@@ -31,7 +31,7 @@
                     Name
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['name']}}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -39,7 +39,7 @@
                     Date of birth
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['dob']}}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -47,7 +47,7 @@
                     Provider(UKPRN)
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{data['provider']}}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -55,7 +55,7 @@
                     T Level Title
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tlevelTitle'] }}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
                   </dd>
                 </div>
               </dl>

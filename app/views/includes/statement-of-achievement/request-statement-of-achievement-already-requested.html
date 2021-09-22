@@ -35,7 +35,7 @@
                       Name
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['name']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
                     </dd>
 
                   </div>
@@ -44,7 +44,7 @@
                       Date of birth
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['dob']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
                     </dd>
 
                   </div>
@@ -53,7 +53,7 @@
                       Provider (UKPRN)
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['provider']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
                     </dd>
                   </div>
                 </dl>
@@ -66,7 +66,7 @@
                       T level title
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['tlevelTitle']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
                     </dd>
                     
                   </div>
@@ -75,8 +75,8 @@
                       Core (code)
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      <p>{{ data ['core'] }}</p>
-                      <p>{{ data ['coreGrade'] }}</p> 
+                      <p>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</p>
+                      <p>Grade: {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}</p> 
                     </dd>
 
                   </div>
@@ -85,8 +85,8 @@
                       Specialism (code)
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      <p>{{ data ['specialism'] }}</p>
-                      <p>{{ data ['specialismGrade'] }}</p> 
+                      <p>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</p>
+                      <p>Grade: {{ data['tLevelsStudentData'][data.uln]['learnerSpecialismResult'] }}</p>
                     </dd>
 
                   </div>
@@ -100,7 +100,7 @@
                       English and maths
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['engMaths']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerEngMaths'] }}
                     </dd>
                     
                   </div>
@@ -109,7 +109,7 @@
                       Industry placement
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['industry']}}
+                      {{ data['tLevelsStudentData'][data.uln]['learnerIndustryPlacement'] }}
                     </dd>
 
                   </div>
@@ -124,7 +124,7 @@
                       Department
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{data ['department']}}
+                      Exam Room 124
                     </dd>
                     
                   </div>
@@ -133,11 +133,11 @@
                       Organisation's address
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      <p>{{ data ['orgName'] }}</p>
-                      <p>{{ data ['orgBuilding'] }}</p>
-                      <p>{{ data ['orgStreet'] }}</p>
-                      <p>{{ data ['orgCity'] }}</p>
-                      <p>{{ data ['orgPostcode'] }}</p>   
+                      Barnsley Academy
+                      <br>Block 1
+                      <br>Bank Street
+                      <br>Barnsley
+                      <br>S70 2AZ 
                     </dd>
                   </div>
 
