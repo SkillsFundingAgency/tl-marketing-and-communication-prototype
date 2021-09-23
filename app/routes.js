@@ -123,5 +123,28 @@ router.post('/V1-0/providers/cancel-address', function (req, res) {
   }
 })
 
+//AO
+
+// Add result - Results
+router.post('/V1-0/AO/results/add-core-result', function (req, res) {
+  let addResult = req.session.data['result-answer']
+
+  req.session.data['addedResult'] = "yes"
+  req.session.data['newResult'] = addResult
+  
+  res.redirect('/V1-0/AO/results/add-core-result-successful')
+
+});
+
+//Change result - Results
+router.post('/V1-0/AO/results/change-core-result-successful', function (req, res) {
+  let changeResult = req.session.data['result-answer']
+
+  req.session.data['changedResult'] = "yes"
+  req.session.data['updateResult'] = changeResult
+  
+  res.redirect('/V1-0/AO/results/change-core-result-successful')
+
+});
     
 module.exports = router
