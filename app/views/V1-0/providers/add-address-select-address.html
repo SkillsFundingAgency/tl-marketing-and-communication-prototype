@@ -14,7 +14,7 @@ Add address - select address - Manage T Level results - GOV.UK
 {% endblock %}
 {% block content %}
 {% if data['address-postcode'] === 's70 3dl' or data['address-postcode'] === 'S70 3DL'%}
-{% include "includes/manage-address/no-addresses.html" %}
+{% include "includes/V1-0/manage-address/no-addresses.html" %}
 {% else %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">

@@ -17,7 +17,7 @@ Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
 {% block content %}
 
 {% if data['uln'] === '1987654321' %}
-{% include "includes/add-providers/add-learner-q1-ulnAlreadyAdded.html" %}
+{% include "includes/V1-0/add-providers/add-learner-q1-ulnAlreadyAdded.html" %}
 {% elseif data['uln'] === '1234567890' or data['uln'] === '1122334455' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -108,6 +108,6 @@ Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
     </div>
 </div>
 {% else %}
-{% include "includes/add-providers/add-learner-q1-ulnNotExist.html" %}
+{% include "includes/V1-0/add-providers/add-learner-q1-ulnNotExist.html" %}
 {% endif %}
 {% endblock %}

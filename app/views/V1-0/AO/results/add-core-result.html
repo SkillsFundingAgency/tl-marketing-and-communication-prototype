@@ -5,10 +5,7 @@ Select the core result page – Manage T Level results – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-    text: "Back",
-    href: "learner-results"
-  }) }}
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
 {% endblock %}
 
 {% block content %}

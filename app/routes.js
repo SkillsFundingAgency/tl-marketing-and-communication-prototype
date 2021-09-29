@@ -125,6 +125,8 @@ router.post('/V1-0/providers/cancel-address', function (req, res) {
 
 //AO
 
+//Results
+
 // Add result - Results
 router.post('/V1-0/AO/results/add-core-result', function (req, res) {
   let addResult = req.session.data['result-answer']
@@ -146,5 +148,30 @@ router.post('/V1-0/AO/results/change-core-result-successful', function (req, res
   res.redirect('/V1-0/AO/results/change-core-result-successful')
 
 });
-    
+
+
+//Assessment Entries
+
+//Add assessment entry for core 
+router.post('/V1-0/AO/assessments/add-first-core-entry', function (req, res) {
+  let addEntry = req.session.data['entry-answer']
+
+  req.session.data['newEntry'] = "yes"
+  req.session.data['addEntry'] = addEntry
+  
+  res.redirect('/V1-0/AO/assessments/add-entry-successful')
+
+});
+
+//remove assessment entry for core 
+router.post('/V1-0/AO/assessments/remove-entry', function (req, res) {
+  let removeEntry = req.session.data['rem-answer']
+
+  req.session.data['updatedEntry'] = "yes"
+  req.session.data['addEntry'] = removeEntry
+  
+  res.redirect('/V1-0/AO/assessments/remove-entry-sucessful')
+
+});
+
 module.exports = router
