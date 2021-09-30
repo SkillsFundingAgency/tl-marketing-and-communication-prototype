@@ -22,63 +22,13 @@
 {% endblock %}
 
 {% block content %}
-{% if data['uln'] == '1231231231%}
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-              <h1 class="govuk-heading-l">Learner's assessment entries</h1>
-              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-              <p class="govuk-body">Name: John Smith</p>
-              <p class="govuk-body">Provider: Barnsley College (12345678)</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-
-              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
-            
-            {% else if data['uln'] == '9876543210%}
-            <section id ="addCoreAssessmentEntry">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key" style="border-bottom:none">
-                     First assessment entry
-                  </dt>
-                  <dd class="govuk-summary-list__value" style="border-bottom:none">
-                     Not specified
-                  </dd>
-                  <dd class="govuk-summary-list__actions" style="border-bottom:none">
-                    <a class="govuk-link" href="add-first-core-entry">
-                      Add entry <span class="govuk-visually-hidden"> for core</span>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-             
-              <hr class="govuk-section-break govuk-section-break--visible">
-
-              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: Not specified</h3>
-
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key" style="border-bottom:none">
-                    First assessment entry
-                  </dt>
-                  <dd class="govuk-summary-list__value" style="border-bottom:none">
-                    Available to add after Autumn 2021 series has passed
-                  </dd>
-                  <dd class="govuk-summary-list__actions" style="border-bottom:none">
-                  </dd>
-                </div>
-              </dl>
-            </section>
-            {% else if data['uln'] == '1122334455%}
-            {%  %}
-              <hr class="govuk-section-break govuk-section-break--visible">
-
-              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="">View and amend this learner's registration details</a></p>
-
-              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="assessment-entries-learner-search">Search again</a></p>
-
-    </div>
-</div>
-
+{% if data['uln'] === '1231231231' %}
+{% include "includes/V1-0/assessments/assessment-entries-withdrawn.html" %}
+{% elseif data['uln'] === '8642135790' %}
+{% include "includes/V1-0/assessments/assessment-entries-add.html" %}
+{% elseif data['uln'] === '5647382910' %}
+{% include "includes/V1-0/assessments/assessment-entries-remove.html" %}
+{% else %}
+{% include "includes/V1-0/assessments/search-for-learner-ULN-not-found.html" %}
+{% endif %}  
 {% endblock %}
