@@ -13,51 +13,56 @@ Add address - confirm address - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-xl">Add address</span>
+      <span class="govuk-caption-l">Add address</span>
 
       <h1 class="govuk-heading-l">
         Check and submit
       </h1>
 
-      <p class="govuk-body govuk-!-margin-top-3">Check the address is correct before you submit. If you need to make changes later on, you can amend this from the 'Home' page.</p>
+      <div class="govuk-grid-row check-submit-change">
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Your organisation's postal address</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <a class="app-float-right" href="add-address-select-address">
+            Change
+            <span class="govuk-visually-hidden"> organisation postal address</span>
+          </a>
+        </div>
+      </div> 
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Department
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             <p class="govuk-body">{{ data['dept-name'] }}</p>
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            <a class="govuk-body govuk-!-font-size-19, govuk-link" href="add-address-select-address">
-              Change address
-            </a>
+          <dd class="govuk-summary-list__actions">
           </dd>
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Organisation's Name
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             {% if data['newManualAddress'] === 'yes'%}
             {{ data['org-name'] }}
             {% else %}
             <p class="govuk-body">{{ data['tLevelsProviders'][data.add]['orgName'] }}</p>
             {% endif %}  
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          <dd class="govuk-summary-list__actions">
           </dd>
         </div>
 
-
-
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Building and street
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             {% if data['newManualAddress'] === 'yes'%}
             {{ data['address-line-1'] }}
             {{ data['address-line-2'] }}
@@ -66,51 +71,49 @@ Add address - confirm address - Manage T Level results - GOV.UK
             <p class="govuk-body">{{ data['tLevelsProviders'][data.add]['orgStreet'] }}</p>
             {% endif %} 
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          <dd class="govuk-summary-list__actions">
           </dd>
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Town or city
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             {% if data['newManualAddress'] === 'yes'%}
             {{ data['address-town'] }}
             {% else %}
             <p class="govuk-body">{{ data['tLevelsProviders'][data.add]['orgCity'] }}</p>
             {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          <dd class="govuk-summary-list__actions">
 
           </dd>
         </div>
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Postcode
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             {% if data['newManualAddress'] === 'yes'%}
             {{ data['address-postcode'] }}
             {% else %}
             <p class="govuk-body">{{ data['tLevelsProviders'][data.add]['orgPostcode'] }}</p>
             {% endif %}
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          <dd class="govuk-summary-list__actions">
 
           </dd>
         </div>
       </dl>
 
-        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6">
-
         <p class="govuk-inset-text">
-          By selecting 'Submit' you are confirming that this is a business address.
+          By selecting 'Submit' you are confirming that this is a business address. If you need to make changes later on, you can amend this from the 'Home' page.
         </p>
 
-        <div class="govuk-button-group govuk-!-margin-top-6">
-          <a class="govuk-button govuk-!-margin-right-5" role="button" href="add-address-confirmation">Submit</a>
+        <div class="govuk-button-group">
+          <a class="govuk-button" role="button" href="add-address-confirmation">Submit</a>
           <a class="govuk-link" href="cancel-address">Cancel</a>
         </div>
   </div>

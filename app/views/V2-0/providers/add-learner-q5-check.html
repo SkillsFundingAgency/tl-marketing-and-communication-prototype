@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's results
+  Learner's T Level record
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-xl">Add a new learner T Level record</span>
+      <span class="govuk-caption-l">Add a new learner T Level record</span>
 
       <h1 class="govuk-heading-l">
         Check and submit
@@ -21,62 +21,62 @@
 
       <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before you submit. If you need to make changes later on, you can search for and update a learner T Level record from the dashboard.</p>
 
-      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
+      <h2 class="govuk-heading-m">Learner details</h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
-            ULN
-          </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">{{ data['uln'] }}</p>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['uln'] }}</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Date of birth
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
             Provider (UKPRN)
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
-            T Level core
+          <dt class="govuk-summary-list__key">
+            T Level title
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <dd class="govuk-summary-list__value">
             <p class="govuk-body">Design, Surveying and Planning for Construction</p>
           </dd>
         </div>
         </dl>
 
-        <hr class="govuk-section-break govuk-section-break--visible">
 
-        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
 
-        <dl class="govuk-summary-list">
+        <h2 class="govuk-heading-m">English and maths minimum standard</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9" >
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key" style="border-bottom:none">
+            <dd class="govuk-summary-list__key">
                Status
             </dd>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <dd class="govuk-summary-list__value">
               {% if data['changeemStatus'] === 'yes'%}
               {{ data['addChangeemStatus'] }}
               {% else %}
@@ -84,7 +84,7 @@
               {% endif %}    
 
             </dd>
-            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="add-learner-change-q2-em">
                 Change <span class="govuk-visually-hidden"> {{ data['result-answer'] }} status</span>
               </a>
@@ -92,11 +92,11 @@
           </div>
           {% if data['uln'] == 4561237890 %}
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key" style="border-bottom:none">
+            <dd class="govuk-summary-list__key">
             </dd>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <dd class="govuk-summary-list__value">
               <details class="govuk-details" closed>
-                  <summary class="govuk-details__summary" style="border-bottom:none">
+                  <summary class="govuk-details__summary">
                       <span class="govuk-details__summary-text">
                           What's LRS?
                       </span>
@@ -107,22 +107,21 @@
                   </div>
               </details>
             </dd>
-            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <dd class="govuk-summary-list__actions">
             </dd>
           </div>
           {% endif %}
         </dl>
 
-        <hr class="govuk-section-break govuk-section-break--visible">
 
-        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's industry placement completion</h3>
+        <h2 class="govuk-heading-m">Learner's industry placement completion</h2>
 
-        <dl class="govuk-summary-list">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key" style="border-bottom:none">
+            <dd class="govuk-summary-list__key">
                Status
             </dd>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <dd class="govuk-summary-list__value">
               {% if data['changeplacementResult'] === 'yes'%}
               {{ data['addChangeindustryPlacement'] }}
               {% else %}
@@ -130,7 +129,7 @@
               {% endif %}   
               
             </dd>
-            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="add-learner-change-q4-ip">
                 Change <span class="govuk-visually-hidden">for industry placement </span>
               </a>
@@ -138,10 +137,8 @@
           </div>
         </dl>
 
-        <hr class="govuk-section-break govuk-section-break--visible">
-
-        <div class="govuk-button-group govuk-!-margin-top-7">
-          <a class="govuk-button govuk-!-margin-right-5" role="button" href="confirmation-learner-added">Submit</a>
+        <div class="govuk-button-group">
+          <a class="govuk-button" role="button" href="confirmation-learner-added">Submit</a>
           <a class="govuk-link" href="cancel-t-level-record">Cancel</a>
         </div>
 
