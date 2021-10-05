@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's assessment entries
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['uln'] === '8642135790' or data['uln'] === '5647382910'%}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="assessments-dashboard.html">Assessments</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="assessment-entries-learner-search">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's assessment entries</li>
+  </ol>
+</div>
+{% else %}
+{{ govukBackLink({
+  text: "Back",
+  href: "assessment-entries-learner-search"
+}) }}
+{% endif %}  
+{% endblock %}
+
+
+{% block content %}
+{% if data['uln'] === '1231231231' %}
+{% include "includes/V2-0/assessments/assessment-entries-withdrawn.html" %}
+{% elseif data['uln'] === '8642135790' %}
+{% include "includes/V2-0/assessments/assessment-entries-add.html" %}
+{% elseif data['uln'] === '5647382910' %}
+{% include "includes/V1-0/assessments/assessment-entries-remove.html" %}
+{% else %}
+{% include "includes/V2-0/assessments/search-for-learner-ULN-not-found.html" %}
+{% endif %}  
+{% endblock %}

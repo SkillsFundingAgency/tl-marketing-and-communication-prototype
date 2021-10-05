@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Remove - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="learners-assessment-entries">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="remove-entry" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+              Are you sure you want to remove this core assessment entry from Summer 2021?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rem-answer-1" name="rem-answer" type="radio" value="Not specified">
+              <label class="govuk-label govuk-radios__label" for="rem-answer-1">
+                Yes, remove the core entry
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rem-answer-2" name="rem-answer" type="radio" value="Summer 2021">
+              <label class="govuk-label govuk-radios__label" for="rem-answer-2">
+                No, do not remove the core entry
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
