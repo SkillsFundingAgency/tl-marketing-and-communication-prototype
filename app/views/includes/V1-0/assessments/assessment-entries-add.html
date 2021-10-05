@@ -23,9 +23,16 @@
             {% endif %} 
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            {% if data['newEntry'] === 'yes'%}
+            <a class="govuk-link" href="remove-entry">
+              Remove entry <span class="govuk-visually-hidden"> for core</span>
+            </a>
+            {% else %}  
             <a class="govuk-link" href="add-first-core-entry">
               Add entry <span class="govuk-visually-hidden"> for core</span>
             </a>
+            {% endif %} 
+            
           </dd>
         </div>
       </dl>

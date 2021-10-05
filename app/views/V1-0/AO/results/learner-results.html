@@ -29,10 +29,11 @@ ULN not found - Manage T Level results - GOV.UK
   </ol>
 </div>
 {% else %}
-{{ govukBackLink({
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+<!-- {{ govukBackLink({
   text: "Back",
   href: "search-learner"
-}) }}
+}) }} -->
 {% endif %} 
 {% endblock %}
 

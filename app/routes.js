@@ -167,12 +167,11 @@ router.post('/V1-0/AO/assessments/add-first-core-entry', function (req, res) {
 
 //remove assessment entry for core 
 router.post('/V1-0/AO/assessments/remove-entry', function (req, res) {
-  let removeEntry = req.session.data['rem-answer']
-
-  req.session.data['updatedEntry'] = "yes"
-  req.session.data['removeEntry'] = removeEntry
   
-  res.redirect('/V1-0/AO/assessments/remove-entry-sucessful')
+
+  req.session.data['newEntry'] = ""
+ 
+  res.redirect('/V1-0/AO/assessments/add-entry-successful')
 
 });
 
