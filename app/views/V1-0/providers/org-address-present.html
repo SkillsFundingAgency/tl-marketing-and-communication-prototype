@@ -27,10 +27,10 @@ Org address present - Manage T Level results - GOV.UK
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="border-bottom:none">
+            <dt class="govuk-summary-list__key">
               Department
             </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <dd class="govuk-summary-list__value">
               {% if data['newAddress'] === 'yes'%}
               <p class="govuk-body">{{ data['dept-name'] }}</p>
               {% elseif data['newManualAddress'] === 'yes'%}
@@ -42,10 +42,10 @@ Org address present - Manage T Level results - GOV.UK
           </div>
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="border-bottom:none">
+            <dt class="govuk-summary-list__key">
               Organisation's name
             </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <dd class="govuk-summary-list__value">
               {% if data['newAddress'] === 'yes'%}
               <p class="govuk-body">{{ data['tLevelsProviders'][data.add]['orgName'] }}</p>
               {% elseif data['newManualAddress'] === 'yes'%}
