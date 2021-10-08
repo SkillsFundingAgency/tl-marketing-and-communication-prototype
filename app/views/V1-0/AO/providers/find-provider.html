@@ -19,16 +19,24 @@ Manage providers – Manage T Level results – GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/V1-0/AO/providers/select-providers-tlevels" method="post" novalidate>
+    <form action="/V1-0/AO/providers/select-providers-tlevels" method="get" novalidate>
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="provider">
           Which provider do you want to manage?
           </label>
-        </h1>
-        <label class="govuk-label" for="provider">
-          Enter the provider's name
-        </label>
-        <input class="govuk-input" id="provider" name="provider" type="text">
+
+          <label class="govuk-label" for="provider">Enter the provider's name
+            <div class="autocomplete-wrapper">
+                <select name="provider" class="govuk-select" id="provider-list">
+                  <option value="">Enter the provider's name</option>
+                  <option value="tl1">Abingdon and Witney College</option>
+                  <option value="tl2">Barnsley City Academy </option>
+                  <option value="tl3">Barking College</option>
+                  <option value="tl4">Leeds City College</option>
+                  <option value="tl5">Luton City College</option>
+                 </select>
+              </div>
+            </label>
       </div>
 
       <details class="govuk-details" data-module="govuk-details">
@@ -47,7 +55,7 @@ Manage providers – Manage T Level results – GOV.UK
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-    </form>
+    </form> 
     
     <h2 class="govuk-heading-m">Before you start</h2>
 
@@ -61,6 +69,27 @@ Manage providers – Manage T Level results – GOV.UK
 
   </div>
 </div>
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
+<script type="text/javascript">
+  var selectEl = document.querySelector('#provider-list')
+  accessibleAutocomplete.enhanceSelectElement({
+      autoselect: true,
+      confirmOnBlur: true,
+      defaultValue: "",
+      minLength: 2,
+      selectElement: selectEl
+  })
+
+  var queryStringParameters = window.location.search
+  var previouslySubmitted = queryStringParameters.length > 0
+  if (previouslySubmitted) {
+      var submittedEl = document.querySelector('.submitted')
+      submittedEl.classList.remove('submitted--hidden')
+      var params = new URLSearchParams(document.location.search.split('?')[1])
+      document.querySelector('.submitted__last-location').innerHTML = params.get('provider-list')
+  }
+</script>
 
 
 {% endblock %}
