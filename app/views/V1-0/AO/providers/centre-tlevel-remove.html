@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,13 +24,13 @@
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-1" name="tLevel-answer" type="radio" value="Yes" {{ checked("tlevel-answwer", "Yes") }}>
+              <input class="govuk-radios__input" id="tLevel-answer-1" name="tLevel-answer" type="radio" value="Yes" >
               <label class="govuk-label govuk-radios__label" for="tLevel-answer-1">
                 Yes, remove T Level
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-2" name="tLevel-answer" type="radio" value="No" {{ checked("tlevel-answer", "No") }}>
+              <input class="govuk-radios__input" id="tLevel-answer-2" name="tLevel-answer" type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="tLevel-answer-2">
                 No, do not remove it
               </label>

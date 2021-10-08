@@ -176,3 +176,112 @@ router.post('/V1-0/AO/assessments/remove-entry', function (req, res) {
 });
 
 module.exports = router
+
+//Appeals
+
+//Add appeal to core component
+router.post('/V1-0/AO/appeals/core-put-on-appeal-2021', function (req, res) {
+
+  let coreOnHold = req.session.data['core-place-on-appeal-2021']
+//yes is being appealed
+  if (coreOnHold === 'yes') {
+    req.session.data['newcoreOnHold2021'] = 'appealed'
+    req.session.data['appealWithdrawn'] = 'no'
+    req.session.data['dateChanged2021'] = 'yes'
+    req.session.data['showBanner'] = "yes"
+
+    res.redirect('/V1-0/AO/appeals/record-entries-routes')
+  
+// no not being appealed - leave with no tag  
+  } else {
+    res.redirect('/V1-0/AO/appeals/record-entries-routes')
+  }
+})
+
+//Add appeal outcome to core component
+router.post('/V1-0/AO/appeals/core-take-off-appeal-2021', function (req, res) {
+
+  let coreOnHold = req.session.data['core-take-off-appeal-2021']
+//I need to update grade
+  if (coreOnHold === 'update') {
+    res.redirect('/V1-0/AO/appeals/change-core-result-appeal-2021')
+
+// I need to withdraw the appeal 
+} else if (coreOnHold === 'withdraw') {  
+  req.session.data['newcoreOnHold2021'] = 'no'
+  req.session.data['appealWithdrawn'] = 'yes'
+  req.session.data['showBanner'] = "yes"
+
+
+  res.redirect('/V1-0/AO/appeals/record-entries-routes')
+
+//Result the same - check and submit confirm   
+  } else {
+    res.redirect('/V1-0/AO/appeals/check-result-change-appeal-2021')
+  }
+})
+
+//2021 core grade changed - after clicking result the same 
+router.post('/V1-0/AO/appeals/check-result-change-appeal-2021', function(req, res) {
+  
+  req.session.data['core-result-changed-2021'] = 'yes'
+ 
+  res.redirect('/V1-0/AO/appeals/check-result-change-appeal-2021')
+
+})
+
+//2021 core grade changed appeal
+router.post('/V1-0/AO/appeals/confirm-result-change-appeal-2021', function (req, res) {
+  
+  let newResult = req.session.data['result-answer-2021']
+  let newResultchanged = req.session.data['core-result-changed-2021']
+  req.session.data['resultChanged2021'] = 'appeal'
+  req.session.data['appealcoreGrade2021'] = newResult
+  req.session.data['newcoreOnHold2021'] = 'final'
+  req.session.data['core-result-changed-2021'] = newResultchanged
+  req.session.data['coreReviewed2021'] = 'appealedgrade'
+  req.session.data['dateChanged2021'] = 'yes'
+  req.session.data['showBanner'] = "yes"
+  req.session.data['appealWithdrawn'] = 'no'
+ 
+  res.redirect('/V1-0/AO/appeals/record-entries-routes')
+
+})
+
+//Appeals - request a grade change
+
+router.post('/V1-0/AO/appeals/exceptions/request-grade-change-routes', function (req, res) {
+
+  let gradeChangeconfirmation = req.session.data['request-grade-change']
+  let uln = req.session.data['uln']
+
+  if (gradeChangeconfirmation === 'learner-page') {
+    req.session.data['uln'] = uln
+    req.session.data['newcoreOnHold2021'] = 'locked'
+    res.redirect('/V1-0/AO/appeals/record-entries-routes')
+
+  } else if (gradeChangeconfirmation === 'search'){
+
+    res.redirect('/V1-0/AO/appeals/search-learner')
+  
+  } else {
+    res.redirect('/V1-0/AO/tlevels-dashboard')
+  }
+})
+
+//EXCEPTIONS
+
+router.post('/V1-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', function (req, res) {
+
+  let appealGrade = req.session.data['exceptions-appeal']
+  let uln = req.session.data['uln']
+
+  if (appealGrade === 'appeal-record') {
+    
+    res.redirect('/V1-0/AO/appeals/exceptions/exceptions-process-confirmation')
+
+  } else{
+    req.session.data['uln'] = uln
+    res.redirect('/V1-0/AO/appeals/record-entries-routes')
+  }
+})
