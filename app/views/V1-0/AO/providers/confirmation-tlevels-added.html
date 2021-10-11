@@ -12,10 +12,11 @@
         <h1 class="govuk-panel__title">T Levels added successfully</h1>
       </div>
 
-      <p class="govuk-body govuk-!-padding-top-5">You confirmed Barnsley College (<abbr>UKPRN</abbr>: 10000536) will offer:</p>
+      <p class="govuk-body govuk-!-padding-top-5">You confirmed {{ data['tLevelsProvidersCourses'][data.provider]['providerName'] }}(<abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data.provider]['providerUKPRN'] }}) will offer:</p>
 <ul class="govuk-list govuk-list--bullet">
       <li><p class="govuk-body govuk-!-font-weight-bold">{{data['tlevel-choice'][0]}}</p></li>
       <li><p class="govuk-body govuk-!-font-weight-bold">{{data['tlevel-choice'][1]}}</p></li>
+      <li><p class="govuk-body govuk-!-font-weight-bold">{{data['tlevel-choice'][2]}}</p></li>
 </ul>
 
       <p class="govuk-body govuk-!-padding-bottom-5 govuk-!-padding-top-1"><a href="centre-details-existing">Manage provider's T Levels</a></p>
