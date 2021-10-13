@@ -11,7 +11,7 @@
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">T Level details confirmed</h1>
         <div class="govuk-panel__body">
-          T level in {{data['tleveltitle']}}
+          T level in {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelTitle'] }}
         </div>
       </div>
       
@@ -20,8 +20,8 @@
       <p class="govuk-body govuk-!-padding-bottom-4">You still have more T Levels to review.</p>
 
       <div class="govuk-button-group">
-        <a class="govuk-button" role="button" href="/1-19/dynamic/t-levels/tlevel-select-non-reviewed">Review another T Level</a>
-        <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back home</a>
+        <a class="govuk-button" role="button" href="tlevel-select-non-reviewed">Review another T Level</a>
+        <a class="govuk-button govuk-button--secondary" role="button" href="/V1-0/AO/tlevels-dashboard.html">Back home</a>
       </div>
 
     </div>

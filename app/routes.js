@@ -285,3 +285,20 @@ router.post('/V1-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', func
     res.redirect('/V1-0/AO/appeals/record-entries-routes')
   }
 })
+
+//Review t level details
+
+router.post('/V1-0/AO/t-levels/verify-tlevel-details-routes', function (req, res) {
+
+  let correctDetails = req.session.data['verify-details']
+
+
+  if (correctDetails === 'yes') {
+    
+    res.redirect('/V1-0/AO/t-levels/review-t-levels-confirmation')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/t-levels/query-t-level')
+  }
+})
