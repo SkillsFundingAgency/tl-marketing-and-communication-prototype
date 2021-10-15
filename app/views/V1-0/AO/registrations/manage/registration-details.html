@@ -1,0 +1,233 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['uln'] === '1234567890' %}
+  Registration details - Manage T Level results - GOV.UK
+{% else %}
+ULN not found - Manage T Level results - GOV.UK
+{% endif %}  
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['uln'] === '1234567890' %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/registrations/registrations.html">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-registration">Search for a registration</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registration details</li>
+  </ol>
+</div>
+{% else %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endif %}  
+{% endblock %}
+
+{% block content %}
+{% if data['uln'] === '1234567890' %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+              <h1 class="govuk-heading-l">Registration details</h1>
+
+              <h2 class="govuk-heading-m">ULN: {{data['uln']}}</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Status
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['withdrawn'] === 'yes' %}
+                    <strong class="govuk-tag govuk-tag--blue">withdrawn</strong>
+                    {% else %}
+                    <strong class="govuk-tag govuk-tag--green">active</strong>
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    <a class="govuk-link" href="rejoin-registration.html">
+                      Change status
+                    </a>
+                    {% else %}
+                    <a class="govuk-link" href="change-status.html">
+                      Change status
+                    </a>
+                    {% endif %}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['name-change'] === 'yes' %}
+                    {{data['first-name']}} {{data['last-name']}}
+                    {% else %}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-name">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['dob-change'] === 'yes' %}
+                    {{ data['dob-day'] }}
+
+                    {% if data['dob-month'] === "1" %}
+                    January
+                    
+                    {% elseif data['dob-month'] === "2" %}
+                    February
+
+                    {% elseif data['dob-month'] === "3" %}
+                    March
+
+                    {% elseif data['dob-month'] === "4" %}
+                    April
+
+                    {% elseif data['dob-month'] === "5" %}
+                    May
+
+                    {% elseif data['dob-month'] === "6" %}
+                    June
+
+                    {% elseif data['dob-month'] === "7" %}
+                    July
+
+                    {% elseif data['dob-month'] === "8" %}
+                    August
+
+                    {% elseif data['dob-month'] === "9" %}
+                    September
+
+                    {% elseif data['dob-month'] === "10" %}
+                    October
+
+                    {% elseif data['dob-month'] === "11" %}
+                    November
+
+                    {% elseif data['dob-month'] === "12" %}
+                    December
+                    
+                    {% else %}
+                    {{ data['dob-month'] }} 
+                    {% endif %} 
+
+                    
+                    {{ data['dob-year'] }}
+                    {% else %}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-dob">
+                      Change<span class="govuk-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider (UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['provider-change'] === 'yes' %}
+                    {{ data['provider'] }}
+                    {% else %}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-provider">
+                      Change<span class="govuk-visually-hidden"> Provider (UKPRN)</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core (code)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-core">
+                      Change<span class="govuk-visually-hidden"> core</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialism(s)<br>(code)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data['specialism'] === 'updated' %}
+                      {% if data['specialism-choice'] === "specialism1"%}
+                      {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS1'] }} {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS1Code'] }}
+                      {% elseif data['specialism-choice'] === "specialism2"%}
+                      {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS2'] }} {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS2Code'] }}
+                      {% else %}
+                      {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS3'] }} {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS3Code'] }}
+                      {% endif %}
+                    
+                    {% elseif data['specialism'] === 'removed' %}
+                    {% else %}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    {% if data['specialism'] === 'removed' %}
+                    <a class="govuk-link" href="change-specialism.html">
+                    Change<span class="govuk-visually-hidden"> specialism</span>  
+                    </a>
+                    {% else %}
+                    <a class="govuk-link" href="change-registration-learner-decided-specialism.html">
+                      Change<span class="govuk-visually-hidden"> specialism</span>  
+                    </a>
+                    {% endif %}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Academic year
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    2020/21
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-year-denial">
+                      Change<span class="govuk-visually-hidden"> academic year</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="">View and amend this learner's assessment entries</a></p>
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-registration">Search again</a></p>
+              
+
+              
+
+
+    </div>
+</div>
+
+{% else %}
+{% include "includes/V1-0/registrations/search-for-learner-ULN-not-found.html" %}
+{% endif %}
+{% endblock %}

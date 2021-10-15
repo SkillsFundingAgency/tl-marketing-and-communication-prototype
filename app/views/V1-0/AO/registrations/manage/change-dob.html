@@ -1,21 +1,21 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new registration - Enter the learner’s date of birth - Manage T Level results - GOV.UK
+  Change date of bith
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-registration-q4-provider" method="post" novalidate data-validate="learner-dob-validation">
+        <form class="form" action="registration-change-dob" method="post" novalidate data-validate="learner-dob-validation">
             <div class="govuk-form-group">
                 
-                    <span class="govuk-caption-xl">Add a new registration</span>
+                    <span class="govuk-caption-xl">Register a new learner</span>
                     <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
                         Enter the learner's date of birth
                       </label>
@@ -55,7 +55,7 @@ Add a new registration - Enter the learner’s date of birth - Manage T Level re
                     
             </div>
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" data-module="govuk-button">Change</button>
 
         </form>
     </div>
@@ -78,6 +78,4 @@ Add a new registration - Enter the learner’s date of birth - Manage T Level re
         
       }
 </script> -->
-
-
 {% endblock %}

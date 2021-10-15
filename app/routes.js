@@ -302,3 +302,127 @@ router.post('/V1-0/AO/t-levels/verify-tlevel-details-routes', function (req, res
     res.redirect('/V1-0/AO/t-levels/query-t-level')
   }
 })
+
+//Registrations
+
+//Manage registrations
+//Status change 
+router.post('/V1-0/AO/registrations/manage/registrations-status-change', function (req, res) {
+
+  let statusChange = req.session.data['status']
+
+
+  if (statusChange === 'withdraw') {
+    
+    res.redirect('/V1-0/AO/registrations/manage/withdraw-registration')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/delete-registration')
+  }
+})
+
+//Withdraw learner registration
+router.post('/V1-0/AO/registrations/manage/confirm-withdraw-answer', function (req, res) {
+
+  let statusChange = req.session.data['withdraw-answer']
+
+
+  if (statusChange === 'Yes') {
+    req.session.data['withdrawn'] = 'yes'
+    res.redirect('/V1-0/AO/registrations/manage/confirmation-reg-withdraw')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/change-status')
+  }
+})
+
+//Rejoin learner registration
+router.post('/V1-0/AO/registrations/manage/confirm-rejoin-answer', function (req, res) {
+
+  let statusChange = req.session.data['rejoin-answer']
+
+
+  if (statusChange === 'Yes') {
+    req.session.data['withdrawn'] = ''
+    res.redirect('/V1-0/AO/registrations/manage/confirmation-reg-rejoin')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/change-status')
+  }
+})
+
+//Delete learner registration 
+router.post('/V1-0/AO/registrations/manage/confirm-delete-answer', function (req, res) {
+
+  let statusChange = req.session.data['delete-answer']
+
+
+  if (statusChange === 'Yes') {
+    req.session.data['deleted'] = 'yes'
+    res.redirect('/V1-0/AO/registrations/manage/confirmation-reg-deleted')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/registration-details')
+  }
+})
+
+
+
+//Change registered name - manage registrations
+
+router.post('/V1-0/AO/registrations/manage/registration-change-name', function (req, res) {
+
+    req.session.data['name-change'] = 'yes'
+    res.redirect('/V1-0/AO/registrations/manage/change-successful')
+
+})
+
+//Change registered dob - manage registrations
+
+router.post('/V1-0/AO/registrations/manage/registration-change-dob', function (req, res) {
+
+  req.session.data['dob-change'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/manage/change-successful')
+
+})
+
+//Change registered provider - manage registrations
+
+router.post('/V1-0/AO/registrations/manage/registration-change-provider', function (req, res) {
+
+  req.session.data['provider-change'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/manage/change-successful')
+
+})
+
+//Update/remove registered specialism - manage registrations
+
+router.post('/V1-0/AO/registrations/manage/update-specialism-answer', function (req, res) {
+
+  let specialismsChange = req.session.data['update-specialism-answer']
+
+
+  if (specialismsChange === 'update') {
+    req.session.data['specialism'] = 'updated'
+    res.redirect('/V1-0/AO/registrations/manage/change-specialism')
+
+  } else{
+    req.session.data['specialism'] = 'removed'
+    res.redirect('/V1-0/AO/registrations/manage/registration-details')
+  }
+
+})
+
+//Change specialism - manage registrations
+
+router.post('/V1-0/AO/registrations/manage/update-specialism-choice', function (req, res) {
+
+    req.session.data['specialism'] = 'updated'
+    res.redirect('/V1-0/AO/registrations/manage/change-successful')
+
+})
+
