@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js-check-all-group<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Download data</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="learner-results" method="post" novalidate data-validate="search-for-learner-validation">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                          Download data
+                        </h1>
+                    </legend>
+                    <p class="govuk-body">Which registration year(s) would you like to download?</p>
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            
+                            <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+                            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                              All registration year(s)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
+                            <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                              2020/21
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+                            <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                              2021/22
+                            </label>
+                          </div>
+                        </div>
+                    
+                      </fieldset>
+                    </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="search-for-learner-validation">
+  {
+
+    "uln": {
+      "presence": {
+        "message": "^Enter a ULN with 10 digits"
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Enter a valid 10-digit ULN"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Enter a valid 10-digit ULN"
+      }
+    }
+
+  }
+</script>
+
+
+{% endblock %}
