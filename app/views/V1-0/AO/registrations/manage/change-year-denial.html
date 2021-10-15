@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Academic year cannot be changed page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Academic year cannot be changed
+            </h1>
+        <p class="govuk-body">You cannot change the academic year if you are keeping the same core on an existing registration.</p>
+        </div>
+        <p>
+            <a class="govuk-button" role="button" href="registration-details">
+                Back to registration details
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
