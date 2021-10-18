@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new registration - Manage T Level results - GOV.UK
+  Add registration - Change ULN
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,25 +12,25 @@ Add a new registration - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-registration-uln-routes" method="post" novalidate data-validate="register-for-learner-validation">
+        <form class="form" action="add-change-uln" method="post" novalidate data-validate="register-for-learner-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Add a new registration</span>
-                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="uln">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-uln">
                       Enter the Unique Learner Number (ULN)
                       </label>
                     </h1>
                     <div class="govuk-form-group">
-                      <span class="govuk-hint" for="uln">
-                        ULN must be 10 digits long
+                      <span class="govuk-hint" for="change-uln">
+                        Must be 10 digits long
                       </span>
-                      <input class="govuk-input govuk-input--width-10" id="uln" name="uln" inputmode="numeric">
+                      <input class="govuk-input govuk-input--width-10" id="change-uln" name="change-uln" inputmode="numeric">
                     </div>
 
 
             </div>
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" data-module="govuk-button">Change</button>
 
         </form>
     </div>
@@ -39,7 +39,7 @@ Add a new registration - Manage T Level results - GOV.UK
 <script type="application/json" id="register-for-learner-validation">
   {
 
-    "uln": {
+    "change-uln": {
       "presence": {
         "message": "^Enter a ULN with 10 digits"
       },

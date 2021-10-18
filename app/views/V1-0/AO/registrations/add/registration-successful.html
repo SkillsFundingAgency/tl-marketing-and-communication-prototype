@@ -9,29 +9,15 @@ Add registration - Registration added confirmation - Manage T Level results - GO
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Learner registered</h1>
-        <div class="govuk-panel__body">ULN: {{data['uln']}} <br> {{ data['first-name'] }} {{ data['last-name'] }}
+        <h1 class="govuk-panel__title">Registration successful</h1>
+        <div class="govuk-panel__body">ULN: {{data['uln']}}
         </div>
       </div>
-      <p class="govuk-body govuk-!-padding-top-3">You have registered one new learner</p>
-
-      <h2 class="govuk-heading-m">What happens now</h2>
-      <p class="govuk-body">You can manage this registration by searching for the learner's ULN. </p>
-      <p class="govuk-body">You will be able to: </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>see registration details</li>
-        <li>change registration details</li>
-        <li>change a learner's course</li>
-        <li>withdraw a learner's registration</li>
-        <li>reactivate a withdrawn learner</li>
-      </ul>
       
-      <p class="govuk-body">You can now add an assessment period for this learner.</p>
+      <p class="govuk-body">You successfully added this new registration.</p>
 
-      <div class="govuk-button-group">
-        <a class="govuk-button" role="button" href="register-new-learner.html">Register another learner</a>
-        <a class="govuk-button govuk-button--secondary" role="button" href="/V1-0/AO/tlevels-dashboard.html">Back to home</a>
-      </div>
+      <a class="govuk-button" role="button" href="/V1-0/AO/registrations/registrations.html">Back to registrations</a>
+
 
 
     </div>
