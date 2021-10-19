@@ -426,3 +426,122 @@ router.post('/V1-0/AO/registrations/manage/update-specialism-choice', function (
 
 })
 
+//Add new registration
+
+//Add registrations - uln routes
+router.post('/V1-0/AO/registrations/add/add-registration-uln-routes', function (req, res) {
+
+  let uln = req.session.data['uln']
+  if (uln === '1234567890') {
+
+    req.session.data['uln'] = uln
+    res.redirect('/V1-0/AO/registrations/add/change-uln-already-registered')
+
+  } else{
+    res.redirect('/V1-0/AO/registrations/add/add-registration-q2-name')
+  }
+
+})
+
+
+
+//Add registration - specialism routes
+router.post('/V1-0/AO/registrations/add/add-registration-specialism-routes', function (req, res) {
+
+  let addSpecialism = req.session.data['specialism']
+  if (addSpecialism === 'yes') {
+
+    res.redirect('/V1-0/AO/registrations/add/add-registration-q6b-specialism')
+
+  } else{
+    res.redirect('/V1-0/AO/registrations/add/add-registration-q7-year')
+  }
+
+})
+
+//Add registration - change uln
+
+router.post('/V1-0/AO/registrations/add/add-change-uln', function (req, res) {
+
+  let uln = req.session.data['change-uln']
+  if (uln === '1234567890') {
+    req.session.data['uln'] = uln
+    res.redirect('/V1-0/AO/registrations/add/change-uln-already-registered')
+
+  } else{
+    req.session.data['uln-changed'] = 'yes'
+    res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+  }
+
+})
+
+//Add registration - change name
+router.post('/V1-0/AO/registrations/add/add-change-name', function (req, res) {
+
+  req.session.data['name-changed'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+
+})
+
+//Add registration - change dob
+router.post('/V1-0/AO/registrations/add/add-change-dob', function (req, res) {
+  let dobMonth = req.session.data['dob-month-change']
+  if (dobMonth === "1"){
+    req.session.data['dob-month-changed'] = 'January'
+  
+  }else if (dobMonth === "2"){
+    req.session.data['dob-month-changed'] = 'Februrary'
+
+  }else if (dobMonth === "3"){
+  req.session.data['dob-month-changed'] = 'March'
+
+  }else if (dobMonth === "4"){
+  req.session.data['dob-month-changed'] = 'April'
+
+  }else if (dobMonth === "5"){
+    req.session.data['dob-month-changed'] = 'May'
+
+  }else if (dobMonth === "6"){
+    req.session.data['dob-month-changed'] = 'June'
+
+  }else if (dobMonth === "7"){
+    req.session.data['dob-month-changed'] = 'July'
+
+  }else if (dobMonth === "8"){
+    req.session.data['dob-month-changed'] = 'August'
+
+  }else if (dobMonth === "9"){
+    req.session.data['dob-month-changed'] = 'September'
+
+  }else if (dobMonth === "10"){
+    req.session.data['dob-month-changed'] = 'October'
+
+  }else if (dobMonth === "11"){
+    req.session.data['dob-month-changed'] = 'November'
+  
+ } else {
+  req.session.data['dob-month-changed'] = 'December'
+
+ }
+
+  req.session.data['dob-changed'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+
+})
+
+//Add registration - change provider
+router.post('/V1-0/AO/registrations/add/add-change-provider', function (req, res) {
+
+  req.session.data['provider-changed'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+
+})
+
+//Add registration - change core
+
+router.post('/V1-0/AO/registrations/add/add-change-core', function (req, res) {
+
+  req.session.data['core-changed'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+
+})

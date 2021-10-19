@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Confirm page title (TBC) - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div>
+
+            <h1 class="govuk-heading-l">
+                ULN is already registered
+            </h1>
+            <p class="govuk-body">Your organisation has already registered this ULN (1234567890). You cannot add it again but you can amend it.</p>
+            </div>
+
+            <a class="govuk-button" role="button" href="/V1-0/AO/registrations/manage/registration-details">
+                View this ULN's registration
+            </a>
+        </div>
+    </div>
+
+    
+</div>
+
+{% endblock %}
