@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="" method="post">
+        <form class="form" action="/V1-0/AO/providers/confirmation-tlevels-added-additional" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -22,7 +22,7 @@
                     </legend>
 
                     <h2 class="govuk-heading-l">
-                        Barnsley College <span class="govuk-hint"><abbr>UKPRN</abbr>: 10000536</span>
+                      {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl2']['providerUKPRN'] }}</span>
                     </h2>
 
                     <span id="tlevel-choice">
@@ -30,15 +30,9 @@
                     </span>
                     <div class="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="tlevel-choice-1" name="tlevel-choice" type="checkbox" value="t01">
-                        <label class="govuk-label govuk-checkboxes__label" for="tlevel-choice-1">
-                          Construction: Design, Surveying and Planning
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="tlevel-choice-2" name="tlevel-choice" type="checkbox" value="t02">
-                        <label class="govuk-label govuk-checkboxes__label" for="tlevel-choice-2">
-                          Digital: Digital Production, Design and Development
+                        <input class="govuk-checkboxes__input" id="tlevelchoice" name="tlevelchoice" type="checkbox" value="tl5">
+                        <label class="govuk-label govuk-checkboxes__label" for="tlevelchoice">
+                          {{ data['tLevelsProvidersCourses']['tl5']['providerTlevel3'] }} 
                         </label>
                       </div>
                     </div>

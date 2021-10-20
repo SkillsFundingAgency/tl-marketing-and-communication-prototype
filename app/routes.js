@@ -545,3 +545,45 @@ router.post('/V1-0/AO/registrations/add/add-change-core', function (req, res) {
   res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
 
 })
+
+// Manage Providers 
+
+//Find provider routes
+
+router.post('/V1-0/AO/providers/select-providers-routes', function (req, res) {
+
+  let providerChoice = req.session.data['provider']
+  if (providerChoice === 'tl5') {
+    res.redirect('/V1-0/AO/providers/centre-details-existing')
+
+  } else{
+    res.redirect('/V1-0/AO/providers/select-providers-tlevels')
+  }
+
+})
+
+// Add additional T level to provider list 
+
+router.post('/V1-0/AO/providers/confirmation-tlevels-added-additional', function (req, res) {
+
+  req.session.data['tlevel-added'] = 'yes'
+  res.redirect('/V1-0/AO/providers/centre-details-existing')
+
+})
+
+// TEST to combine routes to save on creating 3 individual routes
+// until method of sending values through anchor tags/href is figured out
+
+//Remove T Level
+
+router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res) {
+
+  let tlevel1 = req.session.data['tLevel-answer']
+
+  if (tlevel1 === 'Yes') {
+    res.redirect('/V1-0/AO/providers/confirmation-tlevel-removed')
+  } else{
+    res.redirect('/V1-0/AO/providers/centre-details-existing')
+  }
+
+})

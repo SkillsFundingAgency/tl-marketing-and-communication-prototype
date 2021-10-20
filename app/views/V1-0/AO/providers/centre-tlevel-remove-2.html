@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/1-11/AO/confirm-removal-answer" method="post" class="form" >
+    <form action="/V1-0/AO/providers/confirmation-tlevel-removed-2" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -20,18 +20,18 @@
             </h1>
           </legend>
           <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
-            <strong>Digital: Digital Production, Design and Development</strong> from Barnsley College (<abbr>UKPRN</abbr>: 10000536).
+            <strong>{{ data['tLevelsProvidersCourses']['tl5']['providerTlevel3'] }} </strong> from {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>.
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-1" name="tLevel-answer" type="radio" value="Yes" >
-              <label class="govuk-label govuk-radios__label" for="tLevel-answer-1">
+              <input class="govuk-radios__input" id="tLevel3-answer-1" name="tLevel3-answer" type="radio" value="Yes" >
+              <label class="govuk-label govuk-radios__label" for="tLevel3-answer-1">
                 Yes, remove T Level
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-2" name="tLevel-answer" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="tLevel-answer-2">
+              <input class="govuk-radios__input" id="tLevel3-answer-2" name="tLevel3-answer" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="tLevel3-answer-2">
                 No, do not remove it
               </label>
             </div>
