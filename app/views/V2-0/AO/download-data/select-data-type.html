@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                      <span class="govuk-caption-xl">Download data</span>
+                    </legend>
+
+                    <form class="form" action="/data-type-answer" method="post">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                      idPrefix: "what-data",
+                      name: "what-data",
+                      fieldset: {
+                        legend: {
+                          text: "Select data type",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--l"
+                        }
+                      },
+                      hint: {
+                        text: "What data would you like to download?"
+                      },
+                      items: [
+                        {
+                          value: "registrations",
+                          text: "Registrations",
+                          checked: checked("what-data", "registrations")
+                        },
+                        {
+                          value: "assessments",
+                          text: "Assessments",
+                          checked: checked("what-data", "assessments")
+                        },
+                        {
+                          value: "results",
+                          text: "Results",
+                          checked: checked("what-data", "results")
+                        }
+                      ]
+                    }) }}
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

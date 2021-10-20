@@ -7,16 +7,7 @@
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">Download data</a>
-    </li>
-  </ol>
-</div>
+    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -27,34 +18,36 @@
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
-                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-                          Download data
-                        </h1>
+                      <span class="govuk-caption-xl">Download data</span>
                     </legend>
-                    <p class="govuk-body">Which registration year(s) would you like to download?</p>
 
                     <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h1 class="govuk-fieldset__heading">
+                            Select learner status
+                          </h1>
                         </legend>
+                        <div id="waste-hint" class="govuk-hint">
+                          Which learner statuses would you like in the download file?
+                        </div>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            
-                            <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
-                            <label class="govuk-label govuk-checkboxes__label" for="nationality">
-                              All registration year(s)
+                            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+                              All 
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="irish">
-                            <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
-                              2020/21
+                            <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                              Active
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
-                            <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
-                              2021/22
+                            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                              Withdrawn
                             </label>
                           </div>
                         </div>

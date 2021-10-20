@@ -221,6 +221,23 @@ router.post('/V1-0/AO/appeals/core-take-off-appeal-2021', function (req, res) {
   }
 })
 
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('/data-type-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['what-data']
+
+  // Check whether the variable matches a condition
+  if (whatData == "registrations"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-cohorts')  
+  } else {
+    // Send user to ineligible page
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods')
+  }
+
+})
+
 //2021 core grade changed - after clicking result the same 
 router.post('/V1-0/AO/appeals/check-result-change-appeal-2021', function(req, res) {
   

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Download data</a>
+    </li>
+  </ol>
+</div>{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="learner-results" method="post" novalidate data-validate="search-for-learner-validation">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                      <span class="govuk-caption-xl">Download data</span>
+                    </legend>
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h1 class="govuk-fieldset__heading">
+                            Your data is ready
+                          </h1>
+                        </legend>
+
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter">
+                        <img src="/public/images/document-image.png" alt="Document-image">
+                      </div>
+                      <div class="govuk-grid-column-three-quarters">
+                        <h3 class="govuk-heading-m">Download</h3>
+                        <a href="#" class="govuk-link">T Levels data.CSV, 797 bytes</a>                      </div>
+                    </div>
+            </div>
+            <button class="govuk-button govuk-button--secondary" href="/V2-0/AO/download-data/download-data-start.html" data-module="govuk-button">
+              Download more data
+            </button>
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="search-for-learner-validation">
+  {
+
+    "uln": {
+      "presence": {
+        "message": "^Enter a ULN with 10 digits"
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Enter a valid 10-digit ULN"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Enter a valid 10-digit ULN"
+      }
+    }
+
+  }
+</script>
+
+
+{% endblock %}
