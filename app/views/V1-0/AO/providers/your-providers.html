@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your providers page
+  Your providers page – Manage T Level results – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,21 +28,11 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-3">
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value govuk-heading-m">
-              Barnsley College <span class="govuk-hint"><abbr>UKPRN</abbr>: 10000536</span>
+              {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="centre-details-existing-barnsley" id="providers" name="providers" data-tl-type="tl1">
-                View <span class="govuk-visually-hidden">Barnsley College</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value govuk-heading-m">
-              Huddersfield College  <span class="govuk-hint"><abbr>UKPRN</abbr>: 10000999</span>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="centre-details-existing-huddersfield" value="tl2">
-                View <span class="govuk-visually-hidden">Huddersfield College</span>
+              <a class="govuk-link" href="centre-details-existing" value="tl2">
+                View <span class="govuk-visually-hidden">Luton city college</span>
               </a>
             </dd>
           </div>
