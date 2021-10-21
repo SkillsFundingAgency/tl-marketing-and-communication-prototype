@@ -12,11 +12,11 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="" method="post" novalidate data-validate="add-specialism-choice-validation">
+        <form class="form" action="add-change-specialism-choice" method="post" novalidate data-validate="add-specialism-choice-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Add a new registration</span>
-                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="chosen-specialism">
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="change-chosen-specialism">
                       Select the occupational specialism(s) for {{data['core']}}
                       </label>
                     </h1>
@@ -24,14 +24,14 @@
                     {% if data['core'] === 'Design, Surveying and Planning (1000374)' %}
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="chosen-specialism" name="chosen-specialism" type="radio" value="Building services design (70000002)">
-                        <label class="govuk-label govuk-radios__label" for="chosen-specialism">
+                        <input class="govuk-radios__input" id="change-chosen-specialism" name="change-chosen-specialism" type="radio" value="Building services design (70000002)">
+                        <label class="govuk-label govuk-radios__label" for="change-chosen-specialism">
                           Building services design (ZTLOS003)
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="chosen-specialism-3" name="chosen-specialism" type="radio" value="Resource management (70000001)">
-                        <label class="govuk-label govuk-radios__label" for="chosen-specialism-3">
+                        <input class="govuk-radios__input" id="change-chosen-specialism-3" name="change-chosen-specialism" type="radio" value="Resource management (70000001)">
+                        <label class="govuk-label govuk-radios__label" for="change-chosen-specialism-3">
                           Resource management (ZTLOS233)
                         </label>
                       </div>
@@ -40,14 +40,14 @@
                   {% elseif data['core'] === 'Health Support Services (1099393)' %}
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="chosen-specialism-4" name="chosen-specialism" type="radio" value="Healthcare (70000002)">
-                      <label class="govuk-label govuk-radios__label" for="chosen-specialism-4">
+                      <input class="govuk-radios__input" id="change-chosen-specialism-4" name="change-chosen-specialism" type="radio" value="Healthcare (70000002)">
+                      <label class="govuk-label govuk-radios__label" for="change-chosen-specialism-4">
                         Healthcare (ZTLOS453)
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="chosen-specialism-5" name="chosen-specialism" type="radio" value="Administration and Management (70000001)">
-                      <label class="govuk-label govuk-radios__label" for="chosen-specialism-5">
+                      <input class="govuk-radios__input" id="change-chosen-specialism-5" name="change-chosen-specialism" type="radio" value="Administration and Management (70000001)">
+                      <label class="govuk-label govuk-radios__label" for="change-chosen-specialism-5">
                         Administration and Management (ZTLOS333)
                       </label>
                     </div>
@@ -55,14 +55,14 @@
                   {% else %}
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="chosen-specialism-6" name="chosen-specialism" type="radio" value="Agriculture, Land Management and Production (70000002)">
-                      <label class="govuk-label govuk-radios__label" for="chosen-specialism-6">
+                      <input class="govuk-radios__input" id="change-chosen-specialism-6" name="change-chosen-specialism" type="radio" value="Agriculture, Land Management and Production (70000002)">
+                      <label class="govuk-label govuk-radios__label" for="change-chosen-specialism-6">
                         Agriculture, Land Management and Production (ZTLOS242)
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="chosen-specialism-7" name="chosen-specialism" type="radio" value="Animal Care and Management (70000001)">
-                      <label class="govuk-label govuk-radios__label" for="chosen-specialism-7">
+                      <input class="govuk-radios__input" id="change-chosen-specialism-7" name="change-chosen-specialism" type="radio" value="Animal Care and Management (70000001)">
+                      <label class="govuk-label govuk-radios__label" for="change-chosen-specialism-7">
                         Animal Care and Management (ZTLOS563)
                       </label>
                     </div>
@@ -81,7 +81,7 @@
 <script type="application/json" id="add-specialism-choice-validation">
   {
 
-    "chosen-specialism": {
+    "change-chosen-specialism": {
       "presence": {
         "message": "^Select a specialism "
       }

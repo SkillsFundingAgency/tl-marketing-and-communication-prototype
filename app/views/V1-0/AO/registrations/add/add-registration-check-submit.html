@@ -16,7 +16,7 @@ Add a new registration - Check and submit - Manage T Level results - GOV.UK
             <span class="govuk-caption-xl">Register a new learner</span>
 
             <h1 class="govuk-heading-l">
-              Check and submit
+              Check and submit {{data['change-chosen-specialism']}}
             </h1>
 
             <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
@@ -158,6 +158,8 @@ Add a new registration - Check and submit - Manage T Level results - GOV.UK
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if data['specialism']==="no" %}
+                  {% elseif data['add-specialism-changed'] ==="yes"%}
+                  {{ data['change-chosen-specialism'] }}
                   {% else %}
                   {{ data['chosen-specialism'] }}
                   {% endif %}
