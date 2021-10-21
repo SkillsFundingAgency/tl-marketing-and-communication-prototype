@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="registration-change-provider" method="post" novalidate data-validate="">
+        <form class="form" action="registration-change-provider" method="post" novalidate data-validate="select-provider-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Change registration</span>
@@ -49,5 +49,18 @@
         </form>
     </div>
 </div>
+
+<script type="application/json" id="select-provider-validation">
+  {
+    "provider": {
+
+      "presence": {
+      
+      "message": "^Please select a provider"
+
+      }
+    }
+  }
+</script>
 
 {% endblock %}

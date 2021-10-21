@@ -13,7 +13,7 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-registration-q6-specialism" method="post" novalidate data-validate="register-for-learner-validation">
+        <form class="form" action="add-registration-q6-specialism" method="post" novalidate data-validate="select-core-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Add a new registration</span>
@@ -25,7 +25,7 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
                     <div class="govuk-form-group">
                         <select class="govuk-select" id="core" name="core">
                           
-                          <option value="none" selected>Select one</option>
+                          <option value="" selected>Select one</option>
                           <option value="Digital Business Services (1000382)">Digital Business Services (1000382)</option>
                           <option value="Design, Surveying and Planning (1000374)">Design, Surveying and Planning (1000374)</option>  
                           <option value="Digital Support Services (1000442)">Digital Support Services (1000442)</option>
@@ -53,30 +53,19 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
     </div>
 </div>
 
-<!-- <script type="application/json" id="register-for-learner-validation">
+<script type="application/json" id="select-core-validation">
     {
-
-        "first-name": {
-        
+      "core": {
+  
         "presence": {
         
-        "message": "^Enter learner’s last name"
-        
+        "message": "^Please select a core"
+  
         }
-        
-        },
-    
-        "last-name": {
-        
-          "presence": {
-          
-          "message": "^Enter learner’s last name"
-          
-          }
-          
-          }
-        
       }
-</script> -->
+    }
+  </script>
+        
+
 
 {% endblock %}

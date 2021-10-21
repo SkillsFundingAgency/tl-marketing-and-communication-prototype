@@ -157,21 +157,31 @@ router.post('/V1-0/AO/results/change-core-result-successful', function (req, res
 //Add assessment entry for core 
 router.post('/V1-0/AO/assessments/add-first-core-entry', function (req, res) {
   let addEntry = req.session.data['entry-answer']
+  if(addEntry === 'Summer 2021'){
+    req.session.data['newEntry'] = "yes"
+    req.session.data['addEntry'] = addEntry
+    
+    res.redirect('/V1-0/AO/assessments/add-entry-successful')
 
-  req.session.data['newEntry'] = "yes"
-  req.session.data['addEntry'] = addEntry
-  
-  res.redirect('/V1-0/AO/assessments/add-entry-successful')
+  } else {
+    res.redirect('/V1-0/AO/assessments/learners-assessment-entries')
+  }
+
 
 });
 
 //remove assessment entry for core 
 router.post('/V1-0/AO/assessments/remove-entry', function (req, res) {
-  
-
-  req.session.data['newEntry'] = ""
+  let removeEntry = req.session.data['rem-answer']
+  if(removeEntry === 'Not specified'){
+    req.session.data['newEntry'] = ""
  
-  res.redirect('/V1-0/AO/assessments/add-entry-successful')
+    res.redirect('/V1-0/AO/assessments/add-entry-successful')
+
+  }else {
+    res.redirect('/V1-0/AO/assessments/learners-assessment-entries')
+  }
+
 
 });
 

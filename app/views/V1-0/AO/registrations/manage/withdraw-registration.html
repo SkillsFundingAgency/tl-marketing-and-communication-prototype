@@ -11,15 +11,15 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="confirm-withdraw-answer" method="post" class="form" >
+    <form action="confirm-withdraw-answer" method="post" class="form" novalidate data-validate="withdraw-validation" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
-        <fieldset class="govuk-fieldset" aria-describedby="withdraw-tlevel-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="withdraw-learner-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
               Are you sure you want to withdraw this registration?
             </h1>
           </legend>
-          <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
+          <span id="withdraw-learner-hint" class="govuk-hint govuk-!-margin-bottom-7">
             <strong>ULN:</strong> {{data['uln']}}
           </span>
           <div class="govuk-radios">
@@ -45,7 +45,18 @@
   </div>
 </div>
 
+<script type="application/json" id="withdraw-validation">
+  {
 
+    "withdraw-answer": {
+      "presence": {
+        "message": "^Select yes if you want to withdraw this registration "
+      }
+
+    }
+
+  }
+</script>
 
 
 {% endblock %}

@@ -11,7 +11,7 @@ Change registration - Has the learner decided on the specialism page – Manage 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="update-specialism-answer" method="post" class="form" >
+    <form action="update-specialism-answer" method="post" class="form" novalidate data-validate="change-specialism-status-validation">
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset" aria-describedby="withdraw-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -43,7 +43,18 @@ Change registration - Has the learner decided on the specialism page – Manage 
   </div>
 </div>
 
+<script type="application/json" id="change-specialism-status-validation">
+  {
 
+    "update-specialism-answer": {
+      "presence": {
+        "message": "^Select yes if the learner has decided on the specialism "
+      }
+
+    }
+
+  }
+</script>
 
 
 {% endblock %}

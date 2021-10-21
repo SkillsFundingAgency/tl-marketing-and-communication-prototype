@@ -13,7 +13,7 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-registration-q5-core" method="post" novalidate data-validate="register-for-learner-validation">
+        <form class="form" action="add-registration-q5-core" method="post" novalidate data-validate="select-provider-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Add a new registration</span>
@@ -21,11 +21,9 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
                         Select the provider
                       </label>
                     </h1>
-
                     <div class="govuk-form-group">
-
                         <select class="govuk-select" id="provider" name="provider">
-                          <option value="None" selected>Select one</option>
+                          <option value="" selected>Select one</option>
                           <option value="Barnsley Community College (100034)">Barnsley Community College (100034)</option>
                           <option value="Abingdon and Witney College (1000031)">Abingdon and Witney College (1000031)</option>
                           <option value="Bath College (100083)">Bath College (100083)</option>
@@ -52,30 +50,17 @@ Add a new registration - Select the provider - Manage T Level results - GOV.UK
     </div>
 </div>
 
-<!-- <script type="application/json" id="register-for-learner-validation">
+<script type="application/json" id="select-provider-validation">
     {
-
-        "first-name": {
-        
+      "provider": {
+  
         "presence": {
         
-        "message": "^Enter learner’s last name"
-        
+        "message": "^Please select a provider"
+  
         }
-        
-        },
-    
-        "last-name": {
-        
-          "presence": {
-          
-          "message": "^Enter learner’s last name"
-          
-          }
-          
-          }
-        
       }
-</script> -->
+    }
+  </script>
 
 {% endblock %}
