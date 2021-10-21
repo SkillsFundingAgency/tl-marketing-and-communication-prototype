@@ -556,6 +556,43 @@ router.post('/V1-0/AO/registrations/add/add-change-core', function (req, res) {
 
 })
 
+//Add registration - change specialism
+
+router.post('/V1-0/AO/registrations/add/add-change-registration-specialism-routes', function (req, res) {
+
+  let specialismAdd = req.session.data['specialism']
+
+  if(specialismAdd === "yes"){
+    res.redirect('/V1-0/AO/registrations/add/change-registration-q6b-specialism')
+  }else{
+    req.session.data['specialism'] = "no"
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+  }
+})
+
+//Add registration - change specialism choice
+
+router.post('/V1-0/AO/registrations/add/add-change-specialism-choice', function (req, res) {
+  req.session.data['specialism'] = "yes"
+  req.session.data['add-specialism-changed'] = 'yes'
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+
+})
+
+//Add registration - change specialism
+
+router.post('/V1-0/AO/registrations/add/add-change-registration-specialism-routes', function (req, res) {
+
+  let specialismAdd = req.session.data['specialism']
+
+  if(specialismAdd === "yes"){
+    res.redirect('/V1-0/AO/registrations/add/change-registration-q6b-specialism')
+  }else{
+  res.redirect('/V1-0/AO/registrations/add/add-registration-check-submit')
+  }
+})
+
+
 // Manage Providers 
 
 //Find provider routes
@@ -584,7 +621,7 @@ router.post('/V1-0/AO/providers/confirmation-tlevels-added-additional', function
 // TEST to combine routes to save on creating 3 individual routes
 // until method of sending values through anchor tags/href is figured out
 
-//Remove T Level
+//Remove T Level from provider
 
 router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res) {
 
