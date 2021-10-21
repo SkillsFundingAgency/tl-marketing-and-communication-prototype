@@ -12,7 +12,7 @@ Amend active registration page - Manage T Level results - GOV.UK (TBC)
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="registrations-status-change" method="post" class="form" id="my_radio_box">
+        <form action="registrations-status-change" method="post" class="form" novalidate data-validate="change-status-validation">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -41,5 +41,18 @@ Amend active registration page - Manage T Level results - GOV.UK (TBC)
         </form>
     </div>
 </div>
+
+<script type="application/json" id="change-status-validation">
+    {
+  
+      "status": {
+        "presence": {
+          "message": "^Select if you want to withdraw or delete this registration "
+        }
+  
+      }
+  
+    }
+  </script>
 
 {% endblock %}

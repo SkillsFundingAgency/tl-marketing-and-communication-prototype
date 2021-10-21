@@ -22,7 +22,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/V1-0/AO/registrations/manage/registration-details" method="post">
+        <form class="form" action="/V1-0/AO/registrations/manage/registration-details" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -49,6 +49,24 @@
         </form>
     </div>
 </div>
+<script type="application/json" id="search-for-learner-validation">
+  {
 
+    "uln": {
+      "presence": {
+        "message": "^Enter a ULN "
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Enter a valid ULN"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Enter a valid ULN"
+      }
+    }
+
+  }
+</script>
 
 {% endblock %}

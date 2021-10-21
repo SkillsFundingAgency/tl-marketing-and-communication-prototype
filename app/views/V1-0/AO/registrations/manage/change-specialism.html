@@ -11,9 +11,9 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="update-specialism-choice" method="post" class="form" >
+    <form action="update-specialism-choice" method="post" class="form" novalidate data-validate="change-specialism-choice-validation">
       <div class="govuk-form-group govuk-!-margin-bottom-7">
-        <fieldset class="govuk-fieldset" aria-describedby="withdraw-tlevel-hint">
+        <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-xl">Change registration</span>
             <h1 class="govuk-fieldset__heading">
@@ -50,7 +50,18 @@
   </div>
 </div>
 
+<script type="application/json" id="change-specialism-choice-validation">
+  {
 
+    "specialism-choice": {
+      "presence": {
+        "message": "^Select a specialism "
+      }
+
+    }
+
+  }
+</script>
 
 
 {% endblock %}

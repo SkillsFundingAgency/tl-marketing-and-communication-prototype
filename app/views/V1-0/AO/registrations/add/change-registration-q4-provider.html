@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-change-provider" method="post" novalidate data-validate="register-for-learner-validation">
+        <form class="form" action="add-change-provider" method="post" novalidate data-validate="change-provider-validation">
             <div class="govuk-form-group">
                 
                     <span class="govuk-caption-xl">Add a new registration</span>
@@ -23,8 +23,8 @@
 
                     <div class="govuk-form-group">
 
-                        <select class="govuk-select" id="provider" name="provider-change">
-                          <option value="None" selected>Select one</option>
+                        <select class="govuk-select" id="provider-change" name="provider-change">
+                          <option value="" selected>Select one</option>
                           <option value="Barnsley Community College (100034)">Barnsley Community College (100034)</option>
                           <option value="Abingdon and Witney College (1000031)">Abingdon and Witney College (1000031)</option>
                           <option value="Bath College (100083)">Bath College (100083)</option>
@@ -50,5 +50,18 @@
         </form>
     </div>
 </div>
+
+<script type="application/json" id="change-provider-validation">
+  {
+    "provider-change": {
+
+      "presence": {
+      
+      "message": "^Please select a provider"
+
+      }
+    }
+  }
+</script>
 
 {% endblock %}
