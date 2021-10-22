@@ -221,20 +221,47 @@ router.post('/V1-0/AO/appeals/core-take-off-appeal-2021', function (req, res) {
   }
 })
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
+// Run this code when a form is submitted to 'data-type-answer'
 router.post('/data-type-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['what-data']
+  var whatData = req.session.data['uln']
 
   // Check whether the variable matches a condition
   if (whatData == "registrations"){
     // Send user to next page
     res.redirect('/V2-0/AO/download-data/select-cohorts')  
-  } else {
-    // Send user to ineligible page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods')
-  }
+  } 
+  if (whatData == "assessments"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+  } 
+  if (whatData == "results"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'cohorts-answer'
+router.post('/cohorts-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['uln']
+
+  // Check whether the variable matches a condition
+  if (whatData == "cohorts"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-learner-status')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
 
 })
 

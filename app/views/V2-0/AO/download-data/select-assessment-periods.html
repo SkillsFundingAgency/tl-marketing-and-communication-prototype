@@ -14,50 +14,47 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="learner-results" method="post" novalidate data-validate="search-for-learner-validation">
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
-                      <span class="govuk-caption-xl">Download data</span>
-                    </legend>
+      <form class="form" action="/V2-0/AO/download-data/select-optional-columns" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
 
-                    <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                          <h1 class="govuk-fieldset__heading">
-                            Select assessment period(s)
-                          </h1>
-                        </legend>
-                        <div id="waste-hint" class="govuk-hint">
-                          Which assessment period(s) would you like in the download file?
-                        </div>
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="uln">
+              Select assessment period(s)
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <span class="govuk-hint" for="uln">
+              Which assessment period(s) would you like in the download file?
+            </span>
+                        
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                            <input class="govuk-checkboxes__input" id="uln" name="uln" type="checkbox" value="cohorts">
                             <label class="govuk-label govuk-checkboxes__label" for="waste">
                               All 
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                            <input class="govuk-checkboxes__input" id="uln-2" name="uln" type="checkbox" value="cohorts">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                               Summer 2021
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                               Autumn 2021
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                               Summer 2022
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                               Autumn 2022
                             </label>
@@ -74,20 +71,12 @@
     </div>
 </div>
 
-<script type="application/json" id="search-for-learner-validation">
+<script type="application/json" id="data-validate">
   {
 
     "uln": {
       "presence": {
-        "message": "^Enter a ULN with 10 digits"
-      },
-      "numericality": {
-        "onlyInteger": true,
-        "message": "^Enter a valid 10-digit ULN"
-      },
-      "length": {
-        "is": 10,
-        "message": "^Enter a valid 10-digit ULN"
+        "message": "^Select which assessment period(s) you would like in the download file "
       }
     }
 

@@ -1,81 +1,74 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search for a learner page
+Add a new registration - Manage T Level results - GOV.UK
 {% endblock %}
 
-<link rel="stylesheet" href="/stylesheets/development.css">
-
 {% block beforeContent %}
-<a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
 {% endblock %}
 
 {% block content %}
 
-{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-
-{{ govukErrorSummary({
-  "titleText": "There is a problem",
-  "errorList": [
-    {
-      "text": "No data is entered",
-      "href": "#full-name-input"
-    }
-  ]
-}) }}
-
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/data-type-answer" method="post" novalidate data-validate="data-validate">
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                
+                    <h1 class="govuk-label-wrapper">
                       <span class="govuk-caption-xl">Download data</span>
-                    </legend>
+                      <label class="govuk-label govuk-label--l" for="uln">
+                      Select data type
+                      </label>
+                    </h1>
+                    <div class="govuk-form-group">
+                      <span class="govuk-hint" for="uln">
+                        Which type of data would you like to download?
+                      </span>
+                
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-radios__input" id="uln" name="uln" type="radio" value="registrations">
+                          <label class="govuk-label govuk-radios__label" for="results">
+                            Registrations
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="uln-2" name="uln" type="radio" value="assessments">
+                          <label class="govuk-label govuk-radios__label" for="assessments">
+                            Assessments
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="uln-3" name="uln" type="radio" value="results">
+                          <label class="govuk-label govuk-radios__label" for="results">
+                            Results
+                          </label>
+                        </div>
+                      </div>
+                      
+                    </div>
 
-                    <form class="form" action="/data-type-answer" method="post">
 
-                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-                    {{ govukRadios({
-                      idPrefix: "what-data",
-                      name: "what-data",
-                      errorMessage: {
-                        "text": "No data is entered"
-                      },
-                      fieldset: {
-                        legend: {
-                          text: "Select data type",
-                          isPageHeading: true,
-                          classes: "govuk-fieldset__legend--l"
-                        }
-                      },
-                      hint: {
-                        text: "What data would you like to download?"
-                      },
-                      items: [
-                        {
-                          value: "registrations",
-                          text: "Registrations",
-                          checked: checked("what-data", "registrations")
-                        },
-                        {
-                          value: "assessments",
-                          text: "Assessments",
-                          checked: checked("what-data", "assessments")
-                        },
-                        {
-                          value: "results",
-                          text: "Results",
-                          checked: checked("what-data", "results")
-                        }
-                      ]
-                    }) }}
             </div>
 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
+
         </form>
     </div>
 </div>
+
+<script type="application/json" id="data-validate">
+  {
+
+    "uln": {
+      "presence": {
+        "message": "^Select which data type you want to download "
+      }
+    }
+
+  }
+</script>
 
 {% endblock %}
