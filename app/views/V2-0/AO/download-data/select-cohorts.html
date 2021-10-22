@@ -4,16 +4,11 @@
   Search for a learner page
 {% endblock %}
 
-<!-- <link rel="stylesheet" href="/stylesheets/development.css"> -->
-<link rel="stylesheet" href="/public/stylesheets/development123.css">
-<link href="/public/stylesheets/styles.css" media="all" rel="stylesheet" />
-
-
 {% block beforeContent %}
-    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+<a href="/V2-0/AO/tlevels-dashboard" class="govuk-back-link">Back</a>
 {% endblock %}
-
 {% block content %}
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -22,55 +17,55 @@
 
           <h1 class="govuk-label-wrapper">
             <span class="govuk-caption-xl">Download data</span>
-            <label class="govuk-label govuk-label--l" for="uln">
+            <label class="govuk-label govuk-label--l" for="cohort">
               Select cohort(s)
             </label>
           </h1>
-          <div class="govuk-form-group">
-            <span class="govuk-hint" for="uln">
-              In which academic year(s) did the learners register?
-            </span>
+      <div class="govuk-form-group">
+
+      <span class="govuk-hint" for="cohort">
+        In which academic year(s) did the learners register?
+      </span>
+
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <!-- <input name="first-name"> -->
-                            <input class="govuk-checkboxes__input" id="All cohorts" name="uln" type="checkbox" value="All cohorts">
+                            <input onclick="selectall()" class="govuk-checkboxes__input" id="cohort" name="cohort"                 
+                            type="checkbox" value="Advice on testing logistics">
+                            <!-- <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="All cohorts"> -->
                             <label class="govuk-label govuk-checkboxes__label" for="waste">
                               All cohorts
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-2" name="uln" type="checkbox" value="cohorts">
+                            <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="2020-2021">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                               2020-2021
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
+                            <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="2021-2022">
                             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                               2021-2022
                             </label>
                           </div>
-                        </div>
 
+      
+    </div>
 
-                      <!-- </fieldset> -->
-                    </div>
             </div>
+          </div>
 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </div>
 
         </form>
     </div>
 </div>
 
-<script type="text/javascript" src="/public/javascripts/vendor.bundle.js"></script>
-<script type="text/javascript" src= "/public/javascripts/dvsa-mts.bundle.js"></script>
-
-
 <script type="application/json" id="data-validate">
   {
 
-    "uln": {
+    "cohort": {
       "presence": {
         "message": "^Select which cohort(s) would like in the download file "
       }
@@ -79,5 +74,24 @@
   }
 </script>
 
+<script>
+  function selectall() {
+
+    let logistics = document.getElementById("logistics").checked
+
+    
+    if (logistics == false) {
+      document.getElementById("logistics").checked = true;
+      document.getElementById("support-2").checked = true;
+      document.getElementById("support-3").checked = true;
+      document.getElementById("support-4").checked = true;
+      document.getElementById("support-5").checked = true;
+      document.getElementById("support-6").checked = true;
+      document.getElementById("support-7").checked = true;
+    }
+  }
+</script>
+
+<!-- </html> -->
 
 {% endblock %}

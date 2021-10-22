@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+<a href="/V2-0/AO/tlevels-dashboard" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -20,49 +20,42 @@
           <h1 class="govuk-label-wrapper">
             <span class="govuk-caption-xl">Download data</span>
             <label class="govuk-label govuk-label--l" for="uln">
-              Select assessment period(s)
+              Select Assessment period(s)
             </label>
           </h1>
-          <div class="govuk-form-group">
-            <span class="govuk-hint" for="uln">
-              Which assessment period(s) would you like in the download file?
-            </span>
-                        
-                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln" name="uln" type="checkbox" value="cohorts">
-                            <label class="govuk-label govuk-checkboxes__label" for="waste">
-                              All 
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-2" name="uln" type="checkbox" value="cohorts">
-                            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                              Summer 2021
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
-                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                              Autumn 2021
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
-                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                              Summer 2022
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
-                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                              Autumn 2022
-                            </label>
-                          </div>
-                        </div>
-                    
-                      </fieldset>
-                    </div>
+      <div class="govuk-form-group">
+        <fieldset class="js-check-all-group">
+
+      <span class="govuk-hint" for="uln">
+        Which assessment period(s) would you like in the download file?
+      </span>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <input class="govuk-checkboxes__input" id="uln" name="uln" type="checkbox" value="cohosrts">
+    </div>
+        <div class="multiple-choice js-show">
+        <input id="uln" class="js-check-all" name="uln" type="checkbox" value="All cohorts">
+        <label for="class-all">All</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-1" name="uln" type="checkbox" value="cohorts">
+        <label for="class-1">Summer 2021</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-2" name="uln" type="checkbox" value="cohorts">
+        <label for="class-2">Autumn 2021</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-1" name="uln" type="checkbox" value="cohorts">
+        <label for="class-1">Summer 2022</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-2" name="uln" type="checkbox" value="cohorts">
+        <label for="class-2">Autumn 2022</label>
+      </div>
+
+  </fieldset>
+    </div>
+
             </div>
 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
@@ -70,6 +63,16 @@
         </form>
     </div>
 </div>
+
+<!-- stylesheets -->
+<link href="/public/stylesheets/styles.css" media="all" rel="stylesheet" />
+<link rel="stylesheet" href="/public/stylesheets/development123.css">
+
+<!-- javascript -->
+<script type="text/javascript" src="/public/javascripts/vendor.bundle.js"></script>
+<script type="text/javascript" src= "/public/javascripts/dvsa-mts.bundle.js"></script>
+
+
 
 <script type="application/json" id="data-validate">
   {

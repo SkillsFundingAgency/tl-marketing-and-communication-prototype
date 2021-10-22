@@ -251,7 +251,7 @@ router.post('/data-type-answer', function (req, res) {
 router.post('/cohorts-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['uln']
+  var whatData = req.session.data['cohort']
 
   // Check whether the variable matches a condition
   if (whatData == "cohorts"){
