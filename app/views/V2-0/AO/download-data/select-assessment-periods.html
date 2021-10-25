@@ -19,42 +19,51 @@
 
           <h1 class="govuk-label-wrapper">
             <span class="govuk-caption-xl">Download data</span>
-            <label class="govuk-label govuk-label--l" for="uln">
+            <label class="govuk-label govuk-label--l" for="periods">
               Select Assessment period(s)
             </label>
           </h1>
-      <div class="govuk-form-group">
-        <fieldset class="js-check-all-group">
+          <div class="govuk-form-group">
 
-      <span class="govuk-hint" for="uln">
-        Which assessment period(s) would you like in the download file?
-      </span>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <input class="govuk-checkboxes__input" id="uln" name="uln" type="checkbox" value="cohosrts">
-    </div>
-        <div class="multiple-choice js-show">
-        <input id="uln" class="js-check-all" name="uln" type="checkbox" value="All cohorts">
-        <label for="class-all">All</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="class-1" name="uln" type="checkbox" value="cohorts">
-        <label for="class-1">Summer 2021</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="class-2" name="uln" type="checkbox" value="cohorts">
-        <label for="class-2">Autumn 2021</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="class-1" name="uln" type="checkbox" value="cohorts">
-        <label for="class-1">Summer 2022</label>
-      </div>
-      <div class="multiple-choice">
-        <input id="class-2" name="uln" type="checkbox" value="cohorts">
-        <label for="class-2">Autumn 2022</label>
-      </div>
-
-  </fieldset>
-    </div>
+            <span class="govuk-hint" for="periods">
+              Which assessment period(s) would you like in the download file?
+            </span>
+      
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input onclick="toggle(this);" class="govuk-checkboxes__input" id="logistics" name="periods"                 
+                                  type="checkbox" value="All" {{ checked("periods", "All", "Summer 2021", "Autumn 2021", "Summer 2022", "Autumn 2022") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    All 
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-2" name="periods" type="checkbox" value="Summer 2021" {{ checked("periods", "Summer 2021") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                    Summer 2021
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-3" name="periods" type="checkbox" value="Autumn 2021" {{ checked("periods", "Summer 2021") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                    Autumn 2021
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-3" name="periods" type="checkbox" value="Summer 2022" {{ checked("periods", "Summer 2022") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                    Summer 2022
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-3" name="periods" type="checkbox" value="Autumn 2022" {{ checked("periods", "Autumn 2022") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                    Autumn 2022
+                                  </label>
+                                </div>
+          </div>
+      
+                  </div>
 
             </div>
 
@@ -64,20 +73,23 @@
     </div>
 </div>
 
-<!-- stylesheets -->
-<link href="/public/stylesheets/styles.css" media="all" rel="stylesheet" />
-<link rel="stylesheet" href="/public/stylesheets/development123.css">
+<script>
 
-<!-- javascript -->
-<script type="text/javascript" src="/public/javascripts/vendor.bundle.js"></script>
-<script type="text/javascript" src= "/public/javascripts/dvsa-mts.bundle.js"></script>
-
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+  
 
 
 <script type="application/json" id="data-validate">
   {
 
-    "uln": {
+    "periods": {
       "presence": {
         "message": "^Select which assessment period(s) you would like in the download file "
       }

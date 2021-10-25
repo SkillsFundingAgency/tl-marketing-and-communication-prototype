@@ -29,27 +29,24 @@
 
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input onclick="selectall()" class="govuk-checkboxes__input" id="cohort" name="cohort"                 
-                            type="checkbox" value="Advice on testing logistics">
-                            <!-- <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="All cohorts"> -->
+                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="logistics" name="cohort"                
+                            type="checkbox" value="All cohorts" {{ checked("cohort", "All cohorts", "2020-2021", "2021-2022") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="waste">
                               All cohorts
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="2020-2021">
+                            <input class="govuk-checkboxes__input" id="support-2" name="cohort" type="checkbox" value="2020-2021" {{ checked("cohort", "2020-2021") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                               2020-2021
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="cohort" name="cohort" type="checkbox" value="2021-2022">
+                            <input class="govuk-checkboxes__input" id="support-3" name="cohort" type="checkbox" value="2021-2022" {{ checked("cohort", "2021-2022") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                               2021-2022
                             </label>
                           </div>
-
-      
     </div>
 
             </div>
@@ -75,6 +72,18 @@
 </script>
 
 <script>
+
+function toggle(source) {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i] != source)
+          checkboxes[i].checked = source.checked;
+  }
+}
+</script>
+
+
+<!-- <script>
   function selectall() {
 
     let logistics = document.getElementById("logistics").checked
@@ -84,13 +93,9 @@
       document.getElementById("logistics").checked = true;
       document.getElementById("support-2").checked = true;
       document.getElementById("support-3").checked = true;
-      document.getElementById("support-4").checked = true;
-      document.getElementById("support-5").checked = true;
-      document.getElementById("support-6").checked = true;
-      document.getElementById("support-7").checked = true;
     }
   }
-</script>
+</script> -->
 
 <!-- </html> -->
 

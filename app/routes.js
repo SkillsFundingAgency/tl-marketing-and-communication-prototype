@@ -265,6 +265,42 @@ router.post('/cohorts-answer', function (req, res) {
 
 })
 
+// Run this code when a form is submitted to 'cohorts-answer'
+router.post('/learner-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['learner']
+
+  // Check whether the variable matches a condition
+  if (whatData == "learner"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-optional-coloumns')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'cohorts-answer'
+router.post('/periods-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['periods']
+
+  // Check whether the variable matches a condition
+  if (whatData == "periods"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-optional-coloumns')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
 //2021 core grade changed - after clicking result the same 
 router.post('/V1-0/AO/appeals/check-result-change-appeal-2021', function(req, res) {
   
