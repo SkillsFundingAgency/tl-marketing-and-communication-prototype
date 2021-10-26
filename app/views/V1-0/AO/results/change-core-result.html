@@ -15,7 +15,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="change-core-result-successful" method="post" class="form" id="my_radio_box">
+        <form action="change-core-result-successful" method="post" class="form" novalidate data-validate="change-core-result">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -81,4 +81,16 @@ Change assessment entry - Manage T Level results - GOV.UK
     </div>
 </div>
 
+<script type="application/json" id="change-core-result">
+    {
+  
+      "result-answer": {
+        "presence": {
+          "message": "^Please select the core result "
+        }
+  
+      }
+  
+    }
+  </script>
 {% endblock %}

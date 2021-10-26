@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/1-11/AO/confirm-removal-answer" method="post" class="form" >
+    <form action="/V1-0/AO/providers/confirmation-tlevel-removed" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -19,8 +19,8 @@
               Are you sure you want to remove this T Level?
             </h1>
           </legend>
-          <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
-            <strong>Digital: Digital Production, Design and Development</strong> from Barnsley College (<abbr>UKPRN</abbr>: 10000536).
+          <span id="remove-tlevel-hint" class="govuk-hint">
+            <strong>{{ data['tLevelsProvidersCourses']['tl5']['providerTlevel1'] }} </strong> from {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>.
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">

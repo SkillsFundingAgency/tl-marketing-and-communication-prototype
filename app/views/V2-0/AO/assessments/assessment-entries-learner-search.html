@@ -8,7 +8,7 @@ Assessment entries – Search for a learner page – Manage T Level results – 
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="assessments-dashboard.html">Assessments</a>
@@ -22,7 +22,7 @@ Assessment entries – Search for a learner page – Manage T Level results – 
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="learners-assessment-entries" method="post">
+        <form class="form" action="learners-assessment-entries" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -35,7 +35,7 @@ Assessment entries – Search for a learner page – Manage T Level results – 
                       <label class="govuk-label" for="uln">
                         Enter the Unique Learner Number (ULN)
                       </label>
-                      <span class="govuk-hint" for="uln">
+                      <span class="govuk-hint">
                           ULN must be 10 digits long
                       </span>
                       <input class="govuk-input govuk-input--width-20" id="uln" name="uln">
@@ -50,5 +50,24 @@ Assessment entries – Search for a learner page – Manage T Level results – 
     </div>
 </div>
 
+<script type="application/json" id="search-for-learner-validation">
+  {
+
+    "uln": {
+      "presence": {
+        "message": "^Enter a ULN "
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Enter a valid ULN"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Enter a valid ULN"
+      }
+    }
+
+  }
+</script>
 
 {% endblock %}
