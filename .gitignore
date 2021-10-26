@@ -1,2 +1,8 @@
 node_modules
 public
+package-lock.json
+.sass-cache
+.env
+lib/extensions/_extensions.scss
+.port.tmp
+

@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="add-core-entry" method="post" class="form" novalidate data-validate="add-core-entry">
+
+        <h1 class="govuk-heading-l">H1 Title</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider<br>(UKPRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Core <br>(code)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+            </dd>
+          </div>
+        </dl>
+        
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="add-core-entry">
+                  <h2 class="govuk-fieldset__heading">
+                    Question to ask to confirm adding entry
+                  </h2>
+                </legend>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="add-answer-1" name="add-core-entry" type="radio" value="yes" >
+                        <label class="govuk-label govuk-radios__label" for="add-answer-1">
+                          Yes, 
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="add-answer-2" name="add-core-entry" type="radio" value="no"  >
+                        <label class="govuk-label govuk-radios__label" for="add-answer-2">
+                          No, 
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+          <div class="govuk-inset-text">
+            Text to explain adding entry
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="add-core-entry">
+    {
+  
+      "add-core-entry": {
+        "presence": {
+          "message": "^Error message"
+        }
+  
+      }
+  
+    }
+  </script>
+
+{% endblock %}
