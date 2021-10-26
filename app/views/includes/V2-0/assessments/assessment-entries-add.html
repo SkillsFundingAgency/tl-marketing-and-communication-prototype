@@ -6,7 +6,7 @@
 
             <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Name
@@ -51,21 +51,21 @@
 
             <h2 class="govuk-heading-m">Current Assessment entries for Autumn 2021 </h2>
 
+
+            {% if data['core-assessment-entry-added'] === "yes" %}
             <div class="govuk-grid-row check-submit-change">
               <div class="govuk-grid-column-three-quarters">
                 <h3 class="govuk-heading-s">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h3>
               </div>
               <div class="govuk-grid-column-one-quarter">
-                <a class="app-float-right" href="">
-                  Remove
+                <a class="app-float-right" href="/V2-0/AO/assessments/remove-entry-core.html">
+                  Change
                   <span class="govuk-visually-hidden"> assessment entry for core</span>
                 </a>
               </div>
             </div> 
 
-            
-
-            <dl class="govuk-summary-list ">
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Component
@@ -87,39 +87,18 @@
                   Date updated on
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  5 January 1978
+                  5 January 2021
                 </dd>
               </div>
             </dl>
+            {% else %}
 
-            <h3 class="govuk-heading-s">Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h3>
+            <h3 class="govuk-heading-s">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h3>
+            <div class="govuk-inset-text">
+              Content needed: *Text needed to explain no assessment entries registered for autumn 2021* - <a href="/V2-0/AO/assessments/add-entry-core.html">add entry</a>
+            </div>
 
-            <dl class="govuk-summary-list ">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Component
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philips
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date updated on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-              </div>
-            </dl>
+            {% endif %}
 
             <a class="govuk-button" href="assessment-entries-learner-search">Search again</a>
 
