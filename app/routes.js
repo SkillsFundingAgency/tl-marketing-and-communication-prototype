@@ -228,15 +228,15 @@ router.post('/data-type-answer', function (req, res) {
   var whatData = req.session.data['type']
 
   // Check whether the variable matches a condition
-  if (whatData == "Registrations"){
+  if (whatData == "Registrations data"){
     // Send user to next page
     res.redirect('/V2-0/AO/download-data/select-cohorts')  
   } 
-  if (whatData == "Assessments"){
+  if (whatData == "Assessments data"){
     // Send user to next page
     res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
   } 
-  if (whatData == "Results"){
+  if (whatData == "Results data"){
     // Send user to next page
     res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
   } 
