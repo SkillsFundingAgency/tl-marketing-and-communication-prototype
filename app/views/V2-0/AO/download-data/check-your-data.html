@@ -6,11 +6,14 @@
 
 <link rel="stylesheet" href="/stylesheets/development.css">
 
+
 {% block beforeContent %}
     <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
+
+<body onload="remove()">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -67,19 +70,33 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row" id="column-row">
+          <dt class="govuk-summary-list__key">
+            {{ data['columns-name'] }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['optional'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns">
+              {{ data['change-optional'] }}<span class="govuk-visually-hidden">Optional columns</span>
+            </a>
+          </dd>
+        </div>
       </dl>
 
-      
-      <!-- <h2 class="govuk-heading-m">Now send your application</h2>
 
-      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+      
+      <!-- <!-- <h2 class="govuk-heading-m">Now send your application</h2> -->
+
+      <p class="govuk-body">By submitting your data you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> 
 
       <form action="/V2-0/AO/download-data/processing-data-file" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
         <button class="govuk-button" data-module="govuk-button">
-          Submit
+          Submit your data
         </button>
 
       </form>
@@ -87,6 +104,23 @@
     </div>
   </div>
 </main>
+</body>
+
+<script>
+  function remove(){
+      let option = sessionStorage.getItem("check")
+      if (option == "no"){
+          document.getElementById("column-row").style.display = "none";
+      }
+  }
+</script>
+
+<script>
+  document.getElementById('test').addEventListener('change', function () {
+    var style = this.value == 1 ? 'block' : 'none';
+    document.getElementById('hidden_div').style.display = style;
+});
+</script>
 
 
 {% endblock %}
