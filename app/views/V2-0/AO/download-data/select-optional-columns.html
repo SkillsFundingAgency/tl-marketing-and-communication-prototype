@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/check-your-data" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="uln">
+              Select optional columns
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <span class="govuk-hint" for="uln">
+              The CSV download will include ULN, T Level title and registrations year by default. You an also select from the following optional data points.
+            </span>
+            <span class="govuk-hint" for="uln">
+              Which optional columns would you like to download?
+            </span>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="uln" name="uln" type="checkbox" value="cohorts">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+                              Date of birth 
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="uln-2" name="uln" type="checkbox" value="cohorts">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                              Provider
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                              T Level title 
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="uln-3" name="uln" type="checkbox" value="cohorts">
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                              Specialism(s)
+                            </label>
+                          </div>
+                        </div>
+                    
+                      </fieldset>
+                    </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

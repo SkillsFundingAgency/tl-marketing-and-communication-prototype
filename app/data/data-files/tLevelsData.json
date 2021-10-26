@@ -1,0 +1,5 @@
+{
+  "object1": { "stringProperty": "object1", "integerProperty": 1, "floatProperty": 1.5 },
+  "object2": { "stringProperty": "object2", "integerProperty": 2, "floatProperty": 2.6 },
+  "object3": { "stringProperty": "object3", "integerProperty": 3, "floatProperty": 3.7 }
+}
