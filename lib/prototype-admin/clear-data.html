@@ -26,11 +26,17 @@
         iconFallbackText: "Warning"
       }) }}
 
-      {{ govukButton({
-        text: "Clear the data"
-      }) }}
+      <button class="govuk-button" onclick="deleteItems()" data-module="govuk-button">
+        Clear the data
+      </button>
     </div>
   </div>
 </form>
+
+<script>
+  function deleteItems() {
+  sessionStorage.clear();
+}
+</script>
 
 {% endblock %}

@@ -6,19 +6,21 @@
 
 <link rel="stylesheet" href="/stylesheets/development.css">
 
+
 {% block beforeContent %}
     <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
+<body onload="remove()">
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-label-wrapper">
         <span class="govuk-caption-xl">Download data</span>
         <label class="govuk-label govuk-label--l" for="uln">
-          Check your answers before 
-          downloading your data
+          Check your selections
         </label>
       </h1>
       <!-- <h1 class="govuk-heading-l">Check your answers before sending your application</h1> -->
@@ -33,7 +35,15 @@
             {{ data['cohort-name'] }}
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['cohort'] }}
+
+            {% if data[allcohort] === 'All cohorts' 
+            %} 
+            <p>2020 to 2021, 2021 to 2022</p>
+          {% else %}
+          <p>{{ data['cohort'] }}</p>
+
+          {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/V2-0/AO/download-data/select-cohorts">
@@ -46,7 +56,15 @@
             {{ data['learner-name'] }}
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['learner'] }}
+
+            {% if data[alllearner] === 'All' 
+            %} 
+            <p>Active, Withdrawn</p>
+          {% else %}
+          <p>{{ data['learner'] }}</p>
+
+          {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/V2-0/AO/download-data/select-learner-status">
@@ -59,7 +77,15 @@
             {{ data['assessment-name'] }}
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['periods'] }}
+
+           {% if data[allperiods] === 'All' 
+            %} 
+            <p>Summer 2021, Autumn 2021, Summer 2022, Autumn 2022</p>
+          {% else %}
+          <p>{{ data['periods'] }}</p>
+
+          {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/V2-0/AO/download-data/select-assessment-periods">
@@ -67,26 +93,59 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row" id="column-row">
+          <dt class="govuk-summary-list__key">
+            Optional columns
+            <!-- {{ data['columns-name'] }} -->
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['optional'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns">
+              <!-- {{ data['change-optional'] }} -->
+              Change
+              <span class="govuk-visually-hidden">Optional columns</span>
+            </a>
+          </dd>
+        </div>
       </dl>
-
-      
-      <!-- <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
-
-      <form action="/V2-0/AO/download-data/processing-data-file" method="post" novalidate>
+      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
 
         <input type="hidden" name="answers-checked" value="true">
 
-        <button class="govuk-button" data-module="govuk-button">
+        <div class="govuk-button-group">
+
+        <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file'" data-module="govuk-button">
           Submit
         </button>
 
-      </form>
+        
+        <button class="govuk-button govuk-button--secondary" onclick="window.location.href='/V2-0/AO/download-data/download-data'" href="check-your-data" data-module="govuk-button">
+          Start again
+        </button>
+      </div>
 
     </div>
   </div>
 </main>
+</body>
+
+<script>
+  function remove(){
+      let option = sessionStorage.getItem("check")
+      if (option == "no"){
+          document.getElementById("column-row").style.display = "none";
+      }
+  }
+</script>
+
+<!-- <script>
+  document.getElementById('test').addEventListener('change', function () {
+    var style = this.value == 1 ? 'block' : 'none';
+    document.getElementById('hidden_div').style.display = style;
+});
+</script> -->
 
 
 {% endblock %}
