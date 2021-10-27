@@ -33,20 +33,20 @@
       
                               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                  <input onclick="toggle(this);" class="govuk-checkboxes__input" id="logistics" name="learner"                 
+                                  <input onclick="toggle(this);" class="govuk-checkboxes__input" id="learner1" name="alllearner"                 
                                   type="checkbox" value="All" {{ checked("learner", "All") }}>
                                   <label class="govuk-label govuk-checkboxes__label" for="waste">
                                     All 
                                   </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="support-2" name="learner" type="checkbox" value="Active" {{ checked("learner", "Active") }}>
+                                  <input class="govuk-checkboxes__input" id="learner2" name="learner" type="checkbox" value="Active" {{ checked("learner", "Active") }}>
                                   <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                                     Active
                                   </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="support-3" name="learner" type="checkbox" value="Withdrawn" {{ checked("learner", "Withdrawn") }}>
+                                  <input class="govuk-checkboxes__input" id="learner3" name="learner" type="checkbox" value="Withdrawn" {{ checked("learner", "Withdrawn") }}>
                                   <label class="govuk-label govuk-checkboxes__label" for="waste-3">
                                     Withdrawn
                                   </label>
@@ -57,7 +57,7 @@
 
             </div>
 
-            <button class="govuk-button" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" onclick="check1()" data-module="govuk-button">Continue</button>
 
         </form>
     </div>
