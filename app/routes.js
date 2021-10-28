@@ -264,7 +264,7 @@ router.post('/cohorts-answer', function (req, res) {
   var whatData = req.session.data['cohort']
 
   // Check whether the variable matches a condition
-  if (whatData == "cohorts"){
+  if (whatData == "cohort"){
     // Send user to next page
     res.redirect('/V2-0/AO/download-data/select-learner-status')  
   } 
