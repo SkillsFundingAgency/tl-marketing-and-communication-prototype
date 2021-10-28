@@ -23,7 +23,7 @@ Confirmed T Level details
                   T Level title
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsReviewTLevels']['TL-3']['tlevelTitle'] }} 
+                  {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelTitle'] }} 
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -31,8 +31,8 @@ Confirmed T Level details
                   Core <br>(code)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsReviewTLevels']['TL-3']['tlevelCore'] }}<br>
-                  {{ data['tLevelsReviewTLevels']['TL-3']['tlevelCoreCode'] }}
+                  {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelCore'] }}<br>
+                  {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelCoreCode'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -40,14 +40,14 @@ Confirmed T Level details
                   Occupational specialism <br>(code)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <p class="govuk-body">{{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS1'] }}<br>
-                    {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS1Code'] }}
+                  <p class="govuk-body">{{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS1'] }}<br>
+                    {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS1Code'] }}
                   </p>  
-                  <p class="govuk-body">{{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS2'] }}<br>
-                    {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS2Code'] }}
+                  <p class="govuk-body">{{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS2'] }}<br>
+                    {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS2Code'] }}
                   </p>  
-                  <p class="govuk-body">{{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS3'] }}<br>
-                    {{ data['tLevelsReviewTLevels']['TL-3']['tlevelOS3Code'] }}
+                  <p class="govuk-body">{{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS3'] }}<br>
+                    {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS3Code'] }}
                   </p> 
                 </dd>
               </div>
@@ -58,5 +58,11 @@ Confirmed T Level details
 
         </div>
     </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const tlevel = urlParams.get('tlevel');
+      sessionStorage.setItem('tlevel', tlevel)
+    </script>
 
 {% endblock %}
