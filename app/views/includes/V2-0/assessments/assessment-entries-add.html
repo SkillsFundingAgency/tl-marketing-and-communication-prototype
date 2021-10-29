@@ -96,12 +96,13 @@
             {% else %}
 
             <div class="govuk-inset-text">
-              Content needed: *Text needed to explain no assessment entries registered for autumn 2021* - <a href="add-entry-core.html">add entry</a>
+              No assessment entries have yet been recorded for autumn 2021<br aria-hidden="true">
+              <a href="add-entry-core.html">Add an assessment entry for this learner's core component</a>
             </div>
 
             {% endif %}
 
-            <h2 class="govuk-heading-m">Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+            <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
             {% if data['specialism-assessment-entry-added'] === "yes" %}
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -147,7 +148,8 @@
             {% else %}
 
             <div class="govuk-inset-text">
-              Content needed: *Text needed to explain no assessment entries registered for summer 2022* - <a href="add-entry-specialism.html">add entry</a>
+              No assessment entries have yet been recorded for summer 2022 <br aria-hidden="true">
+              <a href="add-entry-specialism.html">Add an assessment entry for this learner's occupational specialism.</a>
             </div>
 
             {% endif %}
