@@ -12,7 +12,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="add-core-entry" method="post" class="form" novalidate data-validate="add-core-entry">
+      <form action="add-specialism-entry" method="post" class="form" novalidate data-validate="add-specialism-entry">
 
         <h1 class="govuk-heading-l">H1 Title</h1> 
         
@@ -70,7 +70,7 @@ Change assessment entry - Manage T Level results - GOV.UK
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="add-core-entry">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="add-specialism-entry">
                   <h2 class="govuk-fieldset__heading">
                     Question to ask to confirm adding entry
                   </h2>
@@ -78,13 +78,13 @@ Change assessment entry - Manage T Level results - GOV.UK
 
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="add-answer-1" name="add-core-entry" type="radio" value="yes" >
+                        <input class="govuk-radios__input" id="add-answer-1" name="add-specialism-entry" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="add-answer-1">
                           Yes, 
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="add-answer-2" name="add-core-entry" type="radio" value="no"  >
+                        <input class="govuk-radios__input" id="add-answer-2" name="add-specialism-entry" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="add-answer-2">
                           No, 
                         </label>
@@ -102,10 +102,10 @@ Change assessment entry - Manage T Level results - GOV.UK
   </div>
 </div>
 
-<script type="application/json" id="add-core-entry">
+<script type="application/json" id="add-specialism-entry">
     {
   
-      "add-core-entry": {
+      "add-specialism-entry": {
         "presence": {
           "message": "^Error message"
         }

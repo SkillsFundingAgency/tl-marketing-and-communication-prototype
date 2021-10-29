@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's assessment entries
+{% if data['uln'] === '1231231231' %}
+Learner withdrawn - Manage T Level results - GOV.UK
+{% elseif data['uln'] === '8642135790' %}
+Learner's assessment entries - Manage T Level results - GOV.UK
+{% else %}
+ULN not found - Manage T Level results - GOV.UK
+{% endif %}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '1231231231' %}
-<a class="govuk-back-link" onclick= "goBack()">Back</a>
-{% else %}
+{% if data['uln'] === '8642135790' %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -22,10 +26,21 @@
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's assessment entries</li>
   </ol>
 </div>
+{% else %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
 {% endif %}
 {% endblock %}
 
+
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    {% if data['showBannerAssessments'] === 'yes' %}
+    {% include "includes/V2-0/assessments/assessment-entries-success-messages.html" %}
+    {% else %}
+    {% endif %}
+</div>
+</div>
 {% if data['uln'] === '1231231231' %}
 {% include "includes/V2-0/assessments/assessment-entries-withdrawn.html" %}
 {% elseif data['uln'] === '8642135790' %}
