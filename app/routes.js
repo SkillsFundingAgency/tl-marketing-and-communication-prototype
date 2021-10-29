@@ -714,3 +714,65 @@ router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res
   }
 
 })
+// V2-0 routes // 
+
+// Assessment Entries - add core entry
+
+router.post('/V2-0/AO/assessments/add-core-entry', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['add-core-entry']
+
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - add specialism entry
+
+router.post('/V2-0/AO/assessments/add-specialism-entry', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['add-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added'] = 'yes'
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove core entry
+
+router.post('/V2-0/AO/assessments/remove-core-entry', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['remove-core-entry']
+
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added'] = 'removed'
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove specialism entry
+
+router.post('/V2-0/AO/assessments/remove-specialism-entry', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['remove-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added'] = 'removed'
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
