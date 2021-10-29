@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-<a href="/V2-0/AO/download-data/select-optional-columns-assessments-results" class="govuk-back-link">Back</a>
+<a href="/V2-0/AO/download-data/select-data-type" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -22,7 +22,8 @@
             <label class="govuk-label govuk-label--l" for="periods" value="Assessment period(s)" name="periods" id="name">
               Select Assessment period(s)
             </label>
-            
+
+
           </h1>
           <div class="govuk-form-group">
 
@@ -33,7 +34,7 @@
                               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
                                   <input onclick="toggle(this);" class="govuk-checkboxes__input" id="assessment1" name="allPeriods"                 
-                                  type="checkbox" value="All" {{ checked("periods", "All") }}>
+                                  type="checkbox" value="All" {{ checked("allPeriods", "All") }}>
                                   <label class="govuk-label govuk-checkboxes__label" for="waste">
                                     All 
                                   </label>
@@ -63,7 +64,7 @@
                                   </label>
                                 </div>
           </div>
-          
+
                   </div>
 
             </div>

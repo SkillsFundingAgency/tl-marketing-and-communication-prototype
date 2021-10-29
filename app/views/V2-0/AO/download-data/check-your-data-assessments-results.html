@@ -8,7 +8,7 @@
 
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/select-optional-columns-assessments-results" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -30,61 +30,24 @@
       <h2 class="govuk-heading-m">{{ data['type'] }}</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ data['cohort-name'] }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-            {% if data[allcohort] === 'All cohorts' 
-            %} 
-            <p>2020 to 2021, 2021 to 2022</p>
-          {% else %}
-          <p>{{ data['cohort'] }}</p>
-
-          {% endif %}
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-cohorts">
-              {{ data['change-cohort'] }}<span class="govuk-visually-hidden"> Cohort(s)</span>
-            </a>
-          </dd>
-        </div>
-
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ data['learner-name'] }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-            {% if data[alllearner] === 'All' 
-            %} 
-            <p>Active, Withdrawn</p>
-          {% else %}
-          <p>{{ data['learner'] }}</p>
-
-          {% endif %}
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-learner-status">
-              {{ data['change-learner'] }}<span class="govuk-visually-hidden">Learner status</span>
-            </a>
-          </dd>
-        </div>
-
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            {{ data['assessment-name'] }}
+          Assessment name
+            {# {{ data['assessment-name'] }} #}
           </dt>
           <dd class="govuk-summary-list__value">
 
-           {% if data[allperiods] === 'All' 
-            %} 
-            <p>Summer 2021, Autumn 2021, Summer 2022, Autumn 2022</p>
+           {% if data[allPeriods] === 'All' %} 
+           
+            Summer 2021
+            <br>
+            Autumn 2021
+            <br>
+            Summer 2022
+            <br>
+            Autumn 2022
+
           {% else %}
           <p>{{ data['periods'] }}</p>
 
@@ -93,20 +56,37 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/V2-0/AO/download-data/select-assessment-periods">
-              {{ data['change-assessment'] }}<span class="govuk-visually-hidden">Assessment period(s)</span>
+              Change<span class="govuk-visually-hidden">Assessment period(s)</span>
             </a>
           </dd>
         </div>
+
+
+
+
         <div class="govuk-summary-list__row" id="column-row">
           <dt class="govuk-summary-list__key">
             Optional columns
-            <!-- {{ data['columns-name'] }} -->
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['optional'] }}
+
+           {% if data['alloptional'] === 'All' %} 
+            Date of birth 
+            <br>
+            Provider
+            <br>
+            T Level title 
+            <br>
+            Specialism(s)
+
+          {% else %}
+          <p>{{ data['optional'] }}</p>
+
+          {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-assessments-results">
               <!-- {{ data['change-optional'] }} -->
               Change
               <span class="govuk-visually-hidden">Optional columns</span>

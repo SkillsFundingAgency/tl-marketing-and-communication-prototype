@@ -8,7 +8,7 @@
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Assessments</li>
   </ol>
@@ -54,12 +54,45 @@
             <ul class="govuk-list govuk-list--bullet">
                 <li>Add or change assessment periods for more than one learner</li>
                 <li>Download a template with assessments data formats and rules guidance</li>
+                
             </ul>
         </div>
     </div>
 
-    <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card" name="hub-choice-1">
+            <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-6">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="assessment-entries-learner-search">
+                    Manage an assessment
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>View a learner's assessment period</li>
+                <li>Add an assessment period for one learner</li>
+                <li>Change an assessment period for one learner</li>
+                <br>
+
+            </ul>
+        </div>
+    </div>
+
+        <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="/V2-0/AO/assessments/assessments-download-data/assessments-download-data">
+                    Download data
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Download your data as a CSV file</li>
+            </ul>
+        </div>
+    </div>
+
+        {# <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
                 <a class="govuk-link--no-visited-state" href="assessment-entries-learner-search">
                     Manage an assessment
@@ -72,9 +105,17 @@
                 <li>Change an assessment period for one learner</li>
             </ul>
         </div>
-    </div>
+    </div> #}
 
+
+    
+        </div>
+
+
+
+    
   </div>
+
 
 
 {% endblock %}

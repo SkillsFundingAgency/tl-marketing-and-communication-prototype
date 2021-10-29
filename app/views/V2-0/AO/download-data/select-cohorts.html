@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search for a learner page
+  Select cohort(s)
 {% endblock %}
 
 {% block beforeContent %}
-<a href="/V2-0/AO/tlevels-dashboard" class="govuk-back-link">Back</a>
+<a href="/V2-0/AO/download-data/select-data-type" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 
@@ -75,6 +75,8 @@
 </script>
 
 <script>
+
+{# // select all toggle #}
 
 function toggle(source) {
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');

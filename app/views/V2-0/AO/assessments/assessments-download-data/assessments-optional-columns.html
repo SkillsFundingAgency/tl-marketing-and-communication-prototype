@@ -7,53 +7,59 @@
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/assessments/assessments-download-data/assessments-select-assessment-periods" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/V2-0/AO/download-data/check-your-data" method="post" novalidate data-validate="data-validate">
+      <form class="form" action="/V2-0/AO/assessments/assessments-download-data/assessments-check-your-data" method="post" novalidate data-validate="data-validate">
         <div class="govuk-form-group">
 
           <h1 class="govuk-label-wrapper">
             <span class="govuk-caption-xl">Download data</span>
-            <label class="govuk-label govuk-label--l" for="optional">
+            <label class="govuk-label govuk-label--l" for="optional3">
               Select optional columns
             </label>
             <!-- <input name="columns-name" value="Optional columns" name="columns-name" hidden="true">
             <input name="change-optional" value="Change" name="change-optional" hidden="true"> -->
           </h1>
           <div class="govuk-form-group">
-            <span class="govuk-hint" for="optional">
+            <span class="govuk-hint" for="optional3">
               The CSV download will include ULN, T Level title and registrations year by default. You an also select from the following optional data points.
             </span>
-            <span class="govuk-hint" for="optional">
+            <span class="govuk-hint" for="optional3">
               Which optional columns would you like to download?
             </span>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="optional1" name="alloptional3" type="checkbox" value="All" {{ checked("alloptional3", "All") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
+                              All
+                            </label>
+                          </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional1" name="optional" type="checkbox" value="Date of birth" {{ checked("optional", "Date of birth") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional1">
+                            <input class="govuk-checkboxes__input" id="optional2" name="optional3" type="checkbox" value="Date of birth" {{ checked("optional3", "Date of birth") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
                               Date of birth 
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional2" name="optional" type="checkbox" value="Provider" {{ checked("optional", "Provider") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional2">
+                            <input class="govuk-checkboxes__input" id="optional3" name="optional3" type="checkbox" value="Provider" {{ checked("optional3", "Provider") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
                               Provider
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional3" name="optional" type="checkbox" value="T Level title" {{ checked("optional", "T Level title") }}>
+                            <input class="govuk-checkboxes__input" id="optional4" name="optional3" type="checkbox" value="T Level title" {{ checked("optional3", "T Level title") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="optional3">
                               T Level title 
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional4" name="optional" type="checkbox" value="Specialism(s)" {{ checked("optional", "Specialism(s)") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional4">
+                            <input class="govuk-checkboxes__input" id="optional5" name="optional3" type="checkbox" value="Specialism(s)" {{ checked("optional3", "Specialism(s)") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
                               Specialism(s)
                             </label>
                           </div>
@@ -62,21 +68,33 @@
                       </fieldset>
                     </div>
             </div>
-            <button class="govuk-button" onclick="check()" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" onclick="checkOptAsses()" data-module="govuk-button">Continue</button>
         </form>
     </div>
 </div>
 
 <script>
-  function check(){
+
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+
+<script>
+  function checkOptAsses(){
   
       let checkbox1 = document.getElementById("optional1").checked
       let checkbox2 = document.getElementById("optional2").checked
       let checkbox3 = document.getElementById("optional3").checked
       let checkbox4 = document.getElementById("optional4").checked
-      
+      let checkbox4 = document.getElementById("optional5").checked
+
       if (checkbox1 == false && checkbox2 == false && checkbox3 == false && checkbox4 == false){
-          sessionStorage.setItem("check", "no")
+          sessionStorage.setItem("checkOptAsses", "no")
       }
   }
   </script>

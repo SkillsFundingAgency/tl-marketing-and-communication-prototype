@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+
+{% block beforeContent %}
+    <a href="/V2-0/AO/download-data/select-optional-columns-registrations" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<body onload="removeRegOpt()">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-label-wrapper">
+        <span class="govuk-caption-xl">Download data</span>
+        <label class="govuk-label govuk-label--l" for="uln">
+          Check your selections
+        </label>
+      </h1>
+      <!-- <h1 class="govuk-heading-l">Check your answers before sending your application</h1> -->
+
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+
+      <h2 class="govuk-heading-m">{{ data['type'] }}</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+        
+          <dt class="govuk-summary-list__key">
+            {{ data['cohort-name'] }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          {# // If it's not blue something is wrong here  #}
+
+          {% if data['allcohort'] === 'All cohorts' %} 
+
+                2020 to 2021
+                <br>
+                2021 to 2022
+          {% else %}
+                <p>{{ data['cohort'] }}   </p>
+
+          {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-cohorts">
+              Change<span class="govuk-visually-hidden"> Cohort(s)</span>
+            </a>
+          </dd>
+        </div>
+
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ data['learner-name'] }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            {% if data['alllearner'] === 'All' %} 
+            Active
+            <br>
+            Withdrawn
+          {% else %}
+          <p>{{ data['learner'] }}</p>
+
+          {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-learner-status">
+              {{ data['change-learner'] }}<span class="govuk-visually-hidden">Learner status</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row" id="column-row-registrations">
+          <dt class="govuk-summary-list__key">
+            Optional columns
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+           {% if data['alllOptionalReg'] === 'All' %} 
+
+            Date of birth 
+            <br>
+            Provider
+            <br>
+            T Level title 
+            <br>
+            Specialism(s)
+          {% else %}
+          <p>{{ data['optionalReg'] }}</p>
+
+          {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-registrations">
+              Change
+              <span class="govuk-visually-hidden">Optional columns</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <div class="govuk-button-group">
+
+        <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file'" data-module="govuk-button">
+          Submit
+        </button>
+
+        
+        <button class="govuk-button govuk-button--secondary" onclick="window.location.href='/V2-0/AO/download-data/download-data'" href="check-your-data" data-module="govuk-button">
+          Start again
+        </button>
+      </div>
+
+    </div>
+  </div>
+</main>
+</body>
+
+<script>
+  function removeRegOpt(){
+      let option = sessionStorage.getItem("checkReg")
+      if (option == "no"){
+          document.getElementById("column-row-registrations").style.display = "none";
+      }
+  }
+</script>
+
+<!-- <script>
+  document.getElementById('test').addEventListener('change', function () {
+    var style = this.value == 1 ? 'block' : 'none';
+    document.getElementById('hidden_div').style.display = style;
+});
+</script> -->
+
+
+{% endblock %}
