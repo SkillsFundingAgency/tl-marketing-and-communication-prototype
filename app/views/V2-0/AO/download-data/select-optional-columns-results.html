@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search for a learner page
+  Select optional columns
 {% endblock %}
 
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/select-assessment-periods" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/V2-0/AO/download-data/check-your-data" method="post" novalidate data-validate="data-validate">
+      <form class="form" action="/V2-0/AO/download-data/check-your-data-results" method="post" novalidate data-validate="data-validate">
         <div class="govuk-form-group">
 
           <h1 class="govuk-label-wrapper">
@@ -33,6 +33,16 @@
               Which optional columns would you like to download?
             </span>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        
+                             <div class="govuk-checkboxes__item">
+                             
+                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="optional1" name="alloptional" type="checkbox" value="All" {{ checked("alloptional", "All") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional1">
+                              All
+                            </label>
+                          </div>
+
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="optional1" name="optional" type="checkbox" value="Date of birth" {{ checked("optional", "Date of birth") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="optional1">
@@ -66,6 +76,19 @@
         </form>
     </div>
 </div>
+
+<script>
+
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+
+  {# // Saying that if it's not checked nothing will be included in the screen as it's optional #}
 
 <script>
   function check(){

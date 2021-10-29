@@ -248,7 +248,7 @@ router.post('/data-type-answer', function (req, res) {
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods-results')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -297,12 +297,30 @@ router.post('/learner-answer', function (req, res) {
 router.post('/periods-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['periods']
+  var whatData = req.session.data['periods4']
 
   // Check whether the variable matches a condition
-  if (whatData == "periods"){
+  if (whatData == "periods4"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-optional-coloumns')  
+    res.redirect('/V2-0/AO/download-data/select-optional-columns-assessments-results')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'cohorts-answer'
+router.post('/assessment-periods-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['aseessments-periods']
+
+  // Check whether the variable matches a condition
+  if (whatData == "aseessments-periods"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/assessments/assessments-download-data/assessments-optional-columns')  
   } 
   // else {
   //   // Send user to ineligible page
