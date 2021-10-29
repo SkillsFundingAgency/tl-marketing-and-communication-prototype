@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search for a learner page
+  Check your data
 {% endblock %}
 
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/download-data/select-optional-columns-assessments-results" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/select-optional-columns-results" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -38,7 +38,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
 
-           {% if data[allPeriods] === 'All' %} 
+           {% if data[allpresults] === 'All' %} 
            
             Summer 2021
             <br>
@@ -49,13 +49,13 @@
             Autumn 2022
 
           {% else %}
-          <p>{{ data['periods'] }}</p>
+          <p>{{ data['presults'] }}</p>
 
           {% endif %}
 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-assessment-periods">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-assessment-periods-results">
               Change<span class="govuk-visually-hidden">Assessment period(s)</span>
             </a>
           </dd>
@@ -86,7 +86,7 @@
 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-assessments-results">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-results">
               <!-- {{ data['change-optional'] }} -->
               Change
               <span class="govuk-visually-hidden">Optional columns</span>
@@ -100,7 +100,7 @@
 
         <div class="govuk-button-group">
 
-        <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file'" data-module="govuk-button">
+        <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file-results'" data-module="govuk-button">
           Submit
         </button>
 

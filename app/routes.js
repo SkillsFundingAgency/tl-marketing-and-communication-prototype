@@ -248,7 +248,7 @@ router.post('/data-type-answer', function (req, res) {
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods-results')  
   } 
   // else {
   //   // Send user to ineligible page

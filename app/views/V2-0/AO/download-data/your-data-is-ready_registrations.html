@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Your data is ready 
+  Your data is ready
 {% endblock %}
 
 <link rel="stylesheet" href="/stylesheets/development.css">
@@ -12,11 +12,8 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
     </li>
-      <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/assessments/assessments-dashboard.html">Assessments</a>
-    </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/assessments/assessments-download-data/assessments-download-data">Download data</a>
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/download-data/download-data">Download data</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" style="text-decoration: none;">Your data is ready</a> 
@@ -28,7 +25,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/V2-0/AO/assessments/assessments-download-data/assessments-download-data" method="post" novalidate data-validate="search-for-learner-validation">
+        <form class="form" action="/V2-0/AO/download-data/download-data" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -53,8 +50,8 @@
                       <div class="govuk-grid-column-three-quarters">
                         <h1 class="govuk-heading-s">Download
                         
-                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
-                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="T_Levels_data.csv">Assessments_File.CSV, 295 bytes</a>
+                        <a href="data:text/csv;charset=utf-8,ULN,First Name,Last Name,Date of Birth,UKPRN,Academic year,Core code,Specialism code(s),Status
+                          1111111111,First1,Last1,10012006,10000536,2021/22,60369115,ZTLOS028,Active,1111111112,First2,Last2e,7102003,10000536,2021/22,60369115,ZTLOS028,Active" download="Registrations_File.csv">Registrations_File.CSV, 270 bytes</a>
                       </h1>
                        </div>
                     </div>
