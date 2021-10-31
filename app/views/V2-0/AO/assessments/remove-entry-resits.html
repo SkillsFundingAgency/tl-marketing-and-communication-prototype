@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="remove-core-entry" method="post" class="form" novalidate data-validate="remove-core-entry">
+      <form action="remove-entry-resits" method="post" class="form" novalidate data-validate="remove-specialism-entry">
 
         <h1 class="govuk-heading-l">H1 Title</h1> 
         
@@ -58,19 +58,11 @@
               {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Core <br>(code)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
-            </dd>
-          </div>
         </dl>
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-core-entry">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-specialism-entry">
                   <h2 class="govuk-fieldset__heading">
                     Question to ask to confirm remove entry
                   </h2>
@@ -78,13 +70,13 @@
 
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-answer-1" name="remove-core-entry" type="radio" value="yes" >
+                        <input class="govuk-radios__input" id="remove-answer-1" name="remove-specialism-entry" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-1">
                           Yes, 
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-answer-2" name="remove-core-entry" type="radio" value="no"  >
+                        <input class="govuk-radios__input" id="remove-answer-2" name="remove-specialism-entry" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-2">
                           No, 
                         </label>
@@ -93,21 +85,17 @@
               </fieldset>
 
           </div>
-          <div class="govuk-inset-text">
-            Text to explain removing entry
-          </div>
-
           <button class="govuk-button" data-module="govuk-button">Submit</button>
       </form>
   </div>
 </div>
 
-<script type="application/json" id="remove-core-entry">
+<script type="application/json" id="remove-specialism-entry">
   {
 
-    "remove-core-entry": {
+    "remove-specialism-entry": {
       "presence": {
-        "message": "^Error message"
+        "message": "^Select whether the assessment entry is being removed"
       }
 
     }

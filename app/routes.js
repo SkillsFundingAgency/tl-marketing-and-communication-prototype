@@ -189,6 +189,18 @@ module.exports = router
 
 //Appeals
 
+//Search ULN - set showBanner to no to stop banner showing continuously
+router.post('/V1-0/AO/appeals/search-learner-appeals', function (req, res) {
+
+  req.session.data['showBanner'] = "no"
+
+  
+  res.redirect('/V1-0/AO/appeals/record-entries-routes')
+
+});
+
+
+
 //Add appeal to core component
 router.post('/V1-0/AO/appeals/core-put-on-appeal-2021', function (req, res) {
 
@@ -698,9 +710,6 @@ router.post('/V1-0/AO/providers/confirmation-tlevels-added-additional', function
 
 })
 
-// TEST to combine routes to save on creating 3 individual routes
-// until method of sending values through anchor tags/href is figured out
-
 //Remove T Level from provider
 
 router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res) {
@@ -716,15 +725,24 @@ router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res
 })
 // V2-0 routes // 
 
+//Search ULN - set showBanner to no to stop banner showing continuously
+router.post('/V2-0/AO/assessments/search-learner-assessments', function (req, res) {
+
+  req.session.data['showBannerAssessments'] = "no"
+  res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+
+});
+
 // Assessment Entries - add core entry
 
 router.post('/V2-0/AO/assessments/add-core-entry', function (req, res) {
 
   let coreAssessmentEntry = req.session.data['add-core-entry']
-
+  
   if (coreAssessmentEntry === 'yes') {
     req.session.data['core-assessment-entry-added'] = 'yes'
     req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-added"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
@@ -740,6 +758,8 @@ router.post('/V2-0/AO/assessments/add-specialism-entry', function (req, res) {
 
   if (specialismAssessmentEntry === 'yes') {
     req.session.data['specialism-assessment-entry-added'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-added"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
@@ -755,6 +775,8 @@ router.post('/V2-0/AO/assessments/remove-core-entry', function (req, res) {
 
   if (coreAssessmentEntry === 'yes') {
     req.session.data['core-assessment-entry-added'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-removed"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
@@ -770,6 +792,8 @@ router.post('/V2-0/AO/assessments/remove-specialism-entry', function (req, res) 
 
   if (specialismAssessmentEntry === 'yes') {
     req.session.data['specialism-assessment-entry-added'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-removed"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')

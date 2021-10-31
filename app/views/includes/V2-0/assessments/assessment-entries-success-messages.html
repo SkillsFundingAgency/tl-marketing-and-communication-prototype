@@ -1,4 +1,4 @@
-{% if data['core-assessment-entry-added'] === 'yes' %}
+{% if data['assessmentsBanner'] === 'core-added' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
       <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -11,7 +11,7 @@
       </h3>
     </div>
   </div>
-{% elseif data['core-assessment-entry-added'] === 'removed' %}
+{% elseif data['assessmentsBanner'] === 'core-removed' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
       <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -22,10 +22,9 @@
       <h3 class="govuk-notification-banner__heading">
         You have removed the core component assessment entry for this learner
       </h3>
-      <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
     </div>
   </div>
-  {% elseif data['specialism-assessment-entry-added'] === 'yes' %}
+  {% elseif data['assessmentsBanner'] === 'specialism-added' %}
   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -36,10 +35,9 @@
         <h3 class="govuk-notification-banner__heading">
             This learner is now registered for the occupational specialism assessment listed below
         </h3>
-        <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
       </div>
     </div>
-{% elseif data['specialism-assessment-entry-added'] === 'removed' %}
+{% elseif data['assessmentsBanner'] === 'specialism-removed' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
     <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -50,7 +48,6 @@
         <h3 class="govuk-notification-banner__heading">
             You have removed the occupational specialism assessment entry for this learner
         </h3>
-        <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
     </div>
     </div>
 {% endif %}

@@ -1,170 +1,116 @@
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-
-            <h1 class="govuk-heading-l">Learner's assessment entries</h1>
-
-            <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
-
-            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Provider<br>(UKPRN)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  T Level
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                </dd>
-              </div>
-            </dl>
-
-            <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+<section id ="add-entries">
+  <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
 
-            {% if data['core-assessment-entry-added'] === "yes" %}
+  {% if data['core-assessment-entry-added'] === "yes" %}
 
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Exam period
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Autumn 2021
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="remove-entry-core">
-                    Remove<span class="govuk-visually-hidden"> assessment entry</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Last updated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philiips
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                  </a>
-                </dd>
-              </div>
-            </dl>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Autumn 2021
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-core">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        5 January 1978
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philiips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
 
-            {% else %}
+  {% elseif data['uln'] === "5647382910" %}
+    <div class="govuk-inset-text">
+      You must <a href="">add a result to this learner's previous assessment</a> 
+      before entering new assessment details.
+    </div>
 
-            <div class="govuk-inset-text">
-              No assessment entries have yet been recorded for autumn 2021<br aria-hidden="true">
-              <a href="add-entry-core.html">Add an assessment entry for this learner's core component</a>
-            </div>
+  {% else %}
 
-            {% endif %}
-
-            <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
-            {% if data['specialism-assessment-entry-added'] === "yes" %}
-
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Exam period
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Summer 2022
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="remove-entry-specialism">
-                    Remove<span class="govuk-visually-hidden"> assessment entry</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Last updated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philiips
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                  </a>
-                </dd>
-              </div>
-            </dl>
-
-            {% else %}
-
-            <div class="govuk-inset-text">
-              No assessment entries have yet been recorded for summer 2022 <br aria-hidden="true">
-              <a href="add-entry-specialism.html">Add an assessment entry for this learner's occupational specialism.</a>
-            </div>
-
-            {% endif %}
-
-            <a class="govuk-button" href="assessment-entries-learner-search" id="nobanner" onclick="nobanner()">Search again</a>
-
+  <div class="govuk-inset-text">
+    No assessment entries have yet been recorded for autumn 2021<br aria-hidden="true">
+    <a href="add-entry-core.html">Add an assessment entry for this learner's core component</a>
   </div>
-</div>
 
-<script>
-  function nobanner() {
-	  sessionStorage.setItem('showBannerAssessments', 'no')
-}
-</script>
+  {% endif %}
 
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  {% if data['specialism-assessment-entry-added'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2022
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        5 January 1978
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philiips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+
+  <div class="govuk-inset-text">
+    No assessment entries have yet been recorded for summer 2022 <br aria-hidden="true">
+    <a href="add-entry-specialism.html">Add an assessment entry for this learner's occupational specialism.</a>
+  </div>
+
+  {% endif %}
+</section>
 
 
 
