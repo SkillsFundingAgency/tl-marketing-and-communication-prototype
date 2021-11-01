@@ -1,4 +1,56 @@
-
+{% if data['assessmentsBanner'] === 'core-added' or data['assessmentsBanner'] === 'core-added-resits'%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        This learner is now registered for the core component assessment listed below
+      </h3>
+    </div>
+  </div>
+{% elseif data['assessmentsBanner'] === 'core-removed' or data['assessmentsBanner'] === 'core-removed-resits' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You have removed the core component assessment entry for this learner
+      </h3>
+    </div>
+  </div>
+  {% elseif data['assessmentsBanner'] === 'specialism-added' or data['assessmentsBanner'] === 'specialism-added-resits' or data['assessmentsBanner'] === 'specialism2-added-resits' %}
+  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+            This learner is now registered for the occupational specialism assessment listed below
+        </h3>
+      </div>
+    </div>
+{% elseif data['assessmentsBanner'] === 'specialism-removed' or data['assessmentsBanner'] === 'specialism-removed-resits' or data['assessmentsBanner'] === 'specialism2-removed-resits' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+        </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+            You have removed the occupational specialism assessment entry for this learner
+        </h3>
+    </div>
+    </div>
+{% endif %}
 
 
 

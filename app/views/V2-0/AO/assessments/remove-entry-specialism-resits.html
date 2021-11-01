@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Remove core assessment entry - Manage T Level results - GOV.UK
+Remove specialism assessment entry - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,9 +12,9 @@ Remove core assessment entry - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="remove-core-entry" method="post" class="form" novalidate data-validate="remove-core-entry">
+      <form action="remove-specialism-entry-resits" method="post" class="form" novalidate data-validate="remove-specialism-entry">
 
-        <h1 class="govuk-heading-l">Remove core component assessment entry from autumn 2021</h1> 
+        <h1 class="govuk-heading-l">Remove occupational specialism assessment entry from summer 2023</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           
@@ -62,23 +62,23 @@ Remove core assessment entry - Manage T Level results - GOV.UK
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-core-entry">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-specialism-entry">
                   <h2 class="govuk-fieldset__heading">
-                    Would you like to remove the core component assessment entry for autumn 2021 from this learner's record?
+                    Would you like to remove the occupational specialism assessment entry for summer 2023 from this learner's record?
                   </h2>
                 </legend>
 
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-answer-1" name="remove-core-entry" type="radio" value="yes" >
+                        <input class="govuk-radios__input" id="remove-answer-1" name="remove-specialism-entry" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-1">
-                          Yes, remove the entry from autumn 2021
+                          Yes, remove entry to summer 2023
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="remove-answer-2" name="remove-core-entry" type="radio" value="no"  >
+                        <input class="govuk-radios__input" id="remove-answer-2" name="remove-specialism-entry" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-2">
-                          No, do not remove the entry from autumn 2021 
+                          No, do not remove entry to summer 2023
                         </label>
                     </div>
                   </div>
@@ -90,12 +90,12 @@ Remove core assessment entry - Manage T Level results - GOV.UK
   </div>
 </div>
 
-<script type="application/json" id="remove-core-entry">
+<script type="application/json" id="remove-specialism-entry">
   {
 
-    "remove-core-entry": {
+    "remove-specialism-entry": {
       "presence": {
-        "message": "^Select whether  the assessment entry is being removed"
+        "message": "^Select whether the assessment entry is being removed"
       }
 
     }

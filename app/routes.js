@@ -189,6 +189,18 @@ module.exports = router
 
 //Appeals
 
+//Search ULN - set showBanner to no to stop banner showing continuously
+router.post('/V1-0/AO/appeals/search-learner-appeals', function (req, res) {
+
+  req.session.data['showBanner'] = "no"
+
+  
+  res.redirect('/V1-0/AO/appeals/record-entries-routes')
+
+});
+
+
+
 //Add appeal to core component
 router.post('/V1-0/AO/appeals/core-put-on-appeal-2021', function (req, res) {
 
@@ -716,9 +728,6 @@ router.post('/V1-0/AO/providers/confirmation-tlevels-added-additional', function
 
 })
 
-// TEST to combine routes to save on creating 3 individual routes
-// until method of sending values through anchor tags/href is figured out
-
 //Remove T Level from provider
 
 router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res) {
@@ -729,6 +738,185 @@ router.post('/V1-0/AO/providers/confirmation-tlevel-removed', function (req, res
     res.redirect('/V1-0/AO/providers/confirmation-tlevel-removed')
   } else{
     res.redirect('/V1-0/AO/providers/centre-details-existing')
+  }
+
+})
+// V2-0 routes // 
+
+//Search ULN - set showBanner to no to stop banner showing continuously
+router.post('/V2-0/AO/assessments/search-learner-assessments', function (req, res) {
+
+  req.session.data['showBannerAssessments'] = "no"
+  res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+
+});
+
+// Assessment Entries - add core entry
+
+router.post('/V2-0/AO/assessments/add-core-entry', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['add-core-entry']
+  
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-added"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - add specialism entry
+
+router.post('/V2-0/AO/assessments/add-specialism-entry', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['add-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-added"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove core entry
+
+router.post('/V2-0/AO/assessments/remove-core-entry', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['remove-core-entry']
+
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-removed"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove specialism entry
+
+router.post('/V2-0/AO/assessments/remove-specialism-entry', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['remove-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-removed"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment entries RESITS 
+// Add core entry resit 
+router.post('/V2-0/AO/assessments/add-core-entry-resits', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['add-core-entry']
+  
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added-resits'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-added-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - add one of the multiple specialism entry for resit 
+
+router.post('/V2-0/AO/assessments/add-specialism-entry-resits', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['add-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added-resits'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-added-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - add second of the multiple specialism entry for resit 
+
+router.post('/V2-0/AO/assessments/add-specialism2-entry-resits', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['add-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism2-assessment-entry-added-resits'] = 'yes'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism2-added-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove core entry resits
+
+router.post('/V2-0/AO/assessments/remove-core-entry-resits', function (req, res) {
+
+  let coreAssessmentEntry = req.session.data['remove-core-entry']
+
+  if (coreAssessmentEntry === 'yes') {
+    req.session.data['core-assessment-entry-added-resits'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "core-removed-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove one of the multiple specialism entry resits
+
+router.post('/V2-0/AO/assessments/remove-specialism-entry-resits', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['remove-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism-assessment-entry-added-resits'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism-removed-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  }
+
+})
+
+// Assessment Entries - remove one of the multiple specialism entry resits
+
+router.post('/V2-0/AO/assessments/remove-specialism2-entry-resits', function (req, res) {
+
+  let specialismAssessmentEntry = req.session.data['remove-specialism-entry']
+
+  if (specialismAssessmentEntry === 'yes') {
+    req.session.data['specialism2-assessment-entry-added-resits'] = 'removed'
+    req.session.data['showBannerAssessments'] = "yes"
+    req.session.data['assessmentsBanner'] = "specialism2-removed-resits"
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
+  } else{
+    res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
 })

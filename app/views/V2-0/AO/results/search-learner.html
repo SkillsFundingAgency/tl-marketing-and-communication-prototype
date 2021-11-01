@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Assessment entries – Search for a learner – Manage T Level results – GOV.UK
+  Search for a learner page
 {% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="assessments-dashboard.html">Assessments</a>
+      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
   </ol>
@@ -22,7 +22,7 @@ Assessment entries – Search for a learner – Manage T Level results – GOV.U
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="search-learner-assessments" method="post" novalidate data-validate="search-for-learner-validation">
+        <form class="form" action="learner-results" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -30,10 +30,10 @@ Assessment entries – Search for a learner – Manage T Level results – GOV.U
                             Search for a learner
                         </h1>
                     </legend>
-                    <p class="govuk-body">You can add, view and amend a learner's assessment entries.</p>
+                    <p class="govuk-body">You can add, view and amend a learner's results.</p>
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="uln">
-                        Enter the unique learner number (ULN)
+                        Enter the Unique Learner Number (ULN)
                       </label>
                       <span class="govuk-hint">
                           ULN must be 10 digits long
@@ -55,19 +55,20 @@ Assessment entries – Search for a learner – Manage T Level results – GOV.U
 
     "uln": {
       "presence": {
-        "message": "^Enter a ULN "
+        "message": "^Enter a ULN with 10 digits"
       },
       "numericality": {
         "onlyInteger": true,
-        "message": "^Enter a valid ULN"
+        "message": "^Enter a valid 10-digit ULN"
       },
       "length": {
         "is": 10,
-        "message": "^Enter a valid ULN"
+        "message": "^Enter a valid 10-digit ULN"
       }
     }
 
   }
 </script>
+
 
 {% endblock %}

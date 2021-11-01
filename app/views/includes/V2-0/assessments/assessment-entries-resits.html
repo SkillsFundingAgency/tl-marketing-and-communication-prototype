@@ -1,133 +1,179 @@
+<section id="multiple-specialism-resits">
+  <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
 
-            <h1 class="govuk-heading-l">Learner's assessment entries</h1>
+  {% if data['core-assessment-entry-added-resits'] === "yes" %}
 
-            <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-core-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-core-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
 
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Provider<br>(UKPRN)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  T Level title
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                </dd>
-              </div>
-            </dl>
+  {% else %}
 
-            <h2 class="govuk-heading-m">Current Assessment entries for Autumn 2021 </h2>
-
-            <div class="govuk-grid-row check-submit-change">
-              <div class="govuk-grid-column-three-quarters">
-                <h3 class="govuk-heading-s">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h3>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <a class="app-float-right" href="">
-                  Remove
-                  <span class="govuk-visually-hidden"> assessment entry for core</span>
-                </a>
-              </div>
-            </div> 
-
-            
-
-            <dl class="govuk-summary-list ">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Component
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philips
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date updated on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-              </div>
-            </dl>
-
-            <h3 class="govuk-heading-s">Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h3>
-
-            <dl class="govuk-summary-list ">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Component
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philips
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date updated on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-              </div>
-            </dl>
-
-            <a class="govuk-button" href="assessment-entries-learner-search">Search again</a>
-
+  <div class="govuk-inset-text">
+    No assessment entries have yet been recorded for summer 2023.<br aria-hidden="true">
+    <a href="add-entry-core-resits.html">Add an assessment entry for this learner's core component</a>.
   </div>
-</div>
 
+  {% endif %}
 
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }}</h2>
+  {% if data['specialism-assessment-entry-added-resits'] === "yes" %}
 
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-specialism-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
 
+  {% else %}
 
+  <div class="govuk-inset-text">
+    No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
+    <a href="add-entry-specialism-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
+  </div>
 
+  {% endif %}
+
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</h2>
+  {% if data['specialism2-assessment-entry-added-resits'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism2-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-specialism2-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philiips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+
+  <div class="govuk-inset-text">
+    No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
+    <a href="add-entry-specialism2-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
+  </div>
+
+  {% endif %}
+</section>
+
+<script>
+  window.onload = function () {
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core-resit').innerHTML = dateFormatcore
+    }
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism-resit').innerHTML = dateFormat
+
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism2-resit').innerHTML = dateFormat
+    
+</script>
