@@ -61,14 +61,11 @@
           </dd>
         </div>
 
-
         <div class="govuk-summary-list__row" id="column-row-assessment">
           <dt class="govuk-summary-list__key">
             Optional columns
-            <!-- {{ data['columns-name'] }} -->
           </dt>
           <dd class="govuk-summary-list__value">
-            {# {{ data['optional'] }} #}
 
             {% if data['alloptional3'] === 'All' %} 
             Date of birth 
@@ -117,7 +114,7 @@
 
 <script>
   function removeOptAsses(){
-      let option = sessionStorage.getItem("checkOptAsses")
+      let option = sessionStorage.getItem("check")
       if (option == "no"){
           document.getElementById("column-row-assessment").style.display = "none";
       }
