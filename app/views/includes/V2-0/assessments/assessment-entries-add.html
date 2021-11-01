@@ -23,7 +23,7 @@
         Last updated
       </dt>
       <dd class="govuk-summary-list__value">
-        5 January 1978
+        <span id = "update-day-core"></span>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -59,6 +59,8 @@
 
   {% endif %}
 
+
+  <!-- <h2 class="govuk-heading-m">Specialism (code): Heating Engineering (ZT0111) and Ventilation (ZT0112)</h2> -->
   <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
   {% if data['specialism-assessment-entry-added'] === "yes" %}
 
@@ -81,7 +83,7 @@
         Last updated
       </dt>
       <dd class="govuk-summary-list__value">
-        5 January 1978
+        <span id = "update-day-specialism"></span>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -112,7 +114,20 @@
   {% endif %}
 </section>
 
-
+<script>
+  window.onload = function () {
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core').innerHTML = dateFormatcore
+    }
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism').innerHTML = dateFormat
+    
+</script>
 
 
 

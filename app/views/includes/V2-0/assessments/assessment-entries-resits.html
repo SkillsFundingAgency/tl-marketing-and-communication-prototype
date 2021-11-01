@@ -2,7 +2,7 @@
   <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
 
-  {% if data['core-assessment-entry-added'] === "yes" %}
+  {% if data['core-assessment-entry-added-resits'] === "yes" %}
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -13,7 +13,7 @@
         Summer 2023
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="remove-entry-core">
+        <a class="govuk-link" href="remove-entry-core-resits">
           Remove<span class="govuk-visually-hidden"> assessment entry</span>
         </a>
       </dd>
@@ -23,7 +23,7 @@
         Last updated
       </dt>
       <dd class="govuk-summary-list__value">
-        5 January 1978
+        <span id = "update-day-core-resit"></span>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -48,13 +48,13 @@
 
   <div class="govuk-inset-text">
     No assessment entries have yet been recorded for summer 2023<br aria-hidden="true">
-    <a href="add-entry-core.html">Add an assessment entry for this learner's core component</a>
+    <a href="add-entry-core-resits.html">Add an assessment entry for this learner's core component</a>
   </div>
 
   {% endif %}
 
-  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism1'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode1'] }}</h2>
-  {% if data['specialism-assessment-entry-added'] === "yes" %}
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }}</h2>
+  {% if data['specialism-assessment-entry-added-resits'] === "yes" %}
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -65,7 +65,7 @@
         Summer 2023
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="remove-entry-specialism">
+        <a class="govuk-link" href="remove-entry-specialism-resits">
           Remove<span class="govuk-visually-hidden"> assessment entry</span>
         </a>
       </dd>
@@ -75,7 +75,7 @@
         Last updated
       </dt>
       <dd class="govuk-summary-list__value">
-        5 January 1978
+        <span id = "update-day-specialism-resit"></span>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -100,13 +100,13 @@
 
   <div class="govuk-inset-text">
     No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
-    <a href="add-entry-specialism.html">Add an assessment entry for this learner's occupational specialism.</a>
+    <a href="add-entry-specialism-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
   </div>
 
   {% endif %}
 
-  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism2'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode2'] }}</h2>
-  {% if data['specialism-assessment-entry-added2'] === "yes" %}
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</h2>
+  {% if data['specialism2-assessment-entry-added-resits'] === "yes" %}
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -117,7 +117,7 @@
         Summer 2023
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="remove-entry-resits">
+        <a class="govuk-link" href="remove-entry-specialism2-resits">
           Remove<span class="govuk-visually-hidden"> assessment entry</span>
         </a>
       </dd>
@@ -127,7 +127,7 @@
         Last updated
       </dt>
       <dd class="govuk-summary-list__value">
-        5 January 1978
+        <span id = "update-day-specialism2-resit"></span>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -152,8 +152,28 @@
 
   <div class="govuk-inset-text">
     No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
-    <a href="add-entry-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
+    <a href="add-entry-specialism2-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
   </div>
 
   {% endif %}
 </section>
+
+<script>
+  window.onload = function () {
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core-resit').innerHTML = dateFormatcore
+    }
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism-resit').innerHTML = dateFormat
+
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism2-resit').innerHTML = dateFormat
+    
+</script>
