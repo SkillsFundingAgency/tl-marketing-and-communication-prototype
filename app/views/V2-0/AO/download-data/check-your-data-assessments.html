@@ -8,7 +8,7 @@
 
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/download-data/select-optional-columns-assessments-results" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/select-optional-columns-assessments" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -61,16 +61,13 @@
           </dd>
         </div>
 
-
-
-
         <div class="govuk-summary-list__row" id="column-row">
           <dt class="govuk-summary-list__key">
-            Optional columns
+            Optional data
           </dt>
           <dd class="govuk-summary-list__value">
 
-           {% if data['alloptional'] === 'All' %} 
+           {% if data['alloptionalAssessment'] === 'All' %} 
             Date of birth 
             <br>
             Provider
@@ -80,28 +77,28 @@
             Specialism(s)
 
           {% else %}
-          <p>{{ data['optional'] }}</p>
+          <p>{{ data['optionalAssessment'] }}</p>
 
           {% endif %}
 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-assessments-results">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-assessments">
               <!-- {{ data['change-optional'] }} -->
               Change
-              <span class="govuk-visually-hidden">Optional columns</span>
+              <span class="govuk-visually-hidden">Optional data</span>
             </a>
           </dd>
         </div>
       </dl>
-      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
+    
 
         <input type="hidden" name="answers-checked" value="true">
 
         <div class="govuk-button-group">
 
         <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file-assessments'" data-module="govuk-button">
-          Submit
+          Generate CSV
         </button>
 
         

@@ -1,66 +1,61 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Select optional columns
+  Registrations
 {% endblock %}
 
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/download-data/select-learner-status" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/select-data-type-list" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/V2-0/AO/download-data/check-your-data-registrations" method="post" novalidate data-validate="data-validate">
+      <form class="form" action="/V2-0/AO/download-data/processing-data-file-registrations-list" method="post" novalidate data-validate="data-validate">
         <div class="govuk-form-group">
 
           <h1 class="govuk-label-wrapper">
-            <span class="govuk-caption-xl">Download data</span>
+          
             <label class="govuk-label govuk-label--l" for="optional1">
-              Select optional columns
+              Choose additional information to include in your registrations download file
             </label>
           </h1>
           <div class="govuk-form-group">
+          <h2 class="govuk-heading-m">Your registrations download will include the following information by default:</h2>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Unique learner number (ULN)</li>
+        <li>First name</li>
+        <li>Last name</li>
+        <li>Date of birth</li>
+        <li>UKPRN</li>
+        <li>Academic year</li>
+        <li>Core code</li>
+        <li>Specialism code(s)</li>
+        <li>Status</li>
+      </ul>
+
+          <h2 class="govuk-heading-m">You can select additional data (columns) to include in your download. This will increase the time it takes to generate your download file.</h2>
+
             <span class="govuk-hint" for="optional1">
-              The CSV download will include ULN, T Level title and registrations year by default. You an also select from the following optional data points.
-            </span>
-            <span class="govuk-hint" for="optional1">
-              Which optional columns would you like to download?
+            Select the additional columns you would like in your data download.
             </span>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-
-                            <div class="govuk-checkboxes__item">
-                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="optional1" name="alllOptionalReg" type="checkbox" value="All" {{ checked("alllOptionalReg", "All") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional1">
-                              All
-                            </label>
-                          </div>
 
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="optional2" name="optionalReg" type="checkbox" value="Date of birth" {{ checked("optionalReg", "Date of birth") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="optional2">
-                              Date of birth 
+                              Provider name 
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="optional3" name="optionalReg" type="checkbox" value="Provider" {{ checked("optionalReg", "Provider") }}>
                             <label class="govuk-label govuk-checkboxes__label" for="optional3">
-                              Provider
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional4" name="optionalReg" type="checkbox" value="T Level title" {{ checked("optionalReg", "T Level title") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional4">
                               T Level title 
-                            </label>
-                          </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="optional5" name="optionalReg" type="checkbox" value="Specialism(s)" {{ checked("optionalReg", "Specialism(s)") }}>
-                            <label class="govuk-label govuk-checkboxes__label" for="optional5">
-                              Specialism(s)
                             </label>
                           </div>
                         </div>
@@ -68,7 +63,7 @@
                       </fieldset>
                     </div>
             </div>
-            <button class="govuk-button" onclick="check()" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" onclick="check()" data-module="govuk-button">Generate CSV</button>
         </form>
     </div>
 </div>

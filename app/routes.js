@@ -252,15 +252,15 @@ router.post('/data-type-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-cohorts')  
+    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations')  
   } 
   if (whatData == "Assessments data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+    res.redirect('/V2-0/AO/download-data/processing-data-file-assessments')  
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods-results')  
+    res.redirect('/V2-0/AO/download-data/processing-data-file-results')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -268,6 +268,73 @@ router.post('/data-type-answer', function (req, res) {
   // }
 
 })
+
+// Run this code when a form is submitted to 'data-type-answer'
+router.post('/data-type-answer-double', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Registrations data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations-double')  
+  } 
+  if (whatData == "Assessments data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/processing-data-file-assessments-double')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'data-type-answer'
+router.post('/data-type-answer-list', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Registrations data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/registrations')  
+  } 
+  if (whatData == "Assessments data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/assessments')  
+  } 
+  if (whatData == "Results data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/results')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'data-type-answer'
+router.post('/data-type-answer-list', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Registrations data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
 
 // Run this code when a form is submitted to 'cohorts-answer'
 router.post('/cohorts-answer', function (req, res) {

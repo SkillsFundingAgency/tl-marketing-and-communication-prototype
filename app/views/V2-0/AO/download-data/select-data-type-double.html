@@ -5,7 +5,7 @@ Select data type
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick= "goBack()" href="/V2-0/AO/download-data/download-data">Back</a>
+<a class="govuk-back-link" onclick= "goBack()" href="/V2-0/AO/download-data//download-data-double">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@ Select data type
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="/data-type-answer" method="post" novalidate data-validate="data-validate">
+        <form class="form" action="/data-type-answer-double" method="post" novalidate data-validate="data-validate">
             <div class="govuk-form-group">
                 
                     <h1 class="govuk-label-wrapper">
@@ -37,20 +37,15 @@ Select data type
                             Assessments
                           </label>
                         </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="uln2" name="type" type="radio" value="Results data" {{ checked("type", "Results") }}>
-                          <label class="govuk-label govuk-radios__label" for="uln2">
-                            Results
-                          </label>
-                        </div>
                       </div>
-                      
                     </div>
-
-
             </div>
-
             <button class="govuk-button" data-module="govuk-button">Generate CSV</button>
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "The 'Results' file type isn't available for you to download because no results have been entered."
+}) }}
 
         </form>
     </div>

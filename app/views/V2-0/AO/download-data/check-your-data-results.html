@@ -66,11 +66,12 @@
 
         <div class="govuk-summary-list__row" id="column-row">
           <dt class="govuk-summary-list__key">
-            Optional columns
+            Optional data
           </dt>
           <dd class="govuk-summary-list__value">
 
            {% if data['alloptional'] === 'All' %} 
+
             Date of birth 
             <br>
             Provider
@@ -89,19 +90,18 @@
             <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-results">
               <!-- {{ data['change-optional'] }} -->
               Change
-              <span class="govuk-visually-hidden">Optional columns</span>
+              <span class="govuk-visually-hidden">Optional data</span>
             </a>
           </dd>
         </div>
       </dl>
-      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
 
         <input type="hidden" name="answers-checked" value="true">
 
         <div class="govuk-button-group">
 
         <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file-results'" data-module="govuk-button">
-          Submit
+          Generate CSV
         </button>
 
         
