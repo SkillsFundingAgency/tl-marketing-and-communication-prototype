@@ -83,19 +83,21 @@
 
         <div class="govuk-summary-list__row" id="column-row-registrations">
           <dt class="govuk-summary-list__key">
-            Optional columns
+            Optional data
           </dt>
           <dd class="govuk-summary-list__value">
 
            {% if data['alllOptionalReg'] === 'All' %} 
 
             Date of birth 
-            <br>
+
             Provider
-            <br>
+          
             T Level title 
-            <br>
+           
             Specialism(s)
+         
+
           {% else %}
           <p>{{ data['optionalReg'] }}</p>
 
@@ -105,19 +107,18 @@
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-registrations">
               Change
-              <span class="govuk-visually-hidden">Optional columns</span>
+              <span class="govuk-visually-hidden">Optional data</span>
             </a>
           </dd>
         </div>
       </dl>
-      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
 
         <input type="hidden" name="answers-checked" value="true">
 
         <div class="govuk-button-group">
 
         <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file-registrations'" data-module="govuk-button">
-          Submit
+          Generate CSV
         </button>
 
         
