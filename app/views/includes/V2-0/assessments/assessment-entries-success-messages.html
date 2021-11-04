@@ -6,8 +6,13 @@
       </h2>
     </div>
     <div class="govuk-notification-banner__content">
+      {% if data['assessmentsBanner'] === 'core-added' %}
       <h3 class="govuk-notification-banner__heading">
         This learner is now registered for the core component assessment listed below
+      </h3>
+      {% else %}
+      <h3 class="govuk-notification-banner__heading">
+        This learner is now registered for the Design, Surveying and Planning (123456) summer 2023 assessment
       </h3>
     </div>
   </div>
