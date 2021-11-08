@@ -56,4 +56,5 @@ The optional data screen has been redesigned to include a list of what info is i
 Changes:
 
 - The check your data screen has been removed so the users go straight to generating a CSV File
+as this would only be necessary with a large dataset. 
 
