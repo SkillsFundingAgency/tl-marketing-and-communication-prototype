@@ -280,6 +280,32 @@ router.post('/data-type-answer-double', function (req, res) {
 })
 
 // Run this code when a form is submitted to 'data-type-answer'
+router.post('/data-type-answer-filters', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Registrations data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-cohorts-and-learner')  
+  } 
+  if (whatData == "Assessments data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+  } 
+  if (whatData == "Results data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/select-assessment-periods-results')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+
+})
+
+// Run this code when a form is submitted to 'data-type-answer'
 router.post('/data-type-answer-list', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'

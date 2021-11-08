@@ -1,0 +1,26 @@
+5th November, 2021
+
+Scenario:
+As an AO data admin/manager, I need to check what data has been 
+uploaded in the system so I be reassured what has been uploaded 
+and identify issues upfront.
+
+Comments:
+
+On the 5th November we prepared a prototype with the option to allow for filtering as users 
+said they would like the high level filter options such as session or series as this would save them from filtering in the CSV file. 
+
+Changes:
+
+- Added on option to allow the user to filter. Another option that we can test on users to see if filters are really necessary.
+/select-data-file-type-filters
+
+- If there are multiple filters they are displayed on one page
+
+- 'All' option has been removed as a business decision from the filters and optional columns 
+as this reduces the processing time. Also 'All' isn't part of the published GDS pattern so 
+we'll test this idea. 
+
+- The user is able to download real example data for Registrations, Assessments and Results 
+
+- On the default and additional data screen the wording was changed to become clearer for the users.
