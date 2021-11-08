@@ -240,15 +240,15 @@ router.post('/data-type-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-registrations')  
   } 
   if (whatData == "Assessments data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-assessments')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-assessments')  
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-results')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-results')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -266,11 +266,11 @@ router.post('/data-type-answer-double', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations-double')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-registrations-double')  
   } 
   if (whatData == "Assessments data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-assessments-double')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-assessments-double')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -288,15 +288,15 @@ router.post('/data-type-answer-filters', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-cohorts-and-learner')  
+    res.redirect('/V2-0/AO/download-data/current/select-cohorts-and-learner')  
   } 
   if (whatData == "Assessments data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods')  
+    res.redirect('/V2-0/AO/download-data/current/select-assessment-periods')  
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-assessment-periods-results')  
+    res.redirect('/V2-0/AO/download-data/current/select-assessment-periods-results')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -314,15 +314,15 @@ router.post('/data-type-answer-list', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/registrations')  
+    res.redirect('/V2-0/AO/download-data/current/registrations')  
   } 
   if (whatData == "Assessments data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/assessments')  
+    res.redirect('/V2-0/AO/download-data/current/assessments')  
   } 
   if (whatData == "Results data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/results')  
+    res.redirect('/V2-0/AO/download-data/current/results')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -340,7 +340,7 @@ router.post('/data-type-answer-list', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "Registrations data"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/processing-data-file-registrations')  
+    res.redirect('/V2-0/AO/download-data/current/processing-data-file-registrations')  
   } 
   // else {
   //   // Send user to ineligible page
@@ -359,7 +359,7 @@ router.post('/cohorts-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (whatData == "cohort"){
     // Send user to next page
-    res.redirect('/V2-0/AO/download-data/select-learner-status')  
+    res.redirect('/V2-0/AO/download-data/current/select-learner-status')  
   } 
   // else {
   //   // Send user to ineligible page
