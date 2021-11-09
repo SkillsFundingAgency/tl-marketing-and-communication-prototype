@@ -779,6 +779,7 @@ router.post('/V2-0/AO/assessments/remove-core-entry', function (req, res) {
     req.session.data['assessmentsBanner'] = "core-removed"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -796,6 +797,7 @@ router.post('/V2-0/AO/assessments/remove-specialism-entry', function (req, res) 
     req.session.data['assessmentsBanner'] = "specialism-removed"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -813,6 +815,7 @@ router.post('/V2-0/AO/assessments/add-core-entry-resits', function (req, res) {
     req.session.data['assessmentsBanner'] = "core-added-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -830,6 +833,7 @@ router.post('/V2-0/AO/assessments/add-specialism-entry-resits', function (req, r
     req.session.data['assessmentsBanner'] = "specialism-added-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -847,6 +851,7 @@ router.post('/V2-0/AO/assessments/add-specialism2-entry-resits', function (req, 
     req.session.data['assessmentsBanner'] = "specialism2-added-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -864,6 +869,7 @@ router.post('/V2-0/AO/assessments/remove-core-entry-resits', function (req, res)
     req.session.data['assessmentsBanner'] = "core-removed-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -881,6 +887,7 @@ router.post('/V2-0/AO/assessments/remove-specialism-entry-resits', function (req
     req.session.data['assessmentsBanner'] = "specialism-removed-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 
@@ -898,6 +905,7 @@ router.post('/V2-0/AO/assessments/remove-specialism2-entry-resits', function (re
     req.session.data['assessmentsBanner'] = "specialism2-removed-resits"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   } else{
+    req.session.data['showBannerAssessments'] = "no"
     res.redirect('/V2-0/AO/assessments/learners-assessment-entries')
   }
 

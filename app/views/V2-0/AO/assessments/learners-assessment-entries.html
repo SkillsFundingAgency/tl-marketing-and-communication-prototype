@@ -3,7 +3,7 @@
 {% block pageTitle %}
 {% if data['uln'] === '1231231231' %}
 Learner withdrawn - Manage T Level results - GOV.UK
-{% elseif data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890'%}
+{% elseif data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
 Learner's assessment entries - Manage T Level results - GOV.UK
 {% else %}
 ULN not found - Manage T Level results - GOV.UK
@@ -11,7 +11,7 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890'%}
+{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -34,7 +34,7 @@ ULN not found - Manage T Level results - GOV.UK
 
 {% block content %}
 
-{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890'%}
+{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       {% if data['showBannerAssessments'] === 'yes' %}
@@ -50,7 +50,7 @@ ULN not found - Manage T Level results - GOV.UK
               <h1 class="govuk-heading-l">Learner's assessment entries</h1>
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
-              <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
+              <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9" aria-label="Learners details">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Name
@@ -95,6 +95,8 @@ ULN not found - Manage T Level results - GOV.UK
 
               {% if data['uln'] === '1234567890' or data['uln'] === '5647382910'%}
               {% include "includes/V2-0/assessments/assessment-entries-add.html" %}
+              {% elseif data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
+              {% include "includes/V2-0/assessments/assessment-entries-new-learner.html" %}
               {% elseif data['uln'] === '8642135790'%}
               {% include "includes/V2-0/assessments/assessment-entries-resits.html" %}
               {% else %}

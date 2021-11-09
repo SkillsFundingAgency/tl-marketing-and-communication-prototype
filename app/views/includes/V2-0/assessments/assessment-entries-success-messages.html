@@ -5,16 +5,19 @@
         Success
       </h2>
     </div>
+    {% if data['assessmentsBanner'] === 'core-added' %}
     <div class="govuk-notification-banner__content">
-      {% if data['assessmentsBanner'] === 'core-added' %}
       <h3 class="govuk-notification-banner__heading">
-        This learner is now registered for the core component assessment listed below
-      </h3>
-      {% else %}
-      <h3 class="govuk-notification-banner__heading">
-        This learner is now registered for the Design, Surveying and Planning (123456) summer 2023 assessment
+        This learner is now registered for the autumn 2021 {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} assessment
       </h3>
     </div>
+    {% else %}
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        This learner is now registered for the summer 2023 {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} assessment
+      </h3>
+    </div>
+    {% endif %}
   </div>
 {% elseif data['assessmentsBanner'] === 'core-removed' or data['assessmentsBanner'] === 'core-removed-resits' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -23,11 +26,19 @@
         Success
       </h2>
     </div>
+    {% if data['assessmentsBanner'] === 'core-removed' %}
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        You have removed the core component assessment entry for this learner
+        You have removed the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} assessment for autumn 2021 from this learner's record
       </h3>
     </div>
+    {% else %}
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You have removed the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} assessment for summer 2023 from this learner's record
+      </h3>
+    </div>  
+    {% endif %}
   </div>
   {% elseif data['assessmentsBanner'] === 'specialism-added' or data['assessmentsBanner'] === 'specialism-added-resits' or data['assessmentsBanner'] === 'specialism2-added-resits' %}
   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -36,11 +47,25 @@
           Success
         </h2>
       </div>
+      {% if data['assessmentsBanner'] === 'specialism-added' %}
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-            This learner is now registered for the occupational specialism assessment listed below
+          This learner is now registered for the summer 2022 {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} assessment
         </h3>
       </div>
+      {% elseif data['assessmentsBanner'] === 'specialism-added-resits' %}
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          This learner is now registered for the summer 2023 {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }} assessment
+        </h3>
+      </div>
+      {% else %}
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          This learner is now registered for the summer 2023 {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }} assessment
+        </h3>
+      </div>
+      {% endif %}
     </div>
 {% elseif data['assessmentsBanner'] === 'specialism-removed' or data['assessmentsBanner'] === 'specialism-removed-resits' or data['assessmentsBanner'] === 'specialism2-removed-resits' %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -49,11 +74,25 @@
         Success
         </h2>
     </div>
+    {% if data['assessmentsBanner'] === 'specialism-removed' %}
     <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-            You have removed the occupational specialism assessment entry for this learner
+          You have removed the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} assessment for summer 2023 from this learner's record
         </h3>
     </div>
+    {% elseif data['assessmentsBanner'] === 'specialism-removed-resits' %}
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You have removed the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }} assessment for summer 2023 from this learner's record
+      </h3>
+    </div>
+    {% else %}
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You have removed the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }} assessment for summer 2023 from this learner's record
+      </h3>
+    </div>
+    {% endif %}
     </div>
 {% endif %}
 
