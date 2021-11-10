@@ -35,10 +35,10 @@ Assessment entries – Search for a learner – Manage T Level results – GOV.U
                       <label class="govuk-label" for="uln">
                         Enter the unique learner number (ULN)
                       </label>
-                      <span class="govuk-hint">
+                      <span id ="uln-hint" class="govuk-hint">
                           ULN must be 10 digits long
                       </span>
-                      <input class="govuk-input govuk-input--width-20" id="uln" name="uln">
+                      <input class="govuk-input govuk-input--width-10" id="uln" name="uln" type="text" spellcheck="false" aria-describedby="uln-hint" pattern="[0-9]*" inputmode="numeric">
                     </div>
 
                 </fieldset>

@@ -46,10 +46,13 @@
 
   {% else %}
 
-  <div class="govuk-inset-text">
-    No assessment entries have yet been recorded for summer 2023.<br aria-hidden="true">
-    <a href="add-entry-core-resits.html">Add an assessment entry for this learner's core component</a>.
-  </div>
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-core-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</a>
+  </p>
+
 
   {% endif %}
 
@@ -97,12 +100,12 @@
   </dl>
 
   {% else %}
-
-  <div class="govuk-inset-text">
-    No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
-    <a href="add-entry-specialism-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
-  </div>
-
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-specialism-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }}</a>
+  </p>
   {% endif %}
 
   <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</h2>
@@ -149,11 +152,12 @@
   </dl>
 
   {% else %}
-
-  <div class="govuk-inset-text">
-    No assessment entries have yet been recorded for summer 2023 <br aria-hidden="true">
-    <a href="add-entry-specialism2-resits.html">Add an assessment entry for this learner's occupational specialism.</a>
-  </div>
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-specialism2-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</a>
+  </p>
 
   {% endif %}
 </section>
