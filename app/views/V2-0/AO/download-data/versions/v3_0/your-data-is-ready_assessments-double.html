@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your data is ready
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/download-data/current/download-data-double">Download data</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" style="text-decoration: none;">Your data is ready</a> 
+    </li>
+  </ol>
+</div>{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/V2-0/AO/download-data/current/download-data-double" method="post" novalidate data-validate="search-for-learner-validation">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    {# <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                      <span class="govuk-caption-xl">Download data</span>
+                    </legend> #}
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h1 class="govuk-fieldset__heading">
+                            Your data is ready
+                          </h1>
+                        </legend>
+
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter">
+                        <img src="/public/images/document-image.png" alt="Document-image">
+                      </div>
+                      <div class="govuk-grid-column-three-quarters">
+                        <h1 class="govuk-heading-s">Download
+
+                        <a id='a' download='2111041518assessments.csv' type='text/csv'>2111041518assessments.CSV, 642 bytes</a>
+
+                      </h1>
+                       </div>
+                    </div>
+            </div>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Download more data
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    var csv = 'ULN,CoreCode,CoreAssessmentEntry,SpecialismCode,SpecialismAssessmentEntry,ProviderName,FirstName,LastName,DOB,UKPRN,AcademicYear,Status,Tlevel\n1534290489,60369115,Summer 2022, , , Brentwood College,Aadil,Wormald,02/06/2006,10006928,2021/22,Active,"Design, surveying and planning for construction"\n1836312172,60369115,Summer 2023, , , Brentwood College,Tania,Carpenter,12/10/2004,10006928,2021/22,Active,"Design, surveying and planning for construction"\n2289673583,75936213,Summer 2024, , , Fishingley Technical College,Adil,Lucero,20/01/2004,10000202,2021/22,Active,"Education and childcare"\n5322041892,6036960369115,Summer 2025, , , Brentwood College,Huey,Bell,11/08/2005,10006928,2021/22,Active,"Design, surveying and planning for construction"\n';
+    
+    var data = new Blob([csv]);
+    var a = document.getElementById('a');
+    a.href = URL.createObjectURL(data);
+</script>
+
+{% endblock %}
