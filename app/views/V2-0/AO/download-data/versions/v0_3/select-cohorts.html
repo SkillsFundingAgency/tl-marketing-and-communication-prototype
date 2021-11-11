@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/V2-0/AO/tlevels-dashboard" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/select-learner-status" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="cohort">
+              Select cohort(s)
+            </label>
+            <input name="cohort-name" value="Cohort(s)" name="cohort-name" hidden="true">
+            <input name="change-cohort" value="Change" name="change-cohort" hidden="true">
+          </h1>
+      <div class="govuk-form-group">
+
+      <span class="govuk-hint" for="cohort">
+        In which academic year(s) did the learners register?
+      </span>
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="logistics" name="cohort"                
+                            type="checkbox" value="All cohorts" {{ checked("cohort", "All cohorts", "2020-2021", "2021-2022") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+                              All cohorts
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="support-2" name="cohort" type="checkbox" value="2020-2021" {{ checked("cohort", "2020-2021") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                              2020-2021
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="support-3" name="cohort" type="checkbox" value="2021-2022" {{ checked("cohort", "2021-2022") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                              2021-2022
+                            </label>
+                          </div>
+    </div>
+
+            </div>
+          </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="data-validate">
+  {
+
+    "cohort": {
+      "presence": {
+        "message": "^Select which cohort(s) would like in the download file "
+      }
+    }
+
+  }
+</script>
+
+<script>
+
+function toggle(source) {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i] != source)
+          checkboxes[i].checked = source.checked;
+  }
+}
+</script>
+
+{% endblock %}
