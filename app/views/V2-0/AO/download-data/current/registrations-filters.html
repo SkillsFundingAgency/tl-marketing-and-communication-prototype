@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
-    <a href="/V2-0/AO/download-data/current/current/select-cohorts-and-learner" class="govuk-back-link">Back</a>
+    <a href="/V2-0/AO/download-data/current/select-cohorts-and-learner" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -18,34 +18,17 @@
         <div class="govuk-form-group">
 
           <h1 class="govuk-label-wrapper">
-          
+            <span class="govuk-caption-xl">Download data</span>
             <label class="govuk-label govuk-label--l" for="optional1">
-              Default and additional data in your registrations download
+              Would you like to include optional data in your download?
             </label>
           </h1>
           <div class="govuk-form-group">
 
-          <h2 class="govuk-heading-m">Data included by default</h2>
-
-        <p class="govuk-body">Your registrations download will include the following data by default:</p>
-
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>unique learner number (uln)</li>
-        <li>first name</li>
-        <li>last name</li>
-        <li>date of birth</li>
-        <li>ukprn</li>
-        <li>academic year</li>
-        <li>core code</li>
-        <li>specialism code(s)</li>
-        <li>status</li>
-      </ul>
-
-          <h2 class="govuk-heading-m">Would you like to include additional data in your download?</h2>
+          {# <h2 class="govuk-heading-m">Would you like to include additional data in your download?</h2> #}
 
             <span class="govuk-hint" for="optional1">
-            Select the additional columns you would like in your data download. This will increase the time it takes to generate your download file.
+            Select the optional columns you would like in your data download. This will increase the time it takes to generate your download file.
             </span>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
@@ -66,7 +49,7 @@
                       </fieldset>
                     </div>
             </div>
-            <button class="govuk-button" onclick="check()" data-module="govuk-button">Continue</button>
+            <button class="govuk-button" onclick="check()" data-module="govuk-button">Generate CSV</button>
         </form>
     </div>
 </div>
