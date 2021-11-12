@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
+Learner’s component grade status - Manage T Level results - GOV.UK
+{% elif data['uln'] === '1231231231'%}
+Learner has been withdrawn - Manage T Level results - GOV.UK
+{% elif data['uln'] === '8642135790'%}
+Learner has no assessment entries - Manage T Level results - GOV.UK
+{% elif data['uln'] === '5647382910'%}
+Learner does not have any registered grades - Manage T Level results - GOV.UK
+{% else %}
+ULN not found - Manage T Level results - GOV.UK
+{% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '1234567890'%}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Appeals</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner’s component grade status</li>
+  </ol>
+</div>
+{% else %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    {% if data['showBanner'] === 'yes' %}
+    {% include "includes/V2-0/appeals/record-entries-success-messages.html" %}
+    {% else %}
+    
+    {% endif %}
+
+
+
+</div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">Learner’s component grade status</h1>
+
+    {% if data['uln'] === '9876543210' %}
+    <div class="govuk-inset-text">
+      This result is final as the date for appeal has passed. To tell us that the grade is being appealed please <a class="govuk-link" href="/V2-0/AO/appeals/exceptions/exceptions-process">raise a request</a>.
+    </div>
+    {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "final" %}
+    <div class="govuk-inset-text">
+      This result is final as the outcome of an appeal has been recorded. If you need to change the grade please <a class="govuk-link" href="/V2-0/AO/appeals/exceptions/request-grade-change">contact us</a>.
+    </div>
+    {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "locked" %}
+    <div class="govuk-inset-text">
+      This learner's grade is locked as a change request has been made.<br>
+      Requested by: Julie Andrews<br>
+      Date requested: 29th July 2021
+
+    </div>
+    {% endif %}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['uln']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provider <br>(UKPRN)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+        </dd>
+      </div>
+    </dl>
+
+
+    {% if data['uln'] === '1987654321'%}
+    {% include "includes/V2-0/appeals/record-entry-full-results-2021.html" %}
+    {% elif data['uln'] === '1122334455' %}
+    {% include "includes/V2-0/appeals/record-entry-no-core-specialism.html" %}
+    {% elif data['uln'] === '1234567890' %}
+    {% include "includes/V2-0/appeals/record-entry-no-core-specialism-not-specified.html" %}
+    {% elif data['uln'] === '9876543210' %}
+    {% include "includes/V2-0/appeals/record-entry-core-specialism-late.html" %}
+    {% endif %}
+
+
+
+    <a class="govuk-button govuk-!-margin-top-7" role="button" href="search-learner">Search again</a>
+
+  </div>
+  
+</div>
+{% elif data['uln'] === '8642135790'%}
+{% include "includes/V2-0/appeals/no-assessment-entry.html" %}
+{% elif data['uln'] === '5647382910'%}
+{% include "includes/V2-0/appeals/no-grades-to-appeal.html" %}
+{% elif data['uln'] === '1231231231' %}
+{% include "includes/V2-0/appeals/learner-withdrawn.html" %}
+{% else %}
+{% include "includes/V2-0/appeals/no-learner-found.html" %}
+{% endif %}
+
+{% endblock %}
