@@ -35,104 +35,17 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block content %}
-{% if data['uln'] === '9876543210' %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-
-              <h1 class="govuk-heading-l">Learner's results</h1>
-
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
-
-              <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Name
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    ULN
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['uln'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Date of birth
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Provider<br>(UKPRN)
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    T Level title
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                  </dd>
-                </div>
-              </dl>
-
-              <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
-
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Exam period
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Grade
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {% if data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
-                    {% else %}
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
-                    {% endif %}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-core-result.html">
-                      Change <span class="govuk-visually-hidden">core result</span>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-
-              <a class="govuk-button" href="search-learner">Search again</a>
-
-    </div>
-</div>
-{% elseif data['uln'] === '5647382910' %}
-{% include "includes/V1-0/results/learner-results-no-grade.html" %}
+{% if data['uln'] === '5647382910' %}
+{% include "includes/V2-0/results/learner-results-no-grade.html" %}
 {% elseif data['uln'] === '1987654321' %}
-{% include "includes/V1-0/results/learner-results-appeal.html" %}
+{% include "includes/V2-0/results/learner-results-appeal.html" %}
 {% elseif data['uln'] === '1122334455' %}
-{% include "includes/V1-0/results/learner-results-final.html" %}
+{% include "includes/V2-0/results/learner-results-final.html" %}
 {% elseif data['uln'] === '8642135790' %}
-{% include "includes/V1-0/results/learner-results-no-assessment.html" %}
+{% include "includes/V2-0/results/learner-results-no-assessment.html" %}
 {% elseif data['uln'] === '1231231231' %}
-{% include "includes/V1-0/results/learner-results-withdrawn.html" %}
+{% include "includes/V2-0/results/learner-results-withdrawn.html" %}
 {% else %}
-{% include "includes/V1-0/results/results-no-learner-found.html" %}
+{% include "includes/V2-0/results/results-no-learner-found.html" %}
 {% endif %}  
 {% endblock %}

@@ -1141,4 +1141,30 @@ router.post('/V2-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', func
   }
 })
 
+//V2 Results
+
+//Results
+
+// Add result - Results
+router.post('/V2-0/AO/results/add-core-result', function (req, res) {
+  let addResult = req.session.data['result-answer']
+
+  req.session.data['gradeShown'] = "added"
+  req.session.data['newResult'] = addResult
+  
+  res.redirect('/V2-0/AO/results/add-core-result-successful')
+
+});
+
+//Change result - Results
+router.post('/V2-0/AO/results/change-core-result-successful', function (req, res) {
+  let changeResult = req.session.data['result-answer']
+
+  req.session.data['gradeShown'] = "changed"
+  req.session.data['updateResult'] = changeResult
+  
+  res.redirect('/V2-0/AO/results/change-core-result-successful')
+
+});
+
 module.exports = router
