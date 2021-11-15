@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your data is ready 
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+      <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/results/student-results.html">Results</a>
+    </li>
+  </ol>
+</div>{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/V2-0/AO/tlevels-dashboard" method="post" novalidate data-validate="search-for-learner-validation">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">                     
+                         <span class="govuk-caption-xl">Download data</span>
+                          <h1 class="govuk-fieldset__heading">
+                            Your data is ready
+                          </h1>
+                        </legend>
+
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-grid-row">
+
+                      <div class="govuk-grid-column-one-quarter">
+                        <img src="/public/images/document-image.png" alt="Document-image">
+                      </div>
+                      <div class="govuk-grid-column-three-quarters">
+                        <h1 class="govuk-heading-s">Core
+                        <br>
+                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
+                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2111021302assessments.csv">2111021302_core_results.CSV, 295 bytes</a>
+                      </h1>
+                      <h1 class="govuk-heading-s">Specialism
+                        <br>
+                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
+                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2111021302assessments.csv">2111021302_specialism_results.CSV, 232 bytes</a>
+                      </h1>
+                       </div>
+                    </div>
+            </div>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Back to home
+            </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
+
+                      <div class="govuk-grid-column-three-quarters">
+                        <h1 class="govuk-heading-s">Core
+                        <br>
+                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
+                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2111021302assessments.csv">2111021302_core_assessments.CSV, 295 bytes</a>
+                      </h1>
+                      <h1 class="govuk-heading-s">Specialism
+                        
+                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
+                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2111021302assessments.csv">2111021302_specialism_assessments.CSV, 235 bytes</a>
+                      </h1>
+                       </div>
