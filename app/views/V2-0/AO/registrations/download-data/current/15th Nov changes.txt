@@ -26,7 +26,7 @@ Assessments and Results.
 
 - The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
 
-- 'Download data' text has been added to the 'data is ready' screen
-
 - The breadcrumbs have been updated to end with the parent section of the home page
+
+- The action button has been changed to green
 

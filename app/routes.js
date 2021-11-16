@@ -151,6 +151,26 @@ router.post('/V1-0/AO/results/change-core-result-successful', function (req, res
 
 });
 
+// Select result type - Results
+router.post('/core-or-specialism', function (req, res) {
+
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Core"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/core-results')  
+  } 
+  if (whatData == "Specialism"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/specialism-results')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+  
+});
 
 //Assessment Entries
 
