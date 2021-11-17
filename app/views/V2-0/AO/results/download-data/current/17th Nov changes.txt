@@ -1,4 +1,4 @@
-15th November, 2021
+17th November, 2021
 
 Scenario:
 As an AO data admin/manager, I need to check what data has been 
@@ -26,8 +26,10 @@ Assessments and Results.
 
 - The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
 
-- 'Download data' text has been added to the 'data is ready' screen
+- The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
+with the button changed to green
 
 - The breadcrumbs have been updated to end with the parent section of the home page
 
-- The action button has been changed to green 
+- The action button has been changed to green
+
