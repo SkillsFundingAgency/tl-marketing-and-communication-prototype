@@ -1,13 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's assessment entries
+{% if data['uln'] === '1231231231' %}
+Learner withdrawn - Manage T Level results - GOV.UK
+{% elseif data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
+Learner's assessment entries - Manage T Level results - GOV.UK
+{% else %}
+ULN not found - Manage T Level results - GOV.UK
+{% endif %}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '1231231231' %}
-<a class="govuk-back-link" onclick= "goBack()">Back</a>
-{% else %}
+{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -22,14 +26,91 @@
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's assessment entries</li>
   </ol>
 </div>
+{% else %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
 {% endif %}
 {% endblock %}
 
+
 {% block content %}
-{% if data['uln'] === '1231231231' %}
+
+{% if data['uln'] === '8642135790' or data['uln'] === '5647382910' or data['uln'] === '1234567890' or data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      {% if data['showBannerAssessments'] === 'yes' %}
+      {% include "includes/V2-0/assessments/assessment-entries-success-messages.html" %}
+      {% else %}
+      {% endif %}
+  </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l">Learner's assessment entries</h1>
+              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+
+              <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9" aria-label="Learners details">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['uln'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider<br aria-hidden="true"/>(UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br aria-hidden="true"/>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    T Level
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                  </dd>
+                </div>
+              </dl>
+
+              {% if data['uln'] === '1234567890' or data['uln'] === '5647382910'%}
+              {% include "includes/V2-0/assessments/assessment-entries-add.html" %}
+              {% elseif data['uln'] === '1234567891' or data['uln'] === '9876543210'%}
+              {% include "includes/V2-0/assessments/assessment-entries-new-learner.html" %}
+              {% elseif data['uln'] === '8642135790'%}
+              {% include "includes/V2-0/assessments/assessment-entries-resits.html" %}
+              {% else %}
+              {% endif %}
+
+
+              <a class="govuk-button" href="assessment-entries-learner-search">Search again</a>
+
+    </div>
+  </div>
+
+
+{% elseif data['uln'] === '1231231231' %}
 {% include "includes/V2-0/assessments/assessment-entries-withdrawn.html" %}
-{% elseif data['uln'] === '8642135790' %}
-{% include "includes/V2-0/assessments/assessment-entries-add.html" %}
 {% else %}
 {% include "includes/V2-0/assessments/search-for-learner-ULN-not-found.html" %}
 {% endif %}  

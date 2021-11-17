@@ -41,10 +41,10 @@ Queried T Level details
                   Occupational specialism <br>(code)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <p class="govuk-body">{{ data['tLevelsReviewTLevels']['TL-1']['tlevelOS1'] }}<br>
-                    {{ data['tLevelsReviewTLevels']['TL-1']['tlevelOS1Code'] }}</p>
-                  <p class="govuk-body">{{ data['tLevelsReviewTLevels']['TL-1']['tlevelOS2'] }}<br>
-                    {{ data['tLevelsReviewTLevels']['TL-1']['tlevelOS2Code'] }}</p>
+                  <p class="govuk-body">{{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS1'] }}<br>
+                    {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS1Code'] }}</p>
+                  <p class="govuk-body">{{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS2'] }}<br>
+                    {{ data['tLevelsReviewTLevels'][data['tlevel']]['tlevelOS2Code'] }}</p>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -71,4 +71,9 @@ Queried T Level details
         </div>
     </div>
 
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const tlevel = urlParams.get('tlevel');
+  sessionStorage.setItem('tlevel', tlevel)
+</script>    
 {% endblock %}

@@ -1,8 +1,13 @@
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-            <h1 class="govuk-heading-l">Learner's assessment entries</h1>
+            <h1 class="govuk-heading-l">Learner's results</h1>
+
+            <div class="govuk-inset-text">
+              This learner's results cannot be changed because they are appealing a grade.
+            </div>
 
             <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
@@ -49,81 +54,36 @@
               </div>
             </dl>
 
-            <h2 class="govuk-heading-m">Current Assessment entries for Autumn 2021 </h2>
+            <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
-            <div class="govuk-grid-row check-submit-change">
-              <div class="govuk-grid-column-three-quarters">
-                <h3 class="govuk-heading-s">Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h3>
-              </div>
-              <div class="govuk-grid-column-one-quarter">
-                <a class="app-float-right" href="">
-                  Change
-                  <span class="govuk-visually-hidden"> assessment entry for core</span>
-                </a>
-              </div>
-            </div> 
-
-            <dl class="govuk-summary-list ">
+            <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Component
+                  Exam period
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }}
+                  {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Updated by
+                  Grade
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Sarah Philips
+                  {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
                 </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date updated on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
+                <dd class="govuk-summary-list__actions">
+                  <strong class="govuk-tag govuk-tag--purple no-wrap">
+                    being appealed
+                  </strong>
                 </dd>
               </div>
             </dl>
 
-            <dl class="govuk-summary-list ">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Component
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Updated by
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Sarah Philips
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date updated on
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  5 January 1978
-                </dd>
-              </div>
-            </dl>
-
-            <a class="govuk-button" href="assessment-entries-learner-search">Search again</a>
-
+            <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
   </div>
 </div>
 
-
-
-
-
-
+{% endblock %}
