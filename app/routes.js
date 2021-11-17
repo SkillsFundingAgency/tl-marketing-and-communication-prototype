@@ -151,6 +151,26 @@ router.post('/V1-0/AO/results/change-core-result-successful', function (req, res
 
 });
 
+// Select result type - Results
+router.post('/core-or-specialism', function (req, res) {
+
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Core"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/core-results')  
+  } 
+  if (whatData == "Specialism"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/specialism-results')  
+  } 
+  // else {
+  //   // Send user to ineligible page
+  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
+  // }
+  
+});
 
 //Assessment Entries
 
@@ -264,6 +284,25 @@ router.post('/data-type-answer', function (req, res) {
   //   // Send user to ineligible page
   //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
   // }
+
+})
+
+
+// Run this code when a form is submitted to 'data-type-answer'
+router.post('/default-filter-data', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "cohort-data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/current/registrations-filters')  
+  } 
+  if (whatData == "learner-status-data"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/download-data/current/registrations-filters')  
+  } 
 
 })
 

@@ -1,0 +1,32 @@
+17th November, 2021
+
+Scenario:
+As an AO data admin/manager, I need to check what data has been 
+uploaded in the system so I be reassured what has been uploaded 
+and identify issues upfront.
+
+Comments:
+
+From the meeting today we concluded that:
+
+The Registrations, Assessments and Results would be better in their individual 
+areas instead of on the home screen with the default columns included. 
+
+If the user downloads Registrations data it would have the Status filter included
+with Active, Withdrawn and Certified inlcuded. 
+
+Changes:
+
+- Remove the Download data from the home screen and put in the individual sections of 
+Registrations, Assessments and Results. 
+
+- If the user downloads Registrations data it would have the Status filter included
+with Active, Withdrawn and Certified inlcuded while there is no filter for 
+Assessments and Results. 
+
+- The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
+with the button changed to green
+
+- The breadcrumbs have been updated to end with the parent section of the home page
+
+

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  No data found
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Download data</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+          <form class="form" action="/V2-0/AO/tlevels-dashboard" method="post" novalidate data-validate="data-validate">
+    <span class="govuk-caption-xl">Download data</span>
+      <h1 class="govuk-heading-l">No data found</h1>
+
+      <ul class="govuk-list">
+        <li>A data file can only be created if you have already uploaded data into this service.</li>
+      </ul>
+    </div>
+
+
+
+
+    <div class="govuk-grid-column-one-third">
+
+      <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+    </div>
+  </div>
+   <button class="govuk-button" data-module="govuk-button">Back to home</button>
+       {{ govukInsetText({
+  text: "There is no data available to download."
+}) }}
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
