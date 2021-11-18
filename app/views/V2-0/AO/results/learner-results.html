@@ -25,7 +25,6 @@ ULN not found - Manage T Level results - GOV.UK
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
   </ol>
 </div>
 {% else %}
@@ -39,7 +38,7 @@ ULN not found - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Learner's results</h1>
+              <h1 class="govuk-heading-l">Core results</h1>
 
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
@@ -117,22 +116,32 @@ ULN not found - Manage T Level results - GOV.UK
                   </dd>
                 </div>
               </dl>
+  <div class="govuk-button-group">
 
               <a class="govuk-button" href="search-learner">Search again</a>
+     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/specialism-results" data-module="govuk-button">
+    Select specialism results
+  </a>
+    </div>
 
     </div>
 </div>
+{# grade is for core and specialism #}
 {% elseif data['uln'] === '5647382910' %}
-{% include "includes/V1-0/results/learner-results-no-grade.html" %}
+{% include "includes/V2-0/results/learner-results-no-grade-core.html" %}
+{# appeals for core and specialism  #}
 {% elseif data['uln'] === '1987654321' %}
-{% include "includes/V1-0/results/learner-results-appeal.html" %}
+{% include "includes/V2-0/results/learner-results-appeal.html" %}
+{# final for core and specialism  #}
 {% elseif data['uln'] === '1122334455' %}
-{% include "includes/V1-0/results/learner-results-final.html" %}
+{% include "includes/V2-0/results/learner-results-final.html" %}
+{# assessment is just for Core   #}
 {% elseif data['uln'] === '8642135790' %}
-{% include "includes/V1-0/results/learner-results-no-assessment.html" %}
+{% include "includes/V2-0/results/learner-results-no-assessment.html" %}
+{# withdrawn is just for Core   #}
 {% elseif data['uln'] === '1231231231' %}
-{% include "includes/V1-0/results/learner-results-withdrawn.html" %}
+{% include "includes/V2-0/results/learner-results-withdrawn.html" %}
 {% else %}
-{% include "includes/V1-0/results/results-no-learner-found.html" %}
+{% include "includes/V2-0/results/results-no-learner-found.html" %}
 {% endif %}  
 {% endblock %}

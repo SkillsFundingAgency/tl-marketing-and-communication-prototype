@@ -1,40 +1,6 @@
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' %}
-  Learner's results - Manage T Level results - GOV.UK
-{% elseif data['uln'] === '1231231231' %}
-Learner withdrawn – Manage T Level results – GOV.UK 
-{% elseif data['uln'] === '8642135790' %}
-No registered assessments – Manage T Level results – GOV.UK
-{% else %}
-ULN not found - Manage T Level results - GOV.UK
-{% endif %}  
-{% endblock %}
-
-{% block beforeContent %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
-    </li>
-  </ol>
-</div>
-{% else %}
-<a class="govuk-back-link" onclick= "goBack()">Back</a>
-
-{% endif %} 
-{% endblock %}
 
 {% block content %}
-{% if data['uln'] === '9876543210' %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -103,45 +69,27 @@ ULN not found - Manage T Level results - GOV.UK
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
+                    {% if data['addedResult'] === 'yes' %}
+                    {{data['newResult']}}
                     {% else %}
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+                    Not received
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-core-result.html">
-                      Change <span class="govuk-visually-hidden">core result</span>
+                    <a class="govuk-link" href="add-core-result">
+                      Add result <span class="govuk-visually-hidden">core result</span>
                     </a>
                   </dd>
                 </div>
               </dl>
-  <div class="govuk-button-group">
+                <div class="govuk-button-group">
 
               <a class="govuk-button" href="search-learner">Search again</a>
      <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/specialism-results" data-module="govuk-button">
     Select specialism results
   </a>
     </div>
-
     </div>
 </div>
-{# grade is for core and specialism #}
-{% elseif data['uln'] === '5647382910' %}
-{% include "includes/V2-0/results/learner-results-no-grade-core.html" %}
-{# appeals for core and specialism  #}
-{% elseif data['uln'] === '1987654321' %}
-{% include "includes/V2-0/results/learner-results-appeal.html" %}
-{# final for core and specialism  #}
-{% elseif data['uln'] === '1122334455' %}
-{% include "includes/V2-0/results/learner-results-final.html" %}
-{# assessment is just for Core   #}
-{% elseif data['uln'] === '8642135790' %}
-{% include "includes/V2-0/results/learner-results-no-assessment.html" %}
-{# withdrawn is just for Core   #}
-{% elseif data['uln'] === '1231231231' %}
-{% include "includes/V2-0/results/learner-results-withdrawn.html" %}
-{% else %}
-{% include "includes/V2-0/results/results-no-learner-found.html" %}
-{% endif %}  
+
 {% endblock %}

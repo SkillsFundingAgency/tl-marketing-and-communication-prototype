@@ -151,9 +151,33 @@ router.post('/V1-0/AO/results/change-core-result-successful', function (req, res
 
 });
 
-// Select result type - Results
-router.post('/core-or-specialism', function (req, res) {
+//Search Learner - Results
+router.post('/search-learner', function (req, res) {
+  // Make a variable and give it the value from 'how-many-balls'
+  let uln = req.session.data['uln']
+  if (uln === '1231231231' && '8642135790')
+  {
+    req.session.data['uln'] = uln
+    res.redirect
+    ('/V2-0/AO/results/learner-results')
+  } 
+  if (uln === '8642135790')
+  {
+    req.session.data['uln'] = uln
+    res.redirect
+    ('/V2-0/AO/results/learner-results')
+  } 
+  
+  else {
+    res.redirect('/V2-0/AO/results/select-result-type')
+  }
 
+})
+
+
+//Select result type - Results
+router.post('/select-result-type', function (req, res) {
+  // Make a variable and give it the value from 'how-many-balls'
   var whatData = req.session.data['type']
 
   // Check whether the variable matches a condition
@@ -165,12 +189,8 @@ router.post('/core-or-specialism', function (req, res) {
     // Send user to next page
     res.redirect('/V2-0/AO/results/specialism-results')  
   } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/V2-0/AO/download-data/select-data-type-error')
-  // }
-  
-});
+
+})
 
 //Assessment Entries
 
