@@ -3,10 +3,10 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Learner's results</h1>
+              <h1 class="govuk-heading-l">Specialism results</h1>
 
               <div class="govuk-inset-text">
-                This result is final, as the outcome of an appeal has been recorded. If you need to change the grade, please <a class="govuk-link" href="#">contact us</a>.
+                This learner hasn't decided on the specialism.
               </div>
 
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
@@ -53,36 +53,12 @@
                   </dd>
                 </div>
               </dl>
-
-              <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
-
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Exam period
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Grade
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <strong class="govuk-tag govuk-tag--red">
-                      final
-                    </strong>
-                  </dd>
-                </div>
-              </dl>
-
-              <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
+               <div class="govuk-button-group">
+              <a class="govuk-button" href="search-learner">Search again</a>
+     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/core-results" data-module="govuk-button">
+    Select core results
+  </a>
+    </div>
     </div>
 </div>
 

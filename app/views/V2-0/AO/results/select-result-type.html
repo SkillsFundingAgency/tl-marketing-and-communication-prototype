@@ -9,7 +9,7 @@ Select data type
 {% endblock %}
 
 {% block content %}
-
+{% if data['uln'] === '5647382910' or data['uln'] === '1987654321' or data['uln'] === '1162334455' or data['uln'] === '1122334455' or data['uln'] === '9876543210' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -61,4 +61,9 @@ Select data type
   }
 </script>
 
+
+{% else %}
+{% include "includes/V2-0/results/results-no-learner-found.html" %}
+{% endif %}  
 {% endblock %}
+

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1162334455' or data['uln'] === '1987654321' or data['uln'] === '1122334455' %}
   Learner's results - Manage T Level results - GOV.UK
 {% else %}
 ULN not found - Manage T Level results - GOV.UK
@@ -9,7 +9,7 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '1162334455' %} 
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -30,6 +30,7 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block content %}
+{# Pass for Specialism #}
 {% if data['uln'] === '9876543210' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -99,8 +100,8 @@ ULN not found - Manage T Level results - GOV.UK
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
+                    {% if data['changedResultSpecialism'] === 'yes' %}
+                    {{data['updateResultSpecialism']}}
                     {% else %}
                     {{ data['tLevelsStudentData'][data.uln]['learnerSpecialismResult'] }}
                     {% endif %}
@@ -125,9 +126,11 @@ ULN not found - Manage T Level results - GOV.UK
 {% elseif data['uln'] === '5647382910' %}
 {% include "includes/V2-0/results/learner-results-no-grade-specialism.html" %}
 {% elseif data['uln'] === '1987654321' %}
-{% include "includes/V2-0/results/learner-results-appeal.html" %}
+{% include "includes/V2-0/results/learner-results-appeal-specialism.html" %}
 {% elseif data['uln'] === '1122334455' %}
-{% include "includes/V2-0/results/learner-results-final.html" %}
+{% include "includes/V2-0/results/learner-results-final-specialism.html" %}
+{% elseif data['uln'] === '1162334455' %}
+{% include "includes/V2-0/results/learner-results-no-specialism-found.html" %}
 {% else %}
 {% include "includes/V2-0/results/results-no-learner-found.html" %}
 {% endif %}  

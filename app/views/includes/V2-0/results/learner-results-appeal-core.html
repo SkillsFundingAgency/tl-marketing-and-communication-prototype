@@ -1,0 +1,94 @@
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+            <h1 class="govuk-heading-l">Core results</h1>
+
+            <div class="govuk-inset-text">
+              This learner's results cannot be changed because they are appealing a grade.
+            </div>
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider<br>(UKPRN)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Exam period
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Grade
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <strong class="govuk-tag govuk-tag--purple no-wrap">
+                    being appealed
+                  </strong>
+                </dd>
+              </div>
+            </dl>
+                <div class="govuk-button-group">
+
+              <a class="govuk-button" href="search-learner">Search again</a>
+     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/specialism-results" data-module="govuk-button">
+    Select specialism results
+  </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -71,14 +71,22 @@
                   <dd class="govuk-summary-list__value">
                     {% if data['addedResult'] === 'yes' %}
                     {{data['newResult']}}
+                    {% elif data['changedResult'] === 'yes' %}
+                    {{data['updateResult']}}
                     {% else %}
                     Not received
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="add-core-result">
+                    {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
+                    <a class="govuk-link" href="change-core-result.html">
+                      Change <span class="govuk-visually-hidden">core result</span>
+                    </a>                    
+                    {% else %}
+                     <a class="govuk-link" href="add-core-result">
                       Add result <span class="govuk-visually-hidden">core result</span>
                     </a>
+                     {% endif %}
                   </dd>
                 </div>
               </dl>

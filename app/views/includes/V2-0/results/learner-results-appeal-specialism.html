@@ -3,7 +3,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-            <h1 class="govuk-heading-l">Learner's results</h1>
+            <h1 class="govuk-heading-l">Specialism results</h1>
 
             <div class="govuk-inset-text">
               This learner's results cannot be changed because they are appealing a grade.
@@ -54,7 +54,7 @@
               </div>
             </dl>
 
-            <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+            <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
@@ -81,8 +81,12 @@
                 </dd>
               </div>
             </dl>
-
-            <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
+                <div class="govuk-button-group">
+              <a class="govuk-button" href="search-learner">Search again</a>
+     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/core-results" data-module="govuk-button">
+    Select core results
+  </a>
+    </div>
   </div>
 </div>
 
