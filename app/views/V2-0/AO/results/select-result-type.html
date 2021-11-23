@@ -15,15 +15,66 @@ Select data type
 
         <form class="form" action="/select-result-type" method="post" novalidate data-validate="data-validate">
             <div class="govuk-form-group">
-                
-                    <h1 class="govuk-label-wrapper">
+
+                                <h1 class="govuk-label-wrapper">
                       <label class="govuk-label govuk-label--l" for="uln">
-                      What type of result would you like to review?
+                      Learner's details
                       </label>
                     </h1>
-                    <div class="govuk-form-group">
+              <br>
+
+
+              {# <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2> #}
+
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['uln'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider<br>(UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    T Level title
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                  </dd>
+                </div>
+              </dl>
                 
-                      <div class="govuk-radios" data-module="govuk-radios">
+
+                    <div class="govuk-form-group">
+
+                    <h2 class="govuk-heading-m govuk-!-margin-top-7">What type of result would you like to review?</h2>
+                
+                                          <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-radios__input" id="uln" name="type" type="radio" value="Core">
                           <label class="govuk-label govuk-radios__label" for="uln">

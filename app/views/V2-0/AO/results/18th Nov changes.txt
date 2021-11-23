@@ -3,7 +3,7 @@
 Results: 
 
 Based off the UR sessions we concluded that the Core and Specialism should be on seperate pages 
-as the user has alot of information to scroll to. 
+because the user has alot of information to scroll to. 
 
 Changes: 
 
