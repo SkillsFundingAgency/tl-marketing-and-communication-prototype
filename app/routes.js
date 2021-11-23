@@ -131,7 +131,7 @@ router.post('/V1-0/providers/cancel-address', function (req, res) {
 router.post('/V1-0/AO/results/add-core-result', function (req, res) {
   let addResult = req.session.data['result-answer']
 
-  req.session.data['addedResult'] = "yes"
+  req.session.data['gradeShown'] = "added"
   req.session.data['newResult'] = addResult
   
   res.redirect('/V1-0/AO/results/add-core-result-successful')
@@ -142,7 +142,7 @@ router.post('/V1-0/AO/results/add-core-result', function (req, res) {
 router.post('/V1-0/AO/results/change-core-result-successful', function (req, res) {
   let changeResult = req.session.data['result-answer']
 
-  req.session.data['changedResult'] = "yes"
+  req.session.data['gradeShown'] = "changed"
   req.session.data['updateResult'] = changeResult
   
   res.redirect('/V1-0/AO/results/change-core-result-successful')
@@ -951,27 +951,109 @@ router.post('/V2-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', func
 
 //Results
 
-// Add result - Results
+//Core Results
+
+// Add core result - Results
 router.post('/V2-0/AO/results/add-core-result', function (req, res) {
   let addResult = req.session.data['result-answer']
 
-  req.session.data['gradeShown'] = "added"
+  req.session.data['addedResult'] = "yes"
   req.session.data['newResult'] = addResult
   
   res.redirect('/V2-0/AO/results/add-core-result-successful')
 
 });
 
-//Change result - Results
-router.post('/V2-0/AO/results/change-core-result-successful', function (req, res) {
+//Change core result - Results
+router.post('/V2-0/AO/results/change-core-result', function (req, res) {
   let changeResult = req.session.data['result-answer']
 
-  req.session.data['gradeShown'] = "changed"
+  req.session.data['addedResult'] = null
+  req.session.data['changedResult'] = "yes"
   req.session.data['updateResult'] = changeResult
   
   res.redirect('/V2-0/AO/results/change-core-result-successful')
 
 });
+
+//Specialism Results
+
+// Add specialism result - Results
+router.post('/V2-0/AO/results/add-specialism-result', function (req, res) {
+  let addResult = req.session.data['result-answer-specialism']
+
+  req.session.data['addedResultSpecialism'] = "yes"
+  req.session.data['newResultSpecialism'] = addResult
+  
+  res.redirect('/V2-0/AO/results/add-specialism-result-successful')
+
+});
+
+//Change specialism result - Results
+router.post('/V2-0/AO/results/change-specialism-result', function (req, res) {
+  let changeResult = req.session.data['result-answer-specialism']
+
+  req.session.data['addedResultSpecialism'] = null
+  req.session.data['changedResultSpecialism'] = "yes"
+  req.session.data['updateResultSpecialism'] = changeResult
+  
+  res.redirect('/V2-0/AO/results/change-specialism-result-successful')
+
+});
+
+//Change core result - Results
+router.post('/V2-0/AO/results/change-core-result-successful', function (req, res) {
+  let changeResult = req.session.data['result-answer-specialism']
+
+  req.session.data['changedResult'] = "yes"
+  req.session.data['updateResult'] = changeResult
+  
+  res.redirect('/V2-0/AO/results/change-specialism-result-successful')
+
+});
+
+//Search Learner - Results
+router.post('/search-learner', function (req, res) {
+  // Make a variable and give it the value from 'how-many-balls'
+  let uln = req.session.data['uln']
+  if (uln === '1231231231' && '8642135790')
+  {
+    req.session.data['uln'] = uln  
+    res.redirect
+    ('/V2-0/AO/results/learner-results')
+  } 
+  if (uln === '8642135790')
+  {
+    req.session.data['uln'] = uln
+    res.redirect
+    ('/V2-0/AO/results/learner-results')
+  } 
+
+  else {
+
+    res.redirect('/V2-0/AO/results/select-result-type')
+    
+  }
+
+})
+
+
+//Select result type - Results
+router.post('/select-result-type', function (req, res) {
+  // Make a variable and give it the value from 'how-many-balls'
+  var whatData = req.session.data['type']
+
+  // Check whether the variable matches a condition
+  if (whatData == "Core"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/core-results')  
+  } 
+  if (whatData == "Specialism"){
+    // Send user to next page
+    res.redirect('/V2-0/AO/results/specialism-results')  
+  } 
+
+})
 
 
 //Data Export
