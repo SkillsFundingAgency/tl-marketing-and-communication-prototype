@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Remove entry - Manage T Level results - GOV.UK
+Remove core assessment entry - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
   <div class="govuk-grid-column-two-thirds">
       <form action="remove-core-entry" method="post" class="form" novalidate data-validate="remove-core-entry">
 
-        <h1 class="govuk-heading-l">H1 Title</h1> 
+        <h1 class="govuk-heading-l">Remove core component assessment entry from autumn 2021</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           
@@ -44,10 +44,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Provider<br>(UKPRN)
+              Provider<br aria-hidden="true">(UKPRN)
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+              {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -58,21 +58,13 @@
               {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Core <br>(code)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
-            </dd>
-          </div>
         </dl>
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-core-entry">
                   <h2 class="govuk-fieldset__heading">
-                    Question to ask to confirm remove entry
+                    Would you like to remove the core component assessment entry for autumn 2021 from this learner's record?
                   </h2>
                 </legend>
 
@@ -80,23 +72,19 @@
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="remove-answer-1" name="remove-core-entry" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-1">
-                          Yes, 
+                          Yes, remove the entry from autumn 2021
                         </label>
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="remove-answer-2" name="remove-core-entry" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-2">
-                          No, 
+                          No, do not remove the entry from autumn 2021 
                         </label>
                     </div>
                   </div>
               </fieldset>
 
           </div>
-          <div class="govuk-inset-text">
-            Text to explain removing entry
-          </div>
-
           <button class="govuk-button" data-module="govuk-button">Submit</button>
       </form>
   </div>
@@ -107,7 +95,7 @@
 
     "remove-core-entry": {
       "presence": {
-        "message": "^Error message"
+        "message": "^Select whether  the assessment entry is being removed"
       }
 
     }

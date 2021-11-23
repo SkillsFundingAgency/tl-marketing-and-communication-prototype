@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Assessment entries – Search for a learner page – Manage T Level results – GOV.UK
+Assessment entries – Search for a learner – Manage T Level results – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,7 @@ Assessment entries – Search for a learner page – Manage T Level results – 
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="learners-assessment-entries" method="post" novalidate data-validate="search-for-learner-validation">
+        <form class="form" action="search-learner-assessments" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -33,12 +33,12 @@ Assessment entries – Search for a learner page – Manage T Level results – 
                     <p class="govuk-body">You can add, view and amend a learner's assessment entries.</p>
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="uln">
-                        Enter the Unique Learner Number (ULN)
+                        Enter the unique learner number (ULN)
                       </label>
-                      <span class="govuk-hint">
+                      <span id ="uln-hint" class="govuk-hint">
                           ULN must be 10 digits long
                       </span>
-                      <input class="govuk-input govuk-input--width-20" id="uln" name="uln">
+                      <input class="govuk-input govuk-input--width-10" id="uln" name="uln" type="text" spellcheck="false" aria-describedby="uln-hint" pattern="[0-9]*" inputmode="numeric">
                     </div>
 
                 </fieldset>
