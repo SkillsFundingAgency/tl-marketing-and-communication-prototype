@@ -1,29 +1,13 @@
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  Result changed successfully
-{% endblock %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      Core (code): Design, Surveying and Planning  (123456)
-result added successfully
-    </h3>
-  </div>
-</div>
-
               <h1 class="govuk-heading-l">Core results</h1>
+
+              <div class="govuk-inset-text">
+                This result is final, as the outcome of an appeal has been recorded. If you need to change the grade, please <a class="govuk-link" href="#">contact us</a>.
+              </div>
 
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
@@ -88,30 +72,17 @@ result added successfully
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['addedResult'] === 'yes' %}
-                    {{data['newResult']}}
-                    {% elif data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
-                    {% else %}
-                    Not received
-                    {% endif %}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
-                    <a class="govuk-link" href="change-core-result.html">
-                      Change <span class="govuk-visually-hidden">core result</span>
-                    </a>                    
-                    {% else %}
-                     <a class="govuk-link" href="add-core-result">
-                      Add result <span class="govuk-visually-hidden">core result</span>
-                    </a>
-                     {% endif %}
+                    <strong class="govuk-tag govuk-tag--red">
+                      final
+                    </strong>
                   </dd>
                 </div>
               </dl>
-                <div class="govuk-button-group">
-
-              <a class="govuk-button" href="search-learner">Search again</a>
+      <div class="govuk-button-group">
+      <a class="govuk-button" href="search-learner">Search again</a>
      <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/specialism-results" data-module="govuk-button">
     View specialism results
   </a>
@@ -120,5 +91,3 @@ result added successfully
 </div>
 
 {% endblock %}
-
-

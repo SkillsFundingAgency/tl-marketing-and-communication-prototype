@@ -1,19 +1,15 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '5647382913' %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1162334455' or data['uln'] === '1987654321' or data['uln'] === '1122334455' %}
   Learner's results - Manage T Level results - GOV.UK
-{% elseif data['uln'] === '1231231231' %}
-Learner withdrawn – Manage T Level results – GOV.UK 
-{% elseif data['uln'] === '8642135790' %}
-No registered assessments – Manage T Level results – GOV.UK
 {% else %}
 ULN not found - Manage T Level results - GOV.UK
 {% endif %}  
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '5647382913' %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '1162334455' %} 
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -34,7 +30,8 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block content %}
-{% if data['uln'] === '9876543210' or data['uln'] === '5647382913' %}
+{# Pass for Specialism #}
+{% if data['uln'] === '9876543210' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -85,7 +82,7 @@ ULN not found - Manage T Level results - GOV.UK
                 </div>
               </dl>
 
-              <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+              <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
@@ -103,25 +100,38 @@ ULN not found - Manage T Level results - GOV.UK
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
+                    {% if data['changedResultSpecialism'] === 'yes' %}
+                    {{data['updateResultSpecialism']}}
                     {% else %}
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerSpecialismResult'] }}
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-core-result.html">
-                      Change <span class="govuk-visually-hidden">core result</span>
+                    <a class="govuk-link" href="change-specialism-result.html">
+                      Change <span class="govuk-visually-hidden">specialism result</span>
                     </a>
                   </dd>
                 </div>
               </dl>
 
+        <div class="govuk-button-group">
               <a class="govuk-button" href="search-learner">Search again</a>
-
+     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/core-results" data-module="govuk-button">
+    Select core results
+        </a>
+    </div>
     </div>
 </div>
+{# grade is just for core and specialism #}
 {% elseif data['uln'] === '5647382910' %}
-{% include "includes/V1-0/results/learner-results-no-grade.html" %}
+{% include "includes/V2-0/results/learner-results-no-grade-specialism.html" %}
+{% elseif data['uln'] === '1987654321' %}
+{% include "includes/V2-0/results/learner-results-appeal-specialism.html" %}
+{% elseif data['uln'] === '1122334455' %}
+{% include "includes/V2-0/results/learner-results-final-specialism.html" %}
+{% elseif data['uln'] === '1162334455' %}
+{% include "includes/V2-0/results/learner-results-no-specialism-found.html" %}
+{% else %}
+{% include "includes/V2-0/results/results-no-learner-found.html" %}
 {% endif %}  
 {% endblock %}
