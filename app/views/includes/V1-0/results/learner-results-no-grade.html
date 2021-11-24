@@ -69,16 +69,24 @@
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['addedResult'] === 'yes' %}
+                    {% if data['gradeShown'] === 'added' %}
                     {{data['newResult']}}
+                    {% elseif data['gradeShown'] === 'changed' %}
+                    {{data['updateResult']}}
                     {% else %}
                     Not received
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="add-core-result">
-                      Add result <span class="govuk-visually-hidden">core result</span>
+                    {% if data['gradeShown'] === 'added' or data['gradeShown'] === 'changed'%}
+                    <a class="govuk-link" href="change-core-result">
+                      Change <span class="govuk-visually-hidden">core result</span>
                     </a>
+                    {% else %}
+                    <a class="govuk-link" href="add-core-result">
+                      Add result
+                    </a>
+                    {% endif %}
                   </dd>
                 </div>
               </dl>
