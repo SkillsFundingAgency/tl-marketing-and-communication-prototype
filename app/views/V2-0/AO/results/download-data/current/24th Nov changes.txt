@@ -11,3 +11,5 @@ On th data is ready screen 'Download data' has been changed to 'Download Results
 and 'Specialism' we've changed it to 'Core components' and 'Occupational specialisms'
 
 On the no records found page: Move buttons up above text. ‘learner’s’
+
+Subject line added to mailto email 
