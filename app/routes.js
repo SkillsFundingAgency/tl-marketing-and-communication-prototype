@@ -355,6 +355,21 @@ router.post('/V1-0/AO/registrations/manage/confirm-withdraw-answer', function (r
   }
 })
 
+//Withdrawn learner option - rejoin or register new
+router.post('/V1-0/AO/registrations/manage/withdrawn-option-answer', function (req, res) {
+
+  let withdrawnOption = req.session.data['withdrawn-answer']
+
+
+  if (withdrawnOption === 'reactivate') {
+    res.redirect('/V1-0/AO/registrations/manage/rejoin-registration')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/provider-new-course')
+  }
+})
+
 //Rejoin learner registration
 router.post('/V1-0/AO/registrations/manage/confirm-rejoin-answer', function (req, res) {
 
