@@ -11,7 +11,7 @@ ULN not found - Manage T Level results - GOV.UK
 {% block beforeContent %}
 {% if data['uln'] === '9876543210' and data['deleted'] === 'yes' %}
 <a class="govuk-back-link" onclick= "goBack()">Back</a>
-{% elseif data['uln'] === '1234567890' or data['uln'] === '9876543210' or data['uln'] === '1231231231'%}
+{% elseif data['uln'] === '1234567890' or data['uln'] === '1231231231' or data['uln'] === '9876543210'%}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
@@ -33,14 +33,20 @@ ULN not found - Manage T Level results - GOV.UK
 
 {% block content %}
 {% if data['uln'] === '9876543210' and data['deleted'] === 'yes' %}
-{% include "includes/V1-0/registrations/search-for-learner-ULN-not-found.html" %}
+{% include "includes/V2-0/registrations/search-for-learner-ULN-not-found.html" %}
 
-{% elseif data['uln'] === '1234567890' or data['uln'] === '9876543210' or data['uln'] === '1231231231'%}
+{% elseif data['uln'] === '1234567890' or data['uln'] === '1231231231' or data['uln'] === '9876543210' %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
               <h1 class="govuk-heading-l">Registration details</h1>
+              {% if data['uln'] === '1231231231' %}
+              <div class="govuk-inset-text">
+                This learner's details cannot be changed. The learner has been withdrawn and has registered with a different awarding organisation.
+              </div>
+              {% else %}
+              {% endif %}
 
               <h2 class="govuk-heading-m">ULN: {{data['uln']}}</h2>
 
@@ -52,15 +58,18 @@ ULN not found - Manage T Level results - GOV.UK
                   <dd class="govuk-summary-list__value">
                     {% if data['withdrawn'] === 'yes' %}
                     <strong class="govuk-tag govuk-tag--blue">withdrawn</strong>
+                    {% elseif data['uln'] === '1231231231' %}
+                    <strong class="govuk-tag govuk-tag--grey">moved ao</strong>
                     {% else %}
                     <strong class="govuk-tag govuk-tag--green">active</strong>
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes'%}
                     <a class="govuk-link" href="rejoin-registration.html">
                       Change status
                     </a>
+                    {% elseif data['uln'] === '1231231231' %}
                     {% else %}
                     <a class="govuk-link" href="change-status.html">
                       Change status
@@ -80,7 +89,7 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231'%}
                     {% else %}
                     <a class="govuk-link" href="change-name">
                       Change<span class="govuk-visually-hidden"> name</span>
@@ -143,7 +152,7 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231' %}
                     {% else %}
                     <a class="govuk-link" href="change-dob">
                       Change<span class="govuk-visually-hidden"> date of birth</span>
@@ -153,17 +162,17 @@ ULN not found - Manage T Level results - GOV.UK
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Provider (UKPRN)
+                    Provider<br aria-hidden="true">(UKPRN)
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data['provider-change'] === 'yes' %}
                     {{ data['provider'] }}
                     {% else %}
-                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231' %}
                     {% else %}
                     <a class="govuk-link" href="change-provider">
                       Change<span class="govuk-visually-hidden"> Provider (UKPRN)</span>
@@ -179,7 +188,7 @@ ULN not found - Manage T Level results - GOV.UK
                     {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231' %}
                     {% else %}
                     <a class="govuk-link" href="change-core">
                       Change<span class="govuk-visually-hidden"> core</span>
@@ -211,7 +220,7 @@ ULN not found - Manage T Level results - GOV.UK
                     <a class="govuk-link" href="change-specialism.html">
                     Change<span class="govuk-visually-hidden"> specialism</span>  
                     </a>
-                    {% elseif data['withdrawn'] === 'yes' %}
+                    {% elseif data['withdrawn'] === 'yes' or data['uln'] === '1231231231'%}
                     {% else %}
                     <a class="govuk-link" href="change-registration-learner-decided-specialism.html">
                       Change<span class="govuk-visually-hidden"> specialism</span>  
@@ -227,7 +236,7 @@ ULN not found - Manage T Level results - GOV.UK
                     2020/21
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231' %}
                     {% else %}
                     <a class="govuk-link" href="change-year-denial">
                       Change<span class="govuk-visually-hidden"> academic year</span>
@@ -249,6 +258,6 @@ ULN not found - Manage T Level results - GOV.UK
 </div>
 
 {% else %}
-{% include "includes/V1-0/registrations/search-for-learner-ULN-not-found.html" %}
+{% include "includes/V2-0/registrations/search-for-learner-ULN-not-found.html" %}
 {% endif %}
 {% endblock %}
