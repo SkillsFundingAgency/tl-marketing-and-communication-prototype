@@ -56,10 +56,8 @@ ULN not found - Manage T Level results - GOV.UK
                     Status
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' or data['uln'] === '1231231231' %}
                     <strong class="govuk-tag govuk-tag--blue">withdrawn</strong>
-                    {% elseif data['uln'] === '1231231231' %}
-                    <strong class="govuk-tag govuk-tag--grey">moved ao</strong>
                     {% else %}
                     <strong class="govuk-tag govuk-tag--green">active</strong>
                     {% endif %}
