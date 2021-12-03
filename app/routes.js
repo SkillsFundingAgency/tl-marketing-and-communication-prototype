@@ -366,8 +366,9 @@ router.post('/V1-0/AO/registrations/manage/withdrawn-option-answer', function (r
 
   } else{
     
-    res.redirect('/V1-0/AO/registrations/manage/provider-new-course')
+    res.redirect('/V1-0/AO/registrations/manage/new-course/provider-new-course')
   }
+  
 })
 
 //Rejoin learner registration

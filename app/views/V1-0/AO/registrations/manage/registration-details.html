@@ -57,7 +57,7 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
+                    {% if data['withdrawn'] === 'yes' and data['uln'] === '9876543210' %}
                     <a class="govuk-link" href="withdrawn-registration-options.html">
                       Change status
                     </a>
