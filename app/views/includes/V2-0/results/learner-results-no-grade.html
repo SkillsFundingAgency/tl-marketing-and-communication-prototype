@@ -3,6 +3,73 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+          {% if data['addCoreResultConfirmation'] === 'yes' %}                  
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Core (code): Design, Surveying and Planning  (123456)
+result added successfully
+    </h3>
+  </div>
+</div>
+
+                    {% endif %}
+
+          {% if data['updateCoreResultConfirmation'] === 'yes' %}                  
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Core (code): Design, Surveying and Planning  (123456)
+result changed successfully
+    </h3>
+  </div>
+</div>
+
+                    {% endif %}
+
+          {% if data['addSpecialismResultConfirmation'] === 'yes' %}
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Specialism (code): Building services design (ZT0123)
+result added successfully
+    </h3>
+  </div>
+</div>
+
+                    {% endif %}
+
+      {% if data['updateSpecialismResultConfirmation'] === 'yes' %}
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+     Specialism (code): Building services design (ZT0123)
+result changed successfully
+    </h3>
+  </div>
+</div>
+
+                    {% endif %}
 
               <h1 class="govuk-heading-l">Learner's results</h1>
 
@@ -51,34 +118,46 @@
                 </div>
               </dl>
 
-              <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+<br>
 
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Exam period
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Grade
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {% if data['gradeShown'] === 'added' %}
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Exam period</th>
+      <th scope="row" class="govuk-table__header">Grade</th>
+      <th scope="row" class="govuk-table__header">Last updated</th>
+      <th scope="row" class="govuk-table__header">Updated by</th>
+      <th scope="row" class="govuk-table__header">Status</th>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+      {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+      </th>
+      <td class="govuk-table__cell">
+                    {% if data['addedResult'] === 'yes' %}
                     {{data['newResult']}}
-                    {% elseif data['gradeShown'] === 'changed' %}
+                    {% elif data['changedResult'] === 'yes' %}
                     {{data['updateResult']}}
                     {% else %}
                     Not received
                     {% endif %}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    {% if data['gradeShown'] === 'added' or data['gradeShown'] === 'changed'%}
+      </td>
+            <td class="govuk-table__cell">
+
+                          {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
+                    4 June 2021
+                    {% endif %}
+      </td>
+            <td class="govuk-table__cell">
+                          {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
+                    Pat Carmicheal
+                    {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+                    {% if data['addedResult'] === 'yes' or (data['changedResult'] === 'yes' and data['updateResult'] != "Not received") %}
                     <a class="govuk-link" href="change-core-result">
                       Change <span class="govuk-visually-hidden">core result</span>
                     </a>
@@ -87,11 +166,64 @@
                       Add result
                     </a>
                     {% endif %}
-                  </dd>
-                </div>
-              </dl>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-              <a class="govuk-button" href="search-learner">Search again</a>
+<br>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Exam period</th>
+      <th scope="row" class="govuk-table__header">Grade</th>
+      <th scope="row" class="govuk-table__header">Last updated</th>
+      <th scope="row" class="govuk-table__header">Updated by</th>
+      <th scope="row" class="govuk-table__header">Status</th>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+      </th>
+      <td class="govuk-table__cell">
+                    {% if data['addedResultSpecialism'] === 'yes' %}
+                    {{data['newResultSpecialism']}}
+                    {% elif data['changedResultSpecialism'] === 'yes' %}
+                    {{data['updateResultSpecialism']}}
+                    {% else %}
+                    Not received
+                    {% endif %}
+      </td>
+            <td class="govuk-table__cell">
+                    {% if data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
+                    4 June 2021
+                    {% endif %}
+      </td>
+            <td class="govuk-table__cell">
+                    {% if data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
+                    Pat Carmicheal
+                    {% endif %}
+      </td>
+      <td class="govuk-table__cell">
+                    {% if data['addedResultSpecialism'] === 'yes' or (data['changedResultSpecialism'] === 'yes' and data['updateResult'] != "Not received") %}
+                    <a class="govuk-link" href="change-specialism-result.html">
+                      Change <span class="govuk-visually-hidden">specialism result</span>
+                    </a>                    
+                    {% else %}
+                     <a class="govuk-link" href="add-specialism-result">
+                      Add result <span class="govuk-visually-hidden">specialism result</span>
+                    </a>
+                     {% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+      <a class="govuk-button" href="search-learner">Search again</a>
 
     </div>
 </div>
