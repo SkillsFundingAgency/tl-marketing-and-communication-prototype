@@ -403,6 +403,21 @@ router.post('/V1-0/AO/registrations/manage/confirm-delete-answer', function (req
   }
 })
 
+//Register new course - specialism routes
+
+router.post('/V1-0/AO/registrations/manage/new-course/new-course-specialism-answer', function (req, res) {
+
+  let addSpecialism = req.session.data['update-specialism-answer']
+  if (addSpecialism === 'yes') {
+
+    res.redirect('/V1-0/AO/registrations/manage/new-course/specialism-new-course')
+
+  } else{
+    res.redirect('/V1-0/AO/registrations/manage/new-course/academic-year-new-course')
+  }
+
+})
+
 
 
 //Change registered name - manage registrations

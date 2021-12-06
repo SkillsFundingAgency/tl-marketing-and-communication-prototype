@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Withdraw registration page - Manage T Level results - GOV.UK
+Register learner on a new course - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,11 +11,11 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="update-specialism-choice" method="post" class="form" novalidate data-validate="change-specialism-choice-validation">
+    <form action="academic-year-new-course" method="post" class="form" novalidate data-validate="change-specialism-choice-validation">
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-xl">Change registration</span>
+            <span class="govuk-caption-xl">Register learner on a new course</span>
             <h1 class="govuk-fieldset__heading">
               Select the occupational specialism(s) for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}
             </h1>

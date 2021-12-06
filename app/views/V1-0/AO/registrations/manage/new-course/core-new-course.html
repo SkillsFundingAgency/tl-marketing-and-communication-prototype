@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add registration - Change core
+Register a learner on a new course - Change core
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,10 +12,10 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="add-change-core" method="post" novalidate data-validate="select-core-validation">
+        <form class="form" action="/V1-0/AO/registrations/manage/new-course/learner-decided-specialism-new-course" method="post" novalidate data-validate="select-core-validation">
             <div class="govuk-form-group">
                 
-                    <span class="govuk-caption-xl">Add a new registration</span>
+                    <span class="govuk-caption-xl">Register a learner on a new course</span>
                     <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="core-change">
                         Select the core
                       </label>
@@ -44,7 +44,7 @@
  
             </div>
 
-            <button class="govuk-button" data-module="govuk-button">Change</button>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
 
         </form>
     </div>

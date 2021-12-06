@@ -5,7 +5,7 @@ Add a new registration - Check and submit - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -28,94 +28,9 @@ Add a new registration - Check and submit - Manage T Level results - GOV.UK
                   ULN
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data['uln-changed'] === "yes" %}
-                  {{data['change-uln']}}
-                  {% else %}
                   {{data['uln']}}
-                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-registration-q1-uln">
-                    Change<span class="govuk-visually-hidden"> ULN</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Name
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {% if data['name-changed'] === "yes" %}
-                  {{ data['first-name-changed'] }} {{ data['last-name-changed'] }}
-                  {% else %}
-                  {{ data['first-name'] }} {{ data['last-name'] }}
-                  {% endif %}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-registration-q2-name">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                  </a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                {% if data['dob-changed'] === "yes" %}
-                {{ data['dob-day-change'] }} {{ data['dob-month-changed'] }} {{ data['dob-year-change'] }}
-
-                {% else %}
-                  {{ data['dob-day'] }}
-
-                  {% if data['dob-month'] === "1" %}
-                  January
-                  
-                  {% elseif data['dob-month'] === "2" %}
-                  February
-
-                  {% elseif data['dob-month'] === "3" %}
-                  March
-
-                  {% elseif data['dob-month'] === "4" %}
-                  April
-
-                  {% elseif data['dob-month'] === "5" %}
-                  May
-
-                  {% elseif data['dob-month'] === "6" %}
-                  June
-
-                  {% elseif data['dob-month'] === "7" %}
-                  July
-
-                  {% elseif data['dob-month'] === "8" %}
-                  August
-
-                  {% elseif data['dob-month'] === "9" %}
-                  September
-
-                  {% elseif data['dob-month'] === "10" %}
-                  October
-
-                  {% elseif data['dob-month'] === "11" %}
-                  November
-
-                  {% elseif data['dob-month'] === "12" %}
-                  December
-                  
-                  {% else %}
-                  {{ data['dob-month'] }} 
-                  {% endif %} 
-
-                  
-                  {{ data['dob-year'] }}
-                  {% endif %}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="change-registration-q3-dob">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                  </a>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -154,7 +69,7 @@ Add a new registration - Check and submit - Manage T Level results - GOV.UK
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Occupational specialism <br>(code)
+                  Specialism(s) <br>(code)
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {% if data['specialism']==="no" %}
