@@ -954,63 +954,79 @@ router.post('/V2-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', func
 //Core Results
 
 // Add core result - Results
-router.post('/V2-0/AO/results/add-core-result', function (req, res) {
+router.post('/V2-0/AO/results/current/add-core-result', function (req, res) {
   let addResult = req.session.data['result-answer']
 
   req.session.data['addedResult'] = "yes"
   req.session.data['newResult'] = addResult
-  
-  res.redirect('/V2-0/AO/results/add-core-result-successful')
+  req.session.data['addCoreResultConfirmation'] = "yes"
+  req.session.data['updateCoreResultConfirmation'] = null
+  req.session.data['addSpecialismResultConfirmation'] = null
+  req.session.data['updateSpecialismResultConfirmation'] = null
+
+  res.redirect('/V2-0/AO/results/current/learner-results')
 
 });
 
 //Change core result - Results
-router.post('/V2-0/AO/results/change-core-result', function (req, res) {
+router.post('/V2-0/AO/results/current/change-core-result', function (req, res) {
   let changeResult = req.session.data['result-answer']
 
-  req.session.data['addedResult'] = null
   req.session.data['changedResult'] = "yes"
   req.session.data['updateResult'] = changeResult
-  
-  res.redirect('/V2-0/AO/results/change-core-result-successful')
+  req.session.data['addedResult'] = null
+  req.session.data['updateCoreResultConfirmation'] = "yes"
+  req.session.data['addCoreResultConfirmation'] = null
+  req.session.data['addSpecialismResultConfirmation'] = null
+  req.session.data['updateSpecialismResultConfirmation'] = null
+
+  res.redirect('/V2-0/AO/results/current/learner-results')
 
 });
 
 //Specialism Results
 
 // Add specialism result - Results
-router.post('/V2-0/AO/results/add-specialism-result', function (req, res) {
+router.post('/V2-0/AO/results/current/add-specialism-result', function (req, res) {
   let addResult = req.session.data['result-answer-specialism']
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
-  
-  res.redirect('/V2-0/AO/results/add-specialism-result-successful')
+  req.session.data['addSpecialismResultConfirmation'] = "yes"
+  req.session.data['updateSpecialismResultConfirmation'] = null
+  req.session.data['addCoreResultConfirmation'] = null
+  req.session.data['updateCoreResultConfirmation'] = null
+
+  res.redirect('/V2-0/AO/results/current/learner-results')
 
 });
 
 //Change specialism result - Results
-router.post('/V2-0/AO/results/change-specialism-result', function (req, res) {
+router.post('/V2-0/AO/results/current/change-specialism-result', function (req, res) {
   let changeResult = req.session.data['result-answer-specialism']
 
-  req.session.data['addedResultSpecialism'] = null
   req.session.data['changedResultSpecialism'] = "yes"
   req.session.data['updateResultSpecialism'] = changeResult
-  
-  res.redirect('/V2-0/AO/results/change-specialism-result-successful')
+  req.session.data['addedResultSpecialism'] = null
+  req.session.data['updateSpecialismResultConfirmation'] = "yes"
+  req.session.data['addSpecialismResultConfirmation'] = null
+  req.session.data['addCoreResultConfirmation'] = null
+  req.session.data['updateCoreResultConfirmation'] = null
+
+  res.redirect('/V2-0/AO/results/current/learner-results')
 
 });
 
 //Change core result - Results
-router.post('/V2-0/AO/results/change-core-result-successful', function (req, res) {
-  let changeResult = req.session.data['result-answer-specialism']
+// router.post('/V2-1/AO/results/change-core-result-successful', function (req, res) {
+//   let changeResult = req.session.data['result-answer-specialism']
 
-  req.session.data['changedResult'] = "yes"
-  req.session.data['updateResult'] = changeResult
+//   req.session.data['changedResult'] = "yes"
+//   req.session.data['updateResult'] = changeResult
   
-  res.redirect('/V2-0/AO/results/change-specialism-result-successful')
+//   res.redirect('/V2-1/AO/results/current/learner-results')
 
-});
+// });
 
 //Search Learner - Results
 router.post('/search-learner', function (req, res) {
@@ -1020,38 +1036,20 @@ router.post('/search-learner', function (req, res) {
   {
     req.session.data['uln'] = uln  
     res.redirect
-    ('/V2-0/AO/results/learner-results')
+    ('/V2-0/AO/results/current/learner-results')
   } 
   if (uln === '8642135790')
   {
     req.session.data['uln'] = uln
     res.redirect
-    ('/V2-0/AO/results/learner-results')
+    ('/V2-0/AO/results/current/learner-results')
   } 
 
   else {
 
-    res.redirect('/V2-0/AO/results/select-result-type')
+    res.redirect('/V2-0/AO/results/current/learner-results')
     
   }
-
-})
-
-
-//Select result type - Results
-router.post('/select-result-type', function (req, res) {
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Core"){
-    // Send user to next page
-    res.redirect('/V2-0/AO/results/core-results')  
-  } 
-  if (whatData == "Specialism"){
-    // Send user to next page
-    res.redirect('/V2-0/AO/results/specialism-results')  
-  } 
 
 })
 

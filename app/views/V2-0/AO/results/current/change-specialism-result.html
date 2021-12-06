@@ -13,16 +13,61 @@ Change specialism result - Manage T Level results - GOV.UK
 
 {% block content %}
 
+  <h1 class="govuk-heading-l">Change the specialism result</h1>
+
+              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['uln'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider<br>(UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    T Level title
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                  </dd>
+                </div>
+              </dl>
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="change-specialism-result" method="post" class="form" novalidate data-validate="change-specialism-result">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      <h1 class="govuk-fieldset__heading">
-                          Select the specialism result
-                          <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}</p>
-                      </h1>
+
+                    <h2 class="govuk-heading-m govuk-!-margin-top-7">Select the result for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
                     </legend>
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">

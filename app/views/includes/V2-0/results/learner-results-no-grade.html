@@ -121,7 +121,7 @@ result changed successfully
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -129,13 +129,15 @@ result changed successfully
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
+      <th scope="row" class="govuk-table__header">Action</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">
+      </td>
+            <td class="govuk-table__cell">
       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-      </th>
+
+      </td>
       <td class="govuk-table__cell">
                     {% if data['addedResult'] === 'yes' %}
                     {{data['newResult']}}
@@ -174,7 +176,7 @@ result changed successfully
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -182,13 +184,15 @@ result changed successfully
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
+      <th scope="row" class="govuk-table__header">Action</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">
+
+            <td class="govuk-table__cell">
        {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-      </th>
+
+      </td>
       <td class="govuk-table__cell">
                     {% if data['addedResultSpecialism'] === 'yes' %}
                     {{data['newResultSpecialism']}}
@@ -222,6 +226,34 @@ result changed successfully
     </tr>
   </tbody>
 </table>
+<br>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More about learner results
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+Once a grade has been entered after an appeal it is marked as 'final' and can no longer be 
+changed here. If you need to change a grade after entering an 
+appeal result, or change a grade after the deadline, please 
+<a href="mailto:someone@yoursite.com?subject=Mail from Our Site" class="govuk-link">contact us.</a>
+<br>
+<br>
+If a result is marked as 'being appealed' the grade cannot be changed here. 
+An appeal outcome must be entered in the 
+<a href="#" class="govuk-link">appeals </a>
+section of this service.
+<br>
+<br>
+Unless an assessment has a grade and is marked as 
+final it cannot be used to calculate an overall T Level result.
+
+</div>
+</details>
+
+<br>
 
       <a class="govuk-button" href="search-learner">Search again</a>
 

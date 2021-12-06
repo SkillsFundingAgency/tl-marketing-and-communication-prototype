@@ -7,8 +7,6 @@
 
             <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
-            
-
             <dl class="govuk-summary-list govuk-summary-list--no-border">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -55,7 +53,7 @@
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Core: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
   <tbody class="govuk-table__body">
 
@@ -65,7 +63,6 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -73,18 +70,18 @@
       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
       </td>
       <td class="govuk-table__cell">
-                    C
+      C
+      &nbsp
+      <strong class="govuk-tag govuk-tag--purple no-wrap">
+      ROMM
+      </strong>      
       </td>
+      
             <td class="govuk-table__cell">
                     4 June 2021
       </td>
             <td class="govuk-table__cell">
                     Pat Carmicheal
-      </td>
-      <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--purple no-wrap">
-                    being appealed
-                  </strong>
       </td>
     </tr>
   </tbody>
@@ -95,7 +92,7 @@
 
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -103,7 +100,6 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -111,7 +107,11 @@
        {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
       </td>
       <td class="govuk-table__cell">
-                   Merit
+      Merit
+      &nbsp
+      <strong class="govuk-tag govuk-tag--purple no-wrap">
+      ROMM
+      </strong>      
       </td>
             <td class="govuk-table__cell">
                     4 June 2021
@@ -119,14 +119,37 @@
             <td class="govuk-table__cell">
                     Pat Carmicheal
       </td>
-      <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--purple no-wrap">
-                    being appealed
-                  </strong>
-      </td>
     </tr>
   </tbody>
 </table>
+<br>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More about learner results
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+Once a grade has been entered after an appeal it is marked as 'final' and can no longer be 
+changed here. If you need to change a grade after entering an 
+appeal result, or change a grade after the deadline, please 
+<a href="mailto:someone@yoursite.com?subject=Mail from Our Site" class="govuk-link">contact us.</a>
+<br>
+<br>
+If a result is marked as 'being appealed' the grade cannot be changed here. 
+An appeal outcome must be entered in the 
+<a href="#" class="govuk-link">appeals </a>
+section of this service.
+<br>
+<br>
+Unless an assessment has a grade and is marked as 
+final it cannot be used to calculate an overall T Level result.
+
+</div>
+</details>
+<br>
+
             <a class="govuk-button govuk-!-margin-top-2" href="search-learner">Search again</a>
   </div>
 </div>
