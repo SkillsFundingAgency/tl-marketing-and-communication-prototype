@@ -14,3 +14,4 @@ while actions to add/change a result are titled in the column at the end under '
 
 - We added a details component at the bottom of the page called 'More about learner results'
 with information about the learner results in
+
