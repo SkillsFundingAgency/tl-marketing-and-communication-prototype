@@ -64,18 +64,15 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
+      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
             <td class="govuk-table__cell">
       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
       </td>
-       <td class="govuk-table__cell">
-        D
-      &nbsp
-      <strong class="govuk-tag govuk-tag--pink no-wrap">
-      FINAL
-      </strong>      
+      <td class="govuk-table__cell">
+                    D
       </td>
             <td class="govuk-table__cell">
 
@@ -83,6 +80,11 @@
       </td>
             <td class="govuk-table__cell">
                     Pat Carmicheal
+      </td>
+      <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--pink">
+                      final
+                    </strong>
       </td>
     </tr>
   </tbody>
@@ -101,18 +103,15 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
+      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
        {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
       </td>
-       <td class="govuk-table__cell">
-        Pass
-      &nbsp
-      <strong class="govuk-tag govuk-tag--pink no-wrap">
-      FINAL
-      </strong>      
+      <td class="govuk-table__cell">
+                    Pass
       </td>
             <td class="govuk-table__cell">
                     4 June 2021
@@ -120,6 +119,48 @@
             <td class="govuk-table__cell">
                     Pat Carmicheal
 
+      </td>
+      <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--pink">
+                      final
+                    </strong>
+      </td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialismCode'] }}</h2>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Exam period</th>
+      <th scope="row" class="govuk-table__header">Grade</th>
+      <th scope="row" class="govuk-table__header">Last updated</th>
+      <th scope="row" class="govuk-table__header">Updated by</th>
+      <th scope="row" class="govuk-table__header">Status</th>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+      </td>
+      <td class="govuk-table__cell">
+                    Pass
+      </td>
+            <td class="govuk-table__cell">
+                    4 June 2021
+      </td>
+            <td class="govuk-table__cell">
+                    Pat Carmicheal
+
+      </td>
+      <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--pink">
+                      final
+                    </strong>
       </td>
     </tr>
 </table>
@@ -151,6 +192,7 @@ final it cannot be used to calculate an overall T Level result.
 </div>
 </details>
 <br>
+
               <a class="govuk-button govuk-!-margin-top-2" href="search-learner">Search again</a>
      </tbody>
 

@@ -13,7 +13,7 @@
                     Name
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                    	Frankie Thomas
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -21,7 +21,7 @@
                     ULN
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['uln'] }}
+                    1162334455
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -29,7 +29,7 @@
                     Date of birth
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                    2 August 2004
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -37,7 +37,10 @@
                     Provider<br>(UKPRN)
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  Barnsley College
+                  <br>
+                  (100656)
+
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -45,8 +48,8 @@
                     T Level title
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                  </dd>
+	          T Level in Design, Surveying and Planning for Construction                 
+               </dd>
                 </div>
               </dl>
               
@@ -68,14 +71,14 @@
     </tr>
     <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-      {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+            Summer 2021
       </td>
-       <td class="govuk-table__cell">
-        D
-      &nbsp
-      <strong class="govuk-tag govuk-tag--pink no-wrap">
-      FINAL
-      </strong>      
+      <td class="govuk-table__cell">
+                    D
+         &nbsp
+      <strong class="govuk-tag govuk-tag--pink">
+                      final
+                    </strong>
       </td>
             <td class="govuk-table__cell">
 
@@ -88,41 +91,12 @@
   </tbody>
 </table>
 
+<h2 class="govuk-heading-m govuk-!-margin-top-7">Occupational specialism: not specified</h2>
+
+<p class="govuk-body">This learner does not have an occupational specialism registered in this system. 
 <br>
-<br>
-
-
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
-
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Exam period</th>
-      <th scope="row" class="govuk-table__header">Grade</th>
-      <th scope="row" class="govuk-table__header">Last updated</th>
-      <th scope="row" class="govuk-table__header">Updated by</th>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-      </td>
-       <td class="govuk-table__cell">
-        Pass
-      &nbsp
-      <strong class="govuk-tag govuk-tag--pink no-wrap">
-      FINAL
-      </strong>      
-      </td>
-            <td class="govuk-table__cell">
-                    4 June 2021
-      </td>
-            <td class="govuk-table__cell">
-                    Pat Carmicheal
-
-      </td>
-    </tr>
-</table>
+<a href="/V1-0/AO/registrations/manage/search-registration" class="govuk-link">Add an occupational specialism.</a>
+</p>
 
 <br>
 
@@ -151,6 +125,7 @@ final it cannot be used to calculate an overall T Level result.
 </div>
 </details>
 <br>
+
               <a class="govuk-button govuk-!-margin-top-2" href="search-learner">Search again</a>
      </tbody>
 
