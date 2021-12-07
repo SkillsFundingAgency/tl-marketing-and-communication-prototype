@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Rejoin course page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="withdrawn-option-answer" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset" aria-describedby="uln-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              What would you like to do with this withdrawn registration?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withdrawn-answer-1" name="withdrawn-answer" type="radio" value="reactivate">
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="withdrawn-answer-1">
+                Reactivate this registration with the same course
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withdrawn-answer-2" name="withdrawn-answer" type="radio" value="register-new">
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="withdrawn-answer-2">
+                Register learner on a different course
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

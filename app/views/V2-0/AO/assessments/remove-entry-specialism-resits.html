@@ -14,7 +14,7 @@ Remove specialism assessment entry - Manage T Level results - GOV.UK
   <div class="govuk-grid-column-two-thirds">
       <form action="remove-specialism-entry-resits" method="post" class="form" novalidate data-validate="remove-specialism-entry">
 
-        <h1 class="govuk-heading-l">Remove occupational specialism assessment entry from summer 2023</h1> 
+        <h1 class="govuk-heading-l">Remove occupational specialism(s) assessment entry from summer 2023</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           
@@ -64,7 +64,7 @@ Remove specialism assessment entry - Manage T Level results - GOV.UK
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-specialism-entry">
                   <h2 class="govuk-fieldset__heading">
-                    Would you like to remove the occupational specialism assessment entry for summer 2023 from this learner's record?
+                    Would you like to remove the {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }} assessment entry from summer 2023 for this learner?
                   </h2>
                 </legend>
 
@@ -72,13 +72,13 @@ Remove specialism assessment entry - Manage T Level results - GOV.UK
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="remove-answer-1" name="remove-specialism-entry" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-1">
-                          Yes, remove entry to summer 2023
+                          Yes, remove the entry from summer 2023
                         </label>
                     </div>
                     <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="remove-answer-2" name="remove-specialism-entry" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="remove-answer-2">
-                          No, do not remove entry to summer 2023
+                          No, do not remove the entry from summer 2023
                         </label>
                     </div>
                   </div>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['uln'] === '1234567890' %}
+{% if data['uln'] === '1234567890' or data['uln'] === '9876543210'%}
   Registration details - Manage T Level results - GOV.UK
 {% else %}
 ULN not found - Manage T Level results - GOV.UK
@@ -57,8 +57,8 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    {% if data['withdrawn'] === 'yes' %}
-                    <a class="govuk-link" href="rejoin-registration.html">
+                    {% if data['withdrawn'] === 'yes' and data['uln'] === '9876543210' %}
+                    <a class="govuk-link" href="withdrawn-registration-options.html">
                       Change status
                     </a>
                     {% else %}
@@ -80,9 +80,12 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    {% else %}
                     <a class="govuk-link" href="change-name">
                       Change<span class="govuk-visually-hidden"> name</span>
                     </a>
+                    {% endif %}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -140,9 +143,12 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    {% else %}
                     <a class="govuk-link" href="change-dob">
                       Change<span class="govuk-visually-hidden"> date of birth</span>
                     </a>
+                    {% endif %}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -157,9 +163,12 @@ ULN not found - Manage T Level results - GOV.UK
                     {% endif %}
                   </dd>
                   <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    {% else %}
                     <a class="govuk-link" href="change-provider">
                       Change<span class="govuk-visually-hidden"> Provider (UKPRN)</span>
                     </a>
+                    {% endif %}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -170,9 +179,12 @@ ULN not found - Manage T Level results - GOV.UK
                     {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
                   </dd>
                   <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    {% else %}
                     <a class="govuk-link" href="change-core">
                       Change<span class="govuk-visually-hidden"> core</span>
                     </a>
+                    {% endif %}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -199,6 +211,8 @@ ULN not found - Manage T Level results - GOV.UK
                     <a class="govuk-link" href="change-specialism.html">
                     Change<span class="govuk-visually-hidden"> specialism</span>  
                     </a>
+                    {% elseif data['withdrawn'] === 'yes' %}
+
                     {% else %}
                     <a class="govuk-link" href="change-registration-learner-decided-specialism.html">
                       Change<span class="govuk-visually-hidden"> specialism</span>  
@@ -214,9 +228,12 @@ ULN not found - Manage T Level results - GOV.UK
                     2020/21
                   </dd>
                   <dd class="govuk-summary-list__actions">
+                    {% if data['withdrawn'] === 'yes' %}
+                    {% else %}
                     <a class="govuk-link" href="change-year-denial">
                       Change<span class="govuk-visually-hidden"> academic year</span>
                     </a>
+                    {% endif %}
                   </dd>
                 </div>
               </dl>
