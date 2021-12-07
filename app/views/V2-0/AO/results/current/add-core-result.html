@@ -15,63 +15,15 @@ Select the core result page – Manage T Level results – GOV.UK
                {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
                core results
               </h1>
-
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
-
-                         <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-              
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Provider
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
-                </dd>
-              </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  UKPRN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  T Level title
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                </dd>
-              </div>
-            </dl>
-
-
             
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="add-core-result" method="post" class="form" novalidate data-validate="add-core-result">
-            <div class="govuk-form-group govuk-!-margin-bottom-7">
+            <div class="govuk-form-group govuk-!-margin-bottom-">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      
-                    <h2 class="govuk-heading-m govuk-!-margin-top-7">Select the result for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+                    <h2 class="govuk-heading-m govuk-!-margin-top-2">Select the result for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
                     </legend>
                     <div class="govuk-radios">
@@ -126,7 +78,58 @@ Select the core result page – Manage T Level results – GOV.UK
                     </div>
                 </fieldset>
             </div>
-            <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+                        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-margin-top-4">
+
+
+                          <h2 class="govuk-heading-m govuk-!-margin-top-2">Learner's details</h2>
+
+               <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+              
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
+
         </form>
     </div>
 </div>

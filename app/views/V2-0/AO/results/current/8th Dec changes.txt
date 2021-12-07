@@ -1,4 +1,4 @@
-6th December, 2021
+8th December, 2021
 
 Results: 
 
@@ -15,3 +15,7 @@ while actions to add/change a result are titled in the column at the end under '
 - We added a details component at the bottom of the page called 'More about learner results'
 with information about the learner results in
 
+- We decided to seperate the UKPRN from the provider in 'Learner details' 
+
+- We made a business decision to leave 'Not received' in on the 'Add/change' results as users mentioned 
+that they need to revert changes 
