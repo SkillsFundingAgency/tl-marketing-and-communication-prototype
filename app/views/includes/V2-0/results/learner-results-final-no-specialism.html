@@ -3,55 +3,55 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Learner's results</h1>
+              <h1 class="govuk-heading-l">
+              {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}' results
+              </h1>
 
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
-              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                 <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+              
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                </dd>
+              </div>
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Name
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    	Frankie Thomas
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    ULN
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    1162334455
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Date of birth
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    2 August 2004
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Provider<br>(UKPRN)
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                  Barnsley College
-                  <br>
-                  (100656)
-
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    T Level title
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-	          T Level in Design, Surveying and Planning for Construction                 
-               </dd>
-                </div>
-              </dl>
+                <dt class="govuk-summary-list__key">
+                  UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
               
               <br>
 
@@ -91,7 +91,7 @@
   </tbody>
 </table>
 
-<h2 class="govuk-heading-m govuk-!-margin-top-7">Occupational specialism: not specified</h2>
+<h2 class="govuk-heading-m govuk-!-margin-top-7">Occupational specialism(s): not specified</h2>
 
 <p class="govuk-body">This learner does not have an occupational specialism registered in this system. 
 <br>
