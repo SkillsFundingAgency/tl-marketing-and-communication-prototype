@@ -13,12 +13,12 @@ Change assessment entry - Manage T Level results - GOV.UK
 
 {% block content %}
 
-              <h1 class="govuk-heading-l">Change 
+              <h1 class="govuk-heading-l">Change a result for 
                {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-               core results
+               
               </h1>
 
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+              <span class="govuk-visually-hidden">Learner's details</span>
 
                      <dl class="govuk-summary-list govuk-summary-list--no-border">
               <div class="govuk-summary-list__row">
@@ -70,16 +70,11 @@ Change assessment entry - Manage T Level results - GOV.UK
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h2 class="govuk-heading-m govuk-!-margin-top-4">Select the result for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+                    <h2 class="govuk-heading-m govuk-!-margin-top-4">Select the grade {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} received for their {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} core component</h2>
 
                     </legend>
                     <div class="govuk-radios">
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Not received" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Not received
-                          </label>
-                      </div>
+
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="A*">
                             <label class="govuk-label govuk-radios__label" for="result-answer-2a">
@@ -122,6 +117,13 @@ Change assessment entry - Manage T Level results - GOV.UK
                                 Unclassified
                             </label>
                         </div>
+                        <div class="govuk-radios__divider">or</div>
+                          <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Not received" >
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              Not received
+                          </label>
+                      </div>
                     </div>
                 </fieldset>
             </div>
