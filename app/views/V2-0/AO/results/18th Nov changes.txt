@@ -1,0 +1,23 @@
+19th November, 2021
+
+Results: 
+
+Based off the UR sessions we concluded that the Core and Specialism should be on seperate pages 
+because the user has alot of information to scroll to. 
+
+Changes: 
+
+- Logic has been added in so that when the user enters Withdrawn or Registrations it goes straight to 
+that screen 
+
+- If there is any other valid ULN it will go to the select-result-type screen where the user selects
+a core or specialism result 
+
+- Core and Specialism result pages have been created so that the user knows which screen they are on 
+
+- A button has been added next to the 'Search again' green button for if the user wants to switch 
+between the Core/Specialism results 
+
+- If the learner don't have a Specialism a scenario has been included for this 
+
+

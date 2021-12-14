@@ -12,8 +12,7 @@
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Summer 2021 design, surveying and planning 
-result added successfully
+      The summer 2021 Design, Surveying and Planning result has been added
     </h3>
   </div>
 </div>
@@ -29,8 +28,7 @@ result added successfully
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Summer 2021 design, surveying and planning 
-result changed successfully
+      The summer 2021 Design, Surveying and Planning result has been changed
     </h3>
   </div>
 </div>
@@ -46,8 +44,7 @@ result changed successfully
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Summer 2021 building services design
-result added successfully
+          The summer 2021 Building Services Design result has been added
     </h3>
   </div>
 </div>
@@ -63,8 +60,7 @@ result added successfully
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-     Summer 2021 building services design 
-result changed successfully
+          The summer 2021 Building Services Design result has been changed
     </h3>
   </div>
 </div>
@@ -130,7 +126,7 @@ result changed successfully
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Exam period</th>
       <th scope="row" class="govuk-table__header">Grade</th>
-      <th scope="row" class="govuk-table__header">Last updated</th>
+      <th scope="row" class="govuk-table__header">Last updated</th>           
       <th scope="row" class="govuk-table__header">Updated by</th>
       <th scope="row" class="govuk-table__header">Action</th>
       </td>
@@ -147,7 +143,7 @@ result changed successfully
                     {% elif data['changedResult'] === 'yes' %}
                     {{data['updateResult']}}
                     {% else %}
-                    Not received
+                    
                     {% endif %}
       </td>
             <td class="govuk-table__cell">
@@ -160,7 +156,7 @@ result changed successfully
                           {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
                     Pat Carmicheal
                     {% endif %}
-      </td>
+      </td>      
       <td class="govuk-table__cell">
                     {% if data['addedResult'] === 'yes' or (data['changedResult'] === 'yes' and data['updateResult'] != "Not received") %}
                     <a class="govuk-link" href="change-core-result">
@@ -202,7 +198,7 @@ result changed successfully
                     {% elif data['changedResultSpecialism'] === 'yes' %}
                     {{data['updateResultSpecialism']}}
                     {% else %}
-                    Not received
+                    
                     {% endif %}
       </td>
             <td class="govuk-table__cell">
@@ -219,7 +215,8 @@ result changed successfully
                     {% if data['addedResultSpecialism'] === 'yes' or (data['changedResultSpecialism'] === 'yes' and data['updateResult'] != "Not received") %}
                     <a class="govuk-link" href="change-specialism-result.html">
                       Change <span class="govuk-visually-hidden">specialism result</span>
-                    </a>                    
+                    </a>    
+                          <br>                
                     {% else %}
                      <a class="govuk-link" href="add-specialism-result">
                       Add result <span class="govuk-visually-hidden">specialism result</span>
@@ -234,25 +231,24 @@ result changed successfully
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      More about learner results
+      More about grade statuses
     </span>
   </summary>
   <div class="govuk-details__text">
-Once a grade has been entered after an appeal it is marked as 'final' and can no longer be 
-changed here. If you need to change a grade after entering an 
-appeal result, or change a grade after the deadline, please 
-<a href="mailto:someone@yoursite.com?subject=Mail from Our Site" class="govuk-link">contact us</a>.
+An overall T Level result cannot be calculated unless 
+all assessments have grades marked 'final'.
 <br>
 <br>
-If a result is marked as 'being appealed' the grade cannot be changed here. 
-An appeal outcome must be entered in the 
-<a href="/V2-0/AO/appeals/search-learner" class="govuk-link">appeals</a>
+If a result is marked as ‘pending’ the grade cannot be changed here. A 
+review or an appeal outcome must be entered in the reviews and appeals 
 section of this service.
 <br>
 <br>
-Unless an assessment has a grade and is marked as 
-final it cannot be used to calculate an overall T Level result.
-
+Once a grade has been entered after a review or an appeal it is 
+marked as ‘final’ and can no longer be changed here. If you need to change a 
+grade after entering a review or an appeal result, or change a grade 
+after the deadline, please 
+<a href="mailto: Tlevel.resultsandcertification@education.gov.uk?subject=Request to change a grade marked final" class="govuk-link">contact us</a>.
 </div>
 </details>
 

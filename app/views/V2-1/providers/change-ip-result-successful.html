@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Placement changed successfully
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Industry placement status updated successfully</h1>
+        <div class="govuk-panel__body">
+          {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}<br>
+          ULN: {{data['uln']}}
+        </div>
+      </div>
+      <p class="govuk-!-margin-top-8">
+        <a class="govuk-button" role="button" href="result-entries1">
+          Back to learner T Level record
+        </a>
+      </p>
+      <p class="govuk-body"><a href="manage-t-level-records">Back to manage learner T Level records</a></p>
+    </div>
+  </div>
+
+{% endblock %}

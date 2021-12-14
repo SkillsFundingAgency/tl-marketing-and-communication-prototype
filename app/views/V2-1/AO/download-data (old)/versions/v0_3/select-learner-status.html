@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<a href="/V2-0/AO/tlevels-dashboard.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/select-optional-columns" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="cohort">
+              Select learner status
+            </label>
+            <input name="learner-name" value="Learner status" name="learner-name" hidden="true">
+            <input name="change-learner" value="Change" name="change-learner" hidden="true">
+          </h1>
+          <div class="govuk-form-group">
+
+            <span class="govuk-hint" for="cohort">
+              Which learner statuses would you like in the download file?
+            </span>
+      
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input onclick="toggle(this);" class="govuk-checkboxes__input" id="logistics" name="learner"                 
+                                  type="checkbox" value="All" {{ checked("learner", "All") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    All 
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-2" name="learner" type="checkbox" value="Active" {{ checked("learner", "Active") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                    Active
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="support-3" name="learner" type="checkbox" value="Withdrawn" {{ checked("learner", "Withdrawn") }}>
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                    Withdrawn
+                                  </label>
+                                </div>
+          </div>
+      
+                  </div>
+
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="data-validate">
+  {
+
+    "learner": {
+      "presence": {
+        "message": "^Select which learner statuses you would like in the download file "
+      }
+    }
+
+  }
+</script>
+
+<script>
+
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+  
+
+
+{% endblock %}

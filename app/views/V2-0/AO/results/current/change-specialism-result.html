@@ -69,9 +69,14 @@ Change specialism result - Manage T Level results - GOV.UK
         <form action="change-specialism-result" method="post" class="form" novalidate data-validate="change-specialism-result">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h2 class="govuk-heading-m govuk-!-margin-top-4">Select the grade {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} received for their {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} occupational specialism</h2>
-                    </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Select the grade for summer 2021
+              </legend>      
+              </h1>    
+
+      <div id="changed-name-hint" class="govuk-hint">
+      Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}          
+</div>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-answer-2a" name="result-answer-specialism" type="radio" value="Distinction">
@@ -101,7 +106,7 @@ Change specialism result - Manage T Level results - GOV.UK
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="result-answer-1" name="result-answer-specialism" type="radio" value="Not received" >
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Not received
+                             This learner's grade has not been received
                           </label>
                       </div>
                     </div>
@@ -117,7 +122,7 @@ Change specialism result - Manage T Level results - GOV.UK
   
       "result-answer-specialism": {
         "presence": {
-          "message": "^Please select the specialism result "
+          "message": "^Please select the grade"
         }
   
       }

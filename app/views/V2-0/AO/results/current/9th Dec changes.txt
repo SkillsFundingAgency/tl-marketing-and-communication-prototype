@@ -19,3 +19,8 @@ with information about the learner results in
 
 - We made a business decision to leave 'Not received' in on the 'Add/change' results as users mentioned 
 that they need to revert changes 
+
+- Separated not received with 'or' from the grades 
+
+- We decided to change the wording 'BEING APPEALED' to 'PENDING' so that the user understands that 
+it takes into account the reviews and appeals sections.

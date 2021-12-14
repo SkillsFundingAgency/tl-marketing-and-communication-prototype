@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select optional columns
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+    <a href="/V2-0/AO/download-data/select-assessment-periods" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/check-your-data-assessments" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="optional">
+              Select optional columns
+            </label>
+            <!-- <input name="columns-name" value="Optional columns" name="columns-name" hidden="true">
+            <input name="change-optional" value="Change" name="change-optional" hidden="true"> -->
+          </h1>
+          <div class="govuk-form-group">
+            <span class="govuk-hint" for="optional">
+              The CSV download will include ULN, T Level title and registrations year by default. You an also select from the following optional data points.
+            </span>
+            <span class="govuk-hint" for="optional">
+              Which optional columns would you like to download?
+            </span>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        
+                             <div class="govuk-checkboxes__item">
+                             
+                            <input onclick="toggle(this);" class="govuk-checkboxes__input" id="optional1" name="alloptional" type="checkbox" value="All" {{ checked("alloptional", "All") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional1">
+                              All
+                            </label>
+                          </div>
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional1" name="optional" type="checkbox" value="Date of birth" {{ checked("optional", "Date of birth") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional1">
+                              Date of birth 
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional2" name="optional" type="checkbox" value="Provider" {{ checked("optional", "Provider") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional2">
+                              Provider
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional3" name="optional" type="checkbox" value="T Level title" {{ checked("optional", "T Level title") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
+                              T Level title 
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional4" name="optional" type="checkbox" value="Specialism(s)" {{ checked("optional", "Specialism(s)") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional4">
+                              Specialism(s)
+                            </label>
+                          </div>
+                        </div>
+                    
+                      </fieldset>
+                    </div>
+            </div>
+            <button class="govuk-button" onclick="check()" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+
+  {# // Saying that if it's not checked nothing will be included in the screen as it's optional #}
+
+<script>
+  function check(){
+  
+      let checkbox1 = document.getElementById("optional1").checked
+      let checkbox2 = document.getElementById("optional2").checked
+      let checkbox3 = document.getElementById("optional3").checked
+      let checkbox4 = document.getElementById("optional4").checked
+      
+      if (checkbox1 == false && checkbox2 == false && checkbox3 == false && checkbox4 == false){
+          sessionStorage.setItem("check", "no")
+      }
+  }
+  </script>
+
+
+{% endblock %}

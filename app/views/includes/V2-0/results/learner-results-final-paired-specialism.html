@@ -57,7 +57,11 @@
 
 
               <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Core: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+  <br>
+    <br>
+
+  <p class="govuk-body">This learner does not have any assessments registered for Design, Surveying and Planning (123456) for the current exam period</p>
 
   <tbody class="govuk-table__body">
 
@@ -67,7 +71,6 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -76,6 +79,10 @@
       </td>
       <td class="govuk-table__cell">
                     D
+      &nbsp
+      <strong class="govuk-tag govuk-tag--pink no-wrap">
+      FINAL
+      </strong>  
       </td>
             <td class="govuk-table__cell">
 
@@ -83,11 +90,6 @@
       </td>
             <td class="govuk-table__cell">
                     Pat Carmicheal
-      </td>
-      <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--pink">
-                      final
-                    </strong>
       </td>
     </tr>
   </tbody>
@@ -98,7 +100,11 @@
 
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  <br>
+    <br>
+
+  <p class="govuk-body">This learner does not have any assessments registered for Building Services Design (ZT0121) for the current exam period</p>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -106,7 +112,6 @@
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -115,6 +120,10 @@
       </td>
       <td class="govuk-table__cell">
                     Pass
+       &nbsp
+      <strong class="govuk-tag govuk-tag--pink no-wrap">
+      FINAL
+      </strong>  
       </td>
             <td class="govuk-table__cell">
                     4 June 2021
@@ -122,11 +131,6 @@
             <td class="govuk-table__cell">
                     Pat Carmicheal
 
-      </td>
-      <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--pink">
-                      final
-                    </strong>
       </td>
     </tr>
 </table>
@@ -135,15 +139,20 @@
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialismCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSecondSpecialismCode'] }}  </h2>
+  <br>
+    <br>
+
+  <p class="govuk-body">This learner does not have any assessments registered for Civil Engineering (ZT0111) for the current exam period</p>
+
 
   <tbody class="govuk-table__body">
+  
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Exam period</th>
       <th scope="row" class="govuk-table__header">Grade</th>
       <th scope="row" class="govuk-table__header">Last updated</th>
       <th scope="row" class="govuk-table__header">Updated by</th>
-      <th scope="row" class="govuk-table__header">Status</th>
       </td>
     </tr>
     <tr class="govuk-table__row">
@@ -152,6 +161,10 @@
       </td>
       <td class="govuk-table__cell">
                     Pass
+      &nbsp
+      <strong class="govuk-tag govuk-tag--pink no-wrap">
+      FINAL
+      </strong>  
       </td>
             <td class="govuk-table__cell">
                     4 June 2021
@@ -159,11 +172,6 @@
             <td class="govuk-table__cell">
                     Pat Carmicheal
 
-      </td>
-      <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--pink">
-                      final
-                    </strong>
       </td>
     </tr>
 </table>
@@ -173,25 +181,23 @@
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      More about learner results
+      More about grade statuses
     </span>
   </summary>
   <div class="govuk-details__text">
-Once a grade has been entered after an appeal it is marked as 'final' and can no longer be 
-changed here. If you need to change a grade after entering an 
-appeal result, or change a grade after the deadline, please 
-<a href="mailto:someone@yoursite.com?subject=Mail from Our Site" class="govuk-link">contact us</a>.
+An overall T&nbsp;Level result cannot be calculated unless all assessments have grades marked 'final'.
 <br>
 <br>
-If a result is marked as 'being appealed' the grade cannot be changed here. 
-An appeal outcome must be entered in the 
-<a href="/V2-0/AO/appeals/search-learner" class="govuk-link">appeals</a>
+If a result is marked as ‘pending’ the grade cannot be changed here. A 
+review or an appeal outcome must be entered in the reviews and appeals 
 section of this service.
 <br>
 <br>
-Unless an assessment has a grade and is marked as 
-final it cannot be used to calculate an overall T Level result.
-
+Once a grade has been entered after a review or an appeal it is 
+marked as ‘final’ and can no longer be changed here. If you need to change a 
+grade after entering a review or an appeal result, or change a grade 
+after the deadline, please 
+<a href="mailto: Tlevel.resultsandcertification@education.gov.uk?subject=Request to change a grade marked final" class="govuk-link">contact us</a>.
 </div>
 </details>
 <br>

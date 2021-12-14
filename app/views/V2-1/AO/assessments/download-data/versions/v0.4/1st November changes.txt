@@ -1,0 +1,25 @@
+1st November, 2021
+
+Scenario:
+As an AO data admin/manager, I need to check what data has been 
+uploaded in the system so I be reassured what has been uploaded 
+and identify issues upfront.
+
+Changes:
+
+- On the start page a list is created to tell the user what they will download
+
+- 'All' has been added onto Optional Columns to allow the user to select all options 
+at once. 
+
+- On the check-your-data screen, the title text has been changed to 'Check-your-selections'.
+Other text has changed to 'Click submit to generate a CSV file containing the data 
+detailed above. 
+
+- The 'Submit-your-data' button has been changed to 'Submit' with a start again button
+added at this stage for the user to go back to the Start screen to start the process again. 
+
+- A Download data section has been created in Assessments, giving an example of what it 
+would be like if the user download the data in an individual section. v0.4
+
+

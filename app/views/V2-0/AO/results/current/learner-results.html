@@ -13,17 +13,14 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '1162334257' or data['uln'] === '1169334253' %}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '1162334257' or data['uln'] === '1169334253' or data['uln'] === '8642135790' %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/results/student-results">Results</a>
     </li>
   </ol>
 </div>
@@ -37,10 +34,11 @@ ULN not found - Manage T Level results - GOV.UK
 {% if data['uln'] === '9876543210' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+              <h1 class="govuk-heading-l">
+               {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}'s results
+              </h1>
 
-              <h1 class="govuk-heading-l">Learner results</h1>
-
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+              <span class="govuk-visually-hidden">Learner's details</span>
 
               <dl class="govuk-summary-list govuk-summary-list--no-border">
                 <div class="govuk-summary-list__row">
@@ -85,38 +83,42 @@ ULN not found - Manage T Level results - GOV.UK
                 </div>
               </dl>
 
-              <h2 class="govuk-heading-m">Core: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+             
+              <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Core: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Exam period
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Grade
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {% if data['changedResult'] === 'yes' %}
-                    {{data['updateResult']}}
-                    {% else %}
-                    {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
-                    {% endif %}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-core-result.html">
-                      Change <span class="govuk-visually-hidden">core result</span>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
+  <tbody class="govuk-table__body">
 
+    <tr class="govuk-table__row">
+    
+      <th scope="row" class="govuk-table__header">Exam period</th>
+      <th scope="row" class="govuk-table__header">Grade</th>
+      <th scope="row" class="govuk-table__header">Last updated</th>
+      <th scope="row" class="govuk-table__header">Updated by</th>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+      {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+      </td>
+       <td class="govuk-table__cell">
+        D
+      &nbsp
+      <strong class="govuk-tag govuk-tag--pink no-wrap">
+      FINAL
+      </strong>      
+      </td>
+            <td class="govuk-table__cell">
+
+                    4 June 2021
+      </td>
+            <td class="govuk-table__cell">
+                    Pat Carmicheal
+      </td>
+    </tr>
+  </tbody>
+</table>
+              
               
   <div class="govuk-button-group">
 
