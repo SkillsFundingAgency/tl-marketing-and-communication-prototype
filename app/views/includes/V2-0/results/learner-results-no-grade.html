@@ -68,7 +68,7 @@
                     {% endif %}
 
               <h1 class="govuk-heading-l">
-              {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}'s results
+              {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}'s results
               </h1>
 
               <span class="govuk-visually-hidden">Learner's details</span>
@@ -88,7 +88,7 @@
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -96,7 +96,7 @@
                   Provider
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
                 </dd>
               </div>
                 <div class="govuk-summary-list__row">
@@ -104,7 +104,7 @@
                   UKPRN
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -112,7 +112,7 @@
                   T Level title
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
                 </dd>
               </div>
             </dl>
@@ -120,7 +120,7 @@
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -134,7 +134,7 @@
     <tr class="govuk-table__row">
       </td>
             <td class="govuk-table__cell">
-      {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+      {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
 
       </td>
       <td class="govuk-table__cell">
@@ -175,7 +175,7 @@
 <br>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+  <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -189,7 +189,7 @@
     <tr class="govuk-table__row">
 
             <td class="govuk-table__cell">
-       {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+       {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
 
       </td>
       <td class="govuk-table__cell">
