@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Check and submit - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Register a new learner</span>
+
+            <h1 class="govuk-heading-l">
+              Check and submit
+            </h1>
+
+            <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['uln']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider <br>(UKPRN)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['provider-changed'] === "yes" %}
+                  {{ data['provider-change'] }}
+                  {% else %}
+                  {{ data['provider'] }}
+                  {% endif %} 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q4-provider">
+                    Change<span class="govuk-visually-hidden"> Provider</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Core <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['core-changed'] === "yes" %}
+                  {{ data['core-change'] }}
+                  {% else %}
+                  {{ data['core'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q5-core">
+                    Change<span class="govuk-visually-hidden"> core</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Specialism(s) <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['specialism']==="no" %}
+                  {% elseif data['add-specialism-changed'] ==="yes"%}
+                  {{ data['change-chosen-specialism'] }}
+                  {% else %}
+                  {{ data['chosen-specialism'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  {% if data['specialism']==="no" %}
+                  <a class="govuk-link" href="change-registration-q6b-specialism">
+                    Change<span class="govuk-visually-hidden"> occupational specialism</span>
+                  </a>
+                  {% else %}
+                  <a class="govuk-link" href="change-registration-q6-specialism">
+                    Change<span class="govuk-visually-hidden"> occupational specialism</span>
+                  </a>
+                  {% endif %}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Academic year
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['year'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q7-year">
+                    Change<span class="govuk-visually-hidden"> academic year</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+
+            <a class="govuk-button govuk-!-margin-top-6" role="button " href="registration-successful">Submit</a>
+
+
+            
+      </div>
+    </div>
+
+{% endblock %}

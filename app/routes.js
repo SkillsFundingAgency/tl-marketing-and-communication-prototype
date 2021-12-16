@@ -355,6 +355,22 @@ router.post('/V1-0/AO/registrations/manage/confirm-withdraw-answer', function (r
   }
 })
 
+//Withdrawn learner option - rejoin or register new
+router.post('/V1-0/AO/registrations/manage/withdrawn-option-answer', function (req, res) {
+
+  let withdrawnOption = req.session.data['withdrawn-answer']
+
+
+  if (withdrawnOption === 'reactivate') {
+    res.redirect('/V1-0/AO/registrations/manage/rejoin-registration')
+
+  } else{
+    
+    res.redirect('/V1-0/AO/registrations/manage/new-course/provider-new-course')
+  }
+  
+})
+
 //Rejoin learner registration
 router.post('/V1-0/AO/registrations/manage/confirm-rejoin-answer', function (req, res) {
 
@@ -385,6 +401,21 @@ router.post('/V1-0/AO/registrations/manage/confirm-delete-answer', function (req
     
     res.redirect('/V1-0/AO/registrations/manage/registration-details')
   }
+})
+
+//Register new course - specialism routes
+
+router.post('/V1-0/AO/registrations/manage/new-course/new-course-specialism-answer', function (req, res) {
+
+  let addSpecialism = req.session.data['update-specialism-answer']
+  if (addSpecialism === 'yes') {
+
+    res.redirect('/V1-0/AO/registrations/manage/new-course/specialism-new-course')
+
+  } else{
+    res.redirect('/V1-0/AO/registrations/manage/new-course/academic-year-new-course')
+  }
+
 })
 
 

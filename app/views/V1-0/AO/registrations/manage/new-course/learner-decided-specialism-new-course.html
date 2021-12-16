@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register a learner on a new course - Has the learner decided on the specialism page – Manage T Level results – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="new-course-specialism-answer" method="post" class="form" novalidate data-validate="change-specialism-status-validation">
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset" aria-describedby="withdraw-tlevel-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Register a learner on a new course</span>
+            <h1 class="govuk-fieldset__heading">
+              Has the learner decided on the specialism?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="update-specialism-answer-1" name="update-specialism-answer" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="update-specialism-answer-1">
+                Yes, add the specialism now
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="update-specialism-answer-2" name="update-specialism-answer" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="update-specialism-answer-2">
+                No, add the specialism later
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="change-specialism-status-validation">
+  {
+
+    "update-specialism-answer": {
+      "presence": {
+        "message": "^Select yes if the learner has decided on the specialism "
+      }
+
+    }
+
+  }
+</script>
+
+
+{% endblock %}

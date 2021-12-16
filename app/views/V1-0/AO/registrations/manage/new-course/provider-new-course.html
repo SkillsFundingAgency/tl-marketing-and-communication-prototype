@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register a learner on a new course - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/V1-0/AO/registrations/manage/new-course/core-new-course" method="post" novalidate data-validate="select-provider-validation">
+            <div class="govuk-form-group">
+                
+                    <span class="govuk-caption-xl">Register a learner on a new course</span>
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+                        Select the provider
+                      </label>
+                    </h1>
+
+                    <div class="govuk-form-group">
+                        <select class="govuk-select" id="provider" name="provider">
+                            <option value="" selected>Select one</option>
+                            <option value="Barnsley College (12345678)">Barnsley College (12345678)</option>
+                            <option value="City of Stoke-on-Trent Sixth Form College (34567812)">City of Stoke-on-Trent Sixth Form College (34567812)</option>
+                            <option value="New City College (90123456)">New City College (90123456)</option>
+                            <option value="Scarborough Sixth Form College (77344478)">Scarborough Sixth Form College (77344478)</option>
+                          </select>
+ 
+                    </div>
+                    
+            </div>
+
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Cannot find one of your providers?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                    If you cannot find one of your providers in the list above, ask your Providers Editor to add it in the 'Providers' section of this service.
+                </div>
+              </details>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="select-provider-validation">
+  {
+    "provider": {
+
+      "presence": {
+      
+      "message": "^Please select a provider"
+
+      }
+    }
+  }
+</script>
+
+{% endblock %}
