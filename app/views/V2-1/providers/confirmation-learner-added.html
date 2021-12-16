@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  SEND updated successfully
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Learner T Level record added successfully</h1>
+      <div class="govuk-panel__body">
+        {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}<br>
+        ULN: {{ data['uln'] }}
+      </div>
+    </div>
+
+    <p class="govuk-!-margin-top-8"><a class="govuk-button" role="button" href="add-learner-q1-uln">Add another learner T Level record</a></p>
+
+    <p class="govuk-body"><a href="student-results">Back to manage learner T Level records</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

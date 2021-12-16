@@ -11,72 +11,81 @@ Select the core result page – Manage T Level results – GOV.UK
 {% block content %}
 
 
-              <h1 class="govuk-heading-l">Add the core result</h1>
+              <h1 class="govuk-heading-l">Add a result for 
+               {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
 
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+              </h1>
 
-              <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Name
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    ULN
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['uln'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Date of birth
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Provider<br>(UKPRN)
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    T Level title
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                  </dd>
-                </div>
-              </dl>
+              <span class="govuk-visually-hidden">Learner's details</span>
 
-<br>
 
-<div class="govuk-grid-row">
+               <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+              
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
+
+
+
+
+
+
+          <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="add-core-result" method="post" class="form" novalidate data-validate="add-core-result">
-            <div class="govuk-form-group govuk-!-margin-bottom-7">
+            <div class="govuk-form-group govuk-!-margin-bottom-">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      
-                    <h2 class="govuk-heading-m govuk-!-margin-top-7">Select the result for {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
-                    </legend>
+                
+      <h1 class="govuk-fieldset__heading">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Select the grade for summer 2021
+              </legend>      
+              </h1>    
+
+      <div id="changed-name-hint" class="govuk-hint">
+Core component: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}          
+</div>
                     <div class="govuk-radios">
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Not received">
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Not received
-                          </label>
-                      </div>
+
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="A*">
                             <label class="govuk-label govuk-radios__label" for="result-answer-2a">
@@ -119,10 +128,20 @@ Select the core result page – Manage T Level results – GOV.UK
                                 Unclassified
                             </label>
                         </div>
+                              <div class="govuk-radios__divider">or</div>
+                 <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Not received">
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              This learner's grade has not been received
+                          </label>
+                      </div>
                     </div>
                 </fieldset>
             </div>
-            <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+                        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+                        
         </form>
     </div>
 </div>
@@ -132,7 +151,7 @@ Select the core result page – Manage T Level results – GOV.UK
   
       "result-answer": {
         "presence": {
-          "message": "^Please select the core result "
+          "message": "^Please select the grade"
         }
   
       }

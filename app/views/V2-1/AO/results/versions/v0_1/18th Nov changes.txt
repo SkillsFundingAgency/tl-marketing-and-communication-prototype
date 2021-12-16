@@ -1,0 +1,45 @@
+19th November, 2021
+
+Results: 
+
+Details page will show all exam periods the learner has entered for Core & Specialism
+
+Based off the UR sessions we concluded that the Core and Specialism should be on seperate pages 
+because the user has alot of information to scroll to. 
+
+Changes: 
+
+- Logic has been added in so that when the user enters Withdrawn or Registrations it goes straight to 
+that screen 
+
+- If there is any other valid ULN it will go to the select-result-type screen where the user selects
+a core or specialism result 
+
+- Core and Specialism result pages have been created so that the user knows which screen they are on 
+
+- A button has been added next to the 'Search again' green button for if the user wants to switch 
+between the Core/Specialism results 
+
+- If the learner don't have a Specialism, the user can still access the specialism page but a 
+notification would appear 
+
+- The success page has changed so that when the learner adds or changes a result a notification 
+appears on the page instead of having a separate page 
+
+- If there are paired Specialisms we had two ideas. One idea was having a screen before the 
+user gets to the specialism page where they can choose which specialism they'd like. The other 
+is a tab menu where they can switch between specialisms 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

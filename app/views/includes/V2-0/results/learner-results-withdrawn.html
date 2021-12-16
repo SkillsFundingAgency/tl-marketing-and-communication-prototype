@@ -3,63 +3,59 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-            <h1 class="govuk-heading-l"> Learner has been withdrawn by the exam board</h1>
+            <h1 class="govuk-heading-l">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }} is withdrawn</h1>
 
-            <div class="govuk-inset-text">
-              This learner's registration has been withdrawn. You cannot change or add a result. Please speak to your organisation's registrations editor to change this learner's status.
+<p class="govuk-body">This learner’s registration has been withdrawn. You cannot change or add a result  Please speak to your organisation’s registrations editor to change this learner’s  status.
+</p>
+
+<br>
+
+               <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
               
-            </div>
-
-          <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
-
-
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{data['uln']}}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Provider <br>(UKPRN)
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                T Level
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-              </dd>
-            </div>
-          </dl>
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
 
 
             
-
           <div class="govuk-button-group">
             <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
             <a class="govuk-button govuk-button--secondary" role="button" href="/V1-0/AO/tlevels-dashboard.html">Back to home</a>
