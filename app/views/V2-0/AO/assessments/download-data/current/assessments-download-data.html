@@ -4,7 +4,6 @@
 Download data - Assessments - Manage T Level results - GOV.UK
 {% endblock %}
 
-<link rel="stylesheet" href="/stylesheets/development.css">
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
@@ -16,49 +15,49 @@ Download data - Assessments - Manage T Level results - GOV.UK
       <a class="govuk-breadcrumbs__link" href="/V2-0/AO/assessments/assessments-dashboard.html">Assessments</a>
     </li>
   </ol>
-</div>{% endblock %}
+</div>
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/V2-0/AO/tlevels-dashboard" method="post" novalidate data-validate="search-for-learner-validation">
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+  <div class="govuk-grid-column-two-thirds">
 
-                    <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-heading-l">
+      Download assessments data
+    </h1>
 
-                          <h1 class="govuk-fieldset__heading">
-                            Download assessments data
-                          </h1>
-                        </legend>
-
-                      </fieldset>
-                    </div>
-
-                    <div class="govuk-grid-row">
-
-                      <div class="govuk-grid-column-one-quarter">
-                        <img src="/public/images/document-image.png" alt="Document-image">
-                      </div>
-                      <div class="govuk-grid-column-three-quarters">
-                        <h1 class="govuk-heading-s">Core components
-                        <br>
-                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
-                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2021-11-18_16-38_11_core_assessments.csv">Core_assessments.CSV, 295 bytes</a>
-                      </h1>
-                      <h1 class="govuk-heading-s">Occupational specialisms
-                        <a href="data:text/csv;charset=utf-8,ULN,Core code,Core assessment entry,Specialism code(s),Specialism assessment entry	
-                          22222222222222,60358294,Summer 2021,22222222222223,60358294,Summer 2021,22222222222224,60358294,Summer 2021" download="2021-11-18_16-38_11_specialism_assessments.csv">Specialism_assessments.CSV, 235 bytes</a>
-                      </h1>
-                       </div>
-                    </div>
-            </div>
-            <button class="govuk-button" data-module="govuk-button">Back to home</button>
-        </form>
+    <div class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+      <div class="attachment__thumbnail">
+        <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true"
+          href="">
+          <svg class="attachment__thumbnail-image thumbnail-image-large" version="1.1" viewBox="0 0 99 140" width="99" height="140"
+            aria-hidden="true">
+            <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"></path>
+            <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
+              stroke-width="0"></path>
+            <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none"
+              stroke-miterlimit="10" stroke-width="2"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="attachment__details">
+        <h3 class="govuk-heading-m">
+          <a class="govuk-link" target="_self"
+            href="">Core assessments data (CSV, 0.295KB)</a></h3>
+        <p class="govuk-body-s"> <span></span> </p>
+        <p class="govuk-body-s"><span></span><span></span></p>
+      </div>
     </div>
+
+
+  </div>
+</div>
+
+
+
+
+  <a class="govuk-button" href="">Back to home</a>
 </div>
 
 
