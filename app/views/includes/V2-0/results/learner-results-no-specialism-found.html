@@ -1,66 +1,66 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Specialism results</h1>
+    <h1 class="govuk-heading-l">Specialism results</h1>
 
-              <div class="govuk-inset-text">
-                This learner hasn't decided on the specialism.
-              </div>
-
-              <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
-
-                   <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-              
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Provider
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
-                </dd>
-              </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  UKPRN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  T Level title
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
-                </dd>
-              </div>
-            </dl>
-               <div class="govuk-button-group">
-              <a class="govuk-button" href="search-learner">Search again</a>
-     <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/core-results" data-module="govuk-button">
-    View core results
-  </a>
+    <div class="govuk-inset-text">
+      This learner hasn't decided on the specialism.
     </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border" aria-label="Learners details">
+      <div class="govuk-summary-list__row">
+
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['uln'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UKPRN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+        </dd>
+      </div>
+    </dl>
+    <div class="govuk-button-group">
+      <a class="govuk-button" href="search-learner">Search again</a>
+      <a class="govuk-button govuk-button--secondary" href="/V2-0/AO/results/core-results" data-module="govuk-button">
+        View core results
+      </a>
     </div>
+  </div>
 </div>
 
 {% endblock %}
