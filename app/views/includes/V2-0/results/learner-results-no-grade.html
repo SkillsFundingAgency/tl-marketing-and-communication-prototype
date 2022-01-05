@@ -117,24 +117,26 @@
       </div>
     </dl>
 
-    <table class="govuk-table govuk-!-margin-top-9">
+    <table class="govuk-table govuk-!-margin-top-9 responsive-table" role="table">
       <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{
         data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
         data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
       <tbody class="govuk-table__body">
+        <thead role="rowgroup">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Exam period</th>
+            <th scope="row" class="govuk-table__header">Grade</th>
+            <th scope="row" class="govuk-table__header">Last updated</th>
+            <th scope="row" class="govuk-table__header">Updated by</th>
+            <th scope="row" class="govuk-table__header">Action</th>
+          </tr>
+      </thead>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Exam period</th>
-          <th scope="row" class="govuk-table__header">Grade</th>
-          <th scope="row" class="govuk-table__header">Last updated</th>
-          <th scope="row" class="govuk-table__header">Updated by</th>
-          <th scope="row" class="govuk-table__header">Action</th>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Exam period</span>
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Grade</span>
             {% if data['addedResult'] === 'yes' %}
             {{data['newResult']}}
             {% elif data['changedResult'] === 'yes' %}
@@ -143,17 +145,17 @@
 
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Last updated</span>
             {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
             4 June 2021
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Updated by</span>
             {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
             Pat Carmicheal
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Action</span>
             {% if data['addedResult'] === 'yes' or (data['changedResult'] === 'yes' and data['updateResult'] != "Not
             received") %}
             <a class="govuk-link" href="change-core-result">
@@ -169,26 +171,27 @@
       </tbody>
     </table>
 
-    <table class="govuk-table govuk-!-margin-top-9">
+    <table class="govuk-table govuk-!-margin-top-9 responsive-table" role="table">
       <caption class="govuk-table__caption govuk-table__caption--m">Occupational specialism: {{
         data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
         data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
 
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Exam period</th>
-          <th scope="row" class="govuk-table__header">Grade</th>
-          <th scope="row" class="govuk-table__header">Last updated</th>
-          <th scope="row" class="govuk-table__header">Updated by</th>
-          <th scope="row" class="govuk-table__header">Action</th>
-          </td>
-        </tr>
+        <thead role="rowgroup">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Exam period</th>
+            <th scope="row" class="govuk-table__header">Grade</th>
+            <th scope="row" class="govuk-table__header">Last updated</th>
+            <th scope="row" class="govuk-table__header">Updated by</th>
+            <th scope="row" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
         <tr class="govuk-table__row">
 
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Exam period</span>
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Grade</span>
             {% if data['addedResultSpecialism'] === 'yes' %}
             {{data['newResultSpecialism']}}
             {% elif data['changedResultSpecialism'] === 'yes' %}
@@ -196,17 +199,17 @@
             {% else %}
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Last updated</span>
             {% if data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
             4 June 2021
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Updated by</span>
             {% if data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
             Pat Carmicheal
             {% endif %}
           </td>
-          <td class="govuk-table__cell">
+          <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Action</span>
             {% if data['addedResultSpecialism'] === 'yes' or (data['changedResultSpecialism'] === 'yes' and
             data['updateResult'] != "Not received") %}
             <a class="govuk-link" href="change-specialism-result.html">
@@ -223,7 +226,9 @@
       </tbody>
     </table>
 
-    <details class="govuk-details" data-module="govuk-details">
+    
+
+    <details class="govuk-details govuk-!-margin-top-7" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
           More about grade statuses
