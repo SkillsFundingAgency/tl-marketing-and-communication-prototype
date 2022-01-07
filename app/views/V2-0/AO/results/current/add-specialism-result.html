@@ -6,121 +6,120 @@ Select the specialism result – Manage T Level results – GOV.UK
 
 {% block beforeContent %}
 {{ govukBackLink({
-    text: "Back",
-    href: "learner-results"
-  }) }}
+text: "Back",
+href: "learner-results"
+}) }}
 {% endblock %}
 
 {% block content %}
-
-              <h1 class="govuk-heading-l">Add a result for 
-               {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-               
-              </h1>
-
-              <span class="govuk-visually-hidden">Learner's details</span>
-
-                         <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-              
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date of birth
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Provider
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
-                </dd>
-              </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  UKPRN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  T Level title
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
-                </dd>
-              </div>
-            </dl>
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form action="add-specialism-result" method="post" class="form" novalidate data-validate="add-specialism-result">
-            <div class="govuk-form-group govuk-!-margin-bottom-7">
-                <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Select the grade for summer 2021
-              </legend>      
-              </h1>    
+  <div class="govuk-grid-column-two-thirds">
+    <form action="add-specialism-result" method="post" class="form" novalidate data-validate="add-specialism-result">
+      
+      <h1 class="govuk-heading-l">Add a result for
+        {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
 
-      <div id="changed-name-hint" class="govuk-hint">
-      Occupational specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}          
-</div>
-                    <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2a" name="result-answer-specialism" type="radio" value="Distinction">
-                            <label class="govuk-label govuk-radios__label" for="result-answer-2a">
-                                Distinction
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2" name="result-answer-specialism" type="radio" value="Merit" >
-                            <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                                Merit
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-3" name="result-answer-specialism" type="radio" value="Pass">
-                            <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                                Pass
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-4" name="result-answer-specialism" type="radio" value="Ungraded" >
-                            <label class="govuk-label govuk-radios__label" for="result-answer-4">
-                                Ungraded
-                            </label>
-                        </div>
-                        <div class="govuk-radios__divider">or</div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer-specialism" type="radio" value="Not received">
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              This learner's grade has not been received
-                          </label>
-                      </div>
-                    </div>
-                </fieldset>
+      </h1>
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border" aria-label="Learners details">
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            UKPRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T Level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+          </dd>
+        </div>
+      </dl>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="add-specialism-result">
+            <h2 class="govuk-fieldset__heading">
+              Select the grade for summer 2021
+            </h2>
+          </legend>
+
+          <div id="occupational-specialism-hint" class="govuk-hint">
+            Occupational specialism: {{
+              data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+              data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }}
+          </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="specialism-answer-1" name="add-specialism-result" type="radio"
+                value="Distinction">
+              <label class="govuk-label govuk-radios__label" for="specialism-answer-1">
+                Distinction
+              </label>
             </div>
-            <button class="govuk-button" data-module="govuk-button">Submit</button>
-        </form>
-    </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="specialism-answer-2" name="add-specialism-result" type="radio"
+                value="Merit">
+              <label class="govuk-label govuk-radios__label" for="specialism-answer-2">
+                Merit
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="specialism-answer-3" name="add-specialism-result" type="radio"
+                value="Pass">
+              <label class="govuk-label govuk-radios__label" for="specialism-answer-3">
+                Pass
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="specialism-answer-4" name="add-specialism-result" type="radio"
+                value="Ungraded">
+              <label class="govuk-label govuk-radios__label" for="specialism-answer-4">
+                Ungraded
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+    </form>
+  </div>
 </div>
 
 <script type="application/json" id="add-specialism-result">
     {
   
-      "result-answer-specialism": {
+      "add-specialism-result": {
         "presence": {
           "message": "^Please select the grade"
         }

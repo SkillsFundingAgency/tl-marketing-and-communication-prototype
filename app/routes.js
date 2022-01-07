@@ -986,7 +986,7 @@ router.post('/V2-0/AO/appeals/exceptions/exceptions-process-put-on-appeal', func
 
 // Add core result - Results
 router.post('/V2-0/AO/results/current/add-core-result', function (req, res) {
-  let addResult = req.session.data['result-answer']
+  let addResult = req.session.data['add-core-result']
 
   req.session.data['addedResult'] = "yes"
   req.session.data['newResult'] = addResult
@@ -1001,7 +1001,7 @@ router.post('/V2-0/AO/results/current/add-core-result', function (req, res) {
 
 //Change core result - Results
 router.post('/V2-0/AO/results/current/change-core-result', function (req, res) {
-  let changeResult = req.session.data['result-answer']
+  let changeResult = req.session.data['change-core-result']
 
   req.session.data['changedResult'] = "yes"
   req.session.data['updateResult'] = changeResult
@@ -1019,7 +1019,7 @@ router.post('/V2-0/AO/results/current/change-core-result', function (req, res) {
 
 // Add specialism result - Results
 router.post('/V2-0/AO/results/current/add-specialism-result', function (req, res) {
-  let addResult = req.session.data['result-answer-specialism']
+  let addResult = req.session.data['add-specialism-result']
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
@@ -1034,7 +1034,7 @@ router.post('/V2-0/AO/results/current/add-specialism-result', function (req, res
 
 //Change specialism result - Results
 router.post('/V2-0/AO/results/current/change-specialism-result', function (req, res) {
-  let changeResult = req.session.data['result-answer-specialism']
+  let changeResult = req.session.data['change-specialism-result']
 
   req.session.data['changedResultSpecialism'] = "yes"
   req.session.data['updateResultSpecialism'] = changeResult
