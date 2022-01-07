@@ -989,6 +989,7 @@ router.post('/V2-0/AO/results/current/add-core-result', function (req, res) {
   let addResult = req.session.data['add-core-result']
 
   req.session.data['addedResult'] = "yes"
+  req.session.data['showBannerResults'] = "yes"
   req.session.data['newResult'] = addResult
   req.session.data['addCoreResultConfirmation'] = "yes"
   req.session.data['updateCoreResultConfirmation'] = null
@@ -1005,6 +1006,7 @@ router.post('/V2-0/AO/results/current/change-core-result', function (req, res) {
 
   req.session.data['changedResult'] = "yes"
   req.session.data['updateResult'] = changeResult
+  req.session.data['showBannerResults'] = "yes"
   req.session.data['addedResult'] = null
   req.session.data['updateCoreResultConfirmation'] = "yes"
   req.session.data['addCoreResultConfirmation'] = null
@@ -1023,6 +1025,7 @@ router.post('/V2-0/AO/results/current/add-specialism-result', function (req, res
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
+  req.session.data['showBannerResults'] = "yes"
   req.session.data['addSpecialismResultConfirmation'] = "yes"
   req.session.data['updateSpecialismResultConfirmation'] = null
   req.session.data['addCoreResultConfirmation'] = null
@@ -1038,6 +1041,7 @@ router.post('/V2-0/AO/results/current/change-specialism-result', function (req, 
 
   req.session.data['changedResultSpecialism'] = "yes"
   req.session.data['updateResultSpecialism'] = changeResult
+  req.session.data['showBannerResults'] = "yes"
   req.session.data['addedResultSpecialism'] = null
   req.session.data['updateSpecialismResultConfirmation'] = "yes"
   req.session.data['addSpecialismResultConfirmation'] = null
@@ -1061,7 +1065,6 @@ router.post('/V2-0/AO/results/current/change-specialism-result', function (req, 
 
 //Search Learner - Results
 router.post('/search-learner', function (req, res) {
-  // Make a variable and give it the value from 'how-many-balls'
   let uln = req.session.data['uln']
   if (uln === '1231231231' && '8642135790')
   {
@@ -1077,7 +1080,7 @@ router.post('/search-learner', function (req, res) {
   } 
 
   else {
-
+    req.session.data['showBannerResults'] = "no"
     res.redirect('/V2-0/AO/results/current/learner-results')
     
   }

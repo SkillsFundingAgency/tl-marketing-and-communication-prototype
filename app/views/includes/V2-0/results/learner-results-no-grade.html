@@ -2,72 +2,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    {% if data['addCoreResultConfirmation'] === 'yes' %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The summer 2021 Design, Surveying and Planning result has been added
-        </h3>
-      </div>
-    </div>
-
+    {% if data['showBannerResults'] === 'yes' %}
+    {% include "includes/V2-0/results/results-success-messages.html" %}
+    {% else %}
     {% endif %}
+  </div>
+</div>
 
-    {% if data['updateCoreResultConfirmation'] === 'yes' %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The summer 2021 Design, Surveying and Planning result has been changed
-        </h3>
-      </div>
-    </div>
-
-    {% endif %}
-
-    {% if data['addSpecialismResultConfirmation'] === 'yes' %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The summer 2021 Building Services Design result has been added
-        </h3>
-      </div>
-    </div>
-
-    {% endif %}
-
-    {% if data['updateSpecialismResultConfirmation'] === 'yes' %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          The summer 2021 Building Services Design result has been changed
-        </h3>
-      </div>
-    </div>
-    {% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-l">
       {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}'s results
@@ -131,7 +74,7 @@
             <th scope="row" class="govuk-table__header">Updated by</th>
             <th scope="row" class="govuk-table__header">Action</th>
           </tr>
-      </thead>
+        </thead>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Exam period</span>
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
@@ -225,7 +168,7 @@
       </tbody>
     </table>
 
-    
+
 
     <details class="govuk-details govuk-!-margin-top-5" data-module="govuk-details">
       <summary class="govuk-details__summary">
