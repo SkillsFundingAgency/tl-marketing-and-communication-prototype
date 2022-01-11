@@ -1,4 +1,4 @@
-
+module.exports = function(router) {
 
 const version = 'V2-0'
 
@@ -635,3 +635,4 @@ router.post('/assessment-periods-answer', function (req, res) {
   // }
 
 })
+}

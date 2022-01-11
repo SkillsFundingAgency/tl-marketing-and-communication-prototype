@@ -1,3 +1,5 @@
+module.exports = function(router) {
+
 const version = 'V1-0'
 
 //' + version + ' routes
@@ -666,3 +668,4 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
     }
   
   })
+}
