@@ -2,7 +2,7 @@
   <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
 
 
-  {% if data['core-assessment-entry-added'] === "yes" %}
+  {% if data['core-assessment-entry-added'] === "yes" or data['uln'] === "1234567891" %}
 
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">

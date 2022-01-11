@@ -35,7 +35,7 @@ ULN not found - Manage T Level results - GOV.UK
 {% if data['uln'] === '9876543210' and data['deleted'] === 'yes' %}
 {% include "includes/V2-0/registrations/search-for-learner-ULN-not-found.html" %}
 
-{% elseif data['uln'] === '1234567890' or data['uln'] === '1231231231' or data['uln'] === '9876543210' %}
+{% elseif data['uln'] === '1234567890' or data['uln'] === '1231231231' or data['uln'] === '9876543210' or data['uln'] === '1234567891'%}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -225,6 +225,10 @@ ULN not found - Manage T Level results - GOV.UK
                     Change<span class="govuk-visually-hidden"> specialism</span>  
                     </a>
                     {% elseif data['withdrawn'] === 'yes' or data['uln'] === '1231231231'%}
+                    {% elseif data['uln'] === '1234567891'%}
+                    <a class="govuk-link" href="registration-specialism-change-restriction.html">
+                      Change<span class="govuk-visually-hidden"> specialism</span>  
+                      </a>
                     {% else %}
                     <a class="govuk-link" href="change-registration-learner-decided-specialism.html">
                       Change<span class="govuk-visually-hidden"> specialism</span>  
