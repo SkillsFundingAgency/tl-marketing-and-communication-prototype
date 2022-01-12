@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change core page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                    Change core
+            </h1>
+
+            <p class="govuk-body">If you want to change the core you must withdraw this registration first. You can then register the learner on the new core.</p>
+
+        </div>
+        <a class="govuk-button" role="button " href="withdraw-registration">Withdraw this registration</a>
+    </div>
+</div>
+
+{% endblock %}

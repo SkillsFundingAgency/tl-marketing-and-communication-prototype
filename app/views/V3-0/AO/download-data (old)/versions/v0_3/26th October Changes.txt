@@ -1,0 +1,27 @@
+26th October, 2021
+
+Scenario:
+As an AO data admin/manager, I need to check what data has been 
+uploaded in the system so I be reassured what has been uploaded 
+and identify issues upfront.
+
+Changes:
+The prototype was created and merged onto Main with the following changes:
+
+- Error messages where added to the cohort, learner status and assessment periods 
+
+- If the user doesn't have any data n, the no data screen appears when the user clicks 
+Download data from the home screen or the individual sections.
+
+- In the check-your-data screens the title registrations, assessments or results changes
+depending on what selection the user has made. Text has been added 'By submitting 
+your data you are confirming that, to the best of your knowledge, the 
+details you are providing are correct.', the button changed from 'Submit'
+to 'Submit-your-data'
+
+- Processing-data-file screen has been added after the user clicks 'Submit-your-data'
+to allow the data file to process before the user can download it. 
+
+- On the 'Your data is ready' page we changed the button to 'Download more data' instead
+of 'Select your CSV data again' and got rid of the extra line of text regarding the 
+download file. 

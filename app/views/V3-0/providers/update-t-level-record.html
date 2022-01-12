@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's T Level record
+{% endblock %}
+
+<style>
+    .Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+</style>
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manage-t-level-records">Manage learner T Level records</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner-tlevel.html">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">Learner T Level record</h1>
+
+        <h2 class="govuk-heading-m">Learner details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }}</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['uln'] }}</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider (UKPRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Design, Surveying and Planning for Construction</p>
+            </dd>
+          </div>
+          </dl>
+
+
+        <h2 class="govuk-heading-m">Learner's English and maths achievement</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value">
+              {% if data['updatedemStatus'] === 'yes'%}
+              {{ data['newemStatus'] }}
+              {% else %}
+              {{ data['tLevelsStudentData'][data.uln]['learnerEngMaths'] }}
+              {% endif %}           
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-em-status">
+                Update <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Learner's industry placement completion</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value">
+              
+              {% if data['newplacementResult'] === 'yes'%}
+
+              {{ data['newindustryPlacement'] }}
+              
+              {% else %}
+              {{ data['tLevelsStudentData'][data.uln]['learnerIndustryPlacement']}}  
+              {% endif %}
+    
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-ip-result">
+                Update <span class="govuk-visually-hidden"> completed status</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <a class="govuk-button" role="button" href="search-learner-tlevel">Search again</a>
+
+    </div>
+</div>
+
+{% endblock %}
+

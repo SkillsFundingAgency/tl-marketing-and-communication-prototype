@@ -1,0 +1,26 @@
+8th December, 2021
+
+Results: 
+
+Details page will show all exam periods the learner has entered for Core & Specialism
+
+Changes: 
+
+- We decided to move the Status to be next to the Grade because it relates to the grade 
+while actions to add/change a result are titled in the column at the end under 'Action' 
+
+- We changed the titles of core and specialism to 'Core component' and 
+'Occupationial specialism' 
+
+- We added a details component at the bottom of the page called 'More about learner results'
+with information about the learner results in
+
+- We decided to seperate the UKPRN from the provider in 'Learner details' 
+
+- We made a business decision to leave 'Not received' in on the 'Add/change' results as users mentioned 
+that they need to revert changes 
+
+- Separated not received with 'or' from the grades 
+
+- We decided to change the wording 'BEING APPEALED' to 'PENDING' so that the user understands that 
+it takes into account the reviews and appeals sections.

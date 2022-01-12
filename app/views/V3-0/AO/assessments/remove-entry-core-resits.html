@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove core assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="remove-core-entry-resits" method="post" class="form" novalidate data-validate="remove-core-entry">
+
+        <h1 class="govuk-heading-l">Remove core component assessment entry from summer 2023</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider<br aria-hidden="true">(UKPRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+            </dd>
+          </div>
+        </dl>
+        
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="remove-core-entry">
+                  <h2 class="govuk-fieldset__heading">
+                    Would you like to remove the core component assessment entry for summer 2023 from this learner's record?
+                  </h2>
+                </legend>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-answer-1" name="remove-core-entry" type="radio" value="yes" >
+                        <label class="govuk-label govuk-radios__label" for="remove-answer-1">
+                          Yes, remove the entry from summer 2023
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="remove-answer-2" name="remove-core-entry" type="radio" value="no"  >
+                        <label class="govuk-label govuk-radios__label" for="remove-answer-2">
+                          No, do not remove the entry from summer 2023 
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="remove-core-entry">
+  {
+
+    "remove-core-entry": {
+      "presence": {
+        "message": "^Select whether the assessment entry is being removed"
+      }
+
+    }
+
+  }
+</script>
+
+
+{% endblock %}

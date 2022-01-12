@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Generating download - Assessments - Manage T Level results - GOV.UK
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/V2-0/AO/assessments/download-data/current/assessments-download-data" method="post" novalidate data-validate="search-for-learner-validation">
+
+                    <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l">Generating assessments data</h2>
+                    </div>
+
+                    <p class="govuk-body">JavaScript is disabled in your browser so we cannot show you a progress icon. 
+                    Generating the file can take up to 10 seconds after you click 'Continue'.</p>
+
+                    <br>
+                    <button class="govuk-button" data-module="govuk-button">
+                    Continue (click once)
+                    </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

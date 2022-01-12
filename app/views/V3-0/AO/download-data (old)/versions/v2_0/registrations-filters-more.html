@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registrations
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+    <a href="/V2-0/AO/download-data/select-data-type-filters" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/processing-data-file-registrations" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+          
+            <label class="govuk-label govuk-label--l" for="optional1">
+              Default and additional data in your registrations download
+            </label>
+          </h1>
+
+
+                      <h2 class="govuk-heading-m">Data included by default with filter options</h2>
+
+
+        <p class="govuk-body">Your registrations download will include the following data by default:</p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>unique learner number (uln)</li>
+        <li>first name</li>
+        <li>last name</li>
+        <li>date of birth</li>
+        <li>ukprn</li>
+        <li>academic year</li>
+        <li>core code</li>
+        <li>specialism code(s)</li>
+        <li>status</li>
+      </ul>
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-form-group">
+
+            {# <h2 class="govuk-heading-m">Filter default data</h2> #}
+
+             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Select cohort(s)
+              </legend>
+
+                              <span class="govuk-hint" for="cohort">
+        Select all that apply
+      </span>
+
+           {# <label class="govuk-label govuk-label--m" for="passport-number">
+              Select cohort(s)
+            </label> #}
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort2" name="cohort" type="checkbox" value="2020 to 2021" 
+                            {{ checked("cohort", "2020 to 2021") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort2">
+                              2020 to 2021
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort3" name="cohort" type="checkbox" value="2021 to 2022" {{ checked("cohort", "2021 to 2022") }}> 
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort3">
+                              2021 to 2022
+                            </label>
+                          </div>
+    </div>
+
+            </div>
+
+           {# <label class="govuk-label govuk-label--m" for="passport-number">
+              Select learner status
+            </label> #}
+
+
+                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Select learner status
+              </legend>
+
+                    <span class="govuk-hint" for="cohort">
+        Select all that apply
+      </span>
+
+
+            <input name="cohort-name" value="Cohort(s)" name="cohort-name" hidden="true">
+            <input name="change-cohort" value="Change" name="change-cohort" hidden="true">
+          </h1>
+      <div class="govuk-form-group">
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort2" name="cohort" type="checkbox" value="2020 to 2021" 
+                            {{ checked("cohort", "2020 to 2021") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort2">
+                              Active
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort3" name="cohort" type="checkbox" value="2021 to 2022" {{ checked("cohort", "2021 to 2022") }}> 
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort3">
+                              Withdrawn
+                            </label>
+                          </div>
+    </div>
+
+            </div>
+          <h2 class="govuk-heading-m">Would you like to include additional data in your download?</h2>
+
+            <span class="govuk-hint" for="optional1">
+            Select the additional columns you would like in your data download. This will increase the time it takes to generate your download file.
+            </span>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional2" name="optionalReg" type="checkbox" value="Provider name" {{ checked("optionalReg", "Provider name") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional2">
+                              Provider name 
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="optional3" name="optionalReg" type="checkbox" value="T Level title" {{ checked("optionalReg", "T Level title") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="optional3">
+                              T Level title 
+                            </label>
+                          </div>
+                        </div>
+                    
+                      </fieldset>
+                    </div>
+            </div>
+            <button class="govuk-button" onclick="check()" data-module="govuk-button">Generate CSV</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+  function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+  }
+  </script>
+
+<script>
+  function check(){
+  
+      let checkbox1 = document.getElementById("optional1").checked
+      let checkbox2 = document.getElementById("optional2").checked
+      let checkbox3 = document.getElementById("optional3").checked
+      let checkbox4 = document.getElementById("optional4").checked
+      let checkbox5 = document.getElementById("optional5").checked
+      
+      if (checkbox1 == false && checkbox2 == false && checkbox3 == false && checkbox4 == false && checkbox5 == false){
+          sessionStorage.setItem("checkReg", "no")
+      }
+  }
+  </script>
+
+
+{% endblock %}

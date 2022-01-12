@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registrations - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        min-height: 140px;
+        margin-bottom: 30px;
+    }
+    .card-padding {
+        padding-bottom: 60px; 
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Registrations
+            </h1>
+            <p class="govuk-body-l">Tell us about your learners and the T Levels they are studying</p>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="upload-registrations-file.html">
+                    Upload multiple registrations
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Add or change registration details for more than one learner</li>
+                <li>Download a template with registrations data formats and rules guidance</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card card-padding " name="hub-choice-2">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="/V2-0/AO/registrations/add/add-registration-q1.html">
+                    Register a new learner
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Register one new learner onto a course</li>
+            </ul>
+               
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="/V2-0/AO/registrations/manage/search-registration">
+                    Manage existing registrations
+                </a>
+            </h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>See registration details</li>
+                <li>Change registration details</li>
+                <li>Change a learner's course</li>
+                <li>Withdraw a learner's registration</li>
+                <li>Reactivate a withdrawn learner</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="/V2-0/AO/registrations/download-data/current/registrations-generating-download">
+                    Download registrations data
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Download your data as a CSV file</li>
+                <br>
+               <br>
+                <br>
+               <br>
+            </ul>
+        </div>
+    </div>
+
+  </div>
+
+
+  </div>
+
+{% endblock %}
