@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Did you use an Industry Placement model, temporary flexibility or both? - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="special-consideration-evidence.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="industry-placement-model-selection" method="post" novalidate data-validate='industry-placement-model-validation'>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    Did you use an Industry Placement model, temporary flexibility or both?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="industry-placement-model" name="industry-placement-model" type="radio" value="Industry placement model">
+                    <label class="govuk-label govuk-radios__label" for="industry-placement-model">
+                      Industry placement model
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="industry-placement-model-2" name="industry-placement-model" type="radio" value="Temporary flexibility">
+                    <label class="govuk-label govuk-radios__label" for="industry-placement-model-2">
+                      Temporary flexibility
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="industry-placement-model-2" name="industry-placement-model" type="radio" value="Both">
+                    <label class="govuk-label govuk-radios__label" for="industry-placement-model-2">
+                      Both
+                    </label>
+                  </div>
+                </div>
+    
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<script type="application/json" id="industry-placement-model-validation">
+    {
+
+        "industry-placement-model": {
+
+            "presence": {
+
+                "message": "^Select yes if you used an industry placment model, temporary flexibility or both"
+
+            }
+
+        }
+
+    }
+</script>
+
+{% endblock %}

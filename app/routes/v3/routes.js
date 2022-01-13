@@ -635,4 +635,22 @@ router.post('/assessment-periods-answer', function (req, res) {
   // }
 
 })
+
+// PROVIDERS ROUTES 
+
+router.post('/change-ip-result', function (req, res) {
+
+  var placementAnswer = req.session.data['result-ip-answer']
+
+  if (placementAnswer == "Placement completed with special consideration") {
+    res.redirect('/' + version + '/providers/total-placement-hours')
+  }
+})
+
+
+
+
+
+
+// This must close line 1 after all other routes
 }
