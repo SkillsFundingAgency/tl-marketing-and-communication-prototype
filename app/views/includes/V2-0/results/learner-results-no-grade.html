@@ -82,12 +82,19 @@
             <span>
             {% if data['addedResult'] === 'yes' %}
             {{data['newResult']}}
+            {% elif data['updateResult'] === 'none' %}
+
             {% elif data['changedResult'] === 'yes' %}
             {{data['updateResult']}}
             {% else %}
             {% endif %}
 
-            {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes'%}
+            {% if data['updateResult'] === 'none'%}
+            <a class="govuk-link" href="add-core-result">
+              Add result <span class="govuk-visually-hidden">for</span>
+            </a>
+
+            {% elif data['addedResult'] == 'yes' or data['changedResult'] == 'yes'%}
             <a class="govuk-link govuk-!-margin-left-2" href="change-core-result">
               Change <span class="govuk-visually-hidden">core result</span>
             </a>
@@ -102,7 +109,6 @@
           <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Last updated</span>
             {% if data['addedResult'] === 'yes' or data['changedResult'] === 'yes' %}
             4 June 2021
-            {% else if data['updateResult'] === 'none' %}
             {% endif %}
           </td>
           <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Updated by</span>
@@ -156,12 +162,17 @@
           <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Grade</span>
             {% if data['addedResultSpecialism'] === 'yes' %}
             {{data['newResultSpecialism']}}
+            {% elif data['updateResultSpecialism'] === 'none' %}
             {% elif data['changedResultSpecialism'] === 'yes' %}
             {{data['updateResultSpecialism']}}
             {% else %}
             {% endif %}
 
-            {% if data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
+            {% if data['updateResultSpecialism'] === 'none'%}
+            <a class="govuk-link" href="add-specialism-result">
+              Add result <span class="govuk-visually-hidden">for specialism</span>
+            </a>
+            {% elif data['addedResultSpecialism'] === 'yes' or data['changedResultSpecialism'] === 'yes' %}
             <a class="govuk-link govuk-!-margin-left-2" href="change-specialism-result.html">
               Change <span class="govuk-visually-hidden">specialism result</span>
             </a>

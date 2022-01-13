@@ -327,6 +327,7 @@ router.post('/' + version + '/AO/results/current/add-core-result', function (req
   req.session.data['addedResult'] = "yes"
   req.session.data['showBannerResults'] = "yes"
   req.session.data['newResult'] = addResult
+  req.session.data['updateResult'] = null
   req.session.data['addCoreResultConfirmation'] = "yes"
   req.session.data['updateCoreResultConfirmation'] = null
   req.session.data['addSpecialismResultConfirmation'] = null
@@ -361,6 +362,7 @@ router.post('/' + version + '/AO/results/current/add-specialism-result', functio
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
+  req.session.data['updateResultSpecialism'] = null
   req.session.data['showBannerResults'] = "yes"
   req.session.data['addSpecialismResultConfirmation'] = "yes"
   req.session.data['updateSpecialismResultConfirmation'] = null
