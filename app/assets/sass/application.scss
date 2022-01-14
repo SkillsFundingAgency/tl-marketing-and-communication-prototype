@@ -244,6 +244,9 @@ $govuk-assets-path: '/govuk/assets/';
     tbody tr {
       border-bottom: 3px solid grey;
     }
+    .govuk-table__cell{
+      padding:10px 0px 10px 0
+    }
   }
   
   @media (min-width: 769px) {
