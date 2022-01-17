@@ -13,7 +13,9 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data['industry-model'] == 'Industry placement model' %}
+    <p>{{ data['industry-placement-model']}}</p>
+
+    {% if data['industry-placement-model'] === 'Industry placement model' %}
     <form action="special-consideration-check-answers" method="post" novalidate data-validate='industrial-placement-models-validation'>
     {% else %}
     <form action="temporary-flexibilities" method="post" novalidate data-validate='industrial-placement-models-validation'>

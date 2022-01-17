@@ -76,7 +76,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
                 Model used
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['industry-model']}}
+                {{ data['industry-placement-model']}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="industry-placement-model">
@@ -122,7 +122,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
     
           <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
   
-          <form action="/form-handler" method="post" novalidate>
+          <form action="special-consideration-check-answers-status" method="post" novalidate>
   
             <input type="hidden" name="answers-checked" value="true">
   

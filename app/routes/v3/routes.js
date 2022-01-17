@@ -764,7 +764,7 @@ router.post('/' + version + '/providers/cancel-address', function (req, res) {
 
 // industry placement, temporary flexibility or both
 
-router.post('/' + version + '/providers/industry-placement-model', function (req, res) { 
+router.post('/' + version + '/providers/industry-placement-model-selection', function (req, res) { 
 
   let modelType = req.session.data['industry-model']
 
@@ -777,6 +777,20 @@ router.post('/' + version + '/providers/industry-placement-model', function (req
     }
 
   })
+
+  router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
+    
+    req.session.data['newplacementResult'] = "yes"
+    req.session.data['newindustryPlacement'] = "Placement completed with special consideration"
+
+    res.redirect('/' + version + '/providers/update-t-level-record')
+
+
+  })
+
+
+
+
 
 
 // This must close line 1 after all other routes
