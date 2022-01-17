@@ -13,7 +13,7 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="industry-placement-model-selection" method="post" novalidate data-validate='industry-placement-model-validation'>
+        <form action="industry-placement-model" method="post" novalidate data-validate='industry-placement-model-validation'>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -21,20 +21,20 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industry-placement-model-1" name="industry-placement-model" type="radio" value="Industry placement model">
+                    <input class="govuk-radios__input" id="industry-placement-model-1" name="industry-model" type="radio" value="Industry placement model">
                     <label class="govuk-label govuk-radios__label" for="industry-placement-model-1">
                       Industry placement model
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industry-placement-model-2" name="industry-placement-model" type="radio" value="Temporary flexibility">
+                    <input class="govuk-radios__input" id="industry-placement-model-2" name="industry-model" type="radio" value="Temporary flexibility">
                     <label class="govuk-label govuk-radios__label" for="industry-placement-model-2">
                       Temporary flexibility
                     </label>
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industry-placement-model-3" name="industry-placement-model" type="radio" value="Both">
+                    <input class="govuk-radios__input" id="industry-placement-model-3" name="industry-model" type="radio" value="Industry placement model and temporary flexibility">
                     <label class="govuk-label govuk-radios__label" for="industry-placement-model-3">
                       Both
                     </label>
@@ -56,7 +56,7 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
 
   {
 
-    "industry-placement-model": {
+    "industry-model": {
 
         "presence": {
 

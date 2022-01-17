@@ -762,9 +762,21 @@ router.post('/' + version + '/providers/cancel-address', function (req, res) {
   }
 })
 
+// industry placement, temporary flexibility or both
 
+router.post('/' + version + '/providers/industry-placement-model', function (req, res) { 
 
+  let modelType = req.session.data['industry-model']
 
+  if (modelType === 'Industry placement model') {
+    res.redirect('/' + version + '/providers/industry-placement-model-selection')
+  } else if (modelType === 'Temporary flexibility') { 
+    res.redirect('/' + version + '/providers/temporary-flexibilities')
+  } else {
+      res.redirect('/' + version + '/providers/industry-placement-model-selection')
+    }
+
+  })
 
 
 // This must close line 1 after all other routes
