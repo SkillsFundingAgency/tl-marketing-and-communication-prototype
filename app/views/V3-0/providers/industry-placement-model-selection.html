@@ -11,55 +11,64 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form action="temporary-flexibilities" method="post" novalidate data-validate='industrial-placement-models-validation'>
+    <form action="temporary-flexibilities" method="post" novalidate data-validate='industrial-placement-models-validation'>
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    Which industrial placement models were used?
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industrial-placement-models-1" name="industrial-placement-models" type="radio" value="  ">
-                    <label class="govuk-label govuk-radios__label" for="industrial-placement-models-1">
-                      Type 1
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industrial-placement-models-2" name="industrial-placement-models" type="radio" value=" ">
-                    <label class="govuk-label govuk-radios__label" for="industrial-placement-models-2">
-                     Type 2
-                    </label>
-                  </div>
-                </div>
-    
-              </fieldset>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Which industrial placement models were used?
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="industrial-placement-models-1" name="industrial-placement-models"
+                type="checkbox" value="  ">
+              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-1">
+                Occupationally relevant part-time work
+              </label>
             </div>
-    
-            <button class="govuk-button" data-module="govuk-button">
-              Continue
-            </button>
-        </form>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="industrial-placement-models-2" name="industrial-placement-models"
+                type="checkbox" value=" ">
+              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2">
+                On-site facilities for 105 hours (for SEND students)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="industrial-placement-models-2" name="industrial-placement-models"
+                type="checkbox" value=" ">
+              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2">
+                On-site facilities (for young people in Young Offender Institutions)
+              </label>
+            </div>
+          </div>
 
-    </div>
+        </fieldset>
+      </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  </form>
+
+</div>
 </div>
 
 <script type="application/json" id="industrial-placement-models-validation">
-    {
+  {
 
-        "industrial-placement-models": {
+    "industrial-placement-models": {
 
-            "presence": {
+      "presence": {
 
-                "message": "^Select which industrial placement models were used"
+        "message": "^Select which industrial placement models were used"
 
-            }
-
-        }
+      }
 
     }
+
+  }
 </script>
 
 {% endblock %}

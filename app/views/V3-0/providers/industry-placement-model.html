@@ -14,7 +14,6 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
     <div class="govuk-grid-column-two-thirds">
 
         <form action="industry-placement-model-selection" method="post" novalidate data-validate='industry-placement-model-validation'>
-
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -22,8 +21,8 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industry-placement-model" name="industry-placement-model" type="radio" value="Industry placement model">
-                    <label class="govuk-label govuk-radios__label" for="industry-placement-model">
+                    <input class="govuk-radios__input" id="industry-placement-model-1" name="industry-placement-model" type="radio" value="Industry placement model">
+                    <label class="govuk-label govuk-radios__label" for="industry-placement-model-1">
                       Industry placement model
                     </label>
                   </div>
@@ -35,8 +34,8 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industry-placement-model-2" name="industry-placement-model" type="radio" value="Both">
-                    <label class="govuk-label govuk-radios__label" for="industry-placement-model-2">
+                    <input class="govuk-radios__input" id="industry-placement-model-3" name="industry-placement-model" type="radio" value="Both">
+                    <label class="govuk-label govuk-radios__label" for="industry-placement-model-3">
                       Both
                     </label>
                   </div>
@@ -54,19 +53,21 @@ Did you use an Industry Placement model, temporary flexibility or both? - Manage
 </div>
 
 <script type="application/json" id="industry-placement-model-validation">
-    {
 
-        "industry-placement-model": {
+  {
 
-            "presence": {
+    "industry-placement-model": {
 
-                "message": "^Select yes if you used an industry placment model, temporary flexibility or both"
+        "presence": {
 
-            }
+            "message": "^Select the reason for special consideration"
 
         }
 
     }
+
+  }
+
 </script>
 
 {% endblock %}
