@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which industrial placement models were used? - Manage T Level results - GOV.UK
+Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,23 +13,23 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="temporary-flexibilities" method="post" novalidate data-validate='industrial-placement-models-validation'>
+        <form action="temporary-flexibilities-selection" method="post" novalidate data-validate='temporary-flexibilities-validation'>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    Which industrial placement models were used?
+                    Which temporary flexibilities were used?
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industrial-placement-models-1" name="industrial-placement-models" type="radio" value="  ">
-                    <label class="govuk-label govuk-radios__label" for="industrial-placement-models-1">
+                    <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities" type="radio" value="  ">
+                    <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-1">
                       Type 1
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industrial-placement-models-2" name="industrial-placement-models" type="radio" value=" ">
-                    <label class="govuk-label govuk-radios__label" for="industrial-placement-models-2">
+                    <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities" type="radio" value=" ">
+                    <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
                      Type 2
                     </label>
                   </div>
@@ -46,14 +46,14 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
     </div>
 </div>
 
-<script type="application/json" id="industrial-placement-models-validation">
+<script type="application/json" id="temporary-flexibilities-validation">
     {
 
-        "industrial-placement-models": {
+        "temporary-flexibilities": {
 
             "presence": {
 
-                "message": "^Select which industrial placement models were used"
+                "message": "^Select which temporary flexibilities were used"
 
             }
 
