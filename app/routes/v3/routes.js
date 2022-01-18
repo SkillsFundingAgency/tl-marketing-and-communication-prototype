@@ -782,15 +782,12 @@ router.post('/' + version + '/providers/industry-placement-model-selection', fun
     
     req.session.data['newplacementResult'] = "yes"
     req.session.data['newindustryPlacement'] = "Placement completed with special consideration"
+    
+    // Success banner needs to be added
 
     res.redirect('/' + version + '/providers/update-t-level-record')
 
-
   })
-
-
-
-
 
 
 // This must close line 1 after all other routes
