@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Filter default data
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/V2-0/AO/download-data/current/select-data-type-filters" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/download-data/current/registrations-filters" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+           <span class="govuk-caption-xl">Download data</span>
+        <h1 class="govuk-heading-l">Filter data</h1>
+
+          </h1>
+      <div class="govuk-form-group">
+           <label class="govuk-label govuk-label--m" for="passport-number">
+              Select cohort(s)
+            </label>
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort" name="cohort-data" type="checkbox" value="cohort-data" 
+                            {{ checked("cohort", "2020 to 2021") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort">
+                              2020 to 2021
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="cohort1" name="cohort-data" type="checkbox" value="cohort-data"> 
+                            <label class="govuk-label govuk-checkboxes__label" for="cohort1">
+                              2021 to 2022
+                            </label>
+                          </div>
+    </div>
+<br>
+<br>
+
+
+           <label class="govuk-label govuk-label--m" for="passport-number">
+              Select learner status
+            </label>
+          </h1>
+      <div class="govuk-form-group">
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="learner" name="learner-status-data" type="checkbox" value="learner-status-data" 
+                            {{ checked("cohort", "2020 to 2021") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="learner">
+                              Active
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="learner1" name="learner-status-data" type="checkbox" value="learner-status-data"> 
+                            <label class="govuk-label govuk-checkboxes__label" for="learner1">
+                              Withdrawn
+                            </label>
+                          </div>
+    </div>
+            </div>
+
+            </div>
+
+
+          </div>
+          
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="data-validate">
+  {
+
+    "cohort-data": {
+      "presence": {
+        "message": "^Select which cohort(s) you would like in the download file"
+      }
+    },
+        "learner-status-data": {
+      "presence": {
+        "message": "^Select which learner status you would like in the download file"
+      }
+    }
+
+
+  }
+
+</script>
+
+
+{% endblock %}

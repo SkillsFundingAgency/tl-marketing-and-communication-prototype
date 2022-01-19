@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which temporary flexibilities were used? - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="industry-placement-model.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="special-consideration-check-answers" method="post" novalidate data-validate='temporary-flexibilities-validation'>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-heading-l">
+                    Which temporary flexibilities were used?
+                  </h1>
+                </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities" type="checkbox" value="Type 1">
+                    <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
+                      Type 1
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="temporary-flexibilities-2" name="temporary-flexibilities" type="checkbox" value="Type 2">
+                    <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-2">
+                     Type 2
+                    </label>
+                  </div>
+                </div>
+    
+              </fieldset>
+            </div>
+    
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<script type="application/json" id="temporary-flexibilities-validation">
+    {
+
+        "temporary-flexibilities": {
+
+            "presence": {
+
+                "message": "^Select which temporary flexibilities were used"
+
+            }
+
+        }
+
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your data
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+
+{% block beforeContent %}
+    <a href="/V2-0/AO/download-data/select-optional-columns-assessments-results" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<body onload="remove()">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-label-wrapper">
+        <span class="govuk-caption-xl">Download data</span>
+        <label class="govuk-label govuk-label--l" for="uln">
+          Check your selections
+        </label>
+      </h1>
+      <!-- <h1 class="govuk-heading-l">Check your answers before sending your application</h1> -->
+
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+
+      <h2 class="govuk-heading-m">{{ data['type'] }}</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Assessment name
+            {# {{ data['assessment-name'] }} #}
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+           {% if data[allPeriods] === 'All' %} 
+           
+            Autumn 2022
+            <br>
+            Summer 2022
+            <br>
+            Autumn 2021
+            <br>
+            Summer 2021
+
+          {% else %}
+          <p>{{ data['periods'] }}</p>
+
+          {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-assessment-periods">
+              Change<span class="govuk-visually-hidden">Assessment period(s)</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+
+        <div class="govuk-summary-list__row" id="column-row">
+          <dt class="govuk-summary-list__key">
+            Optional columns
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+           {% if data['alloptional'] === 'All' %} 
+            Date of birth 
+            <br>
+            Provider
+            <br>
+            T Level title 
+            <br>
+            Specialism(s)
+
+          {% else %}
+          <p>{{ data['optional'] }}</p>
+
+          {% endif %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/V2-0/AO/download-data/select-optional-columns-assessments-results">
+              <!-- {{ data['change-optional'] }} -->
+              Change
+              <span class="govuk-visually-hidden">Optional columns</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-body">Click submit to generate a CSV file containing the data detailed above.</p> 
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <div class="govuk-button-group">
+
+        <button class="govuk-button" onclick="window.location.href='/V2-0/AO/download-data/processing-data-file-assessments'" data-module="govuk-button">
+          Submit
+        </button>
+
+        
+        <button class="govuk-button govuk-button--secondary" onclick="window.location.href='/V2-0/AO/download-data/download-data'" href="check-your-data" data-module="govuk-button">
+          Start again
+        </button>
+      </div>
+
+    </div>
+  </div>
+</main>
+</body>
+
+<script>
+  function remove(){
+      let option = sessionStorage.getItem("check")
+      if (option == "no"){
+          document.getElementById("column-row").style.display = "none";
+      }
+  }
+</script>
+
+<!-- <script>
+  document.getElementById('test').addEventListener('change', function () {
+    var style = this.value == 1 ? 'block' : 'none';
+    document.getElementById('hidden_div').style.display = style;
+});
+</script> -->
+
+
+{% endblock %}

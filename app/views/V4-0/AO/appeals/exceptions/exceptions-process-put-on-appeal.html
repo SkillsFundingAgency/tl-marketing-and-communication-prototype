@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirm appeal
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="exceptions-process-put-on-appeal" method="post" class="form" novalidate data-validate="select-exceptions">
+
+        <h1 class="govuk-heading-l">Appeal the grade after the deadline</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Core <br>(code)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exam period
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Grade
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="exceptions-appeal">
+                  <h2 class="govuk-fieldset__heading">
+                    Is this grade being appealed?
+                  </h2>
+                </legend>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exceptions-answer-1" name="exceptions-appeal" type="radio" value="appeal-record" >
+                        <label class="govuk-label govuk-radios__label" for="exceptions-answer-1">
+                          Yes, it is being appealed
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exceptions-answer-2" name="exceptions-appeal" type="radio" value="no-appeal"  >
+                        <label class="govuk-label govuk-radios__label" for="exceptions-answer-2">
+                          No, leave it as it is
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+          <div class="govuk-inset-text">
+            While this grade is being appealed, we cannot calculate this learner’s overall T Level result
+          </div>
+
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="select-exceptions">
+{
+
+  "exceptions-appeal": {
+    "presence": {
+      "message": "^Please select whether you want to appeal the record "
+    }
+
+  }
+
+}
+</script>
+{% endblock %}
+

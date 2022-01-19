@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="/V2-0/AO/tlevels-dashboard.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/data-type-answer" method="post" novalidate data-validate="data-validate">
+            <div class="govuk-form-group">
+                
+                    <h1 class="govuk-label-wrapper">
+                      <span class="govuk-caption-xl">Download data</span>
+                      <label class="govuk-label govuk-label--l" for="uln">
+                      Select data type
+                      </label>
+                    </h1>
+                    <div class="govuk-form-group">
+                      <span class="govuk-hint" for="uln">
+                        Which type of data would you like to download?
+                      </span>
+                
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-radios__input" id="uln" name="type" type="radio" value="Registrations data" {{ checked("type", "Registrations") }}>
+                          <label class="govuk-label govuk-radios__label" for="results">
+                            Registrations
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="uln-2" name="type" type="radio" value="Assessments data" {{ checked("type", "Assessments") }}>
+                          <label class="govuk-label govuk-radios__label" for="assessments">
+                            Assessments
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="uln-3" name="type" type="radio" value="Results data" {{ checked("type", "Results") }}>
+                          <label class="govuk-label govuk-radios__label" for="results">
+                            Results
+                          </label>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="data-validate">
+  {
+
+    "type": {
+      "presence": {
+        "message": "^Select which data type you would like in the download file"
+      }
+    }
+
+  }
+</script>
+
+{% endblock %}
