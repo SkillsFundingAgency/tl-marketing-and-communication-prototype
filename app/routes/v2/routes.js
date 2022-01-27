@@ -525,28 +525,28 @@ router.post('/' + version + '/AO/results/current/change-specialism-result', func
 // });
 
 //Search Learner - Results
-router.post('/search-learner', function (req, res) {
-  let uln = req.session.data['uln']
-  if (uln === '1231231231' && '8642135790')
-  {
-    req.session.data['uln'] = uln  
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
-  if (uln === '8642135790')
-  {
-    req.session.data['uln'] = uln
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
+// router.post('/search-learner', function (req, res) {
+//   let uln = req.session.data['uln']
+//   if (uln === '1231231231' && '8642135790')
+//   {
+//     req.session.data['uln'] = uln  
+//     res.redirect
+//     ('/' + version + '/AO/results/current/learner-results')
+//   } 
+//   if (uln === '8642135790')
+//   {
+//     req.session.data['uln'] = uln
+//     res.redirect
+//     ('/' + version + '/AO/results/current/learner-results')
+//   } 
 
-  else {
-    req.session.data['showBannerResults'] = "no"
-    res.redirect('/' + version + '/AO/results/current/learner-results')
+//   else {
+//     req.session.data['showBannerResults'] = "no"
+//     res.redirect('/' + version + '/AO/results/current/learner-results')
     
-  }
+//   }
 
-})
+// })
 
 
 //Data Export

@@ -28,10 +28,20 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-3">
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value govuk-heading-m">
-              {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>
+              {{ data['tLevelsProvidersCourses']['TL-5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['TL-5']['providerUKPRN'] }}</span>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="centre-details-existing" value="tl2">
+              <a class="govuk-link" href="centre-details-existing?tlevel=TL-5">
+                View <span class="govuk-visually-hidden">Luton city college</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value govuk-heading-m">
+              {{ data['tLevelsProvidersCourses']['TL-4']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['TL-4']['providerUKPRN'] }}</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="centre-details-existing?tlevel=TL-4">
                 View <span class="govuk-visually-hidden">Luton city college</span>
               </a>
             </dd>

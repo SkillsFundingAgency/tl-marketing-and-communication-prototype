@@ -28,7 +28,7 @@
         </h1>
 
         <h2 class="govuk-heading-l">
-          {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>
+          {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerUKPRN'] }}</span>
         </h2>
 
         <p class="govuk-body govuk-!-margin-bottom-5">This provider is offering:</p>
@@ -38,7 +38,7 @@
           {% else %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsProvidersCourses']['tl5']['providerTlevel1'] }} 
+              {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel1'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="centre-tlevel-remove.html">
@@ -49,7 +49,7 @@
           {% endif %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsProvidersCourses']['tl5']['providerTlevel2'] }} 
+              {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel2'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -60,7 +60,7 @@
           {% if data['tlevel-added'] === 'yes' %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsProvidersCourses']['tl5']['providerTlevel3'] }} 
+              {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel3'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -80,7 +80,11 @@
 
     </div>
 </div>
-
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const tlevel = urlParams.get('tlevel');
+  sessionStorage.setItem('tlevel', tlevel)
+</script>
 
 
 {% endblock %}
