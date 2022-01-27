@@ -14,7 +14,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
   
-          <h1 class="govuk-heading-l">Check your answers before confirming special considerations</h1>
+          <h1 class="govuk-heading-l">Check your answers</h1>
     
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -59,32 +59,19 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Supporting evidence held locally
+                Industry placement model used
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['evidence-held']}}
+                {{ data['industryModel']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="special-consideration-evidence">
-                  Change<span class="govuk-visually-hidden"> supporting evidence held locally</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Model used
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['industry-placement-model']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="industry-placement-model">
+                <a class="govuk-link" href="did-you-use-an-industry-placement">
                   Change<span class="govuk-visually-hidden"> model used</span>
                 </a>
               </dd>
             </div>
 
-            {% if data['industrial-placement-models']|length %} 
+            {% if data['industrial-placement-models']|length and data['industryModel'] === 'yes' %} 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Industrial placement model used
@@ -101,7 +88,21 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             {% else %}
             {% endif %}
 
-            {% if data['temporary-flexibilities']|length %} 
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Temporary flexibility used
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['flexibility']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="did-you-use-a-flexibility">
+                  Change<span class="govuk-visually-hidden"> flexibility used</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['temporary-flexibilities']|length and data['flexibility'] === 'yes'  %} 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Temporary flexibilities
@@ -119,14 +120,14 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             {% endif %}
           </dl>
     
-          <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+          <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
   
           <form action="special-consideration-check-answers-status" method="post" novalidate>
   
             <input type="hidden" name="answers-checked" value="true">
   
             <button class="govuk-button" data-module="govuk-button">
-              Accept and send
+              Submit
             </button>
   
           </form>

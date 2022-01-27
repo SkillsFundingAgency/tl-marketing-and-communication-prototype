@@ -762,19 +762,31 @@ router.post('/' + version + '/providers/cancel-address', function (req, res) {
   }
 })
 
-// industry placement, temporary flexibility or both
+// industry placement, industry placement model
 
-router.post('/' + version + '/providers/industry-placement-model-selection', function (req, res) { 
+router.post('/' + version + '/providers/industry-placement', function (req, res) { 
 
-  let modelType = req.session.data['industry-model']
+  let industryModel = req.session.data['industryModel']
 
-  if (modelType === 'Industry placement model') {
+  if (industryModel === 'yes') {
     res.redirect('/' + version + '/providers/industry-placement-model-selection')
-  } else if (modelType === 'Temporary flexibility') { 
+  } else {
+      res.redirect('/' + version + '/providers/did-you-use-a-flexibility'
+      )}
+
+  })
+
+  // industry placement, temporary flexibility
+
+router.post('/' + version + '/providers/flexibility', function (req, res) { 
+
+  let flexibility = req.session.data['flexibility']
+
+  if (flexibility === 'yes') {
     res.redirect('/' + version + '/providers/temporary-flexibilities')
   } else {
-      res.redirect('/' + version + '/providers/industry-placement-model-selection')
-    }
+      res.redirect('/' + version + '/providers/special-consideration-check-answers'
+      )}
 
   })
 
