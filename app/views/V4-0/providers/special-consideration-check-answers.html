@@ -11,129 +11,161 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 {% block content %}
 
 <div class="govuk-width-container">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-  
-          <h1 class="govuk-heading-l">Check your answers</h1>
-    
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Industry placement completed
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data ['result-ip-answer'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="change-ip-result">
-                  Change<span class="govuk-visually-hidden"> industry placement completed</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Hours spent on placement
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data ['total-placement-hours'] }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="total-placement-hours">
-                  Change<span class="govuk-visually-hidden"> total placement hours</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Special consideration reason
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['special-consideration']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="special-consideration-reason">
-                  Change<span class="govuk-visually-hidden"> special consideration reason</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Industry placement model used
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['industryModel']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="did-you-use-an-industry-placement">
-                  Change<span class="govuk-visually-hidden"> model used</span>
-                </a>
-              </dd>
-            </div>
+      <h1 class="govuk-heading-l">Check your answers</h1>
 
-            {% if data['industrial-placement-models']|length and data['industryModel'] === 'yes' %} 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Industrial placement model used
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['industrial-placement-models']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> licence type</span>
-                  </a>
-                </dd>
-              </div>
-            {% else %}
-            {% endif %}
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Temporary flexibility used
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['flexibility']}}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="did-you-use-a-flexibility">
-                  Change<span class="govuk-visually-hidden"> flexibility used</span>
-                </a>
-              </dd>
-            </div>
-
-            {% if data['temporary-flexibilities']|length and data['flexibility'] === 'yes'  %} 
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Temporary flexibilities
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    {{ data['temporary-flexibilities']}}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="temporary-flexibilities">
-                    Change<span class="govuk-visually-hidden"> temporary felxibilities</span>
-                  </a>
-                </dd>
-              </div>
-            {% else %}
-            {% endif %}
-          </dl>
-    
-          <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
-  
-          <form action="special-consideration-check-answers-status" method="post" novalidate>
-  
-            <input type="hidden" name="answers-checked" value="true">
-  
-            <button class="govuk-button" data-module="govuk-button">
-              Submit
-            </button>
-  
-          </form>
-  
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }}</p>
+          </dd>
         </div>
-      </div>
-  </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['uln'] }}</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}</p>
+          </dd>
+        </div>
+      </dl>
+      
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Industry placement completed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['result-ip-answer'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-ip-result">
+              Change<span class="govuk-visually-hidden"> industry placement completed</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Hours spent on placement
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['total-placement-hours'] }}
 
-  {% endblock %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="total-placement-hours">
+              Change<span class="govuk-visually-hidden"> total placement hours</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Special consideration reason
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['special-consideration']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="special-consideration-reason">
+              Change<span class="govuk-visually-hidden"> special consideration reason</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Industry placement model used
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['industryModel']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="did-you-use-an-industry-placement">
+              Change<span class="govuk-visually-hidden"> model used</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['industrial-placement-models']|length and data['industryModel'] === 'yes' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Industrial placement model used
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['industrial-placement-models']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> licence type</span>
+            </a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Temporary flexibility used
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['flexibility']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="did-you-use-a-flexibility">
+              Change<span class="govuk-visually-hidden"> flexibility used</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if data['temporary-flexibilities']|length and data['flexibility'] === 'yes'  %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Temporary flexibilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['temporary-flexibilities']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="temporary-flexibilities">
+              Change<span class="govuk-visually-hidden"> temporary felxibilities</span>
+            </a>
+          </dd>
+        </div>
+        {% else %}
+        {% endif %}
+      </dl>
+
+      <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their
+        design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
+
+      <form action="special-consideration-check-answers-status" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button class="govuk-button" data-module="govuk-button">
+          Submit
+        </button>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Cancel
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
