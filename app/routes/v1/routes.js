@@ -302,7 +302,7 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
     }
   })
   
-  //Review t level details
+  //Review T Level details
   
   router.post('/' + version + '/AO/t-levels/verify-tlevel-details-routes', function (req, res) {
   
@@ -634,18 +634,19 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
   
   //Find provider routes
   
-  router.post('/' + version + '/AO/providers/select-providers-routes', function (req, res) {
+  router.post('/' + version + '/AO/providers/select-providers-routes', function (req, res) { 
+
+    let providerChoice = req.session.data['provider-list']
   
-    let providerChoice = req.session.data['provider']
     if (providerChoice === 'tl5') {
       res.redirect('/' + version + '/AO/providers/centre-details-existing')
+    } else {
+        res.redirect('/' + version + '/AO/providers/select-providers-tlevels'
+        )}
   
-    } else{
-      res.redirect('/' + version + '/AO/providers/select-providers-tlevels')
-    }
+    })
   
-  })
-  
+
   // Add additional T level to provider list 
   
   router.post('/' + version + '/AO/providers/confirmation-tlevels-added-additional', function (req, res) {
