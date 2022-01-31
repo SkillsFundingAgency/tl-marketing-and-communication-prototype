@@ -6,7 +6,15 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick= "goBack()">Back</a>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../index.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Prototype</li>
+  </ol>
+</div>
+
 {% endblock %}
 
 {% block content %}
@@ -21,65 +29,74 @@
         A collection of the prototype versions through August 2021 to now
       </p>
 
+      <div class="govuk-card govuk-card--contained">
+        <a href="#"></a>
+        <div class="govuk-card__content">
+          <h3 class="govuk-heading-m"><a href="../design-history/prototypes/version1.html">Version 1</a></h3>
 
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Version</th>
-            <th scope="col" class="govuk-table__header">Last updated</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">First 6 weeks</th>
-            <td class="govuk-table__cell">£109.80 per week</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
-            <td class="govuk-table__cell">£109.80 per week</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Total estimated pay</th>
-            <td class="govuk-table__cell">£4,282.20</td>
-          </tr>
-        </tbody>
-      </table>
+          <p class="govuk-body">A short overview of the content that exists behind this card. For example a full page detailing what goes inside the body of a card.
+          </p>
 
-      <h2 class="govuk-heading-m">Version 1</h2>
+        </div>
+        <div class="govuk-card__actions">
+          <ul class="govuk-list govuk-!-mb-r0">
+            <li><a href="../V1-0/providers/tlevels-dashboard.html">Providers dashboard</a></li>
+            <li><a href="../V1-0/AO/tlevels-dashboard.html">AO dashboard</a></li>
+          </ul>
+        </div>
+      </div>
 
-      <p>Providers system - 
-      <a href="../V1-0/providers/tlevels-dashboard.html">Providers dashboard</a> </p>
-      <p>Awarding Organisation system - 
-        <a href="../V1-0/AO/tlevels-dashboard.html">AO dashboard</a> 
-      </p>
-      
-      <h2 class="govuk-heading-m">Version 2</h2>
+      <div class="govuk-card govuk-card--contained">
+        <a href="#"></a>
+        <div class="govuk-card__content">
+          <h3 class="govuk-heading-m"><a href="../design-history/prototypes/version2.html">Version 2</a></h3>
 
-      <p>Providers system - 
-      <a href="V2-0/providers/tlevels-dashboard.html">Providers dashboard</a> </p>
+          <p class="govuk-body">A short overview of the content that exists behind this card. For example a full page detailing what goes inside the body of a card.
+          </p>
 
-      <p>Awarding Organisation system - 
-        <a href="V2-0/AO/tlevels-dashboard.html">AO dashboard</a> 
-      </p>
+        </div>
+        <div class="govuk-card__actions">
+          <ul class="govuk-list govuk-!-mb-r0">
+            <li><a href="../V2-0/providers/tlevels-dashboard.html">Providers dashboard</a></li>
+            <li><a href="../V2-0/AO/tlevels-dashboard.html">AO dashboard</a></li>
+          </ul>
+        </div>
+      </div>
 
-      <h2 class="govuk-heading-m">Version 3</h2>
+      <div class="govuk-card govuk-card--contained">
+        <a href="#"></a>
+        <div class="govuk-card__content">
+          <h3 class="govuk-heading-m"><a href="../design-history/prototypes/version3.html">Version 3</a></h3>
 
-      <p>Providers system - 
-      <a href="V3-0/providers/tlevels-dashboard.html">Providers dashboard</a> </p>
+          <p class="govuk-body">A short overview of the content that exists behind this card. For example a full page detailing what goes inside the body of a card.
+          </p>
 
-      <p>Awarding Organisation system - 
-        <a href="V3-0/AO/tlevels-dashboard.html">AO dashboard</a> 
-      </p>
+        </div>
+        <div class="govuk-card__actions">
+          <ul class="govuk-list govuk-!-mb-r0">
+            <li><a href="../V3-0/providers/tlevels-dashboard.html">Providers dashboard</a></li>
+            <li><a href="../V3-0/AO/tlevels-dashboard.html">AO dashboard</a></li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="govuk-card govuk-card--contained">
+        <a href="#"></a>
+        <div class="govuk-card__content">
+          <h3 class="govuk-heading-m"><a href="../design-history/prototypes/version4.html">Version 4 - Latest</a></h3>
 
-      <h2 class="govuk-heading-m">Version 4 - latest</h2>
+          <p class="govuk-body">A short overview of the content that exists behind this card. For example a full page detailing what goes inside the body of a card.
+          </p>
 
-      <p>Providers system - 
-      <a href="V4-0/providers/tlevels-dashboard.html">Providers dashboard</a> </p>
+        </div>
+        <div class="govuk-card__actions">
+          <ul class="govuk-list govuk-!-mb-r0">
+            <li><a href="../V4-0/providers/tlevels-dashboard.html">Providers dashboard</a></li>
+            <li><a href="../V4-0/AO/tlevels-dashboard.html">AO dashboard</a></li>
+          </ul>
+        </div>
+      </div>
 
-      <p>Awarding Organisation system - 
-        <a href="V4-0/AO/tlevels-dashboard.html">AO dashboard</a> 
-      </p>
 
 
 {% endblock %}
