@@ -321,23 +321,24 @@ router.post('/' + version + '/AO/appeals/exceptions/exceptions-process-put-on-ap
 //Core Results
 
 // Add core result - Results
-router.post('/' + version + '/AO/results/current/add-core-result', function (req, res) {
+router.post('/' + version + '/AO/results/add-core-result', function (req, res) {
   let addResult = req.session.data['add-core-result']
 
   req.session.data['addedResult'] = "yes"
   req.session.data['showBannerResults'] = "yes"
   req.session.data['newResult'] = addResult
+  req.session.data['updateResult'] = null
   req.session.data['addCoreResultConfirmation'] = "yes"
   req.session.data['updateCoreResultConfirmation'] = null
   req.session.data['addSpecialismResultConfirmation'] = null
   req.session.data['updateSpecialismResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Change core result - Results
-router.post('/' + version + '/AO/results/current/change-core-result', function (req, res) {
+router.post('/' + version + '/AO/results/change-core-result', function (req, res) {
   let changeResult = req.session.data['change-core-result']
 
   req.session.data['changedResult'] = "yes"
@@ -349,30 +350,31 @@ router.post('/' + version + '/AO/results/current/change-core-result', function (
   req.session.data['addSpecialismResultConfirmation'] = null
   req.session.data['updateSpecialismResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Specialism Results
 
 // Add specialism result - Results
-router.post('/' + version + '/AO/results/current/add-specialism-result', function (req, res) {
+router.post('/' + version + '/AO/results/add-specialism-result', function (req, res) {
   let addResult = req.session.data['add-specialism-result']
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
+  req.session.data['updateResultSpecialism'] = null
   req.session.data['showBannerResults'] = "yes"
   req.session.data['addSpecialismResultConfirmation'] = "yes"
   req.session.data['updateSpecialismResultConfirmation'] = null
   req.session.data['addCoreResultConfirmation'] = null
   req.session.data['updateCoreResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Change specialism result - Results
-router.post('/' + version + '/AO/results/current/change-specialism-result', function (req, res) {
+router.post('/' + version + '/AO/results/change-specialism-result', function (req, res) {
   let changeResult = req.session.data['change-specialism-result']
 
   req.session.data['changedResultSpecialism'] = "yes"
@@ -384,44 +386,10 @@ router.post('/' + version + '/AO/results/current/change-specialism-result', func
   req.session.data['addCoreResultConfirmation'] = null
   req.session.data['updateCoreResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
-//Change core result - Results
-// router.post('/V2-1/AO/results/change-core-result-successful', function (req, res) {
-//   let changeResult = req.session.data['result-answer-specialism']
-
-//   req.session.data['changedResult'] = "yes"
-//   req.session.data['updateResult'] = changeResult
-  
-//   res.redirect('/V2-1/AO/results/current/learner-results')
-
-// });
-
-//Search Learner - Results
-router.post('/search-learner', function (req, res) {
-  let uln = req.session.data['uln']
-  if (uln === '1231231231' && '8642135790')
-  {
-    req.session.data['uln'] = uln  
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
-  if (uln === '8642135790')
-  {
-    req.session.data['uln'] = uln
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
-
-  else {
-    req.session.data['showBannerResults'] = "no"
-    res.redirect('/' + version + '/AO/results/current/learner-results')
-    
-  }
-
-})
 
 // PROVIDERS ROUTES 
 
