@@ -769,7 +769,7 @@ router.post('/' + version + '/providers/industry-placement', function (req, res)
   let industryModel = req.session.data['industryModel']
 
   if (industryModel === 'yes') {
-    res.redirect('/' + version + '/providers/industry-placement-model-selection')
+    res.redirect('/' + version + '/providers/multiple-employer-model')
   } else {
       res.redirect('/' + version + '/providers/did-you-use-a-flexibility'
       )}

@@ -13,74 +13,31 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="did-you-use-a-flexibility" method="post" novalidate data-validate='industrial-placement-models-validation'>
+    <form action="did-you-use-a-flexibility" method="post" novalidate
+      data-validate='industrial-placement-models-validation'>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-heading-l govuk-fieldset__heading">
               Which industrial placement models were used by {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
-            </h1>  
+            </h1>
           </legend>
           <div id="model-hint" class="govuk-hint">
+            {% if data['multipleEmployerModel'] === 'no' %}
             Maximum of two options can be selected
+            {% else %}
+            {% endif %}
           </div>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-1" name="industrial-placement-models"
-                type="checkbox" value="Occupationally relevant part-time work">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-1">
-                Occupationally relevant part-time work
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-2" name="industrial-placement-models"
-                type="checkbox" value="On-site facilities for 105 hours (for SEND students)">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2">
-                On-site facilities for 105 hours (for SEND students)
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-3" name="industrial-placement-models"
-                type="checkbox" value="On-site facilities (for young people in Young Offender Institutions)">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-3">
-                On-site facilities (for young people in Young Offender Institutions)
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-4" name="industrial-placement-models"
-                type="checkbox" value="Digital and Engineering & Manufacturing: route-level placements">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-4">
-                Digital and Engineering & Manufacturing: route-level placements
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-5" name="industrial-placement-models"
-                type="checkbox" value="Construction and Engineering & Manufacturing: One lead employer facilitating the required 315 hours">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-5">
-                Construction and Engineering & Manufacturing: One lead employer facilitating the required 315 hours
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-6" name="industrial-placement-models"
-                type="checkbox" value="Construction and Engineering & Manufacturing: Use of skills hubs or employer training centres">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-6">
-                Construction and Engineering & Manufacturing: Use of skills hubs or employer training centres
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-7" name="industrial-placement-models"
-                type="checkbox" value="On-site facilities (for young people in Young Offender Institutions)">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-7">
-                Construction: Commercial, Charitable or Community Projects
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="industrial-placement-models-8" name="industrial-placement-models"
-                type="checkbox" value="Multiple employer model">
-              <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-8">
-                Multiple employer model
-              </label>
-            </div>
-          </div>
+
+          {% if data['multipleEmployerModel'] === 'yes' %}
+
+          {% include "../includes/industry-placement-model-1-option.html" %}
+
+          {% else %}
+
+          {% include "../includes/industry-placement-model-2-options.html" %}
+
+          {% endif %}
 
         </fieldset>
       </div>
