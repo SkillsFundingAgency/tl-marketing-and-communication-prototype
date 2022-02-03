@@ -41,8 +41,16 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}</p>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T Level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Design, Surveying and Planning for Construction</p>
+          </dd>
+        </div>
       </dl>
-      
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -57,13 +65,15 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             </a>
           </dd>
         </div>
+
+        {% if data['result-ip-answer'] === 'Placement completed with special consideration' %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Hours spent on placement
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data ['total-placement-hours'] }}
-
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="total-placement-hours">
@@ -76,7 +86,9 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             Special consideration reason
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['special-consideration'] }}
+            {% for item in data['special-consideration']%}
+            <p>{{ item }}</p>
+            {% endfor%}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="special-consideration-reason">
@@ -84,6 +96,9 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             </a>
           </dd>
         </div>
+        {% else %}
+        {% endif %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Industry placement model used
@@ -99,18 +114,32 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         </div>
 
         {% if data['industrial-placement-models']|length and data['industryModel'] === 'yes' %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Multiple employer model used
+          </dt>
+          <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+            {{ data['multipleEmployerModel']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="multiple-employer-model">
+              Change<span class="govuk-visually-hidden"> model used</span>
+            </a>
+          </dd>
+        </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Industrial placement model used
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['multipleEmployerModel'] === 'yes' %}
-            <p> {{ data['industrial-placement-models'] }}</p> 
-            <p>Multiple employer model</p>
+            <p> {{ data['industrial-placement-models'] }}</p>
             {% else %}
             {% for item in data['industrial-placement-models']%}
             <p>{{ item }}</p>
-            {% endfor %}  
+            {% endfor %}
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -157,7 +186,6 @@ How many hours did the student spend on placement? - Manage T Level results - GO
       </dl>
 
 
-
       <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their
         design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
 
@@ -175,19 +203,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 
       </form>
 
-      {% if data['special-consideration']|length === '1' %}
-      {{ data['special-consideration'] }}
-      {% else %}
-      {% for item in data['special-consideration']%}
-      <p>{{ item }}</p>
-      {% endfor %}
-      {% endif %}
-
-      {{ data['special-consideration']|length }}
-      
-
     </div>
   </div>
 </div>
-
 {% endblock %}

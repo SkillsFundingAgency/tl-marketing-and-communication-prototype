@@ -694,9 +694,10 @@ router.post('/' + version + '/providers/cancel-t-level-record', function (req, r
 router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     let newResult = req.session.data['result-ip-answer']
   
-    if (newResult == "Placement completed with special consideration") {
+    if (newResult == "Placement completed with special consideration" ) {
       res.redirect('/' + version + '/providers/total-placement-hours')
-    
+    }  else if (newResult == "Placement completed") {
+      res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
     } else {
     req.session.data['newplacementResult'] = "yes"
     req.session.data['newindustryPlacement'] = newResult
@@ -789,6 +790,8 @@ router.post('/' + version + '/providers/flexibility', function (req, res) {
       )}
 
   })
+
+
 
   router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
     
