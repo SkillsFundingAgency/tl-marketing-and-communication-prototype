@@ -11,13 +11,15 @@
         <h1 class="govuk-panel__title">T Level added successfully</h1>
       </div>
 
-      <p class="govuk-body govuk-!-padding-top-5">The additional T Level {{ data['tLevelsProvidersCourses'][data.tlevelchoice]['providerName'] }} (<abbr>UKPRN</abbr>: 10000536) will offer is:</p>
+      <p class="govuk-body govuk-!-padding-top-5">The additional T Level {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerName'] }} <abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerUKPRN'] }} will offer is:</p>
 
-      <p class="govuk-body">{{ data['tLevelsProvidersCourses'][data.tlevelchoice]['providerTlevel3'] }} </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>{{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel3'] }} </li>
+      </ul>
 
 
       <p class="govuk-body">
-        <a href="/V1-0/AO/providers/centre-details-existing.html">Manage provider's T Levels</a>  
+        <a href="provider-details-existing.html">Manage provider's T Levels</a>  
       </p>
 
 

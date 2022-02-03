@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/V1-0/AO/providers/confirmation-tlevel-removed" method="post" class="form" >
+    <form action="confirmation-tlevel-removed" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -20,18 +20,18 @@
             </h1>
           </legend>
           <span id="remove-tlevel-hint" class="govuk-hint">
-            <strong>{{ data['tLevelsProvidersCourses']['tl5']['providerTlevel1'] }} </strong> from {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl5']['providerUKPRN'] }}</span>.
+            <strong>{{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel1'] }} </strong> from {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerName'] }}  <span class="govuk-hint">(<abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerUKPRN'] }}).</span>
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-1" name="tLevel-answer" type="radio" value="Yes" >
-              <label class="govuk-label govuk-radios__label" for="tLevel-answer-1">
+              <input class="govuk-radios__input" id="remove-tlevel-1" name="remove-tlevel" type="radio" value="Yes" >
+              <label class="govuk-label govuk-radios__label" for="remove-tlevel-1">
                 Yes, remove T Level
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="tLevel-answer-2" name="tLevel-answer" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="tLevel-answer-2">
+              <input class="govuk-radios__input" id="remove-tlevel-2" name="remove-tlevel" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="remove-tlevel-2">
                 No, do not remove it
               </label>
             </div>
@@ -49,3 +49,5 @@
 
 
 {% endblock %}
+
+<!-- Select yes to remove the T Level -->
