@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/V1-0/AO/providers/confirmation-tlevels-provider" method="post">
+        <form class="form" action="confirmation-tlevels-provider" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -22,8 +22,8 @@
                     </legend>
 
                     <h2 class="govuk-heading-l">
-                      {{ data['tLevelsProvidersCourses'][data.provider]['providerName'] }}
-                         <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data.provider]['providerUKPRN'] }}</span>
+                      {{ data['tLevelsProvidersCourses'][data['provider-list']]['providerName'] }}
+                         <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data.provider-list]['providerUKPRN'] }}</span>
                     </h2>
                     <span id="tlevel-choice">
                           <p class="govuk-body govuk-!-margin-bottom-5">Select and submit the T Levels you have approved this provider to offer.</p>
@@ -32,19 +32,19 @@
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="tlevel-choice-1" name="tlevel-choice" type="checkbox">
                         <label class="govuk-label govuk-checkboxes__label" for="tlevel-choice-1">
-                          {{ data['tLevelsProvidersCourses'][data.provider]['providerTlevel1'] }}
+                          {{ data['tLevelsProvidersCourses'][data['provider-list']]['providerTlevel1'] }}
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="tlevel-choice-2" name="tlevel-choice" type="checkbox" value="tlevel-2">
                         <label class="govuk-label govuk-checkboxes__label" for="tlevel-choice-2">
-                          {{ data['tLevelsProvidersCourses'][data.provider]['providerTlevel2'] }}
+                          {{ data['tLevelsProvidersCourses'][data['provider-list']]['providerTlevel2'] }}
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="tlevel-choice-3" name="tlevel-choice" type="checkbox" value="tlevel-3">
                         <label class="govuk-label govuk-checkboxes__label" for="tlevel-choice-2">
-                          {{ data['tLevelsProvidersCourses'][data.provider]['providerTlevel3'] }}
+                          {{ data['tLevelsProvidersCourses'][data['provider-list']]['providerTlevel3'] }}
                         </label>
                       </div>
                     </div>
@@ -60,4 +60,10 @@
 </div>
 
 
+
+
+
+
 {% endblock %}
+
+<!-- Select at least one T Level -->

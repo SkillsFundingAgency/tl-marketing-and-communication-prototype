@@ -12,7 +12,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/V1-0/AO/providers/confirmation-tlevels-added-additional" method="post">
+        <form class="form" action="confirmation-tlevels-added-additional" method="post">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -22,7 +22,7 @@
                     </legend>
 
                     <h2 class="govuk-heading-l">
-                      {{ data['tLevelsProvidersCourses']['tl5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['tl2']['providerUKPRN'] }}</span>
+                      {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerName'] }}   <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerUKPRN'] }}</span>
                     </h2>
 
                     <span id="tlevel-choice">
@@ -32,7 +32,7 @@
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="tlevelchoice" name="tlevelchoice" type="checkbox" value="tl5">
                         <label class="govuk-label govuk-checkboxes__label" for="tlevelchoice">
-                          {{ data['tLevelsProvidersCourses']['tl5']['providerTlevel3'] }} 
+                          {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel3'] }} 
                         </label>
                       </div>
                     </div>
@@ -49,3 +49,5 @@
 
 
 {% endblock %}
+
+<!-- Select at least one T Level -->

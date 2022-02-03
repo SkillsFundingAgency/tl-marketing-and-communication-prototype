@@ -86,9 +86,17 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             Special consideration reason
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if data['special-consideration'] === 'COVID-19' %}
+            {{ data['special-consideration'] }}
+      
+            {% elif (data['special-consideration']|length > 1) and (data['special-consideration']|length <= 9) %}
             {% for item in data['special-consideration']%}
             <p>{{ item }}</p>
-            {% endfor%}
+            {% endfor %}
+            {% else %}
+            {{ data['special-consideration'] }}
+            
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="special-consideration-reason">
@@ -108,43 +116,33 @@ How many hours did the student spend on placement? - Manage T Level results - GO
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="did-you-use-an-industry-placement">
-              Change<span class="govuk-visually-hidden"> model used</span>
+              Change<span class="govuk-visually-hidden"> if industry placement model used</span>
             </a>
           </dd>
         </div>
 
-        {% if data['industrial-placement-models']|length and data['industryModel'] === 'yes' %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Multiple employer model used
-          </dt>
-          <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-            {{ data['multipleEmployerModel']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="multiple-employer-model">
-              Change<span class="govuk-visually-hidden"> model used</span>
-            </a>
-          </dd>
-        </div>
-
+        {% if data['industryModel'] === 'yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Industrial placement model used
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['multipleEmployerModel'] === 'yes' %}
-            <p> {{ data['industrial-placement-models'] }}</p>
-            {% else %}
+            <p> {{ data['industrial-placement-models'] }}</p> 
+            <p>Multiple employer model</p>
+            
+            {% elif data['industrial-placement-models']|length === 2 %}
             {% for item in data['industrial-placement-models']%}
             <p>{{ item }}</p>
             {% endfor %}
+            
+            {% else %}
+            <p> {{ data['industrial-placement-models'] }}</p> 
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> licence type</span>
+            <a class="govuk-link" href="industry-placement-model-selection">
+              Change<span class="govuk-visually-hidden"> industry placement used</span>
             </a>
           </dd>
         </div>
@@ -165,19 +163,24 @@ How many hours did the student spend on placement? - Manage T Level results - GO
           </dd>
         </div>
 
-        {% if data['temporary-flexibilities']|length and data['flexibility'] === 'yes'  %}
+        {% if data['flexibility'] === 'yes'  %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Temporary flexibilities
           </dt>
           <dd class="govuk-summary-list__value">
+            {% if data['temporary-flexibilities']|length === 2 %}
             {% for item in data['temporary-flexibilities']%}
             <p>{{ item }}</p>
-            {% endfor%}
+            {% endfor %}
+            
+            {% else %}
+            <p> {{ data['temporary-flexibilities'] }}</p> 
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="temporary-flexibilities">
-              Change<span class="govuk-visually-hidden"> temporary felxibilities</span>
+              Change<span class="govuk-visually-hidden"> temporary flexibilities</span>
             </a>
           </dd>
         </div>
