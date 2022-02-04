@@ -23,13 +23,13 @@ Did Danny Waldron use an industry placement model?
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="industryModel-yes" name="industryModel" type="radio" value="yes">
+                <input class="govuk-radios__input" id="industryModel-yes" name="industryModel" type="radio" value="yes" {{ checked("industryModel", "yes") }}>
                 <label class="govuk-label govuk-radios__label" for="industryModel-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="industryModel-no" name="industryModel" type="radio" value="no">
+                <input class="govuk-radios__input" id="industryModel-no" name="industryModel" type="radio" value="no" {{ checked("industryModel", "no") }}>
                 <label class="govuk-label govuk-radios__label" for="industryModel-no">
                   No
                 </label>
