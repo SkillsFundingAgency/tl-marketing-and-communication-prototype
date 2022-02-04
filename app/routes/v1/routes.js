@@ -479,7 +479,7 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
   router.post('/' + version + '/AO/registrations/add/add-registration-uln-routes', function (req, res) {
   
     let uln = req.session.data['uln']
-    if (uln === '1234567890') {
+    if (uln === '1234567890' ||  uln === '9876543210') {
   
       req.session.data['uln'] = uln
       res.redirect('/' + version + '/AO/registrations/add/change-uln-already-registered')
