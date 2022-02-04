@@ -1,0 +1,199 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Prototype - Version 2
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../Prototype.html">Prototype</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Version 2</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Version 2</h1>
+    <p class="govuk-body-l">Includes new designs for: Assessment Entries, Data Export and Results as of Decemeber 2021.</p>
+    <p>From: R&C Team</p>
+    <p>Published: 31st January 2022</p>
+    <p>Last updated: 31st January 2022</p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </div>
+</div>
+
+<h2 class="govuk-heading-m"> Prototype links </h2>
+<ul class="govuk-list">
+  <li><a href="../../V2-0/providers/tlevels-dashboard.html">Providers dashboard</a></li>
+  <li><a href="../../V2-0/AO/tlevels-dashboard.html">AO dashboard</a></li>
+</ul>
+
+<h2 class="govuk-heading-m"> ULNs and Search terms to use</h2>
+<h3 class="govuk-heading-s"> Providers </h3>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Add a T Level Record
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>1122334455</li>
+      <li>1234567890</li>
+      <li>Already added a T Level record - 1234567891 or 1987654321</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Update a T Level Record
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>1987654321</li>
+      <li>1234567891</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Request a Statement of Achievement
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Learner withdrawn - 1231231231</li>
+      <li>Statement of Achievement already requested - 9876543210</li>
+      <li>Learner does not have a recorded industry placement status - 8642135790</li>
+      <li>Learner does not have any recorded results - 5647382910</li>
+      <li>Request Statement of Achievement - 1987654321 or 1234567891</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Manage Organisations Postal Address
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>S70 2AX - Add Barnsley College</li>
+      <li>S70 3DL - No address found for this postcode</li>
+    </ul>
+  </div>
+</details>
+
+
+<h3 class="govuk-heading-s"> AO </h3>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Review Providers
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Leeds City College - Existing Provider</li>
+      <li>Luton City College - Existing Provider</li>
+      <li>Barking College - Provider not added yet</li>
+      <li>Barnsley City Academy - Provider not added yet</li>
+      <li>Abdingdon and Witney College - Provider not added yet</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Registrations
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Manage learners registration - 1234567890</li>
+      <li>Delete learners registration - 9876543210</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Assessment Entries
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Learner withdrawn: 1231231231</li>
+      
+      <li>Learner with previous assessment entry: 5647382910</li>
+      
+      <li>Learner multiple specialisms resits: 8642135790</li>
+      
+      <li>Learner newly registered: 1234567891</li>
+      
+      <li>Learner 2nd year onwards: 1234567890</li>
+      
+      <li>Learner not registered for specialism: 9876543210</li>
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Results
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Learner is withdrawn - 1231231231</li>
+      <li>Add a result for learner - 5647382910</li>
+      <li>Learner has an appeal - 1987654321</li>
+      <li>Learner grades are final - 1122334455</li>
+      <li>Learner has no assessment entries - 8642135790</li>
+      <li>Learner grades are final with a paired specialism - 1169334253</li>
+      <li>Learner with no registered specialism - 1162334257</li>
+
+    </ul>
+  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Appeals
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Learner is withdrawn - 1231231231</li>
+      <li>Learner does not have any grades to appeal - 5647382910</li>
+      <li>Learner has no assessment entries - 8642135790</li> 
+      <li>Too late to request a appeal - 9876543210</li>
+      <li> Request an appeal for learner - 1987654321</li> 
+    </ul>
+  </div>
+</details>
+<h2 class="govuk-heading-m">Functionality available</h2>
+
+{% endblock %}
