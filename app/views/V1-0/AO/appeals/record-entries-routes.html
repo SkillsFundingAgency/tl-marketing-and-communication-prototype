@@ -123,10 +123,6 @@ ULN not found - Manage T Level results - GOV.UK
 
     {% if data['uln'] === '1987654321'%}
     {% include "../../includes/appeals/record-entry-full-results-2021.html" %}
-    {% elif data['uln'] === '1122334455' %}
-    {% include "../../includes/appeals/record-entry-no-core-specialism.html" %}
-    {% elif data['uln'] === '1234567890' %}
-    {% include "../../includes/appeals/record-entry-no-core-specialism-not-specified.html" %}
     {% elif data['uln'] === '9876543210' %}
     {% include "../../includes/appeals/record-entry-core-specialism-late.html" %}
     {% endif %}
