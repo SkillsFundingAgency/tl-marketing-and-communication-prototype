@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-How many hours did the student spend on placement? - Manage T Level results - GOV.UK
+Industry placement check answers - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -76,7 +76,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             {{ data ['total-placement-hours'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="total-placement-hours">
+            <a class="govuk-link" href="total-placement-hours?change-answer=yes">
               Change<span class="govuk-visually-hidden"> total placement hours</span>
             </a>
           </dd>
@@ -99,7 +99,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="special-consideration-reason">
+            <a class="govuk-link" href="special-consideration-reason?change-answer=yes">
               Change<span class="govuk-visually-hidden"> special consideration reason</span>
             </a>
           </dd>
@@ -122,6 +122,25 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         </div>
 
         {% if data['industryModel'] === 'yes' %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Multiple employer model used
+          </dt>
+          <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+            {{ data['multipleEmployerModel']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="multiple-employer-model">
+              Change<span class="govuk-visually-hidden"> of multiple employer model was used</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+        {% endif %}
+
+        {% if data['industryModel'] === 'yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Industrial placement model used
@@ -141,7 +160,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="industry-placement-model-selection">
+            <a class="govuk-link" href="industry-placement-model-selection?change-answer=yes">
               Change<span class="govuk-visually-hidden"> industry placement used</span>
             </a>
           </dd>
