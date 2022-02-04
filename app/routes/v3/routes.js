@@ -321,23 +321,24 @@ router.post('/' + version + '/AO/appeals/exceptions/exceptions-process-put-on-ap
 //Core Results
 
 // Add core result - Results
-router.post('/' + version + '/AO/results/current/add-core-result', function (req, res) {
+router.post('/' + version + '/AO/results/add-core-result', function (req, res) {
   let addResult = req.session.data['add-core-result']
 
   req.session.data['addedResult'] = "yes"
   req.session.data['showBannerResults'] = "yes"
   req.session.data['newResult'] = addResult
+  req.session.data['updateResult'] = null
   req.session.data['addCoreResultConfirmation'] = "yes"
   req.session.data['updateCoreResultConfirmation'] = null
   req.session.data['addSpecialismResultConfirmation'] = null
   req.session.data['updateSpecialismResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Change core result - Results
-router.post('/' + version + '/AO/results/current/change-core-result', function (req, res) {
+router.post('/' + version + '/AO/results/change-core-result', function (req, res) {
   let changeResult = req.session.data['change-core-result']
 
   req.session.data['changedResult'] = "yes"
@@ -349,30 +350,31 @@ router.post('/' + version + '/AO/results/current/change-core-result', function (
   req.session.data['addSpecialismResultConfirmation'] = null
   req.session.data['updateSpecialismResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Specialism Results
 
 // Add specialism result - Results
-router.post('/' + version + '/AO/results/current/add-specialism-result', function (req, res) {
+router.post('/' + version + '/AO/results/add-specialism-result', function (req, res) {
   let addResult = req.session.data['add-specialism-result']
 
   req.session.data['addedResultSpecialism'] = "yes"
   req.session.data['newResultSpecialism'] = addResult
+  req.session.data['updateResultSpecialism'] = null
   req.session.data['showBannerResults'] = "yes"
   req.session.data['addSpecialismResultConfirmation'] = "yes"
   req.session.data['updateSpecialismResultConfirmation'] = null
   req.session.data['addCoreResultConfirmation'] = null
   req.session.data['updateCoreResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
 //Change specialism result - Results
-router.post('/' + version + '/AO/results/current/change-specialism-result', function (req, res) {
+router.post('/' + version + '/AO/results/change-specialism-result', function (req, res) {
   let changeResult = req.session.data['change-specialism-result']
 
   req.session.data['changedResultSpecialism'] = "yes"
@@ -384,257 +386,10 @@ router.post('/' + version + '/AO/results/current/change-specialism-result', func
   req.session.data['addCoreResultConfirmation'] = null
   req.session.data['updateCoreResultConfirmation'] = null
 
-  res.redirect('/' + version + '/AO/results/current/learner-results')
+  res.redirect('/' + version + '/AO/results/learner-results')
 
 });
 
-//Change core result - Results
-// router.post('/V2-1/AO/results/change-core-result-successful', function (req, res) {
-//   let changeResult = req.session.data['result-answer-specialism']
-
-//   req.session.data['changedResult'] = "yes"
-//   req.session.data['updateResult'] = changeResult
-  
-//   res.redirect('/V2-1/AO/results/current/learner-results')
-
-// });
-
-//Search Learner - Results
-router.post('/search-learner', function (req, res) {
-  let uln = req.session.data['uln']
-  if (uln === '1231231231' && '8642135790')
-  {
-    req.session.data['uln'] = uln  
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
-  if (uln === '8642135790')
-  {
-    req.session.data['uln'] = uln
-    res.redirect
-    ('/' + version + '/AO/results/current/learner-results')
-  } 
-
-  else {
-    req.session.data['showBannerResults'] = "no"
-    res.redirect('/' + version + '/AO/results/current/learner-results')
-    
-  }
-
-})
-
-
-//Data Export
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/data-type-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Registrations data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-registrations')  
-  } 
-  if (whatData == "Assessments data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-assessments')  
-  } 
-  if (whatData == "Results data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-results')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/default-filter-data', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "cohort-data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/registrations-filters')  
-  } 
-  if (whatData == "learner-status-data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/registrations-filters')  
-  } 
-
-})
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/data-type-answer-double', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Registrations data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-registrations-double')  
-  } 
-  if (whatData == "Assessments data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-assessments-double')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/data-type-answer-filters', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Registrations data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/select-cohorts-and-learner')  
-  } 
-  if (whatData == "Assessments data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/select-assessment-periods')  
-  } 
-  if (whatData == "Results data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/select-assessment-periods-results')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/data-type-answer-list', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Registrations data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/registrations')  
-  } 
-  if (whatData == "Assessments data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/assessments')  
-  } 
-  if (whatData == "Results data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/results')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'data-type-answer'
-router.post('/data-type-answer-list', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['type']
-
-  // Check whether the variable matches a condition
-  if (whatData == "Registrations data"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/processing-data-file-registrations')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-
-// Run this code when a form is submitted to 'cohorts-answer'
-router.post('/cohorts-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['cohort']
-
-  // Check whether the variable matches a condition
-  if (whatData == "cohort"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/current/select-learner-status')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'cohorts-answer'
-router.post('/learner-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['learner']
-
-  // Check whether the variable matches a condition
-  if (whatData == "learner"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/select-optional-coloumns')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'cohorts-answer'
-router.post('/periods-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['periods4']
-
-  // Check whether the variable matches a condition
-  if (whatData == "periods4"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/download-data/select-optional-columns-assessments-results')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
-
-// Run this code when a form is submitted to 'cohorts-answer'
-router.post('/assessment-periods-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var whatData = req.session.data['aseessments-periods']
-
-  // Check whether the variable matches a condition
-  if (whatData == "aseessments-periods"){
-    // Send user to next page
-    res.redirect('/' + version + '/AO/assessments/assessments-download-data/assessments-optional-columns')  
-  } 
-  // else {
-  //   // Send user to ineligible page
-  //   res.redirect('/' + version + '/AO/download-data/select-data-type-error')
-  // }
-
-})
 
 // PROVIDERS ROUTES 
 

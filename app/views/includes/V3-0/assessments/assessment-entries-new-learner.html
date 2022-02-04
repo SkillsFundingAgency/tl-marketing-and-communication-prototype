@@ -1,0 +1,32 @@
+<section id ="add-entries">
+  <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+  <p class="govuk-body govuk-!-margin-bottom-9">
+    You cannot register this learner for a core component assessment until the summer 2022 window opens.
+  </p>
+
+  {% if data['uln'] === '1234567891'%}
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+
+  <p class="govuk-body govuk-!-margin-bottom-9">
+    You cannot register this learner for an occupational specialism assessment until the summer 2023 window opens.
+  </p>
+
+  {% else %}
+  <h2 class="govuk-heading-m">Occupational specialism :</h2>
+
+  <p class="govuk-body">
+    This learner does not have an occupational specialism recorded on this service
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="">Add an occupational specialism to this learner's record</a>
+  </p>   
+
+  {% endif %}
+
+
+</section>
+
+
+
+

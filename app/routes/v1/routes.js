@@ -652,7 +652,7 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
   router.post('/' + version + '/AO/providers/confirmation-tlevels-added-additional', function (req, res) {
   
     req.session.data['tlevel-added'] = 'yes'
-    res.redirect('/' + version + '/AO/providers/centre-details-existing')
+    res.redirect('/' + version + '/AO/providers/confirmation-tlevels-added-additional')
   
   })
   
@@ -660,12 +660,12 @@ router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) 
   
   router.post('/' + version + '/AO/providers/confirmation-tlevel-removed', function (req, res) {
   
-    let tlevel1 = req.session.data['tLevel-answer']
+    let removeTlevelAnswer = req.session.data['remove-tlevel']
   
-    if (tlevel1 === 'Yes') {
+    if (removeTlevelAnswer === 'Yes') {
       res.redirect('/' + version + '/AO/providers/confirmation-tlevel-removed')
     } else{
-      res.redirect('/' + version + '/AO/providers/centre-details-existing')
+      res.redirect('/' + version + '/AO/providers/provider-details-existing')
     }
   
   })

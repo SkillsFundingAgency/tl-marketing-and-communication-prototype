@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Generating download - Results - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="results-download-data" method="post" novalidate data-validate="">
+
+                    <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l">Generating results data</h2>
+                    </div>
+
+                    <p class="govuk-body">JavaScript is disabled in your browser so we cannot show you a progress icon. 
+                    Generating the file can take up to 10 seconds after you click 'Continue'.</p>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                    Continue (click once)
+                    </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
