@@ -24,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
-            Provider's T Levels
+            Provider's T Levels {{data['removeTLevelTitle']}}
         </h1>
 
         <h2 class="govuk-heading-l">
@@ -41,7 +41,7 @@
               {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel1'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="centre-tlevel-remove.html">
+              <a class="govuk-link" href="centre-tlevel-remove?tleveltitle=providerTlevel1">
                 Remove <span class="govuk-visually-hidden">T Level</span>
               </a>
             </dd>
@@ -52,7 +52,7 @@
               {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel2'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="centre-tlevel-remove?tleveltitle=providerTlevel2">
                 Remove <span class="govuk-visually-hidden">T Level</span>
               </a>
             </dd>
@@ -63,7 +63,7 @@
               {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel3'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="centre-tlevel-remove?tleveltitle=providerTlevel3">
                 Remove <span class="govuk-visually-hidden">T Level</span>
               </a>
             </dd>

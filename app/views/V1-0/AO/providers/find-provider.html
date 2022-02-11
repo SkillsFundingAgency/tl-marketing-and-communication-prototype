@@ -27,13 +27,13 @@ Manage providers – Manage T Level results – GOV.UK
 
           <label class="govuk-label" for="provider">Enter the provider's name
             <div class="autocomplete-wrapper">
-                <select name="provider-list" class="govuk-select" id="provider-list">
+                <select name="providerlist" class="govuk-select" id="providerlist">
                   <option value="">Enter the provider's name</option>
-                  <option value="tl1">Abingdon and Witney College</option>
-                  <option value="tl2">Barnsley City Academy </option>
-                  <option value="tl3">Barking College</option>
-                  <option value="tl4">Leeds City College</option>
-                  <option value="tl5">Luton City College</option>
+                  <option value="TL-1">Abingdon and Witney College</option>
+                  <option value="TL-2">Barnsley City Academy </option>
+                  <option value="TL-3">Barking College</option>
+                  <option value="TL-4">Leeds City College</option>
+                  <option value="TL-5">Luton City College</option>
                  </select>
               </div>
             </label>
@@ -72,7 +72,7 @@ Manage providers – Manage T Level results – GOV.UK
 
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.js"></script>
 <script type="text/javascript">
-  var selectEl = document.querySelector('#provider-list')
+  var selectEl = document.querySelector('#providerlist')
   accessibleAutocomplete.enhanceSelectElement({
       autoselect: true,
       confirmOnBlur: true,
@@ -87,7 +87,7 @@ Manage providers – Manage T Level results – GOV.UK
       var submittedEl = document.querySelector('.submitted')
       submittedEl.classList.remove('submitted--hidden')
       var params = new URLSearchParams(document.location.search.split('?')[1])
-      document.querySelector('.submitted__last-location').innerHTML = params.get('provider-list')
+      document.querySelector('.submitted__last-location').innerHTML = params.get('providerlist')
   }
 </script>
 

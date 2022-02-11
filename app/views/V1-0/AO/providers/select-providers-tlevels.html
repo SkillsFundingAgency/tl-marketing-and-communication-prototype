@@ -10,6 +10,8 @@
 
 {% block content %}
 
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form class="form" action="confirmation-tlevels-provider" method="post">
@@ -17,12 +19,12 @@
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-                          Select provider’s T Levels
+                          Select provider’s T Levels {{[data['providerList']]}}
                         </h1>
                     </legend>
 
                     <h2 class="govuk-heading-l">
-                      {{ data['tLevelsProvidersCourses'][data['provider-list']]['providerName'] }}
+                      {{ data['tLevelsProvidersCourses'][data['providerList']]['providerName'] }}
                          <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data.provider-list]['providerUKPRN'] }}</span>
                     </h2>
                     <span id="tlevel-choice">
@@ -61,9 +63,15 @@
 
 
 
-
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const providerList = urlParams.get('providerlist');
+  sessionStorage.setItem('providerList', providerList)
+</script>
 
 
 {% endblock %}
+
+
 
 <!-- Select at least one T Level -->
