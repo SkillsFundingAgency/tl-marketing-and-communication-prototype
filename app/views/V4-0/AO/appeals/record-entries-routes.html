@@ -9,6 +9,8 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
 Learner has no assessment entries - Manage T Level results - GOV.UK
 {% elif data['uln'] === '5647382910'%}
 Learner does not have any registered grades - Manage T Level results - GOV.UK
+{% elif data['uln'] === '5647382913'%}
+Learner does not have any registered specialism grades - Manage T Level results - GOV.UK
 {% else %}
 ULN not found - Manage T Level results - GOV.UK
 {% endif %}
@@ -19,7 +21,7 @@ ULN not found - Manage T Level results - GOV.UK
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="../tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Appeals</a>
@@ -41,7 +43,7 @@ ULN not found - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     {% if data['showBanner'] === 'yes' %}
-    {% include "includes/V2-0/appeals/record-entries-success-messages.html" %}
+    {% include "../../includes/appeals/record-entries-success-messages.html" %}
     {% else %}
     
     {% endif %}
@@ -59,11 +61,11 @@ ULN not found - Manage T Level results - GOV.UK
 
     {% if data['uln'] === '9876543210' %}
     <div class="govuk-inset-text">
-      This result is final as the date for appeal has passed. To tell us that the grade is being appealed please <a class="govuk-link" href="/V2-0/AO/appeals/exceptions/exceptions-process">raise a request</a>.
+      This result is final as the date for appeal has passed. To tell us that the grade is being appealed please <a class="govuk-link" href="/V1-0/AO/appeals/exceptions/exceptions-process">raise a request</a>.
     </div>
     {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "final" %}
     <div class="govuk-inset-text">
-      This result is final as the outcome of an appeal has been recorded. If you need to change the grade please <a class="govuk-link" href="/V2-0/AO/appeals/exceptions/request-grade-change">contact us</a>.
+      This result is final as the outcome of an appeal has been recorded. If you need to change the grade please <a class="govuk-link" href="/V1-0/AO/appeals/exceptions/request-grade-change">contact us</a>.
     </div>
     {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "locked" %}
     <div class="govuk-inset-text">
@@ -120,13 +122,9 @@ ULN not found - Manage T Level results - GOV.UK
 
 
     {% if data['uln'] === '1987654321'%}
-    {% include "includes/V2-0/appeals/record-entry-full-results-2021.html" %}
-    {% elif data['uln'] === '1122334455' %}
-    {% include "includes/V2-0/appeals/record-entry-no-core-specialism.html" %}
-    {% elif data['uln'] === '1234567890' %}
-    {% include "includes/V2-0/appeals/record-entry-no-core-specialism-not-specified.html" %}
+    {% include "../../includes/appeals/record-entry-full-results-2021.html" %}
     {% elif data['uln'] === '9876543210' %}
-    {% include "includes/V2-0/appeals/record-entry-core-specialism-late.html" %}
+    {% include "../../includes/appeals/record-entry-core-specialism-late.html" %}
     {% endif %}
 
 
@@ -137,13 +135,13 @@ ULN not found - Manage T Level results - GOV.UK
   
 </div>
 {% elif data['uln'] === '8642135790'%}
-{% include "includes/V2-0/appeals/no-assessment-entry.html" %}
+{% include "../../includes/appeals/no-assessment-entry.html" %}
 {% elif data['uln'] === '5647382910'%}
-{% include "includes/V2-0/appeals/no-grades-to-appeal.html" %}
+{% include "../../includes/appeals//no-grades-to-appeal.html" %}
 {% elif data['uln'] === '1231231231' %}
-{% include "includes/V2-0/appeals/learner-withdrawn.html" %}
+{% include "../../includes/appeals/learner-withdrawn.html" %}
 {% else %}
-{% include "includes/V2-0/appeals/no-learner-found.html" %}
+{% include "../../includes/appeals/no-learner-found.html" %}
 {% endif %}
 
 {% endblock %}

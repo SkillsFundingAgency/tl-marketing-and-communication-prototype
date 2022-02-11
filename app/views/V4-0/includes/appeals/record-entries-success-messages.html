@@ -1,0 +1,105 @@
+
+<!-- 
+Success Messages logic 
+
+if core or specialism is under review success message " core/specialism status has been updated"
+
+if core or specialism grade taken off hold (reviewed once) - " core/specialism status has been updated"
+
+if core or specialism grade taken off hold (reviewed once) and grade changed - "core/specialism grade has been updated"
+
+if core or specialism is being appealed - " core/specialism status has been updated"
+
+if core or specialism taken off appeal and no grade change - " core/specialism status has been updated"
+
+if core or specialism taken off appeal and grade change - "core/specialism grade has been updated" 
+
+Success message should not display after user navigates from page (could this work with a flag? i.e. once marked yes not show again)
+
+else no message shown
+
+-->
+
+ 
+<!-- (Summer 2021) if core or specialism is being appealed - " core/specialism status has been updated" -->
+{% if data['newcoreOnHold2021'] === "appealed" or data['newspecialismOnHold2021'] === "appealed"%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      {% if data['newcoreOnHold2021'] === "appealed"%}
+      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} is being appealed 
+      {% elseif data['newspecialismOnHold2021'] === "appealed"%}
+      Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} is being appealed 
+      {% endif %}
+    </h3>
+  </div>
+</div> 
+
+<!-- (Summer 2021) if core appeal appeal has been withdrawn- " core appeal has been withdrawn" -->
+{% elseif data['appealWithdrawn'] === "yes" and data['newcoreOnHold2021'] === "no" %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+ 
+      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} appeal has been withdrawn
+     
+    </h3>
+  </div>
+</div>   
+
+<!-- (Summer 2021) if core or specialism taken off appeal - grade change FINAL - " core/specialism status has been updated" -->
+{% elseif data['newcoreOnHold2021'] === "final" and data['core-result-changed-2021'] === 'yes'%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+ 
+      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} grade is final
+     
+    </h3>
+  </div>
+</div>  
+
+
+<!-- (Summer 2021) if core or specialism taken off appeal - no grade change FINAL - " core/specialism status has been updated" -->
+{% elseif data['newcoreOnHold2021'] === "final" or data['newspecialismOnHold2021'] === "final"%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      {% if data['newcoreOnHold2021'] === "final"%}
+      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} grade is final
+      {% elseif data['newspecialismOnHold2021'] === "final"%}
+      Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} grade is final
+      {% endif %}
+    </h3>
+  </div>
+</div>    
+ 
+
+{% endif %}
+
+
+
