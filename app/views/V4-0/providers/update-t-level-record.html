@@ -4,37 +4,6 @@
   Learner's T Level record
 {% endblock %}
 
-<style>
-    .Table
-    {
-        display: table;
-    }
-    .Title
-    {
-        display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
-    }
-    .Heading
-    {
-        display: table-row;
-        font-weight: bold;
-        text-align: center;
-    }
-    .Row
-    {
-        display: table-row;
-    }
-    .Cell
-    {
-        display: table-cell;
-        border: solid;
-        border-width: thin;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-</style>
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
@@ -43,10 +12,7 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="manage-t-level-records">Manage learner T Level records</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner-tlevel.html">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="manage-t-level-records">Learner registrations</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
   </ol>
@@ -56,7 +22,7 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
 
       <div id="banner"></div>
 
@@ -71,7 +37,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }}</p>
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data['uln']]['learnerName'] }}</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -79,7 +45,7 @@
               ULN
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['uln'] }}</p>
+              <p class="govuk-body">{{ [data['tlevel']] }}</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -87,7 +53,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}</p>
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data['tlevel']]['learnerDOB'] }}</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -95,7 +61,7 @@
               Provider (UKPRN)
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data['tlevel']]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -120,7 +86,7 @@
               {% if data['updatedemStatus'] === 'yes'%}
               {{ data['newemStatus'] }}
               {% else %}
-              {{ data['tLevelsStudentData'][data.uln]['learnerEngMaths'] }}
+              {{ data['tLevelsStudentData'][data['tlevel']]['learnerEngMaths'] }}
               {% endif %}           
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -145,7 +111,7 @@
               {{ data['newindustryPlacement'] }}
               
               {% else %}
-              {{ data['tLevelsStudentData'][data.uln]['learnerIndustryPlacement']}}  
+              {{ data['tLevelsStudentData'][data['tlevel']]['learnerIndustryPlacement']}}  
               {% endif %}
     
 
@@ -162,6 +128,13 @@
 
     </div>
 </div>
+
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const uln = urlParams.get('uln');
+  sessionStorage.setItem('uln', uln)
+</script>
 
 {% endblock %}
 

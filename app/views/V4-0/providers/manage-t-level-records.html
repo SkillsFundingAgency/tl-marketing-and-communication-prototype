@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Manage T Level records - Manage T Level results - GOV.UK
+Manage T Level records - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,84 +10,182 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage learner T Level records</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registered Learners</li>
   </ol>
 </div>
 {% endblock %}
 
 {% block content %}
-<!-- CARD STYLES -->
-<style>
-    .card {
-        background-color: #f3f2f1;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        padding-top: 20px;
-        height: 200px;
-        margin-bottom: 30px;
-    }
-</style>
-
-<!-- MAIN HEADING -->
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-form-group">
-            <h1 class="govuk-heading-l">
-                Manage learner T Level records
-            </h1>
-        </div>
-        <p class="govuk-body">
-          Add or update records for learners registered on a T Level course by an exam board (also known as an awarding organisation).
-        </p>
-    </div>
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Registered Learners (100)</h1>
+  </div>
 </div>
 
-<!-- MAIN ROW -->
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m">Filters</h3>
+    <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
 
-  <div class="govuk-grid-column-full">
-      <div class="govuk-inset-text" style="margin-top: 0px;">
-          The information you provide here will be used to calculate overall T Level results and issue certificates and statements of achievement. 
-          Please make sure it is correct as it will not be checked by ESFA.
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/" method="get" novalidate="">
+      <div class="govuk-form-group">
+        <label class="govuk-label app-search__label govuk-label--m" for="keywords">
+          Search by learner name or ULN
+        </label>
+        <input class="govuk-input app-search__input " id="keywords" name="keywords" type="search">
       </div>
+      <button class="govuk-button app-search__button" data-module="govuk-button">
+        Search
+      </button>
+    </form>
+
+    <div class="moj-filter-layout__content" id="records-list">
+
+      <div class="app-records-actions">
+        <div class="app-records-actions__col">
+
+          <p class="govuk-body govuk-!-margin-bottom-3"><a href="#" class="govuk-link">Export these records</a></p>
+          <p class="govuk-visually-hidden">Records sorted by </p>
+          <p class="govuk-body govuk-!-margin-bottom-3">
+            <span class="govuk-!-font-weight-bold">Sort by:</span>
+            <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
+
+              <span class="">Date updated</span>
+
+            </span>
+
+            |
+            <span class="govuk-!-margin-left-2 govuk-!-margin-right-1">
+
+              <a href="/records?sortOrder=lastName" class="govuk-link govuk-link--no-visited-state">Last name</a>
+
+            </span>
+
+
+          </p>
+        </div>
+
+      </div>
+
+          <div class="app-application-card ">
+
+            <div class="app-application-card_row app-application-card_row--header">
+              <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
+                  Danny Waldron
+                </a>
+                <span class="govuk-body">1234567890</span>
+              </h3>
+
+              <span class="app-application-card_tag-container">
+                <span style="display: inline-block;">
+                  <strong class="govuk-tag app-tag--record-incomplete">
+                    Incomplete
+                  </strong>
+
+                </span>
+              </span>
+            </div>
+
+
+            <div class="app-application-card_row app-application-card_row--body">
+              <div class="app-application-card_col">
+                <div>
+
+                  <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1">
+                    <span class="govuk-visually-hidden">Course: </span>
+
+                    T Level in Business Studies and Administration
+
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-16">
+                    <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
+                  </p>
+                </div>
+                <div>
+                  <p class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
+                  <p class="govuk-caption-m govuk-!-font-size-16">
+                    Start year:
+                    <span class="app-nowrap">2021 to 2022</span>
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="app-application-card_col">
+                <p
+                  class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1 app-application-card__submitted">
+
+                  Updated: <span>31 January 2022
+
+                  </span></p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="app-application-card ">
+
+            <div class="app-application-card_row app-application-card_row--header">
+              <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
+                  Frankie Thomas
+                </a>
+                <span class="govuk-body">1122334455</span>
+              </h3>
+
+              <span class="app-application-card_tag-container">
+                <span style="display: inline-block;">
+                  <strong class="govuk-tag app-tag--record-incomplete">
+                    Incomplete
+                  </strong>
+
+                </span>
+              </span>
+            </div>
+
+
+            <div class="app-application-card_row app-application-card_row--body">
+              <div class="app-application-card_col">
+                <div>
+
+                  <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1">
+                    <span class="govuk-visually-hidden">Course: </span>
+
+                    T Level in Business Studies and Administration
+
+                  </p>
+                  <p class="govuk-body govuk-!-font-size-16">
+                    <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
+                  </p>
+                </div>
+                <div>
+                  <p class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
+                  <p class="govuk-caption-m govuk-!-font-size-16">
+                    Start year:
+                    <span class="app-nowrap">2021 to 2022</span>
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="app-application-card_col">
+                <p
+                  class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1 app-application-card__submitted">
+
+                  Updated: <span>31 January 2022
+
+                  </span></p>
+              </div>
+            </div>
+
+          </div>
+
+    </div>
   </div>
 
-    <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card" name="hub-choice-4">
-            <h2 class="govuk-heading-m">
-                    Add a new learner T Level record
-            </h2>
-            <p class="govuk-body">Tell us if a learner has:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>met the minimum standard for English and maths</li>
-                <li>completed their industry placement</li>
-              </ul>
-            <p class="govuk-body">
-              <a class="govuk-link--no-visited-state" href="add-learner-q1-uln">
-                Add a new learner T Level record
-              </a>
-            </p>
-        </div>
-    </div>
-
-    <div class="govuk-grid-column-one-half">
-      <div class="govuk-form-group card" name="hub-choice-5">
-        <h2 class="govuk-heading-m">
-          Update a learner T Level record
-        </h2>
-        <p class="govuk-body">Search for and change an existing:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>English and maths achievement status</li>
-          <li>industry placement completion status</li>
-        </ul>
-
-        <p class="govuk-body">
-          <a class="govuk-link--no-visited-state" href="search-learner-tlevel">
-              Update a learner T Level record
-          </a>
-        </p>
-      </div>
-    </div>
+</div>
 
 {% endblock %}
