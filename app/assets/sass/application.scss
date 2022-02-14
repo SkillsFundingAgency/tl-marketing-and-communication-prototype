@@ -15,6 +15,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
+// Components that aren't in Frontend
+@import "components/record-header";
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .app-float-right{
@@ -341,7 +344,3 @@ $govuk-assets-path: '/govuk/assets/';
     justify-content: space-between;
   }
 }
-
-// .app-application-card__caption {
-
-// }

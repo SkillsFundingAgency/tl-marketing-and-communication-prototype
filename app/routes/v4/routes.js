@@ -708,16 +708,27 @@ router.post('/' + version + '/providers/change-ip-result', function (req, res) {
   });
 
 
-//Update English and Maths status
-router.post('/' + version + '/providers/change-em-status', function (req, res) {
-    let newStatus = req.session.data['result-answer']
+//Update Maths status
+router.post('/' + version + '/providers/add-maths-status', function (req, res) {
+    let newmathsStatus = req.session.data['mathsStatus']
   
     req.session.data['updatedemStatus'] = "yes"
-    req.session.data['newemStatus'] = newStatus
+    req.session.data['mathsStatus'] = newmathsStatus
     
-    res.redirect('/' + version + '/providers/change-em-status-successful')
+    res.redirect('/' + version + '/providers/update-t-level')
   
   });
+
+//Update English status
+router.post('/' + version + '/providers/add-english-status', function (req, res) {
+  let newenglishStatus = req.session.data['englishStatus']
+
+  req.session.data['updatedemStatus'] = "yes"
+  req.session.data['englishStatus'] = newenglishStatus
+  
+  res.redirect('/' + version + '/providers/update-t-level')
+
+});
 
 //Cancel Request Statement of Achievement 
 router.post('/' + version + '/providers/request-statement-of-achievement-cancel', function (req, res) {
