@@ -128,16 +128,19 @@ Learner's T Level record
           Maths
         </dd>
         <dd class="govuk-summary-list__value">
-          {% if data['updatedemStatus'] === 'yes'%}
-          {{ data['newemStatus'] }}
+          {% if data['updatedmathsStatus'] === 'yes'%}
+          {{ data['newmathsStatus'] }}
           {% else %}
           {{ data['tLevelsStudentData'][data['uln']]['learnerEngMaths'] }}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
+          {% if data['newmathsStatus'] === 'Achieved level 2 in Maths'%}
+          {% else %}
           <a class="govuk-link" href="add-maths-status">
             Change <span class="govuk-visually-hidden"> maths status</span>
           </a>
+          {% endif %}
         </dd>
       </div>
       <div class="govuk-summary-list__row">

@@ -712,10 +712,10 @@ router.post('/' + version + '/providers/change-ip-result', function (req, res) {
 router.post('/' + version + '/providers/add-maths-status', function (req, res) {
     let newmathsStatus = req.session.data['mathsStatus']
   
-    req.session.data['updatedemStatus'] = "yes"
+    req.session.data['updatedmathsStatus'] = "yes"
     req.session.data['mathsStatus'] = newmathsStatus
     
-    res.redirect('/' + version + '/providers/update-t-level')
+    res.redirect('/' + version + '/providers/update-t-level-record')
   
   });
 
@@ -726,7 +726,7 @@ router.post('/' + version + '/providers/add-english-status', function (req, res)
   req.session.data['updatedemStatus'] = "yes"
   req.session.data['englishStatus'] = newenglishStatus
   
-  res.redirect('/' + version + '/providers/update-t-level')
+  res.redirect('/' + version + '/providers/update-t-level-record')
 
 });
 
