@@ -159,8 +159,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
                 <p> {{ data['industrial-placement-models'] }}</p> 
               {% endif %}
 
-            <p>Multiple employer model</p>
-            
+
             {% elif (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 6)%}
             {% for item in data['industrial-placement-models']%}
             <p>{{ item }}</p>

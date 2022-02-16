@@ -12,7 +12,7 @@ Add industry placement details - Update learner record - Manage T Level results 
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="change-ip-result" method="post" class="form" id="my_radio_box">
+        <form action="change-ip-result" method="post" novalidate data-validate='placementStatus-validation'>
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -66,4 +66,19 @@ Add industry placement details - Update learner record - Manage T Level results 
     </div>
 </div>
 
+<script type="application/json" id="placementStatus-validation">
+    {
+
+        "result-ip-answer": {
+
+            "presence": {
+
+                "message": "^Select something...."
+
+            }
+
+        }
+
+    }
+</script>
 {% endblock %}

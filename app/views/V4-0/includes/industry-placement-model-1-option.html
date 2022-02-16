@@ -1,37 +1,59 @@
 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
     <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="industrial-placement-models-1"
-            name="industrial-placement-models" type="checkbox" value="Occupationally relevant part-time work"
-            {{ checked("industrial-placement-models", "Occupationally relevant part-time work") }}>
+        <input class="govuk-checkboxes__input" id="industrial-placement-models-1" name="industrial-placement-models"
+            type="checkbox" value="Relevant part-time work" {{
+            checked("industrial-placement-models", "Relevant part-time work" ) }}>
         <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-1">
             Relevant part-time work
         </label>
     </div>
     <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="industrial-placement-models-2"
-            name="industrial-placement-models" type="checkbox"
-            value="On-site facilities for 105 hours (for SEND students)"
-            {{ checked("industrial-placement-models", "On-site facilities for 105 hours (for SEND students)") }}>
-        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2">
-            On-site facilities for SEND students)
+        <input class="govuk-checkboxes__input" id="industrial-placement-models-2" name="industrial-placement-models"
+            type="checkbox" value="On-site facilities for SEND students">
+        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2" {{
+            checked("industrial-placement-models", "On-site facilities for SEND students" ) }}>
+            On-site facilities for SEND students
         </label>
     </div>
     <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="industrial-placement-models-3"
-            name="industrial-placement-models" type="checkbox"
-            value="On-site facilities (for young people in Young Offender Institutions)"
-            {{ checked("industrial-placement-models", "On-site facilities (for young people in Young Offender Institutions)") }}>
-        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-3">
+        <input class="govuk-checkboxes__input" id="industrial-placement-models-3" name="industrial-placement-models"
+            type="checkbox" value="On-site facilities for young people in young offender institutions)">
+        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-3" {{
+            checked("industrial-placement-models", "On-site facilities for young people in young offender institutions"
+            ) }}>
             On-site facilities for young people in young offender institutions)
         </label>
     </div>
     <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="industrial-placement-models-7"
-            name="industrial-placement-models" type="checkbox"
-            value="Commercial, charitable or community projects"
-            {{ checked("industrial-placement-models", "Construction: Commercial, Charitable or Community Projects") }}>
-        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-7">
+        <input class="govuk-checkboxes__input" id="industrial-placement-models-7" name="industrial-placement-models"
+            type="checkbox" value="Commercial, charitable or community projects">
+        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-7" {{
+            checked("industrial-placement-models", "Commercial, charitable or community projects" ) }}>
             Commercial, charitable or community projects
         </label>
     </div>
+    <div class="govuk-checkboxes__divider">or</div>
+    <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="industrial-placement-models-8" name="industrial-placement-models"
+            type="checkbox" value="No, other industry placement model was used">
+        <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-8">
+            No, other industry placement model was used
+        </label>
+    </div>
 </div>
+
+<script type="application/json" id="industrial-placement-models-validation">
+  {
+
+    "industrial-placement-models": {
+
+      "presence": {
+
+        "message": "^Select which industrial placement model was used"
+
+      }
+
+    }
+
+  }
+</script>
