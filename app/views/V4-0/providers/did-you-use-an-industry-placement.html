@@ -13,12 +13,12 @@ Did Danny Waldron use an industry placement model?
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="industry-placement" method="post" novalidate data-validate='industryModel-validation'>
-
+        <span class="govuk-caption-xl">Update learner record</span>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use an industry placement model?
+                Was an industry placement model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}'s industry placement?
               </h1>
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">

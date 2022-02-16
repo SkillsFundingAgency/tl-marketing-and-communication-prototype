@@ -14,18 +14,19 @@ How many hours did the student spend on placement? - Manage T Level results - GO
   <div class="govuk-grid-column-two-thirds">
     <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
       <div class="govuk-form-group">
+        <span class="govuk-caption-xl">Update learner record</span>
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading" for="total-placement-hours">
-            How many hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} spend on placement?
+            How many industry placement hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} complete?
           </h1>
         </legend>
         <div id="total-placement-hours-hint" class="govuk-hint">
-          Maximum of 999 hours
+          Must be between 1 and 999
         </div>
         <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
-          id="total-placement-hours" name="total-placement-hours" type="text">
+          id="total-placement-hours" name="total-placement-hours" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
       </div>
-
+      
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>

@@ -19,17 +19,17 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-heading-l govuk-fieldset__heading">
-                    Which temporary flexibilities did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use?
+                    Which temporary flexibilities were granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
                   </h1>
                   <div id="model-hint" class="govuk-hint">
-                    Maximum of two options can be selected
+                    Select all that apply
                   </div>
                 </legend>
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities" type="checkbox" value="100% remote" {{ checked("temporary-flexibilities", "100% remote") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
-                      100% remote
+                      Up to 100% remote
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
@@ -38,24 +38,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
                       Employer led activities/projects
                     </label>
                   </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="temporary-flexibilities-3" name="temporary-flexibilities" type="checkbox" value="JABQG Risk Rated Approach to be applied to the assessment of EYE students" {{ checked("temporary-flexibilities", "JABQG Risk Rated Approach to be applied to the assessment of EYE students") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-3">
-                      JABQG Risk Rated Approach to be applied to the assessment of EYE students
-                    </label>
-                  </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="temporary-flexibilities-4" name="temporary-flexibilities" type="checkbox" value="Reduction in hours for EYE criteria" {{ checked("temporary-flexibilities", "Reduction in hours for EYE criteria") }}>
-                  <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-4">
-                    Reduction in hours for EYE criteria
-                  </label>
-                </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="temporary-flexibilities-5" name="temporary-flexibilities" type="checkbox" value="Pathway level placements" {{ checked("temporary-flexibilities", "Pathway level placements") }} >
-                <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-5">
-                  Pathway level placements
-                </label>
-              </div>
+                  
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="temporary-flexibilities-6" name="temporary-flexibilities" type="checkbox" value="Blended placements" {{ checked("temporary-flexibilities", "Blended placements") }}  >
               <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-6">
@@ -82,7 +65,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 
             "presence": {
 
-                "message": "^Select which temporary flexibilities were used"
+                "message": "^Select one or more temporary flexibilities"
 
             }
 

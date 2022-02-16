@@ -15,19 +15,21 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 
     <form action="did-you-use-a-flexibility" id="industry-placement-model" method="post" novalidate
       data-validate='industrial-placement-models-validation'>
+      <span class="govuk-caption-xl">Update learner record</span>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l govuk-fieldset__heading">
-              Which industrial placement models were used by {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
-            </h1>
-          </legend>
-          <div id="model-hint" class="govuk-hint">
-            {% if data['multipleEmployerModel'] === 'no' %}
-            Maximum of two options can be selected
-            {% else %}
-            {% endif %}
-          </div>
+
+          {% if data['multipleEmployerModel'] === 'yes' %}
+
+          {% include "../includes/industry-placement-model-1-h1.html" %}
+
+          {% else %}
+
+          {% include "../includes/industry-placement-model-2-h1.html" %}
+
+          {% endif %}
+
+          
 
           {% if data['multipleEmployerModel'] === 'yes' %}
 

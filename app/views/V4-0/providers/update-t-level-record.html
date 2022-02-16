@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's T Level record
+  T Level record
 {% endblock %}
 
 <style>
@@ -45,10 +45,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="manage-t-level-records">Manage learner T Level records</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner-tlevel.html">Search for a learner</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">T Level record</li>
   </ol>
 </div>
 {% endblock %}
@@ -60,7 +57,7 @@
 
       <div id="banner"></div>
 
-        <h1 class="govuk-heading-l">Learner T Level record</h1>
+        <h1 class="govuk-heading-l">T Level record</h1>
 
         <h2 class="govuk-heading-m">Learner details</h2>
 
@@ -92,15 +89,15 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Provider (UKPRN)
+              Provider<br />(UKPRN)
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }} {{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
+              <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br />{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              T Level title
+              T Level
             </dt>
             <dd class="govuk-summary-list__value">
               <p class="govuk-body">Design, Surveying and Planning for Construction</p>
@@ -109,7 +106,7 @@
           </dl>
 
 
-        <h2 class="govuk-heading-m">Learner's English and maths achievement</h2>
+        <h2 class="govuk-heading-m">English and maths</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -131,7 +128,7 @@
           </div>
         </dl>
 
-        <h2 class="govuk-heading-m">Learner's industry placement completion</h2>
+        <h2 class="govuk-heading-m">Industry placement</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">

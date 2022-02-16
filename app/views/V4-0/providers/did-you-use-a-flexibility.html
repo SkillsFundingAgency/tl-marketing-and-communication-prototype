@@ -13,12 +13,12 @@ Did Danny Waldron use an industry placement model?
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="flexibility" method="post" novalidate data-validate='flexibility-validation'>
-
+        <span class="govuk-caption-xl">Update learner record</span>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use a temporary flexibility?
+                Was {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} granted a temporary flexibility?
               </h1>
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
@@ -53,7 +53,7 @@ Did Danny Waldron use an industry placement model?
 
             "presence": {
 
-                "message": "^Select yes if Danny Waldron used a temporary flexibility"
+                "message": "^Select whether the learner was granted a temporary flexibility"
 
             }
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Search for a learner page
+  Search ULN - Update record 
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,6 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="student-results">Manage learner T Level records</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
   </ol>
 </div>
 {% endblock %}
@@ -31,10 +30,10 @@
               Search for a learner
             </h1>
           </legend>
-          <p class="govuk-body">You can view and update learner T Level records you've already added.</p>
+          <p class="govuk-body">You can view and update learner T Level records.</p>
           <div class="govuk-form-group">
             <label class="govuk-label" for="uln-search">
-              Enter the Unique Learner Number (ULN)
+              Enter the unique learner number (ULN)
             </label>
             <span class="govuk-hint">
               ULN must be 10 digits long
@@ -60,11 +59,11 @@
       },
       "numericality": {
         "onlyInteger": true,
-        "message": "^Unique learner number must be a number"
+        "message": "^ULN must contain only numbers"
       },
       "length": {
         "is": 10,
-        "message": "^Unique learner number must be 10 numbers long"
+        "message": "^Enter a 10-digit ULN"
       }
     }
 
