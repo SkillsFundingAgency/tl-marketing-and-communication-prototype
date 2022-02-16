@@ -14,14 +14,13 @@ What is the reason for the special consideration - Manage T Level results - GOV.
     <div class="govuk-grid-column-two-thirds">
         <form action="did-you-use-an-industry-placement" method="post" id="special-consideration" novalidate data-validate='special-consideration-validation'>
             <div class="govuk-form-group">
-                <span class="govuk-caption-xl">Update learner record</span>
                 <fieldset class="govuk-fieldset" aria-describedby="special-consideration-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
                             Why was {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} granted special consideration for their industrial placement?
                         </h1>
                     </legend>
-                    <div id="waste-hint" class="govuk-hint">
+                    <div id="special-consideration-hint" class="govuk-hint">
                         Select all that apply.  We will ask you to declare that you hold documentary evidence on file before you can submit this learner's industry placement details.
                     </div>
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">

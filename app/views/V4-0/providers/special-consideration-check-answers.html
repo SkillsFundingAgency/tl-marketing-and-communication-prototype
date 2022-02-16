@@ -46,7 +46,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
             T Level
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Design, Surveying and Planning for Construction</p>
+            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}</p>
           </dd>
         </div>
       </dl>
@@ -143,14 +143,25 @@ Industry placement check answers - Manage T Level results - GOV.UK
         {% if data['industryModel'] === 'yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            {% if data['multipleEmployerModel'] === 'yes' %}
             Other industrial placement model(s) used
+            {% else %}
+            Industrial placement model(s) used
+            {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['multipleEmployerModel'] === 'yes' %}
-            <p> {{ data['industrial-placement-models'] }}</p> 
+              {% if (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 4)%}
+                {% for item in data['industrial-placement-models']%}
+                <p>{{ item }}</p>
+                {% endfor %}
+              {% else %}
+                <p> {{ data['industrial-placement-models'] }}</p> 
+              {% endif %}
+
             <p>Multiple employer model</p>
             
-            {% elif data['industrial-placement-models']|length === 2 %}
+            {% elif (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 6)%}
             {% for item in data['industrial-placement-models']%}
             <p>{{ item }}</p>
             {% endfor %}
