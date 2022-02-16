@@ -29,17 +29,15 @@ Manage T Level records - Manage T Level results - GOV.UK
 
   </div>
   <div class="govuk-grid-column-two-thirds">
-    <form action="/" method="get" novalidate="">
       <div class="govuk-form-group">
         <label class="govuk-label app-search__label govuk-label--m" for="keywords">
           Search by learner name or ULN
         </label>
-        <input class="govuk-input app-search__input " id="keywords" name="keywords" type="search">
+        <input class="govuk-input app-search__input" id="keywords" name="keywords" type="search" >
       </div>
-      <button class="govuk-button app-search__button" data-module="govuk-button">
+      <button type="button" class="govuk-button app-search__button" data-module="govuk-button" onclick="search()">
         Search
       </button>
-    </form>
 
     <div class="moj-filter-layout__content" id="records-list">
 
@@ -51,26 +49,17 @@ Manage T Level records - Manage T Level results - GOV.UK
           <p class="govuk-body govuk-!-margin-bottom-3">
             <span class="govuk-!-font-weight-bold">Sort by:</span>
             <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
-
               <span class="">Date updated</span>
-
             </span>
-
-            |
             <span class="govuk-!-margin-left-2 govuk-!-margin-right-1">
-
               <a href="/records?sortOrder=lastName" class="govuk-link govuk-link--no-visited-state">Last name</a>
-
             </span>
-
-
           </p>
         </div>
 
       </div>
 
-          <div class="app-application-card ">
-
+          <div class="app-application-card">
             <div class="app-application-card_row app-application-card_row--header">
               <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
                 <a href="update-t-level-record?uln=1987654321" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
@@ -183,9 +172,38 @@ Manage T Level records - Manage T Level results - GOV.UK
 
           </div>
 
+
     </div>
   </div>
 
 </div>
+
+<script>
+
+function search() {
+  // Locate the card elements
+  let cards = document.querySelectorAll('.app-application-card')
+  // Locate the search input
+  let search_query = document.getElementById("keywords").value;
+  // Loop through the cards
+  for (var i = 0; i < cards.length; i++) {
+    // If the text is within the card...
+    if(cards[i].innerText.toLowerCase()
+      // ...and the text matches the search query...
+      .includes(search_query.toLowerCase())) {
+        // ...remove the `.is-hidden` class.
+        cards[i].classList.remove("is-hidden");
+    } else {
+      // Otherwise, add the class.
+      cards[i].classList.add("is-hidden");
+    }
+  }
+}
+
+</script>
+
+<style>
+  .is-hidden { display: none; }
+</style>
 
 {% endblock %}
