@@ -38,12 +38,6 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 
     "total-placement-hours": {
 
-      "presence": {
-        "message": "^Enter number of hours student spent on placement"
-
-      },
-
-
       "numericality": {
         "onlyInteger": true,
         "message": "^Hours spent on placement must be a number, like 50"
@@ -54,7 +48,12 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         "lessThanOrEqualTo": 999,
         "message": "^Hours spent on placement must be 999 or fewer"
 
-      }
+      },
+
+      "presence": {
+        "message": "^Enter number of hours student spent on placement"
+
+      },
 
     }
 
