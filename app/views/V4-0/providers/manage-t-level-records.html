@@ -24,40 +24,146 @@ Manage T Level records - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third">
-    <h3 class="govuk-heading-m">Filters</h3>
-    <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+    <div style="border: 2px solid #505a5f;">
+    <h3 class="govuk-heading-m govuk-!-padding-top-4">Filters</h3>
+    <button class="govuk-button ">Apply filters</button>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend">
+          Start year
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="start-year" name="start-year" type="checkbox" value="2020 to 2021">
+            <label class="govuk-label govuk-checkboxes__label" for="start-year">
+              2020 to 2021
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="start-year-2" name="start-year" type="checkbox" value="2021 to 2022">
+            <label class="govuk-label govuk-checkboxes__label" for="start-year-2">
+              2021 to 2022
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend">
+          Status
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="incomplete">
+            <label class="govuk-label govuk-checkboxes__label" for="status">
+              Incomplete
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="complete">
+            <label class="govuk-label govuk-checkboxes__label" for="status-2">
+              Complete
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend">
+          Awarding organisation
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="awarding-organisation" name="awarding-organisation" type="checkbox" value="ncfe">
+            <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation">
+              NCFE
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="awarding-organisation-2" name="awarding-organisation" type="checkbox" value="pearson">
+            <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation-2">
+              Pearson
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="awarding-organisation-3" name="awarding-organisation" type="checkbox" value="city and guilds">
+            <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation-3">
+              City and Guilds
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend">
+          T level
+        </legend>
+        <div class="govuk-form-group govuk-!-margin-top-1">
+          <label class="govuk-label govuk-visually-hidden" for="width-10">
+            T level search
+          </label>
+          <input onkeyup="tlevelsearch()" class="govuk-input govuk-input--width-10" id="tlevel-search" name="width-10" type="text">
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="t-level" name="t-level" type="checkbox" value="design, surveying and planning">
+            <label class="govuk-label govuk-checkboxes__label" for="t-level">
+              Design, surveying and planning
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="t-level-2" name="t-level" type="checkbox" value="business studies and administration">
+            <label class="govuk-label govuk-checkboxes__label" for="t-level-2">
+              Business studies and administration
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="t-level-3" name="t-level" type="checkbox" value="business studies">
+            <label class="govuk-label govuk-checkboxes__label" for="t-level-3">
+              Business studies
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
 
   </div>
   <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
         <label class="govuk-label app-search__label govuk-label--m" for="keywords">
           Search by learner name or ULN
         </label>
-        <input class="govuk-input app-search__input" id="keywords" name="keywords" type="search" >
+        <input class="govuk-input app-search__input govuk-input--width-20" id="keywords" name="keywords" type="search" >
+        <button type="button" class="govuk-button app-search__button" data-module="govuk-button" onclick="search()">
+          Search
+        </button>
       </div>
-      <button type="button" class="govuk-button app-search__button" data-module="govuk-button" onclick="search()">
-        Search
-      </button>
+
 
     <div class="moj-filter-layout__content" id="records-list">
 
       <div class="app-records-actions">
         <div class="app-records-actions__col">
-
-          <p class="govuk-body govuk-!-margin-bottom-3"><a href="#" class="govuk-link">Export these records</a></p>
+          <p class="govuk-body govuk-!-margin-bottom-6 app-float-right"><a href="#" class="govuk-link">Export these records</a></p>
           <p class="govuk-visually-hidden">Records sorted by </p>
           <p class="govuk-body govuk-!-margin-bottom-3">
             <span class="govuk-!-font-weight-bold">Sort by:</span>
             <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
               <span class="">Date updated</span>
             </span>
+            <span>|</span>
             <span class="govuk-!-margin-left-2 govuk-!-margin-right-1">
               <a href="/records?sortOrder=lastName" class="govuk-link govuk-link--no-visited-state">Last name</a>
             </span>
           </p>
         </div>
-
       </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
           <div class="app-application-card">
             <div class="app-application-card_row app-application-card_row--header">
@@ -83,19 +189,18 @@ Manage T Level records - Manage T Level results - GOV.UK
               <div class="app-application-card_col">
                 <div>
 
-                  <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1">
+                  <p class="govuk-body-s govuk-!-margin-bottom-1">
                     <span class="govuk-visually-hidden">Course: </span>
-
                     T Level in Business Studies and Administration
 
                   </p>
-                  <p class="govuk-body govuk-!-font-size-16">
+                  <p class="govuk-body-s">
                     <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
                   </p>
                 </div>
                 <div>
-                  <p class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
-                  <p class="govuk-caption-m govuk-!-font-size-16">
+                  <p class="govuk-body-s">Awarding organisation: Pearson</p>
+                  <p class="govuk-body-s">
                     Start year:
                     <span class="app-nowrap">2021 to 2022</span>
                   </p>
@@ -105,9 +210,9 @@ Manage T Level records - Manage T Level results - GOV.UK
 
               <div class="app-application-card_col">
                 <p
-                  class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1 app-application-card__submitted">
+                  class="govuk-body-s govuk-!-margin-bottom-1 app-application-card__submitted">
 
-                  Updated: <span>31 January 2022
+                  Updated: <span>29 January 2022
 
                   </span></p>
               </div>
@@ -140,19 +245,19 @@ Manage T Level records - Manage T Level results - GOV.UK
               <div class="app-application-card_col">
                 <div>
 
-                  <p class="govuk-body govuk-!-font-size-16 govuk-!-margin-bottom-1">
+                  <p class="govuk-body-s govuk-!-margin-bottom-1">
                     <span class="govuk-visually-hidden">Course: </span>
 
                     T Level in Business Studies and Administration
 
                   </p>
-                  <p class="govuk-body govuk-!-font-size-16">
+                  <p class="govuk-body-s">
                     <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
                   </p>
                 </div>
                 <div>
-                  <p class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
-                  <p class="govuk-caption-m govuk-!-font-size-16">
+                  <p class="govuk-body-s govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
+                  <p class="govuk-body-s">
                     Start year:
                     <span class="app-nowrap">2021 to 2022</span>
                   </p>
@@ -162,7 +267,7 @@ Manage T Level records - Manage T Level results - GOV.UK
 
               <div class="app-application-card_col">
                 <p
-                  class="govuk-caption-m govuk-!-font-size-16 govuk-!-margin-bottom-1 app-application-card__submitted">
+                  class="govuk-body-s govuk-!-margin-bottom-1 app-application-card__submitted">
 
                   Updated: <span>31 January 2022
 
@@ -185,6 +290,29 @@ function search() {
   let cards = document.querySelectorAll('.app-application-card')
   // Locate the search input
   let search_query = document.getElementById("keywords").value;
+  // Loop through the cards
+  for (var i = 0; i < cards.length; i++) {
+    // If the text is within the card...
+    if(cards[i].innerText.toLowerCase()
+      // ...and the text matches the search query...
+      .includes(search_query.toLowerCase())) {
+        // ...remove the `.is-hidden` class.
+        cards[i].classList.remove("is-hidden");
+    } else {
+      // Otherwise, add the class.
+      cards[i].classList.add("is-hidden");
+    }
+  }
+}
+
+function tlevelsearch() {
+  console.log('tlevelsearch')
+  // Locate the card elements
+  let cards = document.querySelectorAll('input[name="t-level"]')
+  console.log(cards)
+  // Locate the search input
+  let search_query = document.getElementById("tlevel-search").value;
+  console.log (search_query)
   // Loop through the cards
   for (var i = 0; i < cards.length; i++) {
     // If the text is within the card...
