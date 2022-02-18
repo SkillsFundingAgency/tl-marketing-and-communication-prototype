@@ -22,6 +22,19 @@ Learner's T Level record
 {% block content %}
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    {% if data['showBanner'] === 'maths' or data['showBanner'] === 'english'%}
+    {% include "../includes/provider-notification-messages/maths-english-success-messages.html" %}
+    {% else %}
+    
+    {% endif %}
+
+
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <div class="record-header">
@@ -62,11 +75,19 @@ Learner's T Level record
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Provider (UKPRN)
+          Provider
         </dt>
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerProvider'] }} {{
             data['tLevelsStudentDataV3'][data.uln]['UKPRN'] }}</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UKPRN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{data['tLevelsStudentDataV3'][data.uln]['UKPRN'] }}</p>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
