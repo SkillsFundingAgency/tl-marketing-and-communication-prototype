@@ -26,7 +26,7 @@ Learner's T Level record
 
     <div class="record-header">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
-        {{ data['tLevelsStudentData'][data['uln']]['learnerName'] }}
+        {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
 
         <span style="display: inline-block;">
           <strong class="govuk-tag app-tag--record-incomplete">
@@ -52,7 +52,7 @@ Learner's T Level record
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">{{ data['tLevelsStudentData'][data['uln']]['learnerDOB'] }}</p>
+          <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerDOB'] }}</p>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -60,8 +60,8 @@ Learner's T Level record
           Provider (UKPRN)
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">{{ data['tLevelsStudentData'][data['uln']]['learnerProvider'] }} {{
-            data['tLevelsStudentData'][data.uln]['UKPRN'] }}</p>
+          <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerProvider'] }} {{
+            data['tLevelsStudentDataV3'][data.uln]['UKPRN'] }}</p>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -69,7 +69,7 @@ Learner's T Level record
           T Level  
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">{{ data['tLevelsStudentData'][data['uln']]['learnerTLevelTitle'] }}</p>
+          <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelTitle'] }}</p>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -77,7 +77,7 @@ Learner's T Level record
           Start year 
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">2020 to 2021</p>
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerStartYear'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -85,7 +85,7 @@ Learner's T Level record
           Awarding Organisation 
         </dt>
         <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Pearson</p>
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}
         </dd>
       </div>
     </dl>
@@ -104,7 +104,7 @@ Learner's T Level record
           {{ data['newindustryPlacement'] }}
 
           {% else %}
-          {{ data['tLevelsStudentData'][data['uln']]['learnerIndustryPlacement']}}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}
           {% endif %}
 
 
@@ -131,7 +131,7 @@ Learner's T Level record
           {% if data['updatedmathsStatus'] === 'yes'%}
           {{ data['newmathsStatus'] }}
           {% else %}
-          {{ data['tLevelsStudentData'][data['uln']]['learnerEngMaths'] }}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] }}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -148,10 +148,10 @@ Learner's T Level record
           English
         </dd>
         <dd class="govuk-summary-list__value">
-          {% if data['updatedemStatus'] === 'yes'%}
-          {{ data['newemStatus'] }}
+          {% if data['updatedenglishStatus'] === 'yes'%}
+          {{ data['newenglishStatus'] }}
           {% else %}
-          {{ data['tLevelsStudentData'][data['uln']]['learnerEngMaths'] }}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] }}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -171,7 +171,7 @@ Learner's T Level record
           T Level grade
         </dd>
         <dd class="govuk-summary-list__value">
-          <p>Merit</p>
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -184,9 +184,9 @@ Learner's T Level record
           Core
         </dd>
         <dd class="govuk-summary-list__value">
-
-          <p>{{ data['tLevelsStudentData'][data['uln']]['learnerTLevelCore'] }}</p>
-          <p>Grade: A*</p>
+          
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] }}</p>
+          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}</p>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -200,8 +200,8 @@ Learner's T Level record
         </dd>
         <dd class="govuk-summary-list__value">
 
-          <p>{{ data['tLevelsStudentData'][data['uln']]['learnerTLevelSpecialism'] }}</p>
-          <p>Grade: Pass</p>
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
+          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
 
         </dd>
         <dd class="govuk-summary-list__actions">
