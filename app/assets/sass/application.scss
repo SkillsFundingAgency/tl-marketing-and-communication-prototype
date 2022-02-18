@@ -353,3 +353,9 @@ $govuk-assets-path: '/govuk/assets/';
 .section-break-full-width {
   width: 100%;
 }
+
+.scroll {
+  overflow: scroll; 
+  height: 200px;
+  overflow-x: hidden;
+} 
