@@ -29,10 +29,15 @@ Learner's T Level record
         {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
 
         <span style="display: inline-block;">
+          {% if data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and data['updatedenglishStatus'] === 'yes'%}
+          <strong class="govuk-tag govuk-tag--green">
+            Complete
+          </strong>
+          {% else %}
           <strong class="govuk-tag app-tag--record-incomplete">
             Incomplete
           </strong>
-
+          {% endif %}
         </span>
 
       </h1>
@@ -155,9 +160,12 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
+          {% if data['newenglishStatus'] === 'Achieved level 2 in English'%}
+          {% else %}
           <a class="govuk-link" href="add-english-status">
             Change <span class="govuk-visually-hidden"> english status</span>
           </a>
+          {% endif %}
         </dd>
       </div>
     </dl>
