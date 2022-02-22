@@ -57,7 +57,7 @@ ULN not found - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l">Learner’s component grade status</h1>
+    <h1 class="govuk-heading-l">{{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} ROMMs/Appeals</h1>
 
     {% if data['uln'] === '9876543210' %}
     <div class="govuk-inset-text">
@@ -76,16 +76,9 @@ ULN not found - Manage T Level results - GOV.UK
     </div>
     {% endif %}
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-        </dd>
-      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           ULN
@@ -99,15 +92,23 @@ ULN not found - Manage T Level results - GOV.UK
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Provider <br>(UKPRN)
+          Provider
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UKPRN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -115,11 +116,17 @@ ULN not found - Manage T Level results - GOV.UK
           T Level 
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
         </dd>
       </div>
     </dl>
 
+  </div>
+  
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-column">
 
     {% if data['uln'] === '1987654321'%}
     {% include "../../includes/appeals/record-entry-full-results-2021.html" %}

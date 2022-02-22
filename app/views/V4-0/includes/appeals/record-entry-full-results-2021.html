@@ -1,109 +1,38 @@
-<section id="coreComponent">
-
-      <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
-      <div class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">Exam Period</dd>
-          <dd class="govuk-summary-list__value">{{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}</dd>
-          <dd class="govuk-summary-list__value"></dd>  
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href=""></a>
-          </dd>
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value govuk-!-font-weight-bold">Grade</dd>
-            <dd class="govuk-summary-list__value">
-              
-              {% if data['resultChanged2021'] === "appeal" and data['core-result-changed-2021'] === 'yes'%}
-              {{ data['appealcoreGrade2021'] }}
-              
-              {% elseif data['resultChanged2021'] === "appeal" %}
-              {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
-              
-              {% else %}
-              {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__value">
-              
-              {% if data['newcoreOnHold2021'] === "appealed"  %}
-              <strong class="govuk-tag govuk-tag--purple">
-                being appealed
-              </strong>
-  
-              
-              
-              {% else %}
-              {% endif %}</dd>  
-            <dd class="govuk-summary-list__actions">
-              {% if data['newcoreOnHold2021'] === "appealed"  %}
-                <a class="govuk-link" href="core-take-off-appeal-2021">
-                  Update <span class="govuk-visually-hidden"> grade</span>
-                </a>
-      
-              {% elseif data['newcoreOnHold2021'] === "final" %}
-              <strong class="govuk-tag govuk-tag--red">
-                final
-              </strong>
-
-              {% elseif data['newcoreOnHold2021'] === "locked" %}
-              <strong class="govuk-tag govuk-tag--grey">
-                locked
-              </strong>
-      
-              {% else %}
-              
-                <a class="govuk-link" href="core-put-on-appeal-2021">
-                  Update <span class="govuk-visually-hidden"> grade</span>
-                </a>
-              
-              {% endif %}
-            </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">Last updated</dd>
-          <dd class="govuk-summary-list__value">
-            {% if data['dateChanged2021'] === "yes" %}
-            <span id = "update-day-2021"></span>
-            {% else %}
-            20 August 2021
-            {% endif %}</dd>
-          <dd class="govuk-summary-list__value"></dd>  
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href=""></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__value govuk-!-font-weight-bold">Updated by</dd>
-          <dd class="govuk-summary-list__value">
-            {% if data['dateChanged2021'] === "yes" %}
-              Pat Carmicheal
-              {% else %}
-              Tony Gates
-              {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__value"></dd>  
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href=""></a>
-          </dd>
-        </div>
-      </div>
-
-
-
-</section> 
-
-<script>
-  window.onload = function () {
-    
-    var datecore = new Date()
-    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
-    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
-    document.getElementById('update-day-2021').innerHTML = dateFormatcore
-    }
-    
-</script>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Core: {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }}</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Exam period</th>
+      <th scope="col" class="govuk-table__header">Grade</th>
+      <th scope="col" class="govuk-table__header">Last updated</th>
+      <th scope="col" class="govuk-table__header">Updated by</th>
+      <th scope="col" class="govuk-table__header">Action</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}</th>
+      <td class="govuk-table__cell">{{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}</td>
+      <td class="govuk-table__cell">8 March 2022</td>
+      <td class="govuk-table__cell">Anna Delvey</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button" href="search-learner">Raise ROMM</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Autumn 2020</th>
+      <td class="govuk-table__cell">C</td>
+      <td class="govuk-table__cell">7 March 2021</td>
+      <td class="govuk-table__cell">Mark Lewis</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Summer 2020</th>
+      <td class="govuk-table__cell">B</td>
+      <td class="govuk-table__cell">7 August 2020</td>
+      <td class="govuk-table__cell">Janet Smith</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
