@@ -148,7 +148,7 @@ Manage T Level records - Manage T Level results - GOV.UK
 
       <div class="app-records-actions">
         <div class="app-records-actions__col">
-          <p class="govuk-body govuk-!-margin-bottom-6 app-float-right"><a href="#" class="govuk-link">Export these records</a></p>
+          <p class="govuk-body govuk-!-margin-bottom-6 app-float-right"><a href="/app/assets/downloads/tLevelsStudentDataV3.csv" download class="govuk-link">Export these records</a></p>
           <p class="govuk-visually-hidden">Records sorted by </p>
           <p class="govuk-body govuk-!-margin-bottom-3">
             <span class="govuk-!-font-weight-bold">Sort by:</span>
@@ -165,115 +165,10 @@ Manage T Level records - Manage T Level results - GOV.UK
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible section-break-full-width">
 
-          <div class="app-application-card" data-name="2">
-
-            <div class="app-application-card_row app-application-card_row--header">
-              <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
-                <a href="update-t-level-record?uln=1987654321" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
-                  Danny Waldron
-                </a>
-                <span class="govuk-body">1987654321</span>
-              </h3>
-
-              <span class="app-application-card_tag-container">
-                <span style="display: inline-block;">
-                  <strong class="govuk-tag app-tag--record-incomplete">
-                    Incomplete
-                  </strong>
-
-                </span>
-              </span>
-            </div>
-
-
-            <div class="app-application-card_row app-application-card_row--body">
-              <div class="app-application-card_col">
-                <div>
-
-                  <p class="govuk-body-s govuk-!-margin-bottom-1">
-                    <span class="govuk-visually-hidden">Course: </span>
-                    T Level in Business Studies and Administration
-
-                  </p>
-                  <p class="govuk-body-s">
-                    <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
-                  </p>
-                </div>
-                <div>
-                  <p class="govuk-body-s">Awarding organisation: Pearson</p>
-                  <p class="govuk-body-s">
-                    Start year:
-                    <span class="app-nowrap">2021 to 2022</span>
-                  </p>
-                </div>
-
-              </div>
-
-              <div class="app-application-card_col">
-                <p
-                  class="govuk-body-s govuk-!-margin-bottom-1 app-application-card__submitted">
-
-                  Updated: <span>29 January 2022
-
-                  </span></p>
-              </div>
-            </div>
-
-          </div>
-
-          <section class="learner-data">
-
-          <div class="app-application-card" data-name="1">
-
-            <div class="app-application-card_row app-application-card_row--header">
-              <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
-                <a href="update-t-level-record?uln=1122334455" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
-                  Frankie Thomas
-                </a>
-                <span class="govuk-body">1122334455</span>
-              </h3>
-              <span class="app-application-card_tag-container">
-                <span style="display: inline-block;">
-                  <strong class="govuk-tag app-tag--record-incomplete">
-                    Incomplete
-                  </strong>
-                </span>
-              </span>
-            </div>
-            <div class="app-application-card_row app-application-card_row--body">
-              <div class="app-application-card_col">
-                <div>
-                  <p class="govuk-body-s govuk-!-margin-bottom-1">
-                    <span class="govuk-visually-hidden">Course: </span>
-                    T Level in Business Studies and Administration
-                  </p>
-                  <p class="govuk-body-s">
-                    <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
-                  </p>
-                </div>
-                <div>
-                  <p class="govuk-body-s govuk-!-margin-bottom-1">Awarding organisation: Pearson</p>
-                  <p class="govuk-body-s">
-                    Start year:
-                    <span class="app-nowrap">2021 to 2022</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="app-application-card_col">
-                <p class="govuk-body-s govuk-!-margin-bottom-1 app-application-card__submitted">
-                    Updated: <span>31 January 2022                      
-                    </span>
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          </section>
+      {% include "../includes/overall-results/overall-results-learner-data.html" %}
 
           <nav class="govuk-!-margin-top-6" role="navigation" aria-label="Pagination">
-            <div class="pagination__summary">Showing 101 - 150 of 246 results</div>
+            <div class="pagination__summary">Showing 1 - 50 of 100 results</div>
             <ul class="pagination">
               <li class="pagination__item"><a class="pagination__link" href="#0" aria-label="Previous page"><span
                     aria-hidden="true" role="presentation">&laquo;</span> Previous</a></li>

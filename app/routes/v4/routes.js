@@ -716,7 +716,7 @@ router.post('/' + version + '/providers/add-maths-status', function (req, res) {
     req.session.data['showBanner'] = "maths"
     req.session.data['newmathsStatus'] = newmathsStatus
     
-    res.redirect('/' + version + '/providers/update-t-level-record')
+    res.redirect('/' + version + '/providers/update-t-level-record?showBanner=maths')
   
   });
 
@@ -728,7 +728,7 @@ router.post('/' + version + '/providers/add-english-status', function (req, res)
   req.session.data['showBanner'] = "english"
   req.session.data['newenglishStatus'] = newenglishStatus
   
-  res.redirect('/' + version + '/providers/update-t-level-record')
+  res.redirect('/' + version + '/providers/update-t-level-record?showBanner=english')
 
 });
 
