@@ -700,6 +700,7 @@ router.post('/' + version + '/providers/change-ip-result', function (req, res) {
       res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
     } else {
     req.session.data['newplacementResult'] = "yes"
+    req.session.data['showBanner'] = "ip"
     req.session.data['newindustryPlacement'] = newResult
     
     res.redirect('/' + version + '/providers/update-t-level-record')
@@ -807,12 +808,12 @@ router.post('/' + version + '/providers/flexibility', function (req, res) {
 
 
   router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
-    
+    let newplacementStatus = req.session.data['result-ip-answer']
     req.session.data['newplacementResult'] = "yes"
-    req.session.data['newindustryPlacement'] = "Placement completed with special consideration"
+    req.session.data['newindustryPlacement'] = newplacementStatus
     
     // Success banner needs to be added
-
+    req.session.data['showBanner'] = "ip"
     res.redirect('/' + version + '/providers/update-t-level-record')
 
   })
