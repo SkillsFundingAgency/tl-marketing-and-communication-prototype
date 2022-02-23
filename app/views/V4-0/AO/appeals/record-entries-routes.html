@@ -41,8 +41,19 @@ ULN not found - Post-results - Manage T Levels results - GOV.UK
 {% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    {% if data['showBanner'] === 'yes' %}
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['showBannerAppeals'] == 'raiseROMM-core' 
+    or data['showBannerAppeals'] == 'raiseROMM-specialism' 
+    or data['showBannerAppeals'] == 'ROMMwithdrew-core' 
+    or data['showBannerAppeals'] == 'ROMMwithdrew-specialism' 
+    or data['showBannerAppeals'] == 'ROMMoutcome-core' 
+    or data['showBannerAppeals'] == 'ROMMoutcome-specialism' 
+    or data['showBannerAppeals'] == 'raiseAppeal-core' 
+    or data['showBannerAppeals'] == 'raiseAppeal-specialism' 
+    or data['showBannerAppeals'] == 'appealwithdrew-core' 
+    or data['showBannerAppeals'] == 'appealwithdrew-specialism' 
+    or data['showBannerAppeals'] == 'appealoutcome-core' 
+    or data['showBannerAppeals'] == 'appealoutcome-specialism'%}
     {% include "../../includes/appeals/record-entries-success-messages.html" %}
     {% else %}
     
@@ -55,7 +66,7 @@ ULN not found - Post-results - Manage T Levels results - GOV.UK
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">{{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}'s grades</h1>
 

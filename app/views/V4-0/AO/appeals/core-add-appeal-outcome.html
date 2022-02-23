@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Appeal outcome
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add appeal outcome</h1> 
+        
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Core
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exam Period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['core-selected-grade'] == 'yes'%}
+            {{data['ROMM-grade']}}
+            {% else %}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+
+      <form action="core-add-appeal-outcome" method="post" novalidate data-validate='appeal-outcome-validation'>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What is appeal outcome?
+              </h2>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-appeal-outcome" name="what-is-appeal-outcome" type="radio" value="Grade has changed">
+                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome">
+                  Grade has changed
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-appeal-outcome-2" name="what-is-appeal-outcome" type="radio" value="Grade is the same">
+                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-2">
+                  Grade is the same
+                </label>
+              </div>
+              {% if data['appealGradestatus'] == 'appeal'%}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-appeal-outcome-3" name="what-is-appeal-outcome" type="radio" value="learner withdrew appeal">
+                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-3">
+                  Learner withdrew appeal request
+                </label>
+              </div>
+              {% else %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-appeal-outcome-4" name="what-is-appeal-outcome" type="radio" value="Waiting on outcome">
+                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-4">
+                  Waiting on outcome
+                </label>
+              </div>
+              {% endif %}
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="appeal-outcome-validation">
+    {
+
+        "what-is-appeal-outcome": {
+
+            "presence": {
+
+                "message": "^Select outcome"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}
