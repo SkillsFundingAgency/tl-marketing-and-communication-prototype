@@ -168,7 +168,7 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newmathsStatus'] === 'Achieved level 2 in Maths'%}
+          {% if data['newmathsStatus'] === 'Achieved level 2 in Maths' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved through LRS'%}
           {% else %}
           <a class="govuk-link" href="add-maths-status">
             Change <span class="govuk-visually-hidden"> maths status</span>
@@ -188,7 +188,7 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newenglishStatus'] === 'Achieved level 2 in English'%}
+          {% if data['newenglishStatus'] === 'Achieved level 2 in English' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved through LRS' %}
           {% else %}
           <a class="govuk-link" href="add-english-status">
             Change <span class="govuk-visually-hidden"> english status</span>
