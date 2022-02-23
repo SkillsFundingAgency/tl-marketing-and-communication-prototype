@@ -222,7 +222,13 @@ Learner's T Level record
         <dd class="govuk-summary-list__value">
 
           <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] }}</p>
-          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}</p>
+          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }} 
+            {% if data['uln'] === "1234567890" %}
+            <strong class="govuk-tag govuk-tag--purple">
+            ROMM
+          </strong></p>
+          {% else %}
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
