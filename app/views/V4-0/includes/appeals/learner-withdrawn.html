@@ -1,10 +1,10 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l"> Learner has been withdrawn by the exam board</h1>
+              <h1 class="govuk-heading-l">Learner has been withdrawn</h1>
 
               <p class="govuk-body">
-                  This learner's registration has been withdrawn. An appeal cannot be requested. 
+                This learner's registration has been withdrawn. You cannot log a ROMM or an appeal.
               </p>
 
 
@@ -14,7 +14,7 @@
                   Name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -30,15 +30,23 @@
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Provider <br>(UKPRN)
+                  Provider
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UKPRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -46,7 +54,7 @@
                   T Level
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                  {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
                 </dd>
               </div>
             </dl>
@@ -55,7 +63,7 @@
               
 
             <div class="govuk-button-group">
-              <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
+              <a class="govuk-button" role="button" href="post-results-search-uln">Search again</a>
               <a class="govuk-button govuk-button--secondary" role="button" href="../tlevels-dashboard.html">Back to home</a>
             </div>
     </div>
