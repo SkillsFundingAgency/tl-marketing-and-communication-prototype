@@ -33,7 +33,7 @@ Learner's T Level record
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    {% if data['newplacementResult'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not yet provided' and data['updatedmathsStatus'] === 'yes' and data['updatedenglishStatus'] === 'yes'%}
+    {% if data['newplacementResult'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not yet provided' and data['updatedmathsStatus'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] != '	Achieved the minimum standard for maths' and data['updatedenglishStatus'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] != '	Achieved the minimum standard for english'%}
     {% else %}
     {% include "../includes/provider-notification-messages/record-notification.html" %}
     {% endif %}
@@ -49,7 +49,7 @@ Learner's T Level record
 
         <span style="display: inline-block;">
           {% if data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and
-          data['updatedenglishStatus'] === 'yes'%}
+          data['updatedenglishStatus'] === 'yes' or data['uln'] === '1122334455'%}
           <strong class="govuk-tag govuk-tag--green">
             Complete
           </strong>
@@ -143,7 +143,10 @@ Learner's T Level record
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] === 'Placement completed' or data['newindustryPlacement'] === 'Placement completed with special consideration'%}
+          {% if data['newindustryPlacement'] === 'Placement completed' 
+          or data['newindustryPlacement'] === 'Placement completed with special consideration' 
+          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed' 
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed with special consideration'%}
           {% else %}
           <a class="govuk-link" href="change-ip-result">
             Change <span class="govuk-visually-hidden"> completed status</span>
@@ -164,11 +167,11 @@ Learner's T Level record
           {% if data['updatedmathsStatus'] === 'yes'%}
           {{ data['newmathsStatus'] }}
           {% else %}
-          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] }}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] }} (data from Learning Records Service - LRS)
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newmathsStatus'] === 'Achieved level 2 in Maths' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved through LRS'%}
+          {% if data['newmathsStatus'] === 'Achieved level 2 in Maths' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved the minimum standard for maths'%}
           {% else %}
           <a class="govuk-link" href="add-maths-status">
             Change <span class="govuk-visually-hidden"> maths status</span>
@@ -184,11 +187,11 @@ Learner's T Level record
           {% if data['updatedenglishStatus'] === 'yes'%}
           {{ data['newenglishStatus'] }}
           {% else %}
-          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] }}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] }} (data from Learning Records Service - LRS)
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newenglishStatus'] === 'Achieved level 2 in English' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved through LRS' %}
+          {% if data['newenglishStatus'] === 'Achieved level 2 in English' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved the minimum standard for english' %}
           {% else %}
           <a class="govuk-link" href="add-english-status">
             Change <span class="govuk-visually-hidden"> english status</span>
