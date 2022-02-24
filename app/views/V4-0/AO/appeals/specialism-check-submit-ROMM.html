@@ -18,7 +18,7 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the grade.</p>
 
-    <form action="confirm-result-change-appeal-2021" method="post" class="form">
+    <form action="submit-ROMM-outcome-specialism" method="post" class="form">
       <h2 class="govuk-heading-m">Learner's details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
@@ -26,7 +26,7 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -42,15 +42,23 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Provider<br>(UKPRN)
+            Provider
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            UKPRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -67,19 +75,19 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
             Exam Period
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+            {{ data['tLevelsStudentData'][data.uln]['learnerSpecialismAssessmentEntry'] }}
           </dd>
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+      <h2 class="govuk-heading-m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Old grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="">
@@ -92,14 +100,14 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
           </dt>
 
           <dd class="govuk-summary-list__value">
-            {% if data['core-result-changed-2021'] === "yes" %}
-            {{ data['result-answer-2021'] }}
+            {% if data['specialism-selected-grade'] === "yes" %}
+            {{ data['ROMM-grade-specialism'] }}
             {% else %}
-            {{ data['tLevelsStudentData'][data.uln]['learnerCoreResult'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-core-result-appeal-2021">
+            <a class="govuk-link" href="specialism-add-ROMM-select-grade">
               Change<span class="govuk-visually-hidden"> grade</span>
             </a>
           </dd>
@@ -113,7 +121,7 @@ Check and submit outcome of core appeal  - Manage T Level results - GOV.UK
           Submit
         </button>
       
-        <a class="govuk-link" href="cancel-appeal-2021">Cancel</a>
+        <a class="govuk-link" href="">Cancel</a>
       </div>
     </form>
   </div>

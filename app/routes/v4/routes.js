@@ -293,7 +293,7 @@ router.post('/' + version + '/AO/appeals/core-add-appeal-outcome', function (req
   res.redirect('/' + version + '/AO/appeals/record-entries-routes')
   
   // learner withdrew ROMM request
-} else if (appealoutcome === 'learner withdrew') {  
+} else if (appealoutcome === 'learner withdrew appeal') {  
   req.session.data['coreGradestatus'] = 'learner withdrew appeal'
   req.session.data['showBannerAppeals'] = 'appealwithdrew-core'  
   res.redirect('/' + version + '/AO/appeals/record-entries-routes')
@@ -321,7 +321,121 @@ router.post('/' + version + '/AO/appeals/submit-appeal-outcome', function (req, 
 
 })
 
+// SPECIALISM //
 
+//Specialism Add ROMM to core component
+router.post('/' + version + '/AO/appeals/raise-ROMM-for-specialism', function (req, res) {
+
+  let raiseROMMspecialism = req.session.data['raiseROMM-specialism']
+//yes raise ROMM
+  if (raiseROMMspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/specialism-add-ROMM-outcome')
+  
+// no ROMM raised  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  }
+})
+
+//Add ROMM outcome to specialism component
+router.post('/' + version + '/AO/appeals/specialism-add-ROMM-outcome', function (req, res) {
+
+  let ROMMoutcomespecialism = req.session.data['what-is-ROMM-outcome-specialism']
+//grade is changed
+  if (ROMMoutcomespecialism === 'Grade has changed') {
+    res.redirect('/' + version + '/AO/appeals/specialism-add-ROMM-select-grade')
+
+// still waiting on outcome 
+} else if (ROMMoutcomespecialism === 'Waiting on outcome') {
+  req.session.data['showBannerAppeals'] = 'raiseROMM-specialism'    
+  req.session.data['specialismGradestatus'] = 'ROMM'
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+  // learner withdrew ROMM request
+} else if (ROMMoutcomespecialism === 'learner withdrew') {
+  req.session.data['showBannerAppeals'] = 'ROMMwithdrew-specialism'  
+  req.session.data['specialismGradestatus'] = 'learner withdrew ROMM'
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+
+//grade the same  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-ROMM')
+  }
+})
+
+//Specialism ROMM outcome select grade - grade same or grade changed
+router.post('/' + version + '/AO/appeals/ROMM-select-grade-specialism', function (req, res) {
+  
+  req.session.data['specialism-selected-grade'] = 'yes'
+  res.redirect('/' + version + '/AO/appeals/specialism-check-submit-ROMM')
+})
+
+//Specialism ROMM outcome check and submit
+router.post('/' + version + '/AO/appeals/submit-ROMM-outcome-specialism', function (req, res) {
+  let ROMMgradespecialism = req.session.data['ROMM-grade-specialism']
+  req.session.data['ROMM-grade-specialism'] = ROMMgradespecialism
+  req.session.data['specialismGradestatus'] = 'ROMM completed'
+  req.session.data['showBannerAppeals'] = 'ROMMoutcome-specialism'  
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+
+})
+
+//Specialism Add appeal to core component
+router.post('/' + version + '/AO/appeals/raise-appeal-for-specialism', function (req, res) {
+
+  let raiseAppealspecialism = req.session.data['raiseAppealspecialism']
+//yes raise ROMM
+  if (raiseAppealspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/specialism-add-appeal-outcome')
+  
+// no ROMM raised  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  }
+})
+
+// Add appeal outcome to specialism component
+router.post('/' + version + '/AO/appeals/specialism-add-appeal-outcome', function (req, res) {
+
+  let appealoutcomespecialism = req.session.data['what-is-appeal-outcome-specialism']
+//grade is changed
+  if (appealoutcomespecialism === 'Grade has changed') {
+    res.redirect('/' + version + '/AO/appeals/specialism-add-appeal-select-grade')
+
+// still waiting on outcome 
+} else if (appealoutcomespecialism === 'Waiting on outcome') {  
+  req.session.data['specialismGradestatus'] = 'appeal'
+  req.session.data['showBannerAppeals'] = 'raiseAppeal-specialism' 
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+  // learner withdrew ROMM request
+} else if (appealoutcomespecialism === 'learner withdrew appeal') {  
+  req.session.data['specialismGradestatus'] = 'learner withdrew appeal'
+  req.session.data['showBannerAppeals'] = 'appealwithdrew-specialism'  
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+
+//grade the same  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-appeal')
+  }
+})
+
+//Specialism appeal outcome select grade - grade same or grade changed
+router.post('/' + version + '/AO/appeals/appeal-select-grade-specialism', function (req, res) {
+  
+  req.session.data['specialism-selected-grade'] = 'yes-appeal'
+  res.redirect('/' + version + '/AO/appeals/specialism-check-submit-appeal')
+})
+
+// Specialism - Appeal outcome check and submit
+router.post('/' + version + '/AO/appeals/submit-appeal-outcome-specialism', function (req, res) {
+  let appealgradespecialism = req.session.data['appeal-grade-specialism']
+  req.session.data['appeal-grade-specialism'] = appealgradespecialism
+  req.session.data['specialismGradestatus'] = 'appeal completed'
+  req.session.data['showBannerAppeals'] = 'appealoutcome-specialism' 
+  res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+
+})
 
 
 //Appeals - request a grade change

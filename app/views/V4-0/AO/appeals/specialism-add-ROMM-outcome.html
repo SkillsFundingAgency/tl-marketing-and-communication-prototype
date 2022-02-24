@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Appeal outcome
+ROMM outcome
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,13 +12,13 @@ Appeal outcome
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Add appeal outcome</h1> 
+      <h1 class="govuk-heading-l">Add ROMM outcome</h1> 
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Learner
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
@@ -42,10 +42,18 @@ Appeal outcome
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Core
+            T Level
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specialism
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -53,7 +61,7 @@ Appeal outcome
             Exam Period
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -61,48 +69,46 @@ Appeal outcome
             Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['core-selected-grade'] == 'yes'%}
-            {{data['ROMM-grade']}}
-            {% else %}
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
-            {% endif %}
+
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
+
           </dd>
         </div>
       </dl>
 
-      <form action="core-add-appeal-outcome" method="post" novalidate data-validate='appeal-outcome-validation'>
+      <form action="specialism-add-ROMM-outcome" method="post" novalidate data-validate='ROMM-outcome-validation-specialism'>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                What is appeal outcome?
+                What is ROMM outcome?
               </h2>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome" name="what-is-appeal-outcome" type="radio" value="Grade has changed">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
                   Grade has changed
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-2" name="what-is-appeal-outcome" type="radio" value="Grade is the same">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-2">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
                   Grade is the same
                 </label>
               </div>
-              {% if data['coreGradestatus'] == 'appeal'%}
+              {% if data['specialismGradestatus'] == 'ROMM'%}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-3" name="what-is-appeal-outcome" type="radio" value="learner withdrew appeal">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-3">
-                  Learner withdrew appeal request
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-3" name="what-is-ROMM-outcome-specialism" type="radio" value="learner withdrew">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
+                  Learner withdrew ROMM request
                 </label>
               </div>
               {% else %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-4" name="what-is-appeal-outcome" type="radio" value="Waiting on outcome">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-4">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-4" name="what-is-ROMM-outcome-specialism" type="radio" value="Waiting on outcome">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-4">
                   Waiting on outcome
                 </label>
               </div>
@@ -119,10 +125,10 @@ Appeal outcome
     </div>
   </div>
 
-  <script type="application/json" id="appeal-outcome-validation">
+  <script type="application/json" id="ROMM-outcome-validation-specialism">
     {
 
-        "what-is-appeal-outcome": {
+        "what-is-ROMM-outcome-specialism": {
 
             "presence": {
 
@@ -137,3 +143,7 @@ Appeal outcome
 
 
 {% endblock %}
+
+
+
+

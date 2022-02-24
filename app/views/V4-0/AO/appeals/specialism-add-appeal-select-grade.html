@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Appeal outcome
+Select specialism grade - appeal outcome
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,13 +12,13 @@ Appeal outcome
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Add appeal outcome</h1> 
+      <h1 class="govuk-heading-l">Select appeal grade</h1> 
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Learner
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
@@ -42,10 +42,18 @@ Appeal outcome
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            T Level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Core
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -53,7 +61,7 @@ Appeal outcome
             Exam Period
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -61,52 +69,49 @@ Appeal outcome
             Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['core-selected-grade'] == 'yes'%}
-            {{data['ROMM-grade']}}
+            {% if data['specialism-selected-grade'] === "yes" %}
+            {{ data['ROMM-grade-specialism'] }}
             {% else %}
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
             {% endif %}
           </dd>
         </div>
       </dl>
 
-      <form action="core-add-appeal-outcome" method="post" novalidate data-validate='appeal-outcome-validation'>
+      <form action="appeal-select-grade-specialism" method="post" novalidate data-validate='appeal-grade-validation-specialism'>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                What is appeal outcome?
+                What is the new grade?
               </h2>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome" name="what-is-appeal-outcome" type="radio" value="Grade has changed">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome">
-                  Grade has changed
+                <input class="govuk-radios__input" id="appeal-grade-specialism" name="appeal-grade-specialism" type="radio" value="Distinction">
+                <label class="govuk-label govuk-radios__label" for="appeal-grade-specialism">
+                  Distinction
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-2" name="what-is-appeal-outcome" type="radio" value="Grade is the same">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-2">
-                  Grade is the same
+                <input class="govuk-radios__input" id="appeal-grade-specialism-2" name="appeal-grade-specialism" type="radio" value="Merit">
+                <label class="govuk-label govuk-radios__label" for="appeal-grade-specialism-2">
+                  Merit
                 </label>
               </div>
-              {% if data['coreGradestatus'] == 'appeal'%}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-3" name="what-is-appeal-outcome" type="radio" value="learner withdrew appeal">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-3">
-                  Learner withdrew appeal request
+                <input class="govuk-radios__input" id="appeal-grade-specialism-3" name="appeal-grade-specialism" type="radio" value="Pass">
+                <label class="govuk-label govuk-radios__label" for="appeal-grade-specialism-3">
+                  Pass
                 </label>
               </div>
-              {% else %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-appeal-outcome-4" name="what-is-appeal-outcome" type="radio" value="Waiting on outcome">
-                <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-4">
-                  Waiting on outcome
+                <input class="govuk-radios__input" id="appeal-grade-specialism-4" name="appeal-grade-specialism" type="radio" value="Unclassified">
+                <label class="govuk-label govuk-radios__label" for="appeal-grade-specialism-4">
+                  Unclassified
                 </label>
               </div>
-              {% endif %}
             </div>
 
           </fieldset>
@@ -119,14 +124,14 @@ Appeal outcome
     </div>
   </div>
 
-  <script type="application/json" id="appeal-outcome-validation">
+  <script type="application/json" id="appeal-grade-validation-specialism">
     {
 
-        "what-is-appeal-outcome": {
+        "appeal-grade-specialism": {
 
             "presence": {
 
-                "message": "^Select outcome"
+                "message": "^Select a grade"
 
             }
 
@@ -137,3 +142,7 @@ Appeal outcome
 
 
 {% endblock %}
+
+
+
+

@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 {% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
-Learner’s component grade status - Manage T Level results - GOV.UK
+Learner’s grades - Post-results - Manage T Levels results - GOV.UK
 {% elif data['uln'] === '1231231231'%}
 Learner withdrawn - Post-results - Manage T Levels results - GOV.UK
 {% elif data['uln'] === '8642135790'%}
@@ -128,6 +128,25 @@ ULN not found - Post-results - Manage T Levels results - GOV.UK
     {% endif %}
 
 
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          More about grades and their statuses
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        The highest grade for each component will be used to calculate the overall T Level result for results day.
+        All grades must be marked ‘FINAL’ before they can be used to calculate an overall T Level result for certificate
+        printing.Grades are marked ‘FINAL’ and can no longer be changed here when:
+        the appeal deadline has passed, or
+        an appeal outcome has been logged
+    
+        If a grade status is ‘ROMM’ or ‘APPEAL’ it cannot be used to calculate a T Level result for certificate printing
+        until an outcome has also been logged.
+    
+        If you need to change a grade that is marked ‘FINAL’, please contact us.
+      </div>
+    </details>
 
     <a class="govuk-button govuk-!-margin-top-7" role="button" href="search-learner">Search again</a>
 
