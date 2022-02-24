@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Request grade change
+Exceptions
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@ Request grade change
   <div class="govuk-grid-column-two-thirds">
       <form action="request-grade-change-confirmation" method="post" class="form" novalidate data-validate="request-grade-change-input">
 
-        <h1 class="govuk-heading-l">Request a change to this learner's grade</h1> 
+        <h1 class="govuk-heading-l">Exceptions</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           
@@ -44,10 +44,10 @@ Request grade change
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Core <br>(code)
+              Core 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+              {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
