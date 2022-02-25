@@ -17,34 +17,34 @@
         <th scope="row" class="govuk-table__header">{{
           data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}</th>
         <td class="govuk-table__cell">
-
-          {% if data['core-selected-grade'] === "yes" %}
-          {{ data['ROMM-grade'] }}
-          {% elif data['core-selected-grade'] === "yes-appeal" %}
-          {{ data['appeal-grade'] }}
-          {% else %}
-          {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
-          {% endif %}
-
-          {% if data['coreGradestatus'] == 'ROMM'%}
           <span>
-            <strong class="govuk-tag govuk-tag--blue">
+            {% if data['core-selected-grade'] === "yes" %}
+            {{ data['ROMM-grade'] }}
+            {% elif data['core-selected-grade'] === "yes-appeal" %}
+            {{ data['appeal-grade'] }}
+            {% else %}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
+            {% endif %}
+
+            {% if data['coreGradestatus'] == 'ROMM'%}
+            <strong class="govuk-tag govuk-tag--blue govuk-!-margin-left-2">
               ROMM
             </strong>
-          </span>
-          {% elif data['coreGradestatus'] == 'appeal'%}
-          <span>
-            <strong class="govuk-tag govuk-tag--purple">
+
+            {% elif data['coreGradestatus'] == 'appeal'%}
+
+            <strong class="govuk-tag govuk-tag--purple govuk-!-margin-left-2">
               appeal
             </strong>
-          </span>
-          {% elif data['coreGradestatus'] == 'appeal completed'%}
-          <span>
-            <strong class="govuk-tag govuk-tag--pink">
+
+            {% elif data['coreGradestatus'] == 'appeal completed'%}
+
+            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-2">
               final
             </strong>
+            {% endif %}
           </span>
-          {% endif %}
+
         </td>
         <td class="govuk-table__cell">8 March 2022</td>
         <td class="govuk-table__cell">Anna Delvey</td>
@@ -68,9 +68,10 @@
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Autumn 2020</th>
-        <td class="govuk-table__cell">C
+        <td class="govuk-table__cell">
           <span>
-            <strong class="govuk-tag govuk-tag--pink">
+            C
+            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-2">
               final
             </strong>
           </span>
@@ -80,7 +81,8 @@
         <td class="govuk-table__cell">
           {% if data['exceptions'] == 'yes' and data['uln'] == '1987654321'%}
           {% else %}
-          <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button" href="../appeals/exceptions/request-grade-change.html">Exceptions</a>
+          <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button"
+            href="../appeals/exceptions/request-grade-change.html">Exceptions</a>
           {% endif %}
         </td>
       </tr>
@@ -149,7 +151,8 @@
           <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button"
             href="specialism-add-appeal-outcome">Add outcome</a>
           {% elif data['specialismGradestatus'] == 'appeal completed'%}
-          <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button" href="../appeals/exceptions/request-grade-change.html">Exceptions</a>
+          <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button"
+            href="../appeals/exceptions/request-grade-change.html">Exceptions</a>
           {% else %}
           <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button"
             href="specialism-raise-ROMM">Raise ROMM</a>
