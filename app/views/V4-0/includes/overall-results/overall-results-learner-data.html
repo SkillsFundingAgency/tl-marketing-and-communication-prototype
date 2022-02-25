@@ -12,10 +12,15 @@
 
       <span class="app-application-card_tag-container">
         <span style="display: inline-block;">
-          <strong class="govuk-tag app-tag--record-incomplete">
+          {% if key == '1122334455' %}
+          <strong class="govuk-tag govuk-tag--green">
+            complete
+          </strong>
+          {% elif key != '1122334455' %}
+          <strong class="govuk-tag govuk-tag--red">
             Incomplete
           </strong>
-
+          {% endif %}
         </span>
       </span>
     </div>
@@ -23,13 +28,13 @@
       <div class="app-application-card_col">
         <div>
 
-          <p class="govuk-body-s govuk-!-margin-bottom-1">
+          <p class="govuk-body-s">
             <span class="govuk-visually-hidden">Course: </span>
             {{ value.learnerTLevelTitle }}
           </p>
-          <p class="govuk-body-s">
+          <!-- <p class="govuk-body-s">
             <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
-          </p>
+          </p> -->
         </div>
         <div>
           <p class="govuk-body-s">Awarding organisation: {{ value.learnerAwardingOrg }}</p>

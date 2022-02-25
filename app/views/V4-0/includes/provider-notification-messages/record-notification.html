@@ -14,13 +14,13 @@
           <a class="govuk-notification-banner__link" href="change-ip-result">Complete industry placement details</a>
         </li>
         {% endif %}
-        {% if data['updatedmathsStatus'] === 'yes'%}
+        {% if data['updatedmathsStatus'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] != '	Achieved the minimum standard for maths'%}
         {% else %}
         <li>
           <a class="govuk-notification-banner__link" href="add-maths-status">Complete maths details</a>
         </li>
         {% endif %}
-        {% if data['updatedenglishStatus'] === 'yes'%}
+        {% if data['updatedenglishStatus'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] != '	Achieved the minimum standard for english'%}
         {% else %}
         <li>
           <a class="govuk-notification-banner__link" href="add-english-status">Complete english details</a>
