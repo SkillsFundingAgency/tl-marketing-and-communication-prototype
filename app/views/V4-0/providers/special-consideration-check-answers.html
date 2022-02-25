@@ -19,7 +19,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
       <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Learner
           </dt>
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerName'] }}</p>
@@ -46,7 +46,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
             T Level
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Design, Surveying and Planning for Construction</p>
+            <p class="govuk-body">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}</p>
           </dd>
         </div>
       </dl>
@@ -109,14 +109,14 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Industry placement model used
+            Industry placement model
           </dt>
           <dd class="govuk-summary-list__value" style="text-transform: capitalize">
             {{ data['industryModel']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="did-you-use-an-industry-placement">
-              Change<span class="govuk-visually-hidden"> if industry placement model used</span>
+              Change<span class="govuk-visually-hidden"> whether industry placement model used</span>
             </a>
           </dd>
         </div>
@@ -125,14 +125,14 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Multiple employer model used
+            Multiple employer model
           </dt>
           <dd class="govuk-summary-list__value" style="text-transform: capitalize">
             {{ data['multipleEmployerModel']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="multiple-employer-model">
-              Change<span class="govuk-visually-hidden"> of multiple employer model was used</span>
+              Change<span class="govuk-visually-hidden"> whether multiple employer model was used</span>
             </a>
           </dd>
         </div>
@@ -143,14 +143,24 @@ Industry placement check answers - Manage T Level results - GOV.UK
         {% if data['industryModel'] === 'yes' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Industrial placement model used
+            {% if data['multipleEmployerModel'] === 'yes' %}
+            Other industrial placement model(s) used
+            {% else %}
+            Industrial placement model(s) used
+            {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['multipleEmployerModel'] === 'yes' %}
-            <p> {{ data['industrial-placement-models'] }}</p> 
-            <p>Multiple employer model</p>
-            
-            {% elif data['industrial-placement-models']|length === 2 %}
+              {% if (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 4)%}
+                {% for item in data['industrial-placement-models']%}
+                <p>{{ item }}</p>
+                {% endfor %}
+              {% else %}
+                <p> {{ data['industrial-placement-models'] }}</p> 
+              {% endif %}
+
+
+            {% elif (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 6)%}
             {% for item in data['industrial-placement-models']%}
             <p>{{ item }}</p>
             {% endfor %}
@@ -161,7 +171,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="industry-placement-model-selection?change-answer=yes">
-              Change<span class="govuk-visually-hidden"> industry placement used</span>
+              Change<span class="govuk-visually-hidden"> which industry placement models were used</span>
             </a>
           </dd>
         </div>
@@ -170,14 +180,14 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Temporary flexibility used
+            Temporary flexibility
           </dt>
           <dd class="govuk-summary-list__value" style="text-transform: capitalize">
             {{ data['flexibility']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="did-you-use-a-flexibility">
-              Change<span class="govuk-visually-hidden"> flexibility used</span>
+              Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
             </a>
           </dd>
         </div>
@@ -185,7 +195,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
         {% if data['flexibility'] === 'yes'  %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Temporary flexibilities
+            Temporary flexibilities used
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['temporary-flexibilities']|length === 2 %}
@@ -199,7 +209,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="temporary-flexibilities">
-              Change<span class="govuk-visually-hidden"> temporary flexibilities</span>
+              Change<span class="govuk-visually-hidden"> which temporary flexibilities were used</span>
             </a>
           </dd>
         </div>
@@ -207,9 +217,12 @@ Industry placement check answers - Manage T Level results - GOV.UK
         {% endif %}
       </dl>
 
-
+      {% if data['result-ip-answer'] === 'Placement completed with special consideration' %}
       <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their
         design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
+      {% else %}
+      <p class="govuk-body">Content needed</p>
+      {% endif %}
 
       <form action="special-consideration-check-answers-status" method="post" novalidate>
 
