@@ -12,9 +12,15 @@
 
       <span class="app-application-card_tag-container">
         <span style="display: inline-block;">
+          {% if key == '1122334455' %}
+          <strong class="govuk-tag govuk-tag--green">
+            complete
+          </strong>
+          {% elif key != '1122334455' %}
           <strong class="govuk-tag govuk-tag--red">
             Incomplete
           </strong>
+          {% endif %}
         </span>
       </span>
     </div>
