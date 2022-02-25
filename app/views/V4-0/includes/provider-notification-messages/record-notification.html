@@ -1,0 +1,37 @@
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You need to provide additional details before an overall grade can be calculated.
+      <ul class="govuk-list">
+        {% if data['newplacementResult'] === 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not yet provided' %}
+        {% else %}
+        <li>
+          <a class="govuk-notification-banner__link" href="change-ip-result">Complete industry placement details</a>
+        </li>
+        {% endif %}
+        {% if data['updatedmathsStatus'] === 'yes'%}
+        {% else %}
+        <li>
+          <a class="govuk-notification-banner__link" href="add-maths-status">Complete maths details</a>
+        </li>
+        {% endif %}
+        {% if data['updatedenglishStatus'] === 'yes'%}
+        {% else %}
+        <li>
+          <a class="govuk-notification-banner__link" href="add-english-status">Complete english details</a>
+        </li>
+        {% endif %}
+      </ul> 
+    </p>
+  </div>
+</div>
+
+
+
+
+
