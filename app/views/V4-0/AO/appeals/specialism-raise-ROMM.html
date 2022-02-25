@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Raise ROMM
+Add a ROMM - Post-results - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,7 +12,7 @@ Raise ROMM
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Log a ROMM</h1>
+      <h1 class="govuk-heading-l">Add a ROMM</h1>
       <p>Tell us that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} has asked for a review of moderated marking (ROMM) of their {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} </p> 
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -118,7 +118,7 @@ Raise ROMM
 
             "presence": {
 
-                "message": "^Select yes to add ROMM"
+                "message": "^Select ‘yes’ if the learner has requested a ROMM for this grade"
 
             }
 
