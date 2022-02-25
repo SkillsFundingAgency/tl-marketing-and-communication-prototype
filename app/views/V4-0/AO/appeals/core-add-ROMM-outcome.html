@@ -80,6 +80,40 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
 
     <form action="core-add-ROMM-outcome" method="post" novalidate data-validate='ROMM-outcome-validation'>
 
+      {% if data['coreGradestatus'] == 'ROMM'%}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What is the ROMM outcome?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome" type="radio"
+                value="Grade has changed">
+              <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
+                The grade has changed
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome" type="radio"
+                value="Grade is the same">
+              <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
+                No change to grade
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-ROMM-outcome-3" name="what-is-ROMM-outcome" type="radio"
+                value="learner withdrew">
+              <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
+                ROMM withdrawn
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% else %}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -102,15 +136,6 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
                 Yes, the grade is the same
               </label>
             </div>
-            {% if data['coreGradestatus'] == 'ROMM'%}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-is-ROMM-outcome-3" name="what-is-ROMM-outcome" type="radio"
-                value="learner withdrew">
-              <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
-                Learner withdrew ROMM request
-              </label>
-            </div>
-            {% else %}
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="what-is-ROMM-outcome-4" name="what-is-ROMM-outcome" type="radio"
                 value="Waiting on outcome">
@@ -118,11 +143,10 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
                 No
               </label>
             </div>
-            {% endif %}
           </div>
-
         </fieldset>
       </div>
+      {% endif %}
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
@@ -131,6 +155,24 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
   </div>
 </div>
 
+
+{% if data['coreGradestatus'] == 'ROMM'%}
+<script type="application/json" id="ROMM-outcome-validation">
+  {
+
+      "what-is-ROMM-outcome": {
+
+          "presence": {
+
+              "message": "^Select the ROMM outcome"
+
+          }
+
+      }
+
+  }
+</script>
+{% else %}
 <script type="application/json" id="ROMM-outcome-validation">
     {
 
@@ -138,7 +180,7 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
 
             "presence": {
 
-                "message": "^Select outcome"
+                "message": "^Select whether the ROMM logged against this grade has an outcome"
 
             }
 
@@ -146,6 +188,5 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
 
     }
 </script>
-
 {% endif %}
 {% endblock %}

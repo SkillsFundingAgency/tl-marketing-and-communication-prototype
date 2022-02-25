@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-ROMM outcome
+{% if data['specialismGradestatus'] == 'ROMM'%}
+ROMM outcome - Post-results - Manage T Level results - GOV.UK
+{% else %}
+ROMM outcome known - Post-results - Manage T Level results - GOV.UK
+{% endif %}
 {% endblock %}
-
 {% block beforeContent %}
 <a class="govuk-back-link" onclick="goBack()">Back</a>
 {% endblock %}
@@ -12,7 +15,11 @@ ROMM outcome
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Add ROMM outcome</h1> 
+      {% if data['specialismGradestatus'] == 'ROMM'%}
+      <h1 class="govuk-heading-l">Do you know the ROMM outcome?</h1>
+      {% else %}
+      <h1 class="govuk-heading-l">Add a ROMM outcome</h1>
+      {% endif %}
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         
@@ -78,6 +85,7 @@ ROMM outcome
 
       <form action="specialism-add-ROMM-outcome" method="post" novalidate data-validate='ROMM-outcome-validation-specialism'>
 
+        {% if data['specialismGradestatus'] == 'ROMM'%}
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -89,41 +97,85 @@ ROMM outcome
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
                 <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
-                  Grade has changed
+                  The grade has changed
                 </label>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
                 <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
-                  Grade is the same
+                  No change to grade
                 </label>
               </div>
-              {% if data['specialismGradestatus'] == 'ROMM'%}
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="what-is-ROMM-outcome-3" name="what-is-ROMM-outcome-specialism" type="radio" value="learner withdrew">
                 <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
-                  Learner withdrew ROMM request
+                  ROMM withdrawn
                 </label>
               </div>
-              {% else %}
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-4" name="what-is-ROMM-outcome-specialism" type="radio" value="Waiting on outcome">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-4">
-                  Waiting on outcome
-                </label>
-              </div>
-              {% endif %}
+              
             </div>
 
           </fieldset>
         </div>
 
+        {% else %}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Does the ROMM logged against this grade have an outcome?
+              </h2>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
+                  Yes, the grade has changed
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
+                  Yes, the grade is the same
+                </label>
+              </div>              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-4" name="what-is-ROMM-outcome-specialism" type="radio" value="Waiting on outcome">
+                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-4">
+                  No
+                </label>
+              </div>
+              
+            </div>
+
+          </fieldset>
+        </div>
+        {% endif %}
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
       </form>
     </div>
   </div>
+
+  {% if data['specialismGradestatus'] == 'ROMM'%}
+  <script type="application/json" id="ROMM-outcome-validation-specialism">
+    {
+
+        "what-is-ROMM-outcome-specialism": {
+
+            "presence": {
+
+                "message": "^Select the ROMM outcome"
+
+            }
+
+        }
+
+    }
+</script>
+  {% else %}
 
   <script type="application/json" id="ROMM-outcome-validation-specialism">
     {
@@ -132,7 +184,7 @@ ROMM outcome
 
             "presence": {
 
-                "message": "^Select outcome"
+                "message": "^Select whether the ROMM logged against this grade has an outcome"
 
             }
 
@@ -141,7 +193,7 @@ ROMM outcome
     }
 </script>
 
-
+{% endif %}
 {% endblock %}
 
 

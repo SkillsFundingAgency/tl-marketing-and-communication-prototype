@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Check and submit outcome of specialism appeal  - Manage T Level results - GOV.UK
+Check appeal outcome - Post-results - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@ Check and submit outcome of specialism appeal  - Manage T Level results - GOV.UK
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Check and submit
+      Check the appeal outcome
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the grade.</p>
 
@@ -80,7 +80,7 @@ Check and submit outcome of specialism appeal  - Manage T Level results - GOV.UK
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }}<br>{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+      <h2 class="govuk-heading-m">Specialism: {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -120,7 +120,7 @@ Check and submit outcome of specialism appeal  - Manage T Level results - GOV.UK
         </div>
       </dl>
             
-      <p class="govuk-inset-text">Selecting 'Submit' will update the grade and mean the grade is no longer being appealed</p>
+      <p class="govuk-body">By submitting this appeal outcome you are confirming that the new grade is correct and can be used to calculate the overall T Level result for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s certificate.</p>
 
       <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button">

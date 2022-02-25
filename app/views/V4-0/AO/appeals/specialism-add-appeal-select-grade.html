@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Select specialism grade - appeal outcome
+Appeal grade change - Post-results - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,7 +12,7 @@ Select specialism grade - appeal outcome
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Select appeal grade</h1> 
+      <h1 class="govuk-heading-l">Change the grade after an appeal</h1> 
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         
@@ -50,7 +50,7 @@ Select specialism grade - appeal outcome
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Core
+            Specialism
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
@@ -131,7 +131,7 @@ Select specialism grade - appeal outcome
 
             "presence": {
 
-                "message": "^Select a grade"
+                "message": "^Select the new grade"
 
             }
 

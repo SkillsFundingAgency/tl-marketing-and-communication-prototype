@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Raise appeal
+Add an appeal - Post-results - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,19 +12,11 @@ Raise appeal
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Log an appeal</h1>
+      <h1 class="govuk-heading-l">Add an appeal</h1>
       <p>Tell us that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} has asked for an appeal of their {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} </p> 
         
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Learner
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
-          </dd>
-        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             ULN
@@ -85,7 +77,7 @@ Raise appeal
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                Has {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} requested an appeal for this grade?
+                Has {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}  raised an appeal against this grade?
               </h2>
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
@@ -120,7 +112,7 @@ Raise appeal
 
             "presence": {
 
-                "message": "^Select yes to add appeal"
+                "message": "^Select ‘yes’ if the learner has raised an appeal against this grade"
 
             }
 
