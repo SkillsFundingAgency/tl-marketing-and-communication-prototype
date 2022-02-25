@@ -447,32 +447,16 @@ router.post('/' + version + '/AO/appeals/exceptions/request-grade-change-routes'
 
   if (gradeChangeconfirmation === 'learner-page') {
     req.session.data['uln'] = uln
-    req.session.data['newcoreOnHold2021'] = 'locked'
+    req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/record-entries-routes')
 
   } else if (gradeChangeconfirmation === 'search'){
-
+    req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/search-learner')
   
   } else {
+    req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/tlevels-dashboard')
-  }
-})
-
-//Appeals - EXCEPTIONS
-
-router.post('/' + version + '/AO/appeals/exceptions/exceptions-process-put-on-appeal', function (req, res) {
-
-  let appealGrade = req.session.data['exceptions-appeal']
-  let uln = req.session.data['uln']
-
-  if (appealGrade === 'appeal-record') {
-    
-    res.redirect('/' + version + '/AO/appeals/exceptions/exceptions-process-confirmation')
-
-  } else{
-    req.session.data['uln'] = uln
-    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
   }
 })
 
