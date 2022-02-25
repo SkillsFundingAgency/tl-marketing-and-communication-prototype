@@ -307,7 +307,7 @@ router.post('/' + version + '/AO/appeals/core-add-appeal-outcome', function (req
 //appeal outcome select grade - grade same or grade changed
 router.post('/' + version + '/AO/appeals/appeal-select-grade', function (req, res) {
   
-  req.session.data['core-selected-grade'] = 'yes-appeal'
+  req.session.data['core-selected-grade-appeal'] = 'yes-appeal'
   res.redirect('/' + version + '/AO/appeals/check-submit-appeal')
 })
 
@@ -423,7 +423,7 @@ router.post('/' + version + '/AO/appeals/specialism-add-appeal-outcome', functio
 //Specialism appeal outcome select grade - grade same or grade changed
 router.post('/' + version + '/AO/appeals/appeal-select-grade-specialism', function (req, res) {
   
-  req.session.data['specialism-selected-grade'] = 'yes-appeal'
+  req.session.data['specialism-selected-grade-appeal'] = 'yes-appeal'
   res.redirect('/' + version + '/AO/appeals/specialism-check-submit-appeal')
 })
 

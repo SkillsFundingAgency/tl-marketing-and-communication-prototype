@@ -18,10 +18,10 @@
           data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}</th>
         <td class="govuk-table__cell">
           <span>
-            {% if data['core-selected-grade'] === "yes" %}
-            {{ data['ROMM-grade'] }}
-            {% elif data['core-selected-grade'] === "yes-appeal" %}
+            {% if data['core-selected-grade-appeal'] === "yes-appeal" %}
             {{ data['appeal-grade'] }}
+            {% elif data['core-selected-grade'] === "yes" %}
+            {{ data['ROMM-grade'] }}
             {% else %}
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
             {% endif %}
@@ -110,10 +110,10 @@
           data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}</th>
 
         <td class="govuk-table__cell">
-          {% if data['specialism-selected-grade'] === "yes" %}
-          {{ data['ROMM-grade-specialism'] }}
-          {% elif data['specialism-selected-grade'] === "yes-appeal" %}
+          {% if data['specialism-selected-grade-appeal'] === "yes-appeal" %}
           {{ data['appeal-grade-specialism'] }}
+          {% elif data['specialism-selected-grade'] === "yes" %}
+          {{ data['ROMM-grade-specialism'] }}
           {% else %}
           {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
           {% endif %}

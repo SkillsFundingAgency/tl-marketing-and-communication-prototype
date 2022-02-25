@@ -104,10 +104,10 @@ Check and submit outcome of specialism appeal  - Manage T Level results - GOV.UK
           </dt>
 
           <dd class="govuk-summary-list__value">
-            {% if data['specialism-selected-grade'] === "yes" %}
-            {{ data['ROMM-grade-specialism'] }}
-            {% elif data['specialism-selected-grade'] === "yes-appeal" %}
+            {% if data['specialism-selected-grade-appeal'] === "yes-appeal" %}
             {{ data['appeal-grade-specialism'] }}
+            {% elif data['specialism-selected-grade'] === "yes" %}
+            {{ data['ROMM-grade-specialism'] }}
             {% else %}
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
             {% endif %}
