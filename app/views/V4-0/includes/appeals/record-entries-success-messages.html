@@ -1,30 +1,5 @@
-
-<!-- 
-Success Messages logic 
-
-if core or specialism is under review success message " core/specialism status has been updated"
-
-if core or specialism grade taken off hold (reviewed once) - " core/specialism status has been updated"
-
-if core or specialism grade taken off hold (reviewed once) and grade changed - "core/specialism grade has been updated"
-
-if core or specialism is being appealed - " core/specialism status has been updated"
-
-if core or specialism taken off appeal and no grade change - " core/specialism status has been updated"
-
-if core or specialism taken off appeal and grade change - "core/specialism grade has been updated" 
-
-Success message should not display after user navigates from page (could this work with a flag? i.e. once marked yes not show again)
-
-else no message shown
-
--->
-
- 
-<!-- (Summer 2021) if core or specialism is being appealed - " core/specialism status has been updated" -->
-{% if data['newcoreOnHold2021'] === "appealed" or data['newspecialismOnHold2021'] === "appealed"%}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+{% if data['showBannerAppeals'] == 'raiseROMM-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Success
@@ -32,19 +7,16 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      {% if data['newcoreOnHold2021'] === "appealed"%}
-      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} is being appealed 
-      {% elseif data['newspecialismOnHold2021'] === "appealed"%}
-      Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} is being appealed 
-      {% endif %}
+      ROMM recorded
     </h3>
+    <p class="govuk-body">You have recorded that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} requested a ROMM for their {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
   </div>
-</div> 
-
-<!-- (Summer 2021) if core appeal appeal has been withdrawn- " core appeal has been withdrawn" -->
-{% elseif data['appealWithdrawn'] === "yes" and data['newcoreOnHold2021'] === "no" %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+</div>
+{% elif data['showBannerAppeals'] == 'ROMMwithdrew-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Success
@@ -52,17 +24,16 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
- 
-      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} appeal has been withdrawn
-     
+       ROMM withdrawn
     </h3>
+    <p class="govuk-body">You have withdrawn a ROMM for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
   </div>
-</div>   
-
-<!-- (Summer 2021) if core or specialism taken off appeal - grade change FINAL - " core/specialism status has been updated" -->
-{% elseif data['newcoreOnHold2021'] === "final" and data['core-result-changed-2021'] === 'yes'%}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+</div>
+{% elif data['showBannerAppeals'] == 'ROMMoutcome-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Success
@@ -70,18 +41,16 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
- 
-      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} grade is final
-     
+      ROMM outcome recorded
     </h3>
+    <p class="govuk-body">You have recorded a ROMM outcome for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
   </div>
-</div>  
-
-
-<!-- (Summer 2021) if core or specialism taken off appeal - no grade change FINAL - " core/specialism status has been updated" -->
-{% elseif data['newcoreOnHold2021'] === "final" or data['newspecialismOnHold2021'] === "final"%}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+</div>
+{% elif data['showBannerAppeals'] == 'raiseAppeal-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Success
@@ -89,17 +58,149 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      {% if data['newcoreOnHold2021'] === "final"%}
-      Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }} grade is final
-      {% elseif data['newspecialismOnHold2021'] === "final"%}
-      Occupational specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }} grade is final
-      {% endif %}
+      Appeal recorded 
     </h3>
+    <p class="govuk-body">You have recorded that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} raised an appeal for their {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
   </div>
-</div>    
- 
-
+</div>
+{% elif data['showBannerAppeals'] == 'appealwithdrew-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Appeal withdrawn
+    </h3>
+    <p class="govuk-body">You have withdrawn an appeal for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'appealoutcome-core' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Appeal outcome recorded
+    </h3>
+    <p class="govuk-body">You have recorded an appeal outcome for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'raiseROMM-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      ROMM recorded
+    </h3>
+    <p class="govuk-body">You have recorded that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} requested a ROMM for their {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'ROMMwithdrew-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      ROMM withdrawn
+    </h3>
+    <p class="govuk-body">You have withdrawn a ROMM for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'ROMMoutcome-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      ROMM outcome recorded
+    </h3>
+    <p class="govuk-body">You have recorded a ROMM outcome for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'raiseAppeal-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Appeal recorded
+    </h3>
+    <p class="govuk-body">You have recorded that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} raised an appeal for their {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'appealwithdrew-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Appeal withdrawn
+    </h3>
+    <p class="govuk-body">You have withdrawn an appeal for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }} grade</p>
+  </div>
+</div>
+{% elif data['showBannerAppeals'] == 'appealoutcome-specialism' %}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Appeal outcome recorded
+    </h3>
+    <p class="govuk-body">You have recorded an appeal outcome for {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}’s {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }} grade</p>
+  </div>
+</div>
 {% endif %}
-
-
 

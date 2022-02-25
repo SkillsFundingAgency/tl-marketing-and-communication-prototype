@@ -2,24 +2,14 @@
     <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-l">
-        {% if data['examPeriodChoice'] === 'summer' and data['componentChoice'] === 'specialism'%}
-        Learner does not have a registered grade for occupational specialism, summer 2021
-        {% elif data['examPeriodChoice'] === 'autumn' and data['componentChoice'] === 'specialism'%}
-        Learner does not have a registered grade for occupational specialism, autumn 2021
-        {% elif data['examPeriodChoice'] === 'autumn'%}
-        Learner does not have any registered grades for autumn 2021
-        {% elif data['examPeriodChoice'] === 'summer' %}
-        Learner does not have any registered grades for summer 2021
-        {% else %}
-        Learner does not have any registered grades for summer 2021 
-        {% endif %}
+        Learner does not have any results
       </h1>
 
-      <div class="govuk-inset-text">
-        You must <a href="../results/learner-results.html">add a result</a> before you can appeal a grade.
-      </div>
+      <p>You must <a href="../results/learner-results.html">add a result</a> for this learner before you can tell us about a ROMM or appeal.</p>
 
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+      <!-- <div class="govuk-inset-text">
+        You must <a href="../results/learner-results.html">add a result</a> before you can appeal a grade.
+      </div> -->
 
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
@@ -27,7 +17,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -43,15 +33,23 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Provider <br>(UKPRN)
+            Provider
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            UKPRN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -59,13 +57,13 @@
             T Level
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
           </dd>
         </div>
       </dl>
 
       <div class="govuk-button-group">
-        <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
+        <a class="govuk-button" role="button" href="post-results-search-uln">Search again</a>
         <a class="govuk-button govuk-button--secondary" role="button" href="../tlevels-dashboard.html">Back to home</a>
       </div>
 

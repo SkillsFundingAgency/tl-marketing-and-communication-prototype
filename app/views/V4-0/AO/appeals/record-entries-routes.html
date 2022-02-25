@@ -1,33 +1,31 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
-Learner’s component grade status - Manage T Level results - GOV.UK
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1162334257' %}
+Learner’s grades - Post-results - Manage T Levels results - GOV.UK
 {% elif data['uln'] === '1231231231'%}
-Learner has been withdrawn - Manage T Level results - GOV.UK
-{% elif data['uln'] === '8642135790'%}
-Learner has no assessment entries - Manage T Level results - GOV.UK
+Learner withdrawn - Post-results - Manage T Levels results - GOV.UK
+<!-- {% elif data['uln'] === '8642135790'%}
+Learner has no assessment entries - Manage T Level results - GOV.UK -->
 {% elif data['uln'] === '5647382910'%}
-Learner does not have any registered grades - Manage T Level results - GOV.UK
-{% elif data['uln'] === '5647382913'%}
-Learner does not have any registered specialism grades - Manage T Level results - GOV.UK
+No results - Post-results - Manage T Levels results - GOV.UK
 {% else %}
-ULN not found - Manage T Level results - GOV.UK
+ULN not found - Post-results - Manage T Levels results - GOV.UK
 {% endif %}
 {% endblock %}
 
 {% block beforeContent %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1122334455' or data['uln'] === '1234567890'%}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1162334257'%}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="../tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Appeals</a>
+      <a class="govuk-breadcrumbs__link" href="post-results-reviews-appeals-and-grade-changes">Post-results</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="post-results-search-uln">Search for a learner</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner’s component grade status</li>
   </ol>
@@ -38,11 +36,22 @@ ULN not found - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block content %}
-{% if data['uln'] === '9876543210' or data['uln'] === '1987654321'%}
+{% if data['uln'] === '9876543210' or data['uln'] === '1987654321' or data['uln'] === '1162334257' %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    {% if data['showBanner'] === 'yes' %}
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['showBannerAppeals'] == 'raiseROMM-core' 
+    or data['showBannerAppeals'] == 'raiseROMM-specialism' 
+    or data['showBannerAppeals'] == 'ROMMwithdrew-core' 
+    or data['showBannerAppeals'] == 'ROMMwithdrew-specialism' 
+    or data['showBannerAppeals'] == 'ROMMoutcome-core' 
+    or data['showBannerAppeals'] == 'ROMMoutcome-specialism' 
+    or data['showBannerAppeals'] == 'raiseAppeal-core' 
+    or data['showBannerAppeals'] == 'raiseAppeal-specialism' 
+    or data['showBannerAppeals'] == 'appealwithdrew-core' 
+    or data['showBannerAppeals'] == 'appealwithdrew-specialism' 
+    or data['showBannerAppeals'] == 'appealoutcome-core' 
+    or data['showBannerAppeals'] == 'appealoutcome-specialism'%}
     {% include "../../includes/appeals/record-entries-success-messages.html" %}
     {% else %}
     
@@ -55,37 +64,12 @@ ULN not found - Manage T Level results - GOV.UK
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Learner’s component grade status</h1>
+    <h1 class="govuk-heading-l">{{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}'s grades</h1>
 
-    {% if data['uln'] === '9876543210' %}
-    <div class="govuk-inset-text">
-      This result is final as the date for appeal has passed. To tell us that the grade is being appealed please <a class="govuk-link" href="/V1-0/AO/appeals/exceptions/exceptions-process">raise a request</a>.
-    </div>
-    {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "final" %}
-    <div class="govuk-inset-text">
-      This result is final as the outcome of an appeal has been recorded. If you need to change the grade please <a class="govuk-link" href="/V1-0/AO/appeals/exceptions/request-grade-change">contact us</a>.
-    </div>
-    {% elif data['uln'] === '1987654321' and data['newcoreOnHold2021'] === "locked" %}
-    <div class="govuk-inset-text">
-      This learner's grade is locked as a change request has been made.<br>
-      Requested by: Julie Andrews<br>
-      Date requested: 29th July 2021
-
-    </div>
-    {% endif %}
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
-        </dd>
-      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           ULN
@@ -99,15 +83,23 @@ ULN not found - Manage T Level results - GOV.UK
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Provider <br>(UKPRN)
+          Provider
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}<br>{{ data['tLevelsStudentData'][data.uln]['UKPRN'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UKPRN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -115,29 +107,66 @@ ULN not found - Manage T Level results - GOV.UK
           T Level 
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
         </dd>
       </div>
     </dl>
 
+  </div>
+  
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-column">
 
     {% if data['uln'] === '1987654321'%}
     {% include "../../includes/appeals/record-entry-full-results-2021.html" %}
     {% elif data['uln'] === '9876543210' %}
     {% include "../../includes/appeals/record-entry-core-specialism-late.html" %}
+    {% elif data['uln'] === '1162334257' %}
+    {% include "../../includes/appeals/record-entry-core-no-specialism.html" %}
     {% endif %}
-
-
-
-    <a class="govuk-button govuk-!-margin-top-7" role="button" href="search-learner">Search again</a>
 
   </div>
   
 </div>
-{% elif data['uln'] === '8642135790'%}
-{% include "../../includes/appeals/no-assessment-entry.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          More about grades and their statuses
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+        The highest grade for each component will be used to calculate the overall T Level result for results day.</p>
+        <p class="govuk-body">
+        All grades must be marked ‘FINAL’ before they can be used to calculate an overall T Level result for certificate
+        printing.</p>
+        
+        <p class="govuk-body">Grades are marked ‘FINAL’ and can no longer be changed here when:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the appeal deadline has passed, or</li>
+          <li>an appeal outcome has been logged</li>
+        </ul>
+    
+        <p class="govuk-body">If a grade status is ‘ROMM’ or ‘APPEAL’ it cannot be used to calculate a T Level result for certificate printing
+        until an outcome has also been logged.</p>
+    
+        <p class="govuk-body">If you need to change a grade that is marked ‘FINAL’, please <a href="mailto: Tlevel.resultsandcertification@education.gov.uk?subject=Request to change a grade marked final"
+          class="govuk-link">contact us</a>.</p>
+      </div>
+    </details>
+
+    <a class="govuk-button govuk-!-margin-top-7" role="button" href="post-results-search-uln">Search again</a>
+
+  </div>
+  
+</div>
 {% elif data['uln'] === '5647382910'%}
-{% include "../../includes/appeals//no-grades-to-appeal.html" %}
+{% include "../../includes/appeals/no-grades-to-appeal.html" %}
 {% elif data['uln'] === '1231231231' %}
 {% include "../../includes/appeals/learner-withdrawn.html" %}
 {% else %}
