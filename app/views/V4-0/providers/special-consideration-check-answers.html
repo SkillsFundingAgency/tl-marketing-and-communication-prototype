@@ -219,9 +219,9 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
       {% if data['result-ip-answer'] === 'Placement completed with special consideration' %}
       <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has completed their
-        design, surveying and planning for construction T Level industrial placement, with special considerations.</p>
+        T Level industry placement and that all relevant supporting documentation is held on record.</p>
       {% else %}
-      <p class="govuk-body">Content needed</p>
+      <p class="govuk-body">I confirm that Danny Waldron has completed their T Level industry placement and that all relevant supporting documentation is held on record.</p>
       {% endif %}
 
       <form action="special-consideration-check-answers-status" method="post" novalidate>
