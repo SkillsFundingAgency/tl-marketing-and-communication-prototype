@@ -438,25 +438,41 @@ router.post('/' + version + '/AO/appeals/submit-appeal-outcome-specialism', func
 })
 
 
-//Appeals - request a grade change
+//Appeals - request exceptions
 
-router.post('/' + version + '/AO/appeals/exceptions/request-grade-change-routes', function (req, res) {
+router.post('/' + version + '/AO/appeals/exceptions/request-exceptions-routes', function (req, res) {
 
-  let gradeChangeconfirmation = req.session.data['request-grade-change']
+  let exceptionNextStep = req.session.data['exception-next-step']
   let uln = req.session.data['uln']
 
-  if (gradeChangeconfirmation === 'learner-page') {
+  if (exceptionNextStep === 'learner-page') {
     req.session.data['uln'] = uln
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/record-entries-routes')
 
-  } else if (gradeChangeconfirmation === 'search'){
+  } else if (exceptionNextStep === 'search'){
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/search-learner')
   
   } else {
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/tlevels-dashboard')
+  }
+})
+
+//Appeals - Cancel exceptions request
+
+router.post('/' + version + '/AO/appeals/exceptions/cancel-exception-request', function (req, res) {
+
+  let cancelException = req.session.data['cancel-exception-request']
+  let uln = req.session.data['uln']
+
+  if (cancelException === 'yes') {
+    req.session.data['uln'] = uln
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/exceptions/exception')
   }
 })
 
