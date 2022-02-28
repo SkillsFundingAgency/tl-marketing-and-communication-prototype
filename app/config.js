@@ -20,7 +20,7 @@ module.exports = {
 
   // enable live reload (on page load) of data from data files (only matters if useDataFilesToSessionData = 'true')
   // NB - this will overwrite any changes made by user (via forms etc) to session data loaded from files
-  dataFilesToSessionDataLiveReload: 'false',
+  dataFilesToSessionDataLiveReload: 'true',
 
   // Enable cookie-based session store (persists on restart)
   // Please note 4KB cookie limit per domain, cookies too large will silently be ignored
