@@ -437,6 +437,63 @@ router.post('/' + version + '/AO/appeals/submit-appeal-outcome-specialism', func
 
 })
 
+//Cancel
+//cancel ROMM core
+router.post('/' + version + '/AO/appeals/cancel/cancel-ROMM-core', function (req, res) {
+
+  let cancelROMM = req.session.data['cancel-ROMM-update']
+//yes cancel ROMM
+  if (cancelROMM === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/check-submit-ROMM')
+  }
+})
+
+//cancel ROMM specialism
+router.post('/' + version + '/AO/appeals/cancel/cancel-ROMM-specialism', function (req, res) {
+
+  let cancelROMMspecialism = req.session.data['cancel-ROMM-update-specialism']
+//yes cancel ROMM
+  if (cancelROMMspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-ROMM')
+  }
+})
+
+//cancel Appeal core
+router.post('/' + version + '/AO/appeals/cancel/cancel-appeal-core', function (req, res) {
+
+  let cancelAppeal = req.session.data['cancel-appeal-update']
+//yes cancel ROMM
+  if (cancelAppeal === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/check-submit-appeal')
+  }
+})
+
+//cancel Appeal specialism
+router.post('/' + version + '/AO/appeals/cancel/cancel-appeal-specialism', function (req, res) {
+
+  let cancelAppealspecialism = req.session.data['cancel-appeal-update-specialism']
+//yes cancel ROMM
+  if (cancelAppealspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-appeal')
+  }
+})
+
 
 //Appeals - request exceptions
 
