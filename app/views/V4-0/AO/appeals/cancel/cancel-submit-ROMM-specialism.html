@@ -12,27 +12,27 @@ Cancel ROMM update
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="cancel-ROMM-core" method="post" class="form" novalidate data-validate="cancel-ROMM">
+    <form action="cancel-ROMM-specialism" method="post" class="form" novalidate data-validate="cancel-ROMM">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-ROMM-update">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-ROMM-update-specialism">
               <h1 class="govuk-fieldset__heading">
                 Are you sure you want to cancel the update to this ROMM?
               </h1>
             </legend>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancel-ROMM-update" name="cancel-ROMM-update" type="radio"
+                <input class="govuk-radios__input" id="cancel-ROMM-update-specialism" name="cancel-ROMM-update-specialism" type="radio"
                   value="yes">
-                <label class="govuk-label govuk-radios__label" for="cancel-ROMM-update">
+                <label class="govuk-label govuk-radios__label" for="cancel-ROMM-update-specialism">
                   Yes, I want to cancel
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancel-ROMM-update-2" name="cancel-ROMM-update" type="radio"
+                <input class="govuk-radios__input" id="cancel-ROMM-update-specialism-2" name="cancel-ROMM-update-specialism" type="radio"
                   value="no">
-                <label class="govuk-label govuk-radios__label" for="cancel-ROMM-update">
+                <label class="govuk-label govuk-radios__label" for="cancel-ROMM-update-specialism">
                   No, I do not want to cancel
                 </label>
               </div>
@@ -51,7 +51,7 @@ Cancel ROMM update
 <script type="application/json" id="cancel-ROMM">
   {
 
-    "cancel-ROMM-update": {
+    "cancel-ROMM-update-specialism": {
       "presence": {
         "message": "^Please select whether you want to cancel the update to this ROMM"
       }
