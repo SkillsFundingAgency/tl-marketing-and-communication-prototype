@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Cancel grade change request
+Cancel exceptions request
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,25 +12,25 @@ Cancel grade change request
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="cancel-grade-change-request" method="post" class="form" novalidate data-validate="cancel-request">
+    <form action="cancel-exception-request" method="post" class="form" novalidate data-validate="cancel-request">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-grade-change-request">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-exception-request">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to cancel the request for a grade change?
+              Are you sure you want to cancel the update to this ROMM?
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancel-grade-change-request" name="cancel-grade-change-request" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="cancel-grade-update">
+              <input class="govuk-radios__input" id="cancel-exception-request" name="cancel-exception-request" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel-exception-request">
                 Yes, I want to cancel
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancel-grade-change-request-2" name="cancel-grade-change-request" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="cancel-grade-change-request-2">
+              <input class="govuk-radios__input" id="cancel-exception-request-2" name="cancel-exception-request" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel-exception-request-2">
                 No, I do not want to cancel
               </label>
             </div>
@@ -49,9 +49,9 @@ Cancel grade change request
 <script type="application/json" id="cancel-request">
   {
 
-    "cancel-grade-change-request": {
+    "cancel-exception-request": {
       "presence": {
-        "message": "^Please select whether you want to cancel the request for a grade change"
+        "message": "^Please select whether you want to cancel the update to this ROMM"
       }
 
     }
