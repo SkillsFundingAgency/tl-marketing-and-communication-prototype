@@ -11,6 +11,7 @@ function search() {
     if(cards[i].innerText.toLowerCase()
       // ...and the text matches the search query...
       .includes(search_query.toLowerCase())) {
+        document.getElementById('no-results').classList.add('is-hidden')
         // ...remove the `.is-hidden` class.
         cards[i].classList.remove("is-hidden");
     }  else {
@@ -25,6 +26,7 @@ function search() {
       sessionStorage.setItem('noResults', 'yes')
       document.getElementById('sortAndExport').classList.add('govuk-visually-hidden')
       document.getElementById('pagination').classList.add('govuk-visually-hidden')
+      document.getElementById('no-results').classList.remove('is-hidden')
   }
   //show clear search
   document.getElementById('clearSearch').classList.remove("govuk-visually-hidden")
@@ -64,6 +66,8 @@ function clearSearch() {
   document.getElementById('clearSearch').classList.add("govuk-visually-hidden")
   document.getElementById('sortAndExport').classList.remove('govuk-visually-hidden')
   document.getElementById('pagination').classList.remove('govuk-visually-hidden')
+  document.getElementById('no-results').classList.add('is-hidden')
+
   sessionStorage.setItem('noResults', 'no')
   
 }
