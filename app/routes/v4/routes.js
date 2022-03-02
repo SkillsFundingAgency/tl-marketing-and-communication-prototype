@@ -943,15 +943,17 @@ router.post('/' + version + '/providers/flexibility', function (req, res) {
 
   let flexibility = req.session.data['flexibility']
 
-  if (flexibility === 'yes') {
+  if (flexibility === 'yes' && req.session.data['uln'] === '1234567890') {
     res.redirect('/' + version + '/providers/temporary-flexibilities')
+  } else if (flexibility === 'yes' && req.session.data['uln'] === '1987654320') {
+    res.redirect('/' + version + '/providers/special-consideration-check-answers')
+  } else if (flexibility === 'yes')  {
+    res.redirect('/' + version + '/providers/blended-placements')
   } else {
       res.redirect('/' + version + '/providers/special-consideration-check-answers'
       )}
 
   })
-
-
 
   router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
     let newplacementStatus = req.session.data['result-ip-answer']

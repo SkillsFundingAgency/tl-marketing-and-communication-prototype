@@ -180,7 +180,11 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+          {% if data['uln'] === '1987654320' %}
+            Temporary flexibility and blended placment
+          {% else %}
             Temporary flexibility
+          {% endif %}
           </dt>
           <dd class="govuk-summary-list__value" style="text-transform: capitalize">
             {{ data['flexibility']}}
@@ -191,8 +195,28 @@ Industry placement check answers - Manage T Level results - GOV.UK
             </a>
           </dd>
         </div>
+        
+        {% if data['blended-placement'] === 'yes' or data['blended-placement'] === 'no'   %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Blended placement
+          </dt>
+          <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+            {{ data['blended-placement'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="did-you-use-a-flexibility">
+              Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
+            </a>
+          </dd>
+        </div>
+        {% else %}
 
-        {% if data['flexibility'] === 'yes'  %}
+        {% endif %}
+
+        {% if data['flexibility'] === 'yes' and data['uln'] === '1987654320' %}
+
+        {% elif data['flexibility'] === 'yes'  %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Temporary flexibilities used
@@ -237,7 +261,6 @@ Industry placement check answers - Manage T Level results - GOV.UK
         </button>
 
       </form>
-
     </div>
   </div>
 </div>
