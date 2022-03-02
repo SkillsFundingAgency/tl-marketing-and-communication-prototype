@@ -205,7 +205,7 @@ Industry placement check answers - Manage T Level results - GOV.UK
             {{ data['blended-placement'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="did-you-use-a-flexibility">
+            <a class="govuk-link" href="blended-placements">
               Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
             </a>
           </dd>
@@ -252,13 +252,13 @@ Industry placement check answers - Manage T Level results - GOV.UK
 
         <input type="hidden" name="answers-checked" value="true">
 
-        <button class="govuk-button" data-module="govuk-button">
-          Submit
-        </button>
-
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Cancel
-        </button>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Submit
+          </button>
+        
+          <a class="govuk-link" href="update-t-level-record?{{data['uln']}}">Cancel</a>
+        </div>
 
       </form>
     </div>
