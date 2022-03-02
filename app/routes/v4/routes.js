@@ -437,26 +437,99 @@ router.post('/' + version + '/AO/appeals/submit-appeal-outcome-specialism', func
 
 })
 
+//Cancel
+//cancel ROMM core
+router.post('/' + version + '/AO/appeals/cancel/cancel-ROMM-core', function (req, res) {
 
-//Appeals - request a grade change
+  let cancelROMM = req.session.data['cancel-ROMM-update']
+//yes cancel ROMM
+  if (cancelROMM === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/check-submit-ROMM')
+  }
+})
 
-router.post('/' + version + '/AO/appeals/exceptions/request-grade-change-routes', function (req, res) {
+//cancel ROMM specialism
+router.post('/' + version + '/AO/appeals/cancel/cancel-ROMM-specialism', function (req, res) {
 
-  let gradeChangeconfirmation = req.session.data['request-grade-change']
+  let cancelROMMspecialism = req.session.data['cancel-ROMM-update-specialism']
+//yes cancel ROMM
+  if (cancelROMMspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-ROMM')
+  }
+})
+
+//cancel Appeal core
+router.post('/' + version + '/AO/appeals/cancel/cancel-appeal-core', function (req, res) {
+
+  let cancelAppeal = req.session.data['cancel-appeal-update']
+//yes cancel ROMM
+  if (cancelAppeal === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/check-submit-appeal')
+  }
+})
+
+//cancel Appeal specialism
+router.post('/' + version + '/AO/appeals/cancel/cancel-appeal-specialism', function (req, res) {
+
+  let cancelAppealspecialism = req.session.data['cancel-appeal-update-specialism']
+//yes cancel ROMM
+  if (cancelAppealspecialism === 'yes') {
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+// no dont cancel  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/specialism-check-submit-appeal')
+  }
+})
+
+
+//Appeals - request exceptions
+
+router.post('/' + version + '/AO/appeals/exceptions/request-exceptions-routes', function (req, res) {
+
+  let exceptionNextStep = req.session.data['exception-next-step']
   let uln = req.session.data['uln']
 
-  if (gradeChangeconfirmation === 'learner-page') {
+  if (exceptionNextStep === 'learner-page') {
     req.session.data['uln'] = uln
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/record-entries-routes')
 
-  } else if (gradeChangeconfirmation === 'search'){
+  } else if (exceptionNextStep === 'search'){
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/appeals/search-learner')
   
   } else {
     req.session.data['exceptions'] = 'yes'
     res.redirect('/' + version + '/AO/tlevels-dashboard')
+  }
+})
+
+//Appeals - Cancel exceptions request
+
+router.post('/' + version + '/AO/appeals/exceptions/cancel-exception-request', function (req, res) {
+
+  let cancelException = req.session.data['cancel-exception-request']
+  let uln = req.session.data['uln']
+
+  if (cancelException === 'yes') {
+    req.session.data['uln'] = uln
+    res.redirect('/' + version + '/AO/appeals/record-entries-routes')
+  
+  } else {
+    res.redirect('/' + version + '/AO/appeals/exceptions/exception')
   }
 })
 
