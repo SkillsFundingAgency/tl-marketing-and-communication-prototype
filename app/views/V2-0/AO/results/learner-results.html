@@ -37,27 +37,27 @@ ULN not found - Manage T Level results - GOV.UK
 
 {# grade is for core and specialism #}
 {% if data['uln'] === '5647382910' %}
-{% include "includes/V2-0/results/learner-results-no-grade.html" %}
+{% include "../includes/results/learner-results-no-grade.html" %}
 {# appeals for core and specialism  #}
 {% elseif data['uln'] === '1987654321' %}
-{% include "includes/V2-0/results/learner-results-appeal.html" %}
+{% include "../includes/results/learner-results-appeal.html" %}
 {# final for core and specialism  #}
 {% elseif data['uln'] === '1122334455' %}
-{% include "includes/V2-0/results/learner-results-final.html" %}
+{% include "../includes/results/learner-results-final.html" %}
 {# assessment is just for Core   #}
 {% elseif data['uln'] === '8642135790' %}
-{% include "includes/V2-0/results/learner-results-no-assessment.html" %}
+{% include "../includes/results/learner-results-no-assessment.html" %}
 {# withdrawn is just for Core   #}
 {% elseif data['uln'] === '1231231231' %}
-{% include "includes/V2-0/results/learner-results-withdrawn.html" %}
+{% include "../includes/results/learner-results-withdrawn.html" %}
 {# Final Core with no Specialism   #}
 {% elseif data['uln'] === '1162334257' %}
-{% include "includes/V2-0/results/learner-results-final-no-specialism.html" %}
+{% include "..includes/results/learner-results-final-no-specialism.html" %}
 {# Final Core with paired Specialism with learner not having an assessments for the current exam period   #}
 {% elseif data['uln'] === '1169334253' %}
-{% include "includes/V2-0/results/learner-results-final-paired-specialism.html" %}
+{% include "../includes/results/learner-results-final-paired-specialism.html" %}
 {% else %}
-{% include "includes/V2-0/results/results-no-learner-found.html" %}
+{% include "../includes/results/results-no-learner-found.html" %}
 {% endif %}  
 {% endblock %}
 
