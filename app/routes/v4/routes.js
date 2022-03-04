@@ -919,24 +919,38 @@ router.post('/' + version + '/providers/change-ip-result', function (req, res) {
       res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
     } else {
     req.session.data['newplacementResult'] = "yes"
+    req.session.data['showBanner'] = "ip"
     req.session.data['newindustryPlacement'] = newResult
     
-    res.redirect('/' + version + '/providers/change-ip-result-successful')
+    res.redirect('/' + version + '/providers/update-t-level-record')
     }
   
   });
 
 
-//Update English and Maths status
-router.post('/' + version + '/providers/change-em-status', function (req, res) {
-    let newStatus = req.session.data['result-answer']
+//Update Maths status
+router.post('/' + version + '/providers/add-maths-status', function (req, res) {
+    let newmathsStatus = req.session.data['mathsStatus']
   
-    req.session.data['updatedemStatus'] = "yes"
-    req.session.data['newemStatus'] = newStatus
+    req.session.data['updatedmathsStatus'] = "yes"
+    req.session.data['showBanner'] = "maths"
+    req.session.data['newmathsStatus'] = newmathsStatus
     
-    res.redirect('/' + version + '/providers/change-em-status-successful')
+    res.redirect('/' + version + '/providers/update-t-level-record?showBanner=maths')
   
   });
+
+//Update English status
+router.post('/' + version + '/providers/add-english-status', function (req, res) {
+  let newenglishStatus = req.session.data['englishStatus']
+
+  req.session.data['updatedenglishStatus'] = "yes"
+  req.session.data['showBanner'] = "english"
+  req.session.data['newenglishStatus'] = newenglishStatus
+  
+  res.redirect('/' + version + '/providers/update-t-level-record?showBanner=english')
+
+});
 
 //Cancel Request Statement of Achievement 
 router.post('/' + version + '/providers/request-statement-of-achievement-cancel', function (req, res) {
@@ -1002,23 +1016,25 @@ router.post('/' + version + '/providers/flexibility', function (req, res) {
 
   let flexibility = req.session.data['flexibility']
 
-  if (flexibility === 'yes') {
+  if (flexibility === 'yes' && req.session.data['uln'] === '1234567890') {
     res.redirect('/' + version + '/providers/temporary-flexibilities')
+  } else if (flexibility === 'yes' && req.session.data['uln'] === '1987654320') {
+    res.redirect('/' + version + '/providers/special-consideration-check-answers')
+  } else if (flexibility === 'yes')  {
+    res.redirect('/' + version + '/providers/blended-placements')
   } else {
       res.redirect('/' + version + '/providers/special-consideration-check-answers'
       )}
 
   })
 
-
-
   router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
-    
+    let newplacementStatus = req.session.data['result-ip-answer']
     req.session.data['newplacementResult'] = "yes"
-    req.session.data['newindustryPlacement'] = "Placement completed with special consideration"
+    req.session.data['newindustryPlacement'] = newplacementStatus
     
     // Success banner needs to be added
-
+    req.session.data['showBanner'] = "ip"
     res.redirect('/' + version + '/providers/update-t-level-record')
 
   })

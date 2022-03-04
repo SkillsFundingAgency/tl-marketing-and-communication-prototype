@@ -15,10 +15,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
+// Components that aren't in Frontend
+@import "components/record-header";
+@import "components/pagination";
+
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .app-float-right{
-    float:right;
+    float: right;
 }
 
 .autocomplete__wrapper {
@@ -189,7 +194,11 @@ $govuk-assets-path: '/govuk/assets/';
   
   /* Responsive table styling */
 
-  
+   .responsive-table { 
+    margin-bottom: 0;
+    width: 100%;
+  }
+
   thead {
     border: 0;
     clip: rect(0 0 0 0);
@@ -281,8 +290,107 @@ $govuk-assets-path: '/govuk/assets/';
   padding-left: 15px;
   padding-top: 20px;
 }
+
 @media (max-width: 640px) {
   .remove-class-mobile{
     display:none;
   }
+
+
+.app-application-card {
+  margin-bottom: govuk-spacing(3);
+  padding-bottom: govuk-spacing(3);
+  border-bottom: 1px solid govuk-colour('mid-grey');
+}
+
+.app-application-card:first-of-type {
+  border-top: 1px solid govuk-colour('mid-grey');
+  padding-top: govuk-spacing(3);
+}
+
+.app-application-card_row {
+  min-width: 100%;
+}
+
+.app-application-card_row--header {
+  display: flex;
+  justify-content: space-between;
+  .app-application-card_tag-container {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    @include govuk-media-query($from: tablet) {
+      flex-direction: row;
+    }
+    .govuk-tag {
+      display: inline-block;
+      float: right;
+      margin-left: govuk-spacing(3);
+      &:first-child { 
+        margin-bottom: govuk-spacing(1);
+      }
+      @include govuk-media-query($from: tablet) {
+        &:first-child { 
+          margin-bottom: govuk-spacing(0);
+        }
+      }
+    }
+  }
+}
+
+.app-application-card_row--body {
+  margin-top: govuk-spacing(2);
+  @include govuk-media-query($from: 401px) {
+    display: flex;
+    // Ensure columns evenly distributed, with no gap at the start or end
+    justify-content: space-between;
+  }
+}
+
+.filter-border {
+  border: 1px solid #b1b4b6; 
+  padding-left: 20px;
+}
+
+.section-break-full-width {
+  width: 100%;
+}
+
+.scroll {
+  overflow: scroll; 
+  height: 200px;
+  overflow-x: hidden;
+} 
+
+.app-filter__tag:link, .app-filter__tag:visited {
+  color: #0b0c0c;
+}
+
+.app-filter__tag {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.14286;
+  background-color: #ffffff;
+  border: 1px solid #0b0c0c;
+  color: #0b0c0c;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.app-filter__tag:after {
+  background-image: url(/public/images/icon-tag-remove-cross.svg);
+  content: '';
+  display: inline-block;
+  font-weight: bold;
+  height: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 10px;
+
 }

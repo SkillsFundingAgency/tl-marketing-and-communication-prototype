@@ -33,7 +33,7 @@ ULN not found - Manage T Level results - GOV.UK
 
 {% block content %}
 {% if data['uln'] === '9876543210' and data['deleted'] === 'yes' %}
-{% include "includes/V2-0/registrations/search-for-learner-ULN-not-found.html" %}
+{% include "../../includes/registrations/search-for-learner-ULN-not-found.html" %}
 
 {% elseif data['uln'] === '1234567890' or data['uln'] === '1231231231' or data['uln'] === '9876543210' or data['uln'] === '1234567891'%}
 
@@ -268,6 +268,6 @@ ULN not found - Manage T Level results - GOV.UK
 </div>
 
 {% else %}
-{% include "includes/V2-0/registrations/search-for-learner-ULN-not-found.html" %}
+{% include "../../includes/registrations/search-for-learner-ULN-not-found.html" %}
 {% endif %}
 {% endblock %}
