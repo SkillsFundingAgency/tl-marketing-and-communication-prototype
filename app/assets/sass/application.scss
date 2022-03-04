@@ -291,10 +291,6 @@ $govuk-assets-path: '/govuk/assets/';
   padding-top: 20px;
 }
 
-@media (max-width: 640px) {
-  .remove-class-mobile{
-    display:none;
-  }
 
 
 .app-application-card {
@@ -392,5 +388,10 @@ $govuk-assets-path: '/govuk/assets/';
   margin-left: 5px;
   vertical-align: middle;
   width: 10px;
+}
 
+@media (max-width: 640px) {
+  .remove-class-mobile{
+    display:none;
+  }
 }
