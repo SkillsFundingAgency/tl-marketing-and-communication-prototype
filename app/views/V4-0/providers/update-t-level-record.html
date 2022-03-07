@@ -116,7 +116,7 @@ Learner's T Level record
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Awarding Organisation
+          Awarding organisation
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}
@@ -157,7 +157,7 @@ Learner's T Level record
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">Maths and English</h2>
+    <h2 class="govuk-heading-m">Maths and English attainment level</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -175,7 +175,7 @@ Learner's T Level record
           {% if data['newmathsStatus'] === 'Achieved level 2 (or equivalent)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved level 2' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved'%}
           {% else %}
           <a class="govuk-link" href="add-maths-status">
-            Change <span class="govuk-visually-hidden"> maths status</span>
+            Add <span class="govuk-visually-hidden"> maths status</span>
           </a>
           {% endif %}
         </dd>
@@ -195,7 +195,7 @@ Learner's T Level record
           {% if data['newenglishStatus'] === 'Achieved level 2 (or equivalent)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved level 2' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved'%}
           {% else %}
           <a class="govuk-link" href="add-english-status">
-            Change <span class="govuk-visually-hidden"> english status</span>
+            Add <span class="govuk-visually-hidden"> english status</span>
           </a>
           {% endif %}
         </dd>
@@ -221,7 +221,7 @@ Learner's T Level record
       </div>
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
-          Core
+          Core component
         </dd>
         <dd class="govuk-summary-list__value">
 
