@@ -25,7 +25,7 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
         
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Learner
+            Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
@@ -65,7 +65,7 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Exam Period
+            Exam period
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
@@ -90,20 +90,22 @@ ROMM outcome known - Post-results - Manage T Level results - GOV.UK
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                What is ROMM outcome?
+                What is the ROMM outcome?
               </h2>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
                 <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
-                  The grade has changed
+                  No change to grade
                 </label>
               </div>
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
+                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
                 <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
-                  No change to grade
+                  The grade has changed
                 </label>
               </div>
 
