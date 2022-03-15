@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Blended placement
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="temporary-flexibilities" method="post" novalidate data-validate='blended-placement'>
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use the blended placement temporary flexibility?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="blended-placement-yes" name="blended-placement" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>
+                <label class="govuk-label govuk-radios__label" for="blended-placement-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="blended-placement-no" name="blended-placement" type="radio" value="no" {{ checked("blended-placement", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="blended-placement-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="blended-placement">
+    {
+
+        "blended-placement": {
+
+            "presence": {
+
+                "message": "^Select whether the learner was used the blended placement temporary flexibility"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}

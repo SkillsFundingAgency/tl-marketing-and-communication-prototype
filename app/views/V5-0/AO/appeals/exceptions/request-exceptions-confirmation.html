@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Grade change request sent
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Request to change grade sent</h1>
+      </div>
+
+ 
+      <h2 class="govuk-heading-m">What happens now</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>We will send you a confirmation email containing a reference number for your records</li>
+        <li>We will contact you within 3 working days to let you know the outcome of your request</li>
+      </ul>
+
+      <p class="govuk-body">If you have not heard from us by then please contact us.</p>
+
+
+      
+    <form action="request-exceptions-routes" method="post" class="form" novalidate data-validate="">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What would you like to do next?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exception-next-step" name="exception-next-step" type="radio" value="learner-page">
+              <label class="govuk-label govuk-radios__label" for="exception-next-step-1">
+                Back to learner's page
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exception-next-step-2" name="exception-next-step" type="radio" value="search">
+              <label class="govuk-label govuk-radios__label" for="exception-next-step-2">
+                Search for another learner
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exception-next-step-3" name="exception-next-step" type="radio" value="home">
+              <label class="govuk-label govuk-radios__label" for="exception-next-step-3">
+                Back to home
+              </label>
+            </div>
+          </div>
+
+          <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+            Continue
+          </button>
+      
+        </fieldset>
+      </div>
+    </form>  
+
+  </div>
+</div>
+
+{% endblock %}

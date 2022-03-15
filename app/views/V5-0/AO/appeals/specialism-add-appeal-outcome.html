@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['specialismGradestatus'] == 'appeal'%}
+Appeal outcome - Post-results - Manage T Level results - GOV.UK
+{% else %}
+Appeal outcome known - Post-results - Manage T Level results - GOV.UK
+{% endif %}
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['specialismGradestatus'] == 'appeal'%}
+    <h1 class="govuk-heading-l">Add an appeal outcome</h1>
+    {% else %}
+    <h1 class="govuk-heading-l">Do you know the appeal outcome?</h1>
+    {% endif %}
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['uln'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Specialism
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{
+          data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exam period
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grade
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['specialism-selected-grade'] === "yes" %}
+          {{ data['ROMM-grade-specialism'] }}
+          {% else %}
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    <form action="specialism-add-appeal-outcome" method="post" novalidate
+      data-validate='appeal-outcome-validation-specialism'>
+      {% if data['specialismGradestatus'] == 'appeal'%}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What is the appeal outcome?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism"
+                name="what-is-appeal-outcome-specialism" type="radio" value="Grade is the same">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism">
+                No change to grade
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism-2"
+                name="what-is-appeal-outcome-specialism" type="radio" value="Grade has changed">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism-2">
+                The grade has changed
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism-3"
+                name="what-is-appeal-outcome-specialism" type="radio" value="learner withdrew appeal">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism-3">
+                Appeal withdrawn
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+      {% else %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Does the appeal raised against this grade have an outcome?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism"
+                name="what-is-appeal-outcome-specialism" type="radio" value="Grade has changed">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism">
+                Yes, the grade has changed
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism-2"
+                name="what-is-appeal-outcome-specialism" type="radio" value="Grade is the same">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism-2">
+                Yes, the grade is the same
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-is-appeal-outcome-specialism-4"
+                name="what-is-appeal-outcome-specialism" type="radio" value="Waiting on outcome">
+              <label class="govuk-label govuk-radios__label" for="what-is-appeal-outcome-specialism-4">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      {% endif %}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% if data['specialismGradestatus'] == 'appeal'%}
+<script type="application/json" id="appeal-outcome-validation-specialism">
+    {
+
+        "what-is-appeal-outcome-specialism": {
+
+            "presence": {
+
+                "message": "^Select the appeal outcome"
+
+            }
+
+        }
+
+    }
+</script>
+{% else %}
+<script type="application/json" id="appeal-outcome-validation-specialism">
+  {
+
+      "what-is-appeal-outcome-specialism": {
+
+          "presence": {
+
+              "message": "^Select whether the appeal raised against this grade has an outcome"
+
+          }
+
+      }
+
+  }
+</script>
+{% endif %}
+
+{% endblock %}

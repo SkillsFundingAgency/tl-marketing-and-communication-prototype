@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+No records found - Results - Manage T Level results - GOV.UK
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/V2-0/AO/results/student-results">Results</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      No records found
+    </h1>
+
+    <p>A CSV file cannot be generated as there are no learners' results in our system for your organisation.</p>
+
+    <div class="govuk-button-group">
+      <a class="govuk-button" role="button" href="/V2-0/AO/tlevels-dashboard.html">Back to home</a>
+      <a class="govuk-button govuk-button--secondary" role="button" href="/V2-0/AO/results/student-results">Add results</a>
+  </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">Get help with the Manage T Level results service</h2>
+    <p>If you need help with the Manage T Level results service please <a href="mailto:Tlevel.resultsandcertification@education.gov.uk?subject=No result records found">contact us</a>. We aim to respond within 3 working days.</p>
+
+  </div>
+</div>
+
+{% endblock %}

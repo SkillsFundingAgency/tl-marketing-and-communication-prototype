@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Special consideration evidence - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="special-consideration-reason.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Special consideration supporting evidence for Danny Waldron
+      </h1>
+
+      <p class="govuk-body">
+        When providers apply special consideration, providers are asked what documentary evidence they have to support
+        their decision to apply special consideration.
+    </p>
+
+    <p class="govuk-body"> Evidence could include, but is not restricted to: </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+        <li>
+            notes recorded in a student’s records
+        </li>
+        <li>
+            a letter confirming an appointment with social services or other welfare organisation
+        </li>
+        <li>
+            a hospital appointment card or dates of hospital admission
+        </li>
+        <li>
+            a public record of court proceedings        
+        </li>
+    </ul>
+
+    <p class="govuk-body">Providers are not required to submit the evidence with the form, but it must be stored for monitoring purposes.</p>
+
+      <form action="industry-placement-model" method="post" novalidate data-validate="evidence-held-validation">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Do you hold the evidence locally to support the special consideration decision?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="evidence-held" name="evidence-held" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="evidence-held">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="evidence-held-2" name="evidence-held" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="evidence-held-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="evidence-held-validation">
+    {
+
+        "evidence-held": {
+
+            "presence": {
+
+                "message": "^Select yes if you hold the evidence locally"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}

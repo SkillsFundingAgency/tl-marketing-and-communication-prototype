@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How many hours did the student spend on placement? - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
+      <div class="govuk-form-group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading" for="total-placement-hours">
+            How many industry placement hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} complete?
+          </h1>
+        </legend>
+        <div id="total-placement-hours-hint" class="govuk-hint">
+          Must be between 1 and 999
+        </div>
+        <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
+          id="total-placement-hours" name="total-placement-hours" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+      </div>
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="placement-hours-validation">
+  {
+
+    "total-placement-hours": {
+
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Hours spent on placement must be a number, like 50"
+
+      },
+
+      "numericality": {
+        "lessThanOrEqualTo": 999,
+        "message": "^Hours spent on placement must be 999 or fewer"
+
+      },
+
+      "presence": {
+        "message": "^Enter number of hours student spent on placement"
+
+      },
+
+    }
+
+  }
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage T Level records - Manage T Level results - GOV.UK
+{% endblock %}
+{% block content %}
+
+
+{% for key, value in data.tLevelsStudentDataV3 %}
+
+<div class="app-application-card" data-name="2">
+
+    <div class="app-application-card_row app-application-card_row--header">
+      <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
+        <a href="update-t-level-record?uln=1987654321" class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-2">
+            {{ value.learnerName }}
+        </a>
+        <span class="govuk-body">{{ key }}</span>
+      </h3>
+
+      <span class="app-application-card_tag-container">
+        <span style="display: inline-block;">
+          <strong class="govuk-tag app-tag--record-incomplete">
+            Incomplete
+          </strong>
+
+        </span>
+      </span>
+    </div>
+    <div class="app-application-card_row app-application-card_row--body">
+      <div class="app-application-card_col">
+        <div>
+
+          <p class="govuk-body-s govuk-!-margin-bottom-1">
+            <span class="govuk-visually-hidden">Course: </span>
+            {{ value.learnerTLevelTitle }}
+
+          </p>
+          <p class="govuk-body-s">
+            <span class="govuk-visually-hidden">Route: </span>Early years (postgrad)
+          </p>
+        </div>
+        <div>
+          <p class="govuk-body-s">Awarding organisation: {{ value.learnerAwardingOrg }}</p>
+          <p class="govuk-body-s">
+            Start year:
+            <span class="app-nowrap">{{ value.learnerStartYear }}</span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="app-application-card_col">
+        <p
+          class="govuk-body-s govuk-!-margin-bottom-1 app-application-card__submitted">
+
+          Updated: <span>29 January 2022
+
+          </span></p>
+      </div>
+    </div>
+
+  </div>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

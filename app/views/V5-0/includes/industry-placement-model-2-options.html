@@ -1,0 +1,66 @@
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-1"
+                      name="industrial-placement-models" type="checkbox" value="Relevant part-time work"
+                      {{ checked("industrial-placement-models", "Relevant part-time work") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-1">
+                      Relevant part-time work
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-2"
+                      name="industrial-placement-models" type="checkbox"
+                      value="On-site facilities for SEND students"
+                      {{ checked("industrial-placement-models", "On-site facilities for SEND students") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-2">
+                      On-site facilities for SEND students
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-3"
+                      name="industrial-placement-models" type="checkbox"
+                      value="On-site facilities for young people in young offender institution"
+                      {{ checked("industrial-placement-models", "On-site facilities for young people in young offender institutions") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-3">
+                      On-site facilities for young people in young offender institutions
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-5"
+                      name="industrial-placement-models" type="checkbox"
+                      value="One lead employer facilitating the required hours" {{ checked("industrial-placement-models", "One lead employer facilitating the required hours") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-5">
+                      One lead employer facilitating the required hours
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-6"
+                      name="industrial-placement-models" type="checkbox"
+                      value="Use of skills hubs or employer training centres" {{ checked("industrial-placement-models", "Use of skills hubs or employer training centres") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-6">
+                      Use of skills hubs or employer training centres
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="industrial-placement-models-7"
+                      name="industrial-placement-models" type="checkbox"
+                      value="Commercial, charitable or community projects"
+                      {{ checked("industrial-placement-models", "Commercial, charitable or community projects") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="industrial-placement-models-7">
+                      Commercial, charitable or community projects
+                  </label>
+              </div>
+          </div>
+
+          <script type="application/json" id="industrial-placement-models-validation">
+              {
+
+                  "industrial-placement-models": {
+
+                      "presence": {
+
+                          "message": "^Select one or more industry placement models"
+
+                      }
+                  }
+              }
+          </script>

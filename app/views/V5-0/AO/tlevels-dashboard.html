@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+        padding-top: 10px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 801px) {
+        .card {
+        padding-bottom: 20px;
+        height: 100%;
+
+    }
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+            <p class="govuk-body">Use this service to tell us about:</p>
+            <ul class="govuk-list govuk-list--bullet">
+            <li>the T Levels you deliver and which providers are offering them</li>
+            <li>your registered learners, when they will be assessed and the results they achieve</li>
+            </ul>
+            <p class="govuk-body">The information you give us will be used to calculate learners' overall grades and printed on their certificates.</p>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-5">
+
+            <h2 class="govuk-heading-m">
+                <a class="govuk-link--no-visited-state" href="t-levels/student-t-levels.html">
+                    T Levels
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+            <li>Review the T Levels you are licensed to deliver</li>
+            <li>Confirm each T Level's details are correct</li>
+            <li>Request amendments</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-6">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="providers/find-provider.html">
+                        Providers
+                    </a>
+                </h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Review existing providers</li>
+                    <li>Add or remove providers</li>
+                    <li>Select the T Levels each provider offers</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="registrations/registrations">
+                        Registrations
+                    </a>
+                </h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Register learners onto T Level courses</li>
+                    <li>Change a learner's personal details</li>
+                    <li>Change a learner's T Level course</li>
+                    <li>Withdraw or reactivate a registration</li>
+                    <li>Download registrations data</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="assessments/assessments-dashboard.html">
+                        Assessments
+                    </a>
+                </h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Tell us when your learners will be assessed</li>
+                    <li>Download assessments data</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-4">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="results/student-results.html">
+                        Results
+                    </a>
+                </h2>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Tell us the initial grades learners achieved</li>
+                    <li>Download results data</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="appeals/post-results-reviews-appeals-and-grade-changes.html">
+                        Post-results
+                    </a>
+                </h2>
+                <ul class="govuk-list govuk-list--bullet gov-uk-!-padding-bottom-3">
+                    <li>Tell us when a learner has requested a ROMM or appeal</li>
+                    <li>Tell us the outcome of a ROMM or appeal</li>
+                </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-8">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Account
+                    </a>
+                </h2>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>View your profile and permissions</li>
+                    <li>Change your email address or password</li>
+                    <li>Manage other users (admin only)</li>
+                </ul>
+        </div>
+    </div>
+
+
+
+{% endblock %}

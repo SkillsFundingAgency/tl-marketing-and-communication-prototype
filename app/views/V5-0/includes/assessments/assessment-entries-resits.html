@@ -1,0 +1,183 @@
+<section id="multiple-specialism-resits">
+  <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+
+  {% if data['core-assessment-entry-added-resits'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-core-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-core-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-core-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</a>
+  </p>
+
+
+  {% endif %}
+
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }}</h2>
+  {% if data['specialism-assessment-entry-added-resits'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-specialism-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-specialism-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS1'] }}</a>
+  </p>
+  {% endif %}
+
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</h2>
+  {% if data['specialism2-assessment-entry-added-resits'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2023
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism2-resits">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-specialism2-resit"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philiips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2023
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-specialism2-resits.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelMS2'] }}</a>
+  </p>
+
+  {% endif %}
+</section>
+
+<script>
+  window.onload = function () {
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core-resit').innerHTML = dateFormatcore
+    }
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism-resit').innerHTML = dateFormat
+
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism2-resit').innerHTML = dateFormat
+    
+</script>
