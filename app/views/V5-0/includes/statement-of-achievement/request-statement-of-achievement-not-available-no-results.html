@@ -11,7 +11,7 @@
                     <li>this learner has not completed an industry placement</li>
                     <li>this learner has not received a core component result</li>
                   </ul>
-                <p class="govuk-body">If the learner has completed an industry placement, you must <a class="govuk-link" href="result-entries1.html">update their learner T Level record</a></p>
+                <p class="govuk-body">If the learner has completed an industry placement, you must <a class="govuk-link" href="update-t-level-record.html">update their learner T Level record</a></p>
                 <p class="govuk-body">If the learner has completed a technical qualification component, contact the exam board and ask them to add the result.</p>
               </div>
 
@@ -31,7 +31,7 @@
                     Name
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+                    {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -39,7 +39,7 @@
                     Date of birth
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+                    {{ data['tLevelsStudentDataV3'][data.uln]['learnerDOB'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -47,7 +47,7 @@
                     Provider(UKPRN)
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerProvider'] }}
+                    {{ data['tLevelsStudentDataV3'][data.uln]['learnerProvider'] }} ({{ data['tLevelsStudentDataV3'][data.uln]['UKPRN'] }})
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -55,7 +55,7 @@
                     T Level Title
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                    {{ data['tLevelsStudentDataV3'][data.uln]['learnerTLevelTitle'] }}
                   </dd>
                 </div>
               </dl>

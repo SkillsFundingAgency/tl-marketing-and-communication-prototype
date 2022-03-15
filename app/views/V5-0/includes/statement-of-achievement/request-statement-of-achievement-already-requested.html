@@ -63,10 +63,10 @@
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      T level title
+                      T level
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+                      {{ data['tLevelsStudentDataV3'][data.uln]['learnerTLevelTitle'] }}
                     </dd>
                     
                   </div>
@@ -97,10 +97,19 @@
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      English and maths
+                      English
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['tLevelsStudentData'][data.uln]['learnerEngMaths'] }}
+                      {{ data['tLevelsStudentDataV3'][data.uln]['learnerEnglish'] }}
+                    </dd>
+                    
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Maths
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data['tLevelsStudentDataV3'][data.uln]['learnerMaths'] }}
                     </dd>
                     
                   </div>
@@ -109,7 +118,7 @@
                       Industry placement
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      {{ data['tLevelsStudentData'][data.uln]['learnerIndustryPlacement'] }}
+                      {{ data['tLevelsStudentDataV3'][data.uln]['learnerIndustryPlacement'] }}
                     </dd>
 
                   </div>
