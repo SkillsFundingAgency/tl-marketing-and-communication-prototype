@@ -63,21 +63,7 @@ Request statement of achievement - ULN not registered page - Manage T Level resu
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Statement of achievement not available</li>
   </ol>
 </div>
-{% elseif data['uln'] === '8642135790' %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../providers/tlevels-dashboard">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../providers/request-statement-of-achievement.html">Request statement of achievement</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../providers/request-statement-of-achievement-unique-learner-number.html">Search for a learner</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Statement of achievement not available</li>
-  </ol>
-</div>
+
 {% else %}
 <a class="govuk-back-link" href="../providers/request-statement-of-achievement-unique-learner-number">Back</a>
 {% endif %}
@@ -89,8 +75,6 @@ Request statement of achievement - ULN not registered page - Manage T Level resu
 {% include "../includes/statement-of-achievement/request-statement-of-achievement-ULN-not-withdrawn.html" %}
 {% elseif data['uln'] === '9876543210' %}
 {% include "../includes/statement-of-achievement/request-statement-of-achievement-already-requested.html" %}
-{% elseif data['uln'] === '8642135790' %}
-{% include "../includes/statement-of-achievement/request-statement-of-achievement-not-available-no-ip-status.html" %}
 {% elseif data['uln'] === '1987654320' %}
 {% include "../includes/statement-of-achievement/request-statement-of-achievement-not-available-no-results.html" %}
 {% elseif data['uln'] === '1987654321' or data['uln'] === '1234567891' %}
@@ -338,6 +322,6 @@ Request statement of achievement - ULN not registered page - Manage T Level resu
     </div>
   </div>
   {% else %}
-  {% include "includes/V1-0/statement-of-achievement/request-statement-of-achievement-ULN-not-registered.html" %}
+  {% include "../includes/statement-of-achievement/request-statement-of-achievement-ULN-not-registered.html" %}
   {% endif %}  
   {% endblock %}
