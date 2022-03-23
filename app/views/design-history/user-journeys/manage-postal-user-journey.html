@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Providers - Manage your organisations postal address- Manage T Level results design history
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Providers - Manage your organisations postal address</h1>
+        <p class="govuk-body-l">User journey for Providers to inform ESFA the address of their school or college where certificates and statement of achievements will be sent to.</p>
+        <p>From: R&C Team</p>
+        <p>Published: 25 January 2022</p>
+        <p>Last updated: 25 January 2022</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Journey overview</h2>
+        <p>Providers provide ESFA the address of their school/college where certificates and statement of achievements will be sent to.</p>
+        <p>Providers provide this information either via a postcode and selecting an address or entering the address manually.</p>
+        <p>Providers MUST provide an address before a statement of achievement can be requested.</p>
+
+
+        <h2 class="govuk-heading-m">End users</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Learner records editor (user role in the service)</li>
+            <li>Administrators</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Pre requisites before requesting a statement of achievement</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>No pre-requisites needed before</li>
+
+        </ul>
+
+        <h2 class="govuk-heading-m">Current Functionality</h2>
+        <p>Searching for an address via postcode</p>
+        <p>Add address manually:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Department</li>
+            <li>Organisations name</li>
+            <li>Building and street</li>
+            <li>Town or City</li>
+            <li>Postcode</li>
+        </ul>
+        <p>No address found for inputted postcode</p>
+        <p>Change organisation address (once its been added)</p>
+        <p>Cancel adding or changing an address</p>
+
+        <h2 class="govuk-heading-m">User Journey</h2>
+
+        <a href="/public/images/postal-may-21.jpg"><img src="/public/images/postal-may-21.jpg"
+            alt="Screenshot of the current manage postal address user journey as of May 2021" width="500px"></a>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <aside class="app-related govuk-!-display-none-print" role="complementary">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2" id="-title">Related links</h2>
+            <nav role="navigation" aria-labelledby="-title">
+                <ul class="govuk-list">
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link" href="https://miro.com/app/board/uXjVOci3UMU=/"> Manage Organisations Postal Address miro board (T Level team members only)</a>
+                        </h3>
+                    </li>
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link"
+                                href="../../V5-0/providers/org-address-present.html">Prototype link to what is currently in the service
+                            </a>
+                        </h3>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+    </div>
+</div>
+{% endblock %}
