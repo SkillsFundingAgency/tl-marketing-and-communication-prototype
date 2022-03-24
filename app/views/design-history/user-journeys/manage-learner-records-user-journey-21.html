@@ -12,7 +12,8 @@ Providers - Manage learner records - Manage T Level results design history
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Providers - Manage learner records</h1>
-        <p class="govuk-body-l">User journey for Providers to inform ESFA of industry placement status, maths and english attainment level and view overall T Level grades for learners.</p>
+        <p class="govuk-body-l">User journey for Providers to inform ESFA of industry placement status, maths and
+            english attainment level for learners.</p>
         <p>From: R&C Team</p>
         <p>Published: 25 January 2022</p>
         <p>Last updated: 25 January 2022</p>
@@ -26,50 +27,62 @@ Providers - Manage learner records - Manage T Level results design history
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Journey overview</h2>
-        <p>AO's inform ESFA of which learners have requested a ROMM or appeal and what the outcome of the ROMM or appeal was.</p>
-        <p>Information provided:</p>
+        <h3 class="govuk-heading-s">Add a T Level record</h3>
+        <p>Providers send registrations details of the learners to the Awarding Organisation (AO).</p>
+        <p>The learners are then registered into the R&C service (ESFA) by the AO.</p>
+        <p>Once the learners is registered into the service, the provider is able to add a 'new T Level record' in the
+            R&C service (ESFA) to provide information of the individual learners:</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>Which component the learner has taken is undergoing a ROMM or appeal</li>
-            <li>Outcome of ROMM or appeal</li>
+            <li>Industry Placement status</li>
+            <li>Maths and English status</li>
         </ul>
+
+        <h3 class="govuk-heading-s">Update a T Level Record</h3>
+        <p>After creating a T Level record for the learner, the user is able to update the:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Industry Placement status</li>
+            <li>Maths and English status</li>
+        </ul>
+        <p>The user is able to amend/update this information throughout the learners time on the T Level course.</p>
 
         <h2 class="govuk-heading-m">End users</h2>
         <ul class="govuk-list govuk-list--bullet">
-            <li>Results Editor (user role in the service)</li>
+            <li>Learner records editor (user role in the service)</li>
             <li>Administrators</li>
         </ul>
 
-        <h2 class="govuk-heading-m">Pre requisites before adding a ROMM or appeal</h2>
+        <h2 class="govuk-heading-m">Pre requisites before managing a T Level record</h2>
         <ul class="govuk-list govuk-list--bullet">
-            <li>AO must have reviewed the T Levels they offer within the R&C service.</li>
-            <li>AO must have reviewed which providers will offer their T Levels .</li>
-            <li>AO must have registered the learners from their providers.</li>
-            <li>AO must have registered an assessment entry against the learners record.</li>
-            <li>AO must have provided a result for the above assessment entry within the R&C service.</li>
-            <li>AO must have informed and added an outcome for a ROMM before an appeal can be logged.</li>
+            <li>Provider must have sent the AO the registration details of the learners.</li>
+            <li>AO must have registered the learners with ESFA via the R&C service.</li>
+            <li>Add a T Level record - Must not have created a record beforehand.</li>
+            <li>Update a T level record - Must have created a record beforehand.</li>
+
         </ul>
 
         <h2 class="govuk-heading-m">Current Functionality</h2>
 
-        <p>Users inform us if the learner has requested a ROMM or appeal for any of their components on an individual basis through searching for the learners ULN</p>
-        <p>Users inform ESFA the outcome of a ROMM or Appeal:</p>
+        <p>Add a new T Level record and update a T Level record on individual basis.</p>
+        <p>Scenarios catered for:</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>Whether the grade has stayed the same</li>
-            <li>Whether the grade has changed</li>
-            <li>Learner has withdrawn (or it was added by mistake)</li>
-        </ul>
-        <p>Additional Scenarios catered for:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>Learner ULN not found</li>
-            <li>Learner has been withdrawn</li>
-            <li>Learner does not have any results recorded</li>
-            <li>Inform us of a learners request for a ROMM or appeal after the deadline</li>
+            <li>Learner not registered by awarding organisation</li>
+            <li>Learners without LRS data</li>
+            <li>Learners with LRS data</li>
+            <li>Provider has not created a T Level record for the learner in the system when searching for the ULN in
+                the update T Level record journey - user will be entered into the 'Add a T level record'</li>
+            <li>Provider has already a created T Level record when trying to search for a ULN in the 'add a T Level
+                record' - The user will be entered into the update a T level record journey</li>
         </ul>
 
         <h2 class="govuk-heading-m">User Journey</h2>
 
-        <a href="/public/images/post-results-mar-22.jpg"><img src="/public/images/post-results-mar-22.jpg"
-            alt="Screenshot of the current results user journey as of January 2022" width="500px"></a>
+        <h3 class="govuk-heading-s">Add a T Level record</h3>
+        <a href="/public/images/add-t-level-record.jpg"><img src="/public/images/add-t-level-record.jpg"
+                alt="Screenshot of the previous add a t level record journey until March 2022" width="500px"></a>
+
+        <h3 class="govuk-heading-s">Update a T Level Record</h3>
+        <a href="/public/images/update-t-level-record.jpg"><img src="/public/images/update-t-level-record.jpg"
+                alt="Screenshot of the previous update a t level record journey until March 2022" width="500px"></a>
     </div>
 
     <div class="govuk-grid-column-one-third">
@@ -79,45 +92,26 @@ Providers - Manage learner records - Manage T Level results design history
                 <ul class="govuk-list">
                     <li class="app-related__list-item">
                         <h3 class="govuk-heading-s">
-                            <a class="govuk-link" href="https://miro.com/app/board/uXjVOZTFlOw=/?moveToWidget=3458764520298633022&cot=14"> Post-results miro board (T Level team members only)</a>
+                            <a class="govuk-link" href="https://miro.com/app/board/uXjVOcivUn4=/">
+                                Manage T Level records miro board (T Level team members only)</a>
                         </h3>
                     </li>
                     <li class="app-related__list-item">
                         <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="../../V5-0/providers/manage-t-level-records.html">Prototype link to what is currently in the service for post-results
-                            </a>
+                            <a class="govuk-link" href="../../V1-0/providers/manage-t-level-records.html">Prototype
+                                link</a>
                         </h3>
                     </li>
                     <li class="app-related__list-item">
                         <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="../../V1-0/providers/manage-t-level-records.html">Prototype link of previous version </a>
-                        </h3>
-                    </li>
-                    <li class="app-related__list-item">
-                        <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="https://skillsfundingagency.atlassian.net/browse/TLRC-5750">JIRA epic</a>
-                        </h3>
-                    </li>
-                    <li class="app-related__list-item">
-                        <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="https://www.figma.com/file/uFxane4BAyU6r1SevrdzYX/T-Levels-R%26C-Overall-Results?node-id=0%3A1">Figma working file</a>
-                        </h3>
-                    </li>
-                    <li class="app-related__list-item">
-                        <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="../posts/OverallResults.html">Design history post</a>
+                            <a class="govuk-link" href="../posts/OverallResults.html">Design history post</a>
                         </h3>
                     </li>
 
                     <li class="app-related__list-item">
                         <h3 class="govuk-heading-s">
-                            <a class="govuk-link"
-                                href="../user-journeys/appeals-user-journey.html">Previous manage learner records user journey</a>
+                            <a class="govuk-link" href="../user-journeys/appeals-user-journey.html">Previous manage
+                                learner records user journey</a>
                         </h3>
                     </li>
                 </ul>
