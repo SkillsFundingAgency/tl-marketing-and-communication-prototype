@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Awarding organisation - Appeals - Manage T Level results design history
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Awarding organisation - Appeals</h1>
+        <p class="govuk-body-l">User journey for AO's to inform ESFA of which learners have requested an appeal and the outcome of the appeal.</p>
+        <p>From: R&C Team</p>
+        <p>Published: 25 January 2022</p>
+        <p>Last updated: 25 January 2022</p>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--l">
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Journey overview</h2>
+        <p>AO's inform ESFA of which learners have appealed and what the outcome of the appeal was.</p>
+        <p>Information provided:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Which component the learner has taken is being appealed</li>
+            <li>Outcome of appeal - the final grade</li>
+        </ul>
+
+
+        <h2 class="govuk-heading-m">End users</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Results Editor (user role in the service)</li>
+            <li>Administrators</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Pre requisites before adding results</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>AO must have reviewed the T Levels they offer within the R&C service.</li>
+            <li>AO must have reviewed which providers will offer their T Levels .</li>
+            <li>AO must have registered the learners from their providers.</li>
+            <li>Needs to have a current assessment entry to be registered against the learners record.</li>
+            <li>AO must have provided a result for the above assessment entry within the R&C service.</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Current Functionality</h2>
+
+            <p>Users inform us if a learners core component is being appealed on behalf of learner on an individual basis through searching for the learners ULN</p>
+            <p>Users inform ESFA the outcome of an appeal:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Whether the grade has stayed the same</li>
+                <li>Whether the grade has changed</li>
+                <li>Learner has withdrawn (or it was added by mistake)</li>
+            </ul>
+            <p>Additional Scenarios catered for:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Learner ULN not found</li>
+                <li>Learner has been withdrawn</li>
+                <li>Learner does not have any results recorded</li>
+                <li>Learner does not have any registrations registered</li>
+                <li>Request a grade change if user has inputted an incorrect appeal outcome</li>
+                <li>Inform us of a learners request for an appeal after the deadline</li>
+            </ul>
+
+
+        <h2 class="govuk-heading-m">User Journey</h2>
+
+        <a href="/public/images/appeals-aug-21.jpg"><img src="/public/images/appeals-aug-21.jpg"
+            alt="Screenshot of the current results user journey as of January 2022" width="500px"></a>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        <aside class="app-related govuk-!-display-none-print" role="complementary">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2" id="-title">Related links</h2>
+            <nav role="navigation" aria-labelledby="-title">
+                <ul class="govuk-list">
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link" href="https://miro.com/app/board/uXjVOZTFlOw=/?moveToWidget=3458764515640414490&cot=14"> Appeals miro board (T Level team members only)</a>
+                        </h3>
+                    </li>
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link"
+                                href="../../V2-0/AO/appeals/reviews-and-appeals.html">Prototype link
+                            </a>
+                        </h3>
+                    </li>
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link"
+                                href="https://docs.google.com/document/d/1wQgvlY7FijjPnrpsjMcPFDzBQ_8JpVRSo_hf1JmHryc/edit">Business requirements</a>
+                        </h3>
+                    </li>
+                    <li class="app-related__list-item">
+                        <h3 class="govuk-heading-s">
+                            <a class="govuk-link"
+                                href="../posts/Results.html">Current post-results user journey</a>
+                        </h3>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+    </div>
+</div>
+
+{% endblock %}
