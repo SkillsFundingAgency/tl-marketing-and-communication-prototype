@@ -23,13 +23,13 @@ Add English level details - Manage learner - Manage T Level results - GOV.UK
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="englishStatus-yes" name="englishStatus" type="radio" value="Achieved level 2 (or equivalent)" {{ checked("englishStatus", "yes") }}>
+                <input class="govuk-radios__input" id="englishStatus-yes" name="englishStatus" type="radio" value="Achieved" {{ checked("englishStatus", "yes") }}>
                 <label class="govuk-label govuk-radios__label" for="englishStatus-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="englishStatus-no" name="englishStatus" type="radio" value="Not achieved level 2 in English" {{ checked("englishStatus", "no") }}>
+                <input class="govuk-radios__input" id="englishStatus-no" name="englishStatus" type="radio" value="Not achieved" {{ checked("englishStatus", "no") }}>
                 <label class="govuk-label govuk-radios__label" for="englishStatus-no">
                   No
                 </label>
@@ -53,7 +53,7 @@ Add English level details - Manage learner - Manage T Level results - GOV.UK
 
             "presence": {
 
-                "message": "^Select yes if Danny Waldron achieved a level 2 or equivalent in English"
+                "message": "^Select yes if this learner achieved a level 2 or equivalent in English"
 
             }
 
