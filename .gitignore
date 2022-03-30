@@ -10,3 +10,7 @@ lib/extensions/_extensions.scss
 public
 node_modules/*
 .tmuxp.*
+/.vs/
+/.vscode/
+/.idea/
+/package-lock.json
