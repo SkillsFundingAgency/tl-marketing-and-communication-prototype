@@ -19,7 +19,7 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
 
-          {% if data['multipleEmployerModel'] === 'yes' %}
+          {% if data['multipleEmployerModel'] == 'yes' %}
 
           {% include "../includes/industry-placement-model-1-h1.html" %}
 
@@ -31,7 +31,7 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 
 
 
-          {% if data['multipleEmployerModel'] === 'yes' %}
+          {% if data['multipleEmployerModel'] == 'yes' %}
 
           {% include "../includes/industry-placement-model-1-option.html" %}
 
@@ -50,6 +50,9 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
     </form>
 
   </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
 </div>
 
 

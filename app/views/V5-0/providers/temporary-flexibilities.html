@@ -17,7 +17,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
       data-validate='temporary-flexibilities-validation'>
       <div class="govuk-form-group">
 
-        {% if data['blended-placement'] === 'yes' %} 
+        {% if data['blended-placement'] == 'yes' %}
 
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -45,7 +45,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
           </div>
         </fieldset>
 
-        {% elseif data['uln'] === '1234567890' %}
+        {% elseif data['uln'] == '1234567890' %}
 
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -114,7 +114,11 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
     </form>
 
   </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
 </div>
+
 
 <script type="application/json" id="temporary-flexibilities-validation">
     {

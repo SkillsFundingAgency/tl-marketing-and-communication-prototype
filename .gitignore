@@ -13,3 +13,4 @@ node_modules/*
 /.vs/
 /.vscode/
 /.idea/
+/package-lock.json
