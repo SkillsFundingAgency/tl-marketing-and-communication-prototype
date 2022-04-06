@@ -17,11 +17,12 @@ Blended placement
 
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Industry Placement</span>
+            <span class="govuk-caption-l">Industry placement: Temporary flexibility</span>
               <h1 class="govuk-fieldset__heading">
                 Did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use the blended placement temporary flexibility?
               </h1>
             </legend>
+            <div id="special-consideration-hint" class="govuk-hint">Select Yes if a blended placement was used for this learner's industry placement.</div>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="blended-placement-yes" name="blended-placement" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>

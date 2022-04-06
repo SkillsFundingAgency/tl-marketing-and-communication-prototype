@@ -16,12 +16,13 @@ Did Danny Waldron use an industry placement model?
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Industry Placement</span>
+                <span class="govuk-caption-l">Industry placement: Model(s)</span>
 
                 <h1 class="govuk-fieldset__heading">
                 Was a multiple employer model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}? 
               </h1>
             </legend>
+            <div id="special-consideration-hint" class="govuk-hint">Select Yes if a multiple employer model was used for this learner's industry placement.</div>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="multipleEmployerModel-yes" name="multipleEmployerModel" type="radio" value="yes" {{ checked("multipleEmployerModel", "yes") }}>
