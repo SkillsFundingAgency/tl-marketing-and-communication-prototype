@@ -1,201 +1,203 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if data['specialismGradestatus'] == 'ROMM'%}
-ROMM outcome - Post-results - Manage T Level results - GOV.UK
-{% else %}
-ROMM outcome known - Post-results - Manage T Level results - GOV.UK
-{% endif %}
+    {% if data['specialismGradestatus'] == 'ROMM' %}
+        ROMM outcome - Post-results - Manage T Level results - GOV.UK
+    {% else %}
+        ROMM outcome known - Post-results - Manage T Level results - GOV.UK
+    {% endif %}
 {% endblock %}
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+    <a class="govuk-back-link" onclick="goBack()">Back</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% if data['specialismGradestatus'] == 'ROMM'%}
-      <h1 class="govuk-heading-l">Do you know the ROMM outcome?</h1>
-      {% else %}
-      <h1 class="govuk-heading-l">Add a ROMM outcome</h1>
-      {% endif %}
-        
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
-          </dd>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% if data['specialismGradestatus'] == 'ROMM' %}
+                <h1 class="govuk-heading-l">Do you know the ROMM outcome?</h1>
+            {% else %}
+                <h1 class="govuk-heading-l">Add a ROMM outcome</h1>
+            {% endif %}
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        ULN
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['uln'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Date of birth
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        T Level
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Specialism
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br
+                            aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Exam period
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Grade
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
+
+                    </dd>
+                </div>
+            </dl>
+
+            <form action="specialism-add-ROMM-outcome" method="post" novalidate
+                  data-validate='ROMM-outcome-validation-specialism'>
+
+                {% if data['specialismGradestatus'] == 'ROMM' %}
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h2 class="govuk-fieldset__heading">
+                                    What is the ROMM outcome?
+                                </h2>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome"
+                                           name="what-is-ROMM-outcome-specialism" type="radio"
+                                           value="Grade is the same">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
+                                        No change to grade
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome-2"
+                                           name="what-is-ROMM-outcome-specialism" type="radio"
+                                           value="Grade has changed">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
+                                        The grade has changed
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome-3"
+                                           name="what-is-ROMM-outcome-specialism" type="radio" value="learner withdrew">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
+                                        ROMM withdrawn
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+                    </div>
+
+                {% else %}
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h2 class="govuk-fieldset__heading">
+                                    Does the ROMM logged against this grade have an outcome?
+                                </h2>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome-4"
+                                           name="what-is-ROMM-outcome-specialism" type="radio"
+                                           value="Waiting on outcome">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-4">
+                                        No
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome-2"
+                                           name="what-is-ROMM-outcome-specialism" type="radio"
+                                           value="Grade is the same">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
+                                        Yes, the grade is the same
+                                    </label>
+                                </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="what-is-ROMM-outcome"
+                                           name="what-is-ROMM-outcome-specialism" type="radio"
+                                           value="Grade has changed">
+                                    <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
+                                        Yes, the grade has changed
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                {% endif %}
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+            </form>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ULN
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['uln'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            T Level
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Specialism
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Exam period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Grade
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
-
-          </dd>
-        </div>
-      </dl>
-
-      <form action="specialism-add-ROMM-outcome" method="post" novalidate data-validate='ROMM-outcome-validation-specialism'>
-
-        {% if data['specialismGradestatus'] == 'ROMM'%}
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                What is the ROMM outcome?
-              </h2>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
-                  No change to grade
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
-                  The grade has changed
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-3" name="what-is-ROMM-outcome-specialism" type="radio" value="learner withdrew">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-3">
-                  ROMM withdrawn
-                </label>
-              </div>
-              
-            </div>
-
-          </fieldset>
-        </div>
-
-        {% else %}
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Does the ROMM logged against this grade have an outcome?
-              </h2>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade has changed">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome">
-                  Yes, the grade has changed
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-2" name="what-is-ROMM-outcome-specialism" type="radio" value="Grade is the same">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-2">
-                  Yes, the grade is the same
-                </label>
-              </div>              
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="what-is-ROMM-outcome-4" name="what-is-ROMM-outcome-specialism" type="radio" value="Waiting on outcome">
-                <label class="govuk-label govuk-radios__label" for="what-is-ROMM-outcome-4">
-                  No
-                </label>
-              </div>
-              
-            </div>
-
-          </fieldset>
-        </div>
-        {% endif %}
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
-      </form>
     </div>
-  </div>
 
-  {% if data['specialismGradestatus'] == 'ROMM'%}
-  <script type="application/json" id="ROMM-outcome-validation-specialism">
-    {
-
-        "what-is-ROMM-outcome-specialism": {
-
-            "presence": {
-
-                "message": "^Select the ROMM outcome"
-
+    {% if data['specialismGradestatus'] == 'ROMM' %}
+        <script type="application/json" id="ROMM-outcome-validation-specialism">
+            {
+                "what-is-ROMM-outcome-specialism": {
+                    "presence": {
+                        "message": "^Select the ROMM outcome"
+                    }
+                }
             }
+        </script>
+    {% else %}
 
-        }
-
-    }
-</script>
-  {% else %}
-
-  <script type="application/json" id="ROMM-outcome-validation-specialism">
-    {
-
-        "what-is-ROMM-outcome-specialism": {
-
-            "presence": {
-
-                "message": "^Select whether the ROMM logged against this grade has an outcome"
-
+        <script type="application/json" id="ROMM-outcome-validation-specialism">
+            {
+                "what-is-ROMM-outcome-specialism": {
+                    "presence": {
+                        "message": "^Select whether the ROMM logged against this grade has an outcome"
+                    }
+                }
             }
+        </script>
 
-        }
-
-    }
-</script>
-
-{% endif %}
+    {% endif %}
 {% endblock %}
 
 
