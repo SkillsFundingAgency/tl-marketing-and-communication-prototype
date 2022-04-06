@@ -15,7 +15,9 @@ How many hours did the student spend on placement? - Manage T Level results - GO
     <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
       <div class="govuk-form-group">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading" for="total-placement-hours">
+            <span class="govuk-caption-l">Industry Placement</span>
+
+            <h1 class="govuk-fieldset__heading" for="total-placement-hours">
             How many industry placement hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} complete?
           </h1>
         </legend>

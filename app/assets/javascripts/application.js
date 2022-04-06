@@ -19,7 +19,7 @@ window.onload = function () {
   // Get URL parameter
   let check = params.get("change-answer");
   // Get current page form ID
-  let form = document.getElementsByTagName('form')[0].id
+  let form = (document.getElementsByTagName('form').length) ? document.getElementsByTagName('form')[0].id : null;
   // console.log(check)
   // console.log(document.referrer)
   // console.log(form)
