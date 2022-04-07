@@ -15,7 +15,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 
     <form action="special-consideration-check-answers" method="post" novalidate
       data-validate='temporary-flexibilities-validation'>
-      <div class="govuk-form-group">
+
 
         {% if data['blended-placement'] == 'yes' %}
 
@@ -88,27 +88,31 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
               Select all that apply
             </div>
           </legend>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                type="checkbox" value="100% remote" {{ checked("temporary-flexibilities", "100% remote" ) }}>
-              <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
-                Up to 100% remote
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                type="checkbox" value="Employer led activities/projects" {{
-                checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-              <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-2">
-                Employer led activities/projects
-              </label>
+
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
+                  type="checkbox" value="100% remote" {{ checked("temporary-flexibilities", "100% remote" ) }}>
+                <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
+                  Up to 100% remote
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
+                  type="checkbox" value="Employer led activities/projects" {{
+                  checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-2">
+                  Employer led activities/projects
+                </label>
+              </div>
             </div>
           </div>
+
         </fieldset>
         {% endif %}
 
-      </div>
+
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
