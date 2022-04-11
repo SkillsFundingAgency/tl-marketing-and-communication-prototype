@@ -13,7 +13,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
-      <div class="govuk-form-group">
+
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">Industry placement: Special consideration</span>
 
@@ -24,9 +24,12 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         <div id="total-placement-hours-hint" class="govuk-hint">
           Must be between 1 and 999
         </div>
-        <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
-          id="total-placement-hours" name="total-placement-hours" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
-      </div>
+
+        <div class="govuk-form-group">
+          <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
+            id="total-placement-hours" name="total-placement-hours" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+        </div>
+
       
       <button class="govuk-button" data-module="govuk-button">
         Continue

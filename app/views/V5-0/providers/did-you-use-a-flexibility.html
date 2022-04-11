@@ -14,7 +14,7 @@ Did Danny Waldron use an industry placement model?
     <div class="govuk-grid-column-two-thirds">
 
       <form action="flexibility" method="post" novalidate data-validate='flexibility-validation'>
-        <div class="govuk-form-group">
+
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <span class="govuk-caption-l">Industry placement: Temporary flexibility</span>
@@ -27,22 +27,26 @@ Did Danny Waldron use an industry placement model?
                 {% endif %}
               </h1>
             </legend>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="flexibility-yes" name="flexibility" type="radio" value="yes" {{ checked("flexibility", "yes") }}>
-                <label class="govuk-label govuk-radios__label" for="flexibility-yes">
-                  Yes
-                </label>
+
+              <div class="govuk-form-group">
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="flexibility-yes" name="flexibility" type="radio" value="yes" {{ checked("flexibility", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="flexibility-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="flexibility-no" name="flexibility" type="radio" value="no" {{ checked("flexibility", "no") }}>
+                    <label class="govuk-label govuk-radios__label" for="flexibility-no">
+                      No
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="flexibility-no" name="flexibility" type="radio" value="no" {{ checked("flexibility", "no") }}>
-                <label class="govuk-label govuk-radios__label" for="flexibility-no">
-                  No
-                </label>
-              </div>
-            </div>
+
           </fieldset>
-        </div>
+
 
         <button class="govuk-button" data-module="govuk-button">
           Continue

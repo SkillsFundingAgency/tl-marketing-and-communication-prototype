@@ -13,7 +13,7 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <form action="change-ip-result" method="post" novalidate data-validate='placementStatus-validation'>
-                <div class="govuk-form-group">
+
                     <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                             <span class="govuk-caption-l">Industry placement</span>
@@ -23,37 +23,40 @@
                                 placement?
                             </h1>
                         </legend>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
-                                   type="radio"
-                                   value="Placement still to be completed" {{ checked("result-ip-answer", "Placement still to be completed") }} >
-                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
-                                No, still to be completed
-                            </label>
-                        </div>
-                        <div class="govuk-radios">
+                        <div class="govuk-form-group">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
+                                <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
                                        type="radio"
-                                       value="Placement completed" {{ checked("result-ip-answer", "Placement completed") }} >
-                                <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
-                                    Yes, completed
+                                       value="Placement still to be completed" {{ checked("result-ip-answer", "Placement still to be completed") }} >
+                                <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                                    No, still to be completed
                                 </label>
                             </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
-                                       type="radio"
-                                       value="Placement completed with special consideration" {{ checked("result-ip-answer", "Placement completed with special consideration") }} >
-                                <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
-                                    Yes, completed with special consideration
-                                </label>
-                                <div id="result-ip-answer-2-item-hint" class="govuk-hint govuk-radios__hint">
-                                    We will ask you to declare that you have documentary evidence on file before you can
-                                    submit this learner's industry placement details
-                                    
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
+                                           type="radio"
+                                           value="Placement completed" {{ checked("result-ip-answer", "Placement completed") }} >
+                                    <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
+                                        Yes, completed
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
+                                           type="radio"
+                                           value="Placement completed with special consideration" {{ checked("result-ip-answer", "Placement completed with special consideration") }} >
+                                    <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                                        Yes, completed with special consideration
+                                    </label>
+                                    <div id="result-ip-answer-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                        We will ask you to declare that you have documentary evidence on file before you can
+                                        submit this learner's industry placement details
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="govuk-inset-text">By selecting either 'yes' response, you are declaring that the
                             relevant provider responsibilities have been met and that you hold the <a
                                     href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
@@ -61,7 +64,7 @@
                                 student completion (opens in a new tab)</a> for this learner.
                         </div>
                     </fieldset>
-                </div>
+
                 <button class="govuk-button" data-module="govuk-button">Continue</button>
             </form>
         </div>
