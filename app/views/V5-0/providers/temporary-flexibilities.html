@@ -27,24 +27,30 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
               Were any other temporary flexibilities were granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
             </h1>
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                type="radio" value="Employer led activities/projects" {{
-                checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-              <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                Employer led activities/projects
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                type="radio" value="No other temporary flexibilities were used" {{
-                checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
-              <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                No other temporary flexibilities were used
-              </label>
+
+
+          <div class="govuk-form-group">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
+                  type="radio" value="Employer led activities/projects" {{
+                  checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
+                  Employer led activities/projects
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
+                  type="radio" value="No other temporary flexibilities were used" {{
+                  checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
+                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
+                  No other temporary flexibilities were used
+                </label>
+              </div>
             </div>
           </div>
+
+
         </fieldset>
 
         {% elseif data['uln'] == '1234567890' %}
