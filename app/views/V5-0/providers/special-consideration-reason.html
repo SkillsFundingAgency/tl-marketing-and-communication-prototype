@@ -5,7 +5,9 @@ What is the reason for the special consideration - Manage T Level results - GOV.
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -29,9 +31,9 @@ What is the reason for the special consideration - Manage T Level results - GOV.
                     <div class="govuk-form-group">
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="special-consideration" name="special-consideration" type="checkbox"
+                                <input class="govuk-checkboxes__input" id="special-consideration-1" name="special-consideration" type="checkbox"
                                     value="Learner's medical reasons" {{ checked("special-consideration", "Learner's medical reasons") }}>
-                                <label class="govuk-label govuk-checkboxes__label" for="special-consideration">
+                                <label class="govuk-label govuk-checkboxes__label" for="special-consideration-1">
                                     Learner's medical reasons
                                 </label>
                             </div>
