@@ -5,7 +5,9 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -26,11 +28,11 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         </div>
 
         <div class="govuk-form-group">
-          <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
-            id="total-placement-hours" name="total-placement-hours" type="number"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+            <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
+            <input value="{{ data ['total-placement-hours'] }}" style="line-height:6;" class="govuk-input govuk-input--width-3" id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text">
+            <div class="govuk-input__suffix" aria-hidden="true">hours</div>
         </div>
 
-      
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
