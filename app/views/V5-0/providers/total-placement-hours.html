@@ -33,7 +33,6 @@ How many hours did the student spend on placement? - Manage T Level results - GO
             id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
         </div>
 
-
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
@@ -49,22 +48,19 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 
     "total-placement-hours": {
 
-      "numericality": {
-        "onlyInteger": true,
-        "message": "^Hours spent on placement must be a number, like 50"
 
-      },
-
-      "numericality": {
+        "numericality": {
         "lessThanOrEqualTo": 999,
-        "message": "^Hours spent on placement must be 999 or fewer"
+          "greaterThanOrEqualTo": 1,
+        "message": "^Hours spent on placement must be between 0 and 1000"
 
       },
 
       "presence": {
-        "message": "^Enter number of hours student spent on placement"
+        "message": "^Enter number of hours the learner spent on placement"
 
       }
+
 
     }
 
