@@ -5,7 +5,9 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<nav>
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -35,7 +37,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
                 <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
                   type="radio" value="Employer led activities/projects" {{
                   checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
+                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-1">
                   Employer led activities/projects
                 </label>
               </div>
