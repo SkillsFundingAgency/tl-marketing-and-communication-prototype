@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Blended placement
+Blended placements.GOVUK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<nav>
+  <a class="govuk-back-link" tabindex="0" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +15,7 @@ Blended placement
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="temporary-flexibilities" method="post" novalidate data-validate='blended-placement'>
-        <div class="govuk-form-group">
+
 
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -23,23 +25,27 @@ Blended placement
               </h1>
             </legend>
             <div id="special-consideration-hint" class="govuk-hint">Select Yes if a blended placement was used for this learner's industry placement.</div>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="blended-placement-yes" name="blended-placement" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>
-                <label class="govuk-label govuk-radios__label" for="blended-placement-yes">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="blended-placement-no" name="blended-placement" type="radio" value="no" {{ checked("blended-placement", "no") }}>
-                <label class="govuk-label govuk-radios__label" for="blended-placement-no">
-                  No
-                </label>
+
+            <div class="govuk-form-group">
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="blended-placement-yes" name="blended-placement" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="blended-placement-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="blended-placement-no" name="blended-placement" type="radio" value="no" {{ checked("blended-placement", "no") }}>
+                  <label class="govuk-label govuk-radios__label" for="blended-placement-no">
+                    No
+                  </label>
+                </div>
               </div>
             </div>
+
           </fieldset>
 
-        </div>
+
 
         <button class="govuk-button" data-module="govuk-button">
           Continue

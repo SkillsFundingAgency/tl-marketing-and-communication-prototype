@@ -5,7 +5,9 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<nav>
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +17,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 
     <form action="special-consideration-check-answers" method="post" novalidate
       data-validate='temporary-flexibilities-validation'>
-      <div class="govuk-form-group">
+
 
         {% if data['blended-placement'] == 'yes' %}
 
@@ -27,24 +29,30 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
               Were any other temporary flexibilities were granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
             </h1>
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                type="radio" value="Employer led activities/projects" {{
-                checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-              <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                Employer led activities/projects
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                type="radio" value="No other temporary flexibilities were used" {{
-                checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
-              <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                No other temporary flexibilities were used
-              </label>
+
+
+          <div class="govuk-form-group">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
+                  type="radio" value="Employer led activities/projects" {{
+                  checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-1">
+                  Employer led activities/projects
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
+                  type="radio" value="No other temporary flexibilities were used" {{
+                  checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
+                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
+                  No other temporary flexibilities were used
+                </label>
+              </div>
             </div>
           </div>
+
+
         </fieldset>
 
         {% elseif data['uln'] == '1234567890' %}
@@ -88,27 +96,31 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
               Select all that apply
             </div>
           </legend>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                type="checkbox" value="100% remote" {{ checked("temporary-flexibilities", "100% remote" ) }}>
-              <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
-                Up to 100% remote
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                type="checkbox" value="Employer led activities/projects" {{
-                checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-              <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-2">
-                Employer led activities/projects
-              </label>
+
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
+                  type="checkbox" value="100% remote" {{ checked("temporary-flexibilities", "100% remote" ) }}>
+                <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-1">
+                  Up to 100% remote
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
+                  type="checkbox" value="Employer led activities/projects" {{
+                  checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                <label class="govuk-label govuk-checkboxes__label" for="temporary-flexibilities-2">
+                  Employer led activities/projects
+                </label>
+              </div>
             </div>
           </div>
+
         </fieldset>
         {% endif %}
 
-      </div>
+
 
       <button class="govuk-button" data-module="govuk-button">
         Continue

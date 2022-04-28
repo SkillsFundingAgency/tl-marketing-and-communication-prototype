@@ -30,15 +30,16 @@ Search ULN - Post-results - Manage T Levels results - GOV.UK
             </h1>
           </legend>
           <p class="govuk-body">Search for the learner who has requested the review or appeal.</p>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="uln-search">
-              Enter the unique learner number (ULN)
-            </label>
-            <span class="govuk-hint">
-              ULN must be 10 digits long
-            </span>
-            <input class="govuk-input govuk-input--width-10" id="uln" name="uln" pattern="[0-9]*" inputmode="numeric">
-          </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="unique-learner-number-search">
+                    Enter the unique learner number (ULN)
+                </label>
+
+                <div id="unique-learner-number-hint" class="govuk-hint">
+                    ULN must be 10 digits long
+                </div>
+                <input class="govuk-input govuk-input--width-10 govuk-!-display-block" id="unique-learner-number-search" name="uln" pattern="[0-9]*" inputmode="numeric" aria-describedby="unique-learner-number-hint">
+            </div>
         </fieldset>
       </div>
 
