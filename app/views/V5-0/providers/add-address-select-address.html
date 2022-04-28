@@ -10,7 +10,9 @@ Add address - select address - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
+<nav>
   <a class="govuk-back-link" href="../providers/add-address-postcode.html">Back</a>
+</nav>
 {% endblock %}
 {% block content %}
 {% if data['address-postcode'] === 's70 3dl' or data['address-postcode'] === 'S70 3DL'%}
@@ -42,7 +44,7 @@ Add address - select address - Manage T Level results - GOV.UK
               <label class="govuk-label govuk-label--m" for="add">
                 Select an address
               </label>
-              <select class="govuk-select" id="add" name="add">
+              <select class="govuk-select" aria-required="true" id="add" name="add">
                 <option value="" selected>3 addresses found</option>
                 <option value="add1">Barnsley College, Cheylesmore House, Church St, Barnsley, S70 2AX</option>
                 <option value="add2">Open Kitchen, Eaton House, Church St, Barnsley, S70 2AX</option>
@@ -54,7 +56,7 @@ Add address - select address - Manage T Level results - GOV.UK
               <label class="govuk-label " for="dept-name">
                 Department (optional)
               </label>
-              <input class="govuk-input  govuk-!-width-one-half" id="dept-name" name="dept-name" type="text">
+              <input class="govuk-input  govuk-!-width-one-half"  id="dept-name" name="dept-name" type="text">
             </div>
 
             <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0" closed>

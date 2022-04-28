@@ -5,7 +5,9 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +15,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
-      <div class="govuk-form-group">
+
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">Industry placement: Special consideration</span>
 
@@ -24,10 +26,13 @@ How many hours did the student spend on placement? - Manage T Level results - GO
         <div id="total-placement-hours-hint" class="govuk-hint">
           Must be between 1 and 999
         </div>
-        <input value="{{ data ['total-placement-hours'] }}" class="govuk-input govuk-input--width-3"
-          id="total-placement-hours" name="total-placement-hours" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
-      </div>
-      
+
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
+          <input value="{{ data ['total-placement-hours'] }}"  style="line-height:6;" class="govuk-input govuk-input--width-3"
+            id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+        </div>
+
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
@@ -43,22 +48,19 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 
     "total-placement-hours": {
 
-      "numericality": {
-        "onlyInteger": true,
-        "message": "^Hours spent on placement must be a number, like 50"
 
-      },
-
-      "numericality": {
+        "numericality": {
         "lessThanOrEqualTo": 999,
-        "message": "^Hours spent on placement must be 999 or fewer"
+          "greaterThanOrEqualTo": 1,
+        "message": "^Hours spent on placement must be between 0 and 1000"
 
       },
 
       "presence": {
-        "message": "^Enter number of hours student spent on placement"
+        "message": "^Enter number of hours the learner spent on placement"
 
       }
+
 
     }
 

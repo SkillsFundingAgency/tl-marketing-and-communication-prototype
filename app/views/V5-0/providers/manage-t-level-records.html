@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+<nav>
     <div class="govuk-breadcrumbs">
         <ol class="govuk-breadcrumbs__list">
             <li class="govuk-breadcrumbs__list-item">
@@ -13,6 +14,7 @@
             <li class="govuk-breadcrumbs__list-item" aria-current="page">Registered Learners</li>
         </ol>
     </div>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -25,10 +27,10 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
             <div class="filter-border">
-                <h3 class="govuk-heading-m govuk-!-padding-top-4">Filters</h3>
+                <h2 class="govuk-heading-m govuk-!-padding-top-4">Filters</h2>
 
                 <div id="selectedFiltersWrapper" class="govuk-visually-hidden govuk-!-margin-bottom-6">
-                    <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Selected filters</h4>
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Selected filters</h2>
                     <div id="selectedFilters"></div>
                 </div>
 
@@ -73,22 +75,22 @@
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="status-2" name="maths-level" type="checkbox"
-                                       value="complete">
+                                <input class="govuk-checkboxes__input" id="maths-level" name="status" type="checkbox"
+                                       value="incomplete">
                                 <label class="govuk-label govuk-checkboxes__label" for="maths-level">
                                     Maths level
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
                                 <input class="govuk-checkboxes__input" id="industry-placement" name="status" type="checkbox"
-                                       value="complete">
+                                       value="incomplete">
                                 <label class="govuk-label govuk-checkboxes__label" for="industry-placement">
                                     Industry placement
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
                                 <input class="govuk-checkboxes__input" id="all-incomplete" name="status" type="checkbox"
-                                       value="complete">
+                                       value="incomplete">
                                 <label class="govuk-label govuk-checkboxes__label" for="all-incomplete">
                                     All incomplete records
                                 </label>
@@ -132,7 +134,7 @@
                             T Level
                         </legend>
                         <div class="govuk-form-group govuk-!-margin-top-1">
-                            <label class="govuk-label govuk-visually-hidden" for="width-10">
+                            <label class="govuk-label govuk-visually-hidden" for="tlevel-search">
                                 T level search
                             </label>
                             <input onkeyup="tlevelsearch()" class="govuk-input govuk-input--width-10" id="tlevel-search"

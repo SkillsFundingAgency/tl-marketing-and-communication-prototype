@@ -5,7 +5,9 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -16,7 +18,7 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
     <form action="did-you-use-a-flexibility" id="industry-placement-model" method="post" novalidate
       data-validate='industrial-placement-models-validation'>
 
-      <div class="govuk-form-group">
+
           <span class="govuk-caption-l">Industry placement: Model(s)</span>
 
           <fieldset class="govuk-fieldset">
@@ -31,7 +33,7 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 
           {% endif %}
 
-
+              <div class="govuk-form-group">
 
           {% if data['multipleEmployerModel'] == 'yes' %}
 
@@ -43,8 +45,10 @@ Which industrial placement models were used? - Manage T Level results - GOV.UK
 
           {% endif %}
 
+              </div>
+
         </fieldset>
-      </div>
+
 
       <button class="govuk-button" data-module="govuk-button">
         Continue

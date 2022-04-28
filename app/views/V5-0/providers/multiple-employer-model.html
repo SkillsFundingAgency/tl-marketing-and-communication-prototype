@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Did Danny Waldron use an industry placement model?
+Did Danny Waldron use an industry placement model?.GOVUK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -13,7 +15,7 @@ Did Danny Waldron use an industry placement model?
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="industry-placement-model-selection" method="post" novalidate data-validate='multipleEmployerModel-validation'>
-        <div class="govuk-form-group">
+
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <span class="govuk-caption-l">Industry placement: Model(s)</span>
@@ -23,23 +25,25 @@ Did Danny Waldron use an industry placement model?
               </h1>
             </legend>
             <div id="special-consideration-hint" class="govuk-hint">Select Yes if a multiple employer model was used for this learner's industry placement.</div>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="multipleEmployerModel-yes" name="multipleEmployerModel" type="radio" value="yes" {{ checked("multipleEmployerModel", "yes") }}>
-                <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-yes">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="multipleEmployerModel-no" name="multipleEmployerModel" type="radio" value="no" {{ checked("multipleEmployerModel", "no") }}>
-                <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-no">
-                  No
-                </label>
-              </div>
+              <div class="govuk-form-group">
+                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="multipleEmployerModel-yes" name="multipleEmployerModel" type="radio" value="yes" {{ checked("multipleEmployerModel", "yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-yes">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="multipleEmployerModel-no" name="multipleEmployerModel" type="radio" value="no" {{ checked("multipleEmployerModel", "no") }}>
+                        <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-no">
+                          No
+                        </label>
+                      </div>
+                  </div>
             </div>
 
           </fieldset>
-        </div>
+
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
