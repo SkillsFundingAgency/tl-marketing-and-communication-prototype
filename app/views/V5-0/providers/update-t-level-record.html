@@ -146,10 +146,10 @@ Learner's T Level record
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] === 'Placement completed' 
-          or data['newindustryPlacement'] === 'Placement completed with special consideration' 
-          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed' 
-          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed with special consideration'%}
+          {% if data['newindustryPlacement'] === 'Yes, completed'
+          or data['newindustryPlacement'] === 'Yes, completed with special consideration'
+          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Yes, completed'
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Yes, completed with special consideration'%}
           {% else %}
           <a class="govuk-link" href="change-ip-result">
             Add <span class="govuk-visually-hidden"> industry placement information</span>
