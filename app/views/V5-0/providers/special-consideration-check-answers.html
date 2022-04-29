@@ -112,7 +112,11 @@
                             Industry placement model
                         </dt>
                         <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-                            {{ data['industryModel'] }}
+                            {% if data['industryModel'] %}
+                                {{ data['industryModel'] }}
+                            {% else %}
+                                No
+                            {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="did-you-use-an-industry-placement">
@@ -145,19 +149,21 @@
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 {% if data['multipleEmployerModel'] == 'yes' %}
-                                    Other industrial placement model(s) used
+                                    Other industry placement model(s) used
                                 {% else %}
-                                    Industrial placement model(s) used
+                                    Industry placement model(s) used
                                 {% endif %}
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 {% if data['multipleEmployerModel'] == 'yes' %}
-                                    {% if (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 4) %}
+                                    {% if data['industrial-placement-models'] %}
                                         {% for item in data['industrial-placement-models'] %}
                                             <p>{{ item }}</p>
                                         {% endfor %}
                                     {% else %}
-                                        <p> {{ data['industrial-placement-models'] }}</p>
+                                        <p>
+                                            No
+                                        </p>
                                     {% endif %}
 
 

@@ -1,65 +1,51 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which industrial placement models were used? - Manage T Level results - GOV.UK
+    Which industry placement models were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<nav>
-    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
-</nav>
+    <nav>
+        <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+    </nav>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-    <form action="did-you-use-a-flexibility" id="industry-placement-model" method="post" novalidate
-      data-validate='industrial-placement-models-validation'>
-
-
-          <span class="govuk-caption-l">Industry placement: Model(s)</span>
-
-          <fieldset class="govuk-fieldset">
-
-          {% if data['multipleEmployerModel'] == 'yes' %}
-
-          {% include "../includes/industry-placement-model-1-h1.html" %}
-
-          {% else %}
-
-          {% include "../includes/industry-placement-model-2-h1.html" %}
-
-          {% endif %}
-
-              <div class="govuk-form-group">
-
-          {% if data['multipleEmployerModel'] == 'yes' %}
-
-          {% include "../includes/industry-placement-model-1-option.html" %}
-
-          {% else %}
-
-          {% include "../includes/industry-placement-model-2-options.html" %}
-
-          {% endif %}
-
-              </div>
-
-        </fieldset>
+            <form action="did-you-use-a-flexibility" id="industry-placement-model" method="post" novalidate
+                  data-validate='industrial-placement-models-validation'>
 
 
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </form>
+                <span class="govuk-caption-l">Industry placement: Model(s)</span>
 
-  </div>
-    <div class="govuk-grid-column-one-third">
-        {% include "../../../views/includes/sidebar.html" %}
+                <fieldset class="govuk-fieldset">
+                    {% if data['multipleEmployerModel'] == 'yes' %}
+                        {% include "../includes/industry-placement-model-1-h1.html" %}
+                        <div class="govuk-form-group">
+                            {% include "../includes/industry-placement-model-1-option.html" %}
+                        </div>
+                    {% else %}
+                        {% include "../includes/industry-placement-model-2-h1.html" %}
+                        <div class="govuk-form-group">
+                            {% include "../includes/industry-placement-model-2-options.html" %}
+                        </div>
+                    {% endif %}
+                </fieldset>
+
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+            </form>
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {% include "../../../views/includes/sidebar.html" %}
+        </div>
     </div>
-</div>
 
 
 
