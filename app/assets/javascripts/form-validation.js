@@ -153,6 +153,6 @@ function errorSummary(errors) {
       newErrorSummaryList.appendChild(errorItem)
     }
   }
-  document.querySelector('h1').parentNode.insertBefore(newErrorSummary, document.querySelector('h1'))
+  document.querySelector('form').parentNode.insertBefore(newErrorSummary, document.querySelector('form'))
   newErrorSummary.focus()
 }
