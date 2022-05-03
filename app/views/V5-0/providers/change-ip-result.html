@@ -17,43 +17,44 @@
                     <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                             <span class="govuk-caption-l">Industry placement</span>
-
-                            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                                Has {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} completed their industry
-                                placement?
-                            </h1>
                         </legend>
                         <div class="govuk-form-group">
-                            <div class="govuk-radios">
-                                                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
-                                           type="radio"
-                                           value="Yes, completed" {{ checked("result-ip-answer", "Yes, completed") }} >
-                                    <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
-                                        Yes, completed
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
-                                           type="radio"
-                                           value="Yes, completed with special consideration" {{ checked("result-ip-answer", "Yes, completed with special consideration") }} >
-                                    <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
-                                        Yes, completed with special consideration
-                                    </label>
-                                    <div id="result-ip-answer-2-item-hint" class="govuk-hint govuk-radios__hint">
-                                        We will ask you to declare that you have documentary evidence on file before you can
-                                        submit this learner's industry placement details
-
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                                    Has {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} completed their industry
+                                    placement?
+                                </h1>
+                            </legend>
+                                <div class="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
+                                               type="radio"
+                                               value="Yes, completed" {{ checked("result-ip-answer", "Yes, completed") }} >
+                                        <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
+                                            Yes, completed
+                                        </label>
                                     </div>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
-                                           type="radio"
-                                           value="No, still to be completed" {{ checked("result-ip-answer", "No, still to be completed") }} >
-                                    <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
-                                        No, still to be completed
-                                    </label>
-                                </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
+                                               type="radio"
+                                               value="Yes, completed with special consideration" {{ checked("result-ip-answer", "Yes, completed with special consideration") }} >
+                                        <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                                            Yes, completed with special consideration
+                                        </label>
+                                        <div id="result-ip-answer-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                            We will ask you to declare that you have documentary evidence on file before you can
+                                            submit this learner's industry placement details
+
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
+                                               type="radio"
+                                               value="No, still to be completed" {{ checked("result-ip-answer", "No, still to be completed") }} >
+                                        <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                                            No, still to be completed
+                                        </label>
+                                    </div>
                             </div>
                         </div>
 

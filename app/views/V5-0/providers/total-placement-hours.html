@@ -15,22 +15,21 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
-
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">Industry placement: Special consideration</span>
-
-            <h1 class="govuk-fieldset__heading" for="total-placement-hours">
-            How many industry placement hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} complete?
-          </h1>
         </legend>
-        <div id="total-placement-hours-hint" class="govuk-hint">
-          Must be between 1 and 999
-        </div>
-
         <div class="govuk-form-group">
-            <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
-          <input value="{{ data ['total-placement-hours'] }}"  style="line-height:6;" class="govuk-input govuk-input--width-3"
-            id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading" for="total-placement-hours">
+                How many industry placement hours did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} complete?
+              </h1>
+            </legend>
+            <div id="total-placement-hours-hint" class="govuk-hint">
+              Must be between 1 and 999
+            </div>
+                <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
+              <input value="{{ data ['total-placement-hours'] }}"  style="line-height:6;" class="govuk-input govuk-input--width-3"
+                id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
         </div>
 
       <button class="govuk-button" data-module="govuk-button">
