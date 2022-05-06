@@ -609,7 +609,7 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     const newResult = req.session.data['result-ip-answer']
 
-    if (newResult === 'Yes, completed with special consideration') {
+    if (newResult === 'Completed with special consideration') {
       res.redirect('/' + version + '/providers/total-placement-hours')
     } else if (newResult === 'Yes, completed') {
       res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
