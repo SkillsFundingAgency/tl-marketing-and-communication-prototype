@@ -17,28 +17,30 @@ Did Danny Waldron use an industry placement model?.GOVUK
       <form action="industry-placement-model-selection" method="post" novalidate data-validate='multipleEmployerModel-validation'>
 
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Industry placement: Model(s)</span>
-
-                <h1 class="govuk-fieldset__heading">
-                Was a multiple employer model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}? 
-              </h1>
-            </legend>
-            <div id="special-consideration-hint" class="govuk-hint">Select Yes if a multiple employer model was used for this learner's industry placement.</div>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-l">Industry placement: Model(s)</span>
+              </legend>
               <div class="govuk-form-group">
-                  <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="multipleEmployerModel-yes" name="multipleEmployerModel" type="radio" value="yes" {{ checked("multipleEmployerModel", "yes") }}>
-                        <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-yes">
-                          Yes
-                        </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="multipleEmployerModel-no" name="multipleEmployerModel" type="radio" value="no" {{ checked("multipleEmployerModel", "no") }}>
-                        <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-no">
-                          No
-                        </label>
-                      </div>
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                    Was a multiple employer model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
+                  </h1>
+                </legend>
+                <div id="special-consideration-hint" class="govuk-hint">Select Yes if a multiple employer model was used for this learner's industry placement.</div>
+
+                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="multipleEmployerModel-yes" name="multipleEmployerModel" type="radio" value="yes" {{ checked("multipleEmployerModel", "yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-yes">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="multipleEmployerModel-no" name="multipleEmployerModel" type="radio" value="no" {{ checked("multipleEmployerModel", "no") }}>
+                            <label class="govuk-label govuk-radios__label" for="multipleEmployerModel-no">
+                              No
+                            </label>
+                          </div>
                   </div>
             </div>
 
