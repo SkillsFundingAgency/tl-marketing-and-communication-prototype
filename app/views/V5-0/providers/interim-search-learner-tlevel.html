@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a learner page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="update-t-level-record" method="post" novalidate data-validate="search-for-learner-validation">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+              Manage learner records
+            </h1>
+          </legend>
+          <h2 class="govuk-heading-m">List all learners by start year</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="interim-manage-2020-to-2021-t-level-records">2020 to 2021</a></li>
+            <li><a href="interim-manage-2021-to-2022-t-level-records">2021 to 2022</a></li></ul>
+          <h2 class="govuk-heading-m">Or search for the learner you want to manage</h2>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="uln-search">
+              Enter the unique learner number (ULN)
+            </label>
+            <span class="govuk-hint">
+              ULN must be 10 digits long
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="uln" name="uln">
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Search</button>
+
+    </form>
+  </div>
+</div>
+
+
+<script type="application/json" id="search-for-learner-validation">
+  {
+
+    "uln": {
+      "presence": {
+        "message": "^Enter a unique learner number"
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Unique learner number must be a number"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Unique learner number must be 10 numbers long"
+      }
+    }
+
+  }
+</script>
+
+{% endblock %}
