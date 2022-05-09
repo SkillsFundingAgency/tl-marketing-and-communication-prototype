@@ -5,7 +5,9 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<nav>
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -20,34 +22,35 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
         {% if data['blended-placement'] == 'yes' %}
 
         <fieldset class="govuk-fieldset">
+
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">Industry placement: Temporary flexibilities</span>
-
-              <h1 class="govuk-heading-l govuk-fieldset__heading">
-              Were any other temporary flexibilities were granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
-            </h1>
+            <span class="govuk-caption-l">Industry placement: Temporary flexibilities</span>
           </legend>
-
-
           <div class="govuk-form-group">
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                  type="radio" value="Employer led activities/projects" {{
-                  checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
-                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                  Employer led activities/projects
-                </label>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-l govuk-fieldset__heading">
+                Were any other temporary flexibilities granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
+              </h1>
+            </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
+                    type="radio" value="Employer led activities/projects" {{
+                    checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                  <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-1">
+                    Employer led activities/projects
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
+                    type="radio" value="No other temporary flexibilities were used" {{
+                    checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
+                  <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
+                    No other temporary flexibilities were used
+                  </label>
+                </div>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                  type="radio" value="No other temporary flexibilities were used" {{
-                  checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
-                <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                  No other temporary flexibilities were used
-                </label>
-              </div>
-            </div>
           </div>
 
 
@@ -139,7 +142,7 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
 
             "presence": {
 
-                "message": "^Select one or more temporary flexibilities"
+                "message": "^Select one of the options."
 
             }
 

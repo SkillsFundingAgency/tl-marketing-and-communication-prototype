@@ -6,7 +6,9 @@ Learner's T Level record
 
 
 {% block beforeContent %}
-<a href="manage-t-level-records" class="govuk-back-link">Back</a>
+<nav>
+  <a href="manage-t-level-records" class="govuk-back-link">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -144,10 +146,10 @@ Learner's T Level record
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] === 'Placement completed' 
-          or data['newindustryPlacement'] === 'Placement completed with special consideration' 
-          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed' 
-          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Placement completed with special consideration'%}
+          {% if data['newindustryPlacement'] == 'Completed'
+          or data['newindustryPlacement'] == 'Completed with special consideration'
+          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed'
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with special consideration'%}
           {% else %}
           <a class="govuk-link" href="change-ip-result">
             Add <span class="govuk-visually-hidden"> industry placement information</span>
@@ -172,7 +174,7 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newmathsStatus'] === 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved'%}
+          {% if data['newmathsStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved'%}
           {% else %}
           <a class="govuk-link" href="add-maths-status">
             Add <span class="govuk-visually-hidden"> maths status</span>
@@ -185,14 +187,14 @@ Learner's T Level record
           English
         </dd>
         <dd class="govuk-summary-list__value">
-          {% if data['updatedenglishStatus'] === 'yes'%}
+          {% if data['updatedenglishStatus'] == 'yes'%}
           {{ data['newenglishStatus'] }}
           {% else %}
           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] }}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newenglishStatus'] === 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved'%}
+          {% if data['newenglishStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved'%}
           {% else %}
           <a class="govuk-link" href="add-english-status">
             Add <span class="govuk-visually-hidden"> english status</span>
@@ -213,11 +215,6 @@ Learner's T Level record
         <dd class="govuk-summary-list__value">
           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="">
-
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
@@ -233,12 +230,6 @@ Learner's T Level record
           </strong></p>
           {% else %}
           {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="">
-
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
@@ -249,12 +240,6 @@ Learner's T Level record
           <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
           <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
 
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
-
-          </a>
-        </dd>
       </div>
     </dl>
 

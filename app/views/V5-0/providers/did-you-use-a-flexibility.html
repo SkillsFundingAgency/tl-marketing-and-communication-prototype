@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Did Danny Waldron use an industry placement model?
+Did Danny Waldron use a temporary flexibility?
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -16,33 +18,33 @@ Did Danny Waldron use an industry placement model?
       <form action="flexibility" method="post" novalidate data-validate='flexibility-validation'>
 
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <span class="govuk-caption-l">Industry placement: Temporary flexibility</span>
-
-                <h1 class="govuk-fieldset__heading">
-                {% if data['uln'] == '1987654320' %}
-                Temporary flexibility and blended placement?
-                {% else %}
-                Was {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} granted a temporary flexibility?
-                {% endif %}
-              </h1>
-            </legend>
-
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <span class="govuk-caption-l">Industry placement: Temporary flexibility</span>
+              </legend>
               <div class="govuk-form-group">
-                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="flexibility-yes" name="flexibility" type="radio" value="yes" {{ checked("flexibility", "yes") }}>
-                    <label class="govuk-label govuk-radios__label" for="flexibility-yes">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="flexibility-no" name="flexibility" type="radio" value="no" {{ checked("flexibility", "no") }}>
-                    <label class="govuk-label govuk-radios__label" for="flexibility-no">
-                      No
-                    </label>
-                  </div>
-                </div>
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                    {% if data['uln'] == '1987654320' %}
+                    Temporary flexibility and blended placement?
+                    {% else %}
+                    Was {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} granted a temporary flexibility?
+                    {% endif %}
+                  </h1>
+                </legend>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="flexibility-yes" name="flexibility" type="radio" value="yes" {{ checked("flexibility", "yes") }}>
+                        <label class="govuk-label govuk-radios__label" for="flexibility-yes">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="flexibility-no" name="flexibility" type="radio" value="no" {{ checked("flexibility", "no") }}>
+                        <label class="govuk-label govuk-radios__label" for="flexibility-no">
+                          No
+                        </label>
+                      </div>
+                    </div>
               </div>
 
           </fieldset>

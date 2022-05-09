@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Did Danny Waldron use an industry placement model?
+Did Danny Waldron use an industry placement model? - GOVUK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -17,27 +19,27 @@ Did Danny Waldron use an industry placement model?
           <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <span class="govuk-caption-l">Industry placement: Model(s)</span>
-
-                  <h1 class="govuk-fieldset__heading">
-                Was an industry placement model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
-              </h1>
-            </legend>
-
+              </legend>
               <div class="govuk-form-group">
-                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industryModel-yes" name="industryModel" type="radio" value="yes" {{ checked("industryModel", "yes") }}>
-                    <label class="govuk-label govuk-radios__label" for="industryModel-yes">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="industryModel-no" name="industryModel" type="radio" value="no" {{ checked("industryModel", "no") }}>
-                    <label class="govuk-label govuk-radios__label" for="industryModel-no">
-                      No
-                    </label>
-                  </div>
-                </div>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                    Was an industry placement model used for {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
+                  </h1>
+                </legend>
+                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="industryModel-yes" name="industryModel" type="radio" value="yes" {{ checked("industryModel", "yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="industryModel-yes">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="industryModel-no" name="industryModel" type="radio" value="no" {{ checked("industryModel", "no") }}>
+                            <label class="govuk-label govuk-radios__label" for="industryModel-no">
+                              No
+                            </label>
+                      </div>
+                    </div>
               </div>
 
           </fieldset>

@@ -5,7 +5,9 @@ Add English level details - Manage learner - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick="goBack()">Back</a>
+<nav>
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -16,26 +18,26 @@ Add English level details - Manage learner - Manage T Level results - GOV.UK
 
 
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Has {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} achieved a level 2 or equivalent in English?
-              </h1>
-            </legend>
             <div class="govuk-form-group">
-              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="englishStatus-yes" name="englishStatus" type="radio" value="Achieved" {{ checked("englishStatus", "yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="englishStatus-yes">
-                    Yes
-                  </label>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Has {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} achieved a level 2 or equivalent in English?
+                </h1>
+              </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="englishStatus-yes" name="englishStatus" type="radio" value="Achieved" {{ checked("englishStatus", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="englishStatus-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="englishStatus-no" name="englishStatus" type="radio" value="Not achieved" {{ checked("englishStatus", "no") }}>
+                    <label class="govuk-label govuk-radios__label" for="englishStatus-no">
+                      No
+                    </label>
+                  </div>
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="englishStatus-no" name="englishStatus" type="radio" value="Not achieved" {{ checked("englishStatus", "no") }}>
-                  <label class="govuk-label govuk-radios__label" for="englishStatus-no">
-                    No
-                  </label>
-                </div>
-              </div>
             </div>
           </fieldset>
 

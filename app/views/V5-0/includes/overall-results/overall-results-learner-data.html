@@ -11,7 +11,7 @@
                 <span class="govuk-body">{{ key }}</span>
             </h3>
             <span class="app-application-card_tag-container">
-              {% if value.learnerMaths == "Not yet received" or value.learnerEnglish == "Not yet received" or value.learnerIndustryPlacement == "Not yet received" %}
+              {% if value.learnerMaths == "Not yet completed" or value.learnerEnglish == "Not yet completed" or value.learnerIndustryPlacement == "Not yet completed" %}
                   <strong class="govuk-tag govuk-tag--red">Incomplete</strong>
               {% endif %}
             </span>
@@ -43,20 +43,20 @@
                     &nbsp;
                 {% elif key != '1122334455' or key != '5647382910' or key == '8642135790' %}
                     <ul class="govuk-body-s govuk-list -!-margin-bottom-1 app-application-card__submitted govuk-!-text-align-right">
-                        {% if value.learnerIndustryPlacement != "Placement completed" %}
+                        {% if value.learnerIndustryPlacement != "Yes, completed" %}
                             <li>
                                 <a class="govuk-notification-banner__link" href="change-ip-result">Add industry
                                     placement
                                     details</a>
                             </li>
                         {% endif %}
-                        {% if value.learnerMaths == "Not yet received" %}
+                        {% if value.learnerMaths == "Not yet completed" %}
                             <li>
                                 <a class="govuk-notification-banner__link" href="add-maths-status">Add maths level
                                     details</a>
                             </li>
                         {% endif %}
-                        {% if value.learnerEnglish == "Not yet received" %}
+                        {% if value.learnerEnglish == "Not yet completed" %}
                             <li>
                                 <a class="govuk-notification-banner__link" href="add-english-status">Add English level
                                     details</a>

@@ -5,17 +5,19 @@ Search for a learner - Enter Unique Learner Number page - Manage T Level results
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../providers/tlevels-dashboard.html">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../providers/request-statement-of-achievement.html">Request statement of achievement</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
-  </ol>
-</div>
+<nav>
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../providers/tlevels-dashboard.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../providers/request-statement-of-achievement.html">Request statement of achievement</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
+    </ol>
+  </div>
+</nav>
 {% endblock %}
 
 {% block content %}
@@ -25,17 +27,17 @@ Search for a learner - Enter Unique Learner Number page - Manage T Level results
     <form class="form" action="request-statement-of-achievement-check-and-submit" method="post" novalidate data-validate="search-for-learner-validation">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
-            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
-              Search for a learner
-            </h1>
-          </legend>
-          <p class="govuk-body">Enter the Unique Learner Number (ULN) for a learner who has withdrawn from their T level course.</p>
           <div class="govuk-form-group">
-            <span class="govuk-hint">
-              ULN must be 10 digits long
-            </span>
-            <input class="govuk-input govuk-input--width-10" id="uln" name="uln">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                Search for a learner
+              </h1>
+            </legend>
+            <p id="uln-description" class="govuk-body">Enter the Unique Learner Number (ULN) for a learner who has withdrawn from their T level course.</p>
+              <span class="govuk-hint">
+                ULN must be 10 digits long
+              </span>
+              <input class="govuk-input govuk-input--width-10" aria-describedby="uln-description" aria-required="true" id="uln" name="uln">
           </div>
         </fieldset>
       </div>
