@@ -611,7 +611,7 @@ module.exports = function (router) {
 
     if (newResult === 'Completed with special consideration') {
       res.redirect('/' + version + '/providers/total-placement-hours')
-    } else if (newResult === 'Yes, completed') {
+    } else if (newResult === 'Completed') {
       res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
     } else {
       req.session.data.newplacementResult = 'yes'
