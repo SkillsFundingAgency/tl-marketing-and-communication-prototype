@@ -411,3 +411,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 }
 
+.v5{
+  @import "version/v5/learner-record";
+}
