@@ -1,0 +1,14 @@
+.learner-records{
+  .govuk-grid-row{
+    padding: 15px 0;
+  }
+  .govuk-summary-list{
+    &__key, &__value{
+      padding: 0;
+      width: 100%;
+    }
+    &__actions{
+      padding: 0;
+    }
+  }
+}
