@@ -199,6 +199,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                         <span class="govuk-!-font-weight-bold">Sort by:</span>
                         <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
               <span class="">Date updated</span>
+
             </span>
                         <span>|</span>
                         <span class="govuk-!-margin-left-2 govuk-!-margin-right-1">
@@ -206,6 +207,9 @@ Manage T Level records - Manage T Level results - GOV.UK
             </span>
                     </p>
                 </div>
+            </div>
+            <div class="govuk-!-padding-1">
+                Viewing 1 - 10 of 11 learners
             </div>
 
             <style>
@@ -221,7 +225,12 @@ Manage T Level records - Manage T Level results - GOV.UK
             </div>
 
             <div class="pagination">
-                <ul class="pagination__list-items">
+                <ul class="pagination__list-items govuk-!-padding-left-0">
+                    <li class="pagination__item" id="previousButton">
+                        <a class="pagination__link" href="./manage-t-level-records.html">«
+                            <span aria-hidden="true" role="presentation">Previous page</span>
+                        </a>
+                    </li>
                     <li class="pagination__item">
                         <a class="pagination__link" href="?page=1">
                             1
@@ -234,17 +243,25 @@ Manage T Level records - Manage T Level results - GOV.UK
                     </li>
                     <li class="pagination__item" id="nextButton">
                         <a class="pagination__link" href="./manage-t-level-records-page2.html">
-                            Next
-                            <span aria-hidden="true" role="presentation">
-                                    »
-                                </span>
+                            Next page
+                            <span aria-hidden="true" role="presentation">»</span>
                         </a>
                     </li>
                 </ul>
-                <div>
+                <div class="govuk-!-display-inline">
                     Viewing 1 - 10 of 11 learners
                 </div>
-
+                <div class="app-float-right">
+                    Learners per page
+                    <span>
+                        <div class="govuk-form-group govuk-!-display-inline">
+                          <select class="govuk-select learnerFilter" id="sort" name="sort">
+                              <option value="#" selected>10</option>
+                              <option value="#">20</option>
+                          </select>
+                        </div>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -255,6 +272,24 @@ Manage T Level records - Manage T Level results - GOV.UK
 <style>
     .is-hidden {
         display: none;
+    }
+
+    #nextButton {
+        float: right;
+    }
+
+    #previousButton {
+        float: left;
+    }
+
+    .learnerFilter {
+        height: auto;
+        padding: 0px;
+        font-size: initial;
+    }
+
+    .pagination .pagination__list-items {
+        text-align: center;
     }
 
 </style>
