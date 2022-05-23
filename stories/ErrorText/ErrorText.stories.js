@@ -1,7 +1,7 @@
 import { ErrorText } from './ErrorText';
 
 export default {
-  title: 'Gov/InsetText',
+  title: 'Gov/ErrorText',
   argTypes: {
     text: { control: 'text' },
   },

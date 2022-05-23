@@ -9,7 +9,9 @@
   "scripts": {
     "start": "node start.js",
     "lint": "standard",
-    "test": "npm run lint && gulp generate-assets && jest"
+    "test": "npm run lint && gulp generate-assets && jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "acorn": "^8.5.0",
@@ -47,6 +49,18 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@storybook/addon-actions": "^6.5.0",
+    "@storybook/addon-essentials": "^6.5.0",
+    "@storybook/addon-interactions": "^6.5.0",
+    "@storybook/addon-links": "^6.5.0",
+    "@storybook/builder-webpack4": "^6.5.0",
+    "@storybook/html": "^6.5.0",
+    "@storybook/manager-webpack4": "^6.5.0",
+    "@storybook/testing-library": "^0.0.11",
+    "babel-loader": "^8.2.5",
     "glob": "^7.1.4",
     "jest": "^27.3.1",
     "standard": "^14.3.3",

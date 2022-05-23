@@ -12,3 +12,6 @@ const Template = ({ heading, ...args }) => {
 };
 
 export const Primary = Template.bind({});
+Primary.args = {
+  heading: 'Example Heading',
+};

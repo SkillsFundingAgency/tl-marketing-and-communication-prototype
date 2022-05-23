@@ -12,3 +12,6 @@ export default {
 
 const Template = (args) => <ErrorSummary {...args} />;
 export const Primary = Template.bind({});
+Primary.args = {
+  heading: 'Example Heading',
+};
