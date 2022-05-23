@@ -11,7 +11,7 @@
                 <span class="govuk-body">{{ key }}</span>
             </h3>
             <span class="app-application-card_tag-container">
-              {% if value.learnerMaths == "Not yet completed" or value.learnerEnglish == "Not yet completed" or value.learnerIndustryPlacement == "Not yet completed" %}
+              {% if value.learnerMaths == "Not yet received" or value.learnerEnglish == "Not yet received" or value.learnerIndustryPlacement == "Not yet received" %}
                   <strong class="govuk-tag govuk-tag--red">Incomplete</strong>
               {% endif %}
             </span>
@@ -50,13 +50,13 @@
                                     details</a>
                             </li>
                         {% endif %}
-                        {% if value.learnerMaths == "Not yet completed" %}
+                        {% if value.learnerMaths == "Not yet received" %}
                             <li>
                                 <a class="govuk-notification-banner__link" href="add-maths-status">Add maths level
                                     details</a>
                             </li>
                         {% endif %}
-                        {% if value.learnerEnglish == "Not yet completed" %}
+                        {% if value.learnerEnglish == "Not yet received" %}
                             <li>
                                 <a class="govuk-notification-banner__link" href="add-english-status">Add English level
                                     details</a>
