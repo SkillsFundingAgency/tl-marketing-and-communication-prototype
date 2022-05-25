@@ -208,7 +208,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                     </p>
                 </div>
             </div>
-            <div class="govuk-!-padding-1">
+            <div class="govuk-body">
                 Viewing 1 - 10 of 11 learners
             </div>
 
@@ -224,12 +224,12 @@ Manage T Level records - Manage T Level results - GOV.UK
                 </div>
             </div>
 
-            <div class="pagination">
+            <div class="pagination govuk-body">
                 <ul class="pagination__list-items govuk-!-padding-left-0">
-                    <li class="pagination__item" id="previousButton">
-                        <a class="pagination__link" href="./manage-t-level-records.html">«
+                    <li class="pagination__item" id="previousButton" style="visibility: hidden">
+                        <div class="pagination__link" href="./manage-t-level-records.html">«
                             <span aria-hidden="true" role="presentation">Previous page</span>
-                        </a>
+                        </div>
                     </li>
                     <li class="pagination__item">
                         <a class="pagination__link" href="?page=1">
@@ -248,19 +248,8 @@ Manage T Level records - Manage T Level results - GOV.UK
                         </a>
                     </li>
                 </ul>
-                <div class="govuk-!-display-inline">
+                <div class="govuk-!-display-inline govuk-body">
                     Viewing 1 - 10 of 11 learners
-                </div>
-                <div class="app-float-right">
-                    Learners per page
-                    <span>
-                        <div class="govuk-form-group govuk-!-display-inline">
-                          <select class="govuk-select learnerFilter" id="sort" name="sort">
-                              <option value="#" selected>10</option>
-                              <option value="#">20</option>
-                          </select>
-                        </div>
-                    </span>
                 </div>
             </div>
         </div>
@@ -280,12 +269,6 @@ Manage T Level records - Manage T Level results - GOV.UK
 
     #previousButton {
         float: left;
-    }
-
-    .learnerFilter {
-        height: auto;
-        padding: 0px;
-        font-size: initial;
     }
 
     .pagination .pagination__list-items {
