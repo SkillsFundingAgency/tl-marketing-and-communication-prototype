@@ -207,7 +207,7 @@ Manage T Level records - Manage T Level results - GOV.UK
           </p>
         </div>
       </div>
-      <div class="govuk-!-padding-bottom-3">
+      <div class="govuk-body">
         Viewing 1 - 10 of 11 learners
       </div>
 
@@ -259,7 +259,7 @@ Manage T Level records - Manage T Level results - GOV.UK
         </div>
       </div>
 
-      <div class="pagination">
+      <div class="pagination govuk-body">
         <ul class="pagination__list-items govuk-!-padding-left-0">
           <li class="pagination__item" id="previousButton">
             <a class="pagination__link" href="./manage-t-level-records.html">
@@ -280,27 +280,15 @@ Manage T Level records - Manage T Level results - GOV.UK
             </a>
           </li>
           <li class="pagination__item" id="nextButton">
-            <a class="pagination__link" href="./manage-t-level-records-page2.html">
+            <div class="pagination__link" style="visibility: hidden" href="./manage-t-level-records-page2.html">
               Next page
               <span aria-hidden="true" role="presentation">»</span>
-            </a>
+            </div>
           </li>
         </ul>
         <div class="govuk-!-display-inline">
           Viewing 11 - 11 of 11 learners
         </div>
-        <div class="app-float-right">
-          Learners per page
-          <span>
-            <div class="govuk-form-group govuk-!-display-inline">
-              <select class="govuk-select learnerFilter" id="sort" name="sort">
-                <option value="#" selected>10</option>
-                <option value="#">20</option>
-              </select>
-            </div>
-          </span>
-        </div>
-
       </div>
     </div>
   </div>
@@ -319,12 +307,6 @@ Manage T Level records - Manage T Level results - GOV.UK
 
   #previousButton {
     float: left;
-  }
-
-  .learnerFilter {
-    height: auto;
-    padding: 0px;
-    font-size: initial;
   }
 
   .pagination .pagination__list-items {
