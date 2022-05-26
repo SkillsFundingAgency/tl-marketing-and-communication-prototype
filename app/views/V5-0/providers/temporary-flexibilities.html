@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Which temporary flexibilities were used? - Manage T Level results - GOV.UK
+Were employer-led activities used? - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,25 +29,21 @@ Which temporary flexibilities were used? - Manage T Level results - GOV.UK
           <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-heading-l govuk-fieldset__heading">
-                Were any other temporary flexibilities granted to {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}?
+                Did {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} use the employer-led activities/projects temporary flexibility?
               </h1>
             </legend>
-
-              <div class="govuk-radios" data-module="govuk-radios">
+            <div id="special-consideration-hint" class="govuk-hint">Select Yes if the employer-led activities/projects were used as a temporary flexibility.</div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities"
-                    type="radio" value="Employer led activities/projects" {{
-                    checked("temporary-flexibilities", "Employer led activities/projects" ) }}>
+                  <input class="govuk-radios__input" id="temporary-flexibilities-1" name="temporary-flexibilities" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>
                   <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-1">
-                    Employer led activities/projects
+                    Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities"
-                    type="radio" value="No other temporary flexibilities were used" {{
-                    checked("temporary-flexibilities", "No other temporary flexibilities were used" ) }}>
+                  <input class="govuk-radios__input" id="temporary-flexibilities-2" name="temporary-flexibilities" type="radio" value="no" {{ checked("blended-placement", "no") }}>
                   <label class="govuk-label govuk-radios__label" for="temporary-flexibilities-2">
-                    No other temporary flexibilities were used
+                    No
                   </label>
                 </div>
               </div>
