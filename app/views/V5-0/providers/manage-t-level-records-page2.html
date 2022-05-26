@@ -101,45 +101,8 @@ Manage T Level records - Manage T Level results - GOV.UK
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Awarding organisation
-          </legend>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-              <input class="govuk-checkboxes__input" id="awarding-organisation"
-                     name="awarding-organisation" type="checkbox" value="ncfe">
-              <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation">
-                NCFE
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-              <input class="govuk-checkboxes__input" id="awarding-organisation-2"
-                     name="awarding-organisation" type="checkbox" value="pearson">
-              <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation-2">
-                Pearson
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-              <input class="govuk-checkboxes__input" id="awarding-organisation-3"
-                     name="awarding-organisation" type="checkbox" value="city and guilds">
-              <label class="govuk-label govuk-checkboxes__label" for="awarding-organisation-3">
-                City and Guilds
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             T Level
           </legend>
-          <div class="govuk-form-group govuk-!-margin-top-1">
-            <label class="govuk-label govuk-visually-hidden" for="tlevel-search">
-              T level search
-            </label>
-            <input onkeyup="tlevelsearch()" class="govuk-input govuk-input--width-10" id="tlevel-search"
-                   name="width-10" type="text">
-          </div>
           <div class="govuk-checkboxes scroll" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item govuk-checkboxes--small">
               <input class="govuk-checkboxes__input" id="t-level" name="t-level" type="checkbox"
@@ -191,17 +154,12 @@ Manage T Level records - Manage T Level results - GOV.UK
 
       <div class="app-records-actions" id="sortAndExport">
         <div class="app-records-actions__col">
-          <p class="govuk-body govuk-!-margin-bottom-6 app-float-right"><a
-                  href="/public/downloads/tLevelsStudentDataV3.csv" download class="govuk-link">Export
-            these records</a></p>
           <p class="govuk-visually-hidden">Records sorted by </p>
           <p class="govuk-body govuk-!-margin-bottom-3">
             <span class="govuk-!-font-weight-bold">Sort by:</span>
             <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
-              <span class="">Date updated</span>
             </span>
-            <span>|</span>
-            <span class="govuk-!-margin-left-2 govuk-!-margin-right-1">
+            <span class="govuk-!-margin-right-1">
               <a href="#" class="govuk-link govuk-link--no-visited-state">Last name</a>
             </span>
           </p>
@@ -237,7 +195,6 @@ Manage T Level records - Manage T Level results - GOV.UK
               </p> -->
             </div>
             <div>
-              <p class="govuk-body-s">Awarding organisation: Pearson</p>
               <p class="govuk-body-s">
                 Start year:
                 <span class="app-nowrap">2020 to 2021</span>
@@ -311,6 +268,10 @@ Manage T Level records - Manage T Level results - GOV.UK
 
   .pagination .pagination__list-items {
     text-align: center;
+  }
+
+  .app-filter__tag:after {
+    content: none;
   }
 
 </style>
