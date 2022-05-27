@@ -3,6 +3,7 @@ function search() {
   let cards = document.querySelectorAll('.app-application-card')
   console.log(cards.length)
   cardshidden = 0
+  cardsshown = 0
   // Locate the search input
   let search_query = document.getElementById("keywords").value;
   // Loop through the cards
@@ -14,6 +15,7 @@ function search() {
         document.getElementById('no-results').classList.add('is-hidden')
         // ...remove the `.is-hidden` class.
         cards[i].classList.remove("is-hidden");
+        cardsshown++
     }  else {
       // Otherwise, add the class.
       cards[i].classList.add("is-hidden");
@@ -30,6 +32,7 @@ function search() {
   }
   //show clear search
   document.getElementById('clearSearch').classList.remove("govuk-visually-hidden")
+  document.getElementById('paginationId').classList.add("govuk-visually-hidden")
 }
 
 function tlevelsearch() {
@@ -64,6 +67,7 @@ function clearSearch() {
   })
   document.getElementById('keywords').value = ''
   document.getElementById('clearSearch').classList.add("govuk-visually-hidden")
+  document.getElementById('paginationId').classList.remove('govuk-visually-hidden')
   document.getElementById('sortAndExport').classList.remove('govuk-visually-hidden')
   document.getElementById('pagination').classList.remove('govuk-visually-hidden')
   document.getElementById('no-results').classList.add('is-hidden')

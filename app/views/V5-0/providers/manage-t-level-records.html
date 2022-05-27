@@ -188,7 +188,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                    type="search">
             <button type="button"
                     class="govuk-button app-search__button govuk-!-margin-bottom-2 govuk-!-margin-right-1"
-                    data-module="govuk-button" onclick="search()">
+                    data-module="govuk-button" id="searchButton" onclick="search()">
                 Search
             </button>
             <button id="clearSearch" class="govuk-button govuk-button--secondary govuk-visually-hidden"
@@ -228,7 +228,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                 </div>
             </div>
 
-            <div class="pagination govuk-body">
+            <div id="paginationId" class="pagination govuk-body">
                 <ul class="pagination__list-items govuk-!-padding-left-0">
                     <li class="pagination__item" id="previousButton" style="visibility: hidden">
                         <div class="pagination__link" href="./manage-t-level-records.html">«
