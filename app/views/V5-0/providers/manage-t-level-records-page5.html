@@ -11,6 +11,7 @@ Manage T Level records - Manage T Level results - GOV.UK
             <li class="govuk-breadcrumbs__list-item">
                 <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
             </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">Registered Learners</li>
         </ol>
     </div>
 </nav>
@@ -68,28 +69,28 @@ Manage T Level records - Manage T Level results - GOV.UK
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="english-level" name="status" type="checkbox"
-                                   value="English">
+                                   value="incomplete">
                             <label class="govuk-label govuk-checkboxes__label" for="english-level">
                                 English level
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="maths-level" name="status" type="checkbox"
-                                   value="Maths">
+                                   value="incomplete">
                             <label class="govuk-label govuk-checkboxes__label" for="maths-level">
                                 Maths level
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="industry-placement" name="status" type="checkbox"
-                                   value="Industry placement">
+                                   value="incomplete">
                             <label class="govuk-label govuk-checkboxes__label" for="industry-placement">
                                 Industry placement
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="all-incomplete" name="status" type="checkbox"
-                                   value="All incomplete">
+                                   value="incomplete">
                             <label class="govuk-label govuk-checkboxes__label" for="all-incomplete">
                                 All incomplete records
                             </label>
@@ -105,70 +106,70 @@ Manage T Level records - Manage T Level results - GOV.UK
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="building-services-engineering" name="t-level" type="checkbox"
-                                   value="Building Services Engineering">
+                                   value="design, surveying and planning">
                             <label class="govuk-label govuk-checkboxes__label" for="building-services-engineering">
                                 Building Services Engineering
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="design-surveying-and-planning" name="t-level" type="checkbox"
-                                   value="Design, Surveying and Planning">
+                                   value="business studies and administration">
                             <label class="govuk-label govuk-checkboxes__label" for="design-surveying-and-planning">
                                 Design, Surveying and Planning
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="digital-business-services" name="t-level" type="checkbox"
-                                   value="Digital Business Services">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="digital-business-services">
                                 Digital Business Services
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="digital-production-design-and-development" name="t-level" type="checkbox"
-                                   value="Digital Production Design and Development">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="digital-production-design-and-development">
                                 Digital Production, Design and Development
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="digital-support-services" name="t-level" type="checkbox"
-                                   value="Digital Support Services">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="digital-support-services">
                                 Digital Support Services
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="education-and-childcare" name="t-level" type="checkbox"
-                                   value="Education and Childcare">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="education-and-childcare">
                                 Education and Childcare
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="health" name="t-level" type="checkbox"
-                                   value="Health">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="health">
                                 Health
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="healthcare-science" name="t-level" type="checkbox"
-                                   value="Healthcare Science">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="healthcare-science">
                                 Healthcare Science
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="onsite-construction" name="t-level" type="checkbox"
-                                   value="Onsite Construction">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="onsite-construction">
                                 Onsite Construction
                             </label>
                         </div>
                         <div class="govuk-checkboxes__item govuk-checkboxes--small">
                             <input class="govuk-checkboxes__input" id="science" name="t-level" type="checkbox"
-                                   value="Science">
+                                   value="business studies">
                             <label class="govuk-label govuk-checkboxes__label" for="science">
                                 Science
                             </label>
@@ -186,14 +187,18 @@ Manage T Level records - Manage T Level results - GOV.UK
             </label>
             <input class="govuk-input app-search__input govuk-input--width-20" id="keywords" name="keywords"
                    type="search">
-            <button type="button"
-                    class="govuk-button app-search__button govuk-!-margin-bottom-2 govuk-!-margin-right-1"
-                    data-module="govuk-button" id="searchButton" onclick="search()">
-                Search
-            </button>
-            <button id="clearSearch" class="govuk-button govuk-button--secondary govuk-visually-hidden"
-                    onclick="clearSearch()">Clear search
-            </button>
+            <a href="./manage-t-level-records.html">
+                <button type="button"
+                        class="govuk-button app-search__button govuk-!-margin-bottom-2 govuk-!-margin-right-1"
+                        data-module="govuk-button" onclick="search()">
+                    Search
+                </button>
+            </a>
+            <a href="./manage-t-level-records.html">
+                <button id="clearSearch" class="govuk-button govuk-button--secondary govuk-visually-hidden"
+                        onclick="clearSearch()">Clear search
+                </button>
+            </a>
             </p>
         </div>
 
@@ -216,57 +221,47 @@ Manage T Level records - Manage T Level results - GOV.UK
                     </p>
                 </div>
             </div>
-            <div class="govuk-body">
-                Viewing 1 - 10 of 11 learners
-            </div>
 
-            <style>
-                div:nth-child(11) {
-                    display: none !important;
-                }
-            </style>
-            <div id="results">
-                {% include "../includes/overall-results/overall-results-learner-data.html" %}
-                <div id="no-results" class="is-hidden">
-                    {% include "../includes/overall-results/no-results.html" %}
-                </div>
-            </div>
-
-            <div id="paginationId" class="pagination govuk-body">
-                <ul class="pagination__list-items govuk-!-padding-left-0">
-                    <li class="pagination__item" id="previousButton" style="visibility: hidden">
-                        <div class="pagination__link" href="./manage-t-level-records.html">«
-                            <span aria-hidden="true" role="presentation">Previous page</span>
-                        </div>
-                    </li>
-                    <li class="pagination__item">
-                        <a class="pagination__link govuk-!-font-weight-bold" href="?page=1">
-                            1
-                        </a>
-                    </li>
-                    <li class="pagination__item">
-                        <a class="pagination__link" href=./manage-t-level-records-page2.html>
-                            2
-                        </a>
-                    </li>
-                    <li class="pagination__item">
-                        <a class="pagination__link" href=./manage-t-level-records-page3.html>
-                            3
-                        </a>
-                    </li>
-                    <li class="pagination__item" id="nextButton">
-                        <a class="pagination__link" href="./manage-t-level-records-page2.html">
-                            Next page
-                            <span aria-hidden="true" role="presentation">»</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="govuk-!-display-inline govuk-body">
-                    Viewing 1 - 10 of 11 learners
-                </div>
+            <div id="no-results">
+                {% include "../includes/overall-results/no-results.html" %}
             </div>
         </div>
+
+        <div class="pagination govuk-body">
+            <ul class="pagination__list-items govuk-!-padding-left-0">
+                <li class="pagination__item" id="previousButton">
+                    <a class="pagination__link" href="./manage-t-level-records-page4.html">
+                        «
+                        <span aria-hidden="true" role="presentation">
+               Previous page
+              </span>
+                    </a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href=./manage-t-level-records-page3.html>
+                        3
+                    </a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href=./manage-t-level-records-page4.html>
+                        4
+                    </a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link govuk-!-font-weight-bold" href=./manage-t-level-records-page5.html>
+                        5
+                    </a>
+                </li>
+                <li class="pagination__item" id="nextButton" style="visibility: hidden">
+                    <a class="pagination__link" href="./manage-t-level-records-page5.html">
+                        Next page
+                        <span aria-hidden="true" role="presentation">»</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
+</div>
 </div>
 
 <script src="/public/javascripts/overall-results.js"></script>
