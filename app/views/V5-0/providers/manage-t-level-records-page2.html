@@ -183,7 +183,7 @@ Manage T Level records - Manage T Level results - GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group govuk-!-margin-bottom-6">
       <label class="govuk-label app-search__label govuk-label--m" for="keywords">
-        Search by learner name or ULN
+        Search by learner last name or ULN
       </label>
       <input class="govuk-input app-search__input govuk-input--width-20" id="keywords" name="keywords"
              type="search">
@@ -209,11 +209,14 @@ Manage T Level records - Manage T Level results - GOV.UK
         <div class="app-records-actions__col">
           <p class="govuk-visually-hidden">Records sorted by </p>
           <p class="govuk-body govuk-!-margin-bottom-3">
-            <span class="govuk-!-font-weight-bold">Sort by:</span>
-            <span class="govuk-!-margin-left-1 govuk-!-margin-right-1">
+            <span class="govuk-!-font-weight-bold">Sort by last name:</span>
+            <span class="govuk-!-margin-left-1 govuk-!-margin-right-1"></span>
+            <span>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">a - z</a>
             </span>
-            <span class="govuk-!-margin-right-1">
-              <a href="#" class="govuk-link govuk-link--no-visited-state">Last name</a>
+            <span>|</span>
+            <span>
+              <a href="#" class="govuk-link govuk-link--no-visited-state">z - a</a>
             </span>
           </p>
         </div>
@@ -285,15 +288,25 @@ Manage T Level records - Manage T Level results - GOV.UK
             </a>
           </li>
           <li class="pagination__item">
-            <a class="pagination__link" href=./manage-t-level-records-page2.html>
+            <a class="pagination__link govuk-!-font-weight-bold" href=./manage-t-level-records-page2.html>
               2
             </a>
           </li>
+          <li class="pagination__item">
+            <a class="pagination__link" href=./manage-t-level-records-page3.html>
+              3
+            </a>
+          </li>
+          <li class="pagination__item">
+            <a class="pagination__link" href=./manage-t-level-records-page4.html>
+              4
+            </a>
+          </li>
           <li class="pagination__item" id="nextButton">
-            <div class="pagination__link" style="visibility: hidden" href="./manage-t-level-records-page2.html">
+            <a class="pagination__link" href="./manage-t-level-records-page3.html">
               Next page
               <span aria-hidden="true" role="presentation">»</span>
-            </div>
+            </a>
           </li>
         </ul>
         <div class="govuk-!-display-inline">
