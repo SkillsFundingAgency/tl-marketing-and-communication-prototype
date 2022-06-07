@@ -7,7 +7,17 @@ Learner's T Level record
 
 {% block beforeContent %}
 <nav>
-  <a href="manage-t-level-records" class="govuk-back-link">Back</a>
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="../index.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./manage-t-level-records.html">Manage T Level records</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} T Level record</li>
+    </ol>
+  </div>
 </nav>
 {% endblock %}
 
@@ -247,6 +257,7 @@ Learner's T Level record
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const uln = urlParams.get('uln');
+
   sessionStorage.setItem('uln', uln)
 </script>
 
