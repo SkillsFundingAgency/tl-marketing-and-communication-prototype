@@ -414,3 +414,17 @@ $govuk-assets-path: '/govuk/assets/';
 .v5{
   @import "version/v5/learner-record";
 }
+
+@media only screen and (max-width: 810px) {
+  #keywords {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #keywords {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
