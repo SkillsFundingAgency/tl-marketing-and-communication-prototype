@@ -1,21 +1,21 @@
 <dl class="govuk-summary-list">
-    {% for key, value in data.tLevelsStudentDataV3 %}
+    {% for value in tLevelsStudentData | sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="learnerName") %}
     <div class="govuk-summary-list__row">
         <div class="govuk-grid-row govuk-padding-1">
             <div class="govuk-grid-column-two-thirds">
                 <dt class="govuk-summary-list__key govuk-grid-column-full">
                     <h3 class="app-application-card__trainee-name govuk-heading-m govuk-!-margin-bottom-0">
-                        <a href="update-t-level-record?uln={{ key }}"
+                        <a href="update-t-level-record?uln={{ value.KEY_uln }}"
                            class="govuk-link govuk-link--no-visited-state">
                             {{ value.learnerName }}
                         </a>
                     </h3>
                 </dt>
                 <dd class="govuk-summary-list__value govuk-grid-column-full">
-                    <p class="govuk-body-m">{{ key }}</p>
+                    <p class="govuk-body-m">{{ value.KEY_uln }}</p>
                     <p class="govuk-body-s">
                         <span class="govuk-visually-hidden">Course: </span>
-                        {{ value.learnerTLevelTitle }}
+                        {{ value.learnerTLevelTitle | safe}}
                     </p>
                     <p class="govuk-body-s">
                         Start year:
@@ -28,8 +28,8 @@
                     {% if value.learnerMaths == "Not yet received" or value.learnerEnglish == "Not yet received" or value.learnerIndustryPlacement == "Not yet received" %}
                     <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-1">Incomplete</strong>
                     {% endif %}
-                    {% if key == '1122334455' or key == '5647382910' or key == '8642135790' %}
-                    {% elif key != '1122334455' or key != '5647382910' or key == '8642135790' %}
+                    {% if value.KEY_uln == '1122334455' or value.KEY_uln == '5647382910' or value.KEY_uln == '8642135790' %}
+                    {% elif value.KEY_uln != '1122334455' or value.KEY_uln != '5647382910' or value.KEY_uln == '8642135790' %}
                     <ul class="govuk-body-s govuk-list">
                         {% if value.learnerIndustryPlacement != "Placement completed" %}
                         <li>
@@ -57,6 +57,5 @@
             </div>
         </div>
     </div>
-
     {% endfor %}
 </dl>

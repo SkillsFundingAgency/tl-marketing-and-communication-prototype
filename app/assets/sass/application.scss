@@ -414,7 +414,7 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .v5{
-  @import "version/v5/learner-record";
+@import "version/v5/learner-record";
 }
 
 @media only screen and (max-width: 810px) {

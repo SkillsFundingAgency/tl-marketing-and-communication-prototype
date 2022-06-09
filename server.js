@@ -55,6 +55,11 @@ var dataFilesToSessionDataLiveReload = process.env.DATA_FILES_TO_SESSION_DATA_LI
 var useCookieSessionStore = process.env.USE_COOKIE_SESSION_STORE || config.useCookieSessionStore
 var useHttps = process.env.USE_HTTPS || config.useHttps
 
+const csvToJson = require('convert-csv-to-json')
+
+const tLevelsStudentJson = csvToJson.formatValueByType().fieldDelimiter(',').getJsonFromCsv('./app/data/data-files/tLevelsStudentDataV3.csv')
+const tLevelsStudentData = Object.assign(tLevelsStudentJson)
+
 useHttps = useHttps.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
@@ -161,6 +166,9 @@ app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
+app.locals.tLevelsStudentDataSortBy = "learnerName"
+app.locals.tLevelsStudentDataSortOrder = 'reverse=true'
+app.locals.tLevelsStudentData = tLevelsStudentData
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
 app.locals.extensionConfig = extensions.getAppConfig()
 

@@ -23,7 +23,7 @@ Manage T Level records - Manage T Level results - GOV.UK
     </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row v5">
     <div class="govuk-grid-column-one-third">
         <div class="filter-border">
             <h2 class="govuk-heading-m govuk-!-padding-top-4">Filters</h2>
@@ -179,7 +179,7 @@ Manage T Level records - Manage T Level results - GOV.UK
         </div>
 
     </div>
-    <div class="govuk-grid-column-two-thirds v5">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group govuk-!-margin-bottom-6">
             <label class="govuk-label app-search__label govuk-label--m" for="keywords">
                 Search by learner last name or ULN
@@ -197,22 +197,18 @@ Manage T Level records - Manage T Level results - GOV.UK
             </p>
         </div>
 
-
         <div class="moj-filter-layout__content" id="records-list">
 
             <div class="app-records-actions" id="sortAndExport">
                 <div class="app-records-actions__col">
                     <p class="govuk-visually-hidden">Records sorted by </p>
                     <p class="govuk-body govuk-!-margin-bottom-3">
-                        <span class="govuk-!-font-weight-bold">Sort by last name:</span>
-                        <span class="govuk-!-margin-left-1 govuk-!-margin-right-1"></span>
-                        <span>
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">a - z</a>
-                        </span>
-                        <span>|</span>
-                        <span>
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">z - a</a>
-                        </span>
+                        <span class="govuk-!-font-weight-bold govuk-!-margin-right-1">Sort by last name:</span>
+                        {% if data['sortOrder'] == 'z-to-a' %}
+                            <a href="?sortOrder=a-to-z" class="govuk-link govuk-link--no-visited-state">A to Z</a> | Z to A
+                        {% else %}
+                        A to Z | <a href="?sortOrder=z-to-a" class="govuk-link govuk-link--no-visited-state">Z to A</a>
+                        {% endif %}
                     </p>
                 </div>
             </div>
@@ -220,11 +216,6 @@ Manage T Level records - Manage T Level results - GOV.UK
                 Viewing 1 - 10 of 50 learners
             </div>
 
-            <style>
-                div:nth-child(11) {
-                    display: none !important;
-                }
-            </style>
             <div id="results" class="learner-records">
                 {% include "../includes/overall-results/overall-results-learner-data.html" %}
                 <div id="no-results" class="is-hidden">
