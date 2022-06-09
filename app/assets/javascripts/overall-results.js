@@ -84,7 +84,7 @@ function applyFilters() {
 
   for (var i = 0; i < filters. length; i++) {
     console.log(filters[i])
-    arrayOutput += '<p class="govuk-body govuk-!-margin-bottom-1" ><a class="app-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>' + filters[i] + ' </a></p>'
+    arrayOutput += '<p class="govuk-body govuk-!-margin-bottom-1" ><span class="app-filter__tag">' + filters[i] + ' </span></p>'
   };
   selectedFilters.innerHTML = arrayOutput
   document.getElementById('clearFilters').classList.remove('govuk-visually-hidden')
