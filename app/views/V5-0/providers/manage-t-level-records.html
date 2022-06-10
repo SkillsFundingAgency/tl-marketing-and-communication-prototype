@@ -218,14 +218,14 @@ Manage T Level records - Manage T Level results - GOV.UK
 
             <div id="results" class="learner-records">
                 {% include "../includes/overall-results/overall-results-learner-data.html" %}
-                <div id="no-results" class="is-hidden">
+                <div id="no-results" class="govuk-!-display-none">
                     {% include "../includes/overall-results/no-results.html" %}
                 </div>
             </div>
 
             <div id="paginationId" class="pagination govuk-body">
-                <ul class="pagination__list-items govuk-!-padding-left-0">
-                    <li class="pagination__item" id="previousButton" style="visibility: hidden">
+                <ul class="pagination__list-items govuk-!-text-align-centre govuk-!-padding-left-0">
+                    <li class="pagination__item app-float-left" id="previousButton" style="visibility: hidden">
                         <div class="pagination__link" href="./manage-t-level-records.html">«
                             <span aria-hidden="true" role="presentation">Previous page</span>
                         </div>
@@ -245,7 +245,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                             3
                         </a>
                     </li>
-                    <li class="pagination__item" id="nextButton">
+                    <li class="pagination__item app-float-right" id="nextButton">
                         <a class="pagination__link" href="./manage-t-level-records-page2.html">
                             Next page
                             <span aria-hidden="true" role="presentation">»</span>
@@ -261,29 +261,5 @@ Manage T Level records - Manage T Level results - GOV.UK
 </div>
 
 <script src="/public/javascripts/overall-results.js"></script>
-
-<style>
-    .is-hidden {
-        display: none;
-    }
-
-    #nextButton {
-        float: right;
-    }
-
-    #previousButton {
-        float: left;
-    }
-
-    .pagination .pagination__list-items {
-        text-align: center;
-    }
-
-    .app-filter__tag:after {
-        content: none;
-    }
-
-</style>
-
 {% endblock %}
 

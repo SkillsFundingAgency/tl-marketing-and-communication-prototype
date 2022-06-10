@@ -209,15 +209,12 @@ Manage T Level records - Manage T Level results - GOV.UK
                 <div class="app-records-actions__col">
                     <p class="govuk-visually-hidden">Records sorted by </p>
                     <p class="govuk-body govuk-!-margin-bottom-3">
-                        <span class="govuk-!-font-weight-bold">Sort by last name:</span>
-                        <span class="govuk-!-margin-left-1 govuk-!-margin-right-1"></span>
-                        <span>
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">a - z</a>
-                        </span>
-                        <span>|</span>
-                        <span>
-                            <a href="#" class="govuk-link govuk-link--no-visited-state">z - a</a>
-                        </span>
+                        <span class="govuk-!-font-weight-bold govuk-!-margin-right-1">Sort by last name:</span>
+                        {% if data['sortOrder'] == 'z-to-a' %}
+                        <a href="?sortOrder=a-to-z" class="govuk-link govuk-link--no-visited-state">A to Z</a> | Z to A
+                        {% else %}
+                        A to Z | <a href="?sortOrder=z-to-a" class="govuk-link govuk-link--no-visited-state">Z to A</a>
+                        {% endif %}
                     </p>
                 </div>
             </div>
@@ -658,8 +655,8 @@ Manage T Level records - Manage T Level results - GOV.UK
         </div>
 
         <div class="pagination govuk-body">
-            <ul class="pagination__list-items govuk-!-padding-left-0">
-                <li class="pagination__item" id="previousButton">
+            <ul class="pagination__list-items govuk-!-padding-left-0 govuk-!-text-align-centre">
+                <li class="pagination__item app-float-left" id="previousButton">
                     <a class="pagination__link" href="./manage-t-level-records-page2.html">
                         «
                         <span aria-hidden="true" role="presentation">
@@ -692,7 +689,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                         5
                     </a>
                 </li>
-                <li class="pagination__item" id="nextButton">
+                <li class="pagination__item app-float-right" id="nextButton">
                     <a class="pagination__link" href="./manage-t-level-records-page4.html">
                         Next page
                         <span aria-hidden="true" role="presentation">»</span>
@@ -708,29 +705,5 @@ Manage T Level records - Manage T Level results - GOV.UK
 </div>
 
 <script src="/public/javascripts/overall-results.js"></script>
-
-<style>
-    .is-hidden {
-        display: none;
-    }
-
-    #nextButton {
-        float: right;
-    }
-
-    #previousButton {
-        float: left;
-    }
-
-    .pagination .pagination__list-items {
-        text-align: center;
-    }
-
-    .app-filter__tag:after {
-        content: none;
-    }
-
-</style>
-
 {% endblock %}
 
