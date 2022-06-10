@@ -28,30 +28,31 @@ Query T Level
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Core <br>(code)
+              Core <br aria-hidden=true">(code)
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCore'] }}<br>
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCore'] }}<br aria-hidden="true">
               {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCoreCode'] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Occupational Specialism <br>(code)
+              Occupational Specialism <br aria-hidden="true">(code)
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1'] }}<br>
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1Code'] }}  
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1'] }}<br aria-hidden="true">
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1Code'] }}
             </dd>
           </div>
         </dl>
 
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-                  Tell us what is wrong with this T Level's details
-                </label>
-              </h1>
+                <h2 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--m" for="more-detail">
+                    Tell us what is wrong with this T Level's details
+                  </label>
+              </h2>
               <div id="more-detail-hint" class="govuk-hint">
                 You do not need to include any of the above information
               </div>
