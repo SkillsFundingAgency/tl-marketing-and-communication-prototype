@@ -24,31 +24,29 @@
     <div class="govuk-grid-column-two-thirds">
         <form class="form" action="registration-details" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
-                        <h1 class="govuk-fieldset__heading">
-                          Search for a registration
-                        </h1>
-                    </legend>
-                    <p class="govuk-body">You can view, amend and delete a learner’s registration.</p>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="search">
+                <h1 class="govuk-label-wrapper govuk-heading-xl govuk-!-margin-bottom-7">
+                       Search for a registration
+                </h1>
+
+                <p class="govuk-body">You can view, amend and delete a learner’s registration.</p>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="uln">
                         Enter their unique learner number (ULN)
-                      </label>
-                      <span class="govuk-hint">
+                    </label>
+                    <span class="govuk-hint">
                           ULN must be 10 digits long
                       </span>
-                      <input class="govuk-input govuk-input--width-10" id="uln" name="uln">
-                    </div>
-
-                </fieldset>
+                    <input class="govuk-!-margin-top-2 govuk-input govuk-input--width-20 govuk-!-display-block" id="uln" name="uln">
+                </div>
             </div>
+
 
             <button class="govuk-button" data-module="govuk-button">Search</button>
 
         </form>
     </div>
 </div>
+
 <script type="application/json" id="search-for-learner-validation">
   {
 
