@@ -215,8 +215,8 @@ Learner's T Level record
       </div>
     </dl>
 
+    {% if data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] %}
     <h2 class="govuk-heading-m">Core component</h2>
-
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
@@ -231,7 +231,10 @@ Learner's T Level record
           {% endif %}
       </div>
     </dl>
+    {% else %}
+    {% endif %}
 
+    {% if data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] %}
     <h2 class="govuk-heading-m">Occupational specialism</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
       <div class="govuk-summary-list__row">
@@ -240,6 +243,8 @@ Learner's T Level record
           <p><span style="font-weight: bold">Grade</span>: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
       </div>
     </dl>
+    {% else %}
+    {% endif %}
 
 
     <h2 class="govuk-heading-m">Overall T Level result</h2>
