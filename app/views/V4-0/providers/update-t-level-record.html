@@ -211,7 +211,7 @@ Learner's T Level record
           T Level grade
         </dd>
         <dd class="govuk-summary-list__value">
-          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
+          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] | safe }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="">
@@ -225,7 +225,7 @@ Learner's T Level record
         </dd>
         <dd class="govuk-summary-list__value">
 
-          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] }}</p>
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
           <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }} 
             {% if data['uln'] === "1234567890" %}
             <strong class="govuk-tag govuk-tag--purple">
