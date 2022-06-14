@@ -21,22 +21,19 @@ Manage providers – Manage T Level results – GOV.UK
   <div class="govuk-grid-column-two-thirds">
     <form action="select-providers-tlevels" method="get" novalidate>
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--xl" for="provider">
-          Which provider do you want to manage?
-          </label>
+        <h1 class="govuk-heading-xl">Which provider do you want to manage?</h1>
 
-          <label class="govuk-label" for="provider">Enter the provider's name
-            <div class="autocomplete-wrapper">
-                <select name="providerlist" class="govuk-select" id="providerlist">
-                  <option value="">Enter the provider's name</option>
-                  <option value="TL-1">Abingdon and Witney College</option>
-                  <option value="TL-2">Barnsley City Academy </option>
-                  <option value="TL-3">Barking College</option>
-                  <option value="TL-4">Leeds City College</option>
-                  <option value="TL-5">Luton City College</option>
-                 </select>
-              </div>
-            </label>
+        <label class="govuk-label" for="providerlist">Enter the provider's name</label>
+        <div class="autocomplete-wrapper">
+          <select name="providerlist" class="govuk-select" id="providerlist" aria-required="true">
+            <option value=""></option>
+            <option value="TL-1">Abingdon and Witney College</option>
+            <option value="TL-2">Barnsley City Academy </option>
+            <option value="TL-3">Barking College</option>
+            <option value="TL-4">Leeds City College</option>
+            <option value="TL-5">Luton City College</option>
+          </select>
+        </div>
       </div>
 
       <details class="govuk-details" data-module="govuk-details">
@@ -55,15 +52,15 @@ Manage providers – Manage T Level results – GOV.UK
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-    </form> 
-    
+    </form>
+
     <h2 class="govuk-heading-m">Before you start</h2>
 
-        <p class="govuk-body">You should <a class= "govuk-link" href="../t-levels/student-t-levels.html">confirm your T Levels</a> before adding them to providers.</p>
+    <p class="govuk-body">You should <a class= "govuk-link" href="../t-levels/student-t-levels.html">confirm your T Levels</a> before adding them to providers.</p>
 
-        <p class="govuk-body">If you have already added a provider, you can view or change the T Levels they offer.</p>
+    <p class="govuk-body">If you have already added a provider, you can view or change the T Levels they offer.</p>
 
-        <p class="govuk-body">If you have not added a provider, you can add them and select the T Levels they offer.</p>
+    <p class="govuk-body">If you have not added a provider, you can add them and select the T Levels they offer.</p>
 
     <a class="govuk-button govuk-button--secondary" role="button" href="your-providers.html">View existing providers</a>
 
@@ -74,20 +71,20 @@ Manage providers – Manage T Level results – GOV.UK
 <script type="text/javascript">
   var selectEl = document.querySelector('#providerlist')
   accessibleAutocomplete.enhanceSelectElement({
-      autoselect: true,
-      confirmOnBlur: true,
-      defaultValue: "",
-      minLength: 2,
-      selectElement: selectEl
+    autoselect: true,
+    confirmOnBlur: true,
+    defaultValue: "",
+    minLength: 2,
+    selectElement: selectEl
   })
 
   var queryStringParameters = window.location.search
   var previouslySubmitted = queryStringParameters.length > 0
   if (previouslySubmitted) {
-      var submittedEl = document.querySelector('.submitted')
-      submittedEl.classList.remove('submitted--hidden')
-      var params = new URLSearchParams(document.location.search.split('?')[1])
-      document.querySelector('.submitted__last-location').innerHTML = params.get('providerlist')
+    var submittedEl = document.querySelector('.submitted')
+    submittedEl.classList.remove('submitted--hidden')
+    var params = new URLSearchParams(document.location.search.split('?')[1])
+    document.querySelector('.submitted__last-location').innerHTML = params.get('providerlist')
   }
 </script>
 

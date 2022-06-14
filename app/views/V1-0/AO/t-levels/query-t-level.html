@@ -29,20 +29,20 @@ Query T Level
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Core <br>(code)
+              Core <br aria-hidden=true">(code)
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCore'] }}<br>
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCore'] }}<br aria-hidden="true">
               {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelCoreCode'] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Occupational Specialism <br>(code)
+              Occupational Specialism <br aria-hidden="true">(code)
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1'] }}<br>
-              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1Code'] }}  
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1'] }}<br aria-hidden="true">
+              {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelOS1Code'] }}
             </dd>
           </div>
         </dl>
@@ -59,7 +59,6 @@ Query T Level
                 text: "You do not need to include any of the above information."
               }
             }) }}
-
 
           <button class="govuk-button" data-module="govuk-button">
             Submit
