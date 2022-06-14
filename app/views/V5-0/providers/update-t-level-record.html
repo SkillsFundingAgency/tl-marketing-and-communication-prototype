@@ -51,28 +51,6 @@ Learner's T Level record
     <div class="record-header">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
         {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
-
-        <span style="display: inline-block;">
-          {% if data['newplacementResult'] == 'yes' and data['updatedmathsStatus'] == 'yes' and
-          data['updatedenglishStatus'] == 'yes' or data['uln'] === '1122334455' or data['uln'] == '5647382910' or data['uln'] == '8642135790' or data['uln'] == '1231231231'%}
-          <strong class="govuk-tag govuk-tag--green">
-            Complete
-          </strong>
-          {% elif data['newplacementResult'] == 'yes' and data['uln'] == '9876543210' %}
-          <strong class="govuk-tag govuk-tag--green">
-            Complete
-          </strong>
-          {% elif data['newplacementResult'] == 'yes' and data['uln'] == '1169334253' %}
-          <strong class="govuk-tag govuk-tag--green">
-            Complete
-          </strong>
-          {% else %}
-          <strong class="govuk-tag govuk-tag--red">
-            Incomplete
-          </strong>
-          {% endif %}
-        </span>
-
       </h1>
 
       <span class="govuk-caption-l">ULN: {{ [data['uln']] }}
@@ -251,7 +229,11 @@ Learner's T Level record
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
+          {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] %}
           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
+          {% else %}
+          {{ "Results will be displayed from the day before results day and will only be available for final year learners." }}
+          {% endif %}
         </dd>
       </div>
     </dl>
