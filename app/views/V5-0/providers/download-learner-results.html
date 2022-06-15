@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Download T Level results for your learners - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="../providers/tlevels-dashboard.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">
+            Download T Level results for your learners
+        </h1>
+
+        <p class="govuk-body">You can download the results for all of your active learners who are in the final year of their T Level.</p>
+        <p class="govuk-body govuk-!-margin-bottom-6">The results will be available as a CSV file the day before each results day.</p>
+
+
+        <p class="govuk-body">The results in the file may be updated after results day if:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>a grade has changed due to a review or appeal</li>
+            <li>a learner has completed their industry placement</li>
+        </ul>
+        <p class="govuk-body">The file will update each time you download it. Any changes to results will be updated on the results file on the next working day.</p>
+
+        <p class="govuk-body">The results file will not be updated after:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>31 May for overall results provided at the end of the autumn series</li>
+            <li>31 October for overall results provided at the end of the summer series</li>
+        </ul>
+        <p class="govuk-body govuk-!-margin-bottom-6">Following these dates, you will need to look at individual learner records for up-to-date results.</p>
+
+
+        <div class="govuk-button-group">
+            <a class="govuk-button" role="button" href="data:text/csv;charset=utf-8,ULN,Last name,First name,Date of birth,T Level,Start year,Core component,Core code,Core result,Occupational specialism,Specialism code,Specialism result,Industry placement status,Overall result
+            1234567890,Smith,John ,01-Aug-04,T Level in Education and childcare,2020 to 2021,Education and Childcare,60358294,Unclassified,Supporting and Mentoring Students in Educational Settings,ZTLOS008,Unclassified,Not completed,Unclassified
+            1122334455,Thomas,Frankie,02/08/2004,T level in Design Surveying and Planning for Construction,2020 to 2021,Design Surveying and Planning,60358300,A,Surveying and Design for Construction and the Built Environment,ZTLOS001,Distinction,Completed,Distinction
+            1987654320,Chandler,Isobel,09/08/2004,T Level in Digital production design and development,2020 to 2021,Digital Production Design and Development,60358324,B,Digital Production Design and Development,ZTLOS005,Unclassified,Completed with special consideration,Partial achievement
+            1987654321,Lee,Simon,10/08/2004,T Level in Digital production design and development,2021 to 2021,Digital Production Design and Development,60358324,X - no result,Digital Production Design and Development,ZTLOS006,X - no result,Not completed,X - no result
+            4455667788,Christiensen,Rachel,11/08/2004,T level in Design Surveying and Planning for Construction,2022 to 2021,Design Surveying and Planning,60358300,Unclassified,Surveying and Design for Construction and the Built Environment,ZTLOS001,X - no result,Not completed,Unclassified
+            2987654320,Gregory,Lucy,12/08/2004,T Level in Digital production design and development,2020 to 2021,Digital Production Design and Development,60358324,X - no result,,,,Not compelted,X - no result
+            1234567891,Benn,Adrian,21/08/2004,T Level in Education and childcare,2020 to 2021,Education and Childcare,60358294,X - no result,,,,Completed,Partial achievement">Download results file</a>
+            <a class="govuk-button govuk-button--secondary" role="button" href="/V5-0/AO/tlevels-dashboard.html">Back to home</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
