@@ -13,9 +13,8 @@ Learner's T Level record
         <a class="govuk-breadcrumbs__link" href="./tlevels-dashboard.html">Home</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="./manage-t-level-records.html">Manage T Level records</a>
+        <a class="govuk-breadcrumbs__link" href="./manage-t-level-records.html">Registered learners</a>
       </li>
-      <li class="govuk-breadcrumbs__list-item" aria-current="page">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} T Level record</li>
     </ol>
   </div>
 </nav>
@@ -226,7 +225,7 @@ Learner's T Level record
 
 
     <h2 class="govuk-heading-m">Overall T Level result</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
           {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] %}
@@ -238,6 +237,10 @@ Learner's T Level record
       </div>
     </dl>
   </div>
+</div>
+<div class="govuk-button-group">
+  <a id="searchAgainButton" class="govuk-button" role="button" href="./manage-t-level-records.html">Search learner records</a>
+  <a id="backToHomeButton" class="govuk-button govuk-button--secondary" role="button" data-module="govuk-button" href="./tlevels-dashboard.html">Back to home</a>
 </div>
 
 
