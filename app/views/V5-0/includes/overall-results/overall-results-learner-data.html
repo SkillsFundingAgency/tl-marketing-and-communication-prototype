@@ -38,6 +38,8 @@
                                 details</a>
                         </li>
                         {% endif %}
+                        {% if value.KEY_uln == '1169334253' %}
+                        {% elif value.KEY_uln != '1169334253' %}
                         {% if value.learnerMaths == "Not yet received" %}
                         <li>
                             <a class="" href="add-maths-status">Add maths level
@@ -50,6 +52,7 @@
                                 level
                                 details</a>
                         </li>
+                        {% endif %}
                         {% endif %}
                     </ul>
                     {% endif %}
