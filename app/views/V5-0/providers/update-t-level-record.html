@@ -128,7 +128,7 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newmathsStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved'%}
+          {% if data['newmathsStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved (LRS)' %}
           {% else %}
           <a class="govuk-link" href="add-maths-status">
             Add <span class="govuk-visually-hidden"> maths status</span>
@@ -148,7 +148,7 @@ Learner's T Level record
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newenglishStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved'%}
+          {% if data['newenglishStatus'] == 'Achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved (LRS)' %}
           {% else %}
           <a class="govuk-link" href="add-english-status">
             Add <span class="govuk-visually-hidden"> english status</span>
