@@ -31,13 +31,15 @@
                     {% if value.KEY_uln == '1122334455' or value.KEY_uln == '5647382910' or value.KEY_uln == '8642135790' %}
                     {% elif value.KEY_uln != '1122334455' or value.KEY_uln != '5647382910' or value.KEY_uln == '8642135790' %}
                     <ul class="govuk-body-s govuk-list">
-                        {% if value.learnerIndustryPlacement != "Placement completed" %}
+                        {% if value.learnerIndustryPlacement != "Completed" %}
                         <li>
                             <a class="" href="change-ip-result">Add industry
                                 placement
                                 details</a>
                         </li>
                         {% endif %}
+                        {% if value.KEY_uln == '1169334253' %}
+                        {% elif value.KEY_uln != '1169334253' %}
                         {% if value.learnerMaths == "Not yet received" %}
                         <li>
                             <a class="" href="add-maths-status">Add maths level
@@ -50,6 +52,7 @@
                                 level
                                 details</a>
                         </li>
+                        {% endif %}
                         {% endif %}
                     </ul>
                     {% endif %}

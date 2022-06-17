@@ -14,7 +14,6 @@ Manage T Level records - Manage T Level results - GOV.UK
             <li class="govuk-breadcrumbs__list-item">
                 <a class="govuk-breadcrumbs__link" href="search-learner-records.html">Search learner records</a>
             </li>
-            <li class="govuk-breadcrumbs__list-item" aria-current="page">Registered Learners</li>
         </ol>
     </div>
 </nav>
@@ -172,7 +171,7 @@ Manage T Level records - Manage T Level results - GOV.UK
                     data-module="govuk-button" id="searchButton" onclick="search()">
                 Search
             </button>
-            <button id="clearSearch" class="govuk-button govuk-button--secondary govuk-visually-hidden"
+            <button id="clearSearch" class="govuk-button govuk-!-margin-bottom-2 govuk-button--secondary govuk-visually-hidden"
                     onclick="clearSearch()">Clear search
             </button>
             </p>
@@ -231,9 +230,14 @@ Manage T Level records - Manage T Level results - GOV.UK
                         </a>
                     </li>
                 </ul>
-                <div class="govuk-!-display-inline govuk-body">
+                <div class="govuk-!-display-inline dis govuk-body">
                     Viewing 1 - 10 of 50 learners
                 </div>
+                <div class="govuk-button-group govuk-!-margin-top-2">
+                    <a id="searchAgainButton" class="govuk-button" role="button" href="./search-learner-records">Search learner records</a>
+                    <a id="backToHomeButton" class="govuk-button govuk-button--secondary" role="button" data-module="govuk-button" href="./tlevels-dashboard.html">Back to home</a>
+                </div>
+
             </div>
         </div>
     </div>
