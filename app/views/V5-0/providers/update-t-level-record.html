@@ -26,9 +26,12 @@ Learner's T Level record
   <div class="govuk-grid-column-three-quarters">
     {% if data['showBanner'] === 'maths' or data['showBanner'] === 'english'%}
     {% include "../includes/provider-notification-messages/maths-english-success-messages.html" %}
-    {% elif data['showBanner'] === 'ip'%}
+    {% endif %}
+    {% if data['showBanner'] === 'ip' and data['newindustryPlacement'] == 'Completed'
+    or data['newindustryPlacement'] == 'Completed with special consideration' %}
     {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
-    {% else %}
+    {% elif data['showBanner'] === 'ip' %}
+    {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
     {% endif %}
   </div>
 </div>
