@@ -22,7 +22,11 @@ Manage T Level records - Manage T Level results - GOV.UK
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l">Registered Learners (50)</h1>
+        {% if data['learnerStartYear'] == '2020 to 2021' %}
+        <h1 class="govuk-heading-l">Registered Learners (43)</h1>
+        {% else %}
+        <h1 class="govuk-heading-l">Registered Learners (7)</h1>
+        {% endif %}
     </div>
 </div>
 
@@ -192,9 +196,15 @@ Manage T Level records - Manage T Level results - GOV.UK
                     </p>
                 </div>
             </div>
+            {% if data['learnerStartYear'] == '2020 to 2021' %}
             <div class="govuk-body">
-                Viewing 1 - 10 of 50 learners
+                Viewing 1 - 10 of 43 learners
             </div>
+            {% else %}
+            <div class="govuk-body">
+                Viewing 1 - 7 of 7 learners
+            </div>
+            {% endif %}
 
             <div id="results" class="learner-records">
                 {% include "../includes/overall-results/overall-results-learner-data.html" %}
@@ -204,6 +214,7 @@ Manage T Level records - Manage T Level results - GOV.UK
             </div>
 
             <div id="paginationId" class="pagination govuk-body">
+                {% if data['learnerStartYear'] == '2020 to 2021' %}
                 <ul class="pagination__list-items govuk-!-text-align-centre govuk-!-padding-left-0">
                     <li class="pagination__item app-float-left" id="previousButton">
                         <span class="pagination__link--hidden" aria-hidden="true" role="presentation">&#171; Previous page</span>
@@ -230,9 +241,17 @@ Manage T Level records - Manage T Level results - GOV.UK
                         </a>
                     </li>
                 </ul>
+                {% else %}
+                {% endif %}
+                {% if data['learnerStartYear'] == '2020 to 2021' %}
                 <div class="govuk-!-display-inline dis govuk-body">
-                    Viewing 1 - 10 of 50 learners
+                    Viewing 1 - 10 of 43 learners
                 </div>
+                {% else %}
+                <div class="govuk-!-display-inline dis govuk-body">
+                    Viewing 1 - 7 of 7 learners
+                </div>
+                {% endif %}
                 <div class="govuk-button-group govuk-!-margin-top-2">
                     <a id="searchAgainButton" class="govuk-button" role="button" href="./search-learner-records">Search learner records</a>
                     <a id="backToHomeButton" class="govuk-button govuk-button--secondary" role="button" data-module="govuk-button" href="./tlevels-dashboard.html">Back to home</a>
