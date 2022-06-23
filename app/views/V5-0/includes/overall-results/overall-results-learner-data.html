@@ -3,7 +3,8 @@
 
     {% if value['learnerStartYear'] == data['learnerStartYear'] or data['learnerStartYear'] == '' %}
 
-
+    {% set filteredLearners = filters %}
+    {% if value['learnerTLevelTitle'] in filteredLearners | safe %}
     <div class="govuk-summary-list__row">
         <div class="govuk-grid-row govuk-padding-1">
             <div class="govuk-grid-column-two-thirds">
@@ -64,6 +65,8 @@
             </div>
         </div>
     </div>
+    {% else %}
+    {% endif %}
     {% endif %}
     {% endfor %}
 </dl>

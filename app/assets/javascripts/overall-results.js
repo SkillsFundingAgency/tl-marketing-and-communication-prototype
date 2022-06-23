@@ -2,8 +2,8 @@ function search() {
   // Locate the card elements
   let cards = document.querySelectorAll('.govuk-summary-list__row')
   console.log(cards.length)
-  cardshidden = 0
-  cardsshown = 0
+  let cardshidden = 0
+  let cardsshown = 0
   // Locate the search input
   let search_query = document.getElementById("keywords").value;
   // Loop through the cards
@@ -23,7 +23,7 @@ function search() {
       console.log(cards.length)
     }
   }
-    if (cardshidden === 11 ) {
+    if (cardshidden === cards.length ) {
       console.log('no results')
       sessionStorage.setItem('noResults', 'yes')
       document.getElementById('sortAndExport').classList.add('govuk-visually-hidden')
@@ -78,16 +78,41 @@ function clearSearch() {
 
 function applyFilters() {
   const filters = Array.from(document.querySelectorAll('input:checked'), ({ value }) => value);
-  const selectedFilters = document.getElementById("selectedFilters")
-  document.getElementById('selectedFiltersWrapper').classList.remove("govuk-visually-hidden")
+  const selectedFilters = document.getElementById('selectedFilters')
+  document.getElementById('selectedFiltersWrapper').classList.remove('govuk-visually-hidden')
   let arrayOutput = ''
+  console.log(filters)
 
-  for (var i = 0; i < filters. length; i++) {
+  for (let i = 0; i < filters.length; i++) {
     console.log(filters[i])
     arrayOutput += '<p class="govuk-body govuk-!-margin-bottom-1" ><span class="app-filter__tag">' + filters[i] + ' </span></p>'
   };
   selectedFilters.innerHTML = arrayOutput
   document.getElementById('clearFilters').classList.remove('govuk-visually-hidden')
+
+  // let cards = document.querySelectorAll('.govuk-summary-list__row')
+  // let TLevelTitle = document.getElementById('learnerTLevelTitle')
+  // let cardshidden = 0
+
+  // for (let i = 0; i < cards.length; i++) {
+  //   const learner = TLevelTitle.innerHTML
+  //   console.log(TLevelTitle.innerHTML)
+  //   if (learner === filters) {
+  //     cards[i].style.display = ''
+  //   } else {
+  //     cards[i].style.display = 'none'
+  //     cardshidden++
+  //   }
+  //
+  // }
+  // if (cardshidden === cards.length ) {
+  //   console.log('no results')
+  //   sessionStorage.setItem('noResults', 'yes')
+  //   document.getElementById('sortAndExport').classList.add('govuk-visually-hidden')
+  //   document.getElementById('pagination').classList.add('govuk-visually-hidden')
+  //   document.getElementById('no-results').classList.remove('govuk-visually-hidden')
+  // }
+
 }
 
 function clearFilters() {
@@ -98,4 +123,9 @@ function clearFilters() {
   })
   document.getElementById('clearFilters').classList.add('govuk-visually-hidden')
 
+  // let cards = document.querySelectorAll('.govuk-summary-list__row')
+
+  // for (var a = 0; a < cards.length; a++) {
+  //   cards[a].style.display = ''
+  // }
 }

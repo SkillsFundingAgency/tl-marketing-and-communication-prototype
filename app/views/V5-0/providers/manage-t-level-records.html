@@ -213,6 +213,9 @@ Manage T Level records - Manage T Level results - GOV.UK
                 </div>
             </div>
 
+            {% set arr = filters %}
+            {{ arr | dump }}
+
             <div id="paginationId" class="pagination govuk-body">
                 {% if data['learnerStartYear'] == '2020 to 2021' %}
                 <ul class="pagination__list-items govuk-!-text-align-centre govuk-!-padding-left-0">
@@ -261,6 +264,8 @@ Manage T Level records - Manage T Level results - GOV.UK
         </div>
     </div>
 </div>
+
+
 
 <script src="/public/javascripts/overall-results.js"></script>
 {% endblock %}
