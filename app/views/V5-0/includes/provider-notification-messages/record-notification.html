@@ -8,7 +8,7 @@
     <p class="govuk-notification-banner__heading">
       Additional information needed for this learner
       <ul class="govuk-list">
-        {% if data['newplacementResult'] == 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not yet received' %}
+        {% if data['newplacementResult'] == 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' %}
         {% else %}
         <li>
           <a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a>

@@ -1,6 +1,6 @@
 function search() {
   // Locate the card elements
-  let cards = document.querySelectorAll('.app-application-card')
+  let cards = document.querySelectorAll('.govuk-summary-list__row')
   console.log(cards.length)
   cardshidden = 0
   cardsshown = 0
@@ -12,13 +12,13 @@ function search() {
     if(cards[i].innerText.toLowerCase()
       // ...and the text matches the search query...
       .includes(search_query.toLowerCase())) {
-        document.getElementById('no-results').classList.add('is-hidden')
+        document.getElementById('no-results').classList.add('govuk-visually-hidden')
         // ...remove the `.is-hidden` class.
-        cards[i].classList.remove("is-hidden");
+        cards[i].classList.remove('govuk-visually-hidden');
         cardsshown++
     }  else {
       // Otherwise, add the class.
-      cards[i].classList.add("is-hidden");
+      cards[i].classList.add('govuk-visually-hidden');
       cardshidden++
       console.log(cards.length)
     }
@@ -28,11 +28,11 @@ function search() {
       sessionStorage.setItem('noResults', 'yes')
       document.getElementById('sortAndExport').classList.add('govuk-visually-hidden')
       document.getElementById('pagination').classList.add('govuk-visually-hidden')
-      document.getElementById('no-results').classList.remove('is-hidden')
+      document.getElementById('no-results').classList.remove('govuk-visually-hidden')
   }
   //show clear search
-  document.getElementById('clearSearch').classList.remove("govuk-visually-hidden")
-  document.getElementById('paginationId').classList.add("govuk-visually-hidden")
+  document.getElementById('clearSearch').classList.remove('govuk-visually-hidden')
+  document.getElementById('paginationId').classList.add('govuk-visually-hidden')
 }
 
 function tlevelsearch() {
@@ -59,18 +59,18 @@ function tlevelsearch() {
 }
 
 function clearSearch() {
-  let hidden = document.querySelectorAll(".app-application-card")
+  let hidden = document.querySelectorAll('.govuk-summary-list__row')
   console.log(hidden)
   hidden.forEach(function(clearHidden) {
     console.log(clearHidden)
-    clearHidden.classList.remove('is-hidden')
+    clearHidden.classList.remove('govuk-visually-hidden')
   })
   document.getElementById('keywords').value = ''
-  document.getElementById('clearSearch').classList.add("govuk-visually-hidden")
+  document.getElementById('clearSearch').classList.add('govuk-visually-hidden')
   document.getElementById('paginationId').classList.remove('govuk-visually-hidden')
   document.getElementById('sortAndExport').classList.remove('govuk-visually-hidden')
   document.getElementById('pagination').classList.remove('govuk-visually-hidden')
-  document.getElementById('no-results').classList.add('is-hidden')
+  document.getElementById('no-results').classList.add('govuk-visually-hidden')
 
   sessionStorage.setItem('noResults', 'no')
   
