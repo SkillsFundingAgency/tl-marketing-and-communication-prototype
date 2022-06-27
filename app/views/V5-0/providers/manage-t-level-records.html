@@ -194,22 +194,19 @@
                             <li class="pagination__item app-float-left" id="previousButton">
                                 <span class="pagination__link--hidden" aria-hidden="true" role="presentation">&#171; Previous page</span>
                             </li>
+                            <!--This code creates a variable that gives us a number equal to the amount of total pages needed to fit all the data -->
+                            {% set totalLearners = tLevelsStudentData.length+9 %}
+                            {% set totalLearners = totalLearners/10 %}
+                            {% set totalLearners = totalLearners//1 %}
+
+                            {% for i in range(0, totalLearners) %}
                             <li class="pagination__item">
-                                <a class="pagination__link pagination__link__current-page govuk-!-font-weight-bold"
-                                   href="?page=1">
-                                    1
+                                <a class="pagination__link govuk-!-font-weight-bold govuk-link--no-visited-state"
+                                   href="/V5-0/providers/manage-t-level-records-page{{i+1}}.html">
+                                    {{i+1}}
                                 </a>
                             </li>
-                            <li class="pagination__item">
-                                <a class="pagination__link" href="/V5-0/providers/manage-t-level-records-page2.html">
-                                    2
-                                </a>
-                            </li>
-                            <li class="pagination__item">
-                                <a class="pagination__link" href="/V5-0/providers/manage-t-level-records-page3.html">
-                                    3
-                                </a>
-                            </li>
+                            {% endfor %}
                             <li class="pagination__item app-float-right" id="nextButton">
                                 <a class="pagination__link" href="/V5-0/providers/manage-t-level-records-page2.html">
                                     Next page
