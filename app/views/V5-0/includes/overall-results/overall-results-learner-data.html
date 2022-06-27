@@ -3,8 +3,13 @@
 
     {% if value['learnerStartYear'] == data['learnerStartYear'] or data['learnerStartYear'] == '' %}
 
-
-    <div class="govuk-summary-list__row">
+    <div class="govuk-summary-list__row
+                {{ 'industry-placement' if value.learnerIndustryPlacement == 'Not completed' }}
+                {{ 'english' if value.learnerEnglish == 'Not yet received' }}
+                {{ 'maths' if value.learnerMaths == 'Not yet received' }}
+                {{ value.learnerTLevelTitle  | lower  | replace(' ', '-') |replace('&#44;', '') }}
+                {{ 'incomplete' if value.learnerIndustryPlacement == 'Not completed' or value.learnerEnglish == 'Not yet received' or value.learnerMaths == 'Not yet received' }}"
+    >
         <div class="govuk-grid-row govuk-padding-1">
             <div class="govuk-grid-column-two-thirds">
                 <dt class="govuk-summary-list__key govuk-grid-column-full">
