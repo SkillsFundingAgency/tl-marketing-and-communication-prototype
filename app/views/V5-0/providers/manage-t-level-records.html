@@ -89,22 +89,27 @@
                         </legend>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                             {% set filterLabels = [] %}
-                            {% for value in tLevelsStudentData | sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="learnerName") %}
-                                {% if value.learnerTLevelTitle | safe in filterLabels %}
-                                {% else %}
-                                    {%  set filterLabels = (filterLabels.push(value.learnerTLevelTitle | safe), filterLabels) %}
+                            {% for value in tLevelsStudentData %}
+                                {% if value.learnerStartYear == data.learnerStartYear %}
+                                    {% if value.learnerTLevelTitle in filterLabels %}
+                                    {% else %}
+                                        {% set filterLabels = (filterLabels.push(value.learnerTLevelTitle), filterLabels) %}
+                                    {% endif %}
                                 {% endif %}
                             {% endfor %}
 
                             {% for filterLabel in filterLabels %}
 
                                 <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                    <input class="govuk-checkboxes__input" id="{{ filterLabel  | lower  | replace(' ', '-') |replace(',', '') }}" name="t-level"
+                                    <input class="govuk-checkboxes__input"
+                                           id="{{ filterLabel  | lower  | replace(' ', '-') |replace('&#44;', '') }}"
+                                           name="t-level"
                                            type="checkbox"
-                                           value="{{ filterLabel }}"
-                                           data-filterVal="{{ filterLabel  | lower  | replace(' ', '-')  }}">
-                                    <label class="govuk-label govuk-checkboxes__label" for="{{ filter  | lower  | replace(' ', '-') |replace(',', '') }}">
-                                        {{ filterLabel }}
+                                           value="{{ filterLabel  | safe }}"
+                                           data-filterVal="{{ filterLabel  | lower  | replace(' ', '-') | replace('&#44;', '') }}">
+                                    <label class="govuk-label govuk-checkboxes__label"
+                                           for="{{ filter  | lower  | replace(' ', '-') | replace('&#44;', '') }}">
+                                        {{ filterLabel | safe }}
                                     </label>
                                 </div>
                             {% endfor %}
