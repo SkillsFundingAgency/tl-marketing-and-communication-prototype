@@ -51,29 +51,44 @@
                         </legend>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="english-level" name="status" type="checkbox"
+                                <input class="govuk-checkboxes__input"
+                                       id="english"
+                                       name="status"
+                                       type="checkbox"
+                                       data-filterVal="english"
                                        value="English">
-                                <label class="govuk-label govuk-checkboxes__label" for="english-level">
+                                <label class="govuk-label govuk-checkboxes__label" for="english">
                                     English level
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="maths-level" name="status" type="checkbox"
+                                <input class="govuk-checkboxes__input"
+                                       id="maths"
+                                       name="status"
+                                       type="checkbox"
+                                       data-filterVal="maths"
                                        value="Maths">
-                                <label class="govuk-label govuk-checkboxes__label" for="maths-level">
+                                <label class="govuk-label govuk-checkboxes__label" for="maths">
                                     Maths level
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="industry-placement" name="status"
+                                <input class="govuk-checkboxes__input"
+                                       id="industry-placement"
+                                       name="status"
                                        type="checkbox"
+                                       data-filterVal="industry-placement"
                                        value="Industry placement">
                                 <label class="govuk-label govuk-checkboxes__label" for="industry-placement">
                                     Industry placement
                                 </label>
                             </div>
                             <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                                <input class="govuk-checkboxes__input" id="all-incomplete" name="status" type="checkbox"
+                                <input class="govuk-checkboxes__input"
+                                       id="all-incomplete"
+                                       name="status"
+                                       type="checkbox"
+                                       data-filterVal="incomplete"
                                        value="All incomplete">
                                 <label class="govuk-label govuk-checkboxes__label" for="all-incomplete">
                                     All incomplete records
@@ -172,9 +187,6 @@
                         {% include "../includes/overall-results/no-results.html" %}
                     </div>
                 </div>
-
-                {% set arr = filters %}
-                {{ arr | dump }}
 
                 <div id="paginationId" class="pagination govuk-body">
                     {% if data['learnerStartYear'] == '2020 to 2021' %}
