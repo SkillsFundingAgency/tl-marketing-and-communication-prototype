@@ -1,8 +1,6 @@
 <dl class="govuk-summary-list">
-    {% for value in tLevelsStudentData | sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="learnerName") %}
-
+    {% for value in tLevelsStudentData.slice(0,17) | sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="learnerName") %}
     {% if value['learnerStartYear'] == data['learnerStartYear'] or data['learnerStartYear'] == '' %}
-
     <div class="govuk-summary-list__row
                 {{ 'industry-placement' if value.learnerIndustryPlacement == 'Not completed' }}
                 {{ 'english' if value.learnerEnglish == 'Not yet received' }}
