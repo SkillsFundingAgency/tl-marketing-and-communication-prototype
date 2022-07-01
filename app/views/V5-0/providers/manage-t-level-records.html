@@ -181,13 +181,26 @@
                         </p>
                     </div>
                 </div>
-                {% if data['learnerStartYear'] == '2020 to 2021' %}
+                <!--Creates a variable called page and assigns the current page url to be its value, then makes it a float so that it can be summed-->
+                {% set Page = data['page'] %}
+                {% set Page = Page | float %}
+                {% if data['learnerStartYear'] == '2020 to 2021' and Page == 1 %}
                     <div class="govuk-body">
                         Viewing 1 - 10 of {{2020to2021learners}} learners
                     </div>
+                {% elif data['learnerStartYear'] == '2020 to 2021' %}
+                    <div class="govuk-body">
+                        {% set Page = Page-1 %}
+                        Viewing {{Page*10+1}} - {% if 2020to2021learners < Page*10+10 %} {{2020to2021learners}} {% else %} {{Page*10+10}} {% endif %} of {{2020to2021learners}} learners
+                    </div>
+                {% elif data['learnerStartYear'] == '2021 to 2022' and Page == 1 %}
+                    <div class="govuk-body">
+                        Viewing 1 - 10 of {{2021to2022learners}} learners
+                    </div>
                 {% else %}
                     <div class="govuk-body">
-                        Viewing 1 - 7 of {{2021to2022learners}} learners
+                        {% set Page = Page-1 %}
+                        Viewing {{Page*10+1}} - {% if 2021to2022learners < Page*10+10 %} {{2021to2022learners}} {% else %} {{Page*10+10}} {% endif %} of {{2021to2022learners}} learners
                     </div>
                 {% endif %}
 
@@ -198,7 +211,6 @@
                     </div>
                 </div>
 
-                <!--Creates a variable called page and assigns the current page url to be its value, then makes it a float so that it can be summed-->
                 {% set Page = data['page'] %}
                 {% set Page = Page | float %}
                 <div id="paginationId" class="pagination govuk-body">
@@ -214,9 +226,15 @@
                             </li>
                             {% endif %}
                             <!--This code creates a variable that gives us a number equal to the amount of total pages needed to fit all the data -->
-                            {% set totalLearners = tLevelsStudentData.length+9 %}
-                            {% set totalLearners = totalLearners/10 %}
-                            {% set totalLearners = totalLearners//1 %}
+                            {% if data['learnerStartYear'] == '2020 to 2021' %}
+                                {% set totalLearners = 2020to2021learners + 9 %}
+                                {% set totalLearners = totalLearners/10 %}
+                                {% set totalLearners = totalLearners//1 %}
+                            {% else %}
+                                {% set totalLearners = 2021to2022learners + 9 %}
+                                {% set totalLearners = totalLearners/10 %}
+                                {% set totalLearners = totalLearners//1 %}
+                            {% endif %}
 
                             {% for i in range(0, totalLearners) %}
                             <li class="pagination__item">
@@ -228,6 +246,7 @@
                                 </a>
                             </li>
                             {% endfor %}
+                            {% if Page == totalLearners-1 %}
                             <li class="pagination__item app-float-right" id="nextButton">
                                 <a class="pagination__link" href="?page={{Page+1}}">
                                     Next page
@@ -235,16 +254,32 @@
                                 </a>
                             </li>
                         </ul>
+                            {% else %}
+                            <li class="pagination__item app-float-right" id="nextButton">
+                                <span class="pagination__link--hidden" aria-hidden="true" role="presentation">Next page &#187;</span>
+                            </li>
+                        </ul>
+                    {% endif %}
                     {% else %}
                     {% endif %}
-                    {% if data['learnerStartYear'] == '2020 to 2021' %}
+                    {% if data['learnerStartYear'] == '2020 to 2021' and Page == 1 %}
                         <div class="govuk-!-display-inline dis govuk-body">
                             Viewing 1 - 10 of {{2020to2021learners}} learners
                         </div>
-                    {% else %}
+                    {% elif data['learnerStartYear'] == '2020 to 2021' %}
                         <div class="govuk-!-display-inline dis govuk-body">
-                            Viewing 1 - 7 of {{2021to2022learners}} learners
+                            {% set Page = Page-1 %}
+                            Viewing {{Page*10+1}} - {% if 2020to2021learners < Page*10+10 %} {{2020to2021learners}} {% else %} {{Page*10+10}} {% endif %} of {{2020to2021learners}} learners
                         </div>
+                    {% elif data['learnerStartYear'] == '2021 to 2022' and Page == 1  %}
+                        <div class="govuk-!-display-inline dis govuk-body">
+                            Viewing 1 - 10 of {{2021to2022learners}} learners
+                        </div>
+                    {% else %}
+                    <div class="govuk-!-display-inline dis govuk-body">
+                        {% set Page = Page-1 %}
+                        Viewing {{Page*10+1}} - {% if 2021to2022learners < Page*10+10 %} {{2021to2022learners}} {% else %} {{Page*10+10}} {% endif %} of {{2021to2022learners}} learners
+                    </div>
                     {% endif %}
                     <div class="govuk-button-group govuk-!-margin-top-2">
                         <a id="searchAgainButton" class="govuk-button" role="button" href="./search-learner-records">Search
@@ -252,7 +287,6 @@
                         <a id="backToHomeButton" class="govuk-button govuk-button--secondary" role="button"
                            data-module="govuk-button" href="./tlevels-dashboard.html">Back to home</a>
                     </div>
-
                 </div>
             </div>
         </div>
