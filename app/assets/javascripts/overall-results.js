@@ -8,7 +8,12 @@ function hideCards () {
 
 function showCards () {
   for (var i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('govuk-visually-hidden')
+    cards[i].classList.add('govuk-visually-hidden')
+  }
+  for (var i = 0; i < cards.length; i++) {
+    if (i < 10) {
+      cards[i].classList.remove('govuk-visually-hidden')
+    }
   }
 }
 
@@ -120,8 +125,12 @@ function applyFilters () {
     // Add the Filter Tag to the top of the Filter list component
     selectedFiltersContainer.innerHTML += '<p class="govuk-body govuk-!-margin-bottom-1" ><span class="app-filter__tag">' + filterLabel + ' </span></p>'
     // iterate over the cardsToHide and hide them
+    var cardnum = 0
     cardsToHide.forEach.call(cardsToHide, function (el) {
-      el.classList.remove('govuk-visually-hidden')
+      cardnum++
+      if (cardnum < 11) {
+        el.classList.remove('govuk-visually-hidden')
+      }
     })
   }
 
@@ -135,9 +144,4 @@ function clearFilters () {
   })
   document.getElementById('clearFilters').classList.add('govuk-visually-hidden')
   showCards()
-  // let cards = document.querySelectorAll('.govuk-summary-list__row')
-
-  // for (var a = 0; a < cards.length; a++) {
-  //   cards[a].style.display = ''
-  // }
 }
