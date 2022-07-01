@@ -97,8 +97,16 @@ function applyFilters () {
     selectedFiltersContainer.innerHTML = ''
     // hide all cards
     hideCards()
-    // iterate over selected filters and run the showCards function to show the cards mathcing the filters
+    // iterate over selected filters and run the showCards function to show the cards matching the filters
     checkedInputs.forEach(showCards)
+    let learners = document.getElementsByClassName('govuk-summary-list')
+    learners = learners.children
+    for (let i = 0; i < learners; i++) {
+      console.log(i)
+      if (i > 10) {
+        learners[i].classList.add('govuk-visually-hidden')
+      }
+    }
     // Show the 'Selected filters' label
     document.getElementById('selectedFiltersWrapper').classList.remove('govuk-visually-hidden')
     // Show the Clear filters button
