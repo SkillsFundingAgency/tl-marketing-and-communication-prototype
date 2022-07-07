@@ -157,23 +157,16 @@
                             <dd class="govuk-summary-list__value">
                                 {% if data['multipleEmployerModel'] == 'yes' %}
                                     {% if data['industrial-placement-models'] %}
-                                        {% for item in data['industrial-placement-models'] %}
-                                            <p>{{ item }}</p>
-                                        {% endfor %}
+                                        {{ data['industrial-placement-models'] }}
                                     {% else %}
-                                        <p>
-                                            No
-                                        </p>
+                                        No
                                     {% endif %}
 
 
                                 {% elif (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 6) %}
-                                    {% for item in data['industrial-placement-models'] %}
-                                        <p>{{ item }}</p>
-                                    {% endfor %}
-
+                                        {{ data['industrial-placement-models'] }}
                                 {% else %}
-                                    <p> {{ data['industrial-placement-models'] }} </p>
+                                     {{ data['industrial-placement-models'] }}
                                 {% endif %}
 
 
@@ -192,7 +185,7 @@
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             {% if data['uln'] == '1987654320' %}
-                                Temporary flexibility and blended placment
+                                Temporary flexibility and blended placement
                             {% else %}
                                 Temporary flexibility
                             {% endif %}
