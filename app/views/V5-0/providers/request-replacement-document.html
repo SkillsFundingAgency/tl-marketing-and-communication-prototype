@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Request a replacement document - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Request replacement document</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+            Check the learner's details before sending your request
+        </h1>
+        <p class="govuk-body govuk-!-margin-bottom-0">Request a replacement document if it has been lost or damaged.</p>
+        <p class="govuk-body">Check this data is correct or make any changes before submitting your request</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-4 govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="record-header">
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
+                {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
+            </h1>
+
+            <span class="govuk-caption-xl">ULN: {{ [data['uln']] }}
+      </span>
+
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__key">
+                    Document requested
+                </dd>
+                <dd class="govuk-summary-list__value govuk-!-padding-left-9 govuk-!-padding-bottom-6">
+                    Certificate
+                </dd>
+            </div>
+        </dl>
+        <div>
+            <h2 class="govuk-heading-m govuk-!-display-inline">Your organisation's postal address</h2>
+            <a href="#" class="govuk-link govuk-link--no-visited-state app-float-right">change</a>
+        </div>
+        <p class="govuk-body">Changing the address will take you back to the home page</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__key">
+                    Department
+                </dd>
+                <dd class="govuk-summary-list__value govuk-!-padding-left-9">
+                    Exams Office
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__key">
+                    Organisation's address
+                </dd>
+                <dd class="govuk-summary-list__value govuk-!-padding-left-9">
+                    Barnsley Academy<br/>
+                    Main Block<br/>
+                    Church Street<br/>
+                    Barnsley<br/>
+                    S70 2AZ<br/>
+                </dd>
+            </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Now send your request</h2>
+        <p class="govuk-body">By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+        <button type="submit" class="govuk-button govuk-!-display-block" data-module="govuk-button" data-prevent-double-click="true">Accept and request</button>
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
