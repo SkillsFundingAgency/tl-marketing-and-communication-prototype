@@ -200,15 +200,17 @@ Learner's T Level record
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
-
-          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
-          <p><span style="font-weight: bold">Grade</span>: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}
+          <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
+        </dd>
+        <dd>
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}
             {% if data['uln'] === "1234567890" %}
             <strong class="govuk-tag govuk-tag--purple">
               ROMM
             </strong></p>
           {% else %}
           {% endif %}
+      </dd>
       </div>
     </dl>
     {% else %}
@@ -219,8 +221,11 @@ Learner's T Level record
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
-          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
-          <p><span style="font-weight: bold">Grade</span>: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
+          <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
+        </dd>
+        <dd>
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
+        </dd>
       </div>
     </dl>
     {% else %}
@@ -232,7 +237,10 @@ Learner's T Level record
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
           {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] %}
+          <p class="govuk-!-font-weight-bold">Result</p>
+        <dd>
           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
+        </dd>
           {% else %}
           {{ "Results will be displayed from the day before results day and will only be available for active final year learners." }}
           {% endif %}
