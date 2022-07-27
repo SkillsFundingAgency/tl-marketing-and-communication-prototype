@@ -1,25 +1,24 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Address added successfully
+Address added successfully
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Organisation's postal address added successfully</h1>
-      </div>
-      <p class="govuk-body">Certificates and statements of achievements will be sent out to this address.</p>
-      <p class="govuk-body">You can now continue to request a statement of achievement.</p>
-      <p class="govuk-!-margin-top-6">
-        <a class="govuk-button" role="button" href="../providers/request-statement-of-achievement.html">
-          Request statement of achievement
-        </a>
-      </p>
-      <a href="../providers/tlevels-dashboard.html">Back to Home</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Organisation's postal address added successfully</h1>
     </div>
+    <p class="govuk-body">Certificates and statements of achievements will be sent out to this address.</p>
+    <p class="govuk-body">If you have changed the address while requesting a new statement of achievement or certificate, you will need to start the process of requesting the document again.</p>
+    <p class="govuk-!-margin-top-6">
+      <a class="govuk-button" role="button" href="../providers/tlevels-dashboard.html">
+        Back to Home
+      </a>
+    </p>
   </div>
+</div>
 
 {% endblock %}
