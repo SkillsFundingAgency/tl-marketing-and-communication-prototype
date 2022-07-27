@@ -622,6 +622,17 @@ module.exports = function (router) {
     }
   })
 
+  //Update Certificate request status
+  router.post('/' + version + '/providers/request-replacement-document', function (req, res) {
+    const newcertificateStatus = req.session.data.certificateStatus
+
+    req.session.data.updatedcertificateStatus = 'yes'
+    req.session.data.showBanner = 'certificate'
+    req.session.data.newcertificateStatus = newcertificateStatus
+
+    res.redirect('/' + version + '/providers/update-t-level-record?showBanner=certificate')
+  })
+
   // Update Maths status
   router.post('/' + version + '/providers/add-maths-status', function (req, res) {
     const newmathsStatus = req.session.data.mathsStatus
