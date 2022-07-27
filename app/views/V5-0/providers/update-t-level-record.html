@@ -60,7 +60,9 @@ Learner's T Level record
 
       <span class="govuk-caption-l">ULN: {{ [data['uln']] }}
       </span>
-
+      {% if data['showBanner'] === 'certificate' %}
+      <span class="govuk-!-font-weight-bold">Replacement document requested on <span id="currentDate"></span>. Your document may take up to 3 weeks to arrive.</span>
+      {% endif %}
     </div>
 
 
@@ -269,6 +271,20 @@ Learner's T Level record
   const urlParams = new URLSearchParams(window.location.search);
   const uln = urlParams.get('uln');
   sessionStorage.setItem('uln', uln)
+</script>
+
+<script>
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  let today = new Date()
+  const dd = String(today.getDate()).padStart(2, '0')
+  const m = monthNames[today.getMonth()]
+  const yyyy = today.getFullYear()
+  today = dd + ' ' + m + ' ' + yyyy
+  console.log(today)
+  document.getElementById('currentDate').innerText = today
 </script>
 
 {% endblock %}
