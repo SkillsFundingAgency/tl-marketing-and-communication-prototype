@@ -33,6 +33,9 @@ Learner's T Level record
     {% elif data['showBanner'] === 'ip' %}
     {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
     {% endif %}
+    {% if data['showBanner'] === 'certificate' %}
+    {% include "../includes/provider-notification-messages/sent-certificate-message.html" %}
+    {% endif %}
   </div>
 </div>
 <div class="govuk-grid-row">
