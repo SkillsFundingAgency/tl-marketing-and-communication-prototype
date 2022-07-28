@@ -1,7 +1,7 @@
 <dl class="govuk-summary-list">
     {% set 2020Array = [] %}
     {% set 2021Array = [] %}
-    {% for value in tLevelsStudentData |  sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="learnerName") %}
+    {% for value in tLevelsStudentData |  sort(reverse=(true if data['sortOrder'] == 'z-to-a' else false), attribute="lastName") %}
         {% if value['learnerStartYear'] == '2020 to 2021' %}
             {% set 2020Array = (2020Array.push(value), 2020Array) %}
         {% else %}
