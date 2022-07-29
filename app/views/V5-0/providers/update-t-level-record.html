@@ -169,21 +169,21 @@ Learner's T Level record
 
     <h2 class="govuk-heading-m">Industry placement</h2>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
           Status
         </dd>
         <dd class="govuk-summary-list__value">
+          <p>
+            {% if data['newplacementResult'] === 'yes'%}
 
-          {% if data['newplacementResult'] === 'yes'%}
+            {{ data['newindustryPlacement'] }}
 
-          {{ data['newindustryPlacement'] }}
-
-          {% else %}
-          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}
-          {% endif %}
-
+            {% else %}
+            {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}
+            {% endif %}
+          </p>
 
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -202,12 +202,12 @@ Learner's T Level record
 
     {% if data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] %}
     <h2 class="govuk-heading-m">Core component</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
+    <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__key">
           <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
         </dd>
-        <dd>
+        <dd class="govuk-summary-list__value">
           <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}
             {% if data['uln'] === "1234567890" %}
             <strong class="govuk-tag govuk-tag--purple">
@@ -223,12 +223,12 @@ Learner's T Level record
 
     {% if data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] %}
     <h2 class="govuk-heading-m">Occupational specialism</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9 ">
+    <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__key">
           <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
         </dd>
-        <dd>
+        <dd class="govuk-summary-list__value">
           <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
         </dd>
       </div>
@@ -240,11 +240,11 @@ Learner's T Level record
     <h2 class="govuk-heading-m">Overall T Level result</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-6">
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
-          {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] %}
+        <dd class="govuk-summary-list__key">
+          {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] and data['tLevelsStudentDataV3'][data['uln']]['learnerStartYear'] != '2021 to 2022' %}
           <p class="govuk-!-font-weight-bold">Result</p>
-        <dd>
-          {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}
+        <dd class="govuk-summary-list__value">
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}</p>
         </dd>
           {% else %}
           {{ "Results will be displayed from the day before results day and will only be available for active final year learners." }}
