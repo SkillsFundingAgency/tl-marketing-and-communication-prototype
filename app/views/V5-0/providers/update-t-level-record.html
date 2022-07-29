@@ -258,7 +258,7 @@ Learner's T Level record
   <a id="searchAgainButton" class="govuk-button" role="button" href="./manage-t-level-records.html">
     Back to list of learners
   </a>
-  {% if data['tLevelsStudentDataV3'][data['uln']]['Document'] != 'Not available' and data['showBanner'] != 'certificate' %}
+  {% if data['tLevelsStudentDataV3'][data['uln']]['Document'] != 'Not available' and data['showBanner'] != 'certificate' and data['tLevelsStudentDataV3'][data['uln']]['learnerStartYear'] != '2021 to 2022' %}
   <a id="requestReplacementDocument" class="govuk-button" role="button" href="./request-replacement-document.html">
     Request replacement document
   </a>
