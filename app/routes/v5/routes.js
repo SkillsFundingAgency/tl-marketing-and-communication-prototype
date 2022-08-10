@@ -617,6 +617,7 @@ module.exports = function (router) {
       req.session.data.newplacementResult = 'yes'
       req.session.data.showBanner = 'ip'
       req.session.data.newindustryPlacement = newResult
+      req.session.data.selectedUln = req.session.data.uln
 
       res.redirect('/' + version + '/providers/update-t-level-record')
     }
@@ -626,6 +627,7 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/request-replacement-document', function (req, res) {
     const newcertificateStatus = req.session.data.certificateStatus
 
+    req.session.data.selectedUln = req.session.data.uln
     req.session.data.updatedcertificateStatus = 'yes'
     req.session.data.showBanner = 'certificate'
     req.session.data.newcertificateStatus = newcertificateStatus
@@ -637,6 +639,7 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/add-maths-status', function (req, res) {
     const newmathsStatus = req.session.data.mathsStatus
 
+    req.session.data.selectedUln = req.session.data.uln
     req.session.data.updatedmathsStatus = 'yes'
     req.session.data.showBanner = 'maths'
     req.session.data.newmathsStatus = newmathsStatus
@@ -648,6 +651,7 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/add-english-status', function (req, res) {
     const newenglishStatus = req.session.data.englishStatus
 
+    req.session.data.selectedUln = req.session.data.uln
     req.session.data.updatedenglishStatus = 'yes'
     req.session.data.showBanner = 'english'
     req.session.data.newenglishStatus = newenglishStatus
