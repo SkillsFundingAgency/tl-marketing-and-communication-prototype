@@ -5445,6 +5445,10 @@ a:visited {
 }
 
 a.campaign-button:link {
+  color: #000;
+}
+
+a.campaign-button.black:link {
   color: #fff;
 }
 
