@@ -1,0 +1,447 @@
+// Hacking the kit to start with a blank page.
+
+.govuk-header,
+.govuk-width-container,
+.display-none,
+.govuk-skip-link {
+  display:none;
+}
+
+// Variables
+
+$orange: #fc4421;
+
+// Fonts
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/public/fonts/CircularStd-Black.woff2') format('woff2'),
+      url('/public/fonts/CircularStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/public/fonts/CircularStd-BlackItalic.woff2') format('woff2'),
+      url('/public/fonts/CircularStd-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/public/fonts/Sora-Regular.woff2') format('woff2'),
+      url('/public/fonts/Sora-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+p,
+ul li,
+input,
+.font-Sora {
+  font-family: 'Sora', Arial, Helvetica, sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-Circ {
+  font-family: 'Circular Std', Arial, Helvetica, sans-serif !important;
+  font-weight: 900;
+  font-style: normal;
+
+  &.italic {
+    font-style: italic;
+    font-weight: 900;
+  }
+}
+
+p {
+  font-size:20px;
+  font-weight:normal;
+  margin-bottom:30px;
+  
+  a {
+    border-bottom: 1.5px solid #fc4421;
+    text-decoration: none;
+    font-family: 'Sora', Arial, Helvetica, sans-serif !important;
+    font-weight: normal;
+    font-style: normal;
+
+    &:hover {
+      background-color: rgba(252,68,33,0.25);
+      border-bottom: 1.5px solid #000;
+    }
+
+    &:focus {
+      background-color: rgba(252,68,33,0.55);
+      border-bottom: 1.5px solid #000;
+      box-shadow:none;
+    }
+
+    &:active {
+      background-color: rgba(252,68,33,0.55);
+      border-bottom: 1.5px solid #000;
+    }
+  }
+}
+
+ul.bullets {
+
+  margin-top:5px;
+  margin-left:10px;
+  padding-left:0px;
+  
+  li {
+    list-style-type: none;
+    display: block;
+    margin-bottom: 8px;
+    position: relative;
+    margin-left: 10px;
+    font-size: 18px;
+    line-height:28px;
+
+    &:before {
+      background-color: #000;
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      content: "";
+      width: 6px;
+      height: 6px;
+      left: -18px;
+      top: 11px;
+      transition:0.3s ease-in-out;
+    }
+
+    &:hover:before {
+      background-color: $orange;
+    }
+
+    a {
+      border-bottom: 1.5px solid #fc4421;
+      text-decoration: none;
+      font-family: 'Sora', Arial, Helvetica, sans-serif !important;
+      font-weight: normal;
+      font-style: normal;
+
+      &:hover {
+        background-color: rgba(252,68,33,0.25);
+        border-bottom: 1.5px solid #000;
+      }
+
+      &:focus {
+        background-color: rgba(252,68,33,0.55);
+        border-bottom: 1.5px solid #000;
+        box-shadow:none;
+      }
+
+      &:active {
+        background-color: rgba(252,68,33,0.55);
+        border-bottom: 1.5px solid #000;
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Circular Std', Arial, Helvetica, sans-serif !important;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size:45px;
+  line-height:45px;
+  margin-bottom: 34px;
+}
+
+a:hover {
+  cursor:pointer;
+}
+
+a:visited {
+  color:#000;
+}
+
+// Colours
+
+.col-white {
+  color:#fff;
+}
+
+.col-black {
+  color:#000;
+}
+
+.bg-orange {
+  background-color:$orange;
+}
+
+.bg-black {
+  background-color:#000;
+}
+
+// Global styles
+
+* {
+  box-sizing:border-box;
+}
+
+.row {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-wrap {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0px 15px;
+}
+
+.display-flex {
+  display: flex;
+
+  &.f-row {
+    flex-direction: row;
+  }
+
+  &.f-column {
+    flex-direction: column;
+  }
+
+  &.f-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.f-right {
+    align-items: right;
+    justify-content: right;
+  }
+
+  &.f-space {
+    justify-content: space-between
+  }
+}
+
+// Navigation
+
+.student-nav {
+  padding:35px;
+
+  a.logo {
+      width: 180px;
+      height: 30px;
+      background: url('https://www.tlevels.gov.uk/files/images/logomedium.svg') no-repeat left center;
+
+      &:active,
+      &:focus {
+        box-shadow:none;
+        background-color:none;
+      }
+  }
+
+  ol {
+    margin: 11px 0px 0px; padding:0px;
+  }
+
+  li {
+    text-transform:uppercase;
+    list-style-type: none;
+    font-size: 14px;
+    margin-right: 25px;
+
+    a {
+      color:#000;
+      text-decoration: none;
+      margin-top:2px;
+      display:block;
+      border-bottom:0px solid $orange;
+      transition: 0.1s ease-in-out;
+    }
+  
+    a:hover,
+    a.on-page {
+      margin-top:0px;
+      border-bottom:2px solid $orange;
+    }
+  
+    a:visited {
+      color:#000;
+      
+    }
+
+    a:focus {
+      outline: none;
+      color: #000;
+      background-color: rgba(252,68,33,0.25);
+      box-shadow: none;
+      margin-top:0px;
+      border-bottom:2px solid $orange;
+      text-decoration: none;
+    }
+  }
+
+  li:last-child {
+    margin-right:0px;
+  }
+
+}
+
+// Buttons
+
+.campaign-button {
+  display:inline-block;
+  padding: 13px 25px;
+  font-family: 'Circular Std' !important;
+  font-weight: 900;
+  font-style: normal;
+  text-decoration: none;
+  align-self: flex-start;
+  font-size: 18px;
+  position: relative;
+  background-color: $orange;
+  color: black;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  z-index:20;
+}
+
+.campaign-button.black {
+  background-color: #000;
+  color:#fff;
+}
+
+.campaign-button:hover {
+  color:#000;
+}
+
+.campaign-button.black:hover {
+  color:#fff;
+}
+
+.campaign-button:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 2px solid $orange;
+  position: absolute;
+  background-color: transparent;
+  left: 4px;
+  top: 4px;
+  z-index:10;
+  box-sizing:border-box;
+}
+
+.campaign-button.black:before {
+  border: 2px solid #000;
+}
+
+.campaign-button:after {
+  background-image: url('https://www.tlevels.gov.uk/files/images/arrows/arrowup-black.svg');
+  content: "";
+  display: inline-block;
+  width: 0px;
+  opacity: 0;
+  transition: 0.2s ease-in;
+  height: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index:25;
+}
+
+.campaign-button.search:after {
+  background-image: url('https://www.tlevels.gov.uk/files/images/searchicon-white.svg');
+  top:2px;
+}
+
+.campaign-button:hover:after, .campaign-button:focus:after {
+  margin-left: 10px;
+  width: 20px;
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+
+.campaign-button.search:hover:after, .campaign-button.search:focus:after {
+  width:16px;
+}
+
+.campaign-button:active {
+  top: 2px;
+  left: 2px;
+  transition: 0s;
+}
+
+.campaign-button:active:before {
+  top: 2px;
+  left: 2px;
+  transition: 0s;
+}
+
+.campaign-button:focus {
+  background-color: $orange;
+  box-shadow:none;
+}
+
+.campaign-button.black:focus {
+  background-color: #000;
+  box-shadow:none;
+}
+
+
+// Links
+
+.footer-link,
+.link-transcript {
+  font-size: 16px;
+  padding-bottom: 5px;
+  margin-top: 12px;
+  display: inline-block;
+  transition:0.1s ease-in-out;
+}
+
+.bg-orange .link-transcript {
+  font-size:18px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1.5px solid #000;
+  padding-bottom: 2px;
+  transition: 0.1s ease-in-out;
+  line-height: 26px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.25);
+  }
+
+  &:active {
+    background-color: rgba(0,0,0,0.55);
+  }
+}
+
+.footer-link {
+  font-size:18px;
+  padding-bottom:3px;
+}
+
+.bg-black .link-transcript,
+.bg-black .footer-link {
+    color:#fff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color:#fff;
+      border-bottom: 1.5px solid #fff;
+    }
+}
