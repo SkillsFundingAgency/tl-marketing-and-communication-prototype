@@ -7946,7 +7946,8 @@ x:-moz-any-link {
 .govuk-header,
 .govuk-width-container,
 .display-none,
-.govuk-skip-link {
+.govuk-skip-link,
+.govuk-footer {
   display: none;
 }
 
@@ -8101,6 +8102,24 @@ a:visited {
 
 .bg-black {
   background-color: #000;
+}
+.bg-black .link-transcript,
+.bg-black .footer-link,
+.bg-black .link-back {
+  color: #fff;
+}
+.bg-black .link-transcript:hover, .bg-black .link-transcript:focus, .bg-black .link-transcript:active,
+.bg-black .footer-link:hover,
+.bg-black .footer-link:focus,
+.bg-black .footer-link:active,
+.bg-black .link-back:hover,
+.bg-black .link-back:focus,
+.bg-black .link-back:active {
+  color: #fff;
+  border-bottom: 1.5px solid #fff;
+}
+.bg-black p, .bg-black a, .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6 {
+  color: #fff;
 }
 
 * {
@@ -8301,6 +8320,12 @@ a:visited {
   transition: 0.1s ease-in-out;
 }
 
+.link-back {
+  font-size: 16px;
+  display: inline-block;
+  margin: 40px 0px 30px;
+}
+
 .bg-orange .link-transcript {
   font-size: 18px;
   color: #000;
@@ -8321,18 +8346,6 @@ a:visited {
 .footer-link {
   font-size: 18px;
   padding-bottom: 3px;
-}
-
-.bg-black .link-transcript,
-.bg-black .footer-link {
-  color: #fff;
-}
-.bg-black .link-transcript:hover, .bg-black .link-transcript:focus, .bg-black .link-transcript:active,
-.bg-black .footer-link:hover,
-.bg-black .footer-link:focus,
-.bg-black .footer-link:active {
-  color: #fff;
-  border-bottom: 1.5px solid #fff;
 }
 
 .hm-strip {
@@ -8621,4 +8634,14 @@ footer .footer-bottom .socials svg g {
 
 .subpage.blocks.stories-page .search-row {
   margin-top: 30px;
+}
+
+.subjects.digi-prod > div:first-child {
+  background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
+  background-size: cover;
+}
+.subjects.digi-prod > div:first-child .link-transcript {
+  border-bottom: 1.5px solid #fff;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
 }
