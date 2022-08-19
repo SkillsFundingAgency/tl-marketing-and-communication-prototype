@@ -1,7 +1,8 @@
-// Hacking the kit to start with a blank page.
+// Hacking the kit to afford a blank page 
+// (accounts for the blank element with 90px padding at the top of the page)
 
-.govuk-main-wrapper.govuk-main-wrapper--auto-spacing {
-  padding:0px;
+.header-tuck {
+  margin-top:-90px;
 }
 
 // Variables

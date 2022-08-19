@@ -5157,8 +5157,8 @@ x:-moz-any-link {
   margin-bottom: 0;
 }
 
-.govuk-main-wrapper.govuk-main-wrapper--auto-spacing {
-  padding: 0px;
+.header-tuck {
+  margin-top: -90px;
 }
 
 @font-face {
