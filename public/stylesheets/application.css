@@ -7849,6 +7849,13 @@ x:-moz-any-link {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Sora";
+  src: url("/public/fonts/Sora-Bold.woff2") format("woff2"), url("/public/fonts/Sora-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
