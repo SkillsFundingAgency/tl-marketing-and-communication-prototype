@@ -38,6 +38,21 @@ $orange: #fc4421;
   font-display: swap;
 }
 
+// Typograghy
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+p {
+  margin:0px;
+}
+
 p,
 ul li,
 input,
