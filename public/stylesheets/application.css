@@ -8554,8 +8554,23 @@ footer .footer-bottom .socials svg g {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;
 }
-.subjects.digi-prod > div:first-child p {
-  font-size: 20px;
+
+.subjects.health > div:first-child {
+  background: url("https://www.tlevels.gov.uk/files/images/subjects/health.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.subjects.education-childcare > div:first-child {
+  background: url("https://www.tlevels.gov.uk/files/images/subjects/education.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.subjects.design-surveying > div:first-child {
+  background: url("https://www.tlevels.gov.uk/files/images/subjects/design-surveying-planning.jpg") no-repeat center;
+  background-size: cover;
+}
+.subjects.design-surveying .example-roles > div h4 {
+  width: 300px;
 }
 
 .subjects p {
@@ -8563,10 +8578,16 @@ footer .footer-bottom .socials svg g {
   font-size: 18px;
   line-height: 26px;
 }
+.subjects > div:first-child {
+  margin-bottom: 40px;
+}
 .subjects > div:first-child .link-transcript {
   border-bottom: 1.5px solid #fff;
   padding-bottom: 0px;
   margin-bottom: 20px;
+}
+.subjects > div:first-child p {
+  font-size: 20px;
 }
 .subjects .hide-block.wrap {
   padding-right: 30px;
@@ -8581,10 +8602,12 @@ footer .footer-bottom .socials svg g {
   border-left: 5px solid #fc4421;
   padding: 8px 0px 8px 20px;
   margin-bottom: 3px;
+  font-size: 20px;
 }
 .subjects .summary > div:last-child > div h3 span {
   font-family: "Sora", Arial, Helvetica, sans-serif;
   display: block;
+  font-size: 18px;
   text-transform: lowercase;
   font-style: normal;
   font-weight: normal;
@@ -8701,7 +8724,7 @@ footer .footer-bottom .socials svg g {
   font-size: 18px;
   margin-top: 10px;
 }
-.subjects .govuk-details__text p:last-of-type {
+.subjects .govuk-details__text p:nth-child(3) {
   font-size: 18px;
   margin-top: 30px;
 }

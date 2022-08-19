@@ -1,11 +1,27 @@
-.subjects.digi-prod {
-    > div:first-child {
-        background:url('https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg') no-repeat center;
-        background-size:cover;
+.subjects.digi-prod > div:first-child {
+    background:url('https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg') no-repeat center;
+    background-size:cover;
+}
 
-        p {
-            font-size:20px;
-        }
+.subjects.health > div:first-child {
+    background:url('https://www.tlevels.gov.uk/files/images/subjects/health.jpg') no-repeat center;
+    background-size:cover;
+}
+
+.subjects.education-childcare > div:first-child {
+    background:url('https://www.tlevels.gov.uk/files/images/subjects/education.jpg') no-repeat center;
+    background-size:cover;
+}
+
+.subjects.design-surveying {
+
+    > div:first-child {
+        background:url('https://www.tlevels.gov.uk/files/images/subjects/design-surveying-planning.jpg') no-repeat center;
+        background-size:cover;
+    }
+
+   .example-roles > div h4 {
+        width:300px;
     }
 }
 
@@ -18,10 +34,16 @@
     }
 
     > div:first-child {
+        margin-bottom:40px;
+
         .link-transcript {
             border-bottom: 1.5px solid #fff;
             padding-bottom: 0px;
             margin-bottom:20px;
+        }
+
+        p {
+            font-size:20px;
         }
     }
 
@@ -39,10 +61,12 @@
                 border-left:5px solid $orange;
                 padding:8px 0px 8px 20px;
                 margin-bottom:3px;
+                font-size:20px;
 
                 span {
                     font-family:'Sora', Arial, Helvetica, sans-serif;
                     display:block;
+                    font-size:18px;
                     text-transform:lowercase;
                     font-style:normal;
                     font-weight:normal;
@@ -188,7 +212,7 @@
             margin-top:10px;
         }
 
-        p:last-of-type {
+        p:nth-child(3) {
             font-size:18px;
             margin-top:30px;
         }
