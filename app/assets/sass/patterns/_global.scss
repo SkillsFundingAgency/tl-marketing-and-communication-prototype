@@ -5,6 +5,10 @@
   margin-top:-90px;
 }
 
+.govuk-skip-link {
+  display:none;
+}
+
 // Variables
 
 $orange: #fc4421;
@@ -259,9 +263,19 @@ a:visited {
     justify-content: right;
   }
 
+  &.f-right {
+    align-items: flex-start;
+    justify-content: left;
+  }
+
   &.f-space {
     justify-content: space-between
   }
+}
+
+.max-800 {
+  max-width:800px;
+  width:100%;
 }
 
 // Navigation
@@ -452,7 +466,7 @@ a.campaign-button.black:link {
 .link-back {
   font-size:16px;
   display:inline-block;
-  margin:40px 0px 30px;
+  margin:0px 0px 30px;
 }
 
 .bg-orange .link-transcript {

@@ -3,10 +3,203 @@
         background:url('https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg') no-repeat center;
         background-size:cover;
 
+        p {
+            font-size:20px;
+        }
+    }
+}
+
+.subjects {
+
+    p {
+        margin-bottom: 16px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    > div:first-child {
         .link-transcript {
             border-bottom: 1.5px solid #fff;
             padding-bottom: 0px;
             margin-bottom:20px;
         }
     }
+
+    .hide-block.wrap {
+        padding-right:30px;
+    }
+
+    .summary {
+        margin-bottom:50px;
+
+        > div:last-child > div {
+            max-width:400px;
+
+            h3 {
+                border-left:5px solid $orange;
+                padding:8px 0px 8px 20px;
+                margin-bottom:3px;
+
+                span {
+                    font-family:'Sora', Arial, Helvetica, sans-serif;
+                    display:block;
+                    text-transform:lowercase;
+                    font-style:normal;
+                    font-weight:normal;
+                }
+            }
+        }
+    }
+
+    .example-roles {
+
+        p {
+            font-size:18px;
+        }
+
+        > div:last-child p {
+            margin-top:40px;
+        }
+
+        > div h4 {
+            margin: 30px 55px 0px 0px;
+            width: 290px;
+
+            &:last-of-type {
+                margin-right:0px;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+                border-bottom: 1.5px solid #fc4421;
+                display: inline;
+                padding-bottom: 2px;
+                transition: 0.1s ease-in-out;
+                cursor: pointer;
+                font-size: 20px;
+                line-height: 32px;
+                vertical-align: top;
+
+                &:hover {
+                    border-bottom: 1.5px solid #000;
+                    background-color: #fc4421;
+                    background-color: rgba(252,68,33,0.25);
+                }
+    
+                &:active {
+                    border-bottom: 1.5px solid #000;
+                    background-color: #fc4421;
+                    background-color: rgba(252,68,33,0.55);
+                }
+            }
+
+            &:before {
+                background-image: url('https://www.tlevels.gov.uk/files/images/arrows/arrowup-orange.svg');
+                content: "";
+                background-size: 30px 50px;
+                min-width: 30px;
+                background-position: center;
+                background-repeat: no-repeat;
+                float:left;
+                margin: 0 20px 50px 0;
+                transition: 0.3s ease-in;
+                height: 30px;
+            }
+        }
+    }
+
+    .course-content {
+
+        .govuk-details[open] > .govuk-details__summary:before {
+            display:none;
+        }
+
+        .govuk-details__summary {
+            width: 100%;
+            text-align: left;
+            border: none;
+            background-color: #f3f2f1;
+            font-weight: 400;
+            line-height: 20px;
+            padding: 25px 20px 25px 20px;
+            cursor: pointer;
+            position:relative;
+
+            &:hover {
+                background-color: #e7e5e3;
+
+                span {
+                    border-bottom: 2px solid #fc4421;
+                }
+            }
+
+            &:focus,
+            &:active {
+                box-shadow:none;
+                border:2px solid $orange;
+            }
+
+            &:after {
+                content: "";
+                background-color: $orange;
+                width: 20px;
+                height: 4px;
+                position: absolute;
+                right: 22px;
+                top: 33px;
+            }  
+
+
+            &:before {
+                content: "";
+                background-color: #fc4421;
+                height: 20px;
+                width: 4px;
+                position: absolute;
+                right: 30px;
+                top: 25px;
+                background-image: none;
+                bottom: auto;
+                left: auto;
+                margin: 0px;
+                border: none;
+                clip-path: none;
+            }  
+
+            span {
+                text-transform: uppercase;
+                font-size: 20px;
+                font-style: italic;
+                color:#000;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    .govuk-details__text {
+        border-left: 5px solid #f3f2f1;
+        border-right: 5px solid #f3f2f1;
+        border-bottom: 5px solid #f3f2f1;
+        margin-top:-5px;
+
+        p:first-of-type {
+            font-size:18px;
+            margin-top:10px;
+        }
+
+        p:last-of-type {
+            font-size:18px;
+            margin-top:30px;
+        }
+
+        li {
+            margin-bottom:5px;
+        }
+    }
+
+    .what-you-need {
+        margin-bottom:60px;
+    }
+
 }
