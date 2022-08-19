@@ -7943,12 +7943,8 @@ x:-moz-any-link {
   }
 }
 
-.govuk-header,
-.govuk-width-container,
-.display-none,
-.govuk-skip-link,
-.govuk-footer {
-  display: none;
+.govuk-main-wrapper.govuk-main-wrapper--auto-spacing {
+  padding: 0px;
 }
 
 @font-face {
