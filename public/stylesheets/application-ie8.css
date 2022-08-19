@@ -5205,6 +5205,20 @@ a:visited {
   color: #000;
 }
 
+.footer-links > div:last-child a,
+a.link-purple {
+  border-bottom: 1.5px solid #765aaf;
+}
+.footer-links > div:last-child a:hover,
+a.link-purple:hover {
+  border-bottom: 1.5px solid #fff;
+  background-color: rgba(118, 90, 176, 0.25);
+}
+.footer-links > div:last-child a:focus,
+a.link-purple:focus {
+  background-color: rgba(118, 90, 176, 0.55);
+}
+
 .bg-orange {
   background-color: #fc4421;
 }
@@ -5763,6 +5777,87 @@ footer .footer-bottom .socials svg g {
 
 .subpage.blocks.stories-page .search-row {
   margin-top: 30px;
+}
+.subpage.blocks.stories-page .testimonial > div {
+  position: relative;
+  padding: 0px 25px;
+}
+.subpage.blocks.stories-page .testimonial > div:first-child {
+  margin-bottom: 25px;
+}
+.subpage.blocks.stories-page .testimonial > div:first-child p {
+  line-height: 25px;
+}
+.subpage.blocks.stories-page .testimonial > div:last-child p {
+  font-weight: bold;
+  max-width: 379px;
+}
+.subpage.blocks.stories-page .testimonial > div:last-child a.link-transcript {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid #765aaf;
+}
+.subpage.blocks.stories-page .testimonial > div svg {
+  position: absolute;
+  width: 35px;
+}
+.subpage.blocks.stories-page .testimonial > div svg:first-of-type {
+  top: -22px;
+  left: -15px;
+}
+.subpage.blocks.stories-page .testimonial > div svg:last-of-type {
+  bottom: -10px;
+  right: -15px;
+}
+.subpage.blocks.stories-page .light-orange svg path {
+  fill: #ff9467;
+}
+.subpage.blocks.stories-page .light-orange > div:last-child p {
+  color: #ff9467;
+}
+.subpage.blocks.stories-page .light-orange > div:last-child p.col-black {
+  color: #000;
+}
+.subpage.blocks.stories-page .flat-orange svg path {
+  fill: #fc4421;
+}
+.subpage.blocks.stories-page .flat-orange > div:last-child p {
+  color: #fc4421;
+}
+.subpage.blocks.stories-page .flat-orange > div:last-child p.col-black {
+  color: #000;
+}
+.subpage.blocks.stories-page .light-purple svg path {
+  fill: #765aaf;
+}
+.subpage.blocks.stories-page .light-purple > div:last-child p {
+  color: #765aaf;
+}
+.subpage.blocks.stories-page .light-purple > div:last-child p.col-black {
+  color: #000;
+}
+
+.stories-page > div:first-child .block-50.text.hide-block {
+  padding-left: 0px;
+}
+.stories-page > div:first-child .wrap {
+  padding-right: 30px;
+}
+
+.stories-bottom-banner div {
+  padding: 65px 15px 70px;
+}
+.stories-bottom-banner p, .stories-bottom-banner a {
+  margin: 0px;
+}
+.stories-bottom-banner a {
+  border-bottom: 1.5px solid #765aaf;
+}
+.stories-bottom-banner a:hover {
+  border-bottom: 1.5px solid #fff;
+  background-color: rgba(118, 90, 176, 0.25);
+}
+.stories-bottom-banner a:focus {
+  background-color: rgba(118, 90, 176, 0.55);
 }
 
 .subjects.digi-prod > div:first-child {

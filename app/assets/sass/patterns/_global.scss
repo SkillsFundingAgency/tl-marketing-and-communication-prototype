@@ -200,6 +200,20 @@ a:visited {
   color:#000;
 }
 
+.footer-links > div:last-child a,
+a.link-purple {
+    border-bottom:1.5px solid #765aaf;
+
+    &:hover {
+        border-bottom:1.5px solid #fff;
+        background-color: rgba(118,90,176,0.25);
+    }
+
+    &:focus {
+        background-color: rgba(118,90,176,0.55);
+    }
+}
+
 .bg-orange {
   background-color:$orange;
 }
