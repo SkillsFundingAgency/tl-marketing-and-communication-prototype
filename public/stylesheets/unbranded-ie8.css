@@ -5138,7 +5138,7 @@ p a:active {
 }
 
 ul.bullets {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 10px;
   padding-left: 0px;
 }
@@ -5869,6 +5869,17 @@ footer .footer-bottom .socials svg g {
 }
 .stories-bottom-banner a:focus {
   background-color: rgba(118, 90, 176, 0.55);
+}
+
+.heading-sora {
+  text-transform: initial;
+  font-weight: bold;
+}
+
+h3.heading-sora {
+  font-size: 21px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .subjects.digi-prod > div:first-child {
