@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Organisation details | T Levels and industry placement support for employers
+{% endblock %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row eoi-form-journey" style="margin-top:-20px;">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l govuk-!-margin-bottom-6">Step 2 of 3</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Organisation details</h1>
+
+      
+      <form class="form" action="check-answers" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Organisation name",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "org-name",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+        name: "org-name",
+        autocomplete: "email",
+        spellcheck: false,
+        value: data['org-name']
+      }) }}
+
+      <!-- -- -- -->
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "org-other-entry",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "org-other-entry",
+        spellcheck: false,
+        value: data['org-other-entry']
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        
+        idPrefix: "organisation-industry",
+        name: "organisation-industry",
+        fieldset: {
+          legend: {
+            text: "What is your organisation's primary industry?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "Agriculture, Environment and Animal Care",
+            text: "Agriculture, Environment and Animal Care",
+            checked: checked("organisation-industry", "Agriculture, Environment and Animal Care")
+          },
+          {
+            value: "Business and Administration",
+            text: "Business and Administration",
+            checked: checked("organisation-industry", "Business and Administration")
+          },
+          {
+            value: "Catering and Hospitality",
+            text: "Catering and Hospitality",
+            checked: checked("organisation-industry", "Catering and Hospitality")
+          },
+          {
+            value: "Construction and the Built Environment",
+            text: "Construction and the Built Environment",
+            checked: checked("organisation-industry", "Construction and the Built Environment")
+          },
+          {
+            value: "Creative and Design",
+            text: "Creative and Design",
+            checked: checked("organisation-industry", "Creative and Design")
+          },
+          {
+            value: "Digital and IT",
+            text: "Digital and IT",
+            checked: checked("organisation-industry", "Digital and IT")
+          },
+          {
+            value: "Education and Childcare",
+            text: "Education and Childcare",
+            checked: checked("organisation-industry", "Education and Childcare")
+          },
+          {
+            value: "Engineering and Manufacturing",
+            text: "Engineering and Manufacturing",
+            checked: checked("organisation-industry", "Engineering and Manufacturing")
+          },
+          {
+            value: "Hair and Beauty",
+            text: "Hair and Beauty",
+            checked: checked("organisation-industry", "Hair and Beauty")
+          },
+          {
+            value: "Health and Science",
+            text: "Health and Science",
+            checked: checked("organisation-industry", "Health and Science")
+          },
+          {
+            value: "Legal, Finance and Accounting",
+            text: "Legal, Finance and Accounting",
+            checked: checked("organisation-industry", "Legal, Finance and Accounting")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("organisation-industry", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+        ]
+      }) }}
+
+      <!-- -- -- -->
+
+      {{ govukRadios({
+        
+        idPrefix: "student-hosting",
+        name: "student-hosting",
+        fieldset: {
+          legend: {
+            text: "Are you interested in hosting a student at one location or multiple?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "A single workplace",
+            text: "A single workplace",
+            checked: checked("student-hosting", "A single workplace")
+          },
+          {
+            value: "Multiple workplaces",
+            text: "Multiple workplaces",
+            checked: checked("student-hosting", "Multiple workplaces")
+          }
+        ]
+      }) }}
+
+      <!-- -- -- -->
+
+      {{ govukInput({
+        label: {
+          text: "Enter the postcode of your organisation's location",
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        id: "address-postcode",
+        name: "address-postcode",
+        autocomplete: "postal-code",
+        value: data['address-postcode']
+      }) }}
+
+      <!-- -- -- -->
+
+      {{ govukTextarea({
+        name: "spec-req",
+        id: "spec-req",
+        label: {
+          text: "Do you have any specific requirements that you would like to let a prospective School or College know about? ",
+          classes: "govuk-label--m"
+        },
+        classes: "govuk-!-margin-bottom-6",
+        value: data['spec-req']
+      }) }}
+
+      <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

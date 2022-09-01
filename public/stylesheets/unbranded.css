@@ -8293,6 +8293,11 @@ a.campaign-button.black:link {
   width: 208px;
 }
 
+.govuk-header__logo {
+  width: auto !important;
+  margin-right: 35px;
+}
+
 .header-banner {
   padding: 60px 0px;
   background: url("https://www.tlevels.gov.uk/files/images/StudentHomeBanner.jpg") no-repeat center;
@@ -8665,6 +8670,37 @@ h3.heading-sora {
   font-size: 21px;
   margin-bottom: 5px;
   margin-top: 10px;
+}
+
+.eoi-form-journey * {
+  font-family: "GDS Transport", arial, sans-serif !important;
+  font-style: normal !important;
+  text-transform: initial !important;
+}
+.eoi-form-journey * .govuk-link:link {
+  color: #1d70b8;
+  text-decoration: underline;
+}
+.eoi-form-journey * p a,
+.eoi-form-journey * .govuk-link:hover {
+  color: #003078;
+  background: none;
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+  -webkit-text-decoration-skip: none;
+  text-decoration-skip: none;
+}
+.eoi-form-journey * .govuk-link:active {
+  color: #0b0c0c;
+}
+.eoi-form-journey * .govuk-link:focus {
+  outline: 3px solid rgba(0, 0, 0, 0);
+  color: #0b0c0c;
+  background-color: #fd0;
+  -webkit-box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+  text-decoration: none;
 }
 
 .subjects.digi-prod > div:first-child {
