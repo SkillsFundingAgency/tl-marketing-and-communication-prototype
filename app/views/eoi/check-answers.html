@@ -4,6 +4,8 @@
 Your details have been saved | T Levels and industry placement support for employersx
 {% endblock %}
 
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
@@ -15,7 +17,7 @@ Your details have been saved | T Levels and industry placement support for emplo
       <span class="govuk-caption-l govuk-!-margin-bottom-6">Step 3 of 3</span>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check your answers before sending your application</h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
+      <h2 class="govuk-heading-m">About you</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -76,7 +78,7 @@ Your details have been saved | T Levels and industry placement support for emplo
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Organisation details</h2>
+      <h2 class="govuk-heading-m">About your organisation</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -109,7 +111,7 @@ Your details have been saved | T Levels and industry placement support for emplo
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Student hosting arrangement
+            Industry placement locations
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['student-hosting'] }}
@@ -151,15 +153,28 @@ Your details have been saved | T Levels and industry placement support for emplo
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+      <h2 class="govuk-heading-m">Now send your details</h2>
 
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        items: [
+          {
+            value: "By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the privacy notice.",
+            text: "By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the privacy notice."
+          }
+        ]
+      }) }}
+
+      <p>In doing so, we will comply with the General Data Protection Regulation (GDPR) and ensure that any personal data (as defined by GDPR) is protected, used only for the purposes for which it was obtained and disposed of accordingly.
+        We may also from time to time use your contact information to ask you if you would like to take part in research or surveys.
+        </p>
 
       <form action="confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
-
-
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Accept and send
         </button>
