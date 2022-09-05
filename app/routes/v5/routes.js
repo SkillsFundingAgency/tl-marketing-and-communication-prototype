@@ -609,10 +609,8 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     const newResult = req.session.data['result-ip-answer']
 
-    if (newResult === 'Completed with special consideration') {
-      res.redirect('/' + version + '/providers/total-placement-hours')
-    } else if (newResult === 'Completed') {
-      res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
+    if (newResult === 'Completed') {
+      res.redirect('/' + version + '/providers/completed-with-special-consideration')
     } else {
       req.session.data.newplacementResult = 'yes'
       req.session.data.showBanner = 'ip'
@@ -623,7 +621,20 @@ module.exports = function (router) {
     }
   })
 
-  //Update Certificate request status
+  // Update Industry placement special consideration
+  router.post('/' + version + '/providers/completed-with-special-consideration', function (req, res) {
+    const newSpecialConsResult = req.session.data['special-consideration-ip-answer']
+
+    if (newSpecialConsResult === 'special-consideration-yes') {
+      res.redirect('/' + version + '/providers/total-placement-hours')
+    } else {
+      req.session.data.selectedUln = req.session.data.uln
+
+      res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
+    }
+  })
+
+  // Update Certificate request status
   router.post('/' + version + '/providers/request-replacement-document', function (req, res) {
     const newcertificateStatus = req.session.data.certificateStatus
 
