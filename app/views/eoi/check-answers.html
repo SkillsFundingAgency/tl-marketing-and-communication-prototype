@@ -157,21 +157,22 @@ Your details have been saved | T Levels and industry placement support for emplo
 
       <p>By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-      {{ govukCheckboxes({
-        idPrefix: "waste",
-        name: "waste",
-        items: [
-          {
-            value: "By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the privacy notice.",
-            text: "By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the privacy notice."
-          }
-        ]
-      }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 
-      <p>In doing so, we will comply with the General Data Protection Regulation (GDPR) and ensure that any personal data (as defined by GDPR) is protected, used only for the purposes for which it was obtained and disposed of accordingly.
-        We may also from time to time use your contact information to ask you if you would like to take part in research or surveys.
-        </p>
 
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                <p class="govuk-!-font-size-19">By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the privacy notice.</p>
+                <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">In doing so, we will comply with the General Data Protection Regulation (GDPR) and ensure that any personal data (as defined by GDPR) is protected, used only for the purposes for which it was obtained and disposed of accordingly.We may also from time to time use your contact information to ask you if you would like to take part in research or surveys.</p>
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
       <form action="confirmation" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
