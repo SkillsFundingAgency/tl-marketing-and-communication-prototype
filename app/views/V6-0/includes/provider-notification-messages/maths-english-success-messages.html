@@ -1,0 +1,33 @@
+
+{% if data['showBanner'] === 'maths'%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Maths status added
+    </h3>
+    <p class="govuk-body"><a class="govuk-notification-banner__link" href="/contact-us">Contact us</a> if the maths status is incorrect. We aim to respond within 3 working days.</p>
+  </div>
+</div>
+{% elif data['showBanner'] === 'english'%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      English status added
+    </h3>
+    <p class="govuk-body"><a class="govuk-notification-banner__link" href="/contact-us">Contact us</a> if the English status is incorrect. We aim to respond within 3 working days.</p>
+  </div>
+</div>
+{% endif %}
+
+
+

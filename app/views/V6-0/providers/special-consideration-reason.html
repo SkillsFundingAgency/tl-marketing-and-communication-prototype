@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is the reason for the special consideration - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="did-you-use-an-industry-placement" method="post" id="special-consideration" novalidate data-validate='special-consideration-validation'>
+
+            <fieldset class="govuk-fieldset" aria-describedby="special-consideration-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Industry placement: Special consideration</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Why was {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} granted special consideration for their industry placement?
+                        </h1>
+                    </legend>
+                    <div id="special-consideration-hint" class="govuk-hint">
+                        We will ask you to declare that you hold documentary evidence on file before you can submit this learner's industry placement details. Select all that apply.
+                    </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-1" name="special-consideration" type="checkbox"
+                                   value="Learner's medical reasons" {{ checked("special-consideration", "Learner's medical reasons") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-1">
+                                Learner's medical reasons
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-2" name="special-consideration" type="checkbox"
+                                   value="Learner's family medical reasons" {{ checked("special-consideration", "Learner's family medical reasons") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-2">
+                                Learner's family medical reasons
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-3" name="special-consideration" type="checkbox"
+                                   value="Bereavement" {{ checked("special-consideration", "Bereavement") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-3">
+                                Bereavement
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-4" name="special-consideration" type="checkbox"
+                                   value="Domestic crisis" {{ checked("special-consideration", "Domestic crisis") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-4">
+                                Domestic crisis
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-5" name="special-consideration" type="checkbox"
+                                   value="Trauma or significant change of circumstances" {{ checked("special-consideration", "Trauma or significant change of circumstances") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-5">
+                                Trauma or significant change of circumstancs
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-6" name="special-consideration" type="checkbox"
+                                   value="Alternative priorities: Sport, training or other competitions" {{ checked("special-consideration", "Alternative priorities: Sport, training or other competitions") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-6">
+                                Alternative priorities: Sport, training or other competitions
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-7" name="special-consideration" type="checkbox"
+                                   value="Unsafe placement" {{ checked("special-consideration", "Unsafe placement") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-7">
+                                Unsafe placement
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-8" name="special-consideration" type="checkbox"
+                                   value="Placement withdrawn" {{ checked("special-consideration", "Placement withdrawn") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-8">
+                                Placement withdrawn
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="special-consideration-9" name="special-consideration" type="checkbox"
+                                   value="COVID-19" {{ checked("special-consideration", "COVID-19") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="special-consideration-9">
+                                COVID-19
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+<script type="application/json" id="special-consideration-validation">
+    {
+
+        "special-consideration": {
+
+            "presence": {
+
+                "message": "^Select one or more reasons for granting special consideration"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}

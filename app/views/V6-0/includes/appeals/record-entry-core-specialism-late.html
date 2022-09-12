@@ -1,0 +1,38 @@
+<section id="core-table" class="govuk-!-margin-bottom-9 govuk-!-padding-left-3">
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Core component: {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }}</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Exam period</th>
+        <th scope="col" class="govuk-table__header">Grade</th>
+        <th scope="col" class="govuk-table__header">Last updated</th>
+        <th scope="col" class="govuk-table__header">Updated by</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Exam period</span>Autumn 2020</td>
+        <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Grade</span>
+          <span>
+            C
+            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-2">
+              final
+            </strong>
+          </span>
+        </td>
+        <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Last updated</span>7 March 2021</td>
+        <td class="govuk-table__cell"><span class="responsive-table__heading" aria-hidden="true">Updated by</span>Alan Reed</td>
+        <td class="govuk-table__cell"><span class="responsive-table__heading remove-class-mobile" aria-hidden="true">Action</span>
+          {% if data['exceptions'] == 'yes' and data['uln'] == '9876543210'%}
+          {% else %}
+          <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" role="button"
+            href="../appeals/exceptions/exception.html">Request change</a>
+          {% endif %}
+        </td>
+      </tr>
+  </table>
+
+</section>

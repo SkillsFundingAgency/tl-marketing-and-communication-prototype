@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add industry placement details - Update learner record - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="update-t-level-record">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="change-ip-result" method="post" novalidate data-validate='placementStatus-validation'>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Industry placement</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} completed their industry
+                            placement?
+                        </h1>
+                    </legend>
+                    <div>
+                        <p class="govuk-body">If a learner has completed their industry placement with special consideration, select yes.</p>
+                    </div>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
+                                   type="radio"
+                                   value="Completed" {{ checked("result-ip-answer", "Completed") }} >
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                                Yes, completed
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
+                                   type="radio"
+                                   value="Not completed" {{ checked("result-ip-answer", "Not completed") }} >
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                                No, still to be completed
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-inset-text">By selecting 'yes', you are declaring that the
+                    relevant provider responsibilities have been met and that you hold the <a
+                            href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
+                            class="govuk-link" rel="noreferrer noopener" target="_blank">signed declaration of
+                        student completion (opens in a new tab)</a> for this learner.
+                </div>
+            </fieldset>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+<script type="application/json" id="placementStatus-validation">
+    {
+        "result-ip-answer": {
+            "presence": {
+                "message": "^Tell us whether this learner has completed their industry placement"
+            }
+        }
+    }
+</script>
+{% endblock %}
