@@ -23,11 +23,11 @@ About T Levels for students | T Levels
   <div class="center-wrap display-flex f-row f-space">
     <a href="/students" class="logo"></a>
     <ol class="display-flex f-row f-right">
-      <li><a href="/students/" class="font-Circ italic">Home</a></li>
+      <li><a href="/students" class="font-Circ italic">Home</a></li>
       <li><a href="/students/about" class="on-page font-Circ italic">About T Levels</a></li>
+      <li><a href="/students/why" class="font-Circ italic">Why choose T Levels</a></li>
       <li><a href="/students/subjects" class="font-Circ italic">T level subjects</a></li>
       <li><a href="/students/student-stories" class="font-Circ italic">Student stories</a></li>
-      <li><a href="/students/parents" class="font-Circ italic">Resources for parents</a></li>
       <li><a href="https://www.tlevels.gov.uk/students/find" class="font-Circ italic">Find a T level</a></li>
     </ol>
   </div>
@@ -44,8 +44,8 @@ About T Levels for students | T Levels
       </div>
       <div class="block-50 text display-flex f-column">
         <h1>About T Levels</h1>
-        <p>T Levels are a 2-year qualification that you can do  after GCSEs as an alternative to A levels, other post-16 courses or an apprenticeship. </p>
-        <p>They have been designed with leading businesses and employers to give you the knowledge and skills you need.</p>
+        <p>T Levels are a 2-year qualification that you can do as an alternative to A levels, other post-16 courses or an apprenticeship.</p>
+        <p>They bring classroom learning and an extended industry placement together on a course designed with businesses and employers.</p>
       </div>
     </div>
   </div>
@@ -55,10 +55,9 @@ About T Levels for students | T Levels
   <div class="block-row display-flex row center">
     <div class="center-wrap display-flex f-row">
       <div class="block-50 text display-flex f-column">
-        <h2>Get ahead in your career</h2>
+        <h2>A new choice</h2>
+        <p>T Levels are ideal if you have finished your GCSEs and want the knowledge and experience to get straight into employment, an apprenticeship or higher education.</p>
         <p>You’ll spend 80% of your time in the classroom and 20% on a 45-day placement with an employer to give you the skills and knowledge companies look for.</p>
-        <p>Your industry placement gives you the chance to learn what a real career is like while you continue your studies. When and how you complete it depends on the T Level, school or college, and employer.</p>
-        <p>Like A levels, there are no tuition fees to study a T Level if you start before you are 19.</p>
       </div>
       <div class="block-50 image">
         <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets10.jpg" style="margin-bottom: -4px;">
@@ -75,10 +74,9 @@ About T Levels for students | T Levels
         <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets18.jpg" style="margin-bottom: -4px;">
       </div>
       <div class="block-50 text display-flex f-column">
-        <h2>Worth 3 A Levels and awarded UCAS points</h2>
-        <p>Your T Level will be allocated UCAS points (a T Level Distinction* is equivalent to 3 A levels at A*) and will be recognised by universities and other education providers so you can choose to continue studying if you wish.</p>
-        <p>26 of the top 50 universities in <a href="https://www.theguardian.com/education/ng-interactive/2021/sep/11/the-best-uk-universities-2022-rankings" target="_blank">The Guardian’s Best UK Universities 2022 Rankings</a> have agreed to accept T Level students (as of August 2022).</p>
-        <p><a href="https://www.gov.uk/government/publications/t-level-resources-for-universities/providers-that-have-confirmed-t-levels-suitable-for-entry-on-one-course" target="_blank">See the universities accepting T Levels on GOV.UK</a>.</p>
+        <h2>Equivalent to 3 A levels</h2>
+        <p>One T Level takes 2 years of full-time study and is equivalent in size to 3 A levels.</p>
+        <p>The first T Levels have started at selected schools and colleges in England, with more coming in the following years.</p>
       </div>
     </div>
   </div>
@@ -88,28 +86,13 @@ About T Levels for students | T Levels
   <div class="block-row display-flex row center">
     <div class="center-wrap display-flex f-row">
       <div class="block-50 text display-flex f-column">
-        <h2>Qualifications that count</h2>
-        <p>When you pass your T Level, you will get a nationally recognised certificate showing the overall grade you achieved - pass, merit, distinction or distinction*. It will also give details of what you learned on the course to help you move into skilled employment or a higher apprenticeship.</p>
-        <p>In 2022, over 92% of T Level students achieved a ‘Pass’ or above.</p>
+        <h2>T Level transition programme</h2>
+        <p>Think you might like to do a T Level, but need more time to get ready? The T Level Transition Programme is a 1-year post-GCSE course designed to prepare you for your chosen T Level.</p>
+        <p>It will give you knowledge, practical and study skills, and work experience to excel in your subject. Talk to your T Level school or college to find out if this could be right for you.</p>
+        <p><a href="https://www.gov.uk/government/publications/providers-selected-to-deliver-t-levels">See the schools and colleges offering the T Level Transition Programme</a></p>
       </div>
       <div class="block-50 image">
         <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets15New.jpg" style="margin-bottom: -4px;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Block rows - Row three -->
-
-  <div class="block-row display-flex row center">
-    <div class="center-wrap display-flex f-row">
-      <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets18.jpg" style="margin-bottom: -4px;">
-      </div>
-      <div class="block-50 text display-flex f-column">
-        <h2>T Level Transition Programme</h2>
-        <p>Think you might like to do a T Level, but need more time to get ready? The T Level Transition Programme is a 1-year post-GCSE course designed to prepare you for your chosen T Level.</p>
-        <p>It will give you knowledge, practical and study skills, and work experience to excel in your subject. Talk to your T Level school or college to find out if this could be right for you.</p>
-        <p><a href="https://www.gov.uk/government/publications/providers-selected-to-deliver-t-levels" target="_blank">See the schools and colleges offering the T Level Transition Programme</a>.</p>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 {% extends "layout_unbranded.html" %}
 
 {% block pageTitle %}
-About T Levels for students | T Levels
+  T Levels for students | T Levels
 {% endblock %}
 
 {% block content %}
@@ -23,29 +23,49 @@ About T Levels for students | T Levels
   <div class="center-wrap display-flex f-row f-space">
     <a href="/students" class="logo"></a>
     <ol class="display-flex f-row f-right">
-      <li><a href="/students/" class="font-Circ italic">Home</a></li>
-      <li><a href="/students/about" class="on-page font-Circ italic">About T Levels</a></li>
+      <li><a href="/students/" class="on-page font-Circ italic">Home</a></li>
+      <li><a href="/students/about" class="font-Circ italic">About T Levels</a></li>
+      <li><a href="/students/why" class="font-Circ italic">Why choose T Levels</a></li>
       <li><a href="/students/subjects" class="font-Circ italic">T level subjects</a></li>
       <li><a href="/students/student-stories" class="font-Circ italic">Student stories</a></li>
-      <li><a href="/students/parents" class="font-Circ italic">Resources for parents</a></li>
       <li><a href="https://www.tlevels.gov.uk/students/find" class="font-Circ italic">Find a T level</a></li>
     </ol>
   </div>
 </nav>
 
-<main class="subpage blocks">
+<main>
+
+  <!-- Header banner -->
+
+  <div class="header-banner display-flex row center">
+    <div class="center-wrap display-flex f-column f-left">
+      <div class="banner-box">
+        <h1 class="col-white govuk-heading-l">WELCOME TO THE NEXT LEVEL</h1>
+        <p class="col-white">T Levels are a 2-year qualification designed to give you a head start towards the career
+          you want.</p>
+        <p class="col-white">The government has developed T Levels to deliver world-class technical education and give
+          you a new choice after GCSEs.</p>
+        <a class="campaign-button" href="/students/about">Find out more about T Levels</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Block rows - Row one -->
 
-  <div class="block-row bg-orange display-flex row center">
+  <div class="block-row padded-top display-flex row center">
     <div class="center-wrap display-flex f-row">
-      <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets3New.jpg" style="margin-bottom: -4px;">
-      </div>
       <div class="block-50 text display-flex f-column">
-        <h1>About T Levels</h1>
-        <p>T Levels are a 2-year qualification that you can do  after GCSEs as an alternative to A levels, other post-16 courses or an apprenticeship. </p>
-        <p>They have been designed with leading businesses and employers to give you the knowledge and skills you need.</p>
+        <h2>Why choose T Levels</h2>
+        <p>A T Level is a nationally-recognised qualification that is worth the same number of UCAS points as 3 A levels
+          and <a target="_blank"
+            href="https://www.gov.uk/government/publications/t-level-resources-for-universities/providers-that-have-confirmed-t-levels-suitable-for-entry-on-one-course">accepted
+            by universities</a>.</p>
+        <p>Endorsed by business, they include a 45-day industry placement to help you learn what a real career is like.
+        </p>
+        <a class="campaign-button" href="/students/why">Discover the benefits of T Levels</a>
+      </div>
+      <div class="block-50 image">
+        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets17New.jpg" style="margin-bottom: -4px;">
       </div>
     </div>
   </div>
@@ -54,65 +74,48 @@ About T Levels for students | T Levels
 
   <div class="block-row display-flex row center">
     <div class="center-wrap display-flex f-row">
-      <div class="block-50 text display-flex f-column">
-        <h2>Get ahead in your career</h2>
-        <p>You’ll spend 80% of your time in the classroom and 20% on a 45-day placement with an employer to give you the skills and knowledge companies look for.</p>
-        <p>Your industry placement gives you the chance to learn what a real career is like while you continue your studies. When and how you complete it depends on the T Level, school or college, and employer.</p>
-        <p>Like A levels, there are no tuition fees to study a T Level if you start before you are 19.</p>
-      </div>
       <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets10.jpg" style="margin-bottom: -4px;">
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Block rows - Row three -->
-
-  <div class="block-row display-flex row center">
-    <div class="center-wrap display-flex f-row">
-      <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets18.jpg" style="margin-bottom: -4px;">
+        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets2New.jpg" style="margin-bottom: -4px;">
       </div>
       <div class="block-50 text display-flex f-column">
-        <h2>Worth 3 A Levels and awarded UCAS points</h2>
-        <p>Your T Level will be allocated UCAS points (a T Level Distinction* is equivalent to 3 A levels at A*) and will be recognised by universities and other education providers so you can choose to continue studying if you wish.</p>
-        <p>26 of the top 50 universities in <a href="https://www.theguardian.com/education/ng-interactive/2021/sep/11/the-best-uk-universities-2022-rankings" target="_blank">The Guardian’s Best UK Universities 2022 Rankings</a> have agreed to accept T Level students (as of August 2022).</p>
-        <p><a href="https://www.gov.uk/government/publications/t-level-resources-for-universities/providers-that-have-confirmed-t-levels-suitable-for-entry-on-one-course" target="_blank">See the universities accepting T Levels on GOV.UK</a>.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Block rows - Row four -->
-
-  <div class="block-row display-flex row center">
-    <div class="center-wrap display-flex f-row">
-      <div class="block-50 text display-flex f-column">
-        <h2>Qualifications that count</h2>
-        <p>When you pass your T Level, you will get a nationally recognised certificate showing the overall grade you achieved - pass, merit, distinction or distinction*. It will also give details of what you learned on the course to help you move into skilled employment or a higher apprenticeship.</p>
-        <p>In 2022, over 92% of T Level students achieved a ‘Pass’ or above.</p>
-      </div>
-      <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets15New.jpg" style="margin-bottom: -4px;">
+        <h2>What can you learn</h2>
+        <p>Students can already apply for 10 T Level courses. Over the next few years a total of more than 20 T Level
+          subjects will become available.</p>
+        <p>Eventually there will be something for everyone - from agriculture to catering and engineering to finance.
+        </p>
+        <a class="campaign-button" href="/students/subjects">See all T Level subjects</a>
       </div>
     </div>
   </div>
 
   <!-- Block rows - Row three -->
 
-  <div class="block-row display-flex row center">
+  <div class="block-row padded-bottom display-flex row center">
     <div class="center-wrap display-flex f-row">
-      <div class="block-50 image">
-        <img src="https://www.tlevels.gov.uk/files/images/TLevels_WebsiteAssets18.jpg" style="margin-bottom: -4px;">
+      <div class="block-50 text hide-block display-flex f-column">
+        <div class="wrap">
+          <h2>Hear from T Level students</h2>
+          <p>Hear first hand from students about their experiences of studying T Level subjects, and why they think it’s
+            the ideal next step after GCSEs.</p>
+          <a class="campaign-button" href="/students/student-stories">See T Level student stories</a>
+        </div>
+        <span class="hidden-square"></span>
       </div>
-      <div class="block-50 text display-flex f-column">
-        <h2>T Level Transition Programme</h2>
-        <p>Think you might like to do a T Level, but need more time to get ready? The T Level Transition Programme is a 1-year post-GCSE course designed to prepare you for your chosen T Level.</p>
-        <p>It will give you knowledge, practical and study skills, and work experience to excel in your subject. Talk to your T Level school or college to find out if this could be right for you.</p>
-        <p><a href="https://www.gov.uk/government/publications/providers-selected-to-deliver-t-levels" target="_blank">See the schools and colleges offering the T Level Transition Programme</a>.</p>
+      <div class="block-50 video">
+        <div class="video-wrapper">
+          <iframe title="Education and Childcare T Level"
+            src="https://www.youtube-nocookie.com/embed/NyMVsF0oNPg?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.tlevels.gov.uk"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen="" data-gtm-yt-inspected-12962783_43="true" id="173030327"
+            data-gtm-yt-inspected-12962783_93="true" data-gtm-yt-inspected-10="true"
+            data-dashlane-frameid="489"></iframe>
+        </div>
+        <p><a class="link-transcript" href="https://www.tlevels.gov.uk/students/transcripts/ambassadors2">Video
+            transcript</a></p>
       </div>
     </div>
   </div>
+
 
   <div class="search-row bg-orange display-flex row center">
     <div class="center-wrap display-flex f-column">
@@ -124,8 +127,22 @@ About T Levels for students | T Levels
     </div>
   </div>
 
-</main>
+  <div class="row video-fullwidth">
+    <iframe title="T Levels - the next level qualification"
+      src="https://www.youtube-nocookie.com/embed/PTc5pxcHMUY?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.tlevels.gov.uk"
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
+      data-gtm-yt-inspected-7="true" data-gtm-yt-inspected-12962783_43="true" id="25280545"
+      data-gtm-yt-inspected-12962783_93="true" data-dashlane-frameid="1167"></iframe>
+  </div>
 
+  <div class="row bg-black display-flex flex-r row-transcript">
+    <p><a class="link-transcript" href="https://www.tlevels.gov.uk/students/transcripts/home">Read a transcript
+        of this video</a></p>
+  </div>
+
+  <div class="row welcome-banner bg-black"></div>
+
+</main>
 
 <footer class="display-flex bg-black row center">
   <div class="center-wrap">
@@ -427,6 +444,13 @@ About T Levels for students | T Levels
 <!-- - - - -  - - - - -->
 <!-- End page content -->
 <!-- - - - -  - - - - -->
+
+<script type="text/javascript">
+  $(function () {
+    var s = $('div > iframe').attr('src');
+    $('div > iframe').attr('src', s + '&playsinline=1');
+  });
+</script>
 
 <main class="display-none">
   <div class="display-none">

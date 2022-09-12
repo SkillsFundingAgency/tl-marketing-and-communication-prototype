@@ -9,54 +9,36 @@
   {{ govukHeader() }}
 {% endblock %}
 
-{% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
-      </li>
-    </ol>
-  </div>
-{% endblock %}
-
 {% block content %}
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row eoi-form-journey">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        {% if serviceName %} {{ serviceName }} {% endif %}
+        Register an interest in hosting industry placements
       </h1>
 
-      <p>Use this service to:</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget consequat dolor, nec feugiat eros. Nulla sit amet diam eget erat viverra suscipit. Sed vel ligula finibus, gravida diam molestie, varius est. Aenean volutpat convallis sagittis. Proin in nisl neque. Mauris ac imperdiet sem. Etiam viverra blandit elit, commodo molestie neque finibus faucibus.</p>
 
-      <ul class="govuk-list govuk-list--bullet">
+      <!-- <ul class="govuk-list govuk-list--bullet">
         <li>do something</li>
         <li>update your name, address or other details</li>
         <li>do something else</li>
-      </ul>
+      </ul> -->
 
       <p>Registering takes around 5 minutes.</p>
 
-      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      <a href="form-one" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
         </svg>
       </a>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
+      <!-- <h2 class="govuk-heading-m">Before you start</h2>
 
       <p>You can also <a href="#">register by post</a>.</p>
-
       <p>The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
-
-      <p>You can’t register for this service if you’re in the UK illegally.</p>
+      <p>You can’t register for this service if you’re in the UK illegally.</p> -->
 
     </div>
 
@@ -64,22 +46,22 @@
 
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
+          Industry placements
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a href="#">
-                Related link
+              <a href="https://employers.tlevels.gov.uk/hc/en-gb/categories/4403442821650-About-T-Levels-and-industry-placements">
+                About T Levels and industry placements
               </a>
             </li>
             <li>
-              <a href="#">
-                Related link
+              <a href="https://employers.tlevels.gov.uk/hc/en-gb/categories/4403442822034-Business-benefits-and-case-studies">
+                Business benefits and case studies
               </a>
             </li>
             <li>
-              <a href="#" class="govuk-!-font-weight-bold">
+              <a href="https://employers.tlevels.gov.uk" class="govuk-!-font-weight-bold">
                 More <span class="govuk-visually-hidden">in Subsection</span>
               </a>
             </li>
