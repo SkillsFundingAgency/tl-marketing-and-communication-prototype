@@ -1,0 +1,133 @@
+<section id ="add-entries">
+  <h2 class="govuk-heading-m">Core (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+
+
+  {% if data['core-assessment-entry-added'] === "yes" or data['uln'] === "1234567891" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Autumn 2021
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-core">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-core"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% elseif data['uln'] === "5647382910" %}
+    <p class="govuk-body govuk-!-margin-bottom-9">You must <a href="../results/learner-results">add a result to this learner's previous assessment</a> 
+      before entering new assessment details.</p>
+
+  {% else %}
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for autumn 2021
+  </p>
+  <p class="govuk-!-margin-bottom-9"><a href="add-entry-core.html"> Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}</a></p>
+  
+
+  {% endif %}
+
+
+  <!-- <h2 class="govuk-heading-m">Specialism (code): Heating Engineering (ZT0111) and Ventilation (ZT0112)</h2> -->
+  <h2 class="govuk-heading-m">Specialism (code): {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</h2> 
+  {% if data['specialism-assessment-entry-added'] === "yes" %}
+
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Summer 2022
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="remove-entry-specialism">
+          Remove<span class="govuk-visually-hidden"> assessment entry</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <span id = "update-day-specialism"></span>
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Updated by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Sarah Philips
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  {% else %}
+
+  <p class="govuk-body">
+    No assessment entries have yet been recorded for summer 2022
+  </p>
+  <p class="govuk-!-margin-bottom-9">
+    <a href="add-entry-specialism.html">Add an assessment entry for {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialism'] }} {{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}</a>
+  </p> 
+
+  {% endif %}
+</section>
+
+<script>
+  window.onload = function () {
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core').innerHTML = dateFormatcore
+    }
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-specialism').innerHTML = dateFormat
+    
+</script>
+
+
+

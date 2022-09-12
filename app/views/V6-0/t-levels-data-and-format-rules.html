@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Requesting a statement of achievement page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">T Levels data format and rules</h1>
+
+        <p class="govuk-body">These guides show you how to create files that add and amend data for Manage T Level results by bulk upload.</p>
+        <p class="govuk-body">They explain how to:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-5">
+            <li>meet the technical requirements</li>
+            <li>use the correct format for file data items</li>
+            <li>choose the right core and specialism codes</li>
+            <li>present your data correctly, by viewing an example CSV file</li>
+        </ul>
+
+        <h2 class="govuk-heading-m ">
+            Registrations
+        </h2>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#"><img src="/public/images/document-image.png" alt="Document-image"></a>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-s">
+
+                    <a href="#">Download registrations data format and rules (XLSX, 284KB)</a>
+                    <p>Version 1.7, published 2 March 2022</p>
+                </h1>
+            </div>
+        </div>
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            Assessment entries
+        </h2>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#"><img src="/public/images/document-image.png" alt="Document-image"></a>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-s">
+
+                    <a href="#">Download assessment entries data format and rules (XLSX, 285KB)</a>
+                    <p>Version 1.5, published 2 March 2022</p>
+                </h1>
+            </div>
+        </div>
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">
+            Results
+        </h2>
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#"><img src="/public/images/document-image.png" alt="Document-image"></a>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="govuk-heading-s">
+
+                    <a href="#">Download results data format and rules (XLSX, 274KB)</a>
+                    <p>Version 1.3, published 2 March 2022</p>
+                </h1>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

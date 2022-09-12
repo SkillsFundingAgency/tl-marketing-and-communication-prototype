@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation tlevels added page
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">T Level added successfully</h1>
+      </div>
+
+      <p class="govuk-body govuk-!-padding-top-5">The additional T Level {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerName'] }} <abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data['tlevel']]['providerUKPRN'] }} will offer is:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>{{ data['tLevelsProvidersCourses'][data['tlevel']]['providerTlevel3'] }} </li>
+      </ul>
+
+
+      <p class="govuk-body">
+        <a href="provider-details-existing.html">Manage provider's T Levels</a>  
+      </p>
+
+
+      <a class="govuk-button" role="button" href="find-provider.html">Find another provider</a>
+
+    </div>
+  </div>
+
+{% endblock %}

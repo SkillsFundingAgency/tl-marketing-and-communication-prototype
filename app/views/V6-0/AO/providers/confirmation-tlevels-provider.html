@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation tlevels added page
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">T Levels added successfully</h1>
+      </div>
+
+      <p class="govuk-body govuk-!-padding-top-5">You confirmed {{ data['tLevelsProvidersCourses'][data.provider]['providerName'] }}(<abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses'][data.provider]['providerUKPRN'] }}) will offer:</p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        {% if data['tlevel-choice']|length === '3'%}
+          <li>{{data['tlevel-choice'][0]}}</li>
+          <li>{{data['tlevel-choice'][1]}}</li>
+          <li>{{data['tlevel-choice'][2]}}</li>
+        {% elif data['tlevel-choice']|length === '2'%}
+          <li>{{data['tlevel-choice'][0]}}</li>
+          <li>{{data['tlevel-choice'][1]}}</li>
+        {% else %}
+          <li>{{data['tlevel-choice'][0]}}</li>
+        {% endif %}
+        
+      </ul>
+
+      <p class="govuk-body govuk-!-padding-bottom-5 govuk-!-padding-top-1"><a href="provider-details-existing">Manage provider's T Levels</a></p>
+
+      <p><a class="govuk-button" role="button" href="find-provider.html">Find another provider</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

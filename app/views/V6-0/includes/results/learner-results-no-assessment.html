@@ -1,0 +1,108 @@
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}'s results
+    </h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border" aria-label="Learners details">
+      <div class="govuk-summary-list__row">
+
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['uln'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerProvider'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          UKPRN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['UKPRN'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+        </dd>
+      </div>
+    </dl>
+    
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Core component: {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} {{
+      data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCoreCode'] }}</h2>
+ 
+        <p class="govuk-body govuk-!-margin-top-5">
+          This learner does not have any core component assessments registered in this system
+        </p>
+
+        <p class="govuk-body"> <a href="/V2-0/AO/assessments/learners-assessment-entries" class="govuk-link">Add an
+            assessment</a>
+        </p>
+
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7">Occupational specialism: {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }} {{
+        data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialismCode'] }}</h2>
+
+        <p class="govuk-body">
+          This learner does not have any occupational specialism assessments registered in this system.
+        </p>
+        <p class="govuk-body">
+          <a href="/V2-0/AO/assessments/learners-assessment-entries" class="govuk-link">Add an assessment</a>
+        </p>
+
+
+        <details class="govuk-details govuk-!-margin-top-5" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              More about grades and their statuses
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+              <p class="govuk-body">
+                The highest grade for each component will be used to calculate the overall T Level result for results day.</p>
+              
+              <p class="govuk-body">Grades are marked 'FINAL' once:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>the ROMM or appeal deadline has passed, or</li>
+                <li>an appeal outcome has been added</li>
+              </ul>
+          
+              <p class="govuk-body">You can request a change to a grade marked 'FINAL' in the post-results section of this service.</p>
+              <p class="govuk-body">If a grade status is 'ROMM' or 'APPEAL' then the overall result will not be sent for certificate printing until an outcome has been added.</p>
+              <p class="govuk-body">Outcomes can be added in the post-results section of this service.</p>
+          </div>
+        </details>
+
+    <a class="govuk-button" href="search-learner">Search again</a>
+
+
+  </div>
+</div>
+
+{% endblock %}
