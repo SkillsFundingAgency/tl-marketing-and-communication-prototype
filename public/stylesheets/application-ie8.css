@@ -5794,32 +5794,40 @@ footer .footer-bottom .socials svg g {
 .subpage.blocks.stories-page .search-row {
   margin-top: 30px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div,
 .subpage.blocks.stories-page .testimonial > div {
   position: relative;
   padding: 0px 25px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div:first-child,
 .subpage.blocks.stories-page .testimonial > div:first-child {
   margin-bottom: 25px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div:first-child p,
 .subpage.blocks.stories-page .testimonial > div:first-child p {
   line-height: 25px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div:last-child p,
 .subpage.blocks.stories-page .testimonial > div:last-child p {
   font-weight: bold;
   max-width: 379px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div:last-child a.link-transcript,
 .subpage.blocks.stories-page .testimonial > div:last-child a.link-transcript {
   padding-bottom: 2px;
   border-bottom: 1.5px solid #765aaf;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div svg,
 .subpage.blocks.stories-page .testimonial > div svg {
   position: absolute;
   width: 35px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div svg:first-of-type,
 .subpage.blocks.stories-page .testimonial > div svg:first-of-type {
   top: -22px;
   left: -15px;
 }
+.subpage.blocks.stories-page .testimonial .wrap > div svg:last-of-type,
 .subpage.blocks.stories-page .testimonial > div svg:last-of-type {
   bottom: -10px;
   right: -15px;
@@ -5845,9 +5853,11 @@ footer .footer-bottom .socials svg g {
 .subpage.blocks.stories-page .light-purple svg path {
   fill: #765aaf;
 }
+.subpage.blocks.stories-page .light-purple .wrap > div:last-child p,
 .subpage.blocks.stories-page .light-purple > div:last-child p {
   color: #765aaf;
 }
+.subpage.blocks.stories-page .light-purple .wrap > div:last-child p.col-black,
 .subpage.blocks.stories-page .light-purple > div:last-child p.col-black {
   color: #000;
 }

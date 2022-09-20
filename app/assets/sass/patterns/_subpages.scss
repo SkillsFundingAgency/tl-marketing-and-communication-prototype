@@ -17,6 +17,7 @@
     }
 
     .testimonial {
+        .wrap > div,
         > div {
             position:relative;
             padding: 0px 25px;
@@ -88,6 +89,7 @@
         svg path {
             fill:#765aaf;
         }
+        .wrap > div:last-child p,
         > div:last-child p {
             color:#765aaf;
 
