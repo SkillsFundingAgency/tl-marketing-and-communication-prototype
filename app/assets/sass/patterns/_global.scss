@@ -272,6 +272,20 @@ a.link-purple {
   box-sizing:border-box;
 }
 
+.btn-blue {
+  background-color: #1d70b8;
+  color: #ffffff;
+  box-shadow: 0 2px 0 #003078;
+
+  &:hover {
+    background-color: #003078;
+  }
+}
+
+.txt-bold {
+  font-weight:bold;
+}
+
 .row {
   width: 100%;
   position: relative;

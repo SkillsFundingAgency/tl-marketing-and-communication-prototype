@@ -144,30 +144,94 @@ Organisation details | T Levels and industry placement support for employers
 
       <!-- -- -- -->
 
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "skill-other-entry",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "skill-other-entry",
+        spellcheck: false,
+        value: data['skill-other-entry']
+      }) }}
+      {% endset -%}
+
       {{ govukRadios({
         
-        idPrefix: "student-hosting",
-        name: "student-hosting",
+        idPrefix: "skill-area",
+        name: "skill-area",
         fieldset: {
           legend: {
-            text: "How many locations are you interested in hosting industry placements in?",
+            text: "What skill area would you be interested in hosting an industry placement in?",
             classes: "govuk-fieldset__legend--m"
           }
         },
         classes: "govuk-!-margin-bottom-4",
         items: [
           {
-            value: "A single workplace",
-            text: "A single workplace",
-            checked: checked("student-hosting", "A single workplace")
+            value: "Agriculture, Environment and Animal Care",
+            text: "Agriculture, Environment and Animal Care",
+            checked: checked("skill-area", "Agriculture, Environment and Animal Care")
           },
           {
-            value: "Multiple workplaces",
-            text: "Multiple workplaces",
-            checked: checked("student-hosting", "Multiple workplaces")
+            value: "Business and Administration",
+            text: "Business and Administration",
+            checked: checked("skill-area", "Business and Administration")
+          },
+          {
+            value: "Catering and Hospitality",
+            text: "Catering and Hospitality",
+            checked: checked("skill-area", "Catering and Hospitality")
+          },
+          {
+            value: "Construction and the Built Environment",
+            text: "Construction and the Built Environment",
+            checked: checked("skill-area", "Construction and the Built Environment")
+          },
+          {
+            value: "Creative and Design",
+            text: "Creative and Design",
+            checked: checked("skill-area", "Creative and Design")
+          },
+          {
+            value: "Digital and IT",
+            text: "Digital and IT",
+            checked: checked("skill-area", "Digital and IT")
+          },
+          {
+            value: "Education and Childcare",
+            text: "Education and Childcare",
+            checked: checked("skill-area", "Education and Childcare")
+          },
+          {
+            value: "Engineering and Manufacturing",
+            text: "Engineering and Manufacturing",
+            checked: checked("skill-area", "Engineering and Manufacturing")
+          },
+          {
+            value: "Hair and Beauty",
+            text: "Hair and Beauty",
+            checked: checked("skill-area", "Hair and Beauty")
+          },
+          {
+            value: "Health and Science",
+            text: "Health and Science",
+            checked: checked("skill-area", "Health and Science")
+          },
+          {
+            value: "Legal, Finance and Accounting",
+            text: "Legal, Finance and Accounting",
+            checked: checked("skill-area", "Legal, Finance and Accounting")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("skill-area", "Other"),
+            conditional: {
+              html: otherHtml
+            }
           }
         ]
       }) }}
+
 
       <!-- -- -- -->
 
