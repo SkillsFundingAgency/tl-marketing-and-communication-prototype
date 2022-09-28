@@ -325,7 +325,7 @@
   $(function() {
       $('.more-results-link').click(function() {
           $('.show-later').addClass("shown");
-          $('.eoi-prompt').addClass("adjusted-margin");
+          $('.eoi-prompt').addClass("eoi-seen");
       });
   });
 
@@ -335,6 +335,7 @@
           $('.show-initial').addClass("hide-this");
       });
   });
+
   </script>
 
 {% endblock %}

@@ -264,37 +264,16 @@ h3.heading-sora {
     text-align: center;
     padding: 22px 45px 30px;
     margin: 10px 0px 20px;
-    background-color: #f6f6f6;
-    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-top: 5px solid #1d70b8;
     margin:40px 0px 60px;
 
     p { margin:0px; }
 
-    &.adjusted-margin {
-        // display:none;
+    &.eoi-seen {
         margin-bottom:40px;
+        border-top: 5px solid #b1b4b6;
     }
-
-    // p {
-    //     &::before,
-    //     &::after {
-    //         content:'';
-    //         display:block;
-    //         height:1px;
-    //         width:80px;
-    //         background-color:#585858;
-    //         top:30px;
-    //         position:absolute;
-    //     }
-
-    //     &::before {
-    //         left:0px;
-    //     }
-
-    //     &::after {
-    //         right:0px;
-    //     }
-    // }
 
     .govuk-link {
         color: #1d70b8;
