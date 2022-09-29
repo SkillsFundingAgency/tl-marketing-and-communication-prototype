@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add industry placement details - Update learner record - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="update-t-level-record">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="has-completed-full-industry-placement-hours" method="post" novalidate data-validate='placementStatus-validation'>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Industry placement</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} completed their full industry
+                            placement hours?
+                        </h1>
+                    </legend>
+                    <div>
+                        <p class="govuk-body">Select 'No' if your learner has completed their Industry placement but not all of their hours were completed. Tell us the reason for incomplete hours on the next step.</p>
+                    </div>
+                    <div class="govuk-radios govuk-!-display-inline">
+                        <div class="govuk-radios__item govuk-!-display-inline">
+                            <input class="govuk-radios__input" id="change-completed-full-hours-1" name="change-completed-full-hours"
+                                   type="radio"
+                                   value="Completed full hours" {{ checked("change-completed-full-hours", "Completed full hours") }} >
+                            <label class="govuk-!-margin-right-9 govuk-label govuk-radios__label" for="change-completed-full-hours-1">
+                                Yes
+                            </label>
+                        </div>
+
+                        <div class="govuk-!-margin-left-9 govuk-radios__item govuk-!-display-inline">
+                            <input class="govuk-radios__input" id="change-completed-full-hours-2" name="change-completed-full-hours"
+                                   type="radio"
+                                   value="Not completed full hours" {{ checked("change-completed-full-hours", "Not completed full hours") }} >
+                            <label class="govuk-label govuk-radios__label" for="change-completed-full-hours-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button class="govuk-button govuk-!-margin-top-2" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+{% endblock %}

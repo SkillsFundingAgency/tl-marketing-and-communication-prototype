@@ -14,7 +14,7 @@ What is the reason for the special consideration - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="did-you-use-an-industry-placement" method="post" id="special-consideration" novalidate data-validate='special-consideration-validation'>
+        <form action="special-consideration-check-answers" method="post" id="special-consideration" novalidate data-validate='special-consideration-validation'>
 
             <fieldset class="govuk-fieldset" aria-describedby="special-consideration-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -23,7 +23,7 @@ What is the reason for the special consideration - Manage T Level results - GOV.
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Why was {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} granted special consideration for their industry placement?
+                            Why did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} not complete their industry placement?
                         </h1>
                     </legend>
                     <div id="special-consideration-hint" class="govuk-hint">
