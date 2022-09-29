@@ -21,7 +21,7 @@ Add industry placement details - Update learner record - Manage T Level results 
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                            Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} completed their industry
+                            Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} completed their full industry
                             placement?
                         </h1>
                     </legend>
@@ -30,13 +30,23 @@ Add industry placement details - Update learner record - Manage T Level results 
                     </div>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
+                            <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
                                    type="radio"
                                    value="Completed" {{ checked("result-ip-answer", "Completed") }} >
-                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
                                 Yes, completed
                             </label>
                         </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
+                                   type="radio"
+                                   value="Special consideration" {{ checked("result-ip-answer", "Special consideration") }} >
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                                Yes, completed with special consideration
+                            </label>
+                        </div>
+
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
                                    type="radio"

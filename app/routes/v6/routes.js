@@ -610,7 +610,9 @@ module.exports = function (router) {
     const newResult = req.session.data['result-ip-answer']
 
     if (newResult === 'Completed') {
-      res.redirect('/' + version + '/providers/completed-with-special-consideration')
+      res.redirect('/' + version + '/providers/special-consideration-check-answers')
+    } else if (newResult === 'Special consideration') {
+      res.redirect('/' + version + '/providers/has-completed-full-industry-placement-hours')
     } else {
       req.session.data.newplacementResult = 'yes'
       req.session.data.showBanner = 'ip'
@@ -618,6 +620,17 @@ module.exports = function (router) {
       req.session.data.selectedUln = req.session.data.uln
 
       res.redirect('/' + version + '/providers/update-t-level-record')
+    }
+  })
+
+  // Completed full industry placement hours, yes/no
+  router.post('/' + version + '/providers/has-completed-full-industry-placement-hours', function (req, res) {
+    const newPlacementBool = req.session.data['change-completed-full-hours']
+
+    if (newPlacementBool === 'Not completed full hours') {
+      res.redirect('/' + version + '/providers/total-placement-hours')
+    } else {
+      res.redirect('/' + version + '/providers/special-consideration-check-answers')
     }
   })
 
