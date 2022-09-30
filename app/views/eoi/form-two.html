@@ -7,6 +7,7 @@ Organisation details | T Levels and industry placement support for employers
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -41,7 +42,7 @@ Organisation details | T Levels and industry placement support for employers
 
       {{ govukInput({
         label: {
-          text: "Website",
+          text: "Website (optional)",
           classes: "govuk-label--m",
           isPageHeading: false
         },
@@ -154,7 +155,7 @@ Organisation details | T Levels and industry placement support for employers
       }) }}
       {% endset -%}
 
-      {{ govukRadios({
+      {{ govukCheckboxes({
         
         idPrefix: "skill-area",
         name: "skill-area",
