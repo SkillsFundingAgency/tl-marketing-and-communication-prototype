@@ -350,3 +350,11 @@ h3.heading-sora {
 .show-initial.hide-this {
     display:none;
 }
+
+.gov-conditional-set {
+    display:none; 
+
+    &.test-class {
+        display:block;
+    }
+}

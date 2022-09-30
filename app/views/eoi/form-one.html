@@ -9,7 +9,7 @@ Register an interest | T Levels and industry placement support for employers
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% block content %}
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <div class="govuk-grid-row eoi-form-journey">
     <div class="govuk-grid-column-two-thirds">
 
@@ -61,7 +61,7 @@ Register an interest | T Levels and industry placement support for employers
         name: "telephone-number",
         type: "tel",
         autocomplete: "tel",
-        classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4 gov-conditional",
         value: data['telephone-number']
       }) }}
 
@@ -74,10 +74,10 @@ Register an interest | T Levels and industry placement support for employers
         fieldset: {
           legend: {
             text: "How would you prefer to be contacted?",
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--m gov-conditional-set"
           }
         },
-        classes: "govuk-!-margin-bottom-4",
+        classes: "govuk-!-margin-bottom-4 gov-conditional-set",
         items: [
           {
             value: "Email",
@@ -103,5 +103,15 @@ Register an interest | T Levels and industry placement support for employers
 
     </div>
   </div>
+
+  <script type="text/javascript">
+  $('.gov-conditional').keyup(function(){
+    if($(this).val()){
+      $('.gov-conditional-set').addClass("test-class");
+    } else {
+      $('.gov-conditional-set').removeClass("test-class");
+    }
+  });
+</script>
 
 {% endblock %}

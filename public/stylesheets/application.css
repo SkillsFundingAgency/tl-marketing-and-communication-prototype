@@ -8869,6 +8869,13 @@ h3.heading-sora {
   display: none;
 }
 
+.gov-conditional-set {
+  display: none;
+}
+.gov-conditional-set.test-class {
+  display: block;
+}
+
 .subjects.digi-prod > div:first-child {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;
