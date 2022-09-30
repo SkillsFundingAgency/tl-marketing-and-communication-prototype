@@ -178,7 +178,11 @@ Learner's T Level record
           <p>
             {% if data['newplacementResult'] === 'yes' and data['uln'] == data['selectedUln'] %}
 
-            {{ data['newindustryPlacement'] }}
+            {% if data['change-completed-full-hours'] == 'Not completed full hours' %}
+              Special consideration
+            {% else %}
+                {{ data['newindustryPlacement'] }}
+            {% endif %}
 
             {% else %}
             {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}

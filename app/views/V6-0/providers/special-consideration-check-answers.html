@@ -57,7 +57,11 @@
                             Industry placement completed
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data ['result-ip-answer'] }}
+                            {% if data['change-completed-full-hours'] == 'Not completed full hours' %}
+                            Special consideration
+                            {% else %}
+                            Completed
+                            {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="change-ip-result">
@@ -76,7 +80,7 @@
                                 No
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="change-ip-result?change-answer=yes">
+                                <a class="govuk-link" href="has-completed-full-industry-placement-hours?change-answer=yes">
                                     Change<span class="govuk-visually-hidden"> has completed full industry placement?</span>
                                 </a>
                             </dd>
@@ -96,7 +100,7 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Special consideration reason
+                                Reason for incomplete placement hours
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 {% if data['special-consideration'] == 'COVID-19' %}

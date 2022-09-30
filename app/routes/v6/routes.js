@@ -609,8 +609,10 @@ module.exports = function (router) {
   router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     const newResult = req.session.data['result-ip-answer']
 
-    if (newResult === 'Completed') {
-      res.redirect('/' + version + '/providers/special-consideration-check-answers')
+    if (newResult === 'Yes, completed') {
+      req.session.data.selectedUln = req.session.data.uln
+
+      res.redirect('/' + version + '/providers/has-completed-full-industry-placement-hours')
     } else if (newResult === 'Special consideration') {
       res.redirect('/' + version + '/providers/has-completed-full-industry-placement-hours')
     } else {
@@ -630,6 +632,8 @@ module.exports = function (router) {
     if (newPlacementBool === 'Not completed full hours') {
       res.redirect('/' + version + '/providers/total-placement-hours')
     } else {
+      req.session.data.selectedUln = req.session.data.uln
+
       res.redirect('/' + version + '/providers/special-consideration-check-answers')
     }
   })
