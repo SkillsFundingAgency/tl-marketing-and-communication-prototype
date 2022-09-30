@@ -120,27 +120,27 @@
                     {% else %}
                     {% endif %}
 
-                    {% if data['result-ip-answer'] == 'Completed' %}
+<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Industry placement model
-                        </dt>
-                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-                            {% if data['industryModel'] %}
-                                {{ data['industryModel'] }}
-                            {% else %}
-                                No
-                            {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="did-you-use-an-industry-placement">
-                                Change<span class="govuk-visually-hidden"> whether industry placement model used</span>
-                            </a>
-                        </dd>
-                    </div>
+<!--                    <div class="govuk-summary-list__row">-->
+<!--                        <dt class="govuk-summary-list__key">-->
+<!--                            Industry placement model-->
+<!--                        </dt>-->
+<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
+<!--                            {% if data['industryModel'] %}-->
+<!--                                {{ data['industryModel'] }}-->
+<!--                            {% else %}-->
+<!--                                No-->
+<!--                            {% endif %}-->
+<!--                        </dd>-->
+<!--                        <dd class="govuk-summary-list__actions">-->
+<!--                            <a class="govuk-link" href="did-you-use-an-industry-placement">-->
+<!--                                Change<span class="govuk-visually-hidden"> whether industry placement model used</span>-->
+<!--                            </a>-->
+<!--                        </dd>-->
+<!--                    </div>-->
 
-                    {% endif %}
+<!--                    {% endif %}-->
 
                     {% if data['industryModel'] == 'yes' %}
 
@@ -199,27 +199,27 @@
 
                     {% endif %}
 
-                    {% if data['result-ip-answer'] == 'Completed' %}
+<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            {% if data['uln'] == '1987654320' %}
-                                Temporary flexibility and blended placement
-                            {% else %}
-                                Temporary flexibility
-                            {% endif %}
-                        </dt>
-                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-                            No
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="did-you-use-a-flexibility">
-                                Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
-                            </a>
-                        </dd>
-                    </div>
+<!--                    <div class="govuk-summary-list__row">-->
+<!--                        <dt class="govuk-summary-list__key">-->
+<!--                            {% if data['uln'] == '1987654320' %}-->
+<!--                                Temporary flexibility and blended placement-->
+<!--                            {% else %}-->
+<!--                                Temporary flexibility-->
+<!--                            {% endif %}-->
+<!--                        </dt>-->
+<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
+<!--                            No-->
+<!--                        </dd>-->
+<!--                        <dd class="govuk-summary-list__actions">-->
+<!--                            <a class="govuk-link" href="did-you-use-a-flexibility">-->
+<!--                                Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>-->
+<!--                            </a>-->
+<!--                        </dd>-->
+<!--                    </div>-->
 
-                    {% endif %}
+<!--                    {% endif %}-->
 
                     {% if data['blended-placement'] == 'yes' or data['blended-placement'] == 'no' %}
                         <div class="govuk-summary-list__row">
