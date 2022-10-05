@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+    <p class="govuk-body">Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;">Settings</a><a class="govuk-link">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Connect with employers <br>interested in T Levels
+      </h1>
+
+      <p style="display:inline-block;">Showing results for:</p>
+
+      <div class="govuk-form-group" style="display:inline-block; margin-left:10px;">
+        <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
+          <option value="1">SO41 5QU</option>
+          <option value="2">SO53 4SY</option>
+          <option value="3">PO62 9JB</option>
+          <option value="4">PO46 8RS</option>
+          <option value="5">Custom...</option>
+        </select>
+
+        <input class="govuk-input govuk-!-margin-left-4 eoi-hidden-input" placeholder="Enter postcode" id="eoi-hidden-input" name="eoi-hidden-input" type="text">
+        <button class="govuk-button eoi-table-switch govuk-!-margin-left-1 govuk-!-margin-bottom-0" id="eoi-hidden-btn-input" data-module="govuk-button">
+          Search
+        </button>
+      </div>
+
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Industry</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Distance</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date received</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><strong class="govuk-tag govuk-!-margin-right-2">NEW</strong>Lloyds Banking Group</th>
+            <td class="govuk-table__cell">Finance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">84 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">14 Sept 2022</td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">NHS Trusts</th>
+            <td class="govuk-table__cell">Healthcare</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">93 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">7 Aug 2022</td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Skanska</th>
+            <td class="govuk-table__cell">Construction</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">102 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">18 Aug 2022</td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-two hidden-element">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Industry</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Distance</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date received</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><strong class="govuk-tag govuk-!-margin-right-2">NEW</strong>Lloyds Banking Group</th>
+            <td class="govuk-table__cell">Finance</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">22 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">29 September 2022</td>
+            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Balenciaga</th>
+            <td class="govuk-table__cell">Fashion</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">36 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">7 August 2022</td>
+            <td class="govuk-table__cell"><a href="xxx" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Bungie</th>
+            <td class="govuk-table__cell">Digital and IT</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">38 miles</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">18 August 2022</td>
+            <td class="govuk-table__cell"><a href="xxx" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 5) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function() {
+      $('.eoi-table-switch').click(function() {
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+      });
+  });
+
+  </script>
+{% endblock %}

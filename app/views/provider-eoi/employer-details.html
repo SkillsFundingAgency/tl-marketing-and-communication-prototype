@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+    <p class="govuk-body">Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-full">
+
+      <a class="govuk-link" href="employer-list" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Back</a>
+
+      <h1 class="govuk-heading-xl">
+        Lloyds Banking Group
+      </h1>
+
+      <h2 style="font-size:24px; margin:10px 0px -10px;">Organisation details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Website</th>
+            <td class="govuk-table__cell">https://lloydsbank.com</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Primary industry</th>
+            <td class="govuk-table__cell">Finance</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Skill area of industry placement</th>
+            <td class="govuk-table__cell">Digital and IT, Finance</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Office location</th>
+            <td class="govuk-table__cell">WCN2 5DX</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Additional details</th>
+            <td class="govuk-table__cell">Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Sarah Philips</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Contact details</th>
+            <td class="govuk-table__cell">07525 707601<br>sarah.philips@lloyds.com</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Contact preference</th>
+            <td class="govuk-table__cell">Email</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 5) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function() {
+      $('.eoi-table-switch').click(function() {
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+      });
+  });
+
+  </script>
+{% endblock %}

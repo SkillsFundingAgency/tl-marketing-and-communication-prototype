@@ -8695,16 +8695,20 @@ h3.heading-sora {
   margin-top: 10px;
 }
 
+.account-bar *,
 .eoi-form-journey * {
   font-family: "GDS Transport", arial, sans-serif !important;
   font-style: normal !important;
   text-transform: initial !important;
 }
+.account-bar * .govuk-link:link,
 .eoi-form-journey * .govuk-link:link {
   color: #1d70b8;
   text-decoration: underline;
   border-bottom: none;
 }
+.account-bar * p a,
+.account-bar * .govuk-link:hover,
 .eoi-form-journey * p a,
 .eoi-form-journey * .govuk-link:hover {
   color: #003078;
@@ -8715,9 +8719,11 @@ h3.heading-sora {
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
+.account-bar * .govuk-link:active,
 .eoi-form-journey * .govuk-link:active {
   color: #0b0c0c;
 }
+.account-bar * .govuk-link:focus,
 .eoi-form-journey * .govuk-link:focus {
   outline: 3px solid rgba(0, 0, 0, 0);
   color: #0b0c0c;
@@ -8874,6 +8880,53 @@ h3.heading-sora {
 }
 .gov-conditional-set.test-class {
   display: block;
+}
+
+.account-bar {
+  background-color: #f3f2f1;
+  width: 100%;
+  display: block;
+  float: left;
+  clear: both;
+  margin-bottom: 40px;
+}
+.account-bar .govuk-link {
+  color: #1d70b8;
+  text-decoration: underline;
+  border-bottom: none;
+}
+.account-bar p, .account-bar a {
+  font-size: 15px;
+}
+.account-bar p {
+  margin: 10px 0px 10px;
+}
+.account-bar p:first-child {
+  float: left;
+  padding-left: 10px;
+}
+.account-bar p:last-child {
+  float: right;
+  padding-right: 10px;
+}
+
+#eoi-hidden-input {
+  display: none;
+  width: 200px;
+}
+
+#eoi-hidden-btn-input {
+  display: none;
+}
+
+.hidden-element {
+  display: none;
+  opacity: 0;
+}
+
+.visibile-element {
+  display: block;
+  opacity: 1;
 }
 
 .subjects.digi-prod > div:first-child {
