@@ -30,9 +30,9 @@ Employer interest in offering T Levels
       <div class="govuk-form-group" style="display:inline-block; margin-left:10px;">
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
           <option value="1">SO41 5QU</option>
-          <option value="2">SO53 4SY</option>
-          <option value="3">PO62 9JB</option>
-          <option value="4">PO46 8RS</option>
+          <option value="2">PO46 8RS</option>
+          <!-- <option value="3">PO62 9JB</option>
+          <option value="4">PO46 8RS</option> -->
           <option value="5">Custom...</option>
         </select>
 
@@ -193,12 +193,12 @@ Employer interest in offering T Levels
       $('.employer-list-three').removeClass("hidden-element");
       document.getElementById('eoi-hidden-input').style.display = "none";
       document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    } else if (select.value == 3) {
-      document.getElementById('eoi-hidden-input').style.display = "none";
-      document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    } else if (select.value == 4) {
-      document.getElementById('eoi-hidden-input').style.display = "none";
-      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    // } else if (select.value == 3) {
+    //   document.getElementById('eoi-hidden-input').style.display = "none";
+    //   document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    // } else if (select.value == 4) {
+    //   document.getElementById('eoi-hidden-input').style.display = "none";
+    //   document.getElementById('eoi-hidden-btn-input').style.display = "none";
     } else if (select.value == 5) {
       document.getElementById('eoi-hidden-input').style.display = "inline-block";
       document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
