@@ -160,16 +160,6 @@ Organisation details | T Levels and industry placement support for employers
 
       <!-- -- -- -->
 
-      {% set otherHtml %}
-      {{ govukInput({
-        id: "skill-other-entry",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "skill-other-entry",
-        spellcheck: false,
-        value: data['skill-other-entry']
-      }) }}
-      {% endset -%}
-
       {{ govukCheckboxes({
         
         idPrefix: "skill-area",
@@ -251,15 +241,7 @@ Organisation details | T Levels and industry placement support for employers
           value: "Utilities",
           text: "Utilities",
           checked: checked("skill-area", "Utilities")
-        },
-          {
-            value: "Other",
-            text: "Other",
-            checked: checked("skill-area", "Other"),
-            conditional: {
-              html: otherHtml
-            }
-          }
+        }
         ]
       }) }}
 
