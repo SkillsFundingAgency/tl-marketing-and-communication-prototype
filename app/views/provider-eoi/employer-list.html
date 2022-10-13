@@ -25,15 +25,18 @@ Employer interest in offering T Levels
         Connect with employers <br>interested in T Levels
       </h1>
 
-      <p style="display:inline-block;">Showing results for:</p>
+      <p class="govuk-body">Employers have agreed for their details to be shared for 12 weeks. After 12 weeks, their details will be removed unless they agree to extend their interest. </p>
 
-      <div class="govuk-form-group" style="display:inline-block; margin-left:10px;">
+      <p style="display:block;">Select a postcode to view results in that area:</p>
+
+      <div class="govuk-form-group" style="display:block;">
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
+          <option value="0">Select postcode...</option>
           <option value="1">SO41 5QU</option>
           <option value="2">PO46 8RS</option>
           <!-- <option value="3">PO62 9JB</option>
           <option value="4">PO46 8RS</option> -->
-          <option value="5">Custom...</option>
+          <option value="5">Custom postcode</option>
         </select>
 
         <input class="govuk-input govuk-!-margin-left-4 eoi-hidden-input" placeholder="Enter postcode" id="eoi-hidden-input" name="eoi-hidden-input" type="text">
@@ -42,9 +45,7 @@ Employer interest in offering T Levels
         </button>
       </div>
 
-      <p class="govuk-body">The employers below have agreed for their details to be shared for 12 weeks. After 12 weeks, their details will be removed unless they agree to extend their interest. </p>
-
-      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-one hidden-element">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Organisation</th>
