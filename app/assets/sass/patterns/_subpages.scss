@@ -413,3 +413,25 @@ h3.heading-sora {
     opacity:1;
 }
 
+.employer-listing {
+
+    thead tr:hover {
+        background:none;
+    }
+
+    tr:hover {
+        background-color:#f3f2f1;
+    }
+
+    .govuk-table__cell p {
+        margin-bottom:10px;
+        padding-bottom:10px;
+        border-bottom:1px solid #eaeaea;
+
+        &:last-child {
+            margin-bottom:0px;
+            padding-bottom:0px;
+            border:none;
+        }
+    }
+}
