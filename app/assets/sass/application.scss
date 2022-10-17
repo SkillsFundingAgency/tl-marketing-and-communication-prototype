@@ -443,6 +443,23 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.govuk-display-grid {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.chevron-card {
+  border-top: 1px solid #b1b4b6;
+  margin: 0 15px;
+  padding: 5px 0 10px 0;
+  list-style: none;
+}
+
+.chevron-card-wrapper {
+  padding: 10px 30px 10px 0;
+  position: relative;
+}
+
 .card {
   padding-left: 20px;
   padding-right: 10px;
