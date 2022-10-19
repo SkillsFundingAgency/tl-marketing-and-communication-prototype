@@ -21,23 +21,23 @@ Employer interest in offering T Levels
   <div class="govuk-grid-row eoi-form-journey employer-listing">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         Connect with employers <br>interested in T Levels
       </h1>
 
-      <p class="govuk-body">Employers have agreed for their details to be shared for 12 weeks. After 12 weeks, their details will be removed unless they agree to extend their interest. </p>
+      <p class="govuk-body govuk-!-margin-top-0">Employers have agreed for their details to be shared for 12 weeks. <br>After 12 weeks, <span class="govuk-!-font-weight-bold">their details will expire</span> unless they agree to extend their interest. </p>
 
-      <p class="govuk-body" style="display:block;">Select a postcode to view results in that area:</p>
+      <p class="govuk-body govuk-!-margin-top-6" style="display:block;">Select a postcode to view contact data for employers in that area:</p>
 
       <div class="govuk-form-group" style="display:block;">
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
           <option value="0">Select postcode...</option>
           <option value="1">SO41 5QU</option>
           <option value="2">PO46 8RS</option>
-          <!-- <option value="3">PO62 9JB</option>
-          <option value="4">PO46 8RS</option> -->
           <option value="5">Custom...</option>
         </select>
+
+        <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-left-4" style="display:inline-block;">or</p> -->
 
         <input class="govuk-input govuk-!-margin-left-4 eoi-hidden-input" placeholder="Enter postcode" id="eoi-hidden-input" name="eoi-hidden-input" type="text">
         <button class="govuk-button eoi-table-switch govuk-!-margin-left-1 govuk-!-margin-bottom-0" id="eoi-hidden-btn-input" data-module="govuk-button">
@@ -200,12 +200,6 @@ Employer interest in offering T Levels
       $('.employer-list-three').removeClass("hidden-element");
       document.getElementById('eoi-hidden-input').style.display = "none";
       document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    // } else if (select.value == 3) {
-    //   document.getElementById('eoi-hidden-input').style.display = "none";
-    //   document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    // } else if (select.value == 4) {
-    //   document.getElementById('eoi-hidden-input').style.display = "none";
-    //   document.getElementById('eoi-hidden-btn-input').style.display = "none";
     } else if (select.value == 5) {
       document.getElementById('eoi-hidden-input').style.display = "inline-block";
       document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
