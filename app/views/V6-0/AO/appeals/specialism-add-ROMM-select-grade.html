@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ROMM grade change - Post-results - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Change the grade after a ROMM</h1> 
+        
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T Level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specialism
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelSpecialism'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelSpecialismCode'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exam period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismAssessmentEntry'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerSpecialismResult'] }}
+
+          </dd>
+        </div>
+      </dl>
+
+      <form action="ROMM-select-grade-specialism" method="post" novalidate data-validate='ROMM-grade-validation-specialism'>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What is the new grade?
+              </h2>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ROMM-grade-specialism" name="ROMM-grade-specialism" type="radio" value="Distinction">
+                <label class="govuk-label govuk-radios__label" for="ROMM-grade-specialism">
+                  Distinction
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ROMM-grade-specialism-2" name="ROMM-grade-specialism" type="radio" value="Merit">
+                <label class="govuk-label govuk-radios__label" for="ROMM-grade-specialism-2">
+                  Merit
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ROMM-grade-specialism-3" name="ROMM-grade-specialism" type="radio" value="Pass">
+                <label class="govuk-label govuk-radios__label" for="ROMM-grade-specialism-3">
+                  Pass
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ROMM-grade-specialism-4" name="ROMM-grade-specialism" type="radio" value="Unclassified">
+                <label class="govuk-label govuk-radios__label" for="ROMM-grade-specialism-4">
+                  Unclassified
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="ROMM-grade-validation-specialism">
+    {
+
+        "ROMM-grade-specialism": {
+
+            "presence": {
+
+                "message": "^Select the new grade"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}
+
+
+
+
