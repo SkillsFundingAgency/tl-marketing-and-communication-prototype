@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change a 'final' grade - Post-results - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Request to change a 'FINAL' grade</h1> 
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerName'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['uln'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerDOB'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerTLevelTitle'] }}
+          
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Core
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{
+          data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exam period
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tLevelsStudentData'][data.uln]['learnerCoreAssessmentEntry'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Grade
+        </dt>
+        <dd class="govuk-summary-list__value">
+          C
+        </dd>
+      </div>
+    </dl>
+    
+    <p>If you need to change a grade after it has been marked 'FINAL', we need to make a manual change to the grade record.</p>
+
+    <p>This change will take up to 3 working days.</p>
+
+    <form action="request-exceptions-confirmation" method="post" class="form" novalidate
+      data-validate="request-exceptions-input">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+              Please tell us what you need to change and why
+            </label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+              Please do not add any details here that identify the learner, for example their name, date of birth or
+              unique learner number.
+            </div>
+            <div id="more-detail-hint-2" class="govuk-hint">
+              Your message must be 1,000 characters or fewer.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
+              aria-describedby="more-detail-hint"></textarea>
+
+
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Send
+        </button>
+
+        <a class="govuk-link" href="cancel-exceptions-request.html">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="request-exceptions-input">
+{
+
+  "more-detail": {
+	
+		"presence": {
+		
+		"message": "^Please tell us what you need to change and why"
+		
+		}
+	
+	}
+
+}
+
+</script>
+{% endblock %}
