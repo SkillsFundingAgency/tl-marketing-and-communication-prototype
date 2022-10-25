@@ -33,9 +33,8 @@ Employer interest in offering T Levels
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
           <option value="0">Select postcode</option>
           <option value="1">SO41 5QU</option>
-          <option value="2">SO53 4SY</option>
-          <option value="3">PO46 8RS</option>
-          <option value="4">Enter postcode</option>
+          <option value="2">PO46 8RS</option>
+          <option value="5">Enter postcode</option>
         </select>
 
         <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-left-4" style="display:inline-block;">or</p> -->
@@ -46,61 +45,12 @@ Employer interest in offering T Levels
         </button>
       </div>
 
-      <table class="govuk-table govuk-!-margin-top-4 employer-list-one hidden-element">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width:300px;">Organisation</th>
-            <th scope="col" class="govuk-table__header">Placement areas</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Distance</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="width:180px;">Details expire</th>
-            <th scope="col" class="govuk-table__header"></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--blue govuk-!-margin-right-2">NEW</strong>Lloyds Banking Group</th>
-            <td class="govuk-table__cell"><p>Digital and IT</p><p>Legal, Finance and Accounting</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">7 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">2 Jan 2023</td>
-            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Lloyds Banking Group</span></a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Yorkshire Water</th>
-            <td class="govuk-table__cell"><p>Business and Administration</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">12 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">16 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Yorkshire Water</span></a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Permisson Homes</th>
-            <td class="govuk-table__cell"><p>Construction and the Built Environment</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">13 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">13 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Permisson Homes</span></a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong> NHS Trusts</th>
-            <td class="govuk-table__cell"><p>Business and Administration</p><p>Digital and IT</p><p>Health and Science</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">20 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">20 Oct 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">NHS Trusts</span></a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--blue govuk-!-margin-right-2">NEW</strong> Skanska</th>
-            <td class="govuk-table__cell"><p>Construction and the Built Environment</p><p>Engineering and Manufacturing</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">28 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">29 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Skanska</span></a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">IBM</th>
-            <td class="govuk-table__cell">IT and communications</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">31 miles</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">18 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">IBM</span></a></td>
-          </tr>
-        </tbody>
-      </table>
+      <h2 class="sr-only">Employers within 20 miles</h2>
+
+      <div class="govuk-!-margin-top-4 employer-list-one hidden-element" style="background-color:#f3f2f1; padding:30px;">
+        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">There are currently no employers within 20 miles who have expressed interest in T Levels.</span><br>
+          Please search another postcode or check back soon to see employers in your area. </p>
+      </div>
 
       <table class="govuk-table govuk-!-margin-top-4 employer-list-two hidden-element">
         <thead class="govuk-table__head">
@@ -137,11 +87,6 @@ Employer interest in offering T Levels
 
         </tbody>
       </table>
-
-      <div class="govuk-!-margin-top-4 no-employers hidden-element">
-        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">There are currently no employers within 20 miles who have expressed interest in T Levels.</span><br>
-          Please search another postcode or check back soon to see employers in your area. </p>
-      </div>
 
       <table class="govuk-table govuk-!-margin-top-4 employer-list-three hidden-element">
         <thead class="govuk-table__head">
@@ -193,21 +138,20 @@ Employer interest in offering T Levels
   <script type="text/javascript">
   function revealEoiInput(select) {
     if (select.value == 1) {
-      $('.employer-list-one').removeClass("hidden-element").addClass("show-element");
-      $('.employer-list-three, .employer-list-two, .no-employers').addClass("hidden-element").removeClass("show-element");
+      $('.employer-list-one').addClass("show-element");
+      $('.employer-list-three').addClass("hidden-element");
+      $('.employer-list-two').addClass("hidden-element");
+      $('.employer-list-one').removeClass("hidden-element");
       document.getElementById('eoi-hidden-input').style.display = "none";
       document.getElementById('eoi-hidden-btn-input').style.display = "none";
     } else if (select.value == 2) {
-      $('.employer-list-one, .employer-list-two, .no-employers').addClass("hidden-element").removeClass("show-element");
-      $('.employer-list-three').addClass("show-element").removeClass("hidden-element");
+      $('.employer-list-one').addClass("hidden-element");
+      $('.employer-list-three').addClass("visible-element");
+      $('.employer-list-two').addClass("hidden-element");
+      $('.employer-list-three').removeClass("hidden-element");
       document.getElementById('eoi-hidden-input').style.display = "none";
       document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    } else if (select.value == 3) {
-      $('.no-employers').addClass("show-element").removeClass("hidden-element");
-      $('.employer-list-one, .employer-list-two, .employer-list-three').addClass("hidden-element").removeClass("show-element");
-      document.getElementById('eoi-hidden-input').style.display = "none";
-      document.getElementById('eoi-hidden-btn-input').style.display = "none";
-    } else if (select.value == 4) {
+    } else if (select.value == 5) {
       document.getElementById('eoi-hidden-input').style.display = "inline-block";
       document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
     } else {
@@ -216,11 +160,13 @@ Employer interest in offering T Levels
     }
   }
 
-  $(function() {  
+  $(function() {
       $('.eoi-table-switch').click(function() {
-      $('.employer-list-one, .employer-list-three, .no-employers').addClass("hidden-element");
-      $('.employer-list-two').addClass("visible-element").removeClass("hidden-element");
-    });
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+          $('.employer-list-three').addClass("hidden-element");
+      });
   });
 
   </script>
