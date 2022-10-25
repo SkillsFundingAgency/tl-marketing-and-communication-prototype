@@ -12,7 +12,7 @@ Employer interest in offering T Levels
 {% block beforeContent %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-    <p class="govuk-body">Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;">Settings</a><a class="govuk-link">Sign out</a></p>
+    <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 {% endblock %}
@@ -45,6 +45,8 @@ Employer interest in offering T Levels
         </button>
       </div>
 
+      <h2 class="sr-only">Employers within 20 miles</h2>
+
       <table class="govuk-table govuk-!-margin-top-4 employer-list-one hidden-element">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -61,42 +63,42 @@ Employer interest in offering T Levels
             <td class="govuk-table__cell"><p>Digital and IT</p><p>Legal, Finance and Accounting</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">7 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2 Jan 2023</td>
-            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Lloyds Banking Group</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Yorkshire Water</th>
             <td class="govuk-table__cell"><p>Business and Administration</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">12 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">16 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Yorkshire Water</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Permisson Homes</th>
             <td class="govuk-table__cell"><p>Construction and the Built Environment</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">13 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">13 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Permisson Homes</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong> NHS Trusts</th>
             <td class="govuk-table__cell"><p>Business and Administration</p><p>Digital and IT</p><p>Health and Science</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">20 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">20 Oct 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">NHS Trusts</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--blue govuk-!-margin-right-2">NEW</strong> Skanska</th>
             <td class="govuk-table__cell"><p>Construction and the Built Environment</p><p>Engineering and Manufacturing</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">28 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">29 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Skanska</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">IBM</th>
             <td class="govuk-table__cell">IT and communications</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">31 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">18 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">IBM</span></a></td>
           </tr>
         </tbody>
       </table>
@@ -117,21 +119,21 @@ Employer interest in offering T Levels
             <td class="govuk-table__cell"><p>Digital and IT</p><p>Legal, Finance and Accounting</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">22 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2 Jan 2023</td>
-            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Lloyds Banking Group</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Balenciaga</th>
             <td class="govuk-table__cell"><p>Creative and Design</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">36 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">26 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Balenciaga</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Bungie</th>
             <td class="govuk-table__cell"><p>Creative and Design</p><p>Digital and IT</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">38 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">12 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Bungie</span></a></td>
           </tr>
 
         </tbody>
@@ -153,28 +155,28 @@ Employer interest in offering T Levels
             <td class="govuk-table__cell"><p>Digital and IT</p><p>Legal, Finance and Accounting</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">3 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2 Jan 2023</td>
-            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="employer-details" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Lloyds Banking Group</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">IKEA</th>
             <td class="govuk-table__cell"><p>Business and Administration</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">12 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">8 Dec 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">IKEA</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header"><strong style="float:right;" class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong> Laing O'Rourke</th>
             <td class="govuk-table__cell"><p>Construction and the Built Environment</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">14 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">21 Oct 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">Laing O'Rourke</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">IBM</th>
             <td class="govuk-table__cell"><p>Digital and IT</p></td>
             <td class="govuk-table__cell govuk-table__cell--numeric">22 miles</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">18 Nov 2022</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View</a></td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">View <span class="sr-only">IBM</span></a></td>
           </tr>
 
         </tbody>
