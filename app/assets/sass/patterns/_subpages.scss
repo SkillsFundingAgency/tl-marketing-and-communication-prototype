@@ -145,6 +145,7 @@ h3.heading-sora {
     margin-top:10px;
 }
 
+.phase-feedback *,
 .account-bar *,
 .eoi-form-journey * {
     font-family: "GDS Transport", arial, sans-serif !important;
@@ -440,3 +441,11 @@ h3.heading-sora {
     background-color:#f3f2f1; 
     padding:30px;
 }
+
+.phase-feedback {
+    strong {
+        background-color:#d53880;
+        text-transform: uppercase !important;
+    }
+
+} 

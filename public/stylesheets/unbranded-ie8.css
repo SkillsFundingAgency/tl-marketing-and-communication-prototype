@@ -5924,18 +5924,22 @@ h3.heading-sora {
   margin-top: 10px;
 }
 
+.phase-feedback *,
 .account-bar *,
 .eoi-form-journey * {
   font-family: "GDS Transport", arial, sans-serif !important;
   font-style: normal !important;
   text-transform: initial !important;
 }
+.phase-feedback * .govuk-link:link,
 .account-bar * .govuk-link:link,
 .eoi-form-journey * .govuk-link:link {
   color: #1d70b8;
   text-decoration: underline;
   border-bottom: none;
 }
+.phase-feedback * p a,
+.phase-feedback * .govuk-link:hover,
 .account-bar * p a,
 .account-bar * .govuk-link:hover,
 .eoi-form-journey * p a,
@@ -5948,10 +5952,12 @@ h3.heading-sora {
   -webkit-text-decoration-skip: none;
   text-decoration-skip: none;
 }
+.phase-feedback * .govuk-link:active,
 .account-bar * .govuk-link:active,
 .eoi-form-journey * .govuk-link:active {
   color: #0b0c0c;
 }
+.phase-feedback * .govuk-link:focus,
 .account-bar * .govuk-link:focus,
 .eoi-form-journey * .govuk-link:focus {
   outline: 3px solid rgba(0, 0, 0, 0);
@@ -6178,6 +6184,11 @@ h3.heading-sora {
 .no-employers {
   background-color: #f3f2f1;
   padding: 30px;
+}
+
+.phase-feedback strong {
+  background-color: #d53880;
+  text-transform: uppercase !important;
 }
 
 .subjects.digi-prod > div:first-child {
