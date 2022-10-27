@@ -137,6 +137,9 @@ Learner's T Level record
         </dd>
         <dd class="govuk-summary-list__actions">
           {% if data['newmathsStatus'] == 'Achieved' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths']  === 'Not achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved (LRS)' %}
+          <a class="govuk-link" href="add-maths-status">
+            Change <span class="govuk-visually-hidden"> maths status</span>
+          </a>
           {% else %}
           <a class="govuk-link" href="add-maths-status">
             Add <span class="govuk-visually-hidden"> maths status</span>
@@ -157,6 +160,9 @@ Learner's T Level record
         </dd>
         <dd class="govuk-summary-list__actions">
           {% if data['newenglishStatus'] == 'Achieved' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Achieved (LRS)' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved' or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish']  === 'Not achieved (LRS)' %}
+          <a class="govuk-link" href="add-english-status">
+            Change <span class="govuk-visually-hidden"> english status</span>
+          </a>
           {% else %}
           <a class="govuk-link" href="add-english-status">
             Add <span class="govuk-visually-hidden"> english status</span>
@@ -165,7 +171,6 @@ Learner's T Level record
         </dd>
       </div>
     </dl>
-
 
     <h2 class="govuk-heading-m">Industry placement</h2>
 
@@ -191,10 +196,13 @@ Learner's T Level record
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
+          {% if data['newindustryPlacement'] == 'Yes, completed' and data['uln'] == data['selectedUln']
           or data['newindustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln']
           or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
           or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln'] %}
+          <a class="govuk-link" href="change-ip-result">
+            Change <span class="govuk-visually-hidden"> industry placement information</span>
+          </a>
           {% else %}
           <a class="govuk-link" href="change-ip-result">
             Add <span class="govuk-visually-hidden"> industry placement information</span>
