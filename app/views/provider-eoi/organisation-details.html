@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body">Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-full">
+
+      <a class="govuk-link" href="organisation-list" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Return to location list</a>
+
+      <h1 class="govuk-heading-xl">
+        Alesford Campus
+      </h1>
+
+      <h2 style="font-size:24px; margin:10px 0px -10px;">Location details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Alesford Campus</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Postcode</th>
+            <td class="govuk-table__cell">SO53 4SY</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">T Levels offered</th>
+            <td class="govuk-table__cell">Education and Childcare,<br>Health,<br>Healthcare Science</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="organisation-details-edit-org.html">Edit</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Primary contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Ana Amari</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">ana.amari@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07783 637821</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="organisation-details-edit-contact.html">Edit</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Student contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Lena Oxton</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">lena.oxton@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07792 443928</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="">Edit</a></p>
+
+      <!-- <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+        Edit details
+      </button> -->
+
+      <p class="govuk-body govuk-!-margin-top-8"><a href="employer-list" class="govuk-link">< Return to location list</a></p>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 5) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function() {
+      $('.eoi-table-switch').click(function() {
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+      });
+  });
+
+  </script>
+{% endblock %}

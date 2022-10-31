@@ -1,0 +1,294 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body">Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-full">
+
+      <a class="govuk-link" href="employer-list" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Return to location list</a>
+
+      <h1 class="govuk-heading-xl">
+        Alesford Campus
+      </h1>
+
+      <h2 style="font-size:24px; margin:10px 0px -10px;">Location details</h2>
+
+
+      <div class="govuk-form-group govuk-!-margin-left-2">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m govuk-!-margin-top-6" for="event-name">
+            Name
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="Alesford Campus">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-left-2">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+            Postcode
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="SO53 4SY">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-left-2">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              T-Levels offered
+            </h1>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Accounting
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Agriculture, Land Management and Production
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Animal Care and Management
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Building Services Engineering for Construction
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Catering
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Craft and Design
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Design and Development for Engineering and Manufacturing
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Design, Surveying and Planning for Construction
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Digital Business Services
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Digital Production, Design and Development
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Digital Support Services
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Education and Childcare
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Engineering, Manufacturing, Processing and Control
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Finance
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Hair, Beauty and Aesthetics
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Health
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Healthcare Science
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Human Resources
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Legal
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Maintenance, Installation and Repair for Engineering and Manufacturing
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Management and Administration
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Media, Broadcast and Production
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Onsite Construction
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Science
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-4 " data-module="govuk-button">
+        Save details
+      </button>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-1"><a class="govuk-link" href="organisation-details.html">Cancel</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Primary contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Ana Amari</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">ana.amari@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07783 637821</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="">Edit</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Student contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Lena Oxton</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">lena.oxton@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07792 443928</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="">Edit</a></p>
+
+      <!-- <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+        Edit details
+      </button> -->
+
+      <p class="govuk-body govuk-!-margin-top-8"><a href="employer-list" class="govuk-link">< Return to location list</a></p>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 5) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function() {
+      $('.eoi-table-switch').click(function() {
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+      });
+  });
+
+  </script>
+{% endblock %}
