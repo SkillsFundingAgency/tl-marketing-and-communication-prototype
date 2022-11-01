@@ -631,6 +631,7 @@ module.exports = function (router) {
 
       res.redirect('/' + version + '/providers/special-consideration-check-answers')
     } else if (newResult === 'Completed with reduced hours') {
+      req.session.data.selectedUln = req.session.data.uln
       res.redirect('/' + version + '/providers/total-placement-hours')
     } else {
       req.session.data.newplacementResult = 'yes'
