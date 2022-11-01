@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register an interest in T Levels and industry placements
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Confirm your details <br>are up-to-date
+      </h1>
+
+      <p>It is important to ensure the details for your organisation are up-to-date and correct. This information is provided to employers to contact you and will affect the visibility of your organisation in search results for particular T-Levels. Making sure it is correct guarantees that if a provider wishes to contact you, they are able to do so. </p>
+
+      <div class="govuk-inset-text">
+        You will be able to update your details at any point in the service
+      </div>
+
+      <a href="employer-list" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Check my details
+      </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2"><a class="govuk-link" href="organisation-details.html">Continue</a></p>
+
+      <!-- <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also <a href="#">register by post</a>.</p>
+      <p>The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
+      <p>You can’t register for this service if you’re in the UK illegally.</p> -->
+
+    </div>
+  </div>
+{% endblock %}
