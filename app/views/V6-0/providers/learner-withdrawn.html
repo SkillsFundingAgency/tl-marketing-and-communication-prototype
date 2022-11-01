@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Learner has been withdrawn - Update learner record - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="../providers/tlevels-dashboard.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-caption-l"> {{ data['learnerStatus'] }}</p>
+        <h1 class="govuk-heading-l">
+            {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has left
+        </h1>
+        <p class="govuk-body">You've told us that {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has left the course</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Contact the AO and tell them the learner has left</li>
+            <li>Once the AO withdraws the learner you can request their Statement of Achievement </li>
+        </ul>
+
+        <p><a class="govuk-button govuk-!-margin-top-6" role="button" href="update-t-level-record">Continue</a>
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+
+{% endblock %}

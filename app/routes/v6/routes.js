@@ -605,16 +605,33 @@ module.exports = function (router) {
 
   // Update T Level Records
 
+  // Withdraw learner
+  router.post('/' + version + '/providers/does-learner-need-more-time', function (req, res) {
+    const learnerStatus = req.session.data['does-learner-need-more-time']
+
+    if (learnerStatus === 'Learner has left the course') {
+      req.session.data.selectedUln = req.session.data.uln
+      req.session.data.newplacementResult = 'yes'
+      req.session.data.newindustryPlacement = learnerStatus
+
+      res.redirect('/' + version + '/providers/learner-withdrawn')
+    } else {
+      req.session.data.selectedUln = req.session.data.uln
+
+      res.redirect('/' + version + '/providers/update-t-level-record')
+    }
+  })
+
   // Update Industry placement
   router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     const newResult = req.session.data['result-ip-answer']
 
-    if (newResult === 'Yes, completed') {
+    if (newResult === 'Completed') {
       req.session.data.selectedUln = req.session.data.uln
 
-      res.redirect('/' + version + '/providers/has-completed-full-industry-placement-hours')
-    } else if (newResult === 'Special consideration') {
-      res.redirect('/' + version + '/providers/has-completed-full-industry-placement-hours')
+      res.redirect('/' + version + '/providers/special-consideration-check-answers')
+    } else if (newResult === 'Completed with reduced hours') {
+      res.redirect('/' + version + '/providers/total-placement-hours')
     } else {
       req.session.data.newplacementResult = 'yes'
       req.session.data.showBanner = 'ip'

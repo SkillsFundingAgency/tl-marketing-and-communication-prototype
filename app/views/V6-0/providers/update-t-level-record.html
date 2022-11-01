@@ -183,7 +183,9 @@ Learner's T Level record
           <p>
             {% if data['newplacementResult'] === 'yes' and data['uln'] == data['selectedUln'] %}
 
-            {% if data['change-completed-full-hours'] == 'Not completed full hours' %}
+            {% if data['learnerStatus'] == 'Learner has left the course' %}
+              Learner left
+            {% elif data['change-completed-full-hours'] == 'Not completed full hours' %}
               Special consideration
             {% else %}
                 {{ data['newindustryPlacement'] }}
@@ -196,10 +198,11 @@ Learner's T Level record
 
         </dd>
         <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] == 'Yes, completed' and data['uln'] == data['selectedUln']
-          or data['newindustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln']
+          {% if data['newindustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Learner has left the course' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln']
           or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
-          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln'] %}
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln'] %}
           <a class="govuk-link" href="change-ip-result">
             Change <span class="govuk-visually-hidden"> industry placement information</span>
           </a>

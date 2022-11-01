@@ -57,11 +57,7 @@
                             Industry placement completed
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {% if data['change-completed-full-hours'] == 'Not completed full hours' %}
-                            Special consideration
-                            {% else %}
-                            Completed
-                            {% endif %}
+                            {{ data['result-ip-answer'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="change-ip-result">
@@ -70,7 +66,7 @@
                         </dd>
                     </div>
 
-                    {% if data['change-completed-full-hours'] == 'Not completed full hours' %}
+                    {% if data['result-ip-answer'] == 'Completed with reduced hours' %}
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
