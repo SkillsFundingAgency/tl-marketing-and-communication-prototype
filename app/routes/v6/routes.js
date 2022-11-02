@@ -613,10 +613,12 @@ module.exports = function (router) {
       req.session.data.selectedUln = req.session.data.uln
       req.session.data.newplacementResult = 'yes'
       req.session.data.newindustryPlacement = learnerStatus
+      req.session.data.showBanner = 'left'
 
       res.redirect('/' + version + '/providers/learner-withdrawn')
     } else {
       req.session.data.selectedUln = req.session.data.uln
+      req.session.data.showBanner = 'ip'
 
       res.redirect('/' + version + '/providers/update-t-level-record')
     }
