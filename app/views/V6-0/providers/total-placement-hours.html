@@ -15,7 +15,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
-            <p class="govuk-caption-l">Industry placement: Special consideration</p>
+            <p class="govuk-caption-l">Industry placement: Placement hours</p>
             <div class="govuk-form-group">
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-4" for="total-placement-hours">
                     How many industry placement hours did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} complete?
@@ -32,9 +32,6 @@ How many hours did the student spend on placement? - Manage T Level results - GO
                 Continue
             </button>
         </form>
-    </div>
-    <div class="govuk-grid-column-one-third">
-        {% include "../../../views/includes/sidebar.html" %}
     </div>
 </div>
 
