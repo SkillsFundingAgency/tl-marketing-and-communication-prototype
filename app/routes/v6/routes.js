@@ -619,6 +619,7 @@ module.exports = function (router) {
     } else {
       req.session.data.selectedUln = req.session.data.uln
       req.session.data.showBanner = 'ip'
+      req.session.data.newindustryPlacement = learnerStatus
 
       res.redirect('/' + version + '/providers/update-t-level-record')
     }
