@@ -30,7 +30,7 @@ Learner's T Level record
 
     {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
     and data['newindustryPlacement'] == 'Completed'
-    or data['newindustryPlacement'] == 'Completed with special consideration'
+    or data['newindustryPlacement'] == 'Completed with reduced hours'
     and data['uln'] == data['selectedUln'] %}
       {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
     {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
