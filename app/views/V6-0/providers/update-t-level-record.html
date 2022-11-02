@@ -25,27 +25,22 @@ Learner's T Level record
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     {% if data['showBanner'] === 'maths' and data['uln'] == data['selectedUln'] or data['showBanner'] === 'english' and data['uln'] == data['selectedUln'] %}
-    {% include "../includes/provider-notification-messages/maths-english-success-messages.html" %}
+      {% include "../includes/provider-notification-messages/maths-english-success-messages.html" %}
     {% endif %}
-    {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] and data['newindustryPlacement'] == 'Completed'
-    or data['newindustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln'] %}
-    {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
+
+    {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
+    and data['newindustryPlacement'] == 'Completed'
+    or data['newindustryPlacement'] == 'Completed with special consideration'
+    and data['uln'] == data['selectedUln'] %}
+      {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
     {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
-    {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
+      {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
+    {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
+      {% include "../includes/provider-notification-messages/industry-placement-success-message-learner-has-left.html" %}
     {% endif %}
+
     {% if data['showBanner'] === 'certificate' and data['uln'] == data['selectedUln'] %}
-    {% include "../includes/provider-notification-messages/sent-certificate-message.html" %}
-    {% endif %}
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    {% if data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '8642135790' or data['uln'] === '1231231231' or data['uln'] === '1169334253'%}
-    {% elif data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and data['updatedenglishStatus'] === 'yes' %}
-    {% elif data['newplacementResult'] === 'yes' and data['uln'] === '9876543210' %}
-    {% elif data['newplacementResult'] === 'yes' and data['uln'] === '1169334253' %}
-    {% else %}
-    {% include "../includes/provider-notification-messages/record-notification.html" %}
+      {% include "../includes/provider-notification-messages/sent-certificate-message.html" %}
     {% endif %}
   </div>
 </div>
@@ -63,6 +58,43 @@ Learner's T Level record
       {% if data['showBanner'] === 'certificate' and data['uln'] == data['selectedUln'] %}
       <span class="govuk-body govuk-!-font-weight-bold">Replacement document requested on <span id="currentDate"></span>. The document may take up to 3 weeks to arrive.</span>
       {% endif %}
+    </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% if data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '8642135790' or data['uln'] === '1231231231' or data['uln'] === '1169334253'%}
+        {% elif data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and data['updatedenglishStatus'] === 'yes' %}
+        {% else %}
+
+            <h2 class="govuk-heading-m">Provide details about this learner</h2>
+            {% if data['newplacementResult'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' and data['uln'] == data['selectedUln'] %}
+            {% else %}
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Industry placement</h3>
+            <p class="govuk-!-margin-bottom-1"><a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a> or</p>
+            <p><a class="govuk-notification-banner__link" href="does-learner-need-more-time">Tell us if the learner needs more time or has left the course</a></p>
+            {% endif %}
+
+            {% if data['updatedmathsStatus'] == 'yes' and data['uln'] == data['selectedUln']
+            and data['updatedenglishStatus'] == 'yes' and data['uln'] == data['selectedUln']
+            or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] != 'Not yet received'
+            and data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] != 'Not yet received' %}
+            {% else %}
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Maths and English</h3>
+            {% endif %}
+
+            {% if data['updatedmathsStatus'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] != 'Not yet received'%}
+            {% else %}
+            <p class="govuk-!-margin-bottom-1"><a class="govuk-notification-banner__link" href="add-maths-status">Add maths level details</a></p>
+            {% endif %}
+            {% if data['updatedenglishStatus'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerEnglish'] != 'Not yet received'%}
+            {% else %}
+            <p class="govuk-!-margin-bottom-9"><a class="govuk-notification-banner__link" href="add-english-status">Add English level details</a></p>
+            {% endif %}
+
+
+        {% endif %}
+      </div>
     </div>
 
 
