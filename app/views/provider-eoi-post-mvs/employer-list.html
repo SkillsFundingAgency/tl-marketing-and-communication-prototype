@@ -22,7 +22,7 @@ Employer interest in offering T Levels
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-    <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list.html">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list-settings.html">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="venues">Venues</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 {% endblock %}
@@ -33,7 +33,7 @@ Employer interest in offering T Levels
 
       <!-- Temporary banner display -->
 
-      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
             Important
@@ -42,12 +42,16 @@ Employer interest in offering T Levels
         <div class="govuk-notification-banner__content">
           <p class="govuk-notification-banner__heading">
             Please ensure the contact details for your organisation are up-to-date.
-            <a class="govuk-notification-banner__link govuk-link govuk-!-font-weight-bold" href="organisation-list.html">View details</a>.
+            <a class="govuk-notification-banner__link govuk-link govuk-!-font-weight-bold" href="venues.html">View details</a>.
           </p>
         </div>
-      </div>
+      </div> -->
 
       <!-- -->
+
+
+      <div class="tint-banner"><p>Please ensure the <a href="venues" class="govuk-link">details for your organisation</a> are up-to-date.</p></div>
+
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
         Connect with employers <br>interested in T Levels
@@ -55,9 +59,9 @@ Employer interest in offering T Levels
 
       <p class="govuk-body govuk-!-margin-top-0">Employers have agreed for their details to be shared for 12 weeks. <br>After 12 weeks, <span class="govuk-!-font-weight-bold">their details will expire</span> unless they agree to extend their interest.</p>
 
-      <p class="govuk-body">You can <a class="govuk-link" href="organisation-list-settings">customise the results and set up notifications</a> to be alerted when new employers are added.</p>
+      <p class="govuk-body">You can <a class="govuk-link" href="filters-notifications">filter results and set up notifications</a> to be alerted when new employers are added.</p>
 
-      <p class="govuk-body govuk-!-margin-top-6" style="display:block;">Select or enter a postcode to see contact details for employers:</p>
+      <p class="govuk-body" style="display:block;">Select or enter a postcode to see contact details for employers:</p>
 
       <div class="govuk-form-group" style="display:block;">
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
@@ -169,8 +173,15 @@ Employer interest in offering T Levels
       </table>
 
       <div class="govuk-!-margin-top-4 no-employers hidden-element">
-        <p class="govuk-body govuk-!-margin-bottom-0"><span class="govuk-!-font-weight-bold">There are currently no employers within 20 miles who have expressed interest in T Levels.</span><br>
-          Please search another postcode or check back soon to see employers in your area. </p>
+        <p class="govuk-body govuk-!-font-weight-bold">There are currently no employers within 20 miles who have expressed interest in T Levels.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0 ">
+          You can adjust your <a class="govuk-link" href="filters-notifications">filters and notifications settings</a> to expand your search or to be notified when new employers are added.</p>
+      </div>
+
+      <div class="govuk-!-margin-top-4 no-employers hidden-element">
+        <p class="govuk-body govuk-!-font-weight-bold">There are currently no employers found within your search criteria.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0 ">
+          You can adjust your <a class="govuk-link" href="filters-notifications">filters and notifications settings</a> to expand your search or to be notified when new employers are added.</p>
       </div>
 
       <table class="govuk-table govuk-!-margin-top-4 employer-list-three hidden-element">

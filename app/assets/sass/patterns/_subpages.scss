@@ -162,7 +162,7 @@ h3.heading-sora {
     .govuk-link:hover {
         color: #003078;
         background:none;
-        text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+        text-decoration-thickness: max(1.5px);
         -webkit-text-decoration-skip-ink: none;
         text-decoration-skip-ink: none;
         -webkit-text-decoration-skip: none;
@@ -368,7 +368,7 @@ h3.heading-sora {
     display:block;
     float:left;
     clear:both;
-    margin-bottom:40px;
+    margin-bottom:30px;
 
     .govuk-link {
         color: #1d70b8;
@@ -449,3 +449,25 @@ h3.heading-sora {
     }
 
 } 
+
+.tint-banner {
+    display: inline-flex;
+    border-left: 7px solid #2e8ec4;
+    background-color: #eaf4fa;
+    padding: 17px 25px 18px 17px;
+    margin: 5px 0px 30px;
+    font-size:19px;
+    
+    p {
+        margin:0px;
+    }
+}
+
+.govuk-link {
+    border-bottom:none;
+    text-decoration-thickness: max(1px);
+
+    &:hover {
+        border-bottom:none;
+    }
+}

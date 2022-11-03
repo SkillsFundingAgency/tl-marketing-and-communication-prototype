@@ -22,7 +22,7 @@ Employer interest in offering T Levels
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list.html">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list-settings.html">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="venues">Venues</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 {% endblock %}
@@ -31,44 +31,42 @@ Employer interest in offering T Levels
   <div class="govuk-grid-row eoi-form-journey">
     <div class="govuk-grid-column-full">
 
-      <a class="govuk-link" href="organisation-list-settings" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Return to location list</a>
+      <a class="govuk-link" href="employer-list" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Return to location list</a>
 
       <h1 class="govuk-heading-xl">
-        Settings for Alesford Campus
+        Alesford Campus
       </h1>
 
-      <h2 style="font-size:24px; margin:10px 0px 30px;">Employer list settings</h2>
+      <h2 style="font-size:24px; margin:10px 0px -10px;">Location details</h2>
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-            Only display results within:
+
+      <div class="govuk-form-group govuk-!-margin-left-2">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-top-6" for="event-name">
+            Name
           </label>
         </h1>
-        <div id="event-name-hint" class="govuk-hint">
-          The default is set to 20 miles
-        </div>
-        <div class="govuk-form-group" style="display:block;">
-          <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
-            <option value="0">5 miles</option>
-            <option value="1">10 miles</option>
-            <option value="2" selected>20 miles</option>
-            <option value="3">30 miles</option>
-            <option value="3">40 miles</option>
-            <option value="4">No limit</option>
-          </select>
+        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="Alesford Campus">
       </div>
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-!-margin-left-2">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+            Postcode
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="SO53 4SY">
+      </div>
+
+      <div class="govuk-form-group govuk-!-margin-left-2">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-            Only show employers offering placements within:
+              T-Levels offered
             </h1>
           </legend>
           <div id="waste-hint" class="govuk-hint">
-            If nothing is selected, all results will show
+            Select all that apply.
           </div>
-          <div class="govuk-checkboxes govuk-!-margin-top-4" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
@@ -218,49 +216,50 @@ Employer interest in offering T Levels
         </fieldset>
       </div>
 
-      <h2 style="font-size:24px; margin:50px 0px 20px;">Notification settings</h2>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">
-            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-2"><label class="govuk-label govuk-label--s" for="event-name">
-              Do you wish to receieve notifications?</label>
-            </h1>
-          </legend>
-          <div class="govuk-hint govuk-!-margin-bottom-4">
-            Notifications will be sent to the email address of the primary contact of the organisation.
-          </div>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
-                I wish to receive notifications of new employer details
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-
-        <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-4">
-          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-2" for="event-name">
-              Notification frequency
-            </label>
-          </h1>
-          <div class="govuk-form-group" style="display:block;">
-            <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)" style="display:inline-block;">
-              <option value="0">Immediately</option>
-              <option value="1">Every day</option>
-              <option value="2">Every week</option>
-              <option value="3">Every fortnight</option>
-            </select>
-        </div>
-    
-
-      <button class="govuk-button govuk-!-margin-top-8 " data-module="govuk-button">
-        Update settings
+      <button class="govuk-button govuk-!-margin-top-4 " data-module="govuk-button">
+        Save details
       </button>
-      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-8 govuk-!-padding-top-2"><a class="govuk-link" href="organisation-list-settings.html">Cancel</a></p>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-1"><a class="govuk-link" href="venue-details.html">Cancel</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Primary contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Ana Amari</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">ana.amari@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07783 637821</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="">Edit</a></p>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Student contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Lena Oxton</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">lena.oxton@alesfordcsu.edu</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07792 443928</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link" href="">Edit</a></p>
 
     </div>
 

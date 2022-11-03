@@ -22,26 +22,33 @@ Employer interest in offering T Levels
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list.html">Organisation details</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="organisation-list-settings.html">Settings</a><a class="govuk-link" href="start">Sign out</a></p>
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="venues">Venues</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="employer-list">Connect with employers</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="filters-notifications">Filters and notifications</a>
+    </li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row eoi-form-journey">
     <div class="govuk-grid-column-full">
-
-      <a class="govuk-link" href="organisation-list-settings" style="display:inline-block; font-size:16px; margin:0px 0px 30px;">< Return to location list</a>
-
       <h1 class="govuk-heading-xl">
-        Settings for Alesford Campus
+        Filters and notifications <br>for Alesford Campus
       </h1>
 
-      <h2 style="font-size:24px; margin:10px 0px 30px;">Employer list settings</h2>
+      <!-- <h2 style="font-size:24px; margin:10px 0px 30px;">Filters and notifications</h2> -->
 
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-            Only display results within:
+            Only display employers within:
           </label>
         </h1>
         <div id="event-name-hint" class="govuk-hint">
@@ -218,21 +225,23 @@ Employer interest in offering T Levels
         </fieldset>
       </div>
 
+      <!-- <h2 style="font-size:24px; margin:50px 0px 20px;">Notification settings</h2> -->
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">
             <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-2"><label class="govuk-label govuk-label--s" for="event-name">
-              Do you wish to receieve notifications for new results?</label>
+              Do you want to receieve notifications for new employers?</label>
             </h1>
           </legend>
           <div class="govuk-hint govuk-!-margin-bottom-4">
-            Notifications for new results matching the above settings will be sent to evelyn@blossomdownac.edu
+            Notifications for new employers matching the above criteria will be sent to evelyn@blossomdownac.edu
           </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" checked>
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                I wish to receive notifications of new employer details
+                I wish to receive notifications for new employers
               </label>
             </div>
           </div>
@@ -255,10 +264,11 @@ Employer interest in offering T Levels
         </div>
     
 
-      <button class="govuk-button govuk-!-margin-top-8 " data-module="govuk-button">
-        Update settings
-      </button>
-      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-8 govuk-!-padding-top-2"><a class="govuk-link" href="organisation-list-settings.html">Cancel</a></p>
+
+        <a href="filters-notifications" role="button" draggable="false" class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8"  data-module="govuk-button">
+          Update settings
+        </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-8 govuk-!-padding-top-2"><a class="govuk-link" href="filters-notifications">Cancel</a></p>
 
     </div>
 

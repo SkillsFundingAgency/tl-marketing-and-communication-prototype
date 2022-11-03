@@ -7874,6 +7874,10 @@ x:-moz-any-link {
   white-space: nowrap;
 }
 
+.govuk-button {
+  font-size: 19px;
+}
+
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -7911,7 +7915,7 @@ input,
 }
 
 p {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: normal;
   margin-bottom: 30px;
 }
@@ -8731,7 +8735,7 @@ h3.heading-sora {
 .eoi-form-journey * .govuk-link:hover {
   color: #003078;
   background: none;
-  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+  text-decoration-thickness: 1.5px;
   -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none;
   -webkit-text-decoration-skip: none;
@@ -8908,7 +8912,7 @@ h3.heading-sora {
   display: block;
   float: left;
   clear: both;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .account-bar .govuk-link {
   color: #1d70b8;
@@ -8974,6 +8978,26 @@ h3.heading-sora {
 .phase-feedback strong {
   background-color: #d53880;
   text-transform: uppercase !important;
+}
+
+.tint-banner {
+  display: inline-flex;
+  border-left: 7px solid #2e8ec4;
+  background-color: #eaf4fa;
+  padding: 17px 25px 18px 17px;
+  margin: 5px 0px 30px;
+  font-size: 19px;
+}
+.tint-banner p {
+  margin: 0px;
+}
+
+.govuk-link {
+  border-bottom: none;
+  text-decoration-thickness: 1px;
+}
+.govuk-link:hover {
+  border-bottom: none;
 }
 
 .subjects.digi-prod > div:first-child {

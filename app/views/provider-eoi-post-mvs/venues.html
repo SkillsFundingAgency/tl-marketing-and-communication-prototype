@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="venues">Venues</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="employer-list">Connect with employers</a>
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey employer-listing">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Venues
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-0">Select a location from the list below to view and edit student and organisation contact details.</p>
+
+      <table class="govuk-table govuk-!-margin-top-4">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width:300px;">Venue</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Employer contact</th>
+            <th scope="col" class="govuk-table__header">Student contact</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Alesford Campus</th>
+            <td class="govuk-table__cell"><p>SO53 4SY</p></td>
+            <td class="govuk-table__cell">Ana Amari</td>
+            <td class="govuk-table__cell">Lena Oxton</td>
+            <td class="govuk-table__cell"><a href="venue-details" class="govuk-link" style="display:inline-block; margin-left:15px;">Change <span class="sr-only">Alesford Campus</span></a><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Blossom Down Academy</th>
+            <td class="govuk-table__cell"><p>PO13 8HJ</p></td>
+            <td class="govuk-table__cell">Daniel Shaw</td>
+            <td class="govuk-table__cell">Angela Ziegler</td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Change <span class="sr-only">Barley Dean College</span></a><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Warrick Green</th>
+            <td class="govuk-table__cell"><p>PO62 9SJ</p></td>
+            <td class="govuk-table__cell">Julian Porter</td>
+            <td class="govuk-table__cell">Gabriel Reyes</td>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Change <span class="sr-only">Warrick Green</span></a><a href="remove-venue" class="govuk-link" style="display:inline-block; margin-left:15px;">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="add-venue" role="button" draggable="false" class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Add venue
+      </a>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 1) {
+      $('.employer-list-one').removeClass("hidden-element").addClass("show-element");
+      $('.employer-list-three, .employer-list-two, .no-employers').addClass("hidden-element").removeClass("show-element");
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    } else if (select.value == 2) {
+      $('.employer-list-one, .employer-list-two, .no-employers').addClass("hidden-element").removeClass("show-element");
+      $('.employer-list-three').addClass("show-element").removeClass("hidden-element");
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    } else if (select.value == 3) {
+      $('.no-employers').addClass("show-element").removeClass("hidden-element");
+      $('.employer-list-one, .employer-list-two, .employer-list-three').addClass("hidden-element").removeClass("show-element");
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    } else if (select.value == 4) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function() {  
+      $('.eoi-table-switch').click(function() {
+      $('.employer-list-one, .employer-list-three, .no-employers').addClass("hidden-element");
+      $('.employer-list-two').addClass("visible-element").removeClass("hidden-element");
+    });
+  });
+
+  </script>
+{% endblock %}
