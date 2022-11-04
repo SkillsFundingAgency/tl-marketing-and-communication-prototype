@@ -5,7 +5,7 @@ Learner has been withdrawn - Update learner record - Manage T Level results - GO
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="../providers/tlevels-dashboard.html">Back</a>
+<a class="govuk-back-link" onclick="goBack()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ Learner has been withdrawn - Update learner record - Manage T Level results - GO
         <h1 class="govuk-heading-l govuk-!-padding-top-0">
             {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has left
         </h1>
-        <p class="govuk-body">You've told us that {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has left the course</p>
+        <p class="govuk-hint govuk-body">You've told us that {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has left the course</p>
 
         <ul class="govuk-list govuk-list--bullet">
             <li>Contact the AO and tell them the learner has left</li>
@@ -26,6 +26,9 @@ Learner has been withdrawn - Update learner record - Manage T Level results - GO
 
         <p><a class="govuk-button govuk-!-margin-top-6" role="button" href="update-t-level-record">Continue</a>
 
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/guidance-linksV6+.html" %}
     </div>
 </div>
 

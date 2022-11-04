@@ -43,9 +43,9 @@ Add industry placement details - Update learner record - Manage T Level results 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
                                    type="radio"
-                                   value="Completed with reduced hours" {{ checked("result-ip-answer", "Special consideration") }} >
+                                   value="Completed with special consideration" {{ checked("result-ip-answer", "Special consideration") }} >
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
-                                Completed with reduced hours
+                                Completed with special considerations
                             </label>
                         </div>
 
@@ -63,7 +63,10 @@ Add industry placement details - Update learner record - Manage T Level results 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
         </form>
         <p class="govuk-body">Or</p>
-        <p><a href="./does-learner-need-more-time.html" class="govuk-body govuk-link--no-visited-state">Tell us a learner needs more time to complete their industry placement or tell us this learner has left</a></p>
+        <p><a href="./does-learner-need-more-time.html" class="govuk-body govuk-link--no-visited-state">Tell us a learner needs more time to complete their industry placement, will not complete their industry placement, or that the learner has left</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/guidance-linksV6+.html" %}
     </div>
 </div>
 
