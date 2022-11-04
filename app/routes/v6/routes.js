@@ -605,6 +605,17 @@ module.exports = function (router) {
 
   // Update T Level Records
 
+  // Why will learner not complete IP
+
+  router.post('/' + version + '/providers/why-wont-learner-complete-ip', function (req, res) {
+    const learnerStatus = req.session.data['does-learner-need-more-time']
+    req.session.data.newindustryPlacement = learnerStatus
+    req.session.data.newplacementResult = 'yes'
+    req.session.data.showBanner = 'will-not-complete'
+
+    res.redirect('/' + version + '/providers/update-t-level-record')
+  })
+
   // Withdraw learner
   router.post('/' + version + '/providers/does-learner-need-more-time', function (req, res) {
     const learnerStatus = req.session.data['does-learner-need-more-time']
@@ -616,12 +627,18 @@ module.exports = function (router) {
       req.session.data.showBanner = 'left'
 
       res.redirect('/' + version + '/providers/learner-withdrawn')
-    } else {
+    } else if (learnerStatus === 'Learner needs more time') {
       req.session.data.selectedUln = req.session.data.uln
       req.session.data.showBanner = 'ip'
       req.session.data.newindustryPlacement = learnerStatus
 
       res.redirect('/' + version + '/providers/update-t-level-record')
+    } else {
+      req.session.data.selectedUln = req.session.data.uln
+      req.session.data.showBanner = 'will-not-complete'
+      req.session.data.newindustryPlacement = learnerStatus
+
+      res.redirect('/' + version + '/providers/why-wont-learner-complete-ip')
     }
   })
 

@@ -18,7 +18,7 @@ What is the reason for the special consideration - Manage T Level results - GOV.
 
             <fieldset class="govuk-fieldset" aria-describedby="special-consideration-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-0">
-                    <span class="govuk-caption-l">Industry placement: Special consideration</span>
+                    <span class="govuk-caption-l">Industry placement: Reason for reduced hours</span>
                 </legend>
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -26,8 +26,8 @@ What is the reason for the special consideration - Manage T Level results - GOV.
                             Why did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} not complete their industry placement?
                         </h1>
                     </legend>
-                    <div id="special-consideration-hint" class="govuk-hint">
-                        We will ask you to declare that you hold documentary evidence on file before you can submit this learner's industry placement details. Select all that apply.
+                    <div id="special-consideration-hint" class="govuk-body">
+                        Select one or more reasons that were taken in special consideration when allowing the learner to complete their industry placement with reduced hours
                     </div>
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
@@ -94,6 +94,10 @@ What is the reason for the special consideration - Manage T Level results - GOV.
                             </label>
                         </div>
                     </div>
+                </div>
+
+                <div class="govuk-inset-text">
+                    We will ask you to declare that you hold documentary evidence on file before you can submit this learner's industry placement details. Select all that apply. (Previously Special Considerations)
                 </div>
 
             </fieldset>

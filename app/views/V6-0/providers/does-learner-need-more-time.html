@@ -45,6 +45,15 @@ Does learner need more time - Update learner record - Manage T Level results - G
                             </label>
                         </div>
 
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="does-learner-need-time-answer-3" name="does-learner-need-more-time"
+                                   type="radio"
+                                   value="Learner will not complete ip" {{ checked("does-learner-need-more-time", "Learner will not complete ip") }} >
+                            <label class="govuk-label govuk-radios__label" for="does-learner-need-time-answer-3">
+                                This learner will not complete their industry placement
+                            </label>
+                        </div>
+
                     </div>
                 </div>
             </fieldset>
@@ -52,13 +61,16 @@ Does learner need more time - Update learner record - Manage T Level results - G
             <button class="govuk-button" data-module="govuk-button">Continue</button>
         </form>
     </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
 </div>
 
 <script type="application/json" id="learnerStatus-validation">
     {
         "does-learner-need-more-time": {
             "presence": {
-                "message": "^Tell us whether this learner needs more time, or has been removed from the course"
+                "message": "^Tell us whether this learner needs more time, has been removed from the course, or will not complete their industry placement"
             }
         }
     }

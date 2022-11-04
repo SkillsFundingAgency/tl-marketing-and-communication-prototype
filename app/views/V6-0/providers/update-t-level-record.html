@@ -38,12 +38,29 @@ Learner's T Level record
       {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
     {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
       {% include "../includes/provider-notification-messages/industry-placement-success-message-learner-has-left.html" %}
+    {% elif data['showBanner'] === 'will-not-complete' and data['uln'] == data['selectedUln'] %}
+      {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
     {% endif %}
 
     {% if data['showBanner'] === 'certificate' and data['uln'] == data['selectedUln'] %}
       {% include "../includes/provider-notification-messages/sent-certificate-message.html" %}
     {% endif %}
   </div>
+
+  {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
+  and data['newindustryPlacement'] == 'Completed'
+  or data['showBanner'] === 'ip'
+  and data['newindustryPlacement'] == 'Completed with reduced hours'
+  and data['uln'] == data['selectedUln'] %}
+    {% include "../../../views/includes/guidance-linksV6+.html" %}
+  {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
+    {% include "../../../views/includes/guidance-linksV6+.html" %}
+  {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
+    {% include "../../../views/includes/guidance-linksV6+.html" %}
+  {% elif data['showBanner'] === 'will-not-complete' and data['uln'] == data['selectedUln'] %}
+    {% include "../../../views/includes/guidance-linksV6+.html" %}
+  {% endif %}
+
 </div>
 
 <div class="govuk-grid-row">
@@ -52,6 +69,28 @@ Learner's T Level record
     <div class="record-header">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">
         {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
+
+        <span style="display: inline-block;">
+          {% if data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and
+          data['updatedenglishStatus'] === 'yes' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '8642135790' or data['uln'] === '1231231231'%}
+          <strong class="govuk-tag govuk-tag--green">
+            Complete
+          </strong>
+          {% elif data['newplacementResult'] === 'yes' and data['uln'] === '9876543210' %}
+          <strong class="govuk-tag govuk-tag--green">
+            Complete
+          </strong>
+          {% elif data['newplacementResult'] === 'yes' and data['uln'] === '1169334253' %}
+          <strong class="govuk-tag govuk-tag--green">
+            Complete
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--red">
+            Incomplete
+          </strong>
+          {% endif %}
+        </span>
+
       </h1>
 
       <span class="govuk-caption-l">ULN: {{ [data['uln']] }}
@@ -154,6 +193,53 @@ Learner's T Level record
       </div>
     </dl>
 
+
+    <h2 class="govuk-heading-m">Industry placement</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key">
+          Status
+        </dd>
+        <dd class="govuk-summary-list__value">
+          <p>
+            {% if data['newplacementResult'] === 'yes' and data['uln'] == data['selectedUln'] %}
+
+                {% if data['newindustryPlacement'] == 'Learner has left the course' %}
+                    Learner left
+                {% elif data['newindustryPlacement'] == 'Learner will not complete ip' %}
+                    Will not complete
+                {% elif data['result-ip-answer'] == 'Completed with reduced hours' %}
+                    Completed with reduced hours
+                {% else %}
+                    {{ data['newindustryPlacement'] }}
+                {% endif %}
+
+            {% else %}
+                {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}
+            {% endif %}
+          </p>
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if data['newindustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Learner has left the course' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Learner will not complete ip' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln']
+          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln'] %}
+          <a class="govuk-link" href="change-ip-result">
+            Change <span class="govuk-visually-hidden"> industry placement information</span>
+          </a>
+          {% else %}
+          <a class="govuk-link" href="change-ip-result">
+            Add <span class="govuk-visually-hidden"> industry placement information</span>
+          </a>
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
     <h2 class="govuk-heading-m">Level 2 maths and English</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -205,55 +291,14 @@ Learner's T Level record
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">Industry placement</h2>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key">
-          Status
-        </dd>
-        <dd class="govuk-summary-list__value">
-          <p>
-            {% if data['newplacementResult'] === 'yes' and data['uln'] == data['selectedUln'] %}
-
-                {% if data['newindustryPlacement'] == 'Learner has left the course' %}
-                    Learner left
-                {% elif data['result-ip-answer'] == 'Completed with reduced hours' %}
-                    Completed with reduced hours
-                {% else %}
-                    {{ data['newindustryPlacement'] }}
-                {% endif %}
-
-            {% else %}
-                {{ data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement']}}
-            {% endif %}
-          </p>
-
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          {% if data['newindustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
-          or data['newindustryPlacement'] == 'Learner has left the course' and data['uln'] == data['selectedUln']
-          or data['newindustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln']
-          or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
-          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln'] %}
-          <a class="govuk-link" href="change-ip-result">
-            Change <span class="govuk-visually-hidden"> industry placement information</span>
-          </a>
-          {% else %}
-          <a class="govuk-link" href="change-ip-result">
-            Add <span class="govuk-visually-hidden"> industry placement information</span>
-          </a>
-          {% endif %}
-        </dd>
-      </div>
-    </dl>
+    <h2 class="govuk-heading-m">Overall T Level result</h2>
 
     {% if data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] %}
-    <h2 class="govuk-heading-m">Core component</h2>
-    <dl class="govuk-summary-list">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
-          <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
+          <p class="govuk-!-font-weight-bold">T Level grade</p>
+          <p class="govuk-!-font-weight-bold"></p>
         </dd>
         <dd class="govuk-summary-list__value">
           <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerCoreResult'] }}
@@ -269,30 +314,14 @@ Learner's T Level record
     {% else %}
     {% endif %}
 
-    {% if data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] %}
-    <h2 class="govuk-heading-m">Occupational specialism</h2>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key">
-          <p class="govuk-!-font-weight-bold">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
-        </dd>
-        <dd class="govuk-summary-list__value">
-          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
-        </dd>
-      </div>
-    </dl>
-    {% else %}
-    {% endif %}
-
-
-    <h2 class="govuk-heading-m">Overall T Level result</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__key">
           {% if data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] and data['tLevelsStudentDataV3'][data['uln']]['learnerStartYear'] != '2021 to 2022' %}
-          <p class="govuk-!-font-weight-bold">Result</p>
+          <p class="govuk-!-font-weight-bold">Core component</p>
         <dd class="govuk-summary-list__value">
-          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}</p>
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelCore'] | safe}}</p>
+          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerOverallGrade'] }}</p>
         </dd>
         {% else %}
         {{ "Results will be displayed from the day before results day and will only be available for active final year learners." }}
@@ -300,19 +329,33 @@ Learner's T Level record
         </dd>
       </div>
     </dl>
+
+    {% if data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] %}
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key">
+          <p class="govuk-!-font-weight-bold">Occupational specialism</p>
+        </dd>
+        <dd class="govuk-summary-list__value">
+          <p>{{ data['tLevelsStudentDataV3'][data['uln']]['learnerTLevelSpecialism'] }}</p>
+          <p>Grade: {{ data['tLevelsStudentDataV3'][data['uln']]['learnerSpecialismResult'] }}</p>
+        </dd>
+      </div>
+    </dl>
+    {% else %}
+    {% endif %}
+
+
   </div>
+
 </div>
 <div class="govuk-button-group">
-  <a id="searchAgainButton" class="govuk-button" role="button" href="./manage-t-level-records.html">
-    Back to list of learners
-  </a>
   {% if data['uln'] != data['selectedUln'] and data['tLevelsStudentDataV3'][data['uln']]['Document'] != 'Not available' and data['tLevelsStudentDataV3'][data['uln']]['learnerStartYear'] != '2021 to 2022' %}
   <a id="requestReplacementDocument" class="govuk-button" role="button" href="./request-replacement-document.html">
     Request replacement document
   </a>
   {% endif %}
 </div>
-<a id="backToHomeButton" class="govuk-link govuk-link--no-visited-state" role="link" data-module="govuk-button" href="./tlevels-dashboard.html">< Back to home</a>
 
 
 <script>

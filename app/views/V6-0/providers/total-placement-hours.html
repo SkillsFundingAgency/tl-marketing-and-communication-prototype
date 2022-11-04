@@ -21,7 +21,7 @@ How many hours did the student spend on placement? - Manage T Level results - GO
                     How many industry placement hours did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} complete?
                 </h1>
                 <div id="total-placement-hours-hint" class="govuk-hint">
-                    Must be between 1 and 999
+                    Must be between 1 and XXX for {{ data['tLevelsStudentDataV3'][data.uln]['learnerTLevelTitle'] | safe}}
                 </div>
                 <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
                 <input value="{{ data ['total-placement-hours'] }}"  style="line-height:6;" class="govuk-input govuk-input--width-3"
