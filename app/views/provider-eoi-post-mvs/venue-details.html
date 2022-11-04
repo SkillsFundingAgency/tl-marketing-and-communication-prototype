@@ -251,7 +251,7 @@ Employer interest in offering T Levels
 
       <a href="venue-details-ur" role="button" draggable="false"
         class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-8" data-module="govuk-button">
-        Update settings
+        Save changes
       </a>
       <!-- <button class="govuk-button govuk-!-margin-top-4 edit-details-save-2" data-module="govuk-button">
         Save details
@@ -312,7 +312,7 @@ Employer interest in offering T Levels
       </div>
 
       <button class="govuk-button govuk-!-margin-top-4 edit-details-save" data-module="govuk-button">
-        Save details
+        Save changes
       </button>
       <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-2"><a
           class="govuk-link edit-details-save">Cancel</a></p>
@@ -322,27 +322,61 @@ Employer interest in offering T Levels
 
     <h2 style="font-size:24px; margin:40px 0px -10px;">Student contact details</h2>
 
-    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
-          <td class="govuk-table__cell">Lena Oxton</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Email</th>
-          <td class="govuk-table__cell">lena.oxton@alesfordcsu.ac.uk</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Telephone</th>
-          <td class="govuk-table__cell">07792 443928</td>
-        </tr>
-      </tbody>
-    </table>
-    <p><a class="govuk-link" href="">Edit</a></p>
+    <div class="details-listed-block-3">
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Lena Oxton</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">lena.oxton@alesfordcsu.ac.uk</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07792 443928</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a class="govuk-link edit-details-button-3">Edit</a></p>
+    </div>
 
-    <!-- <a href="filters-notifications" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-8"  data-module="govuk-button">
-      Save changes
-    </a> -->
+    <div class="details-editable-block-3 hidden-element">
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-top-6" for="event-name">
+            Name
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text"
+          value="Lena Oxton">
+      </div>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+            Email
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text"
+          value="lena.oxton@alesfordcsu.ac.uk">
+      </div>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+            Telephone
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text"
+          value="07792 443928">
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-4 edit-details-save-3" data-module="govuk-button">
+        Save changes
+      </button>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-2"><a
+          class="govuk-link edit-details-save-3">Cancel</a></p>
+    </div>
+
 
   </div>
 
@@ -376,6 +410,20 @@ Employer interest in offering T Levels
       $('.details-listed-block-2').removeClass("hidden-element");
       $('.details-editable-block-2').addClass("hidden-element");
       $('.details-editable-block-2').removeClass("visible-element");
+    });
+
+    $('.edit-details-button-3').click(function () {
+      $('.details-editable-block-3').addClass("visible-element");
+      $('.details-editable-block-3').removeClass("hidden-element");
+      $('.details-listed-block-3').addClass("hidden-element");
+      $('.details-listed-block-3').removeClass("visible-element");
+    });
+
+    $('.edit-details-save-3').click(function () {
+      $('.details-listed-block-3').addClass("visible-element");
+      $('.details-listed-block-3').removeClass("hidden-element");
+      $('.details-editable-block-3').addClass("hidden-element");
+      $('.details-editable-block-3').removeClass("visible-element");
     });
 
   });
