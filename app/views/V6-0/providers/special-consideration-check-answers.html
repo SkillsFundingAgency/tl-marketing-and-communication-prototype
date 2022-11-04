@@ -14,7 +14,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-l">Check your answers</h1>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Check your answers</h1>
 
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
                     <div class="govuk-summary-list__row">
@@ -27,14 +27,6 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            ULN
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p class="govuk-body">{{ data['uln'] }}</p>
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
                             Date of birth
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -43,10 +35,26 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
+                            ULN
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['uln'] }}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
                             T Level
                         </dt>
                         <dd class="govuk-summary-list__value">
                             <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerTLevelTitle'] | safe}}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Start year
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerStartYear'] | safe}}</p>
                         </dd>
                     </div>
                 </dl>
@@ -70,20 +78,7 @@
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Full industry placement hours
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                No
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="has-completed-full-industry-placement-hours?change-answer=yes">
-                                    Change<span class="govuk-visually-hidden"> has completed full industry placement?</span>
-                                </a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Hours spent on placement
+                                Number of hours
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 {{ data ['total-placement-hours'] }}
@@ -96,7 +91,7 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Reason for incomplete placement hours
+                                Reasons for reduced hours
                             </dt>
                             <dd class="govuk-summary-list__value">
                                 {% if data['special-consideration'] == 'COVID-19' %}
@@ -261,6 +256,13 @@
                     {% endif %}
                 </dl>
 
+                <div class="govuk-inset-text">By selecting 'Continue', you are declaring that the
+                    relevant provider responsibilities have been met and that you hold the <a
+                            href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
+                            class="govuk-link" rel="noreferrer noopener" target="_blank">signed declaration of
+                        student completion (opens in a new tab)</a> for this learner.
+                </div>
+
                 {% if data['result-ip-answer'] == 'Completed with special consideration' %}
                     <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has
                         completed their
@@ -276,10 +278,8 @@
 
                     <div class="govuk-button-group">
                         <button class="govuk-button" data-module="govuk-button">
-                            Submit
+                            Continue
                         </button>
-
-                        <a class="govuk-link" href="update-t-level-record?{{ data['uln'] }}">Cancel</a>
                     </div>
 
                 </form>
