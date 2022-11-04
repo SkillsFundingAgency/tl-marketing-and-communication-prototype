@@ -650,7 +650,7 @@ module.exports = function (router) {
       req.session.data.selectedUln = req.session.data.uln
 
       res.redirect('/' + version + '/providers/special-consideration-check-answers')
-    } else if (newResult === 'Completed with reduced hours') {
+    } else if (newResult === 'Completed with special consideration') {
       req.session.data.selectedUln = req.session.data.uln
       res.redirect('/' + version + '/providers/total-placement-hours')
     } else {

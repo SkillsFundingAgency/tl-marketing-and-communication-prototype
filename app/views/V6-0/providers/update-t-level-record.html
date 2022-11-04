@@ -31,7 +31,7 @@ Learner's T Level record
     {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
     and data['newindustryPlacement'] == 'Completed'
     or data['showBanner'] === 'ip'
-    and data['newindustryPlacement'] == 'Completed with reduced hours'
+    and data['newindustryPlacement'] == 'Completed with special consideration'
     and data['uln'] == data['selectedUln'] %}
       {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
     {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
@@ -50,15 +50,15 @@ Learner's T Level record
   {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
   and data['newindustryPlacement'] == 'Completed'
   or data['showBanner'] === 'ip'
-  and data['newindustryPlacement'] == 'Completed with reduced hours'
+  and data['newindustryPlacement'] == 'Completed with special consideration'
   and data['uln'] == data['selectedUln'] %}
-    {% include "../../../views/includes/guidance-linksV6+.html" %}
+    {% include "../../../views/includes/guidance-result.html" %}
   {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
-    {% include "../../../views/includes/guidance-linksV6+.html" %}
+    {% include "../../../views/includes/guidance-result.html" %}
   {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
-    {% include "../../../views/includes/guidance-linksV6+.html" %}
+    {% include "../../../views/includes/guidance-result.html" %}
   {% elif data['showBanner'] === 'will-not-complete' and data['uln'] == data['selectedUln'] %}
-    {% include "../../../views/includes/guidance-linksV6+.html" %}
+    {% include "../../../views/includes/guidance-result.html" %}
   {% endif %}
 
 </div>
@@ -111,8 +111,9 @@ Learner's T Level record
             {% if data['newplacementResult'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' and data['uln'] == data['selectedUln'] %}
             {% else %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Industry placement</h3>
-            <p class="govuk-!-margin-bottom-1"><a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a> or</p>
-            <p><a class="govuk-notification-banner__link" href="does-learner-need-more-time">Tell us if the learner needs more time or has left the course</a></p>
+            <p class="govuk-!-margin-bottom-1"><a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a></p>
+            <p class="govuk-!-margin-bottom-1 govuk-body">Or</p>
+            <p><a class="govuk-notification-banner__link" href="does-learner-need-more-time">Tell us if the learner needs more time, has left the course, or will not be completing their industry placement</a></p>
             {% endif %}
 
             {% if data['updatedmathsStatus'] == 'yes' and data['uln'] == data['selectedUln']
@@ -209,8 +210,8 @@ Learner's T Level record
                     Learner left
                 {% elif data['newindustryPlacement'] == 'Learner will not complete ip' %}
                     Will not complete
-                {% elif data['result-ip-answer'] == 'Completed with reduced hours' %}
-                    Completed with reduced hours
+                {% elif data['result-ip-answer'] == 'Completed with special consideration' %}
+                    Completed with special consideration
                 {% else %}
                     {{ data['newindustryPlacement'] }}
                 {% endif %}
@@ -225,9 +226,9 @@ Learner's T Level record
           {% if data['newindustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
           or data['newindustryPlacement'] == 'Learner has left the course' and data['uln'] == data['selectedUln']
           or data['newindustryPlacement'] == 'Learner will not complete ip' and data['uln'] == data['selectedUln']
-          or data['newindustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln']
+          or data['newindustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln']
           or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed' and data['uln'] == data['selectedUln']
-          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with reduced hours' and data['uln'] == data['selectedUln'] %}
+          or  data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln'] %}
           <a class="govuk-link" href="change-ip-result">
             Change <span class="govuk-visually-hidden"> industry placement information</span>
           </a>
