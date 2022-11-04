@@ -47,6 +47,7 @@ Employer interest in offering T Levels
       Filters and notifications <br>for Alesford Campus
     </h1>
 
+    <!-- <h2 style="font-size:24px; margin:10px 0px 30px;">Filters and notifications</h2> -->
 
     <div class="govuk-form-group">
       <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
@@ -59,9 +60,9 @@ Employer interest in offering T Levels
       <div class="govuk-form-group" style="display:block;">
         <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)"
           style="display:inline-block;">
-          <option value="0">5 miles</option>
+          <option value="0" selected>5 miles</option>
           <option value="1">10 miles</option>
-          <option value="2" selected>20 miles</option>
+          <option value="2">20 miles</option>
           <option value="3">30 miles</option>
           <option value="3">40 miles</option>
           <option value="4">No limit</option>
@@ -110,7 +111,7 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="craft"name="craft" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="craft" name="craft" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="craft">
                 Craft and Design
               </label>
@@ -128,7 +129,8 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="digital-business" name="digital-business" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="digital-business" name="digital-business" type="checkbox"
+                value="">
               <label class="govuk-label govuk-checkboxes__label" for="digital-business">
                 Digital Business Services
               </label>
@@ -140,13 +142,15 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="digital-support" name="digital-support" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="digital-support" name="digital-support" type="checkbox"
+                value="">
               <label class="govuk-label govuk-checkboxes__label" for="igital-support">
                 Digital Support Services
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="education-childcare" name="education-childcare" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="education-childcare" name="education-childcare" type="checkbox"
+                value="" checked>
               <label class="govuk-label govuk-checkboxes__label" for="education-childcare">
                 Education and Childcare
               </label>
@@ -170,13 +174,13 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="health" name="health" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="health" name="health" type="checkbox" value="" checked>
               <label class="govuk-label govuk-checkboxes__label" for="health">
                 Health
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="healthcare-sci" name="healthcare-sci" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="healthcare-sci" name="healthcare-sci" type="checkbox" value="" checked>
               <label class="govuk-label govuk-checkboxes__label" for="healthcare-sci">
                 Healthcare Science
               </label>
@@ -206,7 +210,8 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="media-broadcast" name="media-broadcast" type="checkbox" value="">
+              <input class="govuk-checkboxes__input" id="media-broadcast" name="media-broadcast" type="checkbox"
+                value="">
               <label class="govuk-label govuk-checkboxes__label" for="media-broadcast">
                 Media, Broadcast and Production
               </label>
@@ -224,9 +229,10 @@ Employer interest in offering T Levels
               </label>
             </div>
           </div>
-
         </fieldset>
       </div>
+
+      <!-- <h2 style="font-size:24px; margin:50px 0px 20px;">Notification settings</h2> -->
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="notifications-hint">
@@ -241,7 +247,8 @@ Employer interest in offering T Levels
           </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input id="notifications-checkbox" class="govuk-checkboxes__input notifications-checkbox" name="notifications-checkbox" type="checkbox">
+              <input id="notifications-checkbox" class="govuk-checkboxes__input notifications-checkbox"
+                name="notifications-checkbox" type="checkbox" checked>
               <label class="govuk-label govuk-checkboxes__label" for="notifications-checkbox">
                 I wish to receive notifications for new employers
               </label>
@@ -249,6 +256,7 @@ Employer interest in offering T Levels
           </div>
         </fieldset>
       </div>
+
 
       <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-4 notification-freq">
 
@@ -269,45 +277,44 @@ Employer interest in offering T Levels
 
       </div>
 
-      <div class="govuk-!-margin-top-8">
-        <a href="filters-notifications-ur" role="button" draggable="false"
-          class="govuk-button govuk-!-margin-bottom-8" data-module="govuk-button">
-          Update settings
-        </a>
-        <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2"><a
-            class="govuk-link" href="filters-notifications">Cancel</a></p>
-      </div>
+
+
+      <a href="filters-notifications" role="button" draggable="false"
+        class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8" data-module="govuk-button">
+        Update settings
+      </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-8 govuk-!-padding-top-2"><a
+          class="govuk-link" href="filters-notifications-ur">Cancel</a></p>
 
     </div>
 
-    <script type="text/javascript">
-      function revealEoiInput(select) {
-        if (select.value == 5) {
-          document.getElementById('eoi-hidden-input').style.display = "inline-block";
-          document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
-        } else {
-          document.getElementById('eoi-hidden-input').style.display = "none";
-          document.getElementById('eoi-hidden-btn-input').style.display = "none";
-        }
+  </div>
+
+  <script type="text/javascript">
+    function revealEoiInput(select) {
+      if (select.value == 5) {
+        document.getElementById('eoi-hidden-input').style.display = "inline-block";
+        document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+      } else {
+        document.getElementById('eoi-hidden-input').style.display = "none";
+        document.getElementById('eoi-hidden-btn-input').style.display = "none";
       }
+    }
 
-      $(function () {
-        $('.eoi-table-switch').click(function () {
-          $('.employer-list-two').addClass("visible-element");
-          $('.employer-list-one').addClass("hidden-element");
-          $('.employer-list-two').removeClass("hidden-element");
-        });
+    $(function () {
+      $('.eoi-table-switch').click(function () {
+        $('.employer-list-two').addClass("visible-element");
+        $('.employer-list-one').addClass("hidden-element");
+        $('.employer-list-two').removeClass("hidden-element");
       });
+    });
 
-      $(".notification-freq").hide();
-      $(".notifications-checkbox").click(function() {
-          if($(this).is(":checked")) {
-              $(".notification-freq").show();
-          } else {
-              $(".notification-freq").hide();
-          }
-      });
-
-    </script>
-
-    {% endblock %}
+    $(".notifications-checkbox").click(function () {
+      if ($(this).is(":checked")) {
+        $(".notification-freq").show();
+      } else {
+        $(".notification-freq").hide();
+      }
+    });
+  </script>
+  {% endblock %}
