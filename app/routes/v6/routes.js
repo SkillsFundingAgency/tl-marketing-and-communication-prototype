@@ -607,14 +607,14 @@ module.exports = function (router) {
 
   // Why will learner not complete IP
 
-  router.post('/' + version + '/providers/why-wont-learner-complete-ip', function (req, res) {
-    const learnerStatus = req.session.data['does-learner-need-more-time']
-    req.session.data.newindustryPlacement = learnerStatus
-    req.session.data.newplacementResult = 'yes'
-    req.session.data.showBanner = 'will-not-complete'
-
-    res.redirect('/' + version + '/providers/update-t-level-record')
-  })
+  // router.post('/' + version + '/providers/why-wont-learner-complete-ip', function (req, res) {
+  //   const learnerStatus = req.session.data['does-learner-need-more-time']
+  //   req.session.data.newindustryPlacement = learnerStatus
+  //   req.session.data.newplacementResult = 'yes'
+  //   req.session.data.showBanner = 'will-not-complete'
+  //
+  //   res.redirect('/' + version + '/providers/update-t-level-record')
+  // })
 
   // Withdraw learner
   router.post('/' + version + '/providers/does-learner-need-more-time', function (req, res) {
@@ -637,8 +637,9 @@ module.exports = function (router) {
       req.session.data.selectedUln = req.session.data.uln
       req.session.data.showBanner = 'will-not-complete'
       req.session.data.newindustryPlacement = learnerStatus
+      req.session.data.newplacementResult = 'yes'
 
-      res.redirect('/' + version + '/providers/why-wont-learner-complete-ip')
+      res.redirect('/' + version + '/providers/update-t-level-record')
     }
   })
 
