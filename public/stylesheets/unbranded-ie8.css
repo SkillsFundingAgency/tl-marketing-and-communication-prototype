@@ -6216,6 +6216,10 @@ h3.heading-sora {
   border-bottom: none;
 }
 
+.govuk-phase-banner__text .govuk-link {
+  font-size: 16px;
+}
+
 .subjects.digi-prod > div:first-child {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;
