@@ -318,11 +318,19 @@ Employer interest in offering T Levels
       });
 
       $(".notif-email-btn").click(function () {
-        $('.notif-email-body').addClass("visible-element");
+        $('.notif-email-body').removeClass("hidden-element");
         $('.notif-email-btn').addClass("hidden-element");
         $('.notif-email').addClass("hidden-element");
         $('.notif-email-body').removeClass("hidden-element");
       });
+
+      $(".notif-email-change").click(function () {
+        $('.notif-email-body').addClass("hidden-element");
+        $('.notif-email-btn').removeClass("hidden-element");
+        $('.notif-email').removeClass("hidden-element");
+        $('.notif-email-body').addClass("hidden-element");
+      });
+
 
     </script>
 
