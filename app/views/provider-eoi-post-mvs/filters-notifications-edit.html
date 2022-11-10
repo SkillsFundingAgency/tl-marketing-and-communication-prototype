@@ -225,14 +225,11 @@ Employer interest in offering T Levels
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="notifications-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">
-            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-2 govuk-!-margin-top-4"><label class="govuk-label govuk-label--s"
+            <h3 class="govuk-fieldset__heading govuk-!-margin-bottom-4 govuk-!-margin-top-4"><label class="govuk-label govuk-label--s"
                 for="event-name">
-                Do you want to receive notifications when new employers are added?</label>
-            </h1>
+                Do you want to receive email notifications when new employers are added?</label>
+            </h3>
           </legend>
-          <div class="govuk-hint govuk-!-margin-bottom-4">
-            We’ll send notifications for new employers matching the above criteria.
-          </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input id="notifications-checkbox" class="govuk-checkboxes__input notifications-checkbox" name="notifications-checkbox" type="checkbox">
@@ -248,17 +245,20 @@ Employer interest in offering T Levels
 
         <div class="govuk-form-group">
           <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s" for="event-name">
-              Email address that will receive notifications
+              Email address
             </label>
           </h3>
-          <div class="govuk-hint govuk-!-margin-bottom-4">
-            You will need to verify your email address before you receive notifications.
+          <div class="govuk-hint email-no-verify govuk-!-margin-bottom-4">
+            You will need to verify this email address to activate notifications.
+          </div>
+          <div class="govuk-hint email-need-verify hidden-element govuk-!-margin-bottom-4">
+            We've sent a verification email. Click the link in the email to activate notifications.
           </div>
           <input class="govuk-input govuk-input--width-10 notif-email" name="notif-email" type="text">
           <button class="govuk-button govuk-!-margin-left-2 govuk-!-margin-bottom-0 notif-email-btn" data-module="govuk-button">
             Add
           </button>
-          <p class="govuk-body notif-email-body hidden-element">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a><a class="govuk-link govuk-!-margin-top-2 govuk-!-margin-left-3" style="display:inline-block;">Resend verification</a></p>
+          <p class="govuk-body notif-email-body hidden-element">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a><a class="govuk-link govuk-!-margin-top-2 govuk-!-margin-left-3" style="display:inline-block;">Resend verification email</a></p>
         </div>
 
         <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-2"
@@ -322,10 +322,14 @@ Employer interest in offering T Levels
         $('.notif-email-btn').addClass("hidden-element");
         $('.notif-email').addClass("hidden-element");
         $('.notif-email-body').removeClass("hidden-element");
+        $('.email-no-verify').addClass("hidden-element");
+        $('.email-need-verify').removeClass("hidden-element");
       });
 
       $(".notif-email-change").click(function () {
         $('.notif-email-body').addClass("hidden-element");
+        $('.email-no-verify').removeClass("hidden-element");
+        $('.email-need-verify').addClass("hidden-element");
         $('.notif-email-btn').removeClass("hidden-element");
         $('.notif-email').removeClass("hidden-element");
         $('.notif-email-body').addClass("hidden-element");
