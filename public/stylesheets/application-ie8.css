@@ -6210,6 +6210,7 @@ h3.heading-sora {
 .govuk-link {
   border-bottom: none;
   text-decoration-thickness: 1px;
+  font-size: 19px;
 }
 .govuk-link:hover {
   border-bottom: none;

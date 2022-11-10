@@ -268,7 +268,7 @@ Employer interest in offering T Levels
           </button>
           <a class="govuk-link govuk-!-margin-top-2 notif-email-change-cancel govuk-!-margin-left-3 hidden-element">Cancel</a>
           
-          <p class="govuk-body notif-email-body">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--green">VERIFIED</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a> </p>
+          <p class="govuk-body notif-email-body">elizabeth.ashe@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--green">VERIFIED</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a> </p>
             
           <p class="govuk-body notif-email-body-alt hidden-element">elizabeth.ashe@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a> <a class="govuk-link govuk-!-margin-top-2 govuk-!-margin-left-3" style="display:inline-block;">Resend verification</a></p>
         </div>
@@ -291,7 +291,9 @@ Employer interest in offering T Levels
       </div>
 
 
-      <a href="filters-notifications-ur-2" role="button" draggable="false"
+
+
+      <a href="filters-notifications" role="button" draggable="false"
         class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8" data-module="govuk-button">
         Save changes
       </a>
@@ -330,24 +332,9 @@ Employer interest in offering T Levels
     });
 
     $(".notif-email-change").click(function () {
+      $('.notif-email').addClass("visible-element");
       $('.notif-email-body').addClass("hidden-element");
       $('.notif-email').removeClass("hidden-element");
-      $('.notif-email-btn').removeClass("hidden-element");
-      $('.notif-email-change-cancel').removeClass("hidden-element");
-    });
-
-    $(".notif-email-change-cancel").click(function () {
-      $('.notif-email-body').removeClass("hidden-element");
-      $('.notif-email').addClass("hidden-element");
-      $('.notif-email-change-cancel').addClass("hidden-element");
-      $('.notif-email-btn').addClass("hidden-element");
-    });
-
-    $(".notif-email-btn").click(function () {
-      $('.notif-email-body-alt').removeClass("hidden-element");
-      $('.notif-email').addClass("hidden-element");
-      $('.notif-email-btn').addClass("hidden-element");
-      $('.notif-email-change-cancel').addClass("hidden-element");
     });
   </script>
   {% endblock %}
