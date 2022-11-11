@@ -108,7 +108,7 @@ Learner's T Level record
         {% else %}
 
             <h2 class="govuk-heading-m">Provide details about this learner</h2>
-            {% if data['newplacementResult'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' and data['uln'] == data['selectedUln'] or data['uln'] === '1987654321'  %}
+            {% if data['newplacementResult'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' and data['uln'] == data['selectedUln'] or data['uln'] === '1987654321' or data['uln'] === '1234243912' %}
             {% else %}
             <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Industry placement</h3>
             <p class="govuk-!-margin-bottom-1"><a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a></p>
