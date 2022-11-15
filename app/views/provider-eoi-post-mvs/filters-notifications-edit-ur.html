@@ -231,7 +231,7 @@ Employer interest in offering T Levels
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="notifications-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">
-            <h3 class="govuk-fieldset__heading govuk-!-margin-bottom-4 govuk-!-margin-top-4"><label class="govuk-label govuk-label--s"
+            <h3 id="notif-emails-list" class="govuk-fieldset__heading govuk-!-margin-bottom-4 govuk-!-margin-top-4"><label class="govuk-label govuk-label--s"
               for="event-name">
               Do you want to receive email notifications when new employers are added?</label>
           </h3>
@@ -251,26 +251,35 @@ Employer interest in offering T Levels
 
       <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-2 notification-freq">
 
-        <div class="govuk-form-group">
-          <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s" for="event-name">
-              Email address
-            </label>
-          </h3>
-          <div class="govuk-hint email-no-verify govuk-!-margin-bottom-4 hidden-element">
-            You will need to verify this email address to activate notifications.
-          </div>
-          <div class="govuk-hint email-need-verify hidden-element govuk-!-margin-bottom-4">
-            We've sent a verification email. Click the link in the email to activate notifications.
-          </div>
-          <input class="govuk-input govuk-input--width-10 notif-email hidden-element" name="notif-email" type="text">
-          <button class="govuk-button govuk-!-margin-left-2 govuk-!-margin-bottom-0 notif-email-btn hidden-element" data-module="govuk-button">
-            Update email
+        <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-1"
+          for="event-name">
+           Email addresses
+          </label>
+        </h3>
+        <div class="govuk-hint govuk-!-margin-bottom-2 email-no-verify">
+          Notifications will be sent to the emails below
+        </div>
+        <table class="govuk-table govuk-!-margin-bottom-2 notif-emails-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row notif-emails-one">
+              <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-0">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--green">VERIFIED</strong></p></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-left-5 govuk-!-margin-bottom-0" style="display:inline-block;">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row notif-emails-two hidden-element">
+              <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-0">elizabeth.ashe@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong></p></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-bottom-0" style="display:inline-block;">Resend verification email</a><a class="govuk-link govuk-!-margin-left-5 govuk-!-margin-bottom-0" style="display:inline-block;">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="notif-email-wrap">
+          <!-- <button class="govuk-button govuk-!-margin-bottom-0 hidden-element notif-add-email-btn" data-module="govuk-button">
+            Add email address
+          </button> -->
+          <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-margin-top-0"><a class="govuk-link notif-add-email-link">Add email address</a></p>
+          <input class="govuk-input govuk-input--width-10 govuk-!-margin-top-3 notif-email-input  hidden-element" name="notif-email" type="text">
+          <button class="govuk-button govuk-!-margin-left-2 govuk-!-margin-top-3 govuk-!-margin-bottom-0 notif-email-confirm  hidden-element" data-module="govuk-button">
+            Confirm
           </button>
-          <a class="govuk-link govuk-!-margin-top-2 notif-email-change-cancel govuk-!-margin-left-3 hidden-element">Cancel</a>
-          
-          <p class="govuk-body notif-email-body">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--green">VERIFIED</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a> </p>
-            
-          <p class="govuk-body notif-email-body-alt hidden-element">elizabeth.ashe@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong><BR><a class="govuk-link govuk-!-margin-top-2 notif-email-change" style="display:inline-block;">Change</a> <a class="govuk-link govuk-!-margin-top-2 govuk-!-margin-left-3" style="display:inline-block;">Resend verification email</a></p>
         </div>
 
         <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-2"
@@ -329,27 +338,16 @@ Employer interest in offering T Levels
       }
     });
 
-    $(".notif-email-change").click(function () {
-      $('.notif-email-body').addClass("hidden-element");
-      $('.notif-email').removeClass("hidden-element");
-      $('.notif-email-btn').removeClass("hidden-element");
-      $('.notif-email-change-cancel').removeClass("hidden-element");
-    });
+      $(".notif-add-email-link").click(function () {
+        $('.notif-add-email-link').addClass("hidden-element");
+        $('.notif-email-input, .notif-email-confirm').removeClass("hidden-element");
+      });
 
-    $(".notif-email-change-cancel").click(function () {
-      $('.notif-email-body').removeClass("hidden-element");
-      $('.notif-email').addClass("hidden-element");
-      $('.notif-email-change-cancel').addClass("hidden-element");
-      $('.notif-email-btn').addClass("hidden-element");
-    });
+      $(".notif-email-confirm").click(function () {
+        $('.notif-email-input, .notif-email-confirm').addClass("hidden-element");
+        $('.notif-add-email-link, .notif-emails-two').removeClass("hidden-element");
+      });
 
-    $(".notif-email-btn").click(function () {
-      $('.notif-email-body-alt').removeClass("hidden-element");
-      $('.notif-email').addClass("hidden-element");
-      $('.notif-email-btn').addClass("hidden-element");
-      $('.notif-email-change-cancel').addClass("hidden-element");
-      $('.email-no-verify').addClass("hidden-element");
-      $('.email-need-verify').removeClass("hidden-element");
-    });
+
   </script>
   {% endblock %}
