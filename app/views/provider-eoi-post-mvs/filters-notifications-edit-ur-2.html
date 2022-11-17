@@ -284,7 +284,7 @@ Employer interest in offering T Levels
 
         <div class="email-warning-box govuk-!-margin-top-6 hidden-element">
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">Do you want to remove elizabeth.ashe@alesfordcsu.ac.uk from receiving notifications?</p>
-            <a href="filters-notifications-edit-ur#notif-emails-list" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-margin-top-0"  data-module="govuk-button">
+            <a role="button" draggable="false" class="govuk-button remove-email govuk-button--warning govuk-!-margin-top-0"  data-module="govuk-button">
               Remove
             </a>
             <a class="govuk-link email-remove-cancel govuk-!-margin-left-4 govuk-!-margin-top-1" style="display:inline-block;">Cancel</a>
@@ -307,15 +307,17 @@ Employer interest in offering T Levels
 
       </div>
 
-
-
-
-      <a href="filters-notifications" role="button" draggable="false"
-        class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8" data-module="govuk-button">
+      <a href="filters-notifications-ur-2" role="button" draggable="false"
+        class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8 save-confirm" data-module="govuk-button">
+        Save changes
+      </a>
+      <a href="filters-notifications-ur" role="button" draggable="false"
+        class="govuk-button govuk-!-margin-top-8 govuk-!-margin-bottom-8 save-confirm-alt hidden-element" data-module="govuk-button">
         Save changes
       </a>
       <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-8 govuk-!-padding-top-2"><a
-          class="govuk-link" href="filters-notifications-ur">Cancel</a></p>
+          class="govuk-link" href="filters-notifications-ur-2">Cancel</a>
+      </p>
 
     </div>
 
@@ -357,5 +359,11 @@ Employer interest in offering T Levels
       $('.notif-add-email-link').removeClass("hidden-element");
       $('.email-warning-box').addClass("hidden-element");
     });
+
+    $(".remove-email").click(function () {
+      $('.save-confirm-alt').removeClass("hidden-element");
+      $('.email-warning-box, .save-confirm, .notif-emails-two').addClass("hidden-element");
+    });
+
   </script>
   {% endblock %}
