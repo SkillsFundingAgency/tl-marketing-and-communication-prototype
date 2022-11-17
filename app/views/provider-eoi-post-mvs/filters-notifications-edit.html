@@ -276,8 +276,8 @@ Employer interest in offering T Levels
               <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link verify-resend govuk-!-margin-bottom-0" style="display:inline-block;">Resend verification email</a><a class="govuk-link govuk-!-margin-left-5 govuk-!-margin-bottom-0" style="display:inline-block;">Remove</a></td>
             </tr>
             <tr class="govuk-table__row notif-emails-two hidden-element">
-              <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-0">ana.amari@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong></p></td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-bottom-0" style="display:inline-block;">Resend verification email</a><a class="govuk-link govuk-!-margin-left-5 govuk-!-margin-bottom-0" style="display:inline-block;">Remove</a></td>
+              <td class="govuk-table__cell"><p class="govuk-body govuk-!-margin-bottom-0">elizabeth.ashe@alesfordcsu.ac.uk <strong class="govuk-tag govuk-!-margin-left-3 govuk-tag--orange">PENDING VERIFICATION</strong></p></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-bottom-0 verify-resend-alt" style="display:inline-block;">Resend verification email</a><a class="govuk-link govuk-!-margin-left-5 govuk-!-margin-bottom-0 remove-email" style="display:inline-block;">Remove</a></td>
             </tr>
           </tbody>
         </table>
@@ -290,14 +290,34 @@ Employer interest in offering T Levels
           <button class="govuk-button govuk-!-margin-left-2 govuk-!-margin-top-3 govuk-!-margin-bottom-0 notif-email-confirm" data-module="govuk-button">
             Confirm
           </button>
+          <input class="govuk-input govuk-input--width-10 govuk-!-margin-top-3 notif-email-input-2 hidden-element" name="notif-email" type="text">
+          <button class="govuk-button govuk-!-margin-left-2 govuk-!-margin-top-3 govuk-!-margin-bottom-0 notif-email-confirm-2 hidden-element" data-module="govuk-button">
+            Confirm
+          </button>
         </div>
 
-        <div class="email-warning-box green-verify govuk-!-margin-top-6 hidden-element">
+        <div class="email-warning-box norm-verify green-verify govuk-!-margin-top-6 hidden-element">
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">We have sent a verification email to ana.amari@alesfordcsu.ac.uk.</p>
           <p class="govuk-body">You will need to click the link in the email in order to start receiving notifications.</p>
           <p class="govuk-body">
             <a class="govuk-link email-verify-close govuk-!-margin-top-1">Close</a>
           </p>
+        </div>
+
+        <div class="email-warning-box alt-verify green-verify govuk-!-margin-top-6 hidden-element">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">We have sent a verification email to elizabeth.ashe@alesfordcsu.ac.uk.</p>
+          <p class="govuk-body">You will need to click the link in the email in order to start receiving notifications.</p>
+          <p class="govuk-body">
+            <a class="govuk-link email-verify-close-alt govuk-!-margin-top-1">Close</a>
+          </p>
+        </div>
+
+        <div class="email-warning-box remove-email-box govuk-!-margin-top-6 hidden-element">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">Do you want to remove elizabeth.ashe@alesfordcsu.ac.uk from receiving notifications?</p>
+            <a role="button" draggable="false" class="govuk-button govuk-button--warning remove-email-confirm govuk-!-margin-top-0"  data-module="govuk-button">
+              Remove
+            </a>
+            <a class="govuk-link email-remove-cancel govuk-!-margin-left-4 govuk-!-margin-top-1 remove-email-cancel" style="display:inline-block;">Cancel</a>
         </div>
 
         <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-2"
@@ -319,7 +339,11 @@ Employer interest in offering T Levels
 
       <div class="govuk-!-margin-top-8">
         <a href="filters-notifications-ur" role="button" draggable="false"
-          class="govuk-button govuk-!-margin-bottom-8" data-module="govuk-button">
+          class="govuk-button govuk-!-margin-bottom-8 save-confirm" data-module="govuk-button">
+          Save changes
+        </a>
+        <a href="filters-notifications-ur-2" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-bottom-8 save-confirm-alt hidden-element" data-module="govuk-button">
           Save changes
         </a>
         <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2"><a
@@ -361,17 +385,45 @@ Employer interest in offering T Levels
         $('.notif-emails-table, .notif-add-email-link').removeClass("hidden-element");
       });
 
-      $(".notif-add-email-link").click(function () {
-        $('.notif-add-email-link').addClass("hidden-element");
-        $('.notif-email-input, .notif-email-confirm').removeClass("hidden-element");
+      $(".verify-resend").click(function () {
+        $('.norm-verify').removeClass("hidden-element");
       });
 
-      $(".verify-resend").click(function () {
-        $('.email-warning-box').removeClass("hidden-element");
+      $(".verify-resend-alt").click(function () {
+        $('.alt-verify').removeClass("hidden-element");
       });
 
       $(".email-verify-close").click(function () {
-        $('.email-warning-box').addClass("hidden-element");
+        $('.norm-verify').addClass("hidden-element");
+      });
+
+      $(".email-verify-close-alt").click(function () {
+        $('.alt-verify').addClass("hidden-element");
+      });
+
+      $(".notif-add-email-link").click(function () {
+        $('.notif-add-email-link').addClass("hidden-element");
+        $('.notif-email-input-2, .notif-email-confirm-2').removeClass("hidden-element");
+      });
+
+      $(".notif-email-confirm-2").click(function () {
+        $('.notif-email-input-2, .notif-email-confirm-2, .save-confirm').addClass("hidden-element");
+        $('.notif-emails-two, .notif-add-email-link, .save-confirm-alt').removeClass("hidden-element");
+      });
+
+      $(".remove-email").click(function () {
+        $('.notif-add-email-link').addClass("hidden-element");
+        $('.remove-email-box').removeClass("hidden-element");
+      });
+
+      $(".remove-email-confirm").click(function () {
+        $('.remove-email-box, .save-confirm-alt, .notif-emails-two').addClass("hidden-element");
+        $('.notif-add-email-link, .save-confirm').removeClass("hidden-element");
+      });
+
+      $(".remove-email-cancel").click(function () {
+        $('.notif-add-email-link').removeClass("hidden-element");
+        $('.remove-email-box').addClass("hidden-element");
       });
 
 
