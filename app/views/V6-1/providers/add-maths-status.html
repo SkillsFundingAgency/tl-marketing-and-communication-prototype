@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add maths level details - Manage learner - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+  <a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="add-maths-status" method="post" novalidate data-validate='mathsStatus-validation'>
+
+
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} achieved a level 2 or equivalent in maths?
+                </h1>
+              </legend>
+
+
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mathsStatus-yes" name="mathsStatus" type="radio" value="Achieved" {{ checked("mathsStatus", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="mathsStatus-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mathsStatus-no" name="mathsStatus" type="radio" value="Not achieved" {{ checked("mathsStatus", "no") }}>
+                    <label class="govuk-label govuk-radios__label" for="mathsStatus-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+            </div>
+
+          </fieldset>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="mathsStatus-validation">
+    {
+
+        "mathsStatus": {
+
+            "presence": {
+
+                "message": "^Select yes if this learner achieved a level 2 or equivalent in maths"
+
+            }
+
+        }
+
+    }
+</script>
+
+{% endblock %}

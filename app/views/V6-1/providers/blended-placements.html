@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Blended placements.GOVUK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+    <a class="govuk-back-link" tabindex="0" href="#" onclick="goBack()">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="temporary-flexibilities" method="post" novalidate data-validate='blended-placement'>
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Industry placement: Temporary flexibility</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} use the blended placement temporary flexibility?
+                        </h1>
+                    </legend>
+                    <div id="special-consideration-hint" class="govuk-hint">Select Yes if a blended placement was used for this learner's industry placement.</div>
+
+
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="blended-placement-yes" name="blended-placement" type="radio" value="yes" {{ checked("blended-placement", "yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="blended-placement-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="blended-placement-no" name="blended-placement" type="radio" value="no" {{ checked("blended-placement", "no") }}>
+                            <label class="govuk-label govuk-radios__label" for="blended-placement-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+<script type="application/json" id="blended-placement">
+    {
+
+        "blended-placement": {
+
+            "presence": {
+
+                "message": "^Select whether the learner used the blended placement temporary flexibility"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}

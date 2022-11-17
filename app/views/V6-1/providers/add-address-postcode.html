@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add address - enter postcode - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+    <a class="govuk-back-link" href="../providers/org-address-present.html">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <form action="add-address-select-address" method="post" class="form" novalidate data-validate="search-for-postcode-validation" >
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Add address</span>
+                <div class="govuk-form-group">
+                    <h1 class="govuk-heading-xl">
+                        What is your organisation's postal address?
+                    </h1>
+
+                    <label class="govuk-label  govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-top-3" for="address-postcode">
+                        <h2 class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-top-3">Enter your postcode</h2>
+                    </label>
+                    <div id="postcode-hint" class="govuk-hint">
+                        For example, 'SW1A 2AA'
+                    </div>
+                    <input class="govuk-input govuk-input--width-10" aria-required="true" id="address-postcode" name="address-postcode" type="text">
+                </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Find address</button>
+        </form>
+
+        <p><a class="govuk-body govuk-!-font-size-19, govuk-link" href="../providers/add-address-manually.html">Add your organisation's address manually</a></p>
+    </div>
+</div>
+
+<script type="application/json" id="search-for-postcode-validation">
+    {
+
+        "address-postcode": {
+            "presence": {
+                "message": "^Enter your postcode"
+            },
+
+            "length": {
+                "minimum": 6,
+                "maximum": 8,
+                "message": "^Enter a valid UK postcode"
+            }
+        }
+
+    }
+</script>
+
+
+{% endblock %}

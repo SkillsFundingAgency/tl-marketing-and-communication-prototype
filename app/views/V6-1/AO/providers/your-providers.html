@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers page – Manage T Level results – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../tlevels-dashboard.html">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+            Your providers
+        </h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-5">The T Level providers you have already set up are:</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value govuk-heading-m">
+              {{ data['tLevelsProvidersCourses']['TL-5']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['TL-5']['providerUKPRN'] }}</span>
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="provider-details-existing?tlevel=TL-5">
+                View <span class="govuk-visually-hidden">Luton city college</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value govuk-heading-m">
+              {{ data['tLevelsProvidersCourses']['TL-4']['providerName'] }}  <span class="govuk-hint"><abbr>UKPRN</abbr>: {{ data['tLevelsProvidersCourses']['TL-4']['providerUKPRN'] }}</span>
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="provider-details-existing?tlevel=TL-4">
+                View <span class="govuk-visually-hidden">Luton city college</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <p><a class="govuk-button" role="button" href="find-provider.html">Add another provider</a></p>
+        
+        <p><a class="govuk-button govuk-button--secondary" role="button" href="../tlevels-dashboard.html">Back to home</a></p>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Assessments
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/V2-0/AO/download-data/select-data-type" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/V2-0/AO/assessments/assessments-download-data/assessments-processing-data-file" method="post" novalidate data-validate="data-validate">
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-label-wrapper">
+            <span class="govuk-caption-xl">Download data</span>
+            <label class="govuk-label govuk-label--l" for="cohort">
+              Assessments
+            </label>
+          </h1>
+      <div class="govuk-form-group">
+      
+            </div>
+          </div>
+          
+            <button class="govuk-button" data-module="govuk-button">Generate CSV</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

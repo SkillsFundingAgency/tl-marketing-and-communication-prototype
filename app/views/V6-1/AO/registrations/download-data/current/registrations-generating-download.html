@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Generating download - Registrations - Manage T Level results - GOV.UK
+{% endblock %}
+
+<link rel="stylesheet" href="/stylesheets/development.css">
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/V2-0/AO/registrations/current/download-data/your-data-is-ready" method="post" novalidate data-validate="search-for-learner-validation">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <div class="govuk-form-group">
+                    <h2 class="govuk-heading-l">Generating registrations data</h2>
+                    </div>
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter">
+                        <img src="/public/images/data-image.png" alt="Document-image" width=635 height=245>
+                      </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+  {
+
+    setTimeout(function(){
+            window.location.href = '/V2-0/AO/registrations/download-data/current/registrations-download-data';
+         }, 5000);
+
+  }
+</script>
+
+
+{% endblock %}

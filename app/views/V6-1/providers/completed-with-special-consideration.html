@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+industry placement - Update learner record - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="update-t-level-record">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="completed-with-special-consideration" method="post" novalidate data-validate='placementStatus-validation'>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <span class="govuk-caption-l">Industry placement</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Has {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} completed their industry placement with special consideration?
+                        </h1>
+                    </legend>
+                    <div>
+                        <p class="govuk-body govuk-!-margin-bottom-0">In some circumstances, learners may be unable to work all of their placement hours.</p>
+                        <p class="govuk-body">They may still pass their industry placement with special consideration.</p>
+                    </div>
+
+                    <div>
+                        <p class="govuk-body">Exceptional circumstances could include:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>long-term sickness or injury</li>
+                            <li>mental health issues</li>
+                            <li>a family bereavement</li>
+                        </ul>
+
+                        <p class="govuk-body">You must show that the learner has:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>demonstrated progress towards their learning goals</li>
+                            <li>worked for an external employer</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="special-consideration-ip-answer-1" name="special-consideration-ip-answer"
+                                   type="radio"
+                                   value="special-consideration-yes" {{ checked("special-consideration-ip-answer", "special-consideration-yes") }} >
+                            <label class="govuk-label govuk-radios__label" for="special-consideration-ip-answer-1">
+                                Yes, completed with special considerations
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="special-consideration-ip-answer-2" name="special-consideration-ip-answer"
+                                   type="radio"
+                                   value="Completed without special considerations" {{ checked("special-consideration-ip-answer", "Completed without special consideration") }} >
+                            <label class="govuk-label govuk-radios__label" for="special-consideration-ip-answer-2">
+                                No, completed without special considerations
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/sidebar.html" %}
+    </div>
+</div>
+
+<script type="application/json" id="placementStatus-validation">
+    {
+        "special-consideration-ip-answer": {
+            "presence": {
+                "message": "^Tell us whether this learner has completed their industry placement with special considerations or not"
+            }
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registrations upload error - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">There is a problem
+        </h1>
+    </div>
+
+    <div class="govuk-inset-text">
+      Your file contains formatting errors. Please check and correct the errors before uploading it again.
+    </div>
+
+
+      <h2 class="govuk-heading-m">Error report</h2>
+      <p class="govuk-body">The error report will tell you what went wrong. Please download this file immediately.</p>
+      <div class="govuk-inset-text">
+        If you leave this page you will not be able to come back later to access the error report.
+      </div>
+
+      <section class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+        <div class="attachment__thumbnail">
+          <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true"
+            href="">
+            <svg class="attachment__thumbnail-image thumbnail-image-large" version="1.1" viewBox="0 0 99 140" width="99" height="140"
+              aria-hidden="true">
+              <path d="M12 12h75v27H12zm0 47h18.75v63H12zm55 2v59H51V61h16m2-2H49v63h20V59z" stroke-width="0"></path>
+              <path d="M49 61.05V120H32.8V61.05H49m2-2H30.75v63H51V59zm34 2V120H69.05V61.05H85m2-2H67v63h20V59z"
+                stroke-width="0"></path>
+              <path d="M30 68.5h56.5M30 77.34h56.5M30 112.7h56.5M30 95.02h56.5M30 86.18h56.5M30 103.86h56.5" fill="none"
+                stroke-miterlimit="10" stroke-width="2"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="attachment__details">
+          <h3 class="govuk-heading-m">
+            <a class="govuk-link" target="_self"
+              href="">Download assessment error report (CSV,0.04 KB)</a></h3>
+        </div>
+      </section>
+
+
+      <div class="govuk-button-group govuk-!-margin-top-7">
+        <a class="govuk-button" role="button" href="upload-assessment-entries-file.html">Upload another file</a>
+        <a class="govuk-button govuk-button--secondary" role="button" href="../tlevels-dashboard.html">Back to home</a>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
