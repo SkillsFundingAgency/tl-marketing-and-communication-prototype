@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Industry placement check answers - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+    <a class="govuk-back-link" onclick="goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-9">Check your answers</h1>
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Learner
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date of birth
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerDOB'] }}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            ULN
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['uln'] }}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            T Level
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerTLevelTitle'] | safe}}</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Start year
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">{{ data['tLevelsStudentDataV3'][data.uln]['learnerStartYear'] | safe}}</p>
+                        </dd>
+                    </div>
+                </dl>
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Industry placement completed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['result-ip-answer'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="change-ip-result">
+                                Change<span class="govuk-visually-hidden"> industry placement completed</span>
+                            </a>
+                        </dd>
+                    </div>
+
+                    {% if data['result-ip-answer'] == 'Completed with special consideration' %}
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number of hours
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {{ data ['total-placement-hours'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="total-placement-hours?change-answer=yes">
+                                    Change<span class="govuk-visually-hidden"> total placement hours</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Reasons for reduced hours
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {% if data['special-consideration'] == 'COVID-19' %}
+                                    {{ data['special-consideration'] }}
+
+                                {% elif (data['special-consideration']|length > 1) and (data['special-consideration']|length <= 9) %}
+                                    {% for item in data['special-consideration'] %}
+                                        <p>{{ item }}</p>
+                                    {% endfor %}
+                                {% else %}
+                                    {{ data['special-consideration'] }}
+
+                                {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="special-consideration-reason?change-answer=yes">
+                                    Change<span class="govuk-visually-hidden"> special consideration reason</span>
+                                </a>
+                            </dd>
+                        </div>
+                    {% else %}
+                    {% endif %}
+
+<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
+
+<!--                    <div class="govuk-summary-list__row">-->
+<!--                        <dt class="govuk-summary-list__key">-->
+<!--                            Industry placement model-->
+<!--                        </dt>-->
+<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
+<!--                            {% if data['industryModel'] %}-->
+<!--                                {{ data['industryModel'] }}-->
+<!--                            {% else %}-->
+<!--                                No-->
+<!--                            {% endif %}-->
+<!--                        </dd>-->
+<!--                        <dd class="govuk-summary-list__actions">-->
+<!--                            <a class="govuk-link" href="did-you-use-an-industry-placement">-->
+<!--                                Change<span class="govuk-visually-hidden"> whether industry placement model used</span>-->
+<!--                            </a>-->
+<!--                        </dd>-->
+<!--                    </div>-->
+
+<!--                    {% endif %}-->
+
+                    {% if data['industryModel'] == 'yes' %}
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Multiple employer model
+                            </dt>
+                            <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+                                {{ data['multipleEmployerModel'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="multiple-employer-model">
+                                    Change<span
+                                        class="govuk-visually-hidden"> whether multiple employer model was used</span>
+                                </a>
+                            </dd>
+                        </div>
+
+                    {% else %}
+                    {% endif %}
+
+                    {% if data['industryModel'] == 'yes' %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                {% if data['multipleEmployerModel'] == 'yes' %}
+                                    Other industry placement model(s) used
+                                {% else %}
+                                    Industry placement model(s) used
+                                {% endif %}
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                {% if data['multipleEmployerModel'] == 'yes' %}
+                                    {% if data['industrial-placement-models'] %}
+                                        {{ data['industrial-placement-models'] }}
+                                    {% else %}
+                                        No
+                                    {% endif %}
+
+
+                                {% elif (data['industrial-placement-models']|length > 1) and (data['industrial-placement-models']|length <= 6) %}
+                                        {{ data['industrial-placement-models'] }}
+                                {% else %}
+                                     {{ data['industrial-placement-models'] }}
+                                {% endif %}
+
+
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="industry-placement-model-selection?change-answer=yes">
+                                    Change<span
+                                        class="govuk-visually-hidden"> which industry placement models were used</span>
+                                </a>
+                            </dd>
+                        </div>
+                    {% else %}
+
+                    {% endif %}
+
+<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
+
+<!--                    <div class="govuk-summary-list__row">-->
+<!--                        <dt class="govuk-summary-list__key">-->
+<!--                            {% if data['uln'] == '1987654320' %}-->
+<!--                                Temporary flexibility and blended placement-->
+<!--                            {% else %}-->
+<!--                                Temporary flexibility-->
+<!--                            {% endif %}-->
+<!--                        </dt>-->
+<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
+<!--                            No-->
+<!--                        </dd>-->
+<!--                        <dd class="govuk-summary-list__actions">-->
+<!--                            <a class="govuk-link" href="did-you-use-a-flexibility">-->
+<!--                                Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>-->
+<!--                            </a>-->
+<!--                        </dd>-->
+<!--                    </div>-->
+
+<!--                    {% endif %}-->
+
+                    {% if data['blended-placement'] == 'yes' or data['blended-placement'] == 'no' %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Blended placement
+                            </dt>
+                            <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+                                {{ data['blended-placement'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="blended-placements">
+                                    Change<span
+                                        class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
+                                </a>
+                            </dd>
+                        </div>
+                    {% else %}
+
+                    {% endif %}
+
+                    {% if data['flexibility'] == 'yes' and data['uln'] == '1987654320' %}
+
+                    {% elif data['flexibility'] == 'yes' %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Employer-led activities/projects temporary flexibility used
+                            </dt>
+                            <dd class="govuk-summary-list__value" style="text-transform: capitalize">
+                                    {{ data['temporary-flexibilities'] }}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="temporary-flexibilities">
+                                    Change<span
+                                        class="govuk-visually-hidden"> which temporary flexibilities were used</span>
+                                </a>
+                            </dd>
+                        </div>
+                    {% else %}
+                    {% endif %}
+                </dl>
+
+                <div class="govuk-inset-text">By selecting 'Continue', you are declaring that the
+                    relevant provider responsibilities have been met and that you hold the <a
+                            href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
+                            class="govuk-link" rel="noreferrer noopener" target="_blank">signed declaration of
+                        student completion (opens in a new tab)</a> for this learner.
+                </div>
+
+                {% if data['result-ip-answer'] == 'Completed with special consideration' %}
+                    <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has
+                        completed their
+                        T Level industry placement and that all relevant supporting documentation is held on record.</p>
+                {% else %}
+                    <p class="govuk-body">I confirm that {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has completed their T Level industry placement
+                        and that all relevant supporting documentation is held on record.</p>
+                {% endif %}
+
+                <form action="special-consideration-check-answers-status" method="post" novalidate>
+
+                    <input type="hidden" name="answers-checked" value="true">
+
+                    <div class="govuk-button-group">
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

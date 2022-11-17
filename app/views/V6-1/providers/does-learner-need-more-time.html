@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Does learner need more time - Update learner record - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="change-ip-result.html">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="does-learner-need-more-time" method="post" novalidate data-validate='learnerStatus-validation'>
+
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-0">
+                    <span class="govuk-caption-l">Industry placement</span>
+                </legend>
+                <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Does {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} need more time or have they left the course?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="does-learner-need-time-answer-1" name="does-learner-need-more-time"
+                                   type="radio"
+                                   value="Not completed" {{ checked("does-learner-need-more-time", "Learner needs more time") }} >
+                            <label class="govuk-label govuk-radios__label" for="does-learner-need-time-answer-1">
+                                This learner needs more time to complete their industry placement
+                            </label>
+                        </div>
+
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="does-learner-need-time-answer-2" name="does-learner-need-more-time"
+                                   type="radio"
+                                   value="Learner has left the course" {{ checked("does-learner-need-more-time", "Learner has left the course") }} >
+                            <label class="govuk-label govuk-radios__label" for="does-learner-need-time-answer-2">
+                                This learner has left the course
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="does-learner-need-time-answer-3" name="does-learner-need-more-time"
+                                   type="radio"
+                                   value="Learner will not complete ip" {{ checked("does-learner-need-more-time", "Learner will not complete ip") }} >
+                            <label class="govuk-label govuk-radios__label" for="does-learner-need-time-answer-3">
+                                This learner will not complete their industry placement
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../../../views/includes/guidance-linksV6+.html" %}
+    </div>
+</div>
+
+<script type="application/json" id="learnerStatus-validation">
+    {
+        "does-learner-need-more-time": {
+            "presence": {
+                "message": "^Tell us whether this learner needs more time, has been removed from the course, or will not complete their industry placement"
+            }
+        }
+    }
+</script>
+{% endblock %}

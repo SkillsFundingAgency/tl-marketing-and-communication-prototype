@@ -1,0 +1,50 @@
+17th November, 2021
+
+Scenario:
+As an AO data admin/manager, I need to check what data has been 
+uploaded in the system so I be reassured what has been uploaded 
+and identify issues upfront.
+
+Comments:
+
+From the meeting today we concluded that:
+
+Team was shown the iterated designs for download data and agreed the following:
+
+download file name will be: registrations.CSV, assessmententries.CSV, results.CSV
+
+clicking on download data will go straight to wait page and then to either downloaded page or no data found page
+
+data in registration, assessment entries, results do not duplicate across each tables within the database. (i.e. just because learner is registered does not mean there will be data for that learner in assessment entries or results)
+
+Registration will have default columns and additional column named “status” - within status column, they will show either active or withdrawn.
+
+go home button is green as it will be the main CTA button and grey button will be secondary if user wishes to add registrations/assessment entries/results.
+
+Design decision not to make the download data box on the dashboard dynamic as the user need for this feature was due to lack of confidence of whether data they have uploaded has been successful. So having a download data element disappear and appear may not help with improving the users confidence of the service.
+
+Assessment entries and results will have 2 separate files for users to download split by core and specialism. The core table will have: ULN, core code, core assessment entry, (core result). The specialism table will have: ULN, specialism code, specialism assessment entry, (specialism result).
+
+Decision to go with above designs and technical changes was based on complexity, time and budget as well as considering the background to why users have requested the ability to download data.
+
+next step is to get process map finalised and signed off.
+
+Changes:
+
+- Remove the Download data from the home screen and put in the individual sections of 
+Registrations, Assessments and Results. 
+
+- If the user downloads Registrations data it would have the Status filter included
+with Active, Withdrawn and Certified inlcuded while there is no filter for 
+Assessments and Results. 
+
+- The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
+
+- The 'Download more data' button on the data is ready screen has been changed to 'Back to home'
+with the button changed to green
+
+- The breadcrumbs have been updated to end with the parent section of the home page
+
+- The action button has been changed to green
+
+- The date and time is included in the file when downloaded 

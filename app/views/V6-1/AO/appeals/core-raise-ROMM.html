@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a ROMM - Post-results - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add a ROMM</h1>
+      <p>Tell us that {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} has asked for a review of moderated marking (ROMM) of their {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }} grade</p> 
+        
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerDOB'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T Level
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelTitle'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Core
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerTLevelCore'] }}<br aria-hidden="true">{{ data['tLevelsStudentData'][data.uln]['learnerTLevelCoreCode'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Exam period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreAssessmentEntry'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            {{ data['tLevelsStudentDataV2'][data.uln]['learnerCoreResult'] }}
+
+          </dd>
+        </div>
+      </dl>
+
+      <form action="raise-ROMM-for-core" method="post" novalidate data-validate='ROMM-validation'>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Has {{ data['tLevelsStudentDataV2'][data.uln]['learnerName'] }} requested a ROMM of this grade?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="raiseROMM-yes" name="raiseROMM" type="radio" value="yes" {{ checked("raiseROMM", "yes") }}>
+                <label class="govuk-label govuk-radios__label" for="raiseROMM-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="raiseROMM-no" name="raiseROMM" type="radio" value="no" {{ checked("raiseROMM", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="raiseROMM-no">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="application/json" id="ROMM-validation">
+    {
+
+        "raiseROMM": {
+
+            "presence": {
+
+                "message": "^Select ‘yes’ if the learner has requested a ROMM for this grade"
+
+            }
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}
+
+
+
+

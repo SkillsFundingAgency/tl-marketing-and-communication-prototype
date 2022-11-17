@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How many hours did the student spend on placement? - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+    <a class="govuk-back-link" tabindex="0" onclick="goBack()">Back</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="special-consideration-reason" method="post" id="total-hours" novalidate data-validate='placement-hours-validation'>
+            <p class="govuk-caption-l">Industry placement: Placement hours</p>
+            <div class="govuk-form-group">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-4" for="total-placement-hours">
+                    How many industry placement hours did {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} complete?
+                </h1>
+                <div id="total-placement-hours-hint" class="govuk-hint">
+                    Must be between 1 and 999
+                </div>
+                <label class="govuk-label govuk-visually-hidden" name="total-placement-hours" for="total-placement-hours">Placement hours</label>
+                <input value="{{ data ['total-placement-hours'] }}"  style="line-height:6;" class="govuk-input govuk-input--width-3"
+                       id="total-placement-hours" name="total-placement-hours" aria-required="true" type="text"><div class="govuk-input__suffix" aria-hidden="true">hours</div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="placement-hours-validation">
+    {
+
+        "total-placement-hours": {
+
+
+            "numericality": {
+                "lessThanOrEqualTo": 999,
+                "greaterThanOrEqualTo": 1,
+                "message": "^Hours spent on placement must be between 1 and 999"
+
+            },
+
+            "presence": {
+                "message": "^Enter number of hours the learner spent on placement"
+
+            }
+
+
+        }
+
+    }
+</script>
+
+
+{% endblock %}

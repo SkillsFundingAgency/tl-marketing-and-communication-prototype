@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload registrations file - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="registrations">Registrations</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Upload registrations file
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">You can add or change registration details for more than one learner by uploading CSV files.</p>
+   
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a csv file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" accept=".csv" multiple
+      onchange="showType(this)" >
+    </div>
+    <a class="govuk-button" id="upload" role="button" href="">Upload</a>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p class="govuk-body">If you export data from another system, you must check the data is in the right format. You can download a template with data formats and rules guidance to help you.</p>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-quarter">
+        <a href="#"><img src="/public/images/document-image.png" alt="Document-image"></a>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">
+
+          <a href="#">Download T Levels registrations data format and rules guide (XSLX, 167KB)</a>
+        </h1>
+        <p>Version 1.7, published 2 March 2022</p>
+      </div>
+    </div>
+    <p class="govuk-!-margin-top-2 govuk-body">If a ULN doesn't already exist in our service, we will add a new registration.</p>
+    <p class="govuk-body">If a ULN already has an active registration, we will update the data, unless:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the registration is active with another awarding organisation</li>
+      <li>the core code is different - you cannot change the core code here</li>
+    </ul>
+    <p class="govuk-body">If the data is not correctly formatted, nothing will be uploaded. You will be able to download an error report which tells you what's wrong.</p> 
+  </div>  
+</div>
+
+<script>
+  function showType(fileInput) {
+    var files = fileInput.files;
+    for (var i = 0; i < files.length; i++) {
+      var name = files[i].name;
+      var type = files[i].type;
+      console.log(type)
+      console.log(name)
+      if (type === 'text/csv' && name === 'correct-data.csv') {
+        document.getElementById('upload').setAttribute("href", "upload-registrations-file-successful")
+        console.log('type successful')
+      } else {
+        document.getElementById('upload').setAttribute("href", "upload-registrations-file-error")
+        console.log('type error')
+      }
+    }
+  }
+</script>
+
+{% endblock %}
