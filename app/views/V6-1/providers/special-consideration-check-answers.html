@@ -62,7 +62,7 @@
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Industry placement completed
+                            Industry placement{% if data['result-ip-answer'] == 'Completed' %} completed {% else %} status {% endif %}
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{ data['result-ip-answer'] }}
@@ -114,28 +114,6 @@
                         </div>
                     {% else %}
                     {% endif %}
-
-<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
-
-<!--                    <div class="govuk-summary-list__row">-->
-<!--                        <dt class="govuk-summary-list__key">-->
-<!--                            Industry placement model-->
-<!--                        </dt>-->
-<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
-<!--                            {% if data['industryModel'] %}-->
-<!--                                {{ data['industryModel'] }}-->
-<!--                            {% else %}-->
-<!--                                No-->
-<!--                            {% endif %}-->
-<!--                        </dd>-->
-<!--                        <dd class="govuk-summary-list__actions">-->
-<!--                            <a class="govuk-link" href="did-you-use-an-industry-placement">-->
-<!--                                Change<span class="govuk-visually-hidden"> whether industry placement model used</span>-->
-<!--                            </a>-->
-<!--                        </dd>-->
-<!--                    </div>-->
-
-<!--                    {% endif %}-->
 
                     {% if data['industryModel'] == 'yes' %}
 
@@ -193,84 +171,20 @@
                     {% else %}
 
                     {% endif %}
-
-<!--                    {% if data['result-ip-answer'] == 'Completed' %}-->
-
-<!--                    <div class="govuk-summary-list__row">-->
-<!--                        <dt class="govuk-summary-list__key">-->
-<!--                            {% if data['uln'] == '1987654320' %}-->
-<!--                                Temporary flexibility and blended placement-->
-<!--                            {% else %}-->
-<!--                                Temporary flexibility-->
-<!--                            {% endif %}-->
-<!--                        </dt>-->
-<!--                        <dd class="govuk-summary-list__value" style="text-transform: capitalize">-->
-<!--                            No-->
-<!--                        </dd>-->
-<!--                        <dd class="govuk-summary-list__actions">-->
-<!--                            <a class="govuk-link" href="did-you-use-a-flexibility">-->
-<!--                                Change<span class="govuk-visually-hidden"> whether temporary flexibility was granted</span>-->
-<!--                            </a>-->
-<!--                        </dd>-->
-<!--                    </div>-->
-
-<!--                    {% endif %}-->
-
-                    {% if data['blended-placement'] == 'yes' or data['blended-placement'] == 'no' %}
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Blended placement
-                            </dt>
-                            <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-                                {{ data['blended-placement'] }}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="blended-placements">
-                                    Change<span
-                                        class="govuk-visually-hidden"> whether temporary flexibility was granted</span>
-                                </a>
-                            </dd>
-                        </div>
-                    {% else %}
-
-                    {% endif %}
-
-                    {% if data['flexibility'] == 'yes' and data['uln'] == '1987654320' %}
-
-                    {% elif data['flexibility'] == 'yes' %}
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Employer-led activities/projects temporary flexibility used
-                            </dt>
-                            <dd class="govuk-summary-list__value" style="text-transform: capitalize">
-                                    {{ data['temporary-flexibilities'] }}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="temporary-flexibilities">
-                                    Change<span
-                                        class="govuk-visually-hidden"> which temporary flexibilities were used</span>
-                                </a>
-                            </dd>
-                        </div>
-                    {% else %}
-                    {% endif %}
                 </dl>
 
-                <div class="govuk-inset-text">By selecting 'Continue', you are declaring that the
-                    relevant provider responsibilities have been met and that you hold the <a
-                            href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
-                            class="govuk-link" rel="noreferrer noopener" target="_blank">signed declaration of
-                        student completion (opens in a new tab)</a> for this learner.
-                </div>
 
-                {% if data['result-ip-answer'] == 'Completed with special consideration' %}
-                    <p class="govuk-body">I confirm that {{ data['tLevelsStudentData'][data.uln]['learnerName'] }} has
-                        completed their
-                        T Level industry placement and that all relevant supporting documentation is held on record.</p>
-                {% else %}
-                    <p class="govuk-body">I confirm that {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has completed their T Level industry placement
-                        and that all relevant supporting documentation is held on record.</p>
-                {% endif %}
+
+                    <p class="govuk-body">
+                        I confirm that
+
+                        {% if data['result-ip-answer'] == 'Completed' or data['result-ip-answer'] == 'Completed with special consideration' %}
+                            {{ data['tLevelsStudentDataV3'][data.uln]['learnerName'] }} has completed their T Level industry placement and that
+                        {% endif %}
+
+                        all relevant supporting documentation is held on record.
+                    </p>
+
 
                 <form action="special-consideration-check-answers-status" method="post" novalidate>
 
@@ -278,7 +192,7 @@
 
                     <div class="govuk-button-group">
                         <button class="govuk-button" data-module="govuk-button">
-                            Continue
+                            Save and continue
                         </button>
                     </div>
 

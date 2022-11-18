@@ -25,48 +25,54 @@ Add industry placement details - Update learner record - Manage T Level results 
                             placement?
                         </h1>
                     </legend>
-                    <div>
-                        <p class="govuk-body">If a learner has completed their industry placement with special consideration, select yes.</p>
-                    </div>
                     <div class="govuk-radios">
 
-                        <div class="govuk-radios__item">
+                        <div class="govuk-radios__item govuk-!-margin-bottom-3">
                             <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer"
                                    type="radio"
-                                   value="Completed" {{ checked("result-ip-answer", "Special consideration") }} >
+                                   value="Completed" {{ checked("result-ip-answer", "Completed") }} >
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
                                 Completed
                             </label>
                         </div>
 
 
-                        <div class="govuk-radios__item">
+                        <div class="govuk-radios__item govuk-!-margin-bottom-3">
                             <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer"
                                    type="radio"
                                    value="Completed with special consideration" {{ checked("result-ip-answer", "Special consideration") }} >
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
-                                Completed with special considerations
+                                Completed with special consideration
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item govuk-!-margin-bottom-3">
+                            <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer"
+                                   type="radio"
+                                   value="The learner needs more time" {{ checked("result-ip-answer", "needs-more-time") }} >
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                                No, the learner needs more time
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item govuk-!-margin-bottom-3">
+                            <input class="govuk-radios__input" id="result-ip-answer-4" name="result-ip-answer"
+                                   type="radio"
+                                   value="No, the learner will not complete their industry placement" {{ checked("result-ip-answer", "will-not-complete") }} >
+                            <label class="govuk-label govuk-radios__label" for="result-ip-answer-4">
+                                No, the learner will not complete their industry placement
                             </label>
                         </div>
 
                     </div>
                 </div>
-
-                <div class="govuk-inset-text">By selecting 'Completed', you are declaring that the
-                    relevant provider responsibilities have been met and that you hold the <a
-                            href="https://www.gov.uk/government/publications/t-level-industry-placements-delivery-guidance/t-level-industry-placements-delivery-guidance#signed-declaration-of-student-completion"
-                            class="govuk-link" rel="noreferrer noopener" target="_blank">signed declaration of
-                        student completion (opens in a new tab)</a> for this learner.
-                </div>
             </fieldset>
 
             <button class="govuk-button" data-module="govuk-button">Continue</button>
         </form>
-        <p class="govuk-body">Or</p>
-        <p><a href="./does-learner-need-more-time.html" class="govuk-body govuk-link--no-visited-state">Tell us a learner needs more time to complete their industry placement, will not complete their industry placement, or that the learner has left</a></p>
     </div>
     <div class="govuk-grid-column-one-third">
-        {% include "../../../views/includes/guidance-linksV6+.html" %}
+        {% include "../../../views/includes/guidance-linksV6-1+.html" %}
     </div>
 </div>
 
