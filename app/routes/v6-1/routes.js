@@ -445,39 +445,31 @@ module.exports = function (router) {
     }
   })
 
-  //Add new registration
+  // Add new registration
 
-  //Add registrations - uln routes
+  // Add registrations - uln routes
   router.post('/' + version + '/AO/registrations/add/add-registration-uln-routes', function (req, res) {
-
-    let uln = req.session.data['uln']
-    if (uln === '1234567890' ||  uln === '9876543210') {
-
-      req.session.data['uln'] = uln
+    const uln = req.session.data.uln
+    if (uln === '1234567890' || uln === '9876543210') {
+      req.session.data.uln = uln
       res.redirect('/' + version + '/AO/registrations/add/change-uln-already-registered')
-
-    } else{
+    } else {
       res.redirect('/' + version + '/AO/registrations/add/add-registration-q2-name')
     }
-
   })
 
-  //Update/remove registered specialism - manage registrations
+  // Update/remove registered specialism - manage registrations
 
   router.post('/' + version + '/AO/registrations/manage/update-specialism-answer', function (req, res) {
-
-    let specialismsChange = req.session.data['update-specialism-answer']
-
+    const specialismsChange = req.session.data['update-specialism-answer']
 
     if (specialismsChange === 'update') {
-      req.session.data['specialism'] = 'updated'
+      req.session.data.specialism = 'updated'
       res.redirect('/' + version + '/AO/registrations/manage/change-specialism')
-
-    } else{
-      req.session.data['specialism'] = 'removed'
+    } else {
+      req.session.data.specialism = 'removed'
       res.redirect('/' + version + '/AO/registrations/manage/registration-details')
     }
-
   })
 
   // Appeals - request exceptions
@@ -651,42 +643,12 @@ module.exports = function (router) {
   //   res.redirect('/' + version + '/providers/update-t-level-record')
   // })
 
-  // Withdraw learner
-  router.post('/' + version + '/providers/does-learner-need-more-time', function (req, res) {
-    const learnerStatus = req.session.data['does-learner-need-more-time']
-
-    if (learnerStatus === 'Learner has left the course') {
-      req.session.data.selectedUln = req.session.data.uln
-      req.session.data.newplacementResult = 'yes'
-      req.session.data.newindustryPlacement = learnerStatus
-      req.session.data.showBanner = 'left'
-
-      res.redirect('/' + version + '/providers/learner-withdrawn')
-    } else if (learnerStatus === 'Learner needs more time') {
-      req.session.data.selectedUln = req.session.data.uln
-      req.session.data.showBanner = 'ip'
-      req.session.data.newindustryPlacement = learnerStatus
-
-      res.redirect('/' + version + '/providers/update-t-level-record')
-    } else {
-      req.session.data.selectedUln = req.session.data.uln
-      req.session.data.showBanner = 'will-not-complete'
-      req.session.data.newindustryPlacement = learnerStatus
-      req.session.data.newplacementResult = 'yes'
-
-      res.redirect('/' + version + '/providers/update-t-level-record')
-    }
-  })
 
   // Update Industry placement
   router.post('/' + version + '/providers/change-ip-result', function (req, res) {
     const newResult = req.session.data['result-ip-answer']
 
-    if (newResult === 'Completed') {
-      req.session.data.selectedUln = req.session.data.uln
-
-      res.redirect('/' + version + '/providers/special-consideration-check-answers')
-    } else if (newResult === 'Completed with special consideration') {
+    if (newResult === 'Completed with special consideration') {
       req.session.data.selectedUln = req.session.data.uln
       res.redirect('/' + version + '/providers/total-placement-hours')
     } else {
@@ -695,7 +657,7 @@ module.exports = function (router) {
       req.session.data.newindustryPlacement = newResult
       req.session.data.selectedUln = req.session.data.uln
 
-      res.redirect('/' + version + '/providers/update-t-level-record')
+      res.redirect('/' + version + '/providers/special-consideration-check-answers')
     }
   })
 
@@ -812,22 +774,7 @@ module.exports = function (router) {
     }
   })
 
-  // industry placement, temporary flexibility
-
-  router.post('/' + version + '/providers/flexibility', function (req, res) {
-    const flexibility = req.session.data.flexibility
-
-    if (flexibility === 'yes' && req.session.data.uln === '1234567890') {
-      res.redirect('/' + version + '/providers/temporary-flexibilities')
-    } else if (flexibility === 'yes' && req.session.data.uln === '1987654320') {
-      res.redirect('/' + version + '/providers/special-consideration-check-answers')
-    } else if (flexibility === 'yes') {
-      res.redirect('/' + version + '/providers/blended-placements')
-    } else {
-      res.redirect('/' + version + '/providers/special-consideration-check-answers'
-      )
-    }
-  })
+  // industry placement
 
   router.post('/' + version + '/providers/special-consideration-check-answers-status', function (req, res) {
     const newplacementStatus = req.session.data['result-ip-answer']
