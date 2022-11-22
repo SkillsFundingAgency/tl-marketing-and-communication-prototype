@@ -11,7 +11,7 @@
         {% if data['newplacementResult'] == 'yes' or data['tLevelsStudentDataV3'][data['uln']]['learnerIndustryPlacement'] != 'Not completed' %}
         {% else %}
         <li>
-          <a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement details</a>
+          <a class="govuk-notification-banner__link" href="change-ip-result">Add industry placement status</a>
         </li>
         {% endif %}
         {% if data['updatedmathsStatus'] == 'yes' and data['uln'] == data['selectedUln'] or data['tLevelsStudentDataV3'][data['uln']]['learnerMaths'] != 'Not yet received'%}
