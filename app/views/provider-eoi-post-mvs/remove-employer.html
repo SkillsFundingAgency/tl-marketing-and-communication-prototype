@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register an interest in T Levels and industry placements
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="campuses">Locations and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="employer-list-admin">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Do you want to remove <br>Lloyds Banking Group?
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">If you remove this employer they will no longer appear in this service. Please check the details below to confirm your selection before continuing.</p>
+
+      <div class="employer-remove-wrap govuk-!-padding-left-6 govuk-!-margin-top-4 govuk-!-margin-bottom-8" style="border-left:3px solid rgb(202 205 207); float:left; clear:both;">
+      <h2 style="font-size:24px; margin:10px 0px -10px;">Organisation details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Website</th>
+            <td class="govuk-table__cell"><a href="https://www.lloydsbank.com">https://www.lloydsbank.com</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Primary industry</th>
+            <td class="govuk-table__cell">Financial services</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Industry placement skill areas</th>
+            <td class="govuk-table__cell">Digital and IT, Financial services</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Location</th>
+            <td class="govuk-table__cell">SO63 9AJ</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Additional details</th>
+            <td class="govuk-table__cell">Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 style="font-size:24px; margin:40px 0px -10px;">Contact details</h2>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-4 employer-list-one">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+            <td class="govuk-table__cell">Sarah Philips</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email</th>
+            <td class="govuk-table__cell">sarah.philips@lloyds.com</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Telephone</th>
+            <td class="govuk-table__cell">07525 707601</td>
+          </tr>          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Contact preference</th>
+            <td class="govuk-table__cell">Email</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <a href="employer-list-admin-removed" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Remove employer
+      </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-1 govuk-!-font-size-18"><a class="govuk-link" href="employer-list-admin">Cancel and return to employers</a></p>
+
+      <!-- <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also <a href="#">register by post</a>.</p>
+      <p>The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
+      <p>You can’t register for this service if you’re in the UK illegally.</p> -->
+
+    </div>
+  </div>
+{% endblock %}

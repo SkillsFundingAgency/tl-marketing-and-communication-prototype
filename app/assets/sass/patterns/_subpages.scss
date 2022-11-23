@@ -405,13 +405,18 @@ h3.heading-sora {
 }
 
 .hidden-element {
-    display:none;
+    display:none !important;
     opacity:0;
 }
 
 .visibile-element {
     display:block;
     opacity:1;
+}
+
+.notif-email-confirm,
+.notif-email-confirm-2 {
+    display:block;
 }
 
 .employer-listing {
@@ -457,6 +462,11 @@ h3.heading-sora {
     padding: 17px 25px 18px 17px;
     margin: 5px 0px 30px;
     font-size:19px;
+
+    &.green {
+        border-left: 7px solid govuk-colour("green");
+        background-color:rgb(224 245 228);
+    }
     
     p {
         margin:0px;
@@ -490,3 +500,4 @@ h3.heading-sora {
     background-color: #fbfffc;
     padding: 20px 15px 0px 25px;
 }
+

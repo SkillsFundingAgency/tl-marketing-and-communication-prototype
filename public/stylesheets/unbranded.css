@@ -8944,13 +8944,18 @@ h3.heading-sora {
 }
 
 .hidden-element {
-  display: none;
+  display: none !important;
   opacity: 0;
 }
 
 .visibile-element {
   display: block;
   opacity: 1;
+}
+
+.notif-email-confirm,
+.notif-email-confirm-2 {
+  display: block;
 }
 
 .employer-listing thead tr:hover {
@@ -8987,6 +8992,10 @@ h3.heading-sora {
   padding: 17px 25px 18px 17px;
   margin: 5px 0px 30px;
   font-size: 19px;
+}
+.tint-banner.green {
+  border-left: 7px solid #00703c;
+  background-color: rgb(224, 245, 228);
 }
 .tint-banner p {
   margin: 0px;
