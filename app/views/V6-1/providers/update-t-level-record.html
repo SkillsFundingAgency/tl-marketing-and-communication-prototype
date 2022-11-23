@@ -86,19 +86,19 @@ Learner's T Level record
           {% if data['newplacementResult'] === 'yes' and data['updatedmathsStatus'] === 'yes' and
           data['updatedenglishStatus'] === 'yes' or data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '8642135790' or data['uln'] === '1231231231'%}
           <strong class="govuk-tag govuk-tag--green">
-            Complete
+            Record complete
           </strong>
           {% elif data['newplacementResult'] === 'yes' and data['uln'] === '9876543210' %}
           <strong class="govuk-tag govuk-tag--green">
-            Complete
+            Record complete
           </strong>
           {% elif data['newplacementResult'] === 'yes' and data['uln'] === '1169334253' %}
           <strong class="govuk-tag govuk-tag--green">
-            Complete
+            Record complete
           </strong>
           {% else %}
           <strong class="govuk-tag govuk-tag--red">
-            Incomplete
+            Record incomplete
           </strong>
           {% endif %}
         </span>
