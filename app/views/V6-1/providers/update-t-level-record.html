@@ -22,24 +22,29 @@ Learner's T Level record
 
 {% block content %}
 
+
+<!-- This block displays the various success messages when you add maths, English, or IP info -->
 <div class="govuk-grid-row">
+
+  <!-- main block for the success banner messages -->
   <div class="govuk-grid-column-three-quarters">
     {% if data['showBanner'] === 'maths' and data['uln'] == data['selectedUln'] or data['showBanner'] === 'english' and data['uln'] == data['selectedUln'] %}
       {% include "../includes/provider-notification-messages/maths-english-success-messages.html" %}
     {% endif %}
 
-    {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
-    and data['newindustryPlacement'] == 'Completed'
-    or data['showBanner'] === 'ip'
-    and data['newindustryPlacement'] == 'Completed with special consideration'
-    and data['uln'] == data['selectedUln'] %}
+    {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] and data['newindustryPlacement'] == 'Completed' %}
       {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
+    {% elif data['showBanner'] === 'ip' and data['newindustryPlacement'] == 'Completed with special consideration' and data['uln'] == data['selectedUln'] %}
+      {% include "../includes/provider-notification-messages/industry-placement-success-messages-special-consideration.html" %}
+
+    {% elif data['newindustryPlacement'] == 'No, the learner will not complete their industry placement' and data['uln'] == data['selectedUln'] %}
+
+      {% include "../includes/provider-notification-messages/industry-placement-success-messages-will-not-complete.html" %}
+
     {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
-      {% include "../includes/provider-notification-messages/industry-placement-success-message-no-yet-achieved.html" %}
-    {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
-      {% include "../includes/provider-notification-messages/industry-placement-success-message-learner-has-left.html" %}
-    {% elif data['showBanner'] === 'will-not-complete' and data['uln'] == data['selectedUln'] %}
-      {% include "../includes/provider-notification-messages/industry-placement-success-messages.html" %}
+
+      {% include "../includes/provider-notification-messages/industry-placement-success-messages-not-yet-achieved.html" %}
+
     {% endif %}
 
     {% if data['showBanner'] === 'certificate' and data['uln'] == data['selectedUln'] %}
@@ -47,12 +52,16 @@ Learner's T Level record
     {% endif %}
   </div>
 
+
+  <!-- This block adds the guidance links to the side of the success banners, however only when success banners are present -->
   {% if data['showBanner'] === 'ip' and data['uln'] == data['selectedUln']
   and data['newindustryPlacement'] == 'Completed'
   or data['showBanner'] === 'ip'
   and data['newindustryPlacement'] == 'Completed with special consideration'
   and data['uln'] == data['selectedUln'] %}
+
     {% include "../../../views/includes/guidance-result.html" %}
+
   {% elif data['showBanner'] === 'ip' and data['uln'] == data['selectedUln'] %}
     {% include "../../../views/includes/guidance-result.html" %}
   {% elif data['showBanner'] === 'left' and data['uln'] == data['selectedUln'] %}
@@ -63,6 +72,9 @@ Learner's T Level record
 
 </div>
 
+
+
+<!--    This block displays the blue banner stating what additional information is needed for the learner    -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     {% if data['uln'] === '1122334455' or data['uln'] === '5647382910' or data['uln'] === '8642135790' or data['uln'] === '1231231231' or data['uln'] === '1169334253' %}
@@ -74,6 +86,9 @@ Learner's T Level record
     {% endif %}
   </div>
 </div>
+
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
