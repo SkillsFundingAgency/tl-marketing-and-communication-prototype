@@ -44,6 +44,7 @@ Add industry placement details - Update learner record - Manage T Level results 
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
                                 Yes, completed with special consideration (reduced hours)
                             </label>
+                            <p class="govuk-hint govuk-radios__hint">Special consideration can be used if a learner has not been able to complete their minimum placement hours due to personal circumstances. Placements may be marked as completed if they meet the criteria.</p>
                         </div>
 
                         <div class="govuk-radios__item govuk-!-margin-bottom-3">
@@ -51,7 +52,7 @@ Add industry placement details - Update learner record - Manage T Level results 
                                    type="radio"
                                    value="The learner needs more time" {{ checked("result-ip-answer", "needs-more-time") }} >
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
-                                No, the learner needs more time
+                                No, they still need to complete it
                             </label>
                         </div>
 
@@ -60,7 +61,7 @@ Add industry placement details - Update learner record - Manage T Level results 
                                    type="radio"
                                    value="No, the learner will not complete their industry placement" {{ checked("result-ip-answer", "will-not-complete") }} >
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-4">
-                                No, the learner will not complete their industry placement
+                                No, they will not complete it
                             </label>
                         </div>
 
