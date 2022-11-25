@@ -6243,6 +6243,17 @@ h3.heading-sora {
   padding: 20px 15px 0px 25px;
 }
 
+.eoi-form-journey strong.govuk-tag {
+  text-transform: uppercase !important;
+}
+
+.status-box.planning {
+  padding: 15px;
+  border: 3px solid #d6c8da;
+  margin-bottom: 40px;
+  width: 700px;
+}
+
 .subjects.digi-prod > div:first-child {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;

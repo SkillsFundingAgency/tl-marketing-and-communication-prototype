@@ -160,6 +160,124 @@ Organisation details | T Levels and industry placement support for employers
 
       <!-- -- -- -->
 
+      {% set orgreadyHTML %}
+      {{ govukTextarea({
+        id: "org-status-ready",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "org-status-ready",
+        label: {
+          text: "What placements are you currently offering?",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Example hint text if needed"
+        },
+        value: data['org-status-ready']
+      }) }}
+      {% endset -%}
+
+
+      {% set orgplanningHTML %}
+      {{ govukTextarea({
+        id: "org-status-planning",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "org-status-planning",
+        label: {
+          text: "What placements are you considering? (optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Example hint text if needed"
+        },
+        value: data['org-status-planning']
+      }) }}
+      {% endset -%}
+
+      {% set orgmoreinfoHTML %}
+      {{ govukTextarea({
+        id: "org-status-moreinfo",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "org-status-moreinfo",
+        label: {
+          text: "What information are you looking for? (optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Example hint text if needed"
+        },
+        value: data['org-status-planning']
+      }) }}
+      {% endset -%}
+
+      {% set orgnotreadyHTML %}
+      {{ govukTextarea({
+        id: "org-status-notready",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "org-status-notready",
+        label: {
+          text: "What information would help you plan for the future? (optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Example hint text if needed"
+        },
+        value: data['org-status-planning']
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        
+        idPrefix: "organisation-placement-status",
+        name: "organisation-placement-status",
+        fieldset: {
+          legend: {
+            text: "Which best describes your current placement status?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "We have placements ready to offer",
+            text: "We have placements ready to offer",
+            checked: checked("organisation-placement-status", "We have placements ready to offer"),
+            conditional: {
+              html: orgreadyHTML
+            }
+          },
+          {
+            value: "We are planning our placements and want to discuss them with a provider",
+            text: "We are planning our placements and want to discuss them with a provider",
+            checked: checked("organisation-placement-status", "We are planning our placements and want to discuss them with a provider"),
+            conditional: {
+              html: orgplanningHTML
+            }
+          },
+          {
+            value: "We want to start offering placements but need more information",
+            text: "We want to start offering placements but need more information",
+            checked: checked("organisation-placement-status", "We want to start offering placements but need more information"),
+            conditional: {
+              html: orgmoreinfoHTML
+            }
+          },
+          {
+            value: "We aren't ready to offer placements yet but plan to in the future",
+            text: "We aren't ready to offer placements yet but plan to in the future",
+            checked: checked("organisation-placement-status", "We aren't ready to offer placements yet but plan to in the future"),
+            conditional: {
+              html: orgnotreadyHTML
+            }
+          }
+        ]
+      }) }}
+
+      <!-- -- -- -->
+
       {{ govukCheckboxes({
         
         idPrefix: "skill-area",
