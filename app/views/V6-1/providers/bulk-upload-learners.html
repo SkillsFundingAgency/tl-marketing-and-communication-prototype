@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload records for multiple learners - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="tlevels-dashboard.html">Home</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Upload industry placement status for multiple learners</h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">You can add or change the industry placement status for more than one learner by uploading a CSV file.</p>
+
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+                Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" accept=".csv" multiple
+                   onchange="showType(this)" >
+        </div>
+        <a class="govuk-button" id="upload" role="button" href="">Upload</a>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p class="govuk-body">You can download a template with data formats and rules guidance to help you.</p>
+
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-one-quarter">
+                <a href="#"><img src="/public/images/document-image.png" alt="Document-image"></a>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+
+                    <a href="#">Download learner data format and rules (XLSX, 274KB)</a>
+                </h3>
+                <p>Version 1.3, published 2 March 2022</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  function showType(fileInput) {
+    var files = fileInput.files;
+    for (var i = 0; i < files.length; i++) {
+      var name = files[i].name;
+      var type = files[i].type;
+      console.log(type)
+      console.log(name)
+      if (type === 'text/csv') {
+        document.getElementById('upload').setAttribute("href", "upload-ip-file-success")
+        console.log('type successful')
+      } else {
+        document.getElementById('upload').setAttribute("href", "upload-ip-file-error")
+        console.log('type error')
+      }
+    }
+  }
+</script>
+
+{% endblock %}
