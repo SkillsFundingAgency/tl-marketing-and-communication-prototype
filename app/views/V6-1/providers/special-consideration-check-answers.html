@@ -62,10 +62,18 @@
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Industry placement{% if data['result-ip-answer'] == 'Completed' %} completed {% else %} status {% endif %}
+                            Industry placement status
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['result-ip-answer'] }}
+                            {% if data['result-ip-answer'] == 'Completed' %}
+                                Yes, completed in full
+                            {% elif data['result-ip-answer'] == 'Completed with special consideration' %}
+                                Yes, completed with special consideration
+                            {% elif data['result-ip-answer'] == 'The learner needs more time' %}
+                                No, they still need to complete it
+                            {% else %}
+                                {{ data['result-ip-answer'] }}
+                            {% endif %}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="change-ip-result">
