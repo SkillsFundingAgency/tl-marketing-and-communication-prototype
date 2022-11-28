@@ -166,17 +166,13 @@ Organisation details | T Levels and industry placement support for employers
         classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
         name: "org-status-ready",
         label: {
-          text: "What placements are you currently offering?",
+          text: "Enter details (optional) ",
           classes: "govuk-label--s",
           isPageHeading: false
-        },
-        hint: {
-          text: "Example hint text if needed"
         },
         value: data['org-status-ready']
       }) }}
       {% endset -%}
-
 
       {% set orgplanningHTML %}
       {{ govukTextarea({
@@ -184,12 +180,9 @@ Organisation details | T Levels and industry placement support for employers
         classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
         name: "org-status-planning",
         label: {
-          text: "What placements are you considering? (optional)",
+          text: "Enter details (optional)",
           classes: "govuk-label--s",
           isPageHeading: false
-        },
-        hint: {
-          text: "Example hint text if needed"
         },
         value: data['org-status-planning']
       }) }}
@@ -201,12 +194,9 @@ Organisation details | T Levels and industry placement support for employers
         classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
         name: "org-status-moreinfo",
         label: {
-          text: "What information are you looking for? (optional)",
+          text: "Enter details (optional)",
           classes: "govuk-label--s",
           isPageHeading: false
-        },
-        hint: {
-          text: "Example hint text if needed"
         },
         value: data['org-status-planning']
       }) }}
@@ -218,12 +208,9 @@ Organisation details | T Levels and industry placement support for employers
         classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
         name: "org-status-notready",
         label: {
-          text: "What information would help you plan for the future? (optional)",
+          text: "Enter details (optional)",
           classes: "govuk-label--s",
           isPageHeading: false
-        },
-        hint: {
-          text: "Example hint text if needed"
         },
         value: data['org-status-planning']
       }) }}
@@ -235,42 +222,34 @@ Organisation details | T Levels and industry placement support for employers
         name: "organisation-placement-status",
         fieldset: {
           legend: {
-            text: "Which best describes your current placement status?",
+            text: "Which statement best describes your organisation?",
             classes: "govuk-fieldset__legend--m"
           }
         },
         classes: "govuk-!-margin-bottom-4",
         items: [
           {
-            value: "We have placements ready to offer",
-            text: "We have placements ready to offer",
-            checked: checked("organisation-placement-status", "We have placements ready to offer"),
+            value: "We are ready to offer placements",
+            text: "We are ready to offer placements",
+            checked: checked("organisation-placement-status", "We are ready to offer placements"),
             conditional: {
               html: orgreadyHTML
             }
           },
           {
-            value: "We are planning our placements and want to discuss them with a provider",
-            text: "We are planning our placements and want to discuss them with a provider",
-            checked: checked("organisation-placement-status", "We are planning our placements and want to discuss them with a provider"),
+            value: "We are keen to offer placements, but need more information",
+            text: "We are keen to offer placements, but need more information",
+            checked: checked("organisation-placement-status", "We are keen to offer placements, but need more information"),
             conditional: {
               html: orgplanningHTML
             }
           },
           {
-            value: "We want to start offering placements but need more information",
-            text: "We want to start offering placements but need more information",
-            checked: checked("organisation-placement-status", "We want to start offering placements but need more information"),
+            value: "We would like more information on T Levels and industry placements",
+            text: "We would like more information on T Levels and industry placements",
+            checked: checked("organisation-placement-status", "We would like more information on T Levels and industry placements"),
             conditional: {
               html: orgmoreinfoHTML
-            }
-          },
-          {
-            value: "We aren't ready to offer placements yet but plan to in the future",
-            text: "We aren't ready to offer placements yet but plan to in the future",
-            checked: checked("organisation-placement-status", "We aren't ready to offer placements yet but plan to in the future"),
-            conditional: {
-              html: orgnotreadyHTML
             }
           }
         ]
@@ -352,6 +331,56 @@ Organisation details | T Levels and industry placement support for employers
         }
         ]
       }) }}
+
+      <!-- -- -- -->
+
+      {% set tlevelsaidHTML %}
+      {{ govukTextarea({
+        id: "tlevels-aid",
+        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
+        name: "tlevels-aid",
+        label: {
+          text: "Enter details (optional) ",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        value: data['tlevels-aid']
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        
+        idPrefix: "emp-tlevel-aid",
+        name: "emp-tlevel-aid",
+        fieldset: {
+          legend: {
+            text: "Are you interested in helping schools and colleges deliver T Levels outside of placements?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, career talks and interview preparation with students"
+        },
+        classes: "govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("emp-tlevel-aid", "Yes"),
+            conditional: {
+              html: tlevelsaidHTML
+            }
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("emp-tlevel-aid", "No")
+          }
+        ]
+      }) }}
+
+      <!-- -- -- -->
 
 
       <!-- -- -- -->
