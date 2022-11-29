@@ -19,8 +19,11 @@ Manage T Level records - Manage T Level results - GOV.UK
 </nav>
 {% endblock %}
 
+<!-- initialise variable for learner count -->
 {% set 2020to2021learners = 0 %}
 {% set 2021to2022learners = 0 %}
+
+<!-- check what year the user is viewing, then loop through them and display the total learners in that year -->
 {% for value in tLevelsStudentData %}
 {% if value['learnerStartYear'] == '2020 to 2021' %}
 {% set 2020to2021learners = 2020to2021learners+1 %}
@@ -113,16 +116,22 @@ Manage T Level records - Manage T Level results - GOV.UK
             T Level
           </legend>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <!--   This code controls the filter checkboxes   -->
             {% set filterLabels = [] %}
             {% for value in tLevelsStudentData %}
-            {% if value.learnerStartYear == data.learnerStartYear %}
-            {% if value.learnerTLevelTitle in filterLabels %}
-            {% else %}
-            {% set filterLabels = (filterLabels.push(value.learnerTLevelTitle), filterLabels) %}
-            {% endif %}
-            {% endif %}
+              {% if value.learnerStartYear == data.learnerStartYear %}
+
+                {% if value.learnerTLevelTitle in filterLabels %}
+                {% else %}
+                  {% set filterLabels = (filterLabels.push(value.learnerTLevelTitle), filterLabels) %}
+                {% endif %}
+
+              {% endif %}
             {% endfor %}
 
+
+            <!--    Creates filter tags based on what filters the user has selected    -->
             {% for filterLabel in filterLabels %}
 
             <div class="govuk-checkboxes__item govuk-checkboxes--small">
@@ -181,6 +190,7 @@ Manage T Level records - Manage T Level results - GOV.UK
           </p>
         </div>
       </div>
+
       <!--Creates a variable called page and assigns the current page url to be its value, then makes it a float so that it can be summed-->
       {% set Page = data['page'] %}
       {% set Page = Page | float %}

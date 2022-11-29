@@ -1,6 +1,8 @@
 module.exports = function (router) {
   const version = 'V6-1'
 
+  // For IP journey and t-level-record look to line 587 onwards
+
   // Add your routes here - above the module.exports line
 
   // ' + version + ' routes //
@@ -510,7 +512,6 @@ module.exports = function (router) {
   // Results
 
   // Core Results
-
   // Add core result - Results
   router.post('/' + version + '/AO/results/add-core-result', function (req, res) {
     const addResult = req.session.data['add-core-result']
@@ -585,39 +586,6 @@ module.exports = function (router) {
 
   // PROVIDERS ROUTES
 
-  // Add T Level Records
-
-  // LRS - straight to industry placement
-  router.post('/' + version + '/providers/add-learner-q2-em', function (req, res) {
-    const uln = req.session.data.uln
-
-    if (uln === '4561237890') {
-      res.redirect('/' + version + '/providers/add-learner-q4-ip')
-    } else {
-      res.redirect('/' + version + '/providers/add-learner-q2-em')
-    }
-  })
-
-  // Change Industry placement
-  router.post('/' + version + '/providers/add-learner-change-q4-ip', function (req, res) {
-    const newResult = req.session.data['result-ip-change']
-
-    req.session.data.changeplacementResult = 'yes'
-    req.session.data.addChangeindustryPlacement = newResult
-
-    res.redirect('/' + version + '/providers/add-learner-q5-check')
-  })
-
-  // Change English and Maths status
-  router.post('/' + version + '/providers/add-learner-change-q2-em', function (req, res) {
-    const newStatus = req.session.data['result-em-change']
-
-    req.session.data.changeemStatus = 'yes'
-    req.session.data.addChangeemStatus = newStatus
-
-    res.redirect('/' + version + '/providers/add-learner-q5-check')
-  })
-
   // Cancel T Level records
 
   router.post('/' + version + '/providers/cancel-t-level-record', function (req, res) {
@@ -629,19 +597,6 @@ module.exports = function (router) {
       res.redirect('/' + version + '/providers/tlevels-dashboard')
     }
   })
-
-  // Update T Level Records
-
-  // Why will learner not complete IP
-
-  // router.post('/' + version + '/providers/why-wont-learner-complete-ip', function (req, res) {
-  //   const learnerStatus = req.session.data['does-learner-need-more-time']
-  //   req.session.data.newindustryPlacement = learnerStatus
-  //   req.session.data.newplacementResult = 'yes'
-  //   req.session.data.showBanner = 'will-not-complete'
-  //
-  //   res.redirect('/' + version + '/providers/update-t-level-record')
-  // })
 
 
   // Update Industry placement
@@ -658,32 +613,6 @@ module.exports = function (router) {
       req.session.data.selectedUln = req.session.data.uln
 
       res.redirect('/' + version + '/providers/special-consideration-check-answers')
-    }
-  })
-
-  // Completed full industry placement hours, yes/no
-  router.post('/' + version + '/providers/has-completed-full-industry-placement-hours', function (req, res) {
-    const newPlacementBool = req.session.data['change-completed-full-hours']
-
-    if (newPlacementBool === 'Not completed full hours') {
-      res.redirect('/' + version + '/providers/total-placement-hours')
-    } else {
-      req.session.data.selectedUln = req.session.data.uln
-
-      res.redirect('/' + version + '/providers/special-consideration-check-answers')
-    }
-  })
-
-  // Update Industry placement special consideration
-  router.post('/' + version + '/providers/completed-with-special-consideration', function (req, res) {
-    const newSpecialConsResult = req.session.data['special-consideration-ip-answer']
-
-    if (newSpecialConsResult === 'special-consideration-yes') {
-      res.redirect('/' + version + '/providers/total-placement-hours')
-    } else {
-      req.session.data.selectedUln = req.session.data.uln
-
-      res.redirect('/' + version + '/providers/did-you-use-an-industry-placement')
     }
   })
 
@@ -761,18 +690,6 @@ module.exports = function (router) {
     }
   })
 
-  // industry placement, industry placement model
-
-  router.post('/' + version + '/providers/industry-placement', function (req, res) {
-    const industryModel = req.session.data.industryModel
-
-    if (industryModel === 'yes') {
-      res.redirect('/' + version + '/providers/multiple-employer-model')
-    } else {
-      res.redirect('/' + version + '/providers/did-you-use-a-flexibility'
-      )
-    }
-  })
 
   // industry placement
 
