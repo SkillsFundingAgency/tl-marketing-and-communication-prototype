@@ -66,13 +66,13 @@
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {% if data['result-ip-answer'] == 'Completed' %}
-                                Yes, completed
+                                Placement completed
                             {% elif data['result-ip-answer'] == 'Completed with special consideration' %}
-                                Yes, completed with special consideration
+                                Placement completed with special consideration
                             {% elif data['result-ip-answer'] == 'The learner needs more time' %}
-                                Still to be completed
+                                Placement still to be completed
                             {% elif data['result-ip-answer'] == 'No, the learner will not complete their industry placement' %}
-                                Not completed
+                                Placement will not completed
                             {% else %}
                                 {{ data['result-ip-answer'] }}
                             {% endif %}
