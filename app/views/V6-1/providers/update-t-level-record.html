@@ -195,7 +195,9 @@ Learner's T Level record
             {% if data['newplacementResult'] === 'yes' and data['uln'] == data['selectedUln'] %}
 
               {% if data['newindustryPlacement'] == 'No, the learner will not complete their industry placement' %}
-                The learner will not complete their industry placement
+                Not completed
+              {% elif data['newindustryPlacement'] == 'The learner needs more time' %}
+                Still to be completed
               {% else %}
                 {{ data['newindustryPlacement'] }}
               {% endif %}
