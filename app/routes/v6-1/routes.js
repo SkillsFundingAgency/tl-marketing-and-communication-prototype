@@ -703,5 +703,20 @@ module.exports = function (router) {
     res.redirect('/' + version + '/providers/update-t-level-record')
   })
 
+    // withdraw learner
+    router.post('/' + version + '/providers/restore-learner', function (req, res) {
+      const restoredLearner = req.session.data['restore-learner']
+      req.session.data.withdrawnLearnerStatus = restoredLearner
+      // Success banner needs to be added
+      res.redirect('/' + version + '/providers/update-t-level-record?uln=1234243966')
+    })
+
+    router.post('/' + version + '/providers/withdrawn-learner', function (req, res) {
+      const withdrawnLearner = req.session.data['withdrawn-learner']
+      req.session.data.withdrawnLearnerStatus = withdrawnLearner
+      // Success banner needs to be added
+      res.redirect('/' + version + '/providers/update-t-level-record?uln=1234243966')
+    })
+
 // This must close line 1 after all other routes
 }

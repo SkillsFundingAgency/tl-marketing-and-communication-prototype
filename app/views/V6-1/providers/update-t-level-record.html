@@ -26,6 +26,17 @@ Learner's T Level record
 <!-- This block displays the various success messages when you add maths, English, or IP info -->
 <div class="govuk-grid-row">
 
+  <!-- withdrawn learners messages -->
+  <div class="govuk-grid-column-three-quarters">
+    {% if data['withdrawnLearnerStatus'] == 'restored' %}
+    {% include "../includes/provider-notification-messages/restore-learner.html" %}
+
+    {% elif data['withdrawnLearnerStatus'] == 'withdrawn' %}
+    {% include "../includes/provider-notification-messages/withdraw-learner.html" %}
+
+    {% endif %}
+  </div>
+
   <!-- main block for the success banner messages -->
   <div class="govuk-grid-column-three-quarters">
     {% if data['showBanner'] === 'maths' and data['uln'] == data['selectedUln'] or data['showBanner'] === 'english' and data['uln'] == data['selectedUln'] %}
@@ -88,8 +99,6 @@ Learner's T Level record
 </div>
 
 
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -130,7 +139,38 @@ Learner's T Level record
     <h2 class="govuk-heading-m">Personal details</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T Level status 
+          <p> {{data['restoredLearner']}}</p>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['withdrawnLearnerStatus'] == 'restored' %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">Active</strong>
+            </td>
+          </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="withdraw-learner" class="govuk-link">Tell us this learner has withdrawn</a></p>
 
+          {% elif data['withdrawnLearnerStatus'] == 'withdrawn' %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">Pending withdrawal</strong>
+            </td>
+          </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="restore-learner" class="govuk-link">Tell us this learner is still taking this T Level</a></p>
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">Active</strong>
+            </td>
+          </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="withdraw-learner" class="govuk-link">Tell us this learner has withdrawn</a></p>
+          {% endif %}
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of birth

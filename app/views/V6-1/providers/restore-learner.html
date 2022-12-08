@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Learner's T Level record
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="restore-learner" method="post" data-validate='restore-learner-validation'>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Is {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} still taking their T Level?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="restore-learner-yes" name="restore-learner" type="radio" value="restored">
+                <label class="govuk-label govuk-radios__label" for="restore-learner-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="restore-learner-no" name="restore-learner" type="radio" value="withdrawn">
+                <label class="govuk-label govuk-radios__label" for="restore-learner-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  <script type="application/json" id="restore-learner-validation">
+    {
+
+        "restore-learner": {
+
+            "presence": {
+
+                "message": "^Select yes if "
+
+            }
+
+        }
+
+    }
+  </script>
+
+{% endblock %}
+
