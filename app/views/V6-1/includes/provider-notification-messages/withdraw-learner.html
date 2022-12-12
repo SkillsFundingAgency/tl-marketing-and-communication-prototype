@@ -1,12 +1,13 @@
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Notification received
+      Important
     </h2>
+  </div>
   <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You've told us that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from this course. You should also contact the AO to let them know.
-    </h3>
-    <p class="govuk-body">Once the AO withdraws {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} you can request their Statement of Achievement.</p>
+    <p class="govuk-body">
+      You've told us that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from this T Level. You should also contact           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}
+      to let them know.
+    </p>
   </div>
 </div>
