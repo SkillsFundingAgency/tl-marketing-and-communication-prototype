@@ -404,7 +404,7 @@ Learner's T Level record
 
   let today = new Date()
   const dd = String(today.getDate()).padStart(1, '0')
-  const m = monthNames[today.getMonth()]
+  const m = monthNames[today.getMonth('')]
   const yyyy = today.getFullYear()
   today = dd + ' ' + m + ' ' + yyyy
   console.log(today)
