@@ -58,7 +58,7 @@ Employer interest in offering T Levels
         <div id="changed-name-hint" class="govuk-hint">
           Selecting off will pause your notifications without needing to remove your email.
         </div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios--inline govuk-!-margin-top-4" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes" checked>
             <label class="govuk-label govuk-radios__label" for="changed-name">
@@ -74,6 +74,10 @@ Employer interest in offering T Levels
           </div>
         </div>
       </fieldset>
+      <a role="button" href="notifications-edit-eli-off" draggable="false" class="govuk-button govuk-!-margin-top-4"
+      data-module="govuk-button">
+      Update
+    </a>
     </div>
 
     <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label
@@ -121,11 +125,7 @@ Employer interest in offering T Levels
 
   </div>
 
-  <script type="text/javascript">
-  document.getElementById("turn-notif-off").onclick = function () {
-      location.href = "notifications-edit-eli-off.html";
-  };
-  </script>
+
 
 
   {% endblock %}

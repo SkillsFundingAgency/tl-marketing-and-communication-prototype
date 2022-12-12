@@ -26,7 +26,7 @@ Employer interest in offering T Levels
   <p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="campuses">Locations
       and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters">Search
       filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
-      href="notifications-ur-4">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+      href="notifications-ur-5">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
@@ -35,7 +35,7 @@ Employer interest in offering T Levels
       <a class="govuk-breadcrumbs__link" href="employer-list">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="notifications-ur-4">Notifications</a>
+      <a class="govuk-breadcrumbs__link" href="notifications-ur-5">Notifications</a>
     </li>
   </ol>
 </div>
@@ -45,7 +45,6 @@ Employer interest in offering T Levels
 
 <div class="govuk-grid-row eoi-form-journey">
   <div class="govuk-grid-column-full">
-    <!-- <div class="tint-banner green"><p>Notifications for elizabeth.ashe@alesfordcsu.ac.uk have been turned off.</p></div> -->
 
     <h1 class="govuk-heading-xl">
       Notifications for<br> elizabeth.ashe@alesfordcsu.ac.uk
@@ -109,7 +108,7 @@ Employer interest in offering T Levels
               class="govuk-link" style="display:inline-block;">Change</a> <a href=""
               class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
         </tr>
-        <tr class="govuk-table__row hidden-element">
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Warrick Green</th>
           <td class="govuk-table__cell">5 miles</td>
           <td class="govuk-table__cell">Selected</td>
@@ -123,13 +122,13 @@ Employer interest in offering T Levels
 
     <div class="email-warning-box remove-email-box govuk-!-margin-top-6 hidden-element">
       <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">Do you want to remove notifications for Warrick Green?</p>
-        <a role="button" draggable="false" class="govuk-button remove-email govuk-button--warning govuk-!-margin-top-0"  data-module="govuk-button">
+        <a role="button" draggable="false" class="govuk-button remove-email govuk-button--warning govuk-!-margin-top-0"  data-module="govuk-button" href="notifications-edit-eli-off-2">
           Remove
         </a>
         <a class="govuk-link email-remove-cancel govuk-!-margin-left-4 govuk-!-margin-top-1" style="display:inline-block;">Cancel</a>
     </div>
 
-    <a role="button" href="notifications-edit-campus-add-eli" draggable="false" class="govuk-button eli-add-notif-btn"
+    <a role="button" href="notifications-edit-campus-add" draggable="false" class="govuk-button eli-add-notif-btn"
       data-module="govuk-button">
       Add notification
     </a>
@@ -138,6 +137,15 @@ Employer interest in offering T Levels
 
   <script type="text/javascript">
 
+    $(".remove-warrick-notif").click(function () {
+      $('.remove-email-box').removeClass("hidden-element");
+      $('.eli-add-notif-btn').addClass("hidden-element");
+    });
+
+    $(".email-remove-cancel").click(function () {
+      $('.eli-add-notif-btn').removeClass("hidden-element");
+      $('.remove-email-box').addClass("hidden-element");
+    });
   </script>
 
 
