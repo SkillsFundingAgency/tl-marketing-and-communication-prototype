@@ -11,6 +11,7 @@
     }
 }
 
+
 .subpage.blocks.stories-page {
     .search-row {
         margin-top:30px;
@@ -496,6 +497,14 @@ h3.heading-sora {
 
 .email-warning-box.green-verify {
     width: 650px;
+    border: 4px solid $govuk-success-colour;
+    background-color: #fbfffc;
+    padding: 20px 15px 0px 25px;
+}
+
+
+.email-warning-box.green-verify.new-notif {
+    width: 800px;
     border: 4px solid $govuk-success-colour;
     background-color: #fbfffc;
     padding: 20px 15px 0px 25px;

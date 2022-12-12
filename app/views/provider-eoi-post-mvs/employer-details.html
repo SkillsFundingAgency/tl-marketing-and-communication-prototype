@@ -5,8 +5,8 @@ Employer interest in offering T Levels
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,11 @@ Employer interest in offering T Levels
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="campuses">Locations and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters-notifications">Filters and notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p>
+  <p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="campuses">Locations
+      and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters">Search
+      filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="notifications">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
@@ -36,83 +40,93 @@ Employer interest in offering T Levels
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row eoi-form-journey">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row eoi-form-journey">
+  <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl">
-        Lloyds Banking Group
-      </h1>
+    <h1 class="govuk-heading-xl">
+      Lloyds Banking Group
+    </h1>
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9">Organisation details</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9">Organisation details</h2>
 
-      <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Website</th>
-            <td class="govuk-table__cell"><a href="https://www.lloydsbank.com">https://www.lloydsbank.com</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Primary industry</th>
-            <td class="govuk-table__cell">Financial services</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Industry placement skill areas</th>
-            <td class="govuk-table__cell">Digital and IT, Financial services</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Location</th>
-            <td class="govuk-table__cell">SO63 9AJ</td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Website</th>
+          <td class="govuk-table__cell"><a href="https://www.lloydsbank.com">https://www.lloydsbank.com</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Primary industry</th>
+          <td class="govuk-table__cell">Financial services</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Industry placement skill areas</th>
+          <td class="govuk-table__cell">Digital and IT, Financial services</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Location</th>
+          <td class="govuk-table__cell">SO63 9AJ</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-9">T Level readiness <strong class="govuk-tag govuk-tag--purple govuk-!-margin-left-2">Planning</strong></h2> 
-      <p class="govuk-body govuk-!-margin-bottom-5">The employer would like to offer placements, but needs more information from a provider.</p>
-      <table class="govuk-table govuk-!-margin-top-6 employer-list-one">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Organisation status</th>
-            <td class="govuk-table__cell">Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada.</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Additional information</th>
-            <td class="govuk-table__cell">Nulla quis lorem ut libero malesuada feugiat. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Offers T Level delivery support</th>
-            <td class="govuk-table__cell">Yes</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-9">T Level readiness</h2>
+    <table class="govuk-table govuk-!-margin-top-6 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Status</th>
+          <td class="govuk-table__cell"><strong
+              class="govuk-tag govuk-tag--purple govuk-!-margin-bottom-2">Planning</strong><br>The employer would like
+            to offer placements, but needs more information from a provider.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Organisation status</th>
+          <td class="govuk-table__cell">Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi,
+            pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at
+            tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
+            malesuada.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Additional information</th>
+          <td class="govuk-table__cell">Nulla quis lorem ut libero malesuada feugiat. Donec sollicitudin molestie
+            malesuada. Curabitur non nulla sit amet nitempus convallis quis ac lectus.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Offers T Level delivery support</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+      </tbody>
+    </table>
 
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9">Contact details</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9">Contact details</h2>
 
-      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-8 employer-list-one">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
-            <td class="govuk-table__cell">Sarah Philips</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Email</th>
-            <td class="govuk-table__cell">sarah.philips@lloyds.com</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Telephone</th>
-            <td class="govuk-table__cell">07525 707601</td>
-          </tr>          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Contact preference</th>
-            <td class="govuk-table__cell">Email</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
+    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-8 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+          <td class="govuk-table__cell">Sarah Philips</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Email</th>
+          <td class="govuk-table__cell">sarah.philips@lloyds.com</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Telephone</th>
+          <td class="govuk-table__cell">07525 707601</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Contact preference</th>
+          <td class="govuk-table__cell">Email</td>
+        </tr>
+      </tbody>
+    </table>
 
   </div>
 
-  <script type="text/javascript">
+</div>
+
+<script type="text/javascript">
   function revealEoiInput(select) {
     if (select.value == 5) {
       document.getElementById('eoi-hidden-input').style.display = "inline-block";
@@ -123,13 +137,12 @@ Employer interest in offering T Levels
     }
   }
 
-  $(function() {
-      $('.eoi-table-switch').click(function() {
-          $('.employer-list-two').addClass("visible-element");
-          $('.employer-list-one').addClass("hidden-element");
-          $('.employer-list-two').removeClass("hidden-element");
-      });
+  $(function () {
+    $('.eoi-table-switch').click(function () {
+      $('.employer-list-two').addClass("visible-element");
+      $('.employer-list-one').addClass("hidden-element");
+      $('.employer-list-two').removeClass("hidden-element");
+    });
   });
-
-  </script>
+</script>
 {% endblock %}

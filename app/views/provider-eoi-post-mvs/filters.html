@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Locations and contacts | Connect with employers interested in T Levels
+Employer interest in offering T Levels
 {% endblock %}
 
 {% block header %}
@@ -35,7 +35,6 @@ Locations and contacts | Connect with employers interested in T Levels
     </li>
   </ol>
 </div>
-
 {% endblock %}
 
 {% block content %}
@@ -43,41 +42,41 @@ Locations and contacts | Connect with employers interested in T Levels
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Locations and contacts
+        Search filters
       </h1>
 
-      <p class="govuk-body govuk-!-margin-top-0">Select a campus to view and edit location and contact details.</p>
+      <p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6">Select a campus from the list below to edit and change their settings.<br>You can add, edit or remove campuses in the <a class="govuk-link" href="campuses.html">locations and contacts</a> page.</p>
 
       <table class="govuk-table govuk-!-margin-top-4">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width:300px;">Campus</th>
-            <th scope="col" class="govuk-table__header">Postcode</th>
-            <th scope="col" class="govuk-table__header">Employer contact</th>
-            <th scope="col" class="govuk-table__header">Student contact</th>
-            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header" style="width:350px;">Campus</th>
+            <th scope="col" class="govuk-table__header">Search radius</th>
+            <th scope="col" class="govuk-table__header">T Levels</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Alesford Campus</th>
-            <td class="govuk-table__cell"><p>SO53 4SY</p></td>
-            <td class="govuk-table__cell">Ana Amari</td>
-            <td class="govuk-table__cell">Lena Oxton</td>
-            <td class="govuk-table__cell"><a href="campus-details" class="govuk-link" style="display:inline-block; margin-left:15px;">Change <span class="sr-only">Alesford Campus</span></a><a href="remove-campus" class="govuk-link" style="display:inline-block; margin-left:15px;">Remove</a></td>
+            <td class="govuk-table__cell">20 miles</td>
+            <td class="govuk-table__cell">All</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="filters-edit.html" class="govuk-link" style="display:inline-block;">Change <span class="sr-only">Alesford Campus</span></a></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Blossom Down Academy</th>
-            <td class="govuk-table__cell"><p>PO13 8HJ</p></td>
-            <td class="govuk-table__cell">Daniel Shaw</td>
-            <td class="govuk-table__cell">Angela Ziegler</td>
-            <td class="govuk-table__cell"><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Change <span class="sr-only">Barley Dean College</span></a><a href="" class="govuk-link" style="display:inline-block; margin-left:15px;">Remove</a></td>
+            <td class="govuk-table__cell">20 miles</td>
+            <td class="govuk-table__cell">All</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="display:inline-block;">Change <span class="sr-only">Barley Dean College</span></a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Warrick Green</th>
+            <td class="govuk-table__cell">20 miles</td>
+            <td class="govuk-table__cell">All</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="" class="govuk-link" style="display:inline-block;">Change <span class="sr-only">Warrick Green</span></a></td>
           </tr>
         </tbody>
       </table>
-      <a href="add-campus" role="button" draggable="false" class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
-        Add campus
-      </a>
 
     </div>
 

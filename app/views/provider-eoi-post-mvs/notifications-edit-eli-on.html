@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p>
+  <p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="campuses">Locations
+      and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters">Search
+      filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="notifications-ur-6">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="employer-list">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="notifications-ur-6">Notifications</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row eoi-form-journey">
+  <div class="govuk-grid-column-full">
+    <div class="tint-banner green"><p>Notifications for elizabeth.ashe@alesfordcsu.ac.uk have been turned on.</p></div>
+
+    <h1 class="govuk-heading-xl">
+      Notifications for<br> elizabeth.ashe@alesfordcsu.ac.uk
+    </h1>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Notifications for elizabeth.ashe@alesfordcsu.ac.uk
+          </h3>
+        </legend>
+        <div id="changed-name-hint" class="govuk-hint">
+          Selecting off will pause your notifications without needing to remove your email.
+        </div>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="turn-notif-on" name="changed-name" type="radio" value="yes" checked>
+            <label class="govuk-label govuk-radios__label" for="changed-name">
+              On
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" class="notifs-off-action" name="changed-name"
+              type="radio">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              Off
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label
+        class="govuk-label govuk-label--m govuk-!-margin-bottom-2" for="event-name">
+        Notifications by campus
+      </label>
+    </h3>
+
+    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width:350px;">Campus</th>
+          <th scope="col" class="govuk-table__header">Radius</th>
+          <th scope="col" class="govuk-table__header">T Levels</th>
+          <th scope="col" class="govuk-table__header">Frequency</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Alesford Campus</th>
+          <td class="govuk-table__cell">5 miles</td>
+          <td class="govuk-table__cell">Selected</td>
+          <td class="govuk-table__cell">Weekly</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href=""
+              class="govuk-link" style="display:inline-block;">Change</a> <a href=""
+              class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Blossom Down Academy</th>
+          <td class="govuk-table__cell">40 miles</td>
+          <td class="govuk-table__cell">All</td>
+          <td class="govuk-table__cell">Fortnightly</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href=""
+              class="govuk-link" style="display:inline-block;">Change</a> <a href=""
+              class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a role="button" href="notifications-edit-campus-add-eli" draggable="false" class="govuk-button eli-add-notif-btn"
+      data-module="govuk-button">
+      Add notification
+    </a>
+
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("turn-notif-on").onclick = function () {
+        location.href = "notifications-edit-eli-on.html";
+    };
+  </script>
+
+
+  {% endblock %}

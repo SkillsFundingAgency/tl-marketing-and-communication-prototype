@@ -6243,6 +6243,13 @@ h3.heading-sora {
   padding: 20px 15px 0px 25px;
 }
 
+.email-warning-box.green-verify.new-notif {
+  width: 800px;
+  border: 4px solid #00703c;
+  background-color: #fbfffc;
+  padding: 20px 15px 0px 25px;
+}
+
 .eoi-form-journey strong.govuk-tag {
   text-transform: uppercase !important;
 }

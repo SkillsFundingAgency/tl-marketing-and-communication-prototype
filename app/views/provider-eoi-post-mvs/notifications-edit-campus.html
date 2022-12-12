@@ -35,69 +35,66 @@ Employer interest in offering T Levels
       <a class="govuk-breadcrumbs__link" href="employer-list">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="campuses">Locations and contacts</a>
+      <a class="govuk-breadcrumbs__link" href="notifications">Notifications</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="notifications-edit">Notification settings</a>
     </li>
   </ol>
 </div>
-
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row eoi-form-journey">
   <div class="govuk-grid-column-full">
-
     <h1 class="govuk-heading-xl">
-      Alesford Campus
+      Notifications for <br>Alesford Campus
     </h1>
 
-    <h2 style="font-size:24px; margin:10px 0px -10px;">Campus details</h2>
 
-    <div class="details-listed-block-2">
-      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Name</th>
-            <td class="govuk-table__cell">Alesford Campus</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Postcode</th>
-            <td class="govuk-table__cell">SO53 4SY</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">T Levels offered</th>
-            <td class="govuk-table__cell">Education and Childcare,<br>Health,<br>Healthcare Science,<br>Management and Administration</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><a class="govuk-link edit-details-button-2">Edit</a></p>
+    <h3 class="govuk-label-wrapper govuk-!-margin-top-7"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-2"
+        for="event-name">
+        Notification frequency
+      </label>
+    </h3>
+    <div class="govuk-form-group" style="display:block;">
+      <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)"
+        style="display:inline-block;">
+        <option value="0">Immediately</option>
+        <option value="1" selected>Daily</option>
+        <option value="2">Weekly</option>
+        <option value="3">Fortnightly</option>
+      </select>
     </div>
 
-    <div class="details-editable-block-2 hidden-element">
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-top-6" for="event-name">
-            Name
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="Alesford Campus">
-      </div>
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-            Postcode
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text" value="SO53 4SY">
+
+    <div class="govuk-form-group">
+      <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-bottom-3 govuk-!-margin-top-8" for="event-name">
+          Receieve notifications for employers within:
+        </label>
+      </h3>
+      <div class="govuk-form-group" style="display:block;">
+        <select class="govuk-select eoi-postcode-selection" id="sort" name="sort" onchange="revealEoiInput(this)"
+          style="display:inline-block;">
+          <option value="0" selected>5 miles</option>
+          <option value="1">10 miles</option>
+          <option value="2">20 miles</option>
+          <option value="3">30 miles</option>
+          <option value="4">40 miles</option>
+          <option value="5">50 miles</option>
+        </select>
       </div>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            <h1 class="govuk-fieldset__heading">
-              T-Levels offered
-            </h1>
+            <h3 class="govuk-fieldset__heading govuk-!-margin-top-3">
+              Receieve notifications for employers interested in <br>the following placement skill areas:
+            </h3>
           </legend>
           <div id="waste-hint" class="govuk-hint">
-            Select all T Levels offered at this campus
+            If nothing is selected, you will receieve notifications for all areas.
           </div>
           <div class="govuk-checkboxes govuk-!-margin-top-4" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -167,7 +164,7 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="education-childcare" name="education-childcare" type="checkbox" value="" checked>
+              <input class="govuk-checkboxes__input" id="education-childcare" name="education-childcare" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="education-childcare">
                 Education and Childcare
               </label>
@@ -191,13 +188,13 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="health" name="health" type="checkbox" value="" checked>
+              <input class="govuk-checkboxes__input" id="health" name="health" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="health">
                 Health
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="healthcare-sci" name="healthcare-sci" type="checkbox" value="" checked>
+              <input class="govuk-checkboxes__input" id="healthcare-sci" name="healthcare-sci" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="healthcare-sci">
                 Healthcare Science
               </label>
@@ -215,7 +212,7 @@ Employer interest in offering T Levels
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="management" name="management" type="checkbox" value="" checked>
+              <input class="govuk-checkboxes__input" id="management" name="management" type="checkbox" value="">
               <label class="govuk-label govuk-checkboxes__label" for="management">
                 Management and Administration
               </label>
@@ -243,138 +240,93 @@ Employer interest in offering T Levels
         </fieldset>
       </div>
 
-      <button class="govuk-button govuk-!-margin-top-4 edit-details-save-2" data-module="govuk-button">
-        Save details
-      </button>
-      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-2"><a class="govuk-link edit-details-save-2">Cancel</a></p>
-    </div>
 
-    <!-- -- -- -- -->
-
-    <h2 style="font-size:24px; margin:40px 0px -10px;">Contact for employers interested in T Levels</h2>
-    <div class="govuk-hint govuk-!-margin-top-2" style="max-width:650px;">
-      This can be an individual or a team at your organisation. These details will be shown on the T Level provider search tool used by prospective employers. 
-    </div>
-
-    <div class="details-listed-block">
-      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
-            <td class="govuk-table__cell">Ana Amari</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Email</th>
-            <td class="govuk-table__cell">ana.amari@alesfordcsu.ac.uk</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Telephone</th>
-            <td class="govuk-table__cell">07783 637821</td>
-          </tr>
-        </tbody>
-      </table>
-      <p><a class="govuk-link edit-details-button">Edit</a></p>
-    </div>
-
-    <div class="details-editable-block hidden-element">
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s govuk-!-margin-top-6" for="event-name">
-            Name
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text"
-          value="Ana Amari">
+      <div class="govuk-!-margin-top-8">
+        <a href="notifications-edit" role="button" draggable="false"
+          class="govuk-button govuk-!-margin-bottom-7 save-confirm" data-module="govuk-button">
+          Save changes
+        </a>
+        <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2"><a
+            class="govuk-link" href="notifications-edit">Cancel</a></p>
       </div>
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-            Email
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text"
-          value="ana.amari@alesfordcsu.ac.uk">
-      </div>
-
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
-            Telephone
-          </label>
-        </h1>
-        <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text"
-          value="07783 637821">
-      </div>
-
-      <button class="govuk-button govuk-!-margin-top-4 edit-details-save" data-module="govuk-button">
-        Save details
-      </button>
-      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-margin-top-4 govuk-!-padding-top-2"><a
-          class="govuk-link edit-details-save">Cancel</a></p>
     </div>
 
-    <!-- -- -- -- -->
+    <script type="text/javascript">
+      function revealEoiInput(select) {
+        if (select.value == 5) {
+          document.getElementById('eoi-hidden-input').style.display = "inline-block";
+          document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+        } else {
+          document.getElementById('eoi-hidden-input').style.display = "none";
+          document.getElementById('eoi-hidden-btn-input').style.display = "none";
+        }
+      }
 
-    <h2 style="font-size:24px; margin:40px 0px -10px;">Contact for students interested in studying T Levels</h2>
-    <div class="govuk-hint govuk-!-margin-top-2" style="max-width:650px;">
-      This can be an individual or a team at your organisation. These details will be shown on the T Level provider search tool used by prospective students.  
-    </div>
+      $(function () {
+        $('.eoi-table-switch').click(function () {
+          $('.employer-list-two').addClass("visible-element");
+          $('.employer-list-one').addClass("hidden-element");
+          $('.employer-list-two').removeClass("hidden-element");
+        });
+      });
 
-    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-2 employer-list-one">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
-          <td class="govuk-table__cell">Lena Oxton</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Email</th>
-          <td class="govuk-table__cell">lena.oxton@alesfordcsu.ac.uk</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Telephone</th>
-          <td class="govuk-table__cell">07792 443928</td>
-        </tr>
-      </tbody>
-    </table>
-    <p><a class="govuk-link" href="">Edit</a></p>
+      $(".notification-freq").hide();
+      $(".notifications-checkbox").click(function() {
+          if($(this).is(":checked")) {
+              $(".notification-freq").show();
+          } else {
+              $(".notification-freq").hide();
+          }
+      });
 
-    <!-- <a href="filters-notifications" role="button" draggable="false" class="govuk-button govuk-!-margin-top-6 govuk-!-margin-bottom-8"  data-module="govuk-button">
-      Save changes
-    </a> -->
+      $(".notif-email-confirm").click(function () {
+        $('.notif-email-input, .notif-email-confirm').addClass("hidden-element");
+        $('.notif-emails-table, .notif-add-email-link').removeClass("hidden-element");
+      });
 
-  </div>
+      $(".verify-resend").click(function () {
+        $('.norm-verify').removeClass("hidden-element");
+      });
 
-</div>
+      $(".verify-resend-alt").click(function () {
+        $('.alt-verify').removeClass("hidden-element");
+      });
 
-<script type="text/javascript">
-  $(function () {
-    $('.edit-details-button').click(function () {
-      $('.details-editable-block').addClass("visible-element");
-      $('.details-editable-block').removeClass("hidden-element");
-      $('.details-listed-block').addClass("hidden-element");
-      $('.details-listed-block').removeClass("visible-element");
-    });
+      $(".email-verify-close").click(function () {
+        $('.norm-verify').addClass("hidden-element");
+      });
 
-    $('.edit-details-save').click(function () {
-      $('.details-listed-block').addClass("visible-element");
-      $('.details-listed-block').removeClass("hidden-element");
-      $('.details-editable-block').addClass("hidden-element");
-      $('.details-editable-block').removeClass("visible-element");
-    });
+      $(".email-verify-close-alt").click(function () {
+        $('.alt-verify').addClass("hidden-element");
+      });
 
-    $('.edit-details-button-2').click(function () {
-      $('.details-editable-block-2').addClass("visible-element");
-      $('.details-editable-block-2').removeClass("hidden-element");
-      $('.details-listed-block-2').addClass("hidden-element");
-      $('.details-listed-block-2').removeClass("visible-element");
-    });
+      $(".notif-add-email-link").click(function () {
+        $('.notif-add-email-link').addClass("hidden-element");
+        $('.notif-email-input-2, .notif-email-confirm-2').removeClass("hidden-element");
+      });
 
-    $('.edit-details-save-2').click(function () {
-      $('.details-listed-block-2').addClass("visible-element");
-      $('.details-listed-block-2').removeClass("hidden-element");
-      $('.details-editable-block-2').addClass("hidden-element");
-      $('.details-editable-block-2').removeClass("visible-element");
-    });
+      $(".notif-email-confirm-2").click(function () {
+        $('.notif-email-input-2, .notif-email-confirm-2, .save-confirm').addClass("hidden-element");
+        $('.notif-emails-two, .notif-add-email-link, .save-confirm-alt').removeClass("hidden-element");
+      });
 
-  });
-  
-</script>
-{% endblock %}
+      $(".remove-email").click(function () {
+        $('.notif-add-email-link').addClass("hidden-element");
+        $('.remove-email-box').removeClass("hidden-element");
+      });
+
+      $(".remove-email-confirm").click(function () {
+        $('.remove-email-box, .save-confirm-alt, .notif-emails-two').addClass("hidden-element");
+        $('.notif-add-email-link, .save-confirm').removeClass("hidden-element");
+      });
+
+      $(".remove-email-cancel").click(function () {
+        $('.notif-add-email-link').removeClass("hidden-element");
+        $('.remove-email-box').addClass("hidden-element");
+      });
+
+
+    </script>
+
+    {% endblock %}

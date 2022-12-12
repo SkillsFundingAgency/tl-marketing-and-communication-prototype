@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>Blossom Down Academy [UKPRN:19282200]</p><p class="govuk-body"><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="campuses">Locations and contacts</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="filters">Search filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="notifications">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="employer-list">Home</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey employer-listing">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Notifications
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6">Manage email addresses that will receive notifications for new employers.</p>
+
+      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width:370px;">Email</th>
+            <th scope="col" class="govuk-table__header">Campus</th>
+            <th scope="col" class="govuk-table__header">Notifications</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">ana.amari@alesfordcsu.ac.uk</th>
+            <td class="govuk-table__cell">Alesford Campus</td>
+            <td class="govuk-table__cell">On</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-edit" class="govuk-link" style="display:inline-block;">Change</a> <a href="notifications-edit" class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">elizabeth.ashe@alesfordcsu.ac.uk</th>
+            <td class="govuk-table__cell"><p>Alesford Campus</p><p>Blossom Down Academy</p></td>
+            <td class="govuk-table__cell">On</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-edit-eli" class="govuk-link" style="display:inline-block;">Change</a> <a href="notifications-remove" class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a role="button" href="notifications-add-new-2" draggable="false" class="govuk-button"  data-module="govuk-button">
+        Add new email
+      </a>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+
+  $(function() {  
+      $('.email-verify-close').click(function() {
+      $('.green-verify').addClass("hidden-element");
+    });
+  });
+
+  </script>
+{% endblock %}
