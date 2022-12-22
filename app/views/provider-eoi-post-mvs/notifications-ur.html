@@ -5,8 +5,8 @@ Employer interest in offering T Levels
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,9 +22,11 @@ Employer interest in offering T Levels
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="account-bar">
-  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span><a href="campuses" class="govuk-link govuk-!-margin-right-1">Havendale College</a> [UKPRN:19282200]</p><p><a class="govuk-link" style="display:inline-block; margin-right:20px;"
-      href="filters">Search filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
-      href="notifications-ur">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span><a href="campuses"
+      class="govuk-link govuk-!-margin-right-1">Havendale College</a> [UKPRN:19282200]</p>
+  <p><a class="govuk-link" style="display:inline-block; margin-right:20px;" href="filters">Search filters</a><a
+      class="govuk-link" style="display:inline-block; margin-right:20px;" href="notifications-ur">Notifications</a><a
+      class="govuk-link" href="start">Sign out</a></p>
 </div>
 
 <div class="govuk-breadcrumbs govuk-!-margin-bottom-0">
@@ -37,60 +39,68 @@ Employer interest in offering T Levels
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row eoi-form-journey employer-listing">
-    <div class="govuk-grid-column-full">
+<div class="govuk-grid-row eoi-form-journey employer-listing">
+  <div class="govuk-grid-column-full">
 
-      <div class="email-warning-box alt-verify green-verify new-notif govuk-!-margin-bottom-7">
-        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">We have sent a verification email to ana.amari@alesfordcsu.ac.uk.</p>
-        <p class="govuk-body">You will need to click the link in the email in order to start receiving notifications.</p>
-        <p class="govuk-body">
-          <a class="govuk-link email-verify-close govuk-!-margin-top-0">Close</a>
-        </p>
-      </div>
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Notifications
-      </h1>
-
-      <p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6">Manage email addresses that will receive notifications for new employers.</p>
-
-      <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-6">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width:370px;">Email</th>
-            <th scope="col" class="govuk-table__header">Campus</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">ana.amari@alesfordcsu.ac.uk<br><a href="notifications-ur-2" class="govuk-link" style="font-weight:normal;">Resend verification</a></th>
-            <td class="govuk-table__cell">Alesford Campus</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-edit" class="govuk-link" style="display:inline-block;">Change</a> <a href="notifications-edit" class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
-          </tr>
-          <tr class="govuk-table__row hidden-element">
-            <th scope="row" class="govuk-table__header">elizabeth.ashe@alesfordcsu.ac.uk</th>
-            <td class="govuk-table__cell"><p>Alesford Campus</p><p>Warrick Green</p></td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-edit" class="govuk-link" style="display:inline-block;">Change</a> <a href="notifications-edit" class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <a role="button" href="notifications-add-email-campus-alt" draggable="false" class="govuk-button"  data-module="govuk-button">
-        Add new email
-      </a>
-
+    <div class="email-warning-box alt-verify green-verify new-notif govuk-!-margin-bottom-7">
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">We have sent a verification email to
+        ana.amari@havendalecollege.ac.uk.</p>
+      <p class="govuk-body">You will need to click the link in the email in order to start receiving notifications.</p>
+      <p class="govuk-body">
+        <a class="govuk-link email-verify-close govuk-!-margin-top-0">Close</a>
+      </p>
     </div>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Notifications
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-top-0 govuk-!-margin-bottom-6">Manage email addresses that will receive
+      notifications for new employers.</p>
+
+    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Email</th>
+          <th scope="col" class="govuk-table__header">Campus</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">ana.amari@havendalecollege.ac.uk <strong class="govuk-tag govuk-tag--orange govuk-!-margin-left-2">Pending</strong></th>
+          <td class="govuk-table__cell">Alesford Campus</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-ur-2" class="govuk-link"
+              style="font-weight:normal;">Resend verification</a> <a href="notifications-edit"
+              class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+        </tr>
+        <tr class="govuk-table__row hidden-element">
+          <th scope="row" class="govuk-table__header">elizabeth.ashe@havendalecollege.ac.uk</th>
+          <td class="govuk-table__cell">
+            <p>Alesford Campus</p>
+            <p>Warrick Green</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="notifications-edit" class="govuk-link"
+              style="display:inline-block;">Change</a> <a href="notifications-edit"
+              class="govuk-link govuk-!-margin-left-3" style="display:inline-block;">Remove</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a role="button" href="notifications-add-email-campus-alt" draggable="false" class="govuk-button"
+      data-module="govuk-button">
+      Add new email
+    </a>
 
   </div>
 
-  <script type="text/javascript">
+</div>
 
-  $(function() {  
-      $('.email-verify-close').click(function() {
+<script type="text/javascript">
+  $(function () {
+    $('.email-verify-close').click(function () {
       $('.green-verify').addClass("hidden-element");
     });
   });
-
-  </script>
+</script>
 {% endblock %}
