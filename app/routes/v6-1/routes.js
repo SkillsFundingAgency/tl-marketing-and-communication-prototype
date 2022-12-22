@@ -707,15 +707,42 @@ module.exports = function (router) {
     router.post('/' + version + '/providers/restore-learner', function (req, res) {
       const restoredLearner = req.session.data['restore-learner']
       req.session.data.withdrawnLearnerStatus = restoredLearner
-      // Success banner needs to be added
-      res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+      if (restoredLearner === "restored-message") {
+        res.redirect('/' + version + '/providers/restore-learner-ao')
+      } else {
+        res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+      }
+    })
+
+    router.post('/' + version + '/providers/restore-learner-ao', function (req, res) {
+      const aoNotified = req.session.data['ao-notified']
+      req.session.data.naoStatus = aoNotified
+      if (aoNotified === "no") {
+        res.redirect('/' + version + '/providers/restore-learner-ao-message')
+      } else {
+        res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+      }
     })
 
     router.post('/' + version + '/providers/withdrawn-learner', function (req, res) {
       const withdrawnLearner = req.session.data['withdrawn-learner']
       req.session.data.withdrawnLearnerStatus = withdrawnLearner
-      // Success banner needs to be added
-      res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+
+      if (withdrawnLearner === "withdrawn-message") {
+        res.redirect('/' + version + '/providers/withdraw-learner-ao')
+      } else {
+        res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+      }
+    })
+
+    router.post('/' + version + '/providers/withdraw-learner-ao', function (req, res) {
+      const aoNotified = req.session.data['ao-notified']
+      req.session.data.aoStatus = aoNotified
+      if (aoNotified === "no") {
+        res.redirect('/' + version + '/providers/withdraw-learner-ao-message')
+      } else {
+        res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
+      }
     })
 
 // This must close line 1 after all other routes

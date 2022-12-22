@@ -9,24 +9,24 @@ Learner's T Level record
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="restore-learner" method="post" data-validate='restore-learner-validation'>
+      <form action="restore-learner-ao" method="post" data-validate='ao-notified-validation'>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Do you want to reinstate {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}  on their T Level?
+                Have you told {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} that you want to reinstate {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}?
               </h1>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="restore-learner-yes" name="restore-learner" type="radio" value="restored-message">
-                <label class="govuk-label govuk-radios__label" for="restore-learner-yes">
+                <input class="govuk-radios__input" id="ao-notified-yes" name="ao-notified" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ao-notified-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="restore-learner-no" name="restore-learner" type="radio" value="withdrawn">
-                <label class="govuk-label govuk-radios__label" for="restore-learner-no">
+                <input class="govuk-radios__input" id="ao-notified-no" name="ao-notified" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ao-notified-no">
                   No
                 </label>
               </div>
@@ -39,15 +39,15 @@ Learner's T Level record
       </form>
     </div>
   </div>
-  
-  <script type="application/json" id="restore-learner-validation">
+
+  <script type="application/json" id="ao-notified-validation">
     {
 
-        "restore-learner": {
+        "ao-notified": {
 
             "presence": {
 
-                "message": "^Select yes if you want to reinstate {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}"
+                "message": "^Select yes if you have contacted {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}"
 
             }
 
@@ -55,6 +55,5 @@ Learner's T Level record
 
     }
   </script>
-
+  
 {% endblock %}
-

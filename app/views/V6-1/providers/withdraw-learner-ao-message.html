@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Learner's T Level record
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">You should contact {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}</h1>
+      <p class="govuk-body">
+        It’s important that you let {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} know that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from their T Level. Once {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} knows they will be able to update their records.
+      </p>
+      <p class="govuk-body">
+        If any records for {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} are still out of date at the end of June, they may not receive their statement of achievement.
+      </p>
+
+    <a class="govuk-button" href="update-t-level-record?uln=1234567221">Continue</a>
+    </div>
+  </div>
+
+
+  
+{% endblock %}

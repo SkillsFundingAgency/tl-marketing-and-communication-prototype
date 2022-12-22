@@ -5,9 +5,14 @@
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
+    {% if data['withdrawnLearnerStatus'] == 'withdrawn-message' and data['ao-notified'] === 'no' %}
     <p class="govuk-body">
-      You've told us that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from this T Level. You should also contact           {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}
-      to let them know.
+      You've told us that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from this T Level. You should also contact {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} to let them know.    </p>
+    {% else %}
+    <p class="govuk-body">
+      You've told us that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} has withdrawn from this T Level. We will update their status to Withdrawn once {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} confirms the change.
     </p>
+     {% endif %}
+
   </div>
 </div>

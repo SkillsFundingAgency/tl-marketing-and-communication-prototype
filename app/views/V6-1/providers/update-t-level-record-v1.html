@@ -28,10 +28,10 @@ Learner's T Level record
 
   <!-- withdrawn learners messages -->
   <div class="govuk-grid-column-three-quarters">
-    {% if data['withdrawnLearnerStatus'] == 'restored-message' %}
+    {% if data['withdrawnLearnerStatus'] == 'restored' %}
     {% include "../includes/provider-notification-messages/restore-learner.html" %}
 
-    {% elif data['withdrawnLearnerStatus'] == 'withdrawn-message' %}
+    {% elif data['withdrawnLearnerStatus'] == 'withdrawn' %}
     {% include "../includes/provider-notification-messages/withdraw-learner.html" %}
 
     {% endif %}
@@ -145,19 +145,21 @@ Learner's T Level record
           <p> {{data['restoredLearner']}}</p>
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['withdrawnLearnerStatus'] == 'restored-message' or data['withdrawnLearnerStatus'] == 'restored' %}
+          {% if data['withdrawnLearnerStatus'] == 'restored' %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--blue">Active</strong>
             </td>
           </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="withdraw-learner" class="govuk-link">Tell us this learner has withdrawn</a></p>
 
-          {% elif data['withdrawnLearnerStatus'] == 'withdrawn-message' or data['withdrawnLearnerStatus'] == 'withdrawn' %}
+          {% elif data['withdrawnLearnerStatus'] == 'withdrawn' %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--blue">Pending withdrawal</strong>
             </td>
           </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="restore-learner" class="govuk-link">Tell us this learner is still taking this T Level</a></p>
 
           {% else %}
           <tr class="govuk-table__row">
@@ -165,24 +167,9 @@ Learner's T Level record
               <strong class="govuk-tag govuk-tag--blue">Active</strong>
             </td>
           </tr>
+          <p class="govuk-body-s govuk-!-padding-top-2"><a href="withdraw-learner" class="govuk-link">Tell us this learner has withdrawn</a></p>
           {% endif %}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          {% if data['withdrawnLearnerStatus'] == 'restored-message' or data['withdrawnLearnerStatus'] == 'restored' %}
-          <a class="govuk-link" href="withdraw-learner">
-            Change<span class="govuk-visually-hidden"> t level status</span>
-          </a>
-          {% elif data['withdrawnLearnerStatus'] == 'withdrawn-message' or data['withdrawnLearnerStatus'] == 'withdrawn' %}
-          <a class="govuk-link" href="restore-learner">
-            Change<span class="govuk-visually-hidden"> t level status</span>
-          </a>
-          {% else %}
-          <a class="govuk-link" href="withdraw-learner">
-            Change<span class="govuk-visually-hidden"> t level status</span>
-          </a>
-          {% endif %}
-        </dd>
-
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
