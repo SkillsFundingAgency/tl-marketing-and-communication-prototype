@@ -65,6 +65,17 @@ Manage T Level records - Manage T Level results - GOV.UK
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item govuk-checkboxes--small">
               <input class="govuk-checkboxes__input"
+                     id="all-incomplete"
+                     name="status"
+                     type="checkbox"
+                     data-filterVal="incomplete"
+                     value="All incomplete">
+              <label class="govuk-label govuk-checkboxes__label" for="all-incomplete">
+                All incomplete records
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item govuk-checkboxes--small">
+              <input class="govuk-checkboxes__input"
                      id="english"
                      name="status"
                      type="checkbox"
@@ -94,17 +105,6 @@ Manage T Level records - Manage T Level results - GOV.UK
                      value="Industry placement">
               <label class="govuk-label govuk-checkboxes__label" for="industry-placement">
                 Industry placement
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item govuk-checkboxes--small">
-              <input class="govuk-checkboxes__input"
-                     id="all-incomplete"
-                     name="status"
-                     type="checkbox"
-                     data-filterVal="incomplete"
-                     value="All incomplete">
-              <label class="govuk-label govuk-checkboxes__label" for="all-incomplete">
-                All incomplete records
               </label>
             </div>
           </div>
@@ -151,6 +151,37 @@ Manage T Level records - Manage T Level results - GOV.UK
           </div>
         </fieldset>
       </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              T level status
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="tlevelstatus-active" name="tlevel-status" type="checkbox" value="active">
+              <label class="govuk-label govuk-checkboxes__label" for="tlevelstatus-active">
+                Active
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="tlevelstatus-pending-withdrawal" name="tlevel-status" type="checkbox" value="pending-withdrawal">
+              <label class="govuk-label govuk-checkboxes__label" for="tlevelstatus-pending-withdrawal">
+                Pending withdrawal
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="tlevelstatus-withdrawn" name="tlevel-status" type="checkbox" value="withdrawn">
+              <label class="govuk-label govuk-checkboxes__label" for="tlevelstatus-withdrawn">
+                Withdrawn
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
     </div>
 
   </div>
