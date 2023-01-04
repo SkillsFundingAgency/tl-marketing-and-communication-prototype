@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+2023 T Levels timeline - GOVUK
+{% endblock %}
+<!--
+{% block beforeContent %}
+<nav>
+    <div class="govuk-breadcrumbs">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="\">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">2022 T Levels timeline</li>
+        </ol>
+    </div>
+</nav>
+{% endblock %}
+-->
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Manage T Level results timeline</h1>
+
+        <ol class="timeline">
+            <li class="timeline-event">
+              <h2 class="timeline-event-title">Deadline for entering industry placement results</h2>
+              <span class="timeline-event-meta govuk-!-margin-bottom-5">31 July 2023</span>
+              <div class="timeline-event-content">
+                <p class="govuk-body">We need this information to calculate a learner’s overall T Level grade for results day.</p>
+                <p class="govuk-body">Find out more about the <a href="/guidance#industry-placement">industry placement information you need to provide</a>.</p>
+              </div>
+            </li>
+            <li class="timeline-event">
+                <h2 class="timeline-event-title">Overall T Level results available to providers</h2>
+                <span class="timeline-event-meta govuk-!-margin-bottom-5">16 August 2023, 12:01am</span>
+                <div class="timeline-event-content">
+                  <p class="govuk-body">We publish the results, ready for results day.</p>
+                  <p class="govuk-body">All results are embargoed until 17 August, 8:00am.</p>
+                </div>
+            </li>
+            <li class="timeline-event">
+                <h2 class="timeline-event-title">Deadline for entering any missing or updated information</h2>
+                <span class="timeline-event-meta govuk-!-margin-bottom-5" style="color: red;">31 October 2023 (tbc)</span>
+                <div class="timeline-event-content">
+                  <p class="govuk-body">We need this information to be able to issue T Level certificates to learners.</p>
+                </div>
+            </li>
+          </ol>
+    
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Request a replacement document - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<nav>
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./tlevels-dashboard.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./update-t-level-record.html">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}</a>
+      </li>
+    </ol>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Request replacement certificate</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      Check details before sending your request
+    </h1>
+
+    <div class="govuk-inset-text">
+      If you have changed any components in the learner's record, we will automatically send you an updated certificate or statement of achievement within the next two months.
+    </div>
+    <p class="govuk-body">The replacement will be a copy of the learner's previous certificate. This means it may not reflect any recent changes in their learner record.</p>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="" method="post" novalidate data-validate='certificateStatus-validation'>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__key">
+            Document requested
+          </dd>
+          <dd class="govuk-summary-list__value">
+            Certificate
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__key">
+            Learner name 
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__key">
+            ULN
+          </dd>
+          <dd class="govuk-summary-list__value">
+            1231231231
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__key">
+            Organisation's address
+          </dd>
+          <dd class="govuk-summary-list__value">
+            Exams office<br/>
+            Barnsley Academy<br/>
+            Main Block<br/>
+            Church Street<br/>
+            Barnsley<br/>
+            S70 2AZ<br/>
+          </dd>
+        </div>
+      </dl>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            My organsation's address is wrong
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">If your organisation's address is wrong you will need to change it in your T Levels account. <a href="../../index.html">You can do this from the service's home page</a>.</p>
+        </div>
+      </details>
+
+     <!-- <p class="govuk-body">By sending this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-!-display-block" name="certificateStatus" data-module="govuk-button" data-prevent-double-click="true" {{ checked("certificateStatus", "TRUE") }}>
+          Send request
+        </button>
+        <a class="govuk-link" href="">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
