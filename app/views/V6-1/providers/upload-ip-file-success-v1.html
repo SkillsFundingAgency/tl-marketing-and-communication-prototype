@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Registrations upload successful - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="tlevels-dashboard.html">Home</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Upload complete
+            </h1>
+          </div>
+        
+        <p class="govuk-body">You have successfully uploaded information for 5 industry placements. This includes:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>1 new industry placement status</li>
+            <li>4 updated industry placement statuses</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">We will use the information you have uploaded to update the relevant learner records. <a href="search-learner-records" class="govuk-link">View your learner records</a>.</p>
+
+
+    </div>
+</div>
+
+{% endblock %}
