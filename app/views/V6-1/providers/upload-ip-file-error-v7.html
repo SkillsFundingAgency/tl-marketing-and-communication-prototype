@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Registrations upload error - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="tlevels-dashboard.html">Home</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl ">There is a problem</h1>
+
+        <p class="govuk-body">Your report contains 8 formatting errors:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>academic year must be in the format YYYY/YY</li>
+            <li>file header is not valid</li>
+            <li>6 UKPRN's are not an 8 digit number</li>
+          </ul>
+        <p class="govuk-body">Before you can send your report to us you should:</p>
+        <ul class="govuk-list govuk-list--number">
+          <li><a href="#" class="govuk-link">download the error report</a></li>
+          <li>correct all errors</li>
+          <li><a href="#" class="govuk-link">upload and check the report again</a></li>
+        </ul>
+        <p class="govuk-body">If you leave this page you will not be able to come back later to access the error report.</p>
+       
+
+    </div>
+</div>
+
+{% endblock %}

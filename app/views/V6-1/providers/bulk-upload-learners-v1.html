@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Upload records for multiple learners - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="tlevels-dashboard.html">Home</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="upload-ip-file-success-v1" method="post" novalidate data-validate='form-validation'>
+        <h1 class="govuk-heading-xl">Upload industry placement status</h1>
+        <p class="govuk-body">Upload a CSV file to add or change the industry placement status for one or more learners.</p>
+        <p class="govuk-body">Your file must include the specific column names provided in the <a href="../t-levels-data-and-format-rules" class="govuk-link">learner data format and rules guidance template</a>.</p>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="ip-file-upload">Upload a file</label>
+                <input class="govuk-file-upload" id="ip-file-upload" name="ip-file-upload" type="file" accept=".csv" >
+            </div>
+            <button class="govuk-button" id="upload-file" role="button">Upload</button>
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="form-validation">
+{
+    "ip-file-upload": {
+
+        "presence": {
+        
+        "message": "^Select a CSV file"
+        
+        }
+
+    }
+}
+</script>
+
+{% endblock %}

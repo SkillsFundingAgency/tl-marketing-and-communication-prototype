@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Registrations upload error - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="tlevels-dashboard.html">Home</a>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl ">There is a problem</h1>
+
+        <p class="govuk-body">We've identified the following problems in the file you've uploaded:</p>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Missing items
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Incorrect items
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Items to review
+            </dt>
+            <dd class="govuk-summary-list__value">
+              3
+            </dd>
+          </div>
+        </dl>
+        
+        <p class="govuk-body">You need to:</p>
+        <ul class="govuk-list govuk-list--number">
+          <li><a href="#" class="govuk-link">Download the full error report (XLSX, 42KB)</a></li>
+          <li>Review and update your records</li>
+          <li>Upload an updated file</li>
+        </ul>
+        
+        <p class="govuk-body">If you leave this page you will not be able to come back later to access the error report.</p>
+
+        <div class="govuk-button-group">
+          <a class="govuk-button govuk-!-margin-top-0" role="button" href="bulk-upload-learners.html">Upload an updated file</a>
+        </div>
+
+
+       
+    </div>
+</div>
+
+{% endblock %}
