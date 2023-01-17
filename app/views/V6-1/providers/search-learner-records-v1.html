@@ -20,28 +20,32 @@ Search learner records - GOV.UK
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"> 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-5">
-      Search for a learner
-    </h1>
+  <div class="govuk-grid-column-two-thirds">
+
+
     <div class="govuk-form-group">
-      <form action="update-t-level-record" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="searchuln">
-            Enter the unique learner number (ULN)
-          </label>
-          <span class="govuk-hint govuk-!-margin-bottom-2">For example, 1231231231</span>
-          <input id="searchuln" class="govuk-!-margin-top-2 govuk-input govuk-input--width-10 govuk-!-display-block" maxlength="10" type="text" data-val="true" data-val-regex="Enter a valid 10-digit ULN" data-val-regex-pattern="^\d{10}$" data-val-required="Enter a ULN with 10 digits" name="uln" value="">
-        </div>
-    </div>
-    <button id="searchButton" type="submit" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Search</button>
-    </form>
-    <h2 class="govuk-heading-m">Or view registered learners by start year</h2>
-      <hp class="govuk-body">View learners that are active or pending withdrawal for the following years:</p>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">
+        Search learner records
+      </h1>
+      <h2 class="govuk-heading-m">List all learners by start year</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a class="govuk-link" href="./manage-t-level-records?learnerStartYear=2021 to 2022&page=1">2021 to 2022</a></li>
         <li><a class="govuk-link" href="./manage-t-level-records?learnerStartYear=2020 to 2021&page=1">2020 to 2021</a></li>
       </ul>
+
+      <form action="update-t-level-record" method="post">
+        <h2 class="govuk-heading-m">Or search for the learner you want to manage</h2>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="searchuln">
+            Enter the unique learner number (ULN)
+          </label>
+          <span class="govuk-hint govuk-!-margin-bottom-2">ULN must be 10 digits long</span>
+          <input id="searchuln" class="govuk-!-margin-top-2 govuk-input govuk-input--width-10 govuk-!-display-block" maxlength="10" type="text" data-val="true" data-val-regex="Enter a valid 10-digit ULN" data-val-regex-pattern="^\d{10}$" data-val-required="Enter a ULN with 10 digits" name="uln" value="">
+        </div>
+    </div>
+    <button id="searchButton" type="submit" class="govuk-button" data-module="govuk-button" data-prevent-double-click="true">Search</button>
+    <input name="_csrfToken" type="hidden" value="CfDJ8G7DxE6fjwBKpEUhsWT16chxW_qrgVfkO1RCA5slT3OIeMrsft0CrR-g1HcmpBO6xEPgXwAQ0e_FRnSqAU_Qu-NVCECBZznLG8uYLIqN3c5Tgy5g8EDS7p3nJ0AuMOpqPYpd3Cr2WbuY3qO40QsOa3VOm7lM3JLrP0ws_FgaqvkNOY0pFC0B0nspdLZCEh3Hcw">
+    </form>
 
   </div>
 </div>
