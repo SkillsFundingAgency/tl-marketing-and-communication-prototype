@@ -4,6 +4,23 @@
 Learner's T Level record
 {% endblock %}
 
+{% block beforeContent %}
+<nav>
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./tlevels-dashboard.html">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./manage-t-level-records.html">Registered learners</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="./update-t-level-record">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}</a>
+      </li>
+    </ol>
+  </div>
+</nav>
+{% endblock %}
 
 {% block content %}
 
@@ -47,7 +64,7 @@ Learner's T Level record
 
             "presence": {
 
-                "message": "^Select yes if you have contacted {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}"
+                "message": "^Select yes if you have contacted the awarding organisation"
 
             }
 

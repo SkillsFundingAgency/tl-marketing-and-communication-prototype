@@ -15,7 +15,7 @@ Learner's T Level record
         <a class="govuk-breadcrumbs__link" href="./manage-t-level-records.html">Registered learners</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="./update-t-level-record">Steve Arnott</a>
+        <a class="govuk-breadcrumbs__link" href="./update-t-level-record">{{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }}</a>
       </li>
     </ol>
   </div>
@@ -30,7 +30,8 @@ Learner's T Level record
       <h1 class="govuk-heading-l">You should contact {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }}</h1>
       <p class="govuk-body">It’s important that you let {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} know that {{ data['tLevelsStudentDataV3'][data['uln']]['learnerName'] }} would like to continue their T Level. You may need to register them with {{ data['tLevelsStudentDataV3'][data['uln']]['learnerAwardingOrg'] }} again.</p>
       <p class="govuk-body">Having accurate records will mean you will not receive unnecessary notifications from us.</p>
-      </ul>      <a class="govuk-button" href="update-t-level-record?uln=1234567221">Continue</a>
+      </ul>      
+      <a class="govuk-button" href="update-t-level-record?uln=1234567221">Continue</a>
     </div>
   </div>
 
