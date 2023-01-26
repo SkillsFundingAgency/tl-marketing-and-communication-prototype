@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>eve@firecorp.com</p>
+  <p><a
+      class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row eoi-form-journey employer-listing">
+  <div class="govuk-grid-column-full">
+
+    <div class="email-warning-box alt-verify green-verify new-notif govuk-!-margin-bottom-7">
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Your expression of interest has been added.</p>
+      <p class="govuk-body">The information you have provided will be shared with T Level schools and colleges near you for the next 12 weeks. If a school or college would like to speak to you about hosting an industry placement or another T Level opportunity, they’ll get in touch using the contact details you have provided.</p>
+      <p class="govuk-body">
+        <a class="govuk-link email-verify-close govuk-!-margin-top-0">Close</a>
+      </p>
+    </div>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Current expressions of interest
+    </h1>
+
+    <p class="govuk-body govuk-!-margin-top-0" style="max-width:650px;">This dashboard allows you to manage your expressions of interest. You can add postcodes to existing items, duplicate items and add or remove listings.</p>
+
+    <table class="govuk-table govuk-!-margin-top-6 employer-list-one">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width:300px;">Reference</th>
+          <th scope="col" class="govuk-table__header">Placement areas</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Locations</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="width:180px;">Details expire
+          </th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><strong style="float:right;"
+              class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong> Digital placements</th>
+          <td class="govuk-table__cell">
+            <p>Business and Administration</p>
+            <p>Digital and IT</p>
+            <p>Health and Science</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">29 Jan 2023</td>
+          <td class="govuk-table__cell"><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">View/Edit <span class="sr-only">NHS Trusts</span></a><br><a href="extend-eoi" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Extend <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Duplicate <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Delete <span class="sr-only">NHS Trusts</span></a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><!--<strong style="float:right;"
+              class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong>--> Business placements</th>
+          <td class="govuk-table__cell">
+            <p>Business and Administration</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">18 Feb 2023</td>
+          <td class="govuk-table__cell"><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">View/Edit <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Duplicate <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Delete <span class="sr-only">NHS Trusts</span></a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><!--<strong style="float:right;"
+              class="govuk-tag govuk-tag--red govuk-!-margin-right-2">EXPIRING</strong>--> Healthcare w/ clinic support</th>
+          <td class="govuk-table__cell">
+            <p>Health and Science</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14 Apr 2023</td>
+          <td class="govuk-table__cell"><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">View/Edit <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Duplicate <span class="sr-only">NHS Trusts</span></a><br><a href="" class="govuk-link"
+              style="display:inline-block; margin-left:15px;">Delete <span class="sr-only">NHS Trusts</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a role="button" href="start" draggable="false" class="govuk-button"
+    data-module="govuk-button">
+    Create new EOI
+  </a>
+
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+
+  $(function () {
+    $('.email-verify-close').click(function () {
+      $('.email-warning-box').addClass("hidden-element");
+    });
+  });
+
+
+  email-verify-close
+</script>
+{% endblock %}

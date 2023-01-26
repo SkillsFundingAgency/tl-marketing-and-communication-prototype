@@ -1,0 +1,262 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your details have been saved | T Levels and industry placement support for employersx
+{% endblock %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>eve@firecorp.com</p>
+  <p><a
+      class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <a class="govuk-back-link govuk-!-margin-bottom-6" href="javascript:window.history.back()">Back</a>
+
+      <!-- <span class="govuk-caption-l govuk-!-margin-bottom-6">Step 3 of 3</span> -->
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Edit details for:<br>
+        Healthcare w/ clinic support
+      </h1>
+
+      <h2 class="govuk-heading-m">About you</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Oliver Barneby
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-one-edit2">
+              Change
+              <span class="govuk-visually-hidden"> full name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            oliver.barneby@firecorp.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-one-edit2">
+              Change
+              <span class="govuk-visually-hidden"> email address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Telephone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07525 707601
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-one-edit2">
+              Change
+              <span class="govuk-visually-hidden"> telephone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact preference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Telephone
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-one-edit2">
+              Change
+              <span class="govuk-visually-hidden"> contact preference</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">About your organisation</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Firecorp
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> about your organisation</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Website
+          </dt>
+          <dd class="govuk-summary-list__value">
+            https://firecorp.com
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> website</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expression of interest ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Healthcare w/ clinic support
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> your EOI ID</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Primary industry
+          </dt>
+          <dd class="govuk-summary-list__value">
+            IT &amp; Communications
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> primary industry</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Which statement best describes your organisation?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            We are keen to offer placements, but need more information
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> the description of where your organisation is with placements</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Industry placement skill areas
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Health and Science
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> industry placement skill areas</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Locations
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Southampton office – SO53 4SY,
+            Portsmouth office – PO22 9AJ
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> postcode</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Additional information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="form-two">
+              Change
+              <span class="govuk-visually-hidden"> additional information</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- <h2 class="govuk-heading-m">Now send your details</h2>
+
+      <p>By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label govuk-!-padding-top-0" for="waste">
+                <p class="govuk-!-font-size-19">By selecting this box you confirm that you consent to the Department for Education processing and storing your data for the purposes described in the <a href="https://www.gov.uk/government/publications/privacy-notice-for-key-stage-5-and-adult-education" class="govuk-link" style="border:none;">privacy notice</a>.</p>
+                <p class="govuk-!-font-size-19 govuk-!-margin-bottom-0">In doing so, we will comply with the General Data Protection Regulation (GDPR) and ensure that any personal data (as defined by GDPR) is protected, used only for the purposes for which it was obtained and disposed of accordingly.</p>
+              </label>
+            </div>
+          </div>
+
+          <div class="govuk-checkboxes govuk-!-margin-top-6" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label govuk-!-padding-top-0" for="waste">
+                <p class="govuk-!-font-size-19 govuk-!-margin-bottom-2">Select this box if you’re happy for the Department for Education’s T Levels team to use your contact information to ask you if you would like to take part in research or surveys for our services. </p>
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div> -->
+      <form action="confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <a role="button" href="eoi-list-ur5" draggable="false" class="govuk-button govuk-!-margin-bottom-8 postcode-add-btn-one" data-module="govuk-button">
+          Save changes
+        </a>
+
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

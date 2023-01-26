@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register an interest in T Levels and industry placements
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>eve@firecorp.com</p>
+  <p><a
+      class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<a class="govuk-back-link govuk-!-margin-bottom-6" href="javascript:window.history.back()">Back</a>
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Do you wish to extend EOI:<br>'Digital placements'?
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">Doing so will extend the duration of your expression of interest by 12 weeks from today. You will still be able to edit and remove its details at any point from your dashboard.</p>
+
+      <a href="eoi-list-ur3" role="button" draggable="false" class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Confirm extension
+      </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2 govuk-!-font-size-18"><a class="govuk-link" href="eoi-list">Cancel and return to listing</a></p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -6269,6 +6269,16 @@ h3.heading-sora {
   font-size: 10px;
 }
 
+.postcode-tags {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 3px 7px 4px;
+  background-color: #eaeaea;
+  display: inline-block;
+  margin: 0px 5px 5px 0px;
+  font-size: 14px;
+}
+
 .subjects.digi-prod > div:first-child {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;

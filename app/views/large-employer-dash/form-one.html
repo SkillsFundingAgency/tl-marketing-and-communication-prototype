@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register an interest | T Levels and industry placement support for employers
+{% endblock %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span>eve@firecorp.com</p>
+  <p><a
+      class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds">
+      <a class="govuk-back-link govuk-!-margin-bottom-6" href="javascript:window.history.back()">Back</a>
+      <span class="govuk-caption-l govuk-!-margin-bottom-4">Step 1 of 3</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">About you</h1>
+      <p class="govuk-!-margin-bottom-9">Enter your contact details here so that T Level schools and colleges can get in touch with you to discuss your interest in industry placements.</p>
+      
+      <form class="form" action="form-two" method="post">
+
+      <!-- -- -- -->
+
+        {{ govukInput({
+          label: {
+            text: "Full name",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "full-name",
+          classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+          name: "full-name",
+          spellcheck: false,
+          value: data['full-name']
+        }) }}
+
+      <!-- -- -- -->
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        id: "email-address",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4",
+        name: "email-address",
+        autocomplete: "email",
+        spellcheck: false,
+        value: data['email-address']
+      }) }}
+
+      <!-- -- -- -->
+
+      {{ govukInput({
+        label: {
+          text: "Telephone number (optional)",
+          classes: "govuk-label--m"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-20 govuk-!-margin-bottom-4 gov-conditional",
+        value: data['telephone-number']
+      }) }}
+
+      <!-- -- -- -->
+
+      {{ govukRadios({
+        
+        idPrefix: "contact-preference",
+        name: "contact-preference",
+        fieldset: {
+          legend: {
+            text: "How would you prefer to be contacted?",
+            classes: "govuk-fieldset__legend--m gov-conditional-set"
+          }
+        },
+        classes: "govuk-!-margin-bottom-4 gov-conditional-set",
+        items: [
+          {
+            value: "Email",
+            text: "Email",
+            checked: checked("contact-preference", "Email")
+          },
+          {
+            value: "Telephone",
+            text: "Telephone",
+            checked: checked("contact-preference", "Telephone")
+          },
+          {
+            value: "I don’t have a preference",
+            text: "I don’t have a preference",
+            checked: checked("contact-preference", "I don’t have a preference")
+          }
+        ]
+      }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  $('.gov-conditional').keyup(function(){
+    if($(this).val()){
+      $('.gov-conditional-set').addClass("test-class");
+    } else {
+      $('.gov-conditional-set').removeClass("test-class");
+    }
+  });
+</script>
+
+{% endblock %}

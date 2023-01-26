@@ -1,0 +1,250 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employer interest in offering T Levels
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span><a href="campuses" class="govuk-link govuk-!-margin-right-1">Havendale College</a> [UKPRN:19282200]</p><p><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="filters">Search
+      filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="notifications">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<a href="eoi-list-ur3" class="govuk-back-link govuk-!-margin-bottom-6">Back</a>
+<div class="govuk-grid-row eoi-form-journey">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      Business placements
+    </h1>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9">Organisation details</h2>
+
+    <table class="govuk-table govuk-!-margin-top-4 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Organisation name</th>
+          <td class="govuk-table__cell">Firecorp</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Website</th>
+          <td class="govuk-table__cell"><a href="">https://www.fire.corp</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Primary industry</th>
+          <td class="govuk-table__cell">Engineering and Manufacturing</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Industry placement skill areas</th>
+          <td class="govuk-table__cell">Business and Administration</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-form-group" style="display:flex; flex-direction:column; justify-content: left;">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Locations</h2>
+      <div id="event-name-hint" class="govuk-hint">
+        This should be the location(s) where the industry placements will take place.
+      </div>
+      <table class="govuk-table postcode-add-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Aleborne office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">AB52 6TU</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Dunthorpe office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">DN20 0EB</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Ipswich office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">IP26 5HG</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Kellsway office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">KY8 1DW</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Lapsley office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">LA1 4LY</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Leicester office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">LE18 3SN</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">London office (North)</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">N2 8JW</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">London office (South)</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">SE1 1WE</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Thyquorn office</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">TQ12 6PD</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- <div class="govuk-form-group" style="display:flex; flex-direction:column; justify-content: left;">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-6">Placement locations</h2>
+      <div id="event-name-hint" class="govuk-hint">
+        This should be the location(s) where the industry placements will take place.
+      </div>
+      <table class="govuk-table postcode-add-table ">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">AB52 6TU</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DN20 0EB</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">IP26 5HG</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">KY8 1DW</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">LA1 4LY</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">LE18 3SN</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">N2 8JW</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">SE1 1WE</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">TQ12 6PD</th>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <input class="govuk-input--width-10 govuk-input" id="address-postcode" name="address-postcode" type="text" aria-describedby="event-name-hint" autocomplete="postal-code">
+    </div>
+
+    <a role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-2 postcode-add-btn-one" style="margin-top:-10px;"  data-module="govuk-button">
+      Add
+    </a>
+
+    <a role="button" draggable="false" class="govuk-button govuk-!-margin-bottom-8 postcode-add-btn-two hidden-element" style="margin-top:-10px;"  data-module="govuk-button">
+      Add
+    </a> -->
+   
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-7">T Level readiness</h2>
+    <table class="govuk-table govuk-!-margin-top-6 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Status</th>
+          <td class="govuk-table__cell"><strong
+              class="govuk-tag govuk-tag--purple govuk-!-margin-bottom-2">Planning</strong><br>The employer would like
+            to offer placements, but needs more information from a provider.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Organisation status</th>
+          <td class="govuk-table__cell">We are looking into the possibility of working with the T Level skills at our UK head office in Southampton. As we’re based in Hampshire we would like to work with local T Level providers. I’m hoping that they are able to assist with helping us to get started?</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Additional information</th>
+          <td class="govuk-table__cell">We design, manufacture, sell and maintain our own measuring equipment, writing our own software to work with the machines.</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Offers T Level delivery support</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-9 exampleClass">Contact details</h2>
+
+    <table class="govuk-table govuk-!-margin-top-4 govuk-!-margin-bottom-8 employer-list-one">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:200px;">Name</th>
+          <td class="govuk-table__cell">Sarah Philips</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Email</th>
+          <td class="govuk-table__cell">sarah.philips@fire.corp</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Telephone</th>
+          <td class="govuk-table__cell">07525 707601</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Contact preference</th>
+          <td class="govuk-table__cell">Email</td>
+        </tr>
+      </tbody>
+    </table>
+    <a role="button" href="form-one-edit" draggable="false" class="govuk-button" data-module="govuk-button">
+      Edit details
+    </a>
+
+  </div>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+  function revealEoiInput(select) {
+    if (select.value == 5) {
+      document.getElementById('eoi-hidden-input').style.display = "inline-block";
+      document.getElementById('eoi-hidden-btn-input').style.display = "inline-block";
+    } else {
+      document.getElementById('eoi-hidden-input').style.display = "none";
+      document.getElementById('eoi-hidden-btn-input').style.display = "none";
+    }
+  }
+
+  $(function () {
+    $('.eoi-table-switch').click(function () {
+      $('.employer-list-two').addClass("visible-element");
+      $('.employer-list-one').addClass("hidden-element");
+      $('.employer-list-two').removeClass("hidden-element");
+    });
+  });
+</script>
+{% endblock %}

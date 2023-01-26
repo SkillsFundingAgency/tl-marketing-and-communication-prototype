@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register an interest in T Levels and industry placements
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner phase-feedback">
+  <p class="govuk-phase-banner__content govuk-body">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Give feedback
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service - <a class="govuk-link" href="#">help us to improve it</a>
+    </span>
+  </p>
+</div>
+<div class="account-bar">
+  <p class="govuk-body"><span class="sr-only">Currently signed in as: </span><a href="campuses" class="govuk-link govuk-!-margin-right-1">Havendale College</a> [UKPRN:19282200]</p><p><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="filters">Search filters</a><a class="govuk-link" style="display:inline-block; margin-right:20px;"
+      href="notifications">Notifications</a><a class="govuk-link" href="start">Sign out</a></p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row eoi-form-journey">
+    <div class="govuk-grid-column-two-thirds">
+      <a class="govuk-back-link govuk-!-margin-bottom-6" href="javascript:window.history.back()">Back</a>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+        Do you want to remove <br>'Business placements'?
+      </h1>
+
+      <p class="govuk-body">This will permanently delete this listing from the service. Providers will no longer be able to view information related to it.</p>
+        
+      <a href="eoi-list-ur6" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-!-margin-top-0 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Confirm
+      </a>
+      <p style="display:inline-block;" class="govuk-!-margin-left-4 govuk-!-padding-top-2 govuk-!-font-size-18"><a class="govuk-link" href="eoi-list-ur5">Cancel and return to list</a></p>
+
+    </div>
+  </div>
+{% endblock %}

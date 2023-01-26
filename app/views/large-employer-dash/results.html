@@ -1,0 +1,341 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Find a T Level school or college
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <div class="eoi-form-journey">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">
+          Find a T Level school or college
+        </h1>
+        <p class="govuk-!-margin-bottom-1 govuk-body">Search for schools and colleges delivering T Levels near you.</p>
+        <p class="govuk-body">You can contact them directly to find the right industry placement student for your business.</p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Looking for providers in more than one location?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You can download a list of all T Level providers if you need to see schools and colleges in multiple locations.</p>
+            <p class="govuk-body"><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/articles/4408396438162#">All T Level providers September 2022</a><br>CSV, 213KB</p>
+            <p class="govuk-body"><strong>Note:</strong> This file contains publicly available data provided by the schools and colleges listed.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-7">
+
+      <!-- Sidebar -->
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="gov-grey-box govuk-!-margin-bottom-6">
+          <h3>Enter a postcode or town</h3>
+          <div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="width-5">
+                For example, S1 2JF, S1 or Sheffield
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+            </div>
+            <button class="govuk-button btn-blue search-initiate" data-module="govuk-button">Search</button>
+          </div>
+        </div>
+
+        <div class="gov-grey-box">
+          <h3>Filter by course</h3>
+          <div>
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                     <h3>Agriculture, Environment and Animal Care</h3>
+                     (0 of 2 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                      <h3>Business and Administration</h3>
+                      (0 of 1 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                      <h3>Catering</h3>
+                      (0 of 1 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Construction and the Built Environment</h3>
+                      (0 of 3 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Creative and Design</h3>
+                      (0 of 2 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Digital and IT</h3>
+                      (0 of 3 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Education and Childcare</h3>
+                      (0 of 1 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Engineering and Manufacturing</h3>
+                      (0 of 3 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Hair and Beauty</h3>
+                      (0 of 1 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Health and Science</h3>
+                      (0 of 3 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                      <h3>Legal, Finance and Accounting</h3>
+                      (0 of 3 selected)
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p style="font-size:16px; margin-top:10px;" class='govuk-body'>Donec rutrum congue leo eget malesuada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+      </div>
+
+      <!-- Main Section -->
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="show-initial govuk-body">Enter a postcode or town name to see the nearest T Level schools and colleges.</p>
+
+        <div class="search-result show-first">
+          <span class="tag-grey">8 miles</span>
+          <h2>Isle of Wight College</h2>
+          <p>Newport | PO30 5TA</p>
+          <div class="available-list">
+            <p class="txt-bold govuk-!-margin-bottom-3">T Levels available now:</p>
+            <p class="govuk-!-margin-bottom-0">Business and Administration</p>
+            <ul class="">
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403450056594-Business-and-Administration">Management and Administration</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Digital and IT</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-production">Digital Production, Design and Development</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-support">Digital Support Services</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Education and Childcare</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442851474-Education-and-Childcare">Education and Childcare</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Engineering and Manufacturing</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852114-Engineering-and-Manufacturing#engineering">Engineering, Manufacturing, Processing and Control</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Health and Science</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#health">Health</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#science">Science</a></li>
+            </ul>
+          </div>
+          <p class="txt-bold govuk-!-margin-bottom-2">Get in touch:</p>
+          <p class="govuk-!-margin-bottom-0">Telephone: <span class="txt-bold">01983 526631</span> | <a class="govuk-link" href="">Visit website</a> | Email: <a class="govuk-link" href="mailto:debbie.lavin@iwcollege.ac.uk">debbie.lavin@iwcollege.ac.uk</a></p>
+        </div>
+
+        <div class="search-result show-first">
+          <span class="tag-grey">12 miles</span>
+          <h2>Ferndown Upper School</h2>
+          <p>Ferndown | BH22 9EY</p>
+          <div class="available-list">
+            <p class="txt-bold govuk-!-margin-bottom-3">T Levels available now:</p>
+            <p class="govuk-!-margin-bottom-0">Digital and IT</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-production">Digital Production, Design and Development</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-support">Digital Support Services</a></li>
+            </ul>
+          </div>
+          <p class="txt-bold govuk-!-margin-bottom-2">Get in touch:</p>
+          <p class="govuk-!-margin-bottom-0">Telephone: <span class="txt-bold">01202 871243</span> | <a class="govuk-link" href="">Visit website</a> | Email: <a class="govuk-link" href="mailto:office@fernup.dorset.sch.uk">office@fernup.dorset.sch.uk</a></p>
+        </div>
+
+        <div class="eoi-prompt show-first">
+          <p><a class="govuk-link more-results-link">See more results</a> or <a href="start" class="govuk-link">register your interest with schools and colleges</a>. </p>
+        </div>
+
+
+        <div class="search-result show-later">
+          <span class="tag-grey">17 miles</span>
+          <h2>Fareham College</h2>
+          <p>Hampshire | PO14 1NH</p>
+          <div class="available-list">
+            <p class="txt-bold govuk-!-margin-bottom-3">T Levels available now:</p>
+            <p class="govuk-!-margin-bottom-0">Construction and the Built Environment</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442849554-Construction-and-the-Built-Environment#building-services-engineering">Building Services Engineering for Construction</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442849554-Construction-and-the-Built-Environment#onsite-construction">Onsite Construction</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Digital and IT</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-business-services">Digital Business Services</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-production">Digital Production, Design and Development</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442850706-Digital-and-IT#digital-support">Digital Support Services</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Education and Childcare</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442851474-Education-and-Childcare">Education and Childcare</a></li>
+            </ul>
+            <p class="govuk-!-margin-bottom-0">Health and Science</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#health">Health</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#healthcare-science">Healthcare Science</a></li>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#science">Science</a></li>
+            </ul>
+          </div>
+          <p class="txt-bold govuk-!-margin-bottom-2">Get in touch:</p>
+          <p class="govuk-!-margin-bottom-0">Telephone: <span class="txt-bold">01329 815200</span> | <a class="govuk-link" href="">Visit website</a></p>
+        </div>
+
+        <div class="search-result show-later">
+          <span class="tag-grey">21 miles</span>
+          <h2>City of Portsmouth College</h2>
+          <p>Portsmouth | PO6 2SA</p>
+          <div class="available-list">
+            <p class="txt-bold govuk-!-margin-bottom-3">T Levels available now:</p>
+            <p class="govuk-!-margin-bottom-0">Health and Science</p>
+            <ul>
+              <li><a class="govuk-link" href="https://employers.tlevels.gov.uk/hc/en-gb/sections/4403442852626-Health-and-Science#health">Health</a></li>
+            </ul>
+          </div>
+          <p class="txt-bold govuk-!-margin-bottom-2">Get in touch:</p>
+          <p class="govuk-!-margin-bottom-0">Telephone: <span class="txt-bold">023 9238 3131</span> | <a class="govuk-link" href="">Visit website</a> | Email: <a href="mailto:info@highbury.ac.uk" class="govuk-link">info@highbury.ac.uk</a></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  $(function() {
+      $('.more-results-link').click(function() {
+          $('.show-later').addClass("shown");
+          $('.eoi-prompt').addClass("eoi-seen");
+      });
+  });
+
+  $(function() {
+      $('.search-initiate').click(function() {
+          $('.show-first').addClass("shown");
+          $('.show-initial').addClass("hide-this");
+      });
+  });
+
+  </script>
+
+{% endblock %}
