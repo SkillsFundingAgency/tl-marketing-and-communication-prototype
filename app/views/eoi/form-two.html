@@ -11,6 +11,7 @@ Organisation details | T Levels and industry placement support for employers
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -160,103 +161,6 @@ Organisation details | T Levels and industry placement support for employers
 
       <!-- -- -- -->
 
-      {% set orgreadyHTML %}
-      {{ govukTextarea({
-        id: "org-status-ready",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "org-status-ready",
-        label: {
-          text: "Enter details (optional) ",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        value: data['org-status-ready']
-      }) }}
-      {% endset -%}
-
-      {% set orgplanningHTML %}
-      {{ govukTextarea({
-        id: "org-status-planning",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "org-status-planning",
-        label: {
-          text: "Enter details (optional)",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        value: data['org-status-planning']
-      }) }}
-      {% endset -%}
-
-      {% set orgmoreinfoHTML %}
-      {{ govukTextarea({
-        id: "org-status-moreinfo",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "org-status-moreinfo",
-        label: {
-          text: "Enter details (optional)",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        value: data['org-status-planning']
-      }) }}
-      {% endset -%}
-
-      {% set orgnotreadyHTML %}
-      {{ govukTextarea({
-        id: "org-status-notready",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "org-status-notready",
-        label: {
-          text: "Enter details (optional)",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        value: data['org-status-planning']
-      }) }}
-      {% endset -%}
-
-      {{ govukRadios({
-        
-        idPrefix: "organisation-placement-status",
-        name: "organisation-placement-status",
-        fieldset: {
-          legend: {
-            text: "Which statement best describes your organisation?",
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        classes: "govuk-!-margin-bottom-4",
-        items: [
-          {
-            value: "We are ready to offer placements",
-            text: "We are ready to offer placements",
-            checked: checked("organisation-placement-status", "We are ready to offer placements"),
-            conditional: {
-              html: orgreadyHTML
-            }
-          },
-          {
-            value: "We are keen to offer placements, but need more information",
-            text: "We are keen to offer placements, but need more information",
-            checked: checked("organisation-placement-status", "We are keen to offer placements, but need more information"),
-            conditional: {
-              html: orgplanningHTML
-            }
-          },
-          {
-            value: "We would like more information on T Levels and industry placements",
-            text: "We would like more information on T Levels and industry placements",
-            checked: checked("organisation-placement-status", "We would like more information on T Levels and industry placements"),
-            conditional: {
-              html: orgmoreinfoHTML
-            }
-          }
-        ]
-      }) }}
-
-      <!-- -- -- -->
-
       {{ govukCheckboxes({
         
         idPrefix: "skill-area",
@@ -334,71 +238,68 @@ Organisation details | T Levels and industry placement support for employers
 
       <!-- -- -- -->
 
-      {% set tlevelsaidHTML %}
-      {{ govukTextarea({
-        id: "tlevels-aid",
-        classes: "govuk-input--width-30 govuk-!-margin-bottom-2",
-        name: "tlevels-aid",
-        label: {
-          text: "Enter details (optional) ",
-          classes: "govuk-label--s",
-          isPageHeading: false
-        },
-        value: data['tlevels-aid']
-      }) }}
-      {% endset -%}
+
+      <div class="govuk-form-group" style="display:flex; flex-direction:column; justify-content: left;">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+            Manage locations
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-5">
+          The location of your placements. You may add multiple locations.
+        </div>
 
 
-      {{ govukRadios({
-        
-        idPrefix: "emp-tlevel-aid",
-        name: "emp-tlevel-aid",
-        fieldset: {
-          legend: {
-            text: "Are you interested in helping schools and colleges deliver T Levels outside of placements?",
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, career talks and interview preparation with students"
-        },
-        classes: "govuk-!-margin-bottom-4",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: checked("emp-tlevel-aid", "Yes"),
-            conditional: {
-              html: tlevelsaidHTML
-            }
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: checked("emp-tlevel-aid", "No")
-          }
-        ]
-      }) }}
-
-      <!-- -- -- -->
+        <div class="location-block-wrap govuk-!-margin-bottom-5"
+          style="padding:20px 0px 20px 40px; border-left:5px solid #eaeaea;">
 
 
-      <!-- -- -- -->
+          <table class="govuk-table postcode-add-table govuk-!-margin-bottom-9 hidden-element">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Southampton office</th>
+                <td class="govuk-table__cell">SO53 4SY</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link">Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row postcode-add-table-row hidden-element">
+                <th scope="row" class="govuk-table__header">Portsmouth office</th>
+                <td class="govuk-table__cell">PO22 9AJ</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                    class="govuk-link postcode-table-remove">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
 
-      {{ govukInput({
-        label: {
-          text: "Enter the postcode of your organisation's location",
-          classes: "govuk-label--m"
-        },
-        hint: {
-          text: "This should be the location where any industry placements might take place."
-        },
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
-        id: "address-postcode",
-        name: "address-postcode",
-        autocomplete: "postal-code",
-        value: data['address-postcode']
-      }) }}
+          <div class="govuk-form-group le-loc-name" style="margin-right:30px; float:left;">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+                Location name
+              </label>
+            </h2>
+            <input class="govuk-input--width-20 govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+
+          <div class="govuk-form-group le-loc-postcode">
+            <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+                Postcode
+              </label>
+            </h2>
+            <input class="govuk-input--width-10 govuk-input" id="address-postcode" name="address-postcode" type="text"
+              aria-describedby="event-name-hint" autocomplete="postal-code">
+          </div>
+
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-one"
+            data-module="govuk-button">
+            Add
+          </a>
+
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-two hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+
+        </div>
+      </div>
 
       <!-- -- -- -->
 
@@ -419,5 +320,20 @@ Organisation details | T Levels and industry placement support for employers
 
     </div>
   </div>
+
+  <script type="text/javascript">
+    $(".postcode-add-btn-one").click(function () {
+      $('.postcode-add-table, .postcode-add-btn-two').removeClass("hidden-element");
+      $('.postcode-add-btn-one').addClass("hidden-element");
+    });
+  
+    $(".postcode-add-btn-two").click(function () {
+      $('.postcode-add-table-row').removeClass("hidden-element");
+    });
+  
+    $(".postcode-table-remove").click(function () {
+      $('.postcode-add-table-row').addClass("hidden-element");
+    });
+  </script>
 
 {% endblock %}
