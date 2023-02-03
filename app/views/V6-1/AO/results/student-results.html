@@ -27,45 +27,40 @@
 </div>
 
 <!-- MAIN ROW -->
-<div class="govuk-grid-row">
+<section class="homepage-section homepage-section--services-and-info">
 
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group chevron-card" name="hub-choice-1">
-            <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                <a class="govuk-link--no-visited-state" href="upload-results-file">
-                    Upload multiple results
-                </a>
-            </h2>
-            <p class="govuk-body govuk-!-margin-bottom-1">Add or change results for more than one learner</p>
-            <p class="govuk-body">Download a template with results data formats and rules guidance</p>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-6">In this section</h2>
+                <ul class="single-column-services-and-info__list">  
+                    <li class="chevron-card">
+                        <div class="chevron-card__wrapper">
+                        <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                            <a class="govuk-link chevron-card__link" href="upload-results-file">Upload results</a>
+                        </h3>
+                        <p class="govuk-body chevron-card__description">Add or change results for learners using a CSV file.</p>
+                        </div>
+                    </li>        
+                    <li class="chevron-card">
+                        <div class="chevron-card__wrapper">
+                        <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                            <a class="govuk-link chevron-card__link" href="assessment-entries-learner-search">Manage results</a>
+                        </h3>
+                        <p class="govuk-body chevron-card__description">Add, view or change results for individual learners.</p>
+                        </div>
+                    </li>      
+                    <li class="chevron-card">
+                        <div class="chevron-card__wrapper">
+                        <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                            <a class="govuk-link chevron-card__link" href="download-data/current/results-generating-download">Download results data</a>
+                        </h3>
+                        <p class="govuk-body chevron-card__description">Download results data in a CSV file.</p>
+                        </div>
+                    </li>   
+            </ul>
         </div>
     </div>
-
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group chevron-card" name="hub-choice-1">
-            <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                <a class="govuk-link--no-visited-state" href="search-learner">
-                    Manage a result
-                </a>
-            </h2>
-            <p class="govuk-body govuk-!-margin-bottom-1">View a learner's results</p>
-            <p class="govuk-body govuk-!-margin-bottom-1">Add a result for one learner</p>
-            <p class="govuk-body">Change a result for one learner</p>
-        </div>
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group chevron-card" name="hub-choice-2">
-            <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                <a class="govuk-link--no-visited-state" href="download-data/current/results-generating-download">
-                    Download results data
-                </a>
-            </h2>
-            <p class="govuk-body">Download your data as a CSV file</p>
-        </div>
-    </div>
-
-  </div>
+    </section>
 
 
 {% endblock %}

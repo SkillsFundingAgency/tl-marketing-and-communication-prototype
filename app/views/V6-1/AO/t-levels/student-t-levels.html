@@ -26,39 +26,40 @@ T Levels - Manage T Level results - GOV.UK
 </div>
 
 <!-- MAIN ROW -->
-<div class="govuk-grid-row">
+<section class="homepage-section homepage-section--services-and-info">
 
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-form-group chevron-card" name="hub-choice-1">
-      <h2 class="govuk-heading-m govuk-!-padding-top-3">
-        <a class="govuk-link--no-visited-state" href="tlevel-select-non-reviewed.html">
-          Review new T Levels
-        </a>
-      </h2>
-      <p class="govuk-body">Confirm the T levels you deliver are correct</p>
-    </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h2 class="gem-c-heading govuk-heading-m govuk-!-margin-bottom-6">In this section</h2>
+              <ul class="single-column-services-and-info__list">  
+                  <li class="chevron-card">
+                      <div class="chevron-card__wrapper">
+                      <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                          <a class="govuk-link chevron-card__link" href="tlevel-select-non-reviewed.html">New T Levels</a>
+                      </h3>
+                      <p class="govuk-body chevron-card__description">Review the details of the T Levels we're adding to your account.</p>
+                      </div>
+                  </li>        
+                  <li class="chevron-card">
+                      <div class="chevron-card__wrapper">
+                      <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                          <a class="govuk-link chevron-card__link" href="confirmed-t-levels.html">T Levels you already offer</a>
+                      </h3>
+                      <p class="govuk-body chevron-card__description">View details of the T Levels already in your account.</p>
+                      </div>
+                  </li>      
+                  <li class="chevron-card">
+                      <div class="chevron-card__wrapper">
+                      <h3 class="gem-c-heading govuk-heading-s govuk-!-margin-bottom-2">
+                          <a class="govuk-link chevron-card__link" href="queried-t-levels.html">T Level queries</a>
+                      </h3>
+                      <p class="govuk-body chevron-card__description">View the T Levels you've asked us to update.</p>
+                      </div>
+                  </li>   
+          </ul>
+      </div>
   </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-form-group chevron-card" name="hub-choice-1">
-      <h2 class="govuk-heading-m govuk-!-padding-top-3">
-        <a class="govuk-link--no-visited-state" href="confirmed-t-levels.html">Confirmed T Levels</a>
-      </h2>
-      <p class="govuk-body">View the T Levels you have told us are correct<p/>
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="govuk-form-group chevron-card" name="hub-choice-1">
-      <h2 class="govuk-heading-m govuk-!-padding-top-3">
-        <a class="govuk-link--no-visited-state" href="queried-t-levels.html">
-          Queried T Levels
-        </a>
-      </h2>
-        <p class="govuk-body">View the T Levels you have asked us to change</p>
-    </div>
-  </div>
-</div>
+  </section>
 
 
 {% endblock %}
