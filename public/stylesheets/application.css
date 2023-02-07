@@ -9064,6 +9064,12 @@ h3.heading-sora {
   font-size: 14px;
 }
 
+.postcode-max-prompt {
+  background-color: #f5f5f5;
+  padding: 15px 15px 20px 20px;
+  border: 1px solid #d3d3d3;
+}
+
 .subjects.digi-prod > div:first-child {
   background: url("https://www.tlevels.gov.uk/files/images/subjects/digital-production-design-development.jpg") no-repeat center;
   background-size: cover;

@@ -241,11 +241,11 @@ Organisation details | T Levels and industry placement support for employers
 
       <div class="govuk-form-group" style="display:flex; flex-direction:column; justify-content: left;">
         <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-            Manage locations
+            Enter the postcode of your organisation’s location
           </label>
         </h1>
         <div id="event-name-hint" class="govuk-hint govuk-!-margin-bottom-5">
-          The location of your placements. You may add multiple locations.
+          This should be the location where any industry placements might take place. You can add up to 6. 
         </div>
 
 
@@ -253,7 +253,7 @@ Organisation details | T Levels and industry placement support for employers
           style="padding:20px 0px 20px 40px; border-left:5px solid #eaeaea;">
 
 
-          <table class="govuk-table postcode-add-table govuk-!-margin-bottom-9 hidden-element">
+          <table class="govuk-table postcode-add-table govuk-!-margin-bottom-8 hidden-element">
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Southampton office</th>
@@ -266,6 +266,30 @@ Organisation details | T Levels and industry placement support for employers
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a
                     class="govuk-link postcode-table-remove">Remove</a></td>
               </tr>
+              <tr class="govuk-table__row postcode-add-table-row-two hidden-element">
+                <th scope="row" class="govuk-table__header">London office</th>
+                <td class="govuk-table__cell">SW19 7QR</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                    class="govuk-link postcode-table-remove">Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row postcode-add-table-row-three hidden-element">
+                <th scope="row" class="govuk-table__header">Hapley office</th>
+                <td class="govuk-table__cell">HP2 5BX</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                    class="govuk-link postcode-table-remove">Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row postcode-add-table-row-four hidden-element">
+                <th scope="row" class="govuk-table__header">Bredbury office</th>
+                <td class="govuk-table__cell">SK6 2EG</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                    class="govuk-link postcode-table-remove">Remove</a></td>
+              </tr>
+              <tr class="govuk-table__row postcode-add-table-row-five hidden-element">
+                <th scope="row" class="govuk-table__header">Milnrow office</th>
+                <td class="govuk-table__cell">OL16 4JB</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                    class="govuk-link postcode-table-remove-six">Remove</a></td>
+              </tr>
             </tbody>
           </table>
 
@@ -277,7 +301,7 @@ Organisation details | T Levels and industry placement support for employers
             <input class="govuk-input--width-20 govuk-input" id="event-name" name="event-name" type="text">
           </div>
 
-          <div class="govuk-form-group le-loc-postcode">
+          <div class="govuk-form-group le-loc-postcode govuk-!-margin-bottom-0">
             <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
                 Postcode
               </label>
@@ -291,12 +315,40 @@ Organisation details | T Levels and industry placement support for employers
             data-module="govuk-button">
             Add
           </a>
-
           <a role="button" draggable="false"
             class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-two hidden-element"
             data-module="govuk-button">
             Add
           </a>
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-three hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-four hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-five hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-six hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+          <a role="button" draggable="false"
+            class="govuk-button govuk-!-margin-top-0 govuk-!-margin-bottom-0 postcode-add-btn-seven hidden-element"
+            data-module="govuk-button">
+            Add
+          </a>
+
+          <div class="postcode-max-prompt hidden-element">
+            <p class="govuk-body govuk-!-margin-bottom-0">You have reached the maximum number of locations. If you are interested in offering placements at more than 6 locations, please <a href="" class="govuk-link">contact us</a>.</p>
+          </div>
 
         </div>
       </div>
@@ -328,8 +380,39 @@ Organisation details | T Levels and industry placement support for employers
     });
   
     $(".postcode-add-btn-two").click(function () {
-      $('.postcode-add-table-row').removeClass("hidden-element");
+      $('.postcode-add-table-row, .postcode-add-btn-three').removeClass("hidden-element");
+      $('.postcode-add-btn-two').addClass("hidden-element");
     });
+
+    $(".postcode-add-btn-three").click(function () {
+      $('.postcode-add-table-row-two, .postcode-add-btn-four').removeClass("hidden-element");
+      $('.postcode-add-btn-three').addClass("hidden-element");
+    });
+
+    $(".postcode-add-btn-four").click(function () {
+      $('.postcode-add-table-row-three, .postcode-add-btn-five').removeClass("hidden-element");
+      $('.postcode-add-btn-four').addClass("hidden-element");
+    });
+
+    $(".postcode-add-btn-five").click(function () {
+      $('.postcode-add-table-row-four, .postcode-add-btn-six').removeClass("hidden-element");
+      $('.postcode-add-btn-five').addClass("hidden-element");
+    });
+
+    $(".postcode-add-btn-six").click(function () {
+      $('.postcode-add-table-row-five, .postcode-max-prompt').removeClass("hidden-element");
+      $('.postcode-add-btn-six, .le-loc-name, .le-loc-postcode').addClass("hidden-element");
+    });
+
+    
+
+    $(".postcode-table-remove-six").click(function () {
+      $('.postcode-add-table-row-five, .postcode-max-prompt').addClass("hidden-element");
+      $('.postcode-add-btn-six, .le-loc-name, .le-loc-postcode').removeClass("hidden-element");
+    });
+
+
+    
   
     $(".postcode-table-remove").click(function () {
       $('.postcode-add-table-row').addClass("hidden-element");
