@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  T Level Confirmation page
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">T Level details confirmed</h1>
+        <div class="govuk-panel__body">
+          T level in {{ data['tLevelsReviewTLevels'][data.tLevel]['tlevelTitle'] }}
+        </div>
+      </div>
+      
+      <p class="govuk-body ">You can still query this T Level’s details at a later date.</p>
+
+      <h2 class="govuk-heading-m">What happens next?</h2>
+      <p class="govuk-body ">You can now:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>View your <a class="govuk-link" href="confirmed-t-levels.html">confirmed T Levels</a></li>
+        <li><a class="govuk-link" href="/V1-0/AO/registrations/student-registrations.html">Register</a> your learners</li>
+        <li><a class="govuk-link" href="">Add T Levels</a> to your providers</li>
+      </ul>
+
+      <div class="govuk-button-group govuk-!-margin-top-6">
+        <a class="govuk-button" role="button" href="/V1-0/AO/t-levels/student-t-levels">Back to T Levels</a>
+        <a class="govuk-button govuk-button--secondary" role="button" href="/V1-0/AO/tlevels-dashboard.html">Back home</a>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

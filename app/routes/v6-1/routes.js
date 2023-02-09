@@ -460,6 +460,150 @@ module.exports = function (router) {
     }
   })
 
+    //Add new registration
+  
+  //Add registrations - uln routes
+  router.post('/' + version + '/AO/registrations/add/add-registration-uln-routes', function (req, res) {
+  
+    let uln = req.session.data['uln']
+    if (uln === '1234567890' ||  uln === '9876543210') {
+  
+      req.session.data['uln'] = uln
+      res.redirect('/' + version + '/AO/registrations/add/change-uln-already-registered')
+  
+    } else{
+      res.redirect('/' + version + '/AO/registrations/add/add-registration-q2-name')
+    }
+  
+  })
+  
+  
+  
+  //Add registration - specialism routes
+  router.post('/' + version + '/AO/registrations/add/add-registration-specialism-routes', function (req, res) {
+  
+    let addSpecialism = req.session.data['specialism']
+    if (addSpecialism === 'yes') {
+  
+      res.redirect('/' + version + '/AO/registrations/add/add-registration-q6b-specialism')
+  
+    } else{
+      res.redirect('/' + version + '/AO/registrations/add/add-registration-q7-year')
+    }
+  
+  })
+  
+  //Add registration - change uln
+  
+  router.post('/' + version + '/AO/registrations/add/add-change-uln', function (req, res) {
+  
+    let uln = req.session.data['change-uln']
+    if (uln === '1234567890') {
+      req.session.data['uln'] = uln
+      res.redirect('/' + version + '/AO/registrations/add/change-uln-already-registered')
+  
+    } else{
+      req.session.data['uln-changed'] = 'yes'
+      res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+    }
+  
+  })
+  
+  //Add registration - change name
+  router.post('/' + version + '/AO/registrations/add/add-change-name', function (req, res) {
+  
+    req.session.data['name-changed'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+  
+  })
+  
+  //Add registration - change dob
+  router.post('/' + version + '/AO/registrations/add/add-change-dob', function (req, res) {
+    let dobMonth = req.session.data['dob-month-change']
+    if (dobMonth === "1"){
+      req.session.data['dob-month-changed'] = 'January'
+    
+    }else if (dobMonth === "2"){
+      req.session.data['dob-month-changed'] = 'Februrary'
+  
+    }else if (dobMonth === "3"){
+    req.session.data['dob-month-changed'] = 'March'
+  
+    }else if (dobMonth === "4"){
+    req.session.data['dob-month-changed'] = 'April'
+  
+    }else if (dobMonth === "5"){
+      req.session.data['dob-month-changed'] = 'May'
+  
+    }else if (dobMonth === "6"){
+      req.session.data['dob-month-changed'] = 'June'
+  
+    }else if (dobMonth === "7"){
+      req.session.data['dob-month-changed'] = 'July'
+  
+    }else if (dobMonth === "8"){
+      req.session.data['dob-month-changed'] = 'August'
+  
+    }else if (dobMonth === "9"){
+      req.session.data['dob-month-changed'] = 'September'
+  
+    }else if (dobMonth === "10"){
+      req.session.data['dob-month-changed'] = 'October'
+  
+    }else if (dobMonth === "11"){
+      req.session.data['dob-month-changed'] = 'November'
+    
+   } else {
+    req.session.data['dob-month-changed'] = 'December'
+  
+   }
+  
+    req.session.data['dob-changed'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+  
+  })
+  
+  //Add registration - change provider
+  router.post('/' + version + '/AO/registrations/add/add-change-provider', function (req, res) {
+  
+    req.session.data['provider-changed'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+  
+  })
+  
+  //Add registration - change core
+  
+  router.post('/' + version + '/AO/registrations/add/add-change-core', function (req, res) {
+  
+    req.session.data['core-changed'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+  
+  })
+  
+  //Add registration - change specialism
+  
+  router.post('/' + version + '/AO/registrations/add/add-change-registration-specialism-routes', function (req, res) {
+  
+    let specialismAdd = req.session.data['specialism']
+  
+    if(specialismAdd === "yes"){
+      res.redirect('/' + version + '/AO/registrations/add/change-registration-q6b-specialism')
+    }else{
+      req.session.data['specialism'] = "no"
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+    }
+  })
+  
+  //Add registration - change specialism choice
+  
+  router.post('/' + version + '/AO/registrations/add/add-change-specialism-choice', function (req, res) {
+    req.session.data['specialism'] = "yes"
+    req.session.data['add-specialism-changed'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/add/add-registration-check-submit')
+  
+  })
+
+
   // Update/remove registered specialism - manage registrations
 
   router.post('/' + version + '/AO/registrations/manage/update-specialism-answer', function (req, res) {
@@ -744,6 +888,195 @@ module.exports = function (router) {
         res.redirect('/' + version + '/providers/update-t-level-record?uln=1234567221')
       }
     })
+
+// rebase of AO 
+
+  //Review T Level details
+  
+  router.post('/' + version + '/AO/t-levels/verify-tlevel-details-routes', function (req, res) {
+  
+    let correctDetails = req.session.data['verify-details']
+  
+  
+    if (correctDetails === 'yes') {
+      
+      res.redirect('/' + version + '/AO/t-levels/review-t-levels-confirmation')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/t-levels/query-t-level')
+    }
+  })
+
+  router.post('/' + version + '/AO/providers/centre-tlevel-remove', function (req, res) {
+  
+    let removeTlevel = req.session.data['remove-tlevel']
+  
+    if (removeTlevel === 'Yes') {
+      
+      res.redirect('/' + version + '/AO/providers/confirmation-tlevel-removed')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/providers/provider-details-existing')
+    }
+  })
+
+  //Registrations
+  
+  //Manage registrations
+  //Status change 
+  router.post('/' + version + '/AO/registrations/manage/registrations-status-change', function (req, res) {
+  
+    let statusChange = req.session.data['status']
+  
+  
+    if (statusChange === 'withdraw') {
+      
+      res.redirect('/' + version + '/AO/registrations/manage/withdraw-registration')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/registrations/manage/delete-registration')
+    }
+  })
+  
+  //Withdraw learner registration
+  router.post('/' + version + '/AO/registrations/manage/confirm-withdraw-answer', function (req, res) {
+  
+    let statusChange = req.session.data['withdraw-answer']
+  
+  
+    if (statusChange === 'Yes') {
+      req.session.data['withdrawn'] = 'yes'
+      res.redirect('/' + version + '/AO/registrations/manage/confirmation-reg-withdraw')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/registrations/manage/change-status')
+    }
+  })
+  
+  //Withdrawn learner option - rejoin or register new
+  router.post('/' + version + '/AO/registrations/manage/withdrawn-option-answer', function (req, res) {
+  
+    let withdrawnOption = req.session.data['withdrawn-answer']
+  
+  
+    if (withdrawnOption === 'reactivate') {
+      res.redirect('/' + version + '/AO/registrations/manage/rejoin-registration')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/registrations/manage/new-course/provider-new-course')
+    }
+    
+  })
+  
+  //Rejoin learner registration
+  router.post('/' + version + '/AO/registrations/manage/confirm-rejoin-answer', function (req, res) {
+  
+    let statusChange = req.session.data['rejoin-answer']
+  
+  
+    if (statusChange === 'Yes') {
+      req.session.data['withdrawn'] = ''
+      res.redirect('/' + version + '/AO/registrations/manage/confirmation-reg-rejoin')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/registrations/manage/change-status')
+    }
+  })
+  
+  //Delete learner registration 
+  router.post('/' + version + '/AO/registrations/manage/confirm-delete-answer', function (req, res) {
+  
+    let statusChange = req.session.data['delete-answer']
+  
+  
+    if (statusChange === 'Yes') {
+      req.session.data['deleted'] = 'yes'
+      res.redirect('/' + version + '/AO/registrations/manage/confirmation-reg-deleted')
+  
+    } else{
+      
+      res.redirect('/' + version + '/AO/registrations/manage/registration-details')
+    }
+  })
+  
+  //Register new course - specialism routes
+  
+  router.post('/' + version + '/AO/registrations/manage/new-course/new-course-specialism-answer', function (req, res) {
+  
+    let addSpecialism = req.session.data['update-specialism-answer']
+    if (addSpecialism === 'yes') {
+  
+      res.redirect('/' + version + '/AO/registrations/manage/new-course/specialism-new-course')
+  
+    } else{
+      res.redirect('/' + version + '/AO/registrations/manage/new-course/academic-year-new-course')
+    }
+  
+  })
+  
+  
+  
+  //Change registered name - manage registrations
+  
+  router.post('/' + version + '/AO/registrations/manage/registration-change-name', function (req, res) {
+  
+      req.session.data['name-change'] = 'yes'
+      res.redirect('/' + version + '/AO/registrations/manage/change-successful')
+  
+  })
+  
+  //Change registered dob - manage registrations
+  
+  router.post('/' + version + '/AO/registrations/manage/registration-change-dob', function (req, res) {
+  
+    req.session.data['dob-change'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/manage/change-successful')
+  
+  })
+  
+  //Change registered provider - manage registrations
+  
+  router.post('/' + version + '/AO/registrations/manage/registration-change-provider', function (req, res) {
+  
+    req.session.data['provider-change'] = 'yes'
+    res.redirect('/' + version + '/AO/registrations/manage/change-successful')
+  
+  })
+  
+  //Update/remove registered specialism - manage registrations
+  
+  router.post('/' + version + '/AO/registrations/manage/update-specialism-answer', function (req, res) {
+  
+    let specialismsChange = req.session.data['update-specialism-answer']
+  
+  
+    if (specialismsChange === 'update') {
+      req.session.data['specialism'] = 'updated'
+      res.redirect('/' + version + '/AO/registrations/manage/change-specialism')
+  
+    } else{
+      req.session.data['specialism'] = 'removed'
+      res.redirect('/' + version + '/AO/registrations/manage/registration-details')
+    }
+  
+  })
+  
+  //Change specialism - manage registrations
+  
+  router.post('/' + version + '/AO/registrations/manage/update-specialism-choice', function (req, res) {
+  
+      req.session.data['specialism'] = 'updated'
+      res.redirect('/' + version + '/AO/registrations/manage/change-successful')
+  
+  })
+
+
 
 // This must close line 1 after all other routes
 }
