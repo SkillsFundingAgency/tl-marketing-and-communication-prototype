@@ -1,0 +1,143 @@
+.support_home {
+
+    .endlinkblock {
+        position:absolute;
+        bottom:0px;
+        border-top:2px solid #b1b4b6;
+        padding-top:15px;
+        width:100%;
+        left: auto;
+        right: auto;
+
+        a {
+            float:right;
+        }
+
+    }
+
+    .bl_divider {
+        width:100%;
+        background-color:#000;
+        height:4px;
+        margin-bottom:20px;
+        display:block;
+    }
+
+    .govuk-link {
+        color:#1d70b8;
+        text-decoration-color:#1d70b8;
+
+        &.thickline {
+            text-decoration-thickness: 1.5px;
+        }
+        
+        &.thickerline {
+            text-decoration-thickness: 2px;
+        }
+
+        &:hover {
+            color:#003078;
+            text-decoration-color:#003078;
+        }
+    }
+
+    .govuk-link h3, .govuk-link h4, .govuk-link h5 {
+        color:#1d70b8;
+    }
+
+    .homepage_banner {
+        background-color:govuk-colour("light-grey");
+
+        div:first-child {
+            padding: 50px 50px 10px 45px;
+        }
+    }
+
+    .homeban_img {
+        background-image:url('https://theme.zdassets.com/theme_assets/9268392/25b3aed82d1fdfbf0c71a772b05dcf3430076be2.png');
+        background-size:cover;
+        min-height:371px;
+    }
+
+    .sup_featured_news {
+
+        > div {
+            > div:first-child {
+                background-image:url('https://theme.zdassets.com/theme_assets/9268392/d05cf863cd3f2b53566cd280d1ee168d66789df3.png');
+                background-size:cover;
+                min-height:313px;
+                max-width:465px;
+            }
+
+            > div:last-child {
+                position:relative;
+                min-height:313px;
+                padding: 0px 0px 0px 15px;
+                margin-left: 15px;
+
+                p:first-of-type {
+                    font-size: 16px;
+                    color: #626a6e;
+                    margin-bottom: 10px;
+                }
+
+                > a {
+                    text-decoration-color:#1d70b8;
+                    text-decoration-thickness: 2px;
+
+                    &:hover {
+                        color:#003078;
+                        text-decoration-color:#003078;
+                    }
+                }
+
+                > div {
+                    position: absolute;
+                    bottom: 0px;
+                    width: 465px;
+                    right: 0px;
+                    border-top: 2px solid #b1b4b6;
+                    padding-top: 15px;
+
+                    a {
+                        float:right;
+                        display:block;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .sup_feat_news {
+        > div > div {
+            min-height:395px;
+            position:relative;
+            padding-bottom:40px;
+        }
+        .kdate-block {
+            padding:20px 0px;
+            border-bottom:1px solid #eaeaea;
+
+            &.last {
+                border-bottom:none;
+            }
+        }
+
+        .endlinkblock.left {
+            width:300px;
+        }
+
+        .endlinkblock.right {
+            width:630px;
+        }
+    }
+
+    .sup-bottomcard {
+        background-color: #f3f2f1;
+        padding: 30px;
+        margin: 20px 0;
+        border-bottom: 5px solid #0b0c0c;
+    }
+
+}
