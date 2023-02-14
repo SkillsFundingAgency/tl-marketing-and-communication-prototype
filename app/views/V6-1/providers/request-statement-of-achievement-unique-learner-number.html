@@ -24,23 +24,16 @@ Search for a learner - Enter Unique Learner Number page - Manage T Level results
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="request-statement-of-achievement-check-and-submit" method="post" novalidate data-validate="search-for-learner-validation">
-      <div class="govuk-form-group">
         <div class="govuk-form-group">
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
             Search for a learner
-          </h1>
-          <label for="uln">
-            <p id="uln-description" class="govuk-body">Enter the Unique Learner Number (ULN) for a learner who has withdrawn from their T level course.</p>
           </label>
-          <span class="govuk-hint">
-                ULN must be 10 digits long
-              </span>
-          <input class="govuk-input govuk-input--width-10" aria-describedby="uln-description" aria-required="true" id="uln" name="uln">
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          Enter the Unique Learner Number (ULN) for a learner who has withdrawn from their T level course.</div>
+        <input class="govuk-input" id="uln" name="uln" type="text">
         </div>
-      </div>
-
-      <button class="govuk-button" data-module="govuk-button">Search</button>
-
+        <button class="govuk-button" data-module="govuk-button">Search</button>
     </form>
   </div>
 </div>

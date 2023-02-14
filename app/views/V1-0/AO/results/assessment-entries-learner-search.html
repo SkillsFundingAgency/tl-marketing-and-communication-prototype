@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Assessment entries – Search for a learner – Manage T Level results – GOV.UK
+Assessment entries – Search for a learner page – Manage T Level results – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-breadcrumbs">
   <ol class="govuk-breadcrumbs__list">
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="../tlevels-dashboard.html">Home</a>
+      <a class="govuk-breadcrumbs__link" href="/V1-0/AO/tlevels-dashboard.html">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="assessments-dashboard.html">Assessments</a>
     </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
   </ol>
 </div>
 {% endblock %}
@@ -21,20 +22,27 @@ Assessment entries – Search for a learner – Manage T Level results – GOV.U
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="search-learner-assessments" method="post" novalidate data-validate="search-for-learner-validation">
+        <form class="form" action="learners-assessment-entries" method="post" novalidate data-validate="search-for-learner-validation">
             <div class="govuk-form-group">
-                        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
                             Search for a learner
                         </h1>
+                    </legend>
                     <p class="govuk-body">You can add, view and amend a learner's assessment entries.</p>
+                    <div class="govuk-form-group">
                       <label class="govuk-label" for="uln">
-                        Enter the unique learner number (ULN)
+                        Enter the Unique Learner Number (ULN)
                       </label>
-                      <div id ="uln-hint" class="govuk-hint">
+                      <span class="govuk-hint">
                           ULN must be 10 digits long
-                      </div>
-                      <input aria-required="true" class="govuk-input govuk-input--width-10" id="uln" name="uln" type="text" spellcheck="false" aria-describedby="uln-hint" pattern="[0-9]*" inputmode="numeric">
-                </div>
+                      </span>
+                      <input class="govuk-input govuk-input--width-20" id="uln" name="uln">
+                    </div>
+
+                </fieldset>
+            </div>
 
             <button class="govuk-button" data-module="govuk-button">Search</button>
 
