@@ -18,11 +18,11 @@
   .border-top-black.thin {
     border-width: 3px;
   }
-  
-  // Tags
-  
-  .govuk-tag.pink {
-    background-color:#dd2d90;
+
+  // Backgrounds
+
+  .bg-light-grey {
+    background-color:govuk-colour("light-grey");
   }
   
   // Buttons
@@ -42,4 +42,8 @@
   .dark-grey { color:$govuk-secondary-text-colour; }
   
   /* - - - */
+}
+
+.govuk-tag.pink {
+  background-color:#dd2d90;
 }
